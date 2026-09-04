@@ -1,0 +1,176 @@
+{
+  "artifact": "ADV_non_lesson_sections_v1.0",
+  "version": "1.0",
+  "policy": "Bilans, communicative activities, evaluation test, annexes and index are support material, not independent grammar lessons.",
+  "section_count": 12,
+  "sections": [
+    {
+      "section_id": "ADV-NL01",
+      "sequence": 1,
+      "title_fr": "Bilan 1",
+      "printed_pages": "30-33",
+      "pdf_pages": "32-35",
+      "roles": [
+        "coverage_verification",
+        "contrast_confirmation",
+        "formative_QA"
+      ],
+      "is_grammar_lesson": false,
+      "source_basis": "BOOK_TOC_AND_SOURCE_MAP"
+    },
+    {
+      "section_id": "ADV-NL02",
+      "sequence": 2,
+      "title_fr": "Bilan 2",
+      "printed_pages": "50-51",
+      "pdf_pages": "52-53",
+      "roles": [
+        "tense_contrast_QA"
+      ],
+      "is_grammar_lesson": false,
+      "source_basis": "BOOK_TOC_AND_SOURCE_MAP"
+    },
+    {
+      "section_id": "ADV-NL03",
+      "sequence": 3,
+      "title_fr": "Bilan 3",
+      "printed_pages": "68-69",
+      "pdf_pages": "70-71",
+      "roles": [
+        "mood_and_infinitive_contrast_QA"
+      ],
+      "is_grammar_lesson": false,
+      "source_basis": "BOOK_TOC_AND_SOURCE_MAP"
+    },
+    {
+      "section_id": "ADV-NL04",
+      "sequence": 4,
+      "title_fr": "Bilan 4",
+      "printed_pages": "88-89",
+      "pdf_pages": "90-91",
+      "roles": [
+        "nonfinite_and_voice_QA"
+      ],
+      "is_grammar_lesson": false,
+      "source_basis": "BOOK_TOC_AND_SOURCE_MAP"
+    },
+    {
+      "section_id": "ADV-NL05",
+      "sequence": 5,
+      "title_fr": "Bilan 5",
+      "printed_pages": "112-113",
+      "pdf_pages": "114-115",
+      "roles": [
+        "reported_speech_adverb_preposition_QA"
+      ],
+      "is_grammar_lesson": false,
+      "source_basis": "BOOK_TOC_AND_SOURCE_MAP"
+    },
+    {
+      "section_id": "ADV-NL06",
+      "sequence": 6,
+      "title_fr": "Bilan 6",
+      "printed_pages": "128-129",
+      "pdf_pages": "130-131",
+      "roles": [
+        "pronoun_system_QA"
+      ],
+      "is_grammar_lesson": false,
+      "source_basis": "BOOK_TOC_AND_SOURCE_MAP"
+    },
+    {
+      "section_id": "ADV-NL07",
+      "sequence": 7,
+      "title_fr": "Bilan 7",
+      "printed_pages": "146-147",
+      "pdf_pages": "148-149",
+      "roles": [
+        "time_cause_consequence_comparison_QA"
+      ],
+      "is_grammar_lesson": false,
+      "source_basis": "BOOK_TOC_AND_SOURCE_MAP"
+    },
+    {
+      "section_id": "ADV-NL08",
+      "sequence": 8,
+      "title_fr": "Bilan 8",
+      "printed_pages": "166-167",
+      "pdf_pages": "168-169",
+      "roles": [
+        "discourse_relation_and_modality_QA"
+      ],
+      "is_grammar_lesson": false,
+      "source_basis": "BOOK_TOC_AND_SOURCE_MAP"
+    },
+    {
+      "section_id": "ADV-NL09",
+      "sequence": 9,
+      "title_fr": "Activités communicatives",
+      "printed_pages": "168-184",
+      "pdf_pages": "170-186",
+      "roles": [
+        "register_confirmation",
+        "discourse_context_models",
+        "coverage_verification"
+      ],
+      "is_grammar_lesson": false,
+      "source_basis": "BOOK_TOC_AND_SOURCE_MAP"
+    },
+    {
+      "section_id": "ADV-NL10",
+      "sequence": 10,
+      "title_fr": "Test d’évaluation",
+      "printed_pages": "185-186",
+      "pdf_pages": "187-188",
+      "roles": [
+        "global_coverage_verification"
+      ],
+      "is_grammar_lesson": false,
+      "source_basis": "BOOK_TOC_AND_SOURCE_MAP"
+    },
+    {
+      "section_id": "ADV-NL11",
+      "sequence": 11,
+      "title_fr": "Annexes",
+      "printed_pages": "187-204",
+      "pdf_pages": "189-206",
+      "roles": [
+        "tense_sequence_confirmation",
+        "verb_government_confirmation",
+        "conjugation_confirmation"
+      ],
+      "is_grammar_lesson": false,
+      "source_basis": "BOOK_TOC_AND_SOURCE_MAP",
+      "subsections": [
+        {
+          "title_fr": "Concordance des temps",
+          "printed_pages": "187-192",
+          "pdf_pages": "189-194"
+        },
+        {
+          "title_fr": "Dictionnaire des verbes",
+          "printed_pages": "193-200",
+          "pdf_pages": "195-202"
+        },
+        {
+          "title_fr": "Tableaux des conjugaisons",
+          "printed_pages": "201-204",
+          "pdf_pages": "203-206"
+        }
+      ]
+    },
+    {
+      "section_id": "ADV-NL12",
+      "sequence": 12,
+      "title_fr": "Index",
+      "printed_pages": "205-209",
+      "pdf_pages": "207-211",
+      "roles": [
+        "terminology_cross_check",
+        "source_navigation"
+      ],
+      "is_grammar_lesson": false,
+      "source_basis": "BOOK_TOC_AND_SOURCE_MAP"
+    }
+  ]
+}

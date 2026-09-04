@@ -1,0 +1,321 @@
+{
+  "artifact": "ADV_sections_v1.0",
+  "version": "1.0",
+  "section_count": 8,
+  "coverage_policy": "Each official grammar lesson belongs to exactly one Bilan-based review section.",
+  "sections": [
+    {
+      "section_id": "ADV-S01",
+      "sequence": 1,
+      "title_fr": "Révision 1 — Bilan 1",
+      "title_fa": "مرور 1 — جمع‌بندی 1",
+      "source_section": "Bilan 1",
+      "source_printed_pages": "30-33",
+      "source_pdf_pages": "32-35",
+      "lesson_ids": [
+        "ADV-L01",
+        "ADV-L02",
+        "ADV-L03"
+      ],
+      "subtopic_ids": [
+        "ADV-L01-ST01",
+        "ADV-L01-ST02",
+        "ADV-L01-ST03",
+        "ADV-L01-ST04",
+        "ADV-L01-ST05",
+        "ADV-L02-ST01",
+        "ADV-L02-ST02",
+        "ADV-L02-ST03",
+        "ADV-L03-ST01",
+        "ADV-L03-ST02"
+      ],
+      "lesson_count": 3,
+      "subtopic_count": 10,
+      "underlying_question_pool_target_count": 710,
+      "role": [
+        "coverage_verification",
+        "contrast_confirmation",
+        "formative_QA"
+      ],
+      "grouping_basis": "BOOK_BILAN_BOUNDARIES",
+      "status": "ACTIVE"
+    },
+    {
+      "section_id": "ADV-S02",
+      "sequence": 2,
+      "title_fr": "Révision 2 — Bilan 2",
+      "title_fa": "مرور 2 — جمع‌بندی 2",
+      "source_section": "Bilan 2",
+      "source_printed_pages": "50-51",
+      "source_pdf_pages": "52-53",
+      "lesson_ids": [
+        "ADV-L04"
+      ],
+      "subtopic_ids": [
+        "ADV-L04-ST01",
+        "ADV-L04-ST02",
+        "ADV-L04-ST03",
+        "ADV-L04-ST04",
+        "ADV-L04-ST05",
+        "ADV-L04-ST06",
+        "ADV-L04-ST07",
+        "ADV-L04-ST08"
+      ],
+      "lesson_count": 1,
+      "subtopic_count": 8,
+      "underlying_question_pool_target_count": 450,
+      "role": [
+        "tense_contrast_QA"
+      ],
+      "grouping_basis": "BOOK_BILAN_BOUNDARIES",
+      "status": "ACTIVE"
+    },
+    {
+      "section_id": "ADV-S03",
+      "sequence": 3,
+      "title_fr": "Révision 3 — Bilan 3",
+      "title_fa": "مرور 3 — جمع‌بندی 3",
+      "source_section": "Bilan 3",
+      "source_printed_pages": "68-69",
+      "source_pdf_pages": "70-71",
+      "lesson_ids": [
+        "ADV-L05",
+        "ADV-L06"
+      ],
+      "subtopic_ids": [
+        "ADV-L05-ST01",
+        "ADV-L05-ST02",
+        "ADV-L05-ST03",
+        "ADV-L05-ST04",
+        "ADV-L06-ST01",
+        "ADV-L06-ST02",
+        "ADV-L06-ST03",
+        "ADV-L06-ST04"
+      ],
+      "lesson_count": 2,
+      "subtopic_count": 8,
+      "underlying_question_pool_target_count": 570,
+      "role": [
+        "mood_and_infinitive_contrast_QA"
+      ],
+      "grouping_basis": "BOOK_BILAN_BOUNDARIES",
+      "status": "ACTIVE"
+    },
+    {
+      "section_id": "ADV-S04",
+      "sequence": 4,
+      "title_fr": "Révision 4 — Bilan 4",
+      "title_fa": "مرور 4 — جمع‌بندی 4",
+      "source_section": "Bilan 4",
+      "source_printed_pages": "88-89",
+      "source_pdf_pages": "90-91",
+      "lesson_ids": [
+        "ADV-L07",
+        "ADV-L08",
+        "ADV-L09",
+        "ADV-L10",
+        "ADV-L11",
+        "ADV-L12",
+        "ADV-L13"
+      ],
+      "subtopic_ids": [
+        "ADV-L07-ST01",
+        "ADV-L07-ST02",
+        "ADV-L07-ST03",
+        "ADV-L07-ST04",
+        "ADV-L08-ST01",
+        "ADV-L08-ST02",
+        "ADV-L08-ST03",
+        "ADV-L08-ST04",
+        "ADV-L09-ST01",
+        "ADV-L09-ST02",
+        "ADV-L09-ST03",
+        "ADV-L09-ST04",
+        "ADV-L10-ST01",
+        "ADV-L10-ST02",
+        "ADV-L10-ST03",
+        "ADV-L11-ST01",
+        "ADV-L11-ST02",
+        "ADV-L11-ST03",
+        "ADV-L11-ST04",
+        "ADV-L12-ST01",
+        "ADV-L12-ST02",
+        "ADV-L12-ST03",
+        "ADV-L13-ST01",
+        "ADV-L13-ST02",
+        "ADV-L13-ST03",
+        "ADV-L13-ST04"
+      ],
+      "lesson_count": 7,
+      "subtopic_count": 26,
+      "underlying_question_pool_target_count": 1160,
+      "role": [
+        "nonfinite_and_voice_QA"
+      ],
+      "grouping_basis": "BOOK_BILAN_BOUNDARIES",
+      "status": "ACTIVE"
+    },
+    {
+      "section_id": "ADV-S05",
+      "sequence": 5,
+      "title_fr": "Révision 5 — Bilan 5",
+      "title_fa": "مرور 5 — جمع‌بندی 5",
+      "source_section": "Bilan 5",
+      "source_printed_pages": "112-113",
+      "source_pdf_pages": "114-115",
+      "lesson_ids": [
+        "ADV-L14",
+        "ADV-L15",
+        "ADV-L16"
+      ],
+      "subtopic_ids": [
+        "ADV-L14-ST01",
+        "ADV-L14-ST02",
+        "ADV-L14-ST03",
+        "ADV-L14-ST04",
+        "ADV-L14-ST05",
+        "ADV-L15-ST01",
+        "ADV-L15-ST02",
+        "ADV-L15-ST03",
+        "ADV-L15-ST04",
+        "ADV-L15-ST05",
+        "ADV-L16-ST01",
+        "ADV-L16-ST02",
+        "ADV-L16-ST03",
+        "ADV-L16-ST04",
+        "ADV-L16-ST05"
+      ],
+      "lesson_count": 3,
+      "subtopic_count": 15,
+      "underlying_question_pool_target_count": 760,
+      "role": [
+        "reported_speech_adverb_preposition_QA"
+      ],
+      "grouping_basis": "BOOK_BILAN_BOUNDARIES",
+      "status": "ACTIVE"
+    },
+    {
+      "section_id": "ADV-S06",
+      "sequence": 6,
+      "title_fr": "Révision 6 — Bilan 6",
+      "title_fa": "مرور 6 — جمع‌بندی 6",
+      "source_section": "Bilan 6",
+      "source_printed_pages": "128-129",
+      "source_pdf_pages": "130-131",
+      "lesson_ids": [
+        "ADV-L17",
+        "ADV-L18",
+        "ADV-L19"
+      ],
+      "subtopic_ids": [
+        "ADV-L17-ST01",
+        "ADV-L17-ST02",
+        "ADV-L17-ST03",
+        "ADV-L17-ST04",
+        "ADV-L17-ST05",
+        "ADV-L18-ST01",
+        "ADV-L18-ST02",
+        "ADV-L18-ST03",
+        "ADV-L18-ST04",
+        "ADV-L18-ST05",
+        "ADV-L19-ST01",
+        "ADV-L19-ST02",
+        "ADV-L19-ST03",
+        "ADV-L19-ST04"
+      ],
+      "lesson_count": 3,
+      "subtopic_count": 14,
+      "underlying_question_pool_target_count": 720,
+      "role": [
+        "pronoun_system_QA"
+      ],
+      "grouping_basis": "BOOK_BILAN_BOUNDARIES",
+      "status": "ACTIVE"
+    },
+    {
+      "section_id": "ADV-S07",
+      "sequence": 7,
+      "title_fr": "Révision 7 — Bilan 7",
+      "title_fa": "مرور 7 — جمع‌بندی 7",
+      "source_section": "Bilan 7",
+      "source_printed_pages": "146-147",
+      "source_pdf_pages": "148-149",
+      "lesson_ids": [
+        "ADV-L20",
+        "ADV-L21",
+        "ADV-L22",
+        "ADV-L23"
+      ],
+      "subtopic_ids": [
+        "ADV-L20-ST01",
+        "ADV-L20-ST02",
+        "ADV-L20-ST03",
+        "ADV-L20-ST04",
+        "ADV-L21-ST01",
+        "ADV-L21-ST02",
+        "ADV-L21-ST03",
+        "ADV-L21-ST04",
+        "ADV-L22-ST01",
+        "ADV-L22-ST02",
+        "ADV-L22-ST03",
+        "ADV-L22-ST04",
+        "ADV-L23-ST01",
+        "ADV-L23-ST02",
+        "ADV-L23-ST03",
+        "ADV-L23-ST04"
+      ],
+      "lesson_count": 4,
+      "subtopic_count": 16,
+      "underlying_question_pool_target_count": 840,
+      "role": [
+        "time_cause_consequence_comparison_QA"
+      ],
+      "grouping_basis": "BOOK_BILAN_BOUNDARIES",
+      "status": "ACTIVE"
+    },
+    {
+      "section_id": "ADV-S08",
+      "sequence": 8,
+      "title_fr": "Révision 8 — Bilan 8",
+      "title_fa": "مرور 8 — جمع‌بندی 8",
+      "source_section": "Bilan 8",
+      "source_printed_pages": "166-167",
+      "source_pdf_pages": "168-169",
+      "lesson_ids": [
+        "ADV-L24",
+        "ADV-L25",
+        "ADV-L26",
+        "ADV-L27"
+      ],
+      "subtopic_ids": [
+        "ADV-L24-ST01",
+        "ADV-L24-ST02",
+        "ADV-L24-ST03",
+        "ADV-L24-ST04",
+        "ADV-L25-ST01",
+        "ADV-L25-ST02",
+        "ADV-L25-ST03",
+        "ADV-L25-ST04",
+        "ADV-L26-ST01",
+        "ADV-L26-ST02",
+        "ADV-L26-ST03",
+        "ADV-L26-ST04",
+        "ADV-L26-ST05",
+        "ADV-L27-ST01",
+        "ADV-L27-ST02",
+        "ADV-L27-ST03",
+        "ADV-L27-ST04",
+        "ADV-L27-ST05",
+        "ADV-L27-ST06"
+      ],
+      "lesson_count": 4,
+      "subtopic_count": 19,
+      "underlying_question_pool_target_count": 920,
+      "role": [
+        "discourse_relation_and_modality_QA"
+      ],
+      "grouping_basis": "BOOK_BILAN_BOUNDARIES",
+      "status": "ACTIVE"
+    }
+  ]
+}

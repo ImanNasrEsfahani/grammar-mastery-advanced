@@ -1,0 +1,85 @@
+{
+  "artifact": "ADV_REPOSITORY_MAPPING_v1.0",
+  "version": "1.0",
+  "target_repository": "ImanNasrEsfahani/grammar-mastery-advanced",
+  "inspected_main_commit": "f9a1df1fd3575d8eb09306ec57c80aa076c55b5f",
+  "canonical_contract": "ADV-QB-SCHEMA-v1.0",
+  "transport_contract": "ADV-QB-IMPORT-v1.0",
+  "postgres_contract": "relational-schema-v0.9.0",
+  "id_strategy": {
+    "strategy": "UUIDv5",
+    "namespace": "2ff38ec0-7fd9-5f16-9864-8976e9a7ac06",
+    "namespace_basis": "https://github.com/ImanNasrEsfahani/grammar-mastery-advanced/ADV/v1",
+    "rule": "uuid5(namespace, '<kind>:<canonical_stable_id>')",
+    "canonical_ids_are_never_rewritten": "true"
+  },
+  "source_identity": {
+    "authoritative_book": "Grammaire Progressive du Français — Niveau avancé",
+    "source_pdf_sha256": "e591fea7ed499aadf59f4ed35ac041653257f4b813a2c936aad6671db187edb0"
+  },
+  "question_row_adapter": {
+    "column_count": 46,
+    "preserve_column_order": true,
+    "field_mappings": {
+      "lesson_id": "ADV stable lesson ID -> UUIDv5(kind=lesson)",
+      "subtopic_id": "ADV stable subtopic ID -> UUIDv5(kind=subtopic)",
+      "secondary_subtopic_ids": "JSON array of ADV IDs -> pipe-delimited UUIDv5 IDs",
+      "misconception_*_id": "ADV misconception ID -> UUIDv5(kind=misconception)",
+      "author_id": "canonical actor token -> UUIDv5(kind=actor)",
+      "reviewer_id": "canonical actor token -> UUIDv5(kind=actor); blank remains blank",
+      "stem_locale": "fr -> fr-FR; fa -> fa-IR",
+      "option_locale": "fr -> fr-FR; fa -> fa-IR",
+      "explanation_locale": "fr -> fr-FR; fa -> fa-IR",
+      "difficulty_score_initial": "canonical 0..1 -> PostgreSQL/Stage23 1..4 with 1 + 3*x, rounded to 2 decimals",
+      "status": "READY_FOR_IMPORT -> DRAFT for Stage23 import workflow",
+      "source_type": {
+        "BOOK_RULE_DERIVED": "PROJECT_SYNTHETIC_FROM_RULE",
+        "BOOK_RULE_DERIVED_ORIGINAL": "PROJECT_SYNTHETIC_FROM_RULE",
+        "BOOK_RULE_PLUS_SUPPORT_CONFIRMED": "EXTERNAL_REVIEWED"
+      },
+      "media_type": "blank -> NONE",
+      "tags": "canonical JSON array -> controlled tokens only; add lesson-level controlled tags; pipe-delimit",
+      "schema_version": "ADV-QB-SCHEMA-v1.0 -> ADV-QB-IMPORT-v1.0",
+      "taxonomy_version": "ADV-TAXONOMY-v1.0",
+      "question_type_catalogue_version": "ADV-QTYPE-v1.0",
+      "compatibility_version": "ADV-COMPAT-v1.0",
+      "distractor_rules_version": "ADV-DISTRACTOR-v1.0"
+    }
+  },
+  "reference_table_mapping": {
+    "ADV_categories_v1.0.categories": "grammar_categories(node_kind=CATEGORY)",
+    "ADV_subcategories_v1.0.subcategories": "grammar_categories(node_kind=SUBCATEGORY)",
+    "ADV_lessons_v1.0.lessons": "grammar_lessons",
+    "ADV_subtopics_v1.0.subtopics": "grammar_subtopics",
+    "ADV_controlled_tags_v1.0.tags": "tags",
+    "ADV_lesson_tags_v1.0.mappings": "lesson_tags",
+    "ADV_question_type_catalogue_v1.0.types": "question_types + question_type_global_targets",
+    "ADV_misconceptions_v1.0.misconceptions": "misconceptions",
+    "ADV_question_type_compatibility_v1.0.records": "subtopic_question_type_compatibility + derived lesson_question_type_compatibility",
+    "ADV_difficulty_plan_v1.0": "difficulty_profiles + lesson_difficulty_targets",
+    "ADV_lessons_v1.0.target_question_count": "lesson_capacity_targets",
+    "ADV_dependencies_v1.0.dependencies": "lesson_related_references as TECHNICAL_SUPPORT; not lesson_prerequisites because the canonical records explicitly say is_book_declared_prerequisite=false",
+    "ADV_cross_references_v1.0.records": "lesson_related_references",
+    "ADV_sections_v1.0 + ADV_review_map_v1.0": "application/product data; no existing relational table required",
+    "ADV_non_lesson_sections_v1.0": "application/product data; no existing relational table required"
+  },
+  "non_inventions": {
+    "grammar_lessons.tcf_weight": 0,
+    "lesson_weight_versions": "not seeded: no verified TCF weighting exists in canonical Advanced source",
+    "mvp_expanded_targets": "equal to full target because no separate canonical tiers are defined; avoids inventing alternate counts"
+  },
+  "compatibility_status_mapping": {
+    "RECOMMENDED": "PREFERRED",
+    "COMPATIBLE": "ALLOWED",
+    "NOT_COMPATIBLE": "NOT_SUITABLE"
+  },
+  "schema_change_required": false,
+  "destructive_change_required": false,
+  "importer_version_update_required": true,
+  "notes": [
+    "No canonical column is renamed or deleted.",
+    "All transport conversions happen in a separate adapter.",
+    "The existing PostgreSQL schema can represent the 27-lesson Advanced canonical dataset.",
+    "Question publication/import remains gated by project-wide Question Bank validation."
+  ]
+}

@@ -1,0 +1,438 @@
+{
+  "artifact": "ADV_dependencies_v1.0",
+  "version": "1.0",
+  "policy": "The book/source map supplies related-topic evidence; direction and prerequisite strength are application-layer derivations, not claims that the book explicitly labels prerequisites.",
+  "dependency_count": 43,
+  "dependencies": [
+    {
+      "dependency_id": "ADV-DEP-001",
+      "from_lesson_id": "ADV-L01",
+      "to_lesson_id": "ADV-L16",
+      "relation_type": "STRONG_SUPPORT",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-002",
+      "from_lesson_id": "ADV-L01",
+      "to_lesson_id": "ADV-L19",
+      "relation_type": "STRONG_SUPPORT",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-003",
+      "from_lesson_id": "ADV-L02",
+      "to_lesson_id": "ADV-L15",
+      "relation_type": "SUPPORT",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-004",
+      "from_lesson_id": "ADV-L02",
+      "to_lesson_id": "ADV-L19",
+      "relation_type": "SUPPORT",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-005",
+      "from_lesson_id": "ADV-L03",
+      "to_lesson_id": "ADV-L05",
+      "relation_type": "STRONG_SUPPORT",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-006",
+      "from_lesson_id": "ADV-L04",
+      "to_lesson_id": "ADV-L06",
+      "relation_type": "PREREQUISITE",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-007",
+      "from_lesson_id": "ADV-L04",
+      "to_lesson_id": "ADV-L14",
+      "relation_type": "PREREQUISITE",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-008",
+      "from_lesson_id": "ADV-L04",
+      "to_lesson_id": "ADV-L20",
+      "relation_type": "PREREQUISITE",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-009",
+      "from_lesson_id": "ADV-L04",
+      "to_lesson_id": "ADV-L26",
+      "relation_type": "PREREQUISITE",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-010",
+      "from_lesson_id": "ADV-L05",
+      "to_lesson_id": "ADV-L24",
+      "relation_type": "PREREQUISITE",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-011",
+      "from_lesson_id": "ADV-L05",
+      "to_lesson_id": "ADV-L25",
+      "relation_type": "PREREQUISITE",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-012",
+      "from_lesson_id": "ADV-L05",
+      "to_lesson_id": "ADV-L26",
+      "relation_type": "STRONG_SUPPORT",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-013",
+      "from_lesson_id": "ADV-L05",
+      "to_lesson_id": "ADV-L27",
+      "relation_type": "STRONG_SUPPORT",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-014",
+      "from_lesson_id": "ADV-L06",
+      "to_lesson_id": "ADV-L14",
+      "relation_type": "STRONG_SUPPORT",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-015",
+      "from_lesson_id": "ADV-L06",
+      "to_lesson_id": "ADV-L26",
+      "relation_type": "PREREQUISITE",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-016",
+      "from_lesson_id": "ADV-L06",
+      "to_lesson_id": "ADV-L27",
+      "relation_type": "SUPPORT",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-017",
+      "from_lesson_id": "ADV-L07",
+      "to_lesson_id": "ADV-L09",
+      "relation_type": "STRONG_SUPPORT",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-018",
+      "from_lesson_id": "ADV-L07",
+      "to_lesson_id": "ADV-L25",
+      "relation_type": "PREREQUISITE",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-019",
+      "from_lesson_id": "ADV-L08",
+      "to_lesson_id": "ADV-L09",
+      "relation_type": "CONTRAST_PAIR",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-020",
+      "from_lesson_id": "ADV-L08",
+      "to_lesson_id": "ADV-L10",
+      "relation_type": "CONTRAST_PAIR",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-021",
+      "from_lesson_id": "ADV-L09",
+      "to_lesson_id": "ADV-L10",
+      "relation_type": "CONTRAST_PAIR",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-022",
+      "from_lesson_id": "ADV-L09",
+      "to_lesson_id": "ADV-L24",
+      "relation_type": "SUPPORT",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-023",
+      "from_lesson_id": "ADV-L09",
+      "to_lesson_id": "ADV-L26",
+      "relation_type": "SUPPORT",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-024",
+      "from_lesson_id": "ADV-L11",
+      "to_lesson_id": "ADV-L12",
+      "relation_type": "CONTRAST_PAIR",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-025",
+      "from_lesson_id": "ADV-L11",
+      "to_lesson_id": "ADV-L13",
+      "relation_type": "SUPPORT",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-026",
+      "from_lesson_id": "ADV-L12",
+      "to_lesson_id": "ADV-L18",
+      "relation_type": "SUPPORT",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-027",
+      "from_lesson_id": "ADV-L13",
+      "to_lesson_id": "ADV-L27",
+      "relation_type": "SUPPORT",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-028",
+      "from_lesson_id": "ADV-L14",
+      "to_lesson_id": "ADV-L20",
+      "relation_type": "STRONG_SUPPORT",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-029",
+      "from_lesson_id": "ADV-L15",
+      "to_lesson_id": "ADV-L20",
+      "relation_type": "SUPPORT",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-030",
+      "from_lesson_id": "ADV-L15",
+      "to_lesson_id": "ADV-L22",
+      "relation_type": "SUPPORT",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-031",
+      "from_lesson_id": "ADV-L15",
+      "to_lesson_id": "ADV-L27",
+      "relation_type": "SUPPORT",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-032",
+      "from_lesson_id": "ADV-L16",
+      "to_lesson_id": "ADV-L17",
+      "relation_type": "PREREQUISITE",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-033",
+      "from_lesson_id": "ADV-L16",
+      "to_lesson_id": "ADV-L18",
+      "relation_type": "SUPPORT",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-034",
+      "from_lesson_id": "ADV-L16",
+      "to_lesson_id": "ADV-L20",
+      "relation_type": "SUPPORT",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-035",
+      "from_lesson_id": "ADV-L16",
+      "to_lesson_id": "ADV-L21",
+      "relation_type": "SUPPORT",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-036",
+      "from_lesson_id": "ADV-L16",
+      "to_lesson_id": "ADV-L25",
+      "relation_type": "SUPPORT",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-037",
+      "from_lesson_id": "ADV-L17",
+      "to_lesson_id": "ADV-L18",
+      "relation_type": "SUPPORT",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-038",
+      "from_lesson_id": "ADV-L18",
+      "to_lesson_id": "ADV-L19",
+      "relation_type": "SUPPORT",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-039",
+      "from_lesson_id": "ADV-L21",
+      "to_lesson_id": "ADV-L22",
+      "relation_type": "CONTRAST_PAIR",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-040",
+      "from_lesson_id": "ADV-L22",
+      "to_lesson_id": "ADV-L25",
+      "relation_type": "SUPPORT",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-041",
+      "from_lesson_id": "ADV-L24",
+      "to_lesson_id": "ADV-L25",
+      "relation_type": "SUPPORT",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-042",
+      "from_lesson_id": "ADV-L24",
+      "to_lesson_id": "ADV-L26",
+      "relation_type": "SUPPORT",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    },
+    {
+      "dependency_id": "ADV-DEP-043",
+      "from_lesson_id": "ADV-L23",
+      "to_lesson_id": "ADV-L27",
+      "relation_type": "SUPPORT",
+      "source_cross_reference_exists": true,
+      "basis": "TECHNICAL_DERIVATION_FROM_SOURCE_CROSS_RELATIONS",
+      "is_book_declared_prerequisite": false,
+      "status": "PROPOSED_FOR_APPLICATION"
+    }
+  ]
+}

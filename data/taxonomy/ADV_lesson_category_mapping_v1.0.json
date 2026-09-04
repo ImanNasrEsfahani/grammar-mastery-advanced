@@ -1,0 +1,142 @@
+{
+  "artifact": "ADV_lesson_category_mapping_v1.0",
+  "version": "1.0",
+  "mapping_count": 27,
+  "mappings": [
+    {
+      "lesson_id": "ADV-L01",
+      "category_id": "ADV-CAT01",
+      "mapping_basis": "TECHNICAL_SITE_TAXONOMY"
+    },
+    {
+      "lesson_id": "ADV-L02",
+      "category_id": "ADV-CAT01",
+      "mapping_basis": "TECHNICAL_SITE_TAXONOMY"
+    },
+    {
+      "lesson_id": "ADV-L03",
+      "category_id": "ADV-CAT02",
+      "mapping_basis": "TECHNICAL_SITE_TAXONOMY"
+    },
+    {
+      "lesson_id": "ADV-L04",
+      "category_id": "ADV-CAT03",
+      "mapping_basis": "TECHNICAL_SITE_TAXONOMY"
+    },
+    {
+      "lesson_id": "ADV-L05",
+      "category_id": "ADV-CAT03",
+      "mapping_basis": "TECHNICAL_SITE_TAXONOMY"
+    },
+    {
+      "lesson_id": "ADV-L06",
+      "category_id": "ADV-CAT03",
+      "mapping_basis": "TECHNICAL_SITE_TAXONOMY"
+    },
+    {
+      "lesson_id": "ADV-L07",
+      "category_id": "ADV-CAT04",
+      "mapping_basis": "TECHNICAL_SITE_TAXONOMY"
+    },
+    {
+      "lesson_id": "ADV-L08",
+      "category_id": "ADV-CAT04",
+      "mapping_basis": "TECHNICAL_SITE_TAXONOMY"
+    },
+    {
+      "lesson_id": "ADV-L09",
+      "category_id": "ADV-CAT04",
+      "mapping_basis": "TECHNICAL_SITE_TAXONOMY"
+    },
+    {
+      "lesson_id": "ADV-L10",
+      "category_id": "ADV-CAT04",
+      "mapping_basis": "TECHNICAL_SITE_TAXONOMY"
+    },
+    {
+      "lesson_id": "ADV-L11",
+      "category_id": "ADV-CAT04",
+      "mapping_basis": "TECHNICAL_SITE_TAXONOMY"
+    },
+    {
+      "lesson_id": "ADV-L12",
+      "category_id": "ADV-CAT04",
+      "mapping_basis": "TECHNICAL_SITE_TAXONOMY"
+    },
+    {
+      "lesson_id": "ADV-L13",
+      "category_id": "ADV-CAT04",
+      "mapping_basis": "TECHNICAL_SITE_TAXONOMY"
+    },
+    {
+      "lesson_id": "ADV-L14",
+      "category_id": "ADV-CAT05",
+      "mapping_basis": "TECHNICAL_SITE_TAXONOMY"
+    },
+    {
+      "lesson_id": "ADV-L15",
+      "category_id": "ADV-CAT05",
+      "mapping_basis": "TECHNICAL_SITE_TAXONOMY"
+    },
+    {
+      "lesson_id": "ADV-L16",
+      "category_id": "ADV-CAT05",
+      "mapping_basis": "TECHNICAL_SITE_TAXONOMY"
+    },
+    {
+      "lesson_id": "ADV-L17",
+      "category_id": "ADV-CAT06",
+      "mapping_basis": "TECHNICAL_SITE_TAXONOMY"
+    },
+    {
+      "lesson_id": "ADV-L18",
+      "category_id": "ADV-CAT06",
+      "mapping_basis": "TECHNICAL_SITE_TAXONOMY"
+    },
+    {
+      "lesson_id": "ADV-L19",
+      "category_id": "ADV-CAT06",
+      "mapping_basis": "TECHNICAL_SITE_TAXONOMY"
+    },
+    {
+      "lesson_id": "ADV-L20",
+      "category_id": "ADV-CAT07",
+      "mapping_basis": "TECHNICAL_SITE_TAXONOMY"
+    },
+    {
+      "lesson_id": "ADV-L21",
+      "category_id": "ADV-CAT07",
+      "mapping_basis": "TECHNICAL_SITE_TAXONOMY"
+    },
+    {
+      "lesson_id": "ADV-L22",
+      "category_id": "ADV-CAT07",
+      "mapping_basis": "TECHNICAL_SITE_TAXONOMY"
+    },
+    {
+      "lesson_id": "ADV-L23",
+      "category_id": "ADV-CAT07",
+      "mapping_basis": "TECHNICAL_SITE_TAXONOMY"
+    },
+    {
+      "lesson_id": "ADV-L24",
+      "category_id": "ADV-CAT07",
+      "mapping_basis": "TECHNICAL_SITE_TAXONOMY"
+    },
+    {
+      "lesson_id": "ADV-L25",
+      "category_id": "ADV-CAT07",
+      "mapping_basis": "TECHNICAL_SITE_TAXONOMY"
+    },
+    {
+      "lesson_id": "ADV-L26",
+      "category_id": "ADV-CAT07",
+      "mapping_basis": "TECHNICAL_SITE_TAXONOMY"
+    },
+    {
+      "lesson_id": "ADV-L27",
+      "category_id": "ADV-CAT08",
+      "mapping_basis": "TECHNICAL_SITE_TAXONOMY"
+    }
+  ]
+}

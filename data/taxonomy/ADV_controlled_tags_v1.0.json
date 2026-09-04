@@ -1,0 +1,471 @@
+{
+  "artifact": "ADV_controlled_tags_v1.0",
+  "version": "1.0",
+  "tag_count": 58,
+  "tags": [
+    {
+      "tag_id": "ADV-TAG-001",
+      "token": "adjective",
+      "label_fr": "Adjectifs",
+      "label_fa": "صفت‌ها",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-002",
+      "token": "adjective_position",
+      "label_fr": "Place de l’adjectif",
+      "label_fa": "جایگاه صفت",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-003",
+      "token": "adverb",
+      "label_fr": "Adverbes",
+      "label_fa": "قیدها",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-004",
+      "token": "agreement",
+      "label_fr": "Accord",
+      "label_fa": "تطابق",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-005",
+      "token": "anteriority",
+      "label_fr": "Antériorité",
+      "label_fa": "تقدم زمانی",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-006",
+      "token": "articles",
+      "label_fr": "Articles",
+      "label_fa": "حروف تعریف",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-007",
+      "token": "aspect",
+      "label_fr": "Aspect",
+      "label_fa": "نمود",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-008",
+      "token": "cause",
+      "label_fr": "Cause",
+      "label_fa": "علت",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-009",
+      "token": "certainty",
+      "label_fr": "Certitude et doute",
+      "label_fa": "قطعیت و تردید",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-010",
+      "token": "communication",
+      "label_fr": "Communication",
+      "label_fa": "ارتباط",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-011",
+      "token": "comparison",
+      "label_fr": "Comparaison",
+      "label_fa": "مقایسه",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-012",
+      "token": "concession",
+      "label_fr": "Concession",
+      "label_fa": "امتیاز / concession",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-013",
+      "token": "condition",
+      "label_fr": "Condition",
+      "label_fa": "شرط",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-014",
+      "token": "conditional",
+      "label_fr": "Conditionnel",
+      "label_fa": "وجه شرطی",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-015",
+      "token": "consequence",
+      "label_fr": "Conséquence",
+      "label_fa": "پیامد",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-016",
+      "token": "determiner",
+      "label_fr": "Déterminants",
+      "label_fa": "تعیین‌کننده‌ها",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-017",
+      "token": "discourse_connector",
+      "label_fr": "Connecteurs",
+      "label_fa": "پیونددهنده‌های گفتمانی",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-018",
+      "token": "duration",
+      "label_fr": "Durée",
+      "label_fa": "مدت",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-019",
+      "token": "formal_register",
+      "label_fr": "Registre soutenu/formel",
+      "label_fa": "سطح رسمی",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-020",
+      "token": "frequency",
+      "label_fr": "Fréquence",
+      "label_fa": "تکرار و بسامد",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-021",
+      "token": "future",
+      "label_fr": "Futur",
+      "label_fa": "آینده",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-022",
+      "token": "gerund",
+      "label_fr": "Gérondif",
+      "label_fa": "ژروندیف",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-023",
+      "token": "hypothesis",
+      "label_fr": "Hypothèse",
+      "label_fa": "فرض",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-024",
+      "token": "imperfect",
+      "label_fr": "Imparfait",
+      "label_fa": "ماضی استمراری / imparfait",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-025",
+      "token": "impersonal",
+      "label_fr": "Forme impersonnelle",
+      "label_fa": "ساخت غیرشخصی",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-026",
+      "token": "indefinite_pronoun",
+      "label_fr": "Pronoms indéfinis",
+      "label_fa": "ضمیرهای نامعین",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-027",
+      "token": "infinitive",
+      "label_fr": "Infinitif",
+      "label_fa": "مصدر",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-028",
+      "token": "modality",
+      "label_fr": "Modalité",
+      "label_fa": "وجه‌نمایی",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-029",
+      "token": "mood_choice",
+      "label_fr": "Choix du mode",
+      "label_fa": "انتخاب وجه",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-030",
+      "token": "negation",
+      "label_fr": "Négation",
+      "label_fa": "نفی",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-031",
+      "token": "nonfinite_form",
+      "label_fr": "Formes non finies",
+      "label_fa": "صورت‌های غیرصرفی",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-032",
+      "token": "numerals",
+      "label_fr": "Numéraux",
+      "label_fa": "اعداد و صفات عددی",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-033",
+      "token": "object_pronoun",
+      "label_fr": "Pronoms compléments",
+      "label_fa": "ضمیرهای مفعولی",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-034",
+      "token": "opposition",
+      "label_fr": "Opposition",
+      "label_fa": "تقابل",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-035",
+      "token": "passe_compose",
+      "label_fr": "Passé composé",
+      "label_fa": "گذشتهٔ مرکب",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-036",
+      "token": "passe_simple",
+      "label_fr": "Passé simple",
+      "label_fa": "گذشتهٔ ساده",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-037",
+      "token": "passive",
+      "label_fr": "Voix passive",
+      "label_fa": "مجهول",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-038",
+      "token": "past",
+      "label_fr": "Passé",
+      "label_fa": "گذشته",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-039",
+      "token": "perception",
+      "label_fr": "Perception",
+      "label_fa": "ادراک",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-040",
+      "token": "posteriority",
+      "label_fr": "Postériorité",
+      "label_fa": "تأخر زمانی",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-041",
+      "token": "preposition",
+      "label_fr": "Prépositions",
+      "label_fa": "حروف اضافه",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-042",
+      "token": "present",
+      "label_fr": "Présent",
+      "label_fa": "حال",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-043",
+      "token": "present_participle",
+      "label_fr": "Participe présent",
+      "label_fa": "participe présent",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-044",
+      "token": "pronominal",
+      "label_fr": "Forme pronominale",
+      "label_fa": "ساخت ضمیری",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-045",
+      "token": "pronoun_order",
+      "label_fr": "Ordre des pronoms",
+      "label_fa": "ترتیب ضمیرها",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-046",
+      "token": "purpose",
+      "label_fr": "But",
+      "label_fa": "هدف",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-047",
+      "token": "register",
+      "label_fr": "Registre",
+      "label_fa": "سطح زبانی",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-048",
+      "token": "relative_pronoun",
+      "label_fr": "Pronoms relatifs",
+      "label_fa": "ضمیرهای موصولی",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-049",
+      "token": "reported_speech",
+      "label_fr": "Discours indirect",
+      "label_fa": "گفتار غیرمستقیم",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-050",
+      "token": "semantic_contrast",
+      "label_fr": "Contraste sémantique",
+      "label_fa": "تقابل معنایی",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-051",
+      "token": "sequence_of_tenses",
+      "label_fr": "Concordance des temps",
+      "label_fa": "تطابق زمان‌ها",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-052",
+      "token": "spoken_french",
+      "label_fr": "Français oral",
+      "label_fa": "فرانسهٔ گفتاری",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-053",
+      "token": "subjunctive",
+      "label_fr": "Subjonctif",
+      "label_fa": "وجه التزامی",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-054",
+      "token": "temporal_relation",
+      "label_fr": "Relations temporelles",
+      "label_fa": "روابط زمانی",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-055",
+      "token": "tense",
+      "label_fr": "Temps verbaux",
+      "label_fa": "زمان‌های فعلی",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-056",
+      "token": "verbal_adjective",
+      "label_fr": "Adjectif verbal",
+      "label_fa": "صفت فعلی",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-057",
+      "token": "word_order",
+      "label_fr": "Ordre des mots",
+      "label_fa": "ترتیب واژه‌ها",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    },
+    {
+      "tag_id": "ADV-TAG-058",
+      "token": "written_french",
+      "label_fr": "Français écrit",
+      "label_fa": "فرانسهٔ نوشتاری",
+      "scope": "LESSON_AND_QUESTION",
+      "status": "ACTIVE"
+    }
+  ]
+}

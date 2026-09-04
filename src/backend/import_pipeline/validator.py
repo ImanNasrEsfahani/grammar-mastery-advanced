@@ -6,7 +6,7 @@ import uuid
 from typing import Any, Mapping
 
 
-SCHEMA_VERSION = "question-import-schema-v0.9.0"
+SCHEMA_VERSION = "ADV-QB-IMPORT-v1.0"
 QUESTION_TYPES = {
     "CLOZE_SINGLE", "CLOZE_CONTEXT", "CORRECT_SENTENCE", "INCORRECT_SENTENCE",
     "ERROR_LOCATION", "CONJUGATION", "TENSE_CHOICE", "PRONOUN_CHOICE",
@@ -31,10 +31,10 @@ EXPECTED_COLUMNS = (
     "content_version",
 )
 VERSION_CONSTANTS = {
-    "taxonomy_version": "taxonomy-v0.9.0",
-    "question_type_catalogue_version": "question-type-catalogue-v0.9.0",
-    "compatibility_version": "question-type-compatibility-v0.9.0",
-    "distractor_rules_version": "distractor-rule-set-v0.9.0",
+    "taxonomy_version": "ADV-TAXONOMY-v1.0",
+    "question_type_catalogue_version": "ADV-QTYPE-v1.0",
+    "compatibility_version": "ADV-COMPAT-v1.0",
+    "distractor_rules_version": "ADV-DISTRACTOR-v1.0",
 }
 
 

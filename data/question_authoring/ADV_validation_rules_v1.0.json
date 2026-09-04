@@ -1,0 +1,296 @@
+{
+  "artifact": "ADV_validation_rules_v1.0",
+  "created_at": "2026-09-02T00:00:00Z",
+  "schema_version": "ADV-QB-SCHEMA-v1.0",
+  "validation_statuses": [
+    "DRAFT",
+    "VALIDATION_FAILED",
+    "VALIDATED",
+    "READY_FOR_IMPORT"
+  ],
+  "validation_order": [
+    "schema_and_id_validation",
+    "source_and_compatibility_validation",
+    "answer_and_explanation_validation",
+    "misconception_integrity",
+    "difficulty_and_language_review",
+    "exact_duplicate_scan",
+    "structural_duplicate_scan",
+    "semantic_near_duplicate_scan",
+    "batch_quota_and_option_balance",
+    "package_and_checkpoint_transaction"
+  ],
+  "fingerprints": {
+    "normalized_stem_signature": "case/space/punctuation normalized stem",
+    "grammar_target_signature": "lesson + primary subtopic + rule/contrast + required operation",
+    "structural_signature": "dependency/slot pattern abstracted from names, places, numbers, person and tense surface values",
+    "semantic_signature": "knowledge point + reasoning path + discourse relation",
+    "answer_pattern_signature": "correct form and distractor misconception configuration independent of option order",
+    "context_signature": "domain, speech act, register, temporal frame and discourse shape"
+  },
+  "difficulty_score_bands": {
+    "EASY": [
+      0.0,
+      0.34
+    ],
+    "MEDIUM": [
+      0.35,
+      0.59
+    ],
+    "HARD": [
+      0.6,
+      0.82
+    ],
+    "VERY_HARD": [
+      0.83,
+      1.0
+    ]
+  },
+  "rules": [
+    {
+      "rule_id": "ADV-V001",
+      "scope": "question",
+      "severity": "BLOCKER",
+      "description": "رکورد دقیقاً ۴۶ ستون canonical را با ترتیب مصوب دارد.",
+      "automated_check": "headers == canonical_column_order and no extras"
+    },
+    {
+      "rule_id": "ADV-V002",
+      "scope": "question",
+      "severity": "BLOCKER",
+      "description": "همهٔ نسخه‌ها دقیقاً با baseline v1.0 تطابق دارند.",
+      "automated_check": "version fields equal version registry"
+    },
+    {
+      "rule_id": "ADV-V003",
+      "scope": "question",
+      "severity": "BLOCKER",
+      "description": "external_id معتبر، در کل پروژه یکتا و با Batch/Q ordinal سازگار است.",
+      "automated_check": "regex + global uniqueness + manifest bounds"
+    },
+    {
+      "rule_id": "ADV-V004",
+      "scope": "question",
+      "severity": "BLOCKER",
+      "description": "lesson، subtopic و codeها در taxonomy وجود دارند و رابطهٔ والد/فرزند درست است.",
+      "automated_check": "foreign-key and parent checks"
+    },
+    {
+      "rule_id": "ADV-V005",
+      "scope": "question",
+      "severity": "BLOCKER",
+      "description": "نوع سؤال یکی از ۱۵ نوع catalogue و برای زیرموضوع سازگار است.",
+      "automated_check": "catalogue membership + compatibility status != NOT_COMPATIBLE"
+    },
+    {
+      "rule_id": "ADV-V006",
+      "scope": "question",
+      "severity": "BLOCKER",
+      "description": "دقیقاً چهار گزینهٔ A تا D، غیرخالی و از نظر معنای پاسخ متمایز وجود دارد.",
+      "automated_check": "four non-empty options + normalized option uniqueness"
+    },
+    {
+      "rule_id": "ADV-V007",
+      "scope": "question",
+      "severity": "BLOCKER",
+      "description": "دقیقاً یک پاسخ صحیح وجود دارد و correct_option یکی از A/B/C/D است.",
+      "automated_check": "correct_option enum + independent answer-key review"
+    },
+    {
+      "rule_id": "ADV-V008",
+      "scope": "question",
+      "severity": "BLOCKER",
+      "description": "full_explanation و توضیح هر چهار گزینه کامل و اختصاصی‌اند.",
+      "automated_check": "five non-empty explanation fields + minimum semantic review"
+    },
+    {
+      "rule_id": "ADV-V009",
+      "scope": "question",
+      "severity": "BLOCKER",
+      "description": "گزینهٔ صحیح misconception ندارد؛ هر distractor در صورت applicability یک misconception معتبر دارد.",
+      "automated_check": "correct mapping null + distractor foreign-key integrity"
+    },
+    {
+      "rule_id": "ADV-V010",
+      "scope": "question",
+      "severity": "BLOCKER",
+      "description": "Difficulty از استدلال گرامری می‌آید و با score/model هم‌خوان است.",
+      "automated_check": "label enum + score band + reviewer justification"
+    },
+    {
+      "rule_id": "ADV-V011",
+      "scope": "question",
+      "severity": "BLOCKER",
+      "description": "French طبیعی، درست، سطح‌مناسب و بدون ابهام پاسخ است.",
+      "automated_check": "linguistic review separate from generation"
+    },
+    {
+      "rule_id": "ADV-V012",
+      "scope": "question",
+      "severity": "BLOCKER",
+      "description": "واژگان به‌تنهایی سختی را ایجاد نمی‌کنند و context قاعده را مخدوش نمی‌کند.",
+      "automated_check": "vocabulary and context review"
+    },
+    {
+      "rule_id": "ADV-V013",
+      "scope": "question",
+      "severity": "BLOCKER",
+      "description": "source_ref به rule واقعی و صفحهٔ چاپی نگاشت می‌شود و source_type اصالت rule-derived را نشان می‌دهد.",
+      "automated_check": "source_ref parse + taxonomy/source-map lookup"
+    },
+    {
+      "rule_id": "ADV-V014",
+      "scope": "question",
+      "severity": "BLOCKER",
+      "description": "stem، context، جمله‌ها و distractorها اصل‌اند و مثال/تمرین کتاب کپی یا بازنویسی سطحی نشده است.",
+      "automated_check": "source overlap scan + human originality review"
+    },
+    {
+      "rule_id": "ADV-V015",
+      "scope": "question",
+      "severity": "BLOCKER",
+      "description": "Exact duplicate در stem/options/key وجود ندارد.",
+      "automated_check": "normalized_stem_signature + normalized options + key"
+    },
+    {
+      "rule_id": "ADV-V016",
+      "scope": "question",
+      "severity": "BLOCKER",
+      "description": "Structural duplicate با تعویض نام، شهر، عدد، شخص یا ترتیب گزینه‌ها وجود ندارد.",
+      "automated_check": "structural_signature against current and prior ADV registry"
+    },
+    {
+      "rule_id": "ADV-V017",
+      "scope": "question",
+      "severity": "BLOCKER",
+      "description": "Semantic near-duplicate با همان knowledge point و reasoning path وجود ندارد.",
+      "automated_check": "semantic_signature + grammar_target_signature + reviewer threshold"
+    },
+    {
+      "rule_id": "ADV-V018",
+      "scope": "question",
+      "severity": "ERROR",
+      "description": "secondary_subtopic_ids فقط برای مفاهیم واقعاً آزموده‌شده و بدون تکرار subtopic اصلی ثبت شده است.",
+      "automated_check": "array uniqueness + taxonomy foreign keys + necessity review"
+    },
+    {
+      "rule_id": "ADV-V019",
+      "scope": "batch",
+      "severity": "BLOCKER",
+      "description": "Batch حداکثر ۵۰ سؤال دارد، فقط یک Lesson را پوشش می‌دهد و count با plan برابر است.",
+      "automated_check": "count <= 50 + one lesson_id + planned count"
+    },
+    {
+      "rule_id": "ADV-V020",
+      "scope": "batch",
+      "severity": "BLOCKER",
+      "description": "شناسه‌های سؤال از Q001 پیوسته‌اند و manifest نخستین/آخرین شناسه را درست ثبت می‌کند.",
+      "automated_check": "sequential ordinal check"
+    },
+    {
+      "rule_id": "ADV-V021",
+      "scope": "batch",
+      "severity": "BLOCKER",
+      "description": "توزیع difficulty، question type و subtopic با سهمیهٔ برنامه و remaining quota سازگار است.",
+      "automated_check": "exact count reconciliation"
+    },
+    {
+      "rule_id": "ADV-V022",
+      "scope": "batch",
+      "severity": "ERROR",
+      "description": "پاسخ صحیح A/B/C/D تا حد منطقی متوازن است و balance کیفیت را خراب نکرده است.",
+      "automated_check": "compare with correct_option_targets; content quality has precedence"
+    },
+    {
+      "rule_id": "ADV-V023",
+      "scope": "batch",
+      "severity": "BLOCKER",
+      "description": "duplicate scan درون Batch و در برابر همهٔ Batchهای قبلی ADV PASS است.",
+      "automated_check": "six fingerprint registries + cross-batch scan"
+    },
+    {
+      "rule_id": "ADV-V024",
+      "scope": "batch",
+      "severity": "BLOCKER",
+      "description": "تمام سؤال‌ها QA مستقل، source coverage، explanation completeness و French review را گذرانده‌اند.",
+      "automated_check": "all question checks PASS + review report"
+    },
+    {
+      "rule_id": "ADV-V025",
+      "scope": "batch",
+      "severity": "BLOCKER",
+      "description": "ZIP فقط وقتی صادر می‌شود که manifest وضعیت READY_FOR_IMPORT داشته باشد.",
+      "automated_check": "manifest.validation_status == READY_FOR_IMPORT"
+    },
+    {
+      "rule_id": "ADV-V026",
+      "scope": "checkpoint",
+      "severity": "BLOCKER",
+      "description": "next_batch فقط پس از GENERATED + VALIDATED + PACKAGED شدن Batch جاری جلو می‌رود.",
+      "automated_check": "transaction state transition audit"
+    },
+    {
+      "rule_id": "ADV-V027",
+      "scope": "checkpoint",
+      "severity": "BLOCKER",
+      "description": "Batchها هرگز skip نمی‌شوند و checkpoint، نه حافظهٔ مکالمه، منبع ادامه است.",
+      "automated_check": "last_completed/next sequential check"
+    },
+    {
+      "rule_id": "ADV-V028",
+      "scope": "checkpoint",
+      "severity": "BLOCKER",
+      "description": "همهٔ total/completed/remainingها برای global، lesson، difficulty، type و subtopic جمع‌پذیرند.",
+      "automated_check": "target == completed + remaining at every level"
+    },
+    {
+      "rule_id": "ADV-V029",
+      "scope": "import",
+      "severity": "BLOCKER",
+      "description": "CSV UTF-8، deterministic، بدون ستون مخفی/فرمول تصادفی و با JSON array معتبر است.",
+      "automated_check": "byte/encoding/header/array/formula safety checks"
+    },
+    {
+      "rule_id": "ADV-V030",
+      "scope": "project",
+      "severity": "BLOCKER",
+      "description": "مجموع برنامه ۶۱۳۰، ۲۷ درس و ۱۳۰ Batch است و هیچ Batch مرز درس را قطع نمی‌کند.",
+      "automated_check": "global plan reconciliation"
+    },
+    {
+      "rule_id": "ADV-V031",
+      "scope": "project",
+      "severity": "BLOCKER",
+      "description": "Difficulty global دقیقاً 1226/2452/1839/613 است.",
+      "automated_check": "aggregate exact counts"
+    },
+    {
+      "rule_id": "ADV-V032",
+      "scope": "project",
+      "severity": "BLOCKER",
+      "description": "Repository قدیمی grammar-mastery-platform در تحلیل، duplicate registry یا import دخالت ندارد.",
+      "automated_check": "provenance and registry-scope audit"
+    },
+    {
+      "rule_id": "ADV-V033",
+      "scope": "project",
+      "severity": "ERROR",
+      "description": "Template repetition با تغییر سطحی نام/شهر/عدد کنترل و reasoning pattern متنوع است.",
+      "automated_check": "template family concentration scan"
+    },
+    {
+      "rule_id": "ADV-V034",
+      "scope": "project",
+      "severity": "BLOCKER",
+      "description": "VERY_HARD با nuance/exception/competition واقعی ساخته می‌شود، نه ابهام، واژگان نامعمول یا دو پاسخ نزدیک.",
+      "automated_check": "difficulty quality rubric review"
+    },
+    {
+      "rule_id": "ADV-V035",
+      "scope": "failure",
+      "severity": "BLOCKER",
+      "description": "در صورت ناتوانی در تولید سؤال سالم، Batch VALIDATION_FAILED می‌ماند و checkpoint جلو نمی‌رود.",
+      "automated_check": "failure-state transaction test"
+    }
+  ]
+}

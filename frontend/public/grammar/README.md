@@ -1,38 +1,42 @@
-# Static grammar lesson HTML — Advanced instance
+# Static grammar lesson HTML — Advanced
 
 This directory is the runtime home for authored grammar lesson HTML files.
+The Next.js frontend serves files from `frontend/public/` at same-origin URLs.
 
-## Current state
+## Canonical book
 
-No canonical Advanced book is registered yet.
+Book slug:
 
-Do not place copied Intermediate lesson HTML here. The real Advanced book slug,
-lesson count, titles, edition and source provenance must be frozen from Stage 1
-before learner lesson content is enabled.
+`grammaire-progressive-francais-avance`
 
-## When Stage 1 is frozen
+Repository directory:
 
-1. Choose one stable ASCII book slug.
-2. Add the real book entry to `frontend/src/lib/grammar-content/books.ts`.
-3. Set `ready: true` and the exact `lessonCount`.
-4. Create `frontend/public/grammar/<book-slug>/`.
-5. Save lesson HTML as `L01.html`, `L02.html`, ... using the canonical lesson
-   number from the Advanced lesson map.
-6. Rebuild/redeploy the frontend.
+`frontend/public/grammar/grammaire-progressive-francais-avance/`
 
-The learner route stays UUID-based. The lesson UUID is the stable application
-identifier; `LNN.html` is only the presentation lookup for authored lesson
-content.
+Runtime URL root:
 
-## HTML authoring contract
+`/grammar/grammaire-progressive-francais-avance/`
 
-- HTML is fetched same-origin and rendered inside the lesson page.
-- The frontend sanitizer removes `script`, `iframe`, `object`, `embed`,
-  event-handler attributes and `javascript:` URLs.
-- Do not add JavaScript to authored lesson HTML.
-- Keep CSS scoped to the lesson wrapper.
-- Mixed Persian RTL and French LTR content must remain explicit.
-- Relative images/media belong under the same book directory, e.g. `assets/`.
+## Lesson naming contract
 
-Do not use the display title as a storage key. The stable slug is the storage
-and routing key.
+The Advanced canonical dataset contains exactly 27 lessons:
+
+- Lesson 1 -> `L01.html`
+- ...
+- Lesson 27 -> `L27.html`
+
+The learner route remains UUID-based:
+
+`/{locale}/lessons/{lessonId}?book=grammaire-progressive-francais-avance`
+
+The UI reads `lesson_no` from the canonical lesson API and resolves the matching static
+lesson file. The physical database UUID remains the stable application key; the
+filename is only a presentation lookup.
+
+## Content policy
+
+The Advanced HTML fragments in this repository are generated from
+`data/product/ADV_lesson_content_v1.0.json`. Their pedagogical examples are original
+project examples, not transcriptions of book exercises.
+
+Do not add JavaScript to lesson HTML. Keep styles scoped under `.adv-lesson`.

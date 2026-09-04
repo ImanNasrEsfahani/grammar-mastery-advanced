@@ -1,0 +1,863 @@
+{
+  "artifact": "ADV_database_schema_v1.0",
+  "schema_version": "ADV-QB-SCHEMA-v1.0",
+  "created_at": "2026-09-02T00:00:00Z",
+  "contract_role": "Implementation-independent canonical content contract",
+  "canonical_column_count": 46,
+  "canonical_column_order": [
+    "schema_version",
+    "external_id",
+    "question_revision",
+    "lesson_id",
+    "lesson_code",
+    "subtopic_id",
+    "subtopic_code",
+    "secondary_subtopic_ids",
+    "question_type",
+    "stem",
+    "stem_locale",
+    "option_a",
+    "option_b",
+    "option_c",
+    "option_d",
+    "option_locale",
+    "correct_option",
+    "full_explanation",
+    "explanation_a",
+    "explanation_b",
+    "explanation_c",
+    "explanation_d",
+    "explanation_locale",
+    "misconception_a_id",
+    "misconception_b_id",
+    "misconception_c_id",
+    "misconception_d_id",
+    "difficulty",
+    "difficulty_score_initial",
+    "difficulty_model_version",
+    "status",
+    "source_type",
+    "source_ref",
+    "author_id",
+    "reviewer_id",
+    "tags",
+    "media_type",
+    "media_uri",
+    "media_alt_text",
+    "media_transcript",
+    "media_source_ref",
+    "taxonomy_version",
+    "question_type_catalogue_version",
+    "compatibility_version",
+    "distractor_rules_version",
+    "content_version"
+  ],
+  "field_definitions": [
+    {
+      "position": 1,
+      "name": "schema_version",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "نسخهٔ قرارداد canonical؛ باید ADV-QB-SCHEMA-v1.0 باشد.",
+      "allowed_values": [
+        "ADV-QB-SCHEMA-v1.0"
+      ]
+    },
+    {
+      "position": 2,
+      "name": "external_id",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "شناسهٔ پایدار سؤال با الگوی GMP-ADV-Bddd-Qddd.",
+      "pattern": "^GMP-ADV-B\\d{3}-Q\\d{3}$"
+    },
+    {
+      "position": 3,
+      "name": "question_revision",
+      "logical_type": "integer",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "شمارهٔ بازبینی؛ با اصلاح محتوا افزایش می‌یابد و external_id ثابت می‌ماند.",
+      "minimum": 1
+    },
+    {
+      "position": 4,
+      "name": "lesson_id",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "شناسهٔ درس ADV-L01 تا ADV-L27.",
+      "pattern": "^ADV-L(?:0[1-9]|1\\d|2[0-7])$"
+    },
+    {
+      "position": 5,
+      "name": "lesson_code",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "کد پایدار و خوانای درس."
+    },
+    {
+      "position": 6,
+      "name": "subtopic_id",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "زیرموضوع اصلی سؤال.",
+      "pattern": "^ADV-L(?:0[1-9]|1\\d|2[0-7])-ST\\d{2}$"
+    },
+    {
+      "position": 7,
+      "name": "subtopic_code",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "کد پایدار زیرموضوع اصلی."
+    },
+    {
+      "position": 8,
+      "name": "secondary_subtopic_ids",
+      "logical_type": "array[string]",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "آرایهٔ JSON از زیرموضوع‌های ثانویه؛ در حالت عادی خالی."
+    },
+    {
+      "position": 9,
+      "name": "question_type",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "یکی از ۱۵ نوع استاندارد ADV-QTYPE-v1.0.",
+      "allowed_values": [
+        "CLOZE_SINGLE",
+        "CLOZE_CONTEXT",
+        "CORRECT_SENTENCE",
+        "INCORRECT_SENTENCE",
+        "ERROR_LOCATION",
+        "CONJUGATION",
+        "TENSE_CHOICE",
+        "PRONOUN_CHOICE",
+        "PREPOSITION_CHOICE",
+        "REWRITE_EQUIV",
+        "FR_TO_FA",
+        "FA_TO_FR",
+        "DIALOGUE_COMPLETE",
+        "REGISTER_CHOICE",
+        "CONTRAST_RULES"
+      ]
+    },
+    {
+      "position": 10,
+      "name": "stem",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "متن کامل و طبیعی صورت سؤال."
+    },
+    {
+      "position": 11,
+      "name": "stem_locale",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "زبان stem؛ معمولاً fr و برای FA_TO_FR برابر fa.",
+      "allowed_values": [
+        "fr",
+        "fa"
+      ]
+    },
+    {
+      "position": 12,
+      "name": "option_a",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "گزینهٔ A."
+    },
+    {
+      "position": 13,
+      "name": "option_b",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "گزینهٔ B."
+    },
+    {
+      "position": 14,
+      "name": "option_c",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "گزینهٔ C."
+    },
+    {
+      "position": 15,
+      "name": "option_d",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "گزینهٔ D."
+    },
+    {
+      "position": 16,
+      "name": "option_locale",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "زبان گزینه‌ها؛ معمولاً fr، در FR_TO_FA برابر fa.",
+      "allowed_values": [
+        "fr",
+        "fa"
+      ]
+    },
+    {
+      "position": 17,
+      "name": "correct_option",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "تنها گزینهٔ درست: A، B، C یا D.",
+      "allowed_values": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    {
+      "position": 18,
+      "name": "full_explanation",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "توضیح آموزشی کاملِ قاعده، پاسخ درست و دام‌های اصلی."
+    },
+    {
+      "position": 19,
+      "name": "explanation_a",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "توضیح اختصاصی گزینهٔ A."
+    },
+    {
+      "position": 20,
+      "name": "explanation_b",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "توضیح اختصاصی گزینهٔ B."
+    },
+    {
+      "position": 21,
+      "name": "explanation_c",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "توضیح اختصاصی گزینهٔ C."
+    },
+    {
+      "position": 22,
+      "name": "explanation_d",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "توضیح اختصاصی گزینهٔ D."
+    },
+    {
+      "position": 23,
+      "name": "explanation_locale",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "زبان توضیحات؛ baseline برابر fa.",
+      "allowed_values": [
+        "fa",
+        "fr"
+      ]
+    },
+    {
+      "position": 24,
+      "name": "misconception_a_id",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": true,
+      "description_fa": "شناسهٔ خطای تشخیصی گزینهٔ A؛ برای پاسخ درست null/خالی.",
+      "pattern_when_non_null": "^ADV-L(?:0[1-9]|1\\d|2[0-7])-MC\\d{2}$"
+    },
+    {
+      "position": 25,
+      "name": "misconception_b_id",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": true,
+      "description_fa": "شناسهٔ خطای تشخیصی گزینهٔ B؛ برای پاسخ درست null/خالی.",
+      "pattern_when_non_null": "^ADV-L(?:0[1-9]|1\\d|2[0-7])-MC\\d{2}$"
+    },
+    {
+      "position": 26,
+      "name": "misconception_c_id",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": true,
+      "description_fa": "شناسهٔ خطای تشخیصی گزینهٔ C؛ برای پاسخ درست null/خالی.",
+      "pattern_when_non_null": "^ADV-L(?:0[1-9]|1\\d|2[0-7])-MC\\d{2}$"
+    },
+    {
+      "position": 27,
+      "name": "misconception_d_id",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": true,
+      "description_fa": "شناسهٔ خطای تشخیصی گزینهٔ D؛ برای پاسخ درست null/خالی.",
+      "pattern_when_non_null": "^ADV-L(?:0[1-9]|1\\d|2[0-7])-MC\\d{2}$"
+    },
+    {
+      "position": 28,
+      "name": "difficulty",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "EASY، MEDIUM، HARD یا VERY_HARD.",
+      "allowed_values": [
+        "EASY",
+        "MEDIUM",
+        "HARD",
+        "VERY_HARD"
+      ]
+    },
+    {
+      "position": 29,
+      "name": "difficulty_score_initial",
+      "logical_type": "number",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "امتیاز اولیهٔ پیوسته در بازهٔ 0 تا 1.",
+      "minimum": 0.0,
+      "maximum": 1.0
+    },
+    {
+      "position": 30,
+      "name": "difficulty_model_version",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "نسخهٔ مدل سختی.",
+      "allowed_values": [
+        "ADV-DIFFICULTY-v1.0"
+      ]
+    },
+    {
+      "position": 31,
+      "name": "status",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "وضعیت رکورد؛ ZIP قابل ورود فقط READY_FOR_IMPORT.",
+      "allowed_values": [
+        "DRAFT",
+        "VALIDATION_FAILED",
+        "VALIDATED",
+        "READY_FOR_IMPORT"
+      ]
+    },
+    {
+      "position": 32,
+      "name": "source_type",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "نوع اتکای منبع؛ baseline برابر BOOK_RULE_DERIVED_ORIGINAL.",
+      "allowed_values": [
+        "BOOK_RULE_DERIVED_ORIGINAL",
+        "BOOK_RULE_PLUS_SUPPORT_CONFIRMED"
+      ]
+    },
+    {
+      "position": 33,
+      "name": "source_ref",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "ارجاع قابل بازگشت به درس، صفحهٔ چاپی و rule anchor."
+    },
+    {
+      "position": 34,
+      "name": "author_id",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "شناسهٔ عامل/نویسندهٔ تولیدکننده."
+    },
+    {
+      "position": 35,
+      "name": "reviewer_id",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": true,
+      "description_fa": "شناسهٔ بازبین مستقل؛ تا پیش از review می‌تواند خالی باشد."
+    },
+    {
+      "position": 36,
+      "name": "tags",
+      "logical_type": "array[string]",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "آرایهٔ JSON از برچسب‌های کنترل‌شده."
+    },
+    {
+      "position": 37,
+      "name": "media_type",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": true,
+      "description_fa": "نوع رسانه یا null؛ baseline سؤال متنی برابر null."
+    },
+    {
+      "position": 38,
+      "name": "media_uri",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": true,
+      "description_fa": "نشانی رسانه یا null."
+    },
+    {
+      "position": 39,
+      "name": "media_alt_text",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": true,
+      "description_fa": "متن جایگزین رسانه یا null."
+    },
+    {
+      "position": 40,
+      "name": "media_transcript",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": true,
+      "description_fa": "رونوشت رسانه یا null."
+    },
+    {
+      "position": 41,
+      "name": "media_source_ref",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": true,
+      "description_fa": "ارجاع حقوقی/منبع رسانه یا null."
+    },
+    {
+      "position": 42,
+      "name": "taxonomy_version",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "نسخهٔ taxonomy.",
+      "allowed_values": [
+        "ADV-TAXONOMY-v1.0"
+      ]
+    },
+    {
+      "position": 43,
+      "name": "question_type_catalogue_version",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "نسخهٔ فهرست انواع سؤال.",
+      "allowed_values": [
+        "ADV-QTYPE-v1.0"
+      ]
+    },
+    {
+      "position": 44,
+      "name": "compatibility_version",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "نسخهٔ ماتریس سازگاری.",
+      "allowed_values": [
+        "ADV-COMPAT-v1.0"
+      ]
+    },
+    {
+      "position": 45,
+      "name": "distractor_rules_version",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "نسخهٔ قوانین distractor.",
+      "allowed_values": [
+        "ADV-DISTRACTOR-v1.0"
+      ]
+    },
+    {
+      "position": 46,
+      "name": "content_version",
+      "logical_type": "string",
+      "required_column": true,
+      "nullable_value": false,
+      "description_fa": "نسخهٔ محتوای پروژه.",
+      "allowed_values": [
+        "ADV-CONTENT-v1.0"
+      ]
+    }
+  ],
+  "csv_contract": {
+    "encoding": "UTF-8",
+    "delimiter": ",",
+    "quote_character": "\"",
+    "line_ending": "LF",
+    "header_required": true,
+    "stable_column_order": true,
+    "multiline_fields": "RFC 4180 quoted; producers must not emit malformed line breaks",
+    "array_serialization": "compact valid JSON arrays",
+    "formula_policy": "All cells are data; values beginning with =, +, - or @ must be safely quoted/escaped for spreadsheet consumers."
+  },
+  "json_record_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "schema_version",
+      "external_id",
+      "question_revision",
+      "lesson_id",
+      "lesson_code",
+      "subtopic_id",
+      "subtopic_code",
+      "secondary_subtopic_ids",
+      "question_type",
+      "stem",
+      "stem_locale",
+      "option_a",
+      "option_b",
+      "option_c",
+      "option_d",
+      "option_locale",
+      "correct_option",
+      "full_explanation",
+      "explanation_a",
+      "explanation_b",
+      "explanation_c",
+      "explanation_d",
+      "explanation_locale",
+      "misconception_a_id",
+      "misconception_b_id",
+      "misconception_c_id",
+      "misconception_d_id",
+      "difficulty",
+      "difficulty_score_initial",
+      "difficulty_model_version",
+      "status",
+      "source_type",
+      "source_ref",
+      "author_id",
+      "reviewer_id",
+      "tags",
+      "media_type",
+      "media_uri",
+      "media_alt_text",
+      "media_transcript",
+      "media_source_ref",
+      "taxonomy_version",
+      "question_type_catalogue_version",
+      "compatibility_version",
+      "distractor_rules_version",
+      "content_version"
+    ],
+    "properties": {
+      "schema_version": {
+        "type": "string",
+        "enum": [
+          "ADV-QB-SCHEMA-v1.0"
+        ]
+      },
+      "external_id": {
+        "type": "string"
+      },
+      "question_revision": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "lesson_id": {
+        "type": "string"
+      },
+      "lesson_code": {
+        "type": "string"
+      },
+      "subtopic_id": {
+        "type": "string"
+      },
+      "subtopic_code": {
+        "type": "string"
+      },
+      "secondary_subtopic_ids": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "question_type": {
+        "type": "string",
+        "enum": [
+          "CLOZE_SINGLE",
+          "CLOZE_CONTEXT",
+          "CORRECT_SENTENCE",
+          "INCORRECT_SENTENCE",
+          "ERROR_LOCATION",
+          "CONJUGATION",
+          "TENSE_CHOICE",
+          "PRONOUN_CHOICE",
+          "PREPOSITION_CHOICE",
+          "REWRITE_EQUIV",
+          "FR_TO_FA",
+          "FA_TO_FR",
+          "DIALOGUE_COMPLETE",
+          "REGISTER_CHOICE",
+          "CONTRAST_RULES"
+        ]
+      },
+      "stem": {
+        "type": "string"
+      },
+      "stem_locale": {
+        "type": "string",
+        "enum": [
+          "fr",
+          "fa"
+        ]
+      },
+      "option_a": {
+        "type": "string"
+      },
+      "option_b": {
+        "type": "string"
+      },
+      "option_c": {
+        "type": "string"
+      },
+      "option_d": {
+        "type": "string"
+      },
+      "option_locale": {
+        "type": "string",
+        "enum": [
+          "fr",
+          "fa"
+        ]
+      },
+      "correct_option": {
+        "type": "string",
+        "enum": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      "full_explanation": {
+        "type": "string"
+      },
+      "explanation_a": {
+        "type": "string"
+      },
+      "explanation_b": {
+        "type": "string"
+      },
+      "explanation_c": {
+        "type": "string"
+      },
+      "explanation_d": {
+        "type": "string"
+      },
+      "explanation_locale": {
+        "type": "string",
+        "enum": [
+          "fa",
+          "fr"
+        ]
+      },
+      "misconception_a_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "misconception_b_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "misconception_c_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "misconception_d_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "difficulty": {
+        "type": "string",
+        "enum": [
+          "EASY",
+          "MEDIUM",
+          "HARD",
+          "VERY_HARD"
+        ]
+      },
+      "difficulty_score_initial": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+      },
+      "difficulty_model_version": {
+        "type": "string",
+        "enum": [
+          "ADV-DIFFICULTY-v1.0"
+        ]
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "DRAFT",
+          "VALIDATION_FAILED",
+          "VALIDATED",
+          "READY_FOR_IMPORT"
+        ]
+      },
+      "source_type": {
+        "type": "string",
+        "enum": [
+          "BOOK_RULE_DERIVED_ORIGINAL",
+          "BOOK_RULE_PLUS_SUPPORT_CONFIRMED"
+        ]
+      },
+      "source_ref": {
+        "type": "string"
+      },
+      "author_id": {
+        "type": "string"
+      },
+      "reviewer_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "media_type": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "media_uri": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "media_alt_text": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "media_transcript": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "media_source_ref": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "taxonomy_version": {
+        "type": "string",
+        "enum": [
+          "ADV-TAXONOMY-v1.0"
+        ]
+      },
+      "question_type_catalogue_version": {
+        "type": "string",
+        "enum": [
+          "ADV-QTYPE-v1.0"
+        ]
+      },
+      "compatibility_version": {
+        "type": "string",
+        "enum": [
+          "ADV-COMPAT-v1.0"
+        ]
+      },
+      "distractor_rules_version": {
+        "type": "string",
+        "enum": [
+          "ADV-DISTRACTOR-v1.0"
+        ]
+      },
+      "content_version": {
+        "type": "string",
+        "enum": [
+          "ADV-CONTENT-v1.0"
+        ]
+      }
+    }
+  },
+  "migration_policy": "Do not rename, delete or reorder canonical columns silently; use an explicitly versioned migration or external importer mapping."
+}

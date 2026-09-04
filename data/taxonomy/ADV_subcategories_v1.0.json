@@ -1,0 +1,420 @@
+{
+  "artifact": "ADV_subcategories_v1.0",
+  "version": "1.0",
+  "subcategory_count": 27,
+  "subcategories": [
+    {
+      "subcategory_id": "ADV-SUBCAT-01",
+      "category_id": "ADV-CAT01",
+      "lesson_id": "ADV-L01",
+      "sequence": 1,
+      "title_fr": "L’article",
+      "title_fa": "حرف تعریف",
+      "subtopic_ids": [
+        "ADV-L01-ST01",
+        "ADV-L01-ST02",
+        "ADV-L01-ST03",
+        "ADV-L01-ST04",
+        "ADV-L01-ST05"
+      ],
+      "basis": "LESSON_AS_SITE_SUBCATEGORY"
+    },
+    {
+      "subcategory_id": "ADV-SUBCAT-02",
+      "category_id": "ADV-CAT01",
+      "lesson_id": "ADV-L02",
+      "sequence": 2,
+      "title_fr": "L’adjectif",
+      "title_fa": "صفت",
+      "subtopic_ids": [
+        "ADV-L02-ST01",
+        "ADV-L02-ST02",
+        "ADV-L02-ST03"
+      ],
+      "basis": "LESSON_AS_SITE_SUBCATEGORY"
+    },
+    {
+      "subcategory_id": "ADV-SUBCAT-03",
+      "category_id": "ADV-CAT02",
+      "lesson_id": "ADV-L03",
+      "sequence": 3,
+      "title_fr": "Les négations",
+      "title_fa": "ساخت‌های منفی",
+      "subtopic_ids": [
+        "ADV-L03-ST01",
+        "ADV-L03-ST02"
+      ],
+      "basis": "LESSON_AS_SITE_SUBCATEGORY"
+    },
+    {
+      "subcategory_id": "ADV-SUBCAT-04",
+      "category_id": "ADV-CAT03",
+      "lesson_id": "ADV-L04",
+      "sequence": 4,
+      "title_fr": "Les temps de l’indicatif",
+      "title_fa": "زمان‌های وجه اخباری",
+      "subtopic_ids": [
+        "ADV-L04-ST01",
+        "ADV-L04-ST02",
+        "ADV-L04-ST03",
+        "ADV-L04-ST04",
+        "ADV-L04-ST05",
+        "ADV-L04-ST06",
+        "ADV-L04-ST07",
+        "ADV-L04-ST08"
+      ],
+      "basis": "LESSON_AS_SITE_SUBCATEGORY"
+    },
+    {
+      "subcategory_id": "ADV-SUBCAT-05",
+      "category_id": "ADV-CAT03",
+      "lesson_id": "ADV-L05",
+      "sequence": 5,
+      "title_fr": "Le subjonctif",
+      "title_fa": "وجه التزامی",
+      "subtopic_ids": [
+        "ADV-L05-ST01",
+        "ADV-L05-ST02",
+        "ADV-L05-ST03",
+        "ADV-L05-ST04"
+      ],
+      "basis": "LESSON_AS_SITE_SUBCATEGORY"
+    },
+    {
+      "subcategory_id": "ADV-SUBCAT-06",
+      "category_id": "ADV-CAT03",
+      "lesson_id": "ADV-L06",
+      "sequence": 6,
+      "title_fr": "Le conditionnel",
+      "title_fa": "وجه شرطی",
+      "subtopic_ids": [
+        "ADV-L06-ST01",
+        "ADV-L06-ST02",
+        "ADV-L06-ST03",
+        "ADV-L06-ST04"
+      ],
+      "basis": "LESSON_AS_SITE_SUBCATEGORY"
+    },
+    {
+      "subcategory_id": "ADV-SUBCAT-07",
+      "category_id": "ADV-CAT04",
+      "lesson_id": "ADV-L07",
+      "sequence": 7,
+      "title_fr": "L’infinitif",
+      "title_fa": "مصدر",
+      "subtopic_ids": [
+        "ADV-L07-ST01",
+        "ADV-L07-ST02",
+        "ADV-L07-ST03",
+        "ADV-L07-ST04"
+      ],
+      "basis": "LESSON_AS_SITE_SUBCATEGORY"
+    },
+    {
+      "subcategory_id": "ADV-SUBCAT-08",
+      "category_id": "ADV-CAT04",
+      "lesson_id": "ADV-L08",
+      "sequence": 8,
+      "title_fr": "Le participe présent",
+      "title_fa": "اسم مفعولِ حال / participe présent",
+      "subtopic_ids": [
+        "ADV-L08-ST01",
+        "ADV-L08-ST02",
+        "ADV-L08-ST03",
+        "ADV-L08-ST04"
+      ],
+      "basis": "LESSON_AS_SITE_SUBCATEGORY"
+    },
+    {
+      "subcategory_id": "ADV-SUBCAT-09",
+      "category_id": "ADV-CAT04",
+      "lesson_id": "ADV-L09",
+      "sequence": 9,
+      "title_fr": "Le gérondif",
+      "title_fa": "ژروندیف",
+      "subtopic_ids": [
+        "ADV-L09-ST01",
+        "ADV-L09-ST02",
+        "ADV-L09-ST03",
+        "ADV-L09-ST04"
+      ],
+      "basis": "LESSON_AS_SITE_SUBCATEGORY"
+    },
+    {
+      "subcategory_id": "ADV-SUBCAT-10",
+      "category_id": "ADV-CAT04",
+      "lesson_id": "ADV-L10",
+      "sequence": 10,
+      "title_fr": "L’adjectif verbal",
+      "title_fa": "صفت فعلی",
+      "subtopic_ids": [
+        "ADV-L10-ST01",
+        "ADV-L10-ST02",
+        "ADV-L10-ST03"
+      ],
+      "basis": "LESSON_AS_SITE_SUBCATEGORY"
+    },
+    {
+      "subcategory_id": "ADV-SUBCAT-11",
+      "category_id": "ADV-CAT04",
+      "lesson_id": "ADV-L11",
+      "sequence": 11,
+      "title_fr": "La forme passive",
+      "title_fa": "ساخت مجهول",
+      "subtopic_ids": [
+        "ADV-L11-ST01",
+        "ADV-L11-ST02",
+        "ADV-L11-ST03",
+        "ADV-L11-ST04"
+      ],
+      "basis": "LESSON_AS_SITE_SUBCATEGORY"
+    },
+    {
+      "subcategory_id": "ADV-SUBCAT-12",
+      "category_id": "ADV-CAT04",
+      "lesson_id": "ADV-L12",
+      "sequence": 12,
+      "title_fr": "La forme pronominale",
+      "title_fa": "ساخت ضمیری",
+      "subtopic_ids": [
+        "ADV-L12-ST01",
+        "ADV-L12-ST02",
+        "ADV-L12-ST03"
+      ],
+      "basis": "LESSON_AS_SITE_SUBCATEGORY"
+    },
+    {
+      "subcategory_id": "ADV-SUBCAT-13",
+      "category_id": "ADV-CAT04",
+      "lesson_id": "ADV-L13",
+      "sequence": 13,
+      "title_fr": "La forme impersonnelle",
+      "title_fa": "ساخت غیرشخصی",
+      "subtopic_ids": [
+        "ADV-L13-ST01",
+        "ADV-L13-ST02",
+        "ADV-L13-ST03",
+        "ADV-L13-ST04"
+      ],
+      "basis": "LESSON_AS_SITE_SUBCATEGORY"
+    },
+    {
+      "subcategory_id": "ADV-SUBCAT-14",
+      "category_id": "ADV-CAT05",
+      "lesson_id": "ADV-L14",
+      "sequence": 14,
+      "title_fr": "Le discours indirect",
+      "title_fa": "گفتار غیرمستقیم",
+      "subtopic_ids": [
+        "ADV-L14-ST01",
+        "ADV-L14-ST02",
+        "ADV-L14-ST03",
+        "ADV-L14-ST04",
+        "ADV-L14-ST05"
+      ],
+      "basis": "LESSON_AS_SITE_SUBCATEGORY"
+    },
+    {
+      "subcategory_id": "ADV-SUBCAT-15",
+      "category_id": "ADV-CAT05",
+      "lesson_id": "ADV-L15",
+      "sequence": 15,
+      "title_fr": "L’adverbe",
+      "title_fa": "قید",
+      "subtopic_ids": [
+        "ADV-L15-ST01",
+        "ADV-L15-ST02",
+        "ADV-L15-ST03",
+        "ADV-L15-ST04",
+        "ADV-L15-ST05"
+      ],
+      "basis": "LESSON_AS_SITE_SUBCATEGORY"
+    },
+    {
+      "subcategory_id": "ADV-SUBCAT-16",
+      "category_id": "ADV-CAT05",
+      "lesson_id": "ADV-L16",
+      "sequence": 16,
+      "title_fr": "Les prépositions",
+      "title_fa": "حروف اضافه",
+      "subtopic_ids": [
+        "ADV-L16-ST01",
+        "ADV-L16-ST02",
+        "ADV-L16-ST03",
+        "ADV-L16-ST04",
+        "ADV-L16-ST05"
+      ],
+      "basis": "LESSON_AS_SITE_SUBCATEGORY"
+    },
+    {
+      "subcategory_id": "ADV-SUBCAT-17",
+      "category_id": "ADV-CAT06",
+      "lesson_id": "ADV-L17",
+      "sequence": 17,
+      "title_fr": "Les pronoms relatifs",
+      "title_fa": "ضمیرهای موصولی",
+      "subtopic_ids": [
+        "ADV-L17-ST01",
+        "ADV-L17-ST02",
+        "ADV-L17-ST03",
+        "ADV-L17-ST04",
+        "ADV-L17-ST05"
+      ],
+      "basis": "LESSON_AS_SITE_SUBCATEGORY"
+    },
+    {
+      "subcategory_id": "ADV-SUBCAT-18",
+      "category_id": "ADV-CAT06",
+      "lesson_id": "ADV-L18",
+      "sequence": 18,
+      "title_fr": "Les pronoms personnels compléments",
+      "title_fa": "ضمیرهای مفعولی",
+      "subtopic_ids": [
+        "ADV-L18-ST01",
+        "ADV-L18-ST02",
+        "ADV-L18-ST03",
+        "ADV-L18-ST04",
+        "ADV-L18-ST05"
+      ],
+      "basis": "LESSON_AS_SITE_SUBCATEGORY"
+    },
+    {
+      "subcategory_id": "ADV-SUBCAT-19",
+      "category_id": "ADV-CAT06",
+      "lesson_id": "ADV-L19",
+      "sequence": 19,
+      "title_fr": "Les pronoms indéfinis",
+      "title_fa": "ضمیرهای نامعین",
+      "subtopic_ids": [
+        "ADV-L19-ST01",
+        "ADV-L19-ST02",
+        "ADV-L19-ST03",
+        "ADV-L19-ST04"
+      ],
+      "basis": "LESSON_AS_SITE_SUBCATEGORY"
+    },
+    {
+      "subcategory_id": "ADV-SUBCAT-20",
+      "category_id": "ADV-CAT07",
+      "lesson_id": "ADV-L20",
+      "sequence": 20,
+      "title_fr": "La situation dans le temps",
+      "title_fa": "موقعیت و مدت در زمان",
+      "subtopic_ids": [
+        "ADV-L20-ST01",
+        "ADV-L20-ST02",
+        "ADV-L20-ST03",
+        "ADV-L20-ST04"
+      ],
+      "basis": "LESSON_AS_SITE_SUBCATEGORY"
+    },
+    {
+      "subcategory_id": "ADV-SUBCAT-21",
+      "category_id": "ADV-CAT07",
+      "lesson_id": "ADV-L21",
+      "sequence": 21,
+      "title_fr": "L’expression de la cause",
+      "title_fa": "بیان علت",
+      "subtopic_ids": [
+        "ADV-L21-ST01",
+        "ADV-L21-ST02",
+        "ADV-L21-ST03",
+        "ADV-L21-ST04"
+      ],
+      "basis": "LESSON_AS_SITE_SUBCATEGORY"
+    },
+    {
+      "subcategory_id": "ADV-SUBCAT-22",
+      "category_id": "ADV-CAT07",
+      "lesson_id": "ADV-L22",
+      "sequence": 22,
+      "title_fr": "L’expression de la conséquence",
+      "title_fa": "بیان پیامد",
+      "subtopic_ids": [
+        "ADV-L22-ST01",
+        "ADV-L22-ST02",
+        "ADV-L22-ST03",
+        "ADV-L22-ST04"
+      ],
+      "basis": "LESSON_AS_SITE_SUBCATEGORY"
+    },
+    {
+      "subcategory_id": "ADV-SUBCAT-23",
+      "category_id": "ADV-CAT07",
+      "lesson_id": "ADV-L23",
+      "sequence": 23,
+      "title_fr": "L’expression de la comparaison",
+      "title_fa": "بیان مقایسه",
+      "subtopic_ids": [
+        "ADV-L23-ST01",
+        "ADV-L23-ST02",
+        "ADV-L23-ST03",
+        "ADV-L23-ST04"
+      ],
+      "basis": "LESSON_AS_SITE_SUBCATEGORY"
+    },
+    {
+      "subcategory_id": "ADV-SUBCAT-24",
+      "category_id": "ADV-CAT07",
+      "lesson_id": "ADV-L24",
+      "sequence": 24,
+      "title_fr": "L’expression de l’opposition et de la concession",
+      "title_fa": "بیان تقابل و امتیاز",
+      "subtopic_ids": [
+        "ADV-L24-ST01",
+        "ADV-L24-ST02",
+        "ADV-L24-ST03",
+        "ADV-L24-ST04"
+      ],
+      "basis": "LESSON_AS_SITE_SUBCATEGORY"
+    },
+    {
+      "subcategory_id": "ADV-SUBCAT-25",
+      "category_id": "ADV-CAT07",
+      "lesson_id": "ADV-L25",
+      "sequence": 25,
+      "title_fr": "L’expression du but",
+      "title_fa": "بیان هدف",
+      "subtopic_ids": [
+        "ADV-L25-ST01",
+        "ADV-L25-ST02",
+        "ADV-L25-ST03",
+        "ADV-L25-ST04"
+      ],
+      "basis": "LESSON_AS_SITE_SUBCATEGORY"
+    },
+    {
+      "subcategory_id": "ADV-SUBCAT-26",
+      "category_id": "ADV-CAT07",
+      "lesson_id": "ADV-L26",
+      "sequence": 26,
+      "title_fr": "L’expression de la condition et de l’hypothèse",
+      "title_fa": "بیان شرط و فرض",
+      "subtopic_ids": [
+        "ADV-L26-ST01",
+        "ADV-L26-ST02",
+        "ADV-L26-ST03",
+        "ADV-L26-ST04",
+        "ADV-L26-ST05"
+      ],
+      "basis": "LESSON_AS_SITE_SUBCATEGORY"
+    },
+    {
+      "subcategory_id": "ADV-SUBCAT-27",
+      "category_id": "ADV-CAT08",
+      "lesson_id": "ADV-L27",
+      "sequence": 27,
+      "title_fr": "Communication : mécanismes et nuances",
+      "title_fa": "سازوکارها و ظرافت‌های ارتباط",
+      "subtopic_ids": [
+        "ADV-L27-ST01",
+        "ADV-L27-ST02",
+        "ADV-L27-ST03",
+        "ADV-L27-ST04",
+        "ADV-L27-ST05",
+        "ADV-L27-ST06"
+      ],
+      "basis": "LESSON_AS_SITE_SUBCATEGORY"
+    }
+  ]
+}

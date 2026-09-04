@@ -1,0 +1,497 @@
+{
+  "artifact": "ADV_lesson_tags_v1.0",
+  "version": "1.0",
+  "mapping_count": 98,
+  "mappings": [
+    {
+      "lesson_id": "ADV-L01",
+      "tag_token": "articles",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L01",
+      "tag_token": "determiner",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L01",
+      "tag_token": "semantic_contrast",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L02",
+      "tag_token": "adjective",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L02",
+      "tag_token": "numerals",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L02",
+      "tag_token": "adjective_position",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L02",
+      "tag_token": "agreement",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L02",
+      "tag_token": "semantic_contrast",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L03",
+      "tag_token": "negation",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L03",
+      "tag_token": "word_order",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L03",
+      "tag_token": "semantic_contrast",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L04",
+      "tag_token": "tense",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L04",
+      "tag_token": "aspect",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L04",
+      "tag_token": "present",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L04",
+      "tag_token": "past",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L04",
+      "tag_token": "imperfect",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L04",
+      "tag_token": "passe_compose",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L04",
+      "tag_token": "passe_simple",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L04",
+      "tag_token": "future",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L04",
+      "tag_token": "anteriority",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L04",
+      "tag_token": "posteriority",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L04",
+      "tag_token": "written_french",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L04",
+      "tag_token": "spoken_french",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L04",
+      "tag_token": "register",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L05",
+      "tag_token": "subjunctive",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L05",
+      "tag_token": "mood_choice",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L05",
+      "tag_token": "modality",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L06",
+      "tag_token": "conditional",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L06",
+      "tag_token": "hypothesis",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L06",
+      "tag_token": "modality",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L07",
+      "tag_token": "infinitive",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L07",
+      "tag_token": "nonfinite_form",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L08",
+      "tag_token": "present_participle",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L08",
+      "tag_token": "nonfinite_form",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L08",
+      "tag_token": "written_french",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L09",
+      "tag_token": "gerund",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L09",
+      "tag_token": "nonfinite_form",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L09",
+      "tag_token": "semantic_contrast",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L10",
+      "tag_token": "verbal_adjective",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L10",
+      "tag_token": "agreement",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L10",
+      "tag_token": "semantic_contrast",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L11",
+      "tag_token": "passive",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L11",
+      "tag_token": "agreement",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L12",
+      "tag_token": "pronominal",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L12",
+      "tag_token": "agreement",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L13",
+      "tag_token": "impersonal",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L13",
+      "tag_token": "modality",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L13",
+      "tag_token": "formal_register",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L14",
+      "tag_token": "reported_speech",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L14",
+      "tag_token": "sequence_of_tenses",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L14",
+      "tag_token": "tense",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L14",
+      "tag_token": "temporal_relation",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L15",
+      "tag_token": "adverb",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L15",
+      "tag_token": "modality",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L15",
+      "tag_token": "word_order",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L15",
+      "tag_token": "register",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L16",
+      "tag_token": "preposition",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L16",
+      "tag_token": "semantic_contrast",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L17",
+      "tag_token": "relative_pronoun",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L17",
+      "tag_token": "preposition",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L18",
+      "tag_token": "object_pronoun",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L18",
+      "tag_token": "pronoun_order",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L18",
+      "tag_token": "word_order",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L19",
+      "tag_token": "indefinite_pronoun",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L19",
+      "tag_token": "negation",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L20",
+      "tag_token": "temporal_relation",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L20",
+      "tag_token": "duration",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L20",
+      "tag_token": "frequency",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L20",
+      "tag_token": "anteriority",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L20",
+      "tag_token": "posteriority",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L21",
+      "tag_token": "cause",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L21",
+      "tag_token": "discourse_connector",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L21",
+      "tag_token": "register",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L22",
+      "tag_token": "consequence",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L22",
+      "tag_token": "discourse_connector",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L22",
+      "tag_token": "register",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L23",
+      "tag_token": "comparison",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L23",
+      "tag_token": "semantic_contrast",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L24",
+      "tag_token": "opposition",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L24",
+      "tag_token": "concession",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L24",
+      "tag_token": "subjunctive",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L24",
+      "tag_token": "discourse_connector",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L24",
+      "tag_token": "register",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L25",
+      "tag_token": "purpose",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L25",
+      "tag_token": "subjunctive",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L25",
+      "tag_token": "infinitive",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L25",
+      "tag_token": "register",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L26",
+      "tag_token": "condition",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L26",
+      "tag_token": "hypothesis",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L26",
+      "tag_token": "conditional",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L26",
+      "tag_token": "subjunctive",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L26",
+      "tag_token": "tense",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L27",
+      "tag_token": "communication",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L27",
+      "tag_token": "modality",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L27",
+      "tag_token": "certainty",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L27",
+      "tag_token": "perception",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L27",
+      "tag_token": "register",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    },
+    {
+      "lesson_id": "ADV-L27",
+      "tag_token": "semantic_contrast",
+      "mapping_basis": "TECHNICAL_DERIVATION_FROM_LESSON_CONTENT"
+    }
+  ]
+}

@@ -41,3 +41,18 @@ tests/
 # Do NOT exclude data/ here. The Advanced content pipeline will create new,
 # versioned files whose names/counts are not known yet. docker/backend/Dockerfile
 # copies the active data/ tree into the runtime image.
+
+# Advanced canonical data allow-list v1.0
+!data/knowledge/
+!data/knowledge/ADV_*.json
+!data/taxonomy/
+!data/taxonomy/ADV_*.json
+!data/planning/
+!data/planning/ADV_*.json
+!data/question_authoring/
+!data/question_authoring/ADV_*.json
+!data/question_authoring/ADV_*.csv
+!data/product/
+!data/product/ADV_*.json
+!data/advanced/
+!data/advanced/**

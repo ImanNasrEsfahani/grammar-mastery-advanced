@@ -1,0 +1,1621 @@
+{
+  "artifact": "ADV_difficulty_plan_v1.0",
+  "difficulty_model_version": "ADV-DIFFICULTY-v1.0",
+  "created_at": "2026-09-02T00:00:00Z",
+  "global_target": {
+    "total": 6130,
+    "counts": {
+      "EASY": 1226,
+      "MEDIUM": 2452,
+      "HARD": 1839,
+      "VERY_HARD": 613
+    },
+    "proportions": {
+      "EASY": 0.2,
+      "MEDIUM": 0.4,
+      "HARD": 0.3,
+      "VERY_HARD": 0.1
+    }
+  },
+  "rubric": {
+    "EASY": {
+      "grammar_operation": "بازشناسی مستقیم یک قاعده",
+      "context": "کم و شفاف",
+      "distractors": "ساده اما طبیعی",
+      "forbidden_shortcut": "گزینهٔ مضحک یا سرنخ سطحی"
+    },
+    "MEDIUM": {
+      "grammar_operation": "اعمال قاعده در بافت واقعی‌تر",
+      "context": "یک یا دو نشانهٔ مرتبط",
+      "distractors": "plausible و مبتنی بر misconception",
+      "forbidden_shortcut": "سختی واژگانی به‌جای گرامر"
+    },
+    "HARD": {
+      "grammar_operation": "تقابل چند قاعده یا تشخیص ظریف",
+      "context": "پیچیده‌تر اما غیرمبهم",
+      "distractors": "تحلیل‌های رقیبِ قابل‌دفاع ولی غلط",
+      "forbidden_shortcut": "جملهٔ طولانیِ بی‌دلیل"
+    },
+    "VERY_HARD": {
+      "grammar_operation": "nuance، exception یا تمایز معنایی پیشرفته",
+      "context": "گفتمانی و دقیق با یک پاسخ یکتا",
+      "distractors": "چند تحلیل plausible که فقط با قاعدهٔ دقیق رد می‌شوند",
+      "forbidden_shortcut": "ابهام، واژگان obscure، trick wording، French معیوب یا دو پاسخ تقریباً درست"
+    }
+  },
+  "lesson_targets": [
+    {
+      "lesson_id": "ADV-L01",
+      "target": 250,
+      "counts": {
+        "EASY": 50,
+        "MEDIUM": 100,
+        "HARD": 75,
+        "VERY_HARD": 25
+      }
+    },
+    {
+      "lesson_id": "ADV-L02",
+      "target": 220,
+      "counts": {
+        "EASY": 44,
+        "MEDIUM": 88,
+        "HARD": 66,
+        "VERY_HARD": 22
+      }
+    },
+    {
+      "lesson_id": "ADV-L03",
+      "target": 240,
+      "counts": {
+        "EASY": 48,
+        "MEDIUM": 96,
+        "HARD": 72,
+        "VERY_HARD": 24
+      }
+    },
+    {
+      "lesson_id": "ADV-L04",
+      "target": 450,
+      "counts": {
+        "EASY": 90,
+        "MEDIUM": 180,
+        "HARD": 135,
+        "VERY_HARD": 45
+      }
+    },
+    {
+      "lesson_id": "ADV-L05",
+      "target": 320,
+      "counts": {
+        "EASY": 64,
+        "MEDIUM": 128,
+        "HARD": 96,
+        "VERY_HARD": 32
+      }
+    },
+    {
+      "lesson_id": "ADV-L06",
+      "target": 250,
+      "counts": {
+        "EASY": 50,
+        "MEDIUM": 100,
+        "HARD": 75,
+        "VERY_HARD": 25
+      }
+    },
+    {
+      "lesson_id": "ADV-L07",
+      "target": 220,
+      "counts": {
+        "EASY": 44,
+        "MEDIUM": 88,
+        "HARD": 66,
+        "VERY_HARD": 22
+      }
+    },
+    {
+      "lesson_id": "ADV-L08",
+      "target": 150,
+      "counts": {
+        "EASY": 30,
+        "MEDIUM": 60,
+        "HARD": 45,
+        "VERY_HARD": 15
+      }
+    },
+    {
+      "lesson_id": "ADV-L09",
+      "target": 140,
+      "counts": {
+        "EASY": 28,
+        "MEDIUM": 56,
+        "HARD": 42,
+        "VERY_HARD": 14
+      }
+    },
+    {
+      "lesson_id": "ADV-L10",
+      "target": 100,
+      "counts": {
+        "EASY": 20,
+        "MEDIUM": 40,
+        "HARD": 30,
+        "VERY_HARD": 10
+      }
+    },
+    {
+      "lesson_id": "ADV-L11",
+      "target": 200,
+      "counts": {
+        "EASY": 40,
+        "MEDIUM": 80,
+        "HARD": 60,
+        "VERY_HARD": 20
+      }
+    },
+    {
+      "lesson_id": "ADV-L12",
+      "target": 200,
+      "counts": {
+        "EASY": 40,
+        "MEDIUM": 80,
+        "HARD": 60,
+        "VERY_HARD": 20
+      }
+    },
+    {
+      "lesson_id": "ADV-L13",
+      "target": 150,
+      "counts": {
+        "EASY": 30,
+        "MEDIUM": 60,
+        "HARD": 45,
+        "VERY_HARD": 15
+      }
+    },
+    {
+      "lesson_id": "ADV-L14",
+      "target": 280,
+      "counts": {
+        "EASY": 56,
+        "MEDIUM": 112,
+        "HARD": 84,
+        "VERY_HARD": 28
+      }
+    },
+    {
+      "lesson_id": "ADV-L15",
+      "target": 220,
+      "counts": {
+        "EASY": 44,
+        "MEDIUM": 88,
+        "HARD": 66,
+        "VERY_HARD": 22
+      }
+    },
+    {
+      "lesson_id": "ADV-L16",
+      "target": 260,
+      "counts": {
+        "EASY": 52,
+        "MEDIUM": 104,
+        "HARD": 78,
+        "VERY_HARD": 26
+      }
+    },
+    {
+      "lesson_id": "ADV-L17",
+      "target": 240,
+      "counts": {
+        "EASY": 48,
+        "MEDIUM": 96,
+        "HARD": 72,
+        "VERY_HARD": 24
+      }
+    },
+    {
+      "lesson_id": "ADV-L18",
+      "target": 300,
+      "counts": {
+        "EASY": 60,
+        "MEDIUM": 120,
+        "HARD": 90,
+        "VERY_HARD": 30
+      }
+    },
+    {
+      "lesson_id": "ADV-L19",
+      "target": 180,
+      "counts": {
+        "EASY": 36,
+        "MEDIUM": 72,
+        "HARD": 54,
+        "VERY_HARD": 18
+      }
+    },
+    {
+      "lesson_id": "ADV-L20",
+      "target": 240,
+      "counts": {
+        "EASY": 48,
+        "MEDIUM": 96,
+        "HARD": 72,
+        "VERY_HARD": 24
+      }
+    },
+    {
+      "lesson_id": "ADV-L21",
+      "target": 200,
+      "counts": {
+        "EASY": 40,
+        "MEDIUM": 80,
+        "HARD": 60,
+        "VERY_HARD": 20
+      }
+    },
+    {
+      "lesson_id": "ADV-L22",
+      "target": 200,
+      "counts": {
+        "EASY": 40,
+        "MEDIUM": 80,
+        "HARD": 60,
+        "VERY_HARD": 20
+      }
+    },
+    {
+      "lesson_id": "ADV-L23",
+      "target": 200,
+      "counts": {
+        "EASY": 40,
+        "MEDIUM": 80,
+        "HARD": 60,
+        "VERY_HARD": 20
+      }
+    },
+    {
+      "lesson_id": "ADV-L24",
+      "target": 220,
+      "counts": {
+        "EASY": 44,
+        "MEDIUM": 88,
+        "HARD": 66,
+        "VERY_HARD": 22
+      }
+    },
+    {
+      "lesson_id": "ADV-L25",
+      "target": 160,
+      "counts": {
+        "EASY": 32,
+        "MEDIUM": 64,
+        "HARD": 48,
+        "VERY_HARD": 16
+      }
+    },
+    {
+      "lesson_id": "ADV-L26",
+      "target": 260,
+      "counts": {
+        "EASY": 52,
+        "MEDIUM": 104,
+        "HARD": 78,
+        "VERY_HARD": 26
+      }
+    },
+    {
+      "lesson_id": "ADV-L27",
+      "target": 280,
+      "counts": {
+        "EASY": 56,
+        "MEDIUM": 112,
+        "HARD": 84,
+        "VERY_HARD": 28
+      }
+    }
+  ],
+  "batch_targets": [
+    {
+      "batch_id": "ADV-B001",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B002",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B003",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B004",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B005",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B006",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B007",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B008",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B009",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B010",
+      "target": 20,
+      "counts": {
+        "EASY": 4,
+        "MEDIUM": 8,
+        "HARD": 6,
+        "VERY_HARD": 2
+      }
+    },
+    {
+      "batch_id": "ADV-B011",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B012",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B013",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B014",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B015",
+      "target": 40,
+      "counts": {
+        "EASY": 8,
+        "MEDIUM": 16,
+        "HARD": 12,
+        "VERY_HARD": 4
+      }
+    },
+    {
+      "batch_id": "ADV-B016",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B017",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B018",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B019",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B020",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B021",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B022",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B023",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B024",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B025",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B026",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B027",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B028",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B029",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B030",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B031",
+      "target": 20,
+      "counts": {
+        "EASY": 4,
+        "MEDIUM": 8,
+        "HARD": 6,
+        "VERY_HARD": 2
+      }
+    },
+    {
+      "batch_id": "ADV-B032",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B033",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B034",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B035",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B036",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B037",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B038",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B039",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B040",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B041",
+      "target": 20,
+      "counts": {
+        "EASY": 4,
+        "MEDIUM": 8,
+        "HARD": 6,
+        "VERY_HARD": 2
+      }
+    },
+    {
+      "batch_id": "ADV-B042",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B043",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B044",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B045",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B046",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B047",
+      "target": 40,
+      "counts": {
+        "EASY": 8,
+        "MEDIUM": 16,
+        "HARD": 12,
+        "VERY_HARD": 4
+      }
+    },
+    {
+      "batch_id": "ADV-B048",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B049",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B050",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B051",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B052",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B053",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B054",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B055",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B056",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B057",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B058",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B059",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B060",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B061",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B062",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B063",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B064",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B065",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B066",
+      "target": 30,
+      "counts": {
+        "EASY": 6,
+        "MEDIUM": 12,
+        "HARD": 9,
+        "VERY_HARD": 3
+      }
+    },
+    {
+      "batch_id": "ADV-B067",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B068",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B069",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B070",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B071",
+      "target": 20,
+      "counts": {
+        "EASY": 4,
+        "MEDIUM": 8,
+        "HARD": 6,
+        "VERY_HARD": 2
+      }
+    },
+    {
+      "batch_id": "ADV-B072",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B073",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B074",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B075",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B076",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B077",
+      "target": 10,
+      "counts": {
+        "EASY": 2,
+        "MEDIUM": 4,
+        "HARD": 3,
+        "VERY_HARD": 1
+      }
+    },
+    {
+      "batch_id": "ADV-B078",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B079",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B080",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B081",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B082",
+      "target": 40,
+      "counts": {
+        "EASY": 8,
+        "MEDIUM": 16,
+        "HARD": 12,
+        "VERY_HARD": 4
+      }
+    },
+    {
+      "batch_id": "ADV-B083",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B084",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B085",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B086",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B087",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B088",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B089",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B090",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B091",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B092",
+      "target": 30,
+      "counts": {
+        "EASY": 6,
+        "MEDIUM": 12,
+        "HARD": 9,
+        "VERY_HARD": 3
+      }
+    },
+    {
+      "batch_id": "ADV-B093",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B094",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B095",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B096",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B097",
+      "target": 40,
+      "counts": {
+        "EASY": 8,
+        "MEDIUM": 16,
+        "HARD": 12,
+        "VERY_HARD": 4
+      }
+    },
+    {
+      "batch_id": "ADV-B098",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B099",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B100",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B101",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B102",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B103",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B104",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B105",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B106",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B107",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B108",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B109",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B110",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B111",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B112",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B113",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B114",
+      "target": 20,
+      "counts": {
+        "EASY": 4,
+        "MEDIUM": 8,
+        "HARD": 6,
+        "VERY_HARD": 2
+      }
+    },
+    {
+      "batch_id": "ADV-B115",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B116",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B117",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B118",
+      "target": 10,
+      "counts": {
+        "EASY": 2,
+        "MEDIUM": 4,
+        "HARD": 3,
+        "VERY_HARD": 1
+      }
+    },
+    {
+      "batch_id": "ADV-B119",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B120",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B121",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B122",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B123",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B124",
+      "target": 10,
+      "counts": {
+        "EASY": 2,
+        "MEDIUM": 4,
+        "HARD": 3,
+        "VERY_HARD": 1
+      }
+    },
+    {
+      "batch_id": "ADV-B125",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B126",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B127",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B128",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B129",
+      "target": 50,
+      "counts": {
+        "EASY": 10,
+        "MEDIUM": 20,
+        "HARD": 15,
+        "VERY_HARD": 5
+      }
+    },
+    {
+      "batch_id": "ADV-B130",
+      "target": 30,
+      "counts": {
+        "EASY": 6,
+        "MEDIUM": 12,
+        "HARD": 9,
+        "VERY_HARD": 3
+      }
+    }
+  ],
+  "reconciliation_policy": "After every validated batch, recompute remaining quotas; repair distribution gradually without manufacturing artificial difficulty."
+}

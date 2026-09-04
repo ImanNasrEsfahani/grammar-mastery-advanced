@@ -1,52 +1,28 @@
-export type GrammarBookDefinition = {
-  slug: string;
-  titleFr: string;
-  titleFa: string;
-  edition: string;
-  lessonCount: number;
-  publicRoot: string;
-  ready: boolean;
-};
-
-/**
- * Advanced starts intentionally without a registered canonical book.
- *
- * Replace this placeholder only after Stage 1 has frozen the Advanced book
- * identity and lesson inventory. Keeping a typed placeholder prevents the
- * frontend from silently falling back to the Intermediate book.
- */
 export const GRAMMAR_BOOKS = {
-  "advanced-content-pending": {
-    slug: "advanced-content-pending",
-    titleFr: "Contenu avancé en préparation",
-    titleFa: "محتوای سطح پیشرفته در حال آماده‌سازی",
-    edition: "pending",
-    lessonCount: 0,
-    publicRoot: "/grammar/advanced-content-pending",
-    ready: false,
+  "grammaire-progressive-francais-avance": {
+    slug: "grammaire-progressive-francais-avance",
+    titleFr: "Grammaire Progressive du Français — Niveau avancé",
+    titleFa: "گرامر پیش‌روندهٔ زبان فرانسه — سطح پیشرفته",
+    edition: "Niveau avancé",
+    lessonCount: 27,
+    publicRoot: "/grammar/grammaire-progressive-francais-avance",
   },
-} as const satisfies Record<string, GrammarBookDefinition>;
+} as const;
 
 export type GrammarBookSlug = keyof typeof GRAMMAR_BOOKS;
 
 export const DEFAULT_GRAMMAR_BOOK_SLUG: GrammarBookSlug =
-  "advanced-content-pending";
+  "grammaire-progressive-francais-avance";
 
 export function isGrammarBookSlug(value: string): value is GrammarBookSlug {
   return Object.prototype.hasOwnProperty.call(GRAMMAR_BOOKS, value);
 }
 
-/**
- * Fail closed until a real Advanced book is registered.
- * This deliberately makes learner lesson-content routes return 404 rather
- * than serving copied Intermediate HTML.
- */
 export function resolveGrammarBookSlug(
   value?: string | null,
 ): GrammarBookSlug | null {
-  const candidate = value || DEFAULT_GRAMMAR_BOOK_SLUG;
-  if (!isGrammarBookSlug(candidate)) return null;
-  return GRAMMAR_BOOKS[candidate].ready ? candidate : null;
+  if (!value) return DEFAULT_GRAMMAR_BOOK_SLUG;
+  return isGrammarBookSlug(value) ? value : null;
 }
 
 export function getGrammarBook(slug: GrammarBookSlug) {
@@ -54,8 +30,8 @@ export function getGrammarBook(slug: GrammarBookSlug) {
 }
 
 export function lessonHtmlFileName(lessonNo: number): string {
-  if (!Number.isInteger(lessonNo) || lessonNo < 1 || lessonNo > 999) {
-    throw new RangeError("lessonNo must be an integer from 1 to 999.");
+  if (!Number.isInteger(lessonNo) || lessonNo < 1 || lessonNo > 99) {
+    throw new RangeError("lessonNo must be an integer from 1 to 99.");
   }
   return `L${String(lessonNo).padStart(2, "0")}.html`;
 }
@@ -65,18 +41,10 @@ export function grammarLessonUrl(
   lessonNo: number,
 ): string {
   const book = getGrammarBook(slug);
-
-  if (!book.ready || book.lessonCount < 1) {
-    throw new Error(
-      "Advanced grammar content is not registered yet. Complete Stage 1 and register the canonical book before serving lesson HTML.",
-    );
-  }
-
   if (lessonNo > book.lessonCount) {
     throw new RangeError(
       `Lesson ${lessonNo} is outside the configured ${book.lessonCount}-lesson book.`,
     );
   }
-
   return `${book.publicRoot}/${lessonHtmlFileName(lessonNo)}`;
 }

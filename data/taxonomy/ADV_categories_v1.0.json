@@ -1,0 +1,115 @@
+{
+  "artifact": "ADV_categories_v1.0",
+  "version": "1.0",
+  "category_count": 8,
+  "authority_note": "These are application taxonomy groups, not official book headings.",
+  "categories": [
+    {
+      "category_id": "ADV-CAT01",
+      "sequence": 1,
+      "title_fr": "Déterminants et groupe nominal",
+      "title_fa": "تعیین‌کننده‌ها و گروه اسمی",
+      "lesson_ids": [
+        "ADV-L01",
+        "ADV-L02"
+      ],
+      "basis": "TECHNICAL_SITE_TAXONOMY",
+      "status": "ACTIVE"
+    },
+    {
+      "category_id": "ADV-CAT02",
+      "sequence": 2,
+      "title_fr": "Négation et polarité",
+      "title_fa": "نفی و قطبیت",
+      "lesson_ids": [
+        "ADV-L03"
+      ],
+      "basis": "TECHNICAL_SITE_TAXONOMY",
+      "status": "ACTIVE"
+    },
+    {
+      "category_id": "ADV-CAT03",
+      "sequence": 3,
+      "title_fr": "Temps et modes verbaux",
+      "title_fa": "زمان‌ها و وجه‌های فعلی",
+      "lesson_ids": [
+        "ADV-L04",
+        "ADV-L05",
+        "ADV-L06"
+      ],
+      "basis": "TECHNICAL_SITE_TAXONOMY",
+      "status": "ACTIVE"
+    },
+    {
+      "category_id": "ADV-CAT04",
+      "sequence": 4,
+      "title_fr": "Formes non finies, voix et constructions",
+      "title_fa": "صورت‌های غیرصرفی، وجه و ساخت‌ها",
+      "lesson_ids": [
+        "ADV-L07",
+        "ADV-L08",
+        "ADV-L09",
+        "ADV-L10",
+        "ADV-L11",
+        "ADV-L12",
+        "ADV-L13"
+      ],
+      "basis": "TECHNICAL_SITE_TAXONOMY",
+      "status": "ACTIVE"
+    },
+    {
+      "category_id": "ADV-CAT05",
+      "sequence": 5,
+      "title_fr": "Discours, adverbes et prépositions",
+      "title_fa": "گفتار، قیدها و حروف اضافه",
+      "lesson_ids": [
+        "ADV-L14",
+        "ADV-L15",
+        "ADV-L16"
+      ],
+      "basis": "TECHNICAL_SITE_TAXONOMY",
+      "status": "ACTIVE"
+    },
+    {
+      "category_id": "ADV-CAT06",
+      "sequence": 6,
+      "title_fr": "Pronoms et référence",
+      "title_fa": "ضمیرها و ارجاع",
+      "lesson_ids": [
+        "ADV-L17",
+        "ADV-L18",
+        "ADV-L19"
+      ],
+      "basis": "TECHNICAL_SITE_TAXONOMY",
+      "status": "ACTIVE"
+    },
+    {
+      "category_id": "ADV-CAT07",
+      "sequence": 7,
+      "title_fr": "Temps et relations logiques",
+      "title_fa": "زمان و روابط منطقی",
+      "lesson_ids": [
+        "ADV-L20",
+        "ADV-L21",
+        "ADV-L22",
+        "ADV-L23",
+        "ADV-L24",
+        "ADV-L25",
+        "ADV-L26"
+      ],
+      "basis": "TECHNICAL_SITE_TAXONOMY",
+      "status": "ACTIVE"
+    },
+    {
+      "category_id": "ADV-CAT08",
+      "sequence": 8,
+      "title_fr": "Communication et modalisation",
+      "title_fa": "ارتباط و وجه‌نمایی",
+      "lesson_ids": [
+        "ADV-L27"
+      ],
+      "basis": "TECHNICAL_SITE_TAXONOMY",
+      "status": "ACTIVE"
+    }
+  ]
+}

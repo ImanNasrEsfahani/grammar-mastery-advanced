@@ -1,0 +1,293 @@
+{
+  "artifact": "ADV_SITE_MANIFEST_v1.0",
+  "version": "1.0",
+  "package_name": "ADV_SITE_DATA_v1.0.zip",
+  "validation_status": "PASS",
+  "file_count_excluding_manifest": 54,
+  "files": [
+    {
+      "path": "ADV_SITE_README_v1.0.md",
+      "size_bytes": 1899,
+      "sha256": "42ed05484719e7a2b29f2db4857b8897f9841fcb27ac2d2f0d46fc1f36c92e26"
+    },
+    {
+      "path": "assessment/ADV_review_map_v1.0.csv",
+      "size_bytes": 3765,
+      "sha256": "4e05310b663d9c8a8ad38818eadfc63ec5c3494b9ea9237afd244ec37b92d2ac"
+    },
+    {
+      "path": "assessment/ADV_review_map_v1.0.json",
+      "size_bytes": 8337,
+      "sha256": "c00dc37bac619f260b5882e99fafd0c2e297fb9fb6230bc32ff5d5522f71070f"
+    },
+    {
+      "path": "content/ADV_examples_v1.0.csv",
+      "size_bytes": 34610,
+      "sha256": "2d3998b48d6fef95382c144fd5931680d7a2a98c0c1a70ef9dcfb77c92805664"
+    },
+    {
+      "path": "content/ADV_examples_v1.0.json",
+      "size_bytes": 61839,
+      "sha256": "d9e30320ffc021394472db86e8d790a27c18c657afc47eabfc01c3dce22aab78"
+    },
+    {
+      "path": "content/ADV_lesson_content_v1.0.json",
+      "size_bytes": 206524,
+      "sha256": "7316d8f21b6b192fa746477f273f34d028ac9a951b734b17b25422d3ced0b823"
+    },
+    {
+      "path": "content/ADV_rules_v1.0.csv",
+      "size_bytes": 85352,
+      "sha256": "ed1e8b2f1b85207891f12c790b9246a7d62581adb871395e4c45c052ef6fda25"
+    },
+    {
+      "path": "content/ADV_rules_v1.0.json",
+      "size_bytes": 129107,
+      "sha256": "3bfa982cf7f8c8b55a713bc17d227d6fe9df0fe7d3506a1f1669504e3e0a3cd9"
+    },
+    {
+      "path": "content/ADV_warnings_v1.0.csv",
+      "size_bytes": 39036,
+      "sha256": "e8c4a1c3a41bf443ee73ee828910323a404b776e9d10e4a8335096d125b341e7"
+    },
+    {
+      "path": "content/ADV_warnings_v1.0.json",
+      "size_bytes": 87674,
+      "sha256": "aea6dc9f61d5a25b9f3633a551079a355679423a6fc7bbc943c6df802426623c"
+    },
+    {
+      "path": "core/ADV_README_v1.0.md",
+      "size_bytes": 4088,
+      "sha256": "76ee8c1fe2c94a6d032c001aa4bb34106b50a75b55eb493378b01e6e60d130d7"
+    },
+    {
+      "path": "core/ADV_SETUP_MANIFEST_v1.0.json",
+      "size_bytes": 3856,
+      "sha256": "16f1f4f6f9678aa18c6a150a618c15c2c5b5d38b977cccc566ee535d521469d1"
+    },
+    {
+      "path": "core/ADV_batch_plan_v1.0.json",
+      "size_bytes": 235550,
+      "sha256": "fbe1dca62218c9d95e7483b8ef3822f7ac0b47c8351dff23b08ad825dca89434"
+    },
+    {
+      "path": "core/ADV_checkpoint_initial_v1.0.json",
+      "size_bytes": 10988,
+      "sha256": "0f0025006eaa643a0a7dec91ba091fdf620e212ab18a2aabe506143bcfe7e5fe"
+    },
+    {
+      "path": "core/ADV_database_schema_v1.0.json",
+      "size_bytes": 21883,
+      "sha256": "fd051e17463ee10c2cf76a694ba3164bb33d7da2dfbe7f0e79ad7dd427a8d2e1"
+    },
+    {
+      "path": "core/ADV_difficulty_plan_v1.0.json",
+      "size_bytes": 29328,
+      "sha256": "452ca2e1a023c4bc2ffda05a69a1b087a4489d0b358da372c7308a16011bc2bf"
+    },
+    {
+      "path": "core/ADV_empty_duplicate_registry_v1.0.json",
+      "size_bytes": 413,
+      "sha256": "ff4f2e85cd5902b5cb09f02ad8aa18d7bef19f1525f67e52ac9e2cf0a8a7ce61"
+    },
+    {
+      "path": "core/ADV_lessons_v1.0.json",
+      "size_bytes": 41757,
+      "sha256": "1a971714704f259f556394dec2a09fa4b90302d6460babbaf91ebc4b68029ef0"
+    },
+    {
+      "path": "core/ADV_misconceptions_v1.0.json",
+      "size_bytes": 148669,
+      "sha256": "608e7e822717cc10db109fc96fbb694f072a698603701aad1363ed8d575caff5"
+    },
+    {
+      "path": "core/ADV_question_import_template_v1.0.csv",
+      "size_bytes": 680,
+      "sha256": "e6d907e9d97563ccb583593b1b355ce64790df13a93651e8e71d445d6fe4dc8f"
+    },
+    {
+      "path": "core/ADV_question_type_catalogue_v1.0.json",
+      "size_bytes": 16165,
+      "sha256": "3de7fb85e985086d4e6a175821c63a7bc5b25bc4cfb4c44e6d733a499a447d88"
+    },
+    {
+      "path": "core/ADV_question_type_compatibility_v1.0.json",
+      "size_bytes": 595523,
+      "sha256": "ce98a99e53359f1596dbdf4ef036859c972d5605e08715e1bf1dae3f9c8f0106"
+    },
+    {
+      "path": "core/ADV_setup_validation_report_v1.0.json",
+      "size_bytes": 3309,
+      "sha256": "11fa68128b1eef890bf1e78fbdec874ed33bc5069d173effab09f30f5d0822fd"
+    },
+    {
+      "path": "core/ADV_source_map_v1.0.json",
+      "size_bytes": 127436,
+      "sha256": "7b137c9f8e89192b5f27bd967598b585a47d8e85a4ccb4f937db9ddb7c836f6b"
+    },
+    {
+      "path": "core/ADV_subtopics_v1.0.json",
+      "size_bytes": 147932,
+      "sha256": "2a5cbc3755f1516f55ed6b056e3d3e917d327cff804c816b1e9fde810293eee9"
+    },
+    {
+      "path": "core/ADV_taxonomy_v1.0.json",
+      "size_bytes": 159708,
+      "sha256": "c982c1f74679e5f2604d0d5af90c0df450a4a1b3e2735c087cffd1ddd07878a7"
+    },
+    {
+      "path": "core/ADV_validation_rules_v1.0.json",
+      "size_bytes": 12241,
+      "sha256": "439efd9fcf009ae1e63b507e4d6472ca39f1eb4fa9991e436d215c49859fd357"
+    },
+    {
+      "path": "frontend/ADV_navigation_v1.0.json",
+      "size_bytes": 8779,
+      "sha256": "4ee67d8c49420dbb8ea1a1c2f0f32d944a9eb5d66b9b5bdcef6d5c4f593c1399"
+    },
+    {
+      "path": "frontend/ADV_site_content_tree_v1.0.json",
+      "size_bytes": 85568,
+      "sha256": "8e390410351291e87438b9cefbee569284e97fde355df2f650802a89af90d37d"
+    },
+    {
+      "path": "import/ADV_database_mapping_v1.0.json",
+      "size_bytes": 3325,
+      "sha256": "669f195712718e3478ae5d6a9a62953517f621283e88c973f22f145a82216b0e"
+    },
+    {
+      "path": "import/ADV_import_manifest_v1.0.json",
+      "size_bytes": 9724,
+      "sha256": "550370fa8a4bcb58afd5fac34b3a12aa60821345378790c97cc4b1ab088e8c9d"
+    },
+    {
+      "path": "import/ADV_seed_config_v1.0.json",
+      "size_bytes": 1086,
+      "sha256": "f2f967ac51f0a3c8b4c5d65cb9cd0d3230de2b4adcf62f1c76e7eb1561fe0d7a"
+    },
+    {
+      "path": "knowledge/ADV_cross_references_v1.0.csv",
+      "size_bytes": 10538,
+      "sha256": "57b5af2cb06be522dee8a08786d7b686568e4d9460fe4e35b3d9f7bd49045fc5"
+    },
+    {
+      "path": "knowledge/ADV_cross_references_v1.0.json",
+      "size_bytes": 30148,
+      "sha256": "9990dff7c4c2bdf4bd346527ff2baaf5a0e229e21ab158b14181ab21b7ec255a"
+    },
+    {
+      "path": "knowledge/ADV_dependencies_v1.0.csv",
+      "size_bytes": 5510,
+      "sha256": "40ae6e1b3d593bd05c5b8b5b227abe05d0c2cdfdc767bb3956b2f9ca5bb917ab"
+    },
+    {
+      "path": "knowledge/ADV_dependencies_v1.0.json",
+      "size_bytes": 15662,
+      "sha256": "4b88cd862c3ed5c7a99ade8e955eccc400089ce3f6f2aa6e80f5c22b53161bfe"
+    },
+    {
+      "path": "knowledge/ADV_glossary_v1.0.csv",
+      "size_bytes": 38152,
+      "sha256": "8c6aed0c2484e9743f9bebe80f2735c4abb21b3f4699272c1c08f7fb2a74b620"
+    },
+    {
+      "path": "knowledge/ADV_glossary_v1.0.json",
+      "size_bytes": 65113,
+      "sha256": "c75408ced4e4038d29f21d3b1a73002ca099df153249f4ecf425bd804f2154a7"
+    },
+    {
+      "path": "knowledge/ADV_needs_decision_v1.0.json",
+      "size_bytes": 1291,
+      "sha256": "40607c8b5f71246d2290759c44de9e49a7e9c4602164f0e5dd567e1dd4e71cbc"
+    },
+    {
+      "path": "knowledge/ADV_non_lesson_sections_v1.0.csv",
+      "size_bytes": 1830,
+      "sha256": "ac9f5d104b814fa05dfc3b63962de883d2534b222c73a98bfc314fcf60ceb025"
+    },
+    {
+      "path": "knowledge/ADV_non_lesson_sections_v1.0.json",
+      "size_bytes": 4602,
+      "sha256": "74beb0b1309b5dd7d4010a9313e1edc71eb18693e591adb9b90370f650ee7d5e"
+    },
+    {
+      "path": "knowledge/ADV_sections_v1.0.csv",
+      "size_bytes": 3941,
+      "sha256": "c0f3386f02178c37b710d1ca5e0f3ee2c38df180f2dbfdbb6975f31160346f41"
+    },
+    {
+      "path": "knowledge/ADV_sections_v1.0.json",
+      "size_bytes": 8204,
+      "sha256": "113a77dbc6e28abd235e033b6a4d7551dc66dab7570a3d9b1ed6f52c8879a63b"
+    },
+    {
+      "path": "taxonomy/ADV_categories_v1.0.csv",
+      "size_bytes": 1337,
+      "sha256": "ece90376dc8d01252c154521b5630ac4df811999b5bb397c927741240e7055c3"
+    },
+    {
+      "path": "taxonomy/ADV_categories_v1.0.json",
+      "size_bytes": 2922,
+      "sha256": "51a4bf2333d7aff12254efc9596cf7d00092cc39a5198e5b64d60746b1f4e911"
+    },
+    {
+      "path": "taxonomy/ADV_controlled_tags_v1.0.csv",
+      "size_bytes": 4961,
+      "sha256": "0524ea9dbfd146a6efb85d8bbe0cd36e9e5ebb9a7dea054b0db8c0e48c170806"
+    },
+    {
+      "path": "taxonomy/ADV_controlled_tags_v1.0.json",
+      "size_bytes": 12379,
+      "sha256": "c7dba7381f5bb66ba0de47a9a25fff1910bef5d8350834a9639e5a5ff125076b"
+    },
+    {
+      "path": "taxonomy/ADV_lesson_category_mapping_v1.0.csv",
+      "size_bytes": 1201,
+      "sha256": "d272bb64cd3e9af9a0fd00523dd2db16acc9c164feb245255fdecb5c88ba8ffd"
+    },
+    {
+      "path": "taxonomy/ADV_lesson_category_mapping_v1.0.json",
+      "size_bytes": 3518,
+      "sha256": "5cb231c52f7a9dfffe8a9bf35a2a08c249d3d9b1426dbdfbe5ba2eb8aa9f2326"
+    },
+    {
+      "path": "taxonomy/ADV_lesson_tags_v1.0.csv",
+      "size_bytes": 6127,
+      "sha256": "ccf0ad7997f5a28e0720afcacbbcbbad42595ac7182ae69806f885f25fc60369"
+    },
+    {
+      "path": "taxonomy/ADV_lesson_tags_v1.0.json",
+      "size_bytes": 14131,
+      "sha256": "b38a3226b6f23d104bcde092d0e4cdf0b2abfcb4b25564440c2d044da9b4e556"
+    },
+    {
+      "path": "taxonomy/ADV_subcategories_v1.0.csv",
+      "size_bytes": 5153,
+      "sha256": "fc082b18a9e046d8777f3a5ac3bb1393932b10313883ac061396c7ce20bfce9e"
+    },
+    {
+      "path": "taxonomy/ADV_subcategories_v1.0.json",
+      "size_bytes": 11150,
+      "sha256": "60e85eade392cf968382fd7b0d93750d010e99ff812ae056cb88d761e8454a8b"
+    },
+    {
+      "path": "validation/ADV_site_validation_report_v1.0.json",
+      "size_bytes": 6796,
+      "sha256": "a0475aadf202e21d7c349836a1686ee1e746f08ce5edd794cb4948995aabdb8b"
+    }
+  ],
+  "core_integrity": "PRESERVED_BYTE_FOR_BYTE",
+  "counts": {
+    "lessons": 27,
+    "subtopics": 116,
+    "questions_planned": 6130,
+    "batches": 130,
+    "review_sections": 8,
+    "rules": 116,
+    "original_examples": 116,
+    "warning_nuance_records": 234,
+    "cross_references": 68,
+    "dependencies": 43,
+    "controlled_tags": 58
+  }
+}

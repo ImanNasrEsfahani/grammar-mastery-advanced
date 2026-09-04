@@ -1,0 +1,940 @@
+{
+  "artifact": "ADV_cross_references_v1.0",
+  "version": "1.0",
+  "cross_reference_count": 68,
+  "records": [
+    {
+      "cross_reference_id": "ADV-XREF-001",
+      "lesson_a_id": "ADV-L01",
+      "lesson_a_title_fr": "L’article",
+      "lesson_b_id": "ADV-L02",
+      "lesson_b_title_fr": "L’adjectif",
+      "declared_by_lesson_ids": [
+        "ADV-L02"
+      ],
+      "bidirectional_in_source_map": false,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-002",
+      "lesson_a_id": "ADV-L01",
+      "lesson_a_title_fr": "L’article",
+      "lesson_b_id": "ADV-L03",
+      "lesson_b_title_fr": "Les négations",
+      "declared_by_lesson_ids": [
+        "ADV-L01",
+        "ADV-L03"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-003",
+      "lesson_a_id": "ADV-L01",
+      "lesson_a_title_fr": "L’article",
+      "lesson_b_id": "ADV-L16",
+      "lesson_b_title_fr": "Les prépositions",
+      "declared_by_lesson_ids": [
+        "ADV-L01",
+        "ADV-L16"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-004",
+      "lesson_a_id": "ADV-L01",
+      "lesson_a_title_fr": "L’article",
+      "lesson_b_id": "ADV-L19",
+      "lesson_b_title_fr": "Les pronoms indéfinis",
+      "declared_by_lesson_ids": [
+        "ADV-L01",
+        "ADV-L19"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-005",
+      "lesson_a_id": "ADV-L02",
+      "lesson_a_title_fr": "L’adjectif",
+      "lesson_b_id": "ADV-L10",
+      "lesson_b_title_fr": "L’adjectif verbal",
+      "declared_by_lesson_ids": [
+        "ADV-L10"
+      ],
+      "bidirectional_in_source_map": false,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-006",
+      "lesson_a_id": "ADV-L02",
+      "lesson_a_title_fr": "L’adjectif",
+      "lesson_b_id": "ADV-L15",
+      "lesson_b_title_fr": "L’adverbe",
+      "declared_by_lesson_ids": [
+        "ADV-L02",
+        "ADV-L15"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-007",
+      "lesson_a_id": "ADV-L02",
+      "lesson_a_title_fr": "L’adjectif",
+      "lesson_b_id": "ADV-L19",
+      "lesson_b_title_fr": "Les pronoms indéfinis",
+      "declared_by_lesson_ids": [
+        "ADV-L02",
+        "ADV-L19"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-008",
+      "lesson_a_id": "ADV-L02",
+      "lesson_a_title_fr": "L’adjectif",
+      "lesson_b_id": "ADV-L20",
+      "lesson_b_title_fr": "La situation dans le temps",
+      "declared_by_lesson_ids": [
+        "ADV-L02"
+      ],
+      "bidirectional_in_source_map": false,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-009",
+      "lesson_a_id": "ADV-L02",
+      "lesson_a_title_fr": "L’adjectif",
+      "lesson_b_id": "ADV-L23",
+      "lesson_b_title_fr": "L’expression de la comparaison",
+      "declared_by_lesson_ids": [
+        "ADV-L23"
+      ],
+      "bidirectional_in_source_map": false,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-010",
+      "lesson_a_id": "ADV-L03",
+      "lesson_a_title_fr": "Les négations",
+      "lesson_b_id": "ADV-L05",
+      "lesson_b_title_fr": "Le subjonctif",
+      "declared_by_lesson_ids": [
+        "ADV-L03",
+        "ADV-L05"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-011",
+      "lesson_a_id": "ADV-L03",
+      "lesson_a_title_fr": "Les négations",
+      "lesson_b_id": "ADV-L07",
+      "lesson_b_title_fr": "L’infinitif",
+      "declared_by_lesson_ids": [
+        "ADV-L03"
+      ],
+      "bidirectional_in_source_map": false,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-012",
+      "lesson_a_id": "ADV-L03",
+      "lesson_a_title_fr": "Les négations",
+      "lesson_b_id": "ADV-L15",
+      "lesson_b_title_fr": "L’adverbe",
+      "declared_by_lesson_ids": [
+        "ADV-L15"
+      ],
+      "bidirectional_in_source_map": false,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-013",
+      "lesson_a_id": "ADV-L03",
+      "lesson_a_title_fr": "Les négations",
+      "lesson_b_id": "ADV-L19",
+      "lesson_b_title_fr": "Les pronoms indéfinis",
+      "declared_by_lesson_ids": [
+        "ADV-L03",
+        "ADV-L19"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-014",
+      "lesson_a_id": "ADV-L04",
+      "lesson_a_title_fr": "Les temps de l’indicatif",
+      "lesson_b_id": "ADV-L06",
+      "lesson_b_title_fr": "Le conditionnel",
+      "declared_by_lesson_ids": [
+        "ADV-L04",
+        "ADV-L06"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-015",
+      "lesson_a_id": "ADV-L04",
+      "lesson_a_title_fr": "Les temps de l’indicatif",
+      "lesson_b_id": "ADV-L14",
+      "lesson_b_title_fr": "Le discours indirect",
+      "declared_by_lesson_ids": [
+        "ADV-L04",
+        "ADV-L14"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-016",
+      "lesson_a_id": "ADV-L04",
+      "lesson_a_title_fr": "Les temps de l’indicatif",
+      "lesson_b_id": "ADV-L20",
+      "lesson_b_title_fr": "La situation dans le temps",
+      "declared_by_lesson_ids": [
+        "ADV-L04",
+        "ADV-L20"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-017",
+      "lesson_a_id": "ADV-L04",
+      "lesson_a_title_fr": "Les temps de l’indicatif",
+      "lesson_b_id": "ADV-L26",
+      "lesson_b_title_fr": "L’expression de la condition et de l’hypothèse",
+      "declared_by_lesson_ids": [
+        "ADV-L04",
+        "ADV-L26"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-018",
+      "lesson_a_id": "ADV-L05",
+      "lesson_a_title_fr": "Le subjonctif",
+      "lesson_b_id": "ADV-L07",
+      "lesson_b_title_fr": "L’infinitif",
+      "declared_by_lesson_ids": [
+        "ADV-L05",
+        "ADV-L07"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-019",
+      "lesson_a_id": "ADV-L05",
+      "lesson_a_title_fr": "Le subjonctif",
+      "lesson_b_id": "ADV-L13",
+      "lesson_b_title_fr": "La forme impersonnelle",
+      "declared_by_lesson_ids": [
+        "ADV-L05",
+        "ADV-L13"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-020",
+      "lesson_a_id": "ADV-L05",
+      "lesson_a_title_fr": "Le subjonctif",
+      "lesson_b_id": "ADV-L14",
+      "lesson_b_title_fr": "Le discours indirect",
+      "declared_by_lesson_ids": [
+        "ADV-L14"
+      ],
+      "bidirectional_in_source_map": false,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-021",
+      "lesson_a_id": "ADV-L05",
+      "lesson_a_title_fr": "Le subjonctif",
+      "lesson_b_id": "ADV-L24",
+      "lesson_b_title_fr": "L’expression de l’opposition et de la concession",
+      "declared_by_lesson_ids": [
+        "ADV-L05",
+        "ADV-L24"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-022",
+      "lesson_a_id": "ADV-L05",
+      "lesson_a_title_fr": "Le subjonctif",
+      "lesson_b_id": "ADV-L25",
+      "lesson_b_title_fr": "L’expression du but",
+      "declared_by_lesson_ids": [
+        "ADV-L05",
+        "ADV-L25"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-023",
+      "lesson_a_id": "ADV-L05",
+      "lesson_a_title_fr": "Le subjonctif",
+      "lesson_b_id": "ADV-L26",
+      "lesson_b_title_fr": "L’expression de la condition et de l’hypothèse",
+      "declared_by_lesson_ids": [
+        "ADV-L05",
+        "ADV-L26"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-024",
+      "lesson_a_id": "ADV-L05",
+      "lesson_a_title_fr": "Le subjonctif",
+      "lesson_b_id": "ADV-L27",
+      "lesson_b_title_fr": "Communication : mécanismes et nuances",
+      "declared_by_lesson_ids": [
+        "ADV-L05",
+        "ADV-L27"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-025",
+      "lesson_a_id": "ADV-L06",
+      "lesson_a_title_fr": "Le conditionnel",
+      "lesson_b_id": "ADV-L14",
+      "lesson_b_title_fr": "Le discours indirect",
+      "declared_by_lesson_ids": [
+        "ADV-L06",
+        "ADV-L14"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-026",
+      "lesson_a_id": "ADV-L06",
+      "lesson_a_title_fr": "Le conditionnel",
+      "lesson_b_id": "ADV-L26",
+      "lesson_b_title_fr": "L’expression de la condition et de l’hypothèse",
+      "declared_by_lesson_ids": [
+        "ADV-L06",
+        "ADV-L26"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-027",
+      "lesson_a_id": "ADV-L06",
+      "lesson_a_title_fr": "Le conditionnel",
+      "lesson_b_id": "ADV-L27",
+      "lesson_b_title_fr": "Communication : mécanismes et nuances",
+      "declared_by_lesson_ids": [
+        "ADV-L06",
+        "ADV-L27"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-028",
+      "lesson_a_id": "ADV-L07",
+      "lesson_a_title_fr": "L’infinitif",
+      "lesson_b_id": "ADV-L08",
+      "lesson_b_title_fr": "Le participe présent",
+      "declared_by_lesson_ids": [
+        "ADV-L08"
+      ],
+      "bidirectional_in_source_map": false,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-029",
+      "lesson_a_id": "ADV-L07",
+      "lesson_a_title_fr": "L’infinitif",
+      "lesson_b_id": "ADV-L09",
+      "lesson_b_title_fr": "Le gérondif",
+      "declared_by_lesson_ids": [
+        "ADV-L07"
+      ],
+      "bidirectional_in_source_map": false,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-030",
+      "lesson_a_id": "ADV-L07",
+      "lesson_a_title_fr": "L’infinitif",
+      "lesson_b_id": "ADV-L13",
+      "lesson_b_title_fr": "La forme impersonnelle",
+      "declared_by_lesson_ids": [
+        "ADV-L13"
+      ],
+      "bidirectional_in_source_map": false,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-031",
+      "lesson_a_id": "ADV-L07",
+      "lesson_a_title_fr": "L’infinitif",
+      "lesson_b_id": "ADV-L14",
+      "lesson_b_title_fr": "Le discours indirect",
+      "declared_by_lesson_ids": [
+        "ADV-L14"
+      ],
+      "bidirectional_in_source_map": false,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-032",
+      "lesson_a_id": "ADV-L07",
+      "lesson_a_title_fr": "L’infinitif",
+      "lesson_b_id": "ADV-L16",
+      "lesson_b_title_fr": "Les prépositions",
+      "declared_by_lesson_ids": [
+        "ADV-L07",
+        "ADV-L16"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-033",
+      "lesson_a_id": "ADV-L07",
+      "lesson_a_title_fr": "L’infinitif",
+      "lesson_b_id": "ADV-L24",
+      "lesson_b_title_fr": "L’expression de l’opposition et de la concession",
+      "declared_by_lesson_ids": [
+        "ADV-L24"
+      ],
+      "bidirectional_in_source_map": false,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-034",
+      "lesson_a_id": "ADV-L07",
+      "lesson_a_title_fr": "L’infinitif",
+      "lesson_b_id": "ADV-L25",
+      "lesson_b_title_fr": "L’expression du but",
+      "declared_by_lesson_ids": [
+        "ADV-L07",
+        "ADV-L25"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-035",
+      "lesson_a_id": "ADV-L08",
+      "lesson_a_title_fr": "Le participe présent",
+      "lesson_b_id": "ADV-L09",
+      "lesson_b_title_fr": "Le gérondif",
+      "declared_by_lesson_ids": [
+        "ADV-L08",
+        "ADV-L09"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-036",
+      "lesson_a_id": "ADV-L08",
+      "lesson_a_title_fr": "Le participe présent",
+      "lesson_b_id": "ADV-L10",
+      "lesson_b_title_fr": "L’adjectif verbal",
+      "declared_by_lesson_ids": [
+        "ADV-L08",
+        "ADV-L10"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-037",
+      "lesson_a_id": "ADV-L08",
+      "lesson_a_title_fr": "Le participe présent",
+      "lesson_b_id": "ADV-L11",
+      "lesson_b_title_fr": "La forme passive",
+      "declared_by_lesson_ids": [
+        "ADV-L11"
+      ],
+      "bidirectional_in_source_map": false,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-038",
+      "lesson_a_id": "ADV-L08",
+      "lesson_a_title_fr": "Le participe présent",
+      "lesson_b_id": "ADV-L17",
+      "lesson_b_title_fr": "Les pronoms relatifs",
+      "declared_by_lesson_ids": [
+        "ADV-L08",
+        "ADV-L17"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-039",
+      "lesson_a_id": "ADV-L08",
+      "lesson_a_title_fr": "Le participe présent",
+      "lesson_b_id": "ADV-L21",
+      "lesson_b_title_fr": "L’expression de la cause",
+      "declared_by_lesson_ids": [
+        "ADV-L08",
+        "ADV-L21"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-040",
+      "lesson_a_id": "ADV-L09",
+      "lesson_a_title_fr": "Le gérondif",
+      "lesson_b_id": "ADV-L10",
+      "lesson_b_title_fr": "L’adjectif verbal",
+      "declared_by_lesson_ids": [
+        "ADV-L09",
+        "ADV-L10"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-041",
+      "lesson_a_id": "ADV-L09",
+      "lesson_a_title_fr": "Le gérondif",
+      "lesson_b_id": "ADV-L21",
+      "lesson_b_title_fr": "L’expression de la cause",
+      "declared_by_lesson_ids": [
+        "ADV-L09",
+        "ADV-L21"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-042",
+      "lesson_a_id": "ADV-L09",
+      "lesson_a_title_fr": "Le gérondif",
+      "lesson_b_id": "ADV-L24",
+      "lesson_b_title_fr": "L’expression de l’opposition et de la concession",
+      "declared_by_lesson_ids": [
+        "ADV-L09",
+        "ADV-L24"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-043",
+      "lesson_a_id": "ADV-L09",
+      "lesson_a_title_fr": "Le gérondif",
+      "lesson_b_id": "ADV-L26",
+      "lesson_b_title_fr": "L’expression de la condition et de l’hypothèse",
+      "declared_by_lesson_ids": [
+        "ADV-L09"
+      ],
+      "bidirectional_in_source_map": false,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-044",
+      "lesson_a_id": "ADV-L11",
+      "lesson_a_title_fr": "La forme passive",
+      "lesson_b_id": "ADV-L12",
+      "lesson_b_title_fr": "La forme pronominale",
+      "declared_by_lesson_ids": [
+        "ADV-L11",
+        "ADV-L12"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-045",
+      "lesson_a_id": "ADV-L11",
+      "lesson_a_title_fr": "La forme passive",
+      "lesson_b_id": "ADV-L13",
+      "lesson_b_title_fr": "La forme impersonnelle",
+      "declared_by_lesson_ids": [
+        "ADV-L11",
+        "ADV-L13"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-046",
+      "lesson_a_id": "ADV-L11",
+      "lesson_a_title_fr": "La forme passive",
+      "lesson_b_id": "ADV-L16",
+      "lesson_b_title_fr": "Les prépositions",
+      "declared_by_lesson_ids": [
+        "ADV-L11",
+        "ADV-L16"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-047",
+      "lesson_a_id": "ADV-L12",
+      "lesson_a_title_fr": "La forme pronominale",
+      "lesson_b_id": "ADV-L18",
+      "lesson_b_title_fr": "Les pronoms personnels compléments",
+      "declared_by_lesson_ids": [
+        "ADV-L12",
+        "ADV-L18"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-048",
+      "lesson_a_id": "ADV-L13",
+      "lesson_a_title_fr": "La forme impersonnelle",
+      "lesson_b_id": "ADV-L27",
+      "lesson_b_title_fr": "Communication : mécanismes et nuances",
+      "declared_by_lesson_ids": [
+        "ADV-L13",
+        "ADV-L27"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-049",
+      "lesson_a_id": "ADV-L14",
+      "lesson_a_title_fr": "Le discours indirect",
+      "lesson_b_id": "ADV-L20",
+      "lesson_b_title_fr": "La situation dans le temps",
+      "declared_by_lesson_ids": [
+        "ADV-L14",
+        "ADV-L20"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-050",
+      "lesson_a_id": "ADV-L15",
+      "lesson_a_title_fr": "L’adverbe",
+      "lesson_b_id": "ADV-L20",
+      "lesson_b_title_fr": "La situation dans le temps",
+      "declared_by_lesson_ids": [
+        "ADV-L15",
+        "ADV-L20"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-051",
+      "lesson_a_id": "ADV-L15",
+      "lesson_a_title_fr": "L’adverbe",
+      "lesson_b_id": "ADV-L22",
+      "lesson_b_title_fr": "L’expression de la conséquence",
+      "declared_by_lesson_ids": [
+        "ADV-L15",
+        "ADV-L22"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-052",
+      "lesson_a_id": "ADV-L15",
+      "lesson_a_title_fr": "L’adverbe",
+      "lesson_b_id": "ADV-L23",
+      "lesson_b_title_fr": "L’expression de la comparaison",
+      "declared_by_lesson_ids": [
+        "ADV-L23"
+      ],
+      "bidirectional_in_source_map": false,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-053",
+      "lesson_a_id": "ADV-L15",
+      "lesson_a_title_fr": "L’adverbe",
+      "lesson_b_id": "ADV-L27",
+      "lesson_b_title_fr": "Communication : mécanismes et nuances",
+      "declared_by_lesson_ids": [
+        "ADV-L15",
+        "ADV-L27"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-054",
+      "lesson_a_id": "ADV-L16",
+      "lesson_a_title_fr": "Les prépositions",
+      "lesson_b_id": "ADV-L17",
+      "lesson_b_title_fr": "Les pronoms relatifs",
+      "declared_by_lesson_ids": [
+        "ADV-L16",
+        "ADV-L17"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-055",
+      "lesson_a_id": "ADV-L16",
+      "lesson_a_title_fr": "Les prépositions",
+      "lesson_b_id": "ADV-L18",
+      "lesson_b_title_fr": "Les pronoms personnels compléments",
+      "declared_by_lesson_ids": [
+        "ADV-L16",
+        "ADV-L18"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-056",
+      "lesson_a_id": "ADV-L16",
+      "lesson_a_title_fr": "Les prépositions",
+      "lesson_b_id": "ADV-L20",
+      "lesson_b_title_fr": "La situation dans le temps",
+      "declared_by_lesson_ids": [
+        "ADV-L16",
+        "ADV-L20"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-057",
+      "lesson_a_id": "ADV-L16",
+      "lesson_a_title_fr": "Les prépositions",
+      "lesson_b_id": "ADV-L21",
+      "lesson_b_title_fr": "L’expression de la cause",
+      "declared_by_lesson_ids": [
+        "ADV-L16",
+        "ADV-L21"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-058",
+      "lesson_a_id": "ADV-L16",
+      "lesson_a_title_fr": "Les prépositions",
+      "lesson_b_id": "ADV-L23",
+      "lesson_b_title_fr": "L’expression de la comparaison",
+      "declared_by_lesson_ids": [
+        "ADV-L23"
+      ],
+      "bidirectional_in_source_map": false,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-059",
+      "lesson_a_id": "ADV-L16",
+      "lesson_a_title_fr": "Les prépositions",
+      "lesson_b_id": "ADV-L25",
+      "lesson_b_title_fr": "L’expression du but",
+      "declared_by_lesson_ids": [
+        "ADV-L16",
+        "ADV-L25"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-060",
+      "lesson_a_id": "ADV-L17",
+      "lesson_a_title_fr": "Les pronoms relatifs",
+      "lesson_b_id": "ADV-L18",
+      "lesson_b_title_fr": "Les pronoms personnels compléments",
+      "declared_by_lesson_ids": [
+        "ADV-L17",
+        "ADV-L18"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-061",
+      "lesson_a_id": "ADV-L18",
+      "lesson_a_title_fr": "Les pronoms personnels compléments",
+      "lesson_b_id": "ADV-L19",
+      "lesson_b_title_fr": "Les pronoms indéfinis",
+      "declared_by_lesson_ids": [
+        "ADV-L18",
+        "ADV-L19"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-062",
+      "lesson_a_id": "ADV-L20",
+      "lesson_a_title_fr": "La situation dans le temps",
+      "lesson_b_id": "ADV-L26",
+      "lesson_b_title_fr": "L’expression de la condition et de l’hypothèse",
+      "declared_by_lesson_ids": [
+        "ADV-L26"
+      ],
+      "bidirectional_in_source_map": false,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-063",
+      "lesson_a_id": "ADV-L21",
+      "lesson_a_title_fr": "L’expression de la cause",
+      "lesson_b_id": "ADV-L22",
+      "lesson_b_title_fr": "L’expression de la conséquence",
+      "declared_by_lesson_ids": [
+        "ADV-L21",
+        "ADV-L22"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-064",
+      "lesson_a_id": "ADV-L22",
+      "lesson_a_title_fr": "L’expression de la conséquence",
+      "lesson_b_id": "ADV-L23",
+      "lesson_b_title_fr": "L’expression de la comparaison",
+      "declared_by_lesson_ids": [
+        "ADV-L22"
+      ],
+      "bidirectional_in_source_map": false,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-065",
+      "lesson_a_id": "ADV-L22",
+      "lesson_a_title_fr": "L’expression de la conséquence",
+      "lesson_b_id": "ADV-L25",
+      "lesson_b_title_fr": "L’expression du but",
+      "declared_by_lesson_ids": [
+        "ADV-L22",
+        "ADV-L25"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-066",
+      "lesson_a_id": "ADV-L23",
+      "lesson_a_title_fr": "L’expression de la comparaison",
+      "lesson_b_id": "ADV-L27",
+      "lesson_b_title_fr": "Communication : mécanismes et nuances",
+      "declared_by_lesson_ids": [
+        "ADV-L23",
+        "ADV-L27"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-067",
+      "lesson_a_id": "ADV-L24",
+      "lesson_a_title_fr": "L’expression de l’opposition et de la concession",
+      "lesson_b_id": "ADV-L25",
+      "lesson_b_title_fr": "L’expression du but",
+      "declared_by_lesson_ids": [
+        "ADV-L24"
+      ],
+      "bidirectional_in_source_map": false,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    },
+    {
+      "cross_reference_id": "ADV-XREF-068",
+      "lesson_a_id": "ADV-L24",
+      "lesson_a_title_fr": "L’expression de l’opposition et de la concession",
+      "lesson_b_id": "ADV-L26",
+      "lesson_b_title_fr": "L’expression de la condition et de l’hypothèse",
+      "declared_by_lesson_ids": [
+        "ADV-L24",
+        "ADV-L26"
+      ],
+      "bidirectional_in_source_map": true,
+      "relation_type": "RELATED_GRAMMAR_TOPIC",
+      "source_basis": "BOOK_DERIVED_SOURCE_MAP"
+    }
+  ]
+}
