@@ -109,5 +109,8 @@ test("renders the real subcategory hierarchy, mastery, concept and lesson", asyn
   expect(screen.getAllByText("۴۲%").length).toBeGreaterThan(0);
   expect(screen.getByText("LES RELATIFS")).toBeInTheDocument();
   expect(screen.getByText(/۷ خطای تکرارشونده/)).toBeInTheDocument();
-  expect(screen.getByRole("link", {name: "تمرین زیرگروه"})).toHaveAttribute("href", expect.stringContaining(`group=${SUBCATEGORY_ID}`));
+
+  const practiceLinks = screen.getAllByRole("link", {name: "تمرین زیرگروه"});
+  expect(practiceLinks.length).toBeGreaterThan(0);
+  expect(practiceLinks.every((link) => (link.getAttribute("href") ?? "").includes(`group=${SUBCATEGORY_ID}`))).toBe(true);
 });
