@@ -1,0 +1,14 @@
+Grammar Mastery Advanced — Clean Seed Audit
+============================================
+Repository: C:\Users\Iman4\Downloads\grammar_mastery_advanced_export_kit_v1.0\dist\grammar-mastery-advanced-seed
+Structural errors: 0
+Old-content marker warnings: 5
+
+WARNINGS (review before first production deploy)
+- OLD-CONTENT marker 'Grammaire Progressive du Français - Niveau intermédiaire' found in config/stage16_contract.json
+- OLD-CONTENT marker 'Grammaire Progressive du Français - Niveau intermédiaire' found in config/stage17_contract.json
+- OLD-CONTENT marker 'Grammaire Progressive du Français — Niveau intermédiaire' found in frontend/src/lib/grammar-content/books.ts
+- OLD-CONTENT marker 'stage1_lessons_v1.0.csv' found in .dockerignore
+- OLD-CONTENT marker 'stage1_subtopics_v1.0.csv' found in .dockerignore
+
+STRUCTURE PASS: warnings are non-blocking unless --strict-markers is used.
