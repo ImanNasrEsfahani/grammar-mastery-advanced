@@ -18,12 +18,12 @@ test("theme toggle persists the selected mode and synchronizes duplicate header 
 
   await waitFor(() =>
     expect(
-      screen.getAllByRole("button", {name: "فعال کردن حالت تاریک"}),
+      screen.getAllByRole("button", {name: "فعال‌کردن حالت تاریک"}),
     ).toHaveLength(2),
   );
 
   const darkButtons = screen.getAllByRole("button", {
-    name: "فعال کردن حالت تاریک",
+    name: "فعال‌کردن حالت تاریک",
   });
   fireEvent.click(darkButtons[0]!);
 
@@ -33,7 +33,7 @@ test("theme toggle persists the selected mode and synchronizes duplicate header 
   expect(window.localStorage.getItem("gmp-theme")).toBe("dark");
 
   const lightButtons = screen.getAllByRole("button", {
-    name: "فعال کردن حالت روشن",
+    name: "فعال‌کردن حالت روشن",
   });
   expect(lightButtons).toHaveLength(2);
   expect(lightButtons[0]!).toHaveAttribute("aria-pressed", "true");

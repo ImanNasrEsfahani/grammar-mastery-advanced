@@ -3,8 +3,8 @@ import {expect, test, vi} from "vitest";
 import {GrammarSearchClient} from "./GrammarSearchClient";
 import {apiRequest} from "@/lib/api/client";
 
-const replace = vi.fn();
-vi.mock("next/navigation", () => ({useRouter: () => ({replace})}));
+const router = vi.hoisted(() => ({replace: vi.fn()}));
+vi.mock("next/navigation", () => ({useRouter: () => router}));
 vi.mock("@/lib/api/client", async (importOriginal) => {
   const original = await importOriginal<typeof import("@/lib/api/client")>();
   return {...original, apiRequest: vi.fn()};

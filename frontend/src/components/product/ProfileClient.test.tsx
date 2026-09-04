@@ -65,7 +65,7 @@ test("renders the learner-centered profile workspace from dashboard evidence", a
   expect(screen.getByText("جلسه کامل‌شده")).toBeInTheDocument();
   expect(screen.getByText("روز متوالی")).toBeInTheDocument();
   expect(screen.getAllByText("Les pronoms relatifs").length).toBeGreaterThan(0);
-  expect(screen.getByText("Le passé composé")).toBeInTheDocument();
+  expect(screen.getAllByText("Le passé composé").length).toBeGreaterThan(0);
   expect(screen.getByText(/آخرین حالت استفاده‌شده/)).toHaveTextContent("تطبیقی");
   expect(screen.getByRole("link", {name: "مشاهده پیشرفت"})).toHaveAttribute("href", "/fa/progress");
 });

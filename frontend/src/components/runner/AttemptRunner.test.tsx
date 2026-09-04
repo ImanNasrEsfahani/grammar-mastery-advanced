@@ -61,7 +61,7 @@ describe("AttemptRunner", () => {
     await waitFor(() => expect(option).not.toBeDisabled());
     await userEvent.click(option);
     await userEvent.click(screen.getByRole("button", {name: "Submit answer"}));
-    expect(await screen.findByRole("heading", {name: /answer is safe/i})).toBeInTheDocument();
+    expect(await screen.findByRole("alert")).toHaveTextContent(/answer is safe/i);
     const pending = await getPendingAnswer(ids.attempt, ids.question);
     expect(pending?.selected_option_id).toBe(ids.optionB);
     window.dispatchEvent(new Event("online"));

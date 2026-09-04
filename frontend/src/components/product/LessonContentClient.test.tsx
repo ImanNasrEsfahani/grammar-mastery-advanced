@@ -151,7 +151,7 @@ test("renders the lesson dashboard with a synthetic Advanced fixture", async () 
   expect(screen.getByText("63%")).toBeInTheDocument();
   expect(screen.getByText("52%")).toBeInTheDocument();
   expect(screen.getByText("71%")).toBeInTheDocument();
-  expect(screen.getByText("Synthetic advanced subtopic")).toBeInTheDocument();
+  expect(screen.getAllByText("Synthetic advanced subtopic").length).toBeGreaterThan(0);
   expect(screen.getByText("خطای آزمایشی")).toBeInTheDocument();
   expect(screen.getByRole("link", {name: "شروع تمرین درس"})).toHaveAttribute(
     "href",

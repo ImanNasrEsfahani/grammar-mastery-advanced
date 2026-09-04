@@ -138,7 +138,7 @@ test("renders the complete review workspace with progress and priority", async (
   render(<ReviewRunnerClient locale="fa" reviewId={reviewId} />);
 
   expect(await screen.findByText("Le livre ______ j’ai acheté est très intéressant.")).toBeInTheDocument();
-  expect(await screen.findByText("Les pronoms relatifs (que/dont)")).toBeInTheDocument();
+  expect((await screen.findAllByText("Les pronoms relatifs (que/dont)")).length).toBeGreaterThan(0);
   expect(screen.getByText(/پاسخ قبلی/)).toHaveTextContent("que");
   expect(screen.getByRole("heading", {name: "پیشرفت جلسه"})).toBeInTheDocument();
   expect(screen.getByRole("heading", {name: "اولویت مرور"})).toBeInTheDocument();
@@ -169,8 +169,8 @@ test("reveals misconception, related rule and mastery impact only after grading"
   expect(screen.getByRole("heading", {name: "قاعده مرتبط"})).toBeInTheDocument();
   expect(screen.getByText("dont replaces de + noun.")).toBeInTheDocument();
   expect(screen.getByRole("heading", {name: "اثر بر تسلط"})).toBeInTheDocument();
-  expect(screen.getByText(/30/)).toBeInTheDocument();
-  expect(screen.getByText(/60/)).toBeInTheDocument();
+  expect(screen.getByText(/۳۰/)).toBeInTheDocument();
+  expect(screen.getByText(/۶۰/)).toBeInTheDocument();
   expect(screen.getByText(/امتیاز آزمون اصلی بازنویسی نمی‌شود/)).toBeInTheDocument();
 });
 

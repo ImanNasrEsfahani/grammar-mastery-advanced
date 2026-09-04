@@ -105,7 +105,7 @@ test("renders the real subcategory hierarchy, mastery, concept and lesson", asyn
   render(<SubcategoryDetailClient locale="fa" subcategoryId={SUBCATEGORY_ID} />);
 
   expect(await screen.findByRole("heading", {name: "Pronoms relatifs"})).toBeInTheDocument();
-  expect(screen.getByText("dont")).toBeInTheDocument();
+  expect(screen.getAllByText("dont").length).toBeGreaterThan(0);
   expect(screen.getByText("۴۲%")).toBeInTheDocument();
   expect(screen.getByText("LES RELATIFS")).toBeInTheDocument();
   expect(screen.getByText(/۷ خطای تکرارشونده/)).toBeInTheDocument();

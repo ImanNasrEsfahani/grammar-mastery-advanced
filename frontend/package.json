@@ -12,8 +12,9 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run",
+    "test": "vitest run && npm run test:responsive-css",
     "test:watch": "vitest",
+    "test:responsive-css": "node scripts/responsive-css-tools.test.mjs",
     "api:generate": "openapi-typescript ../api/stage21_core_api_spec_v1.0.yaml -o src/lib/api/generated.ts",
     "api:check": "npm run api:generate && git diff --exit-code -- src/lib/api/generated.ts",
     "validate": "npm run api:generate && npm run lint && npm run typecheck && npm run test && npm run build"

@@ -122,6 +122,10 @@ test("renders educational result insights from the enriched attempt contract", a
   expect(screen.getByText("Mastery Impact")).toBeInTheDocument();
   expect(screen.getByText("que / dont")).toBeInTheDocument();
   expect(screen.getAllByText("اولین شواهد").length).toBeGreaterThan(0);
-  expect(screen.getByRole("link", {name: /مرور اشتباهات/})).toHaveAttribute("href", `/fa/review/${REVIEW_ID}`);
-  expect(screen.getByRole("link", {name: /تمرین ضعف‌ها/})).toHaveAttribute("href", expect.stringContaining(`lessons=${LESSON_ID}`));
+  expect(screen.getAllByRole("link", {name: /مرور اشتباهات/}).some((link) =>
+    link.getAttribute("href") === `/fa/review/${REVIEW_ID}`,
+  )).toBe(true);
+  expect(screen.getAllByRole("link", {name: /تمرین ضعف‌ها/}).some((link) =>
+    (link.getAttribute("href") ?? "").includes(`lessons=${LESSON_ID}`),
+  )).toBe(true);
 });

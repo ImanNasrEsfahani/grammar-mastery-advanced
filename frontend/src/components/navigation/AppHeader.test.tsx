@@ -1,8 +1,15 @@
-import {fireEvent, render, screen} from "@testing-library/react";
+import {fireEvent, render, screen, waitFor} from "@testing-library/react";
 import {beforeEach, expect, test, vi} from "vitest";
 import {AppHeader} from "./AppHeader";
 
 const navigationState = vi.hoisted(() => ({pathname: "/fa/dashboard", search: ""}));
+
+function mockUnreadCount() {
+  return vi.spyOn(globalThis, "fetch").mockResolvedValue({
+    ok: true,
+    json: async () => ({data: {unread_count: 0}}),
+  } as Response);
+}
 
 vi.mock("next/navigation", () => ({
   usePathname: () => navigationState.pathname,
@@ -15,8 +22,10 @@ beforeEach(() => {
   navigationState.search = "";
 });
 
-test("mobile menu exposes navigation and toggles accessibly", () => {
+test("mobile menu exposes navigation and toggles accessibly", async () => {
+  const fetchSpy = mockUnreadCount();
   render(<AppHeader locale="fa" authenticated />);
+  await waitFor(() => expect(fetchSpy).toHaveBeenCalled());
   const toggle = screen.getByRole("button", {name: "باز کردن منو"});
   expect(toggle).toHaveAttribute("aria-expanded", "false");
   fireEvent.click(toggle);
@@ -27,16 +36,19 @@ test("mobile menu exposes navigation and toggles accessibly", () => {
   expect(screen.getByRole("button", {name: "باز کردن منو"})).toHaveAttribute("aria-expanded", "false");
 });
 
-test("header preserves notification access to the notification center", () => {
-  window.localStorage.setItem("gmp-notifications-unread-v1", "3");
+test("header preserves notification access to the notification center", async () => {
+  const fetchSpy = mockUnreadCount();
   render(<AppHeader locale="fa" authenticated />);
+  await waitFor(() => expect(fetchSpy).toHaveBeenCalled());
   const notificationLinks = screen.getAllByRole("link", {name: "اعلان‌ها"});
   expect(notificationLinks.length).toBeGreaterThan(0);
   expect(notificationLinks[0]!).toHaveAttribute("href", "/fa/notifications");
 });
 
-test("authenticated header exposes the designed avatar account trigger", () => {
+test("authenticated header exposes the designed avatar account trigger", async () => {
+  const fetchSpy = mockUnreadCount();
   render(<AppHeader locale="fa" authenticated />);
+  await waitFor(() => expect(fetchSpy).toHaveBeenCalled());
   expect(screen.getAllByRole("button", {name: /باز کردن منوی حساب کاربری/}).length).toBeGreaterThan(0);
   expect(screen.queryByRole("button", {name: "خروج"})).not.toBeInTheDocument();
 });

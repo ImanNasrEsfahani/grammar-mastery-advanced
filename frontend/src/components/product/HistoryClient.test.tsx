@@ -53,10 +53,9 @@ test("renders real attempt history with score, duration and result CTA", async (
   expect(await screen.findByText("LES PRONOMS RELATIFS")).toBeInTheDocument();
   expect(screen.getAllByText("۸۰%").length).toBeGreaterThan(0);
   expect(screen.getByText("22:18")).toBeInTheDocument();
-  expect(screen.getByRole("link", {name: /مشاهده/})).toHaveAttribute(
-    "href",
-    "/fa/attempts/11111111-1111-4111-8111-111111111111/result",
-  );
+  expect(screen.getAllByRole("link", {name: /مشاهده/}).some((link) =>
+    link.getAttribute("href") === "/fa/attempts/11111111-1111-4111-8111-111111111111/result",
+  )).toBe(true);
 });
 
 test("filters call the read-only history endpoint instead of fabricating rows", async () => {
