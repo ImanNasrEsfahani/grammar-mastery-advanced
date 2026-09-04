@@ -1,5 +1,5 @@
-import {beforeEach, fireEvent, render, screen, waitFor} from "@testing-library/react";
-import {expect, test, vi} from "vitest";
+import {fireEvent, render, screen, waitFor} from "@testing-library/react";
+import {beforeEach, expect, test, vi} from "vitest";
 import {MasteryMapClient} from "./MasteryMapClient";
 import {apiRequest} from "@/lib/api/client";
 
@@ -8,7 +8,14 @@ vi.mock("@/lib/api/client", async (importOriginal) => {
   return {...original, apiRequest: vi.fn()};
 });
 
-const mastery = (score: number, band: string, confidence = .63, evidence = 8, coverage = .72, source = "PERSISTED_LESSON") => ({
+const mastery = (
+  score: number,
+  band: string,
+  confidence = .63,
+  evidence = 8,
+  coverage = .72,
+  source = "PERSISTED_LESSON",
+) => ({
   mastery_score_pct: score,
   confidence,
   coverage_ratio: coverage,
@@ -29,7 +36,13 @@ const response = {
       subcategory_count: 27,
       lesson_count: 52,
       subtopic_count: 304,
-      band_counts: {NO_EVIDENCE: 1, UNCERTAIN: 1, WEAK: 1, DEVELOPING: 5, STRONG: 3},
+      band_counts: {
+        NO_EVIDENCE: 1,
+        UNCERTAIN: 1,
+        WEAK: 1,
+        DEVELOPING: 5,
+        STRONG: 3,
+      },
       mastery: mastery(68, "DEVELOPING", .71, 120, .61, "DERIVED_OVERALL_FOR_UI"),
     },
     semantics: {
@@ -75,8 +88,26 @@ const response = {
                 display_title: "LES RELATIFS",
                 mastery: mastery(55, "DEVELOPING"),
                 subtopics: [
-                  {id: "t1", lesson_id: "l1111111-1111-4111-8111-111111111111", code: "L32-S01", title_fr: "Qui", title_fa: "qui", short_definition_fa: null, display_title: "qui", mastery: mastery(72, "DEVELOPING", .7, 5, 1, "PERSISTED_SUBTOPIC")},
-                  {id: "t2", lesson_id: "l1111111-1111-4111-8111-111111111111", code: "L32-S02", title_fr: "Dont", title_fa: "dont", short_definition_fa: null, display_title: "dont", mastery: mastery(42, "WEAK", .61, 4, 1, "PERSISTED_SUBTOPIC")},
+                  {
+                    id: "t1",
+                    lesson_id: "l1111111-1111-4111-8111-111111111111",
+                    code: "L32-S01",
+                    title_fr: "Qui",
+                    title_fa: "qui",
+                    short_definition_fa: null,
+                    display_title: "qui",
+                    mastery: mastery(72, "DEVELOPING", .7, 5, 1, "PERSISTED_SUBTOPIC"),
+                  },
+                  {
+                    id: "t2",
+                    lesson_id: "l1111111-1111-4111-8111-111111111111",
+                    code: "L32-S02",
+                    title_fr: "Dont",
+                    title_fa: "dont",
+                    short_definition_fa: null,
+                    display_title: "dont",
+                    mastery: mastery(42, "WEAK", .61, 4, 1, "PERSISTED_SUBTOPIC"),
+                  },
                 ],
                 top_misconception: {
                   id: "m1",
@@ -98,7 +129,11 @@ const response = {
       },
     ],
   },
-  meta: {request_id: "map-request", api_version: "v1", runtime_version: "mastery-map-runtime-v1.0.0"},
+  meta: {
+    request_id: "map-request",
+    api_version: "v1",
+    runtime_version: "mastery-map-runtime-v1.0.0",
+  },
 };
 
 beforeEach(() => {
@@ -118,9 +153,17 @@ test("renders the canonical taxonomy hierarchy and lesson inspector from real ma
     "href",
     "/fa/lessons/l1111111-1111-4111-8111-111111111111",
   );
-  expect(screen.getByRole("link", {name: "تمرین این بخش"})).toHaveAttribute("href", "/fa/tests/new");
-  expect(screen.getByRole("link", {name: "مرور خطاهای مرتبط"})).toHaveAttribute("href", "/fa/review");
-  expect(vi.mocked(apiRequest)).toHaveBeenCalledWith("/api/backend/mastery-map?locale=fa");
+  expect(screen.getByRole("link", {name: "تمرین این بخش"})).toHaveAttribute(
+    "href",
+    "/fa/tests/new",
+  );
+  expect(screen.getByRole("link", {name: "مرور خطاهای مرتبط"})).toHaveAttribute(
+    "href",
+    "/fa/review",
+  );
+  expect(vi.mocked(apiRequest)).toHaveBeenCalledWith(
+    "/api/backend/mastery-map?locale=fa",
+  );
 });
 
 test("search and status filters work client-side without inventing mastery rows", async () => {
@@ -128,14 +171,20 @@ test("search and status filters work client-side without inventing mastery rows"
   render(<MasteryMapClient locale="fa" />);
   await screen.findAllByText("LES RELATIFS");
 
-  fireEvent.change(screen.getByLabelText("جست‌وجوی نقشه"), {target: {value: "not-present"}});
+  fireEvent.change(screen.getByLabelText("جست‌وجوی نقشه"), {
+    target: {value: "not-present"},
+  });
   expect(screen.getByText("نتیجه‌ای با این فیلترها پیدا نشد")).toBeInTheDocument();
 
   fireEvent.click(screen.getByRole("button", {name: "پاک‌کردن فیلترها"}));
-  fireEvent.change(screen.getAllByRole("combobox")[0], {target: {value: "WEAK"}});
+  const statusSelect = screen.getAllByRole("combobox")[0];
+  expect(statusSelect).toBeDefined();
+  fireEvent.change(statusSelect!, {target: {value: "WEAK"}});
 
   await waitFor(() => {
-    expect(screen.queryByText("نتیجه‌ای با این فیلترها پیدا نشد")).toBeInTheDocument();
+    expect(
+      screen.queryByText("نتیجه‌ای با این فیلترها پیدا نشد"),
+    ).toBeInTheDocument();
   });
   expect(vi.mocked(apiRequest)).toHaveBeenCalledTimes(1);
 });

@@ -64,8 +64,8 @@ const categoryMastery = {
 
 const lessonMastery = {
   data: [
-    {scope_type: "LESSON", scope_id: lessons.data[0].id, mastery_score_pct: 72, confidence: .82, coverage_ratio: .74, evidence_count: 80, mastery_band: "DEVELOPING", model_version: "mastery-v1"},
-    {scope_type: "LESSON", scope_id: lessons.data[1].id, mastery_score_pct: 55, confidence: .75, coverage_ratio: .68, evidence_count: 64, mastery_band: "DEVELOPING", model_version: "mastery-v1"},
+    {scope_type: "LESSON", scope_id: lessons.data[0]!.id, mastery_score_pct: 72, confidence: .82, coverage_ratio: .74, evidence_count: 80, mastery_band: "DEVELOPING", model_version: "mastery-v1"},
+    {scope_type: "LESSON", scope_id: lessons.data[1]!.id, mastery_score_pct: 55, confidence: .75, coverage_ratio: .68, evidence_count: 64, mastery_band: "DEVELOPING", model_version: "mastery-v1"},
   ],
   meta: {request_id: "lesson-mastery", api_version: "v1"},
 };

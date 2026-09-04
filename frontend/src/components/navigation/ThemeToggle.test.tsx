@@ -16,11 +16,25 @@ test("theme toggle persists the selected mode and synchronizes duplicate header 
     </>,
   );
 
-  await waitFor(() => expect(screen.getAllByRole("button", {name: "فعال کردن حالت تاریک"})).toHaveLength(2));
-  fireEvent.click(screen.getAllByRole("button", {name: "فعال کردن حالت تاریک"})[0]);
+  await waitFor(() =>
+    expect(
+      screen.getAllByRole("button", {name: "فعال کردن حالت تاریک"}),
+    ).toHaveLength(2),
+  );
 
-  await waitFor(() => expect(document.documentElement.dataset.theme).toBe("dark"));
+  const darkButtons = screen.getAllByRole("button", {
+    name: "فعال کردن حالت تاریک",
+  });
+  fireEvent.click(darkButtons[0]!);
+
+  await waitFor(() =>
+    expect(document.documentElement.dataset.theme).toBe("dark"),
+  );
   expect(window.localStorage.getItem("gmp-theme")).toBe("dark");
-  expect(screen.getAllByRole("button", {name: "فعال کردن حالت روشن"})).toHaveLength(2);
-  expect(screen.getAllByRole("button", {name: "فعال کردن حالت روشن"})[0]).toHaveAttribute("aria-pressed", "true");
+
+  const lightButtons = screen.getAllByRole("button", {
+    name: "فعال کردن حالت روشن",
+  });
+  expect(lightButtons).toHaveLength(2);
+  expect(lightButtons[0]!).toHaveAttribute("aria-pressed", "true");
 });

@@ -8,6 +8,27 @@ vi.mock("@/lib/api/client", async (importOriginal) => {
   return {...original, apiRequest: vi.fn()};
 });
 
+vi.mock("@/lib/grammar-content/books", async (importOriginal) => {
+  const original =
+    await importOriginal<typeof import("@/lib/grammar-content/books")>();
+  return {
+    ...original,
+    getGrammarBook: vi.fn(() => ({
+      slug: "advanced-content-pending",
+      titleFr: "Advanced test content",
+      titleFa: "محتوای آزمایشی پیشرفته",
+      edition: "test",
+      lessonCount: 999,
+      publicRoot: "/grammar/advanced-test",
+      ready: true,
+    })),
+    grammarLessonUrl: vi.fn(
+      (_slug: "advanced-content-pending", lessonNo: number) =>
+        `/grammar/advanced-test/L${String(lessonNo).padStart(2, "0")}.html`,
+    ),
+  };
+});
+
 const LESSON_ID = "22222222-2222-4222-8222-222222222222";
 const SUBTOPIC_ID = "33333333-3333-4333-8333-333333333333";
 const REVIEW_ID = "55555555-5555-4555-8555-555555555555";
@@ -17,28 +38,28 @@ function lessonEnvelope() {
     data: {
       id: LESSON_ID,
       lesson_no: 32,
-      title_fr: "LES RELATIFS",
-      short_title: "Relatifs",
+      title_fr: "ADVANCED TEST LESSON",
+      short_title: "Advanced test",
       category_id: "66666666-6666-4666-8666-666666666666",
       subcategory_id: "77777777-7777-4777-8777-777777777777",
-      category_title_fr: "Pronoms et référence",
-      category_title_fa: "ضمیرها و ارجاع",
-      subcategory_title_fr: "Pronoms relatifs",
-      subcategory_title_fa: "ضمیرهای موصولی",
+      category_title_fr: "Advanced grammar",
+      category_title_fa: "گرامر پیشرفته",
+      subcategory_title_fr: "Advanced synthetic fixture",
+      subcategory_title_fa: "نمونه آزمایشی پیشرفته",
       tcf_weight: 1,
       active: true,
       question_count: 42,
       subtopics: [
         {
           id: SUBTOPIC_ID,
-          code: "L32-ST01",
-          title_fr: "Relatif « qui »",
-          title_fa: "ضمیر موصولی qui",
-          short_definition_fa: "qui جای فاعل را می‌گیرد.",
+          code: "ADV-T01",
+          title_fr: "Synthetic advanced subtopic",
+          title_fa: "زیرموضوع آزمایشی پیشرفته",
+          short_definition_fa: "این داده فقط برای تست رابط کاربری است.",
           active: true,
         },
       ],
-      book_reference: {book_pages: "140-147", pdf_pages: "152-159"},
+      book_reference: {book_pages: "test", pdf_pages: "test"},
       learning: {
         overview: {
           mastery_score_pct: 63,
@@ -70,13 +91,13 @@ function lessonEnvelope() {
         misconceptions: [
           {
             id: "88888888-8888-4888-8888-888888888888",
-            family: "RELATIVE_PRONOUN",
-            name_fa: "que / dont",
-            statement_fa: "انتخاب ضمیر موصولی نادرست",
+            family: "ADVANCED_SYNTHETIC",
+            name_fa: "خطای آزمایشی",
+            statement_fa: "این misconception صرفاً fixture تست است.",
             diagnostic_interpretation_fa: null,
             subtopic_id: SUBTOPIC_ID,
-            subtopic_title_fr: "Relatif « qui »",
-            subtopic_title_fa: "ضمیر موصولی qui",
+            subtopic_title_fr: "Synthetic advanced subtopic",
+            subtopic_title_fa: "زیرموضوع آزمایشی پیشرفته",
             repeat_count: 5,
             last_wrong_at: "2026-08-24T18:00:00Z",
           },
@@ -105,24 +126,33 @@ afterEach(() => {
   vi.restoreAllMocks();
 });
 
-test("renders the designed lesson dashboard from real lesson insight fields", async () => {
+test("renders the lesson dashboard with a synthetic Advanced fixture", async () => {
   vi.mocked(apiRequest).mockResolvedValue(lessonEnvelope());
-  vi.stubGlobal("fetch", vi.fn().mockResolvedValue({status: 200, ok: true}));
+  vi.stubGlobal(
+    "fetch",
+    vi.fn().mockResolvedValue({
+      status: 200,
+      ok: true,
+      text: async () => "<article><p>Advanced test lesson body</p></article>",
+    }),
+  );
 
   render(
     <LessonContentClient
       locale="fa"
       lessonId={LESSON_ID}
-      bookSlug="grammaire-progressive-francais-intermediaire-3e"
+      bookSlug="advanced-content-pending"
     />,
   );
 
-  expect(await screen.findByRole("heading", {name: "LES RELATIFS"})).toBeInTheDocument();
+  expect(
+    await screen.findByRole("heading", {name: "ADVANCED TEST LESSON"}),
+  ).toBeInTheDocument();
   expect(screen.getByText("63%")).toBeInTheDocument();
   expect(screen.getByText("52%")).toBeInTheDocument();
   expect(screen.getByText("71%")).toBeInTheDocument();
-  expect(screen.getByText("Relatif « qui »")).toBeInTheDocument();
-  expect(screen.getByText("que / dont")).toBeInTheDocument();
+  expect(screen.getByText("Synthetic advanced subtopic")).toBeInTheDocument();
+  expect(screen.getByText("خطای آزمایشی")).toBeInTheDocument();
   expect(screen.getByRole("link", {name: "شروع تمرین درس"})).toHaveAttribute(
     "href",
     `/fa/tests/new?lesson=${LESSON_ID}`,

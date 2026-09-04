@@ -88,10 +88,10 @@ test("renders canonical search results, learner mastery and real navigation CTAs
   expect(screen.getByText("que ↔ dont")).toBeInTheDocument();
 
   const lessonLinks = screen.getAllByRole("link", {name: "باز کردن درس"});
-  expect(lessonLinks[0]).toHaveAttribute("href", "/fa/lessons/22222222-2222-4222-8222-222222222222");
+  expect(lessonLinks[0]!).toHaveAttribute("href", "/fa/lessons/22222222-2222-4222-8222-222222222222");
   const practiceLinks = screen.getAllByRole("link", {name: "تمرین"});
-  expect(practiceLinks[0].getAttribute("href")).toContain("/fa/tests/new?");
-  expect(practiceLinks[0].getAttribute("href")).toContain("lesson=22222222-2222-4222-8222-222222222222");
+  expect(practiceLinks[0]!.getAttribute("href")).toContain("/fa/tests/new?");
+  expect(practiceLinks[0]!.getAttribute("href")).toContain("lesson=22222222-2222-4222-8222-222222222222");
 });
 
 test("kind filter calls the additive search endpoint instead of filtering fabricated client data", async () => {

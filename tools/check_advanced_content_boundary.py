@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import json
-import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -18,6 +17,7 @@ REQUIRED_PATHS = [
     ROOT / "frontend/src/lib/grammar-content/books.ts",
     ROOT / "ops/stage26/migration_runner.py",
     ROOT / "config/stage26_operations_contract_v1.0.json",
+    ROOT / "schemas/stage26_release_evidence_v1.0.schema.json",
 ]
 
 errors: list[str] = []
@@ -63,8 +63,30 @@ if contract_path.is_file():
     if contract.get("production_release") == "READY":
         errors.append("production release must still be blocked in empty-content phase")
 
-# Stage 16/17 algorithms are reusable, but their old source-provenance metadata
-# remains a known non-blocking Stage-1 cleanup item.
+schema_path = ROOT / "schemas/stage26_release_evidence_v1.0.schema.json"
+if schema_path.is_file():
+    schema = json.loads(schema_path.read_text(encoding="utf-8-sig"))
+    properties = schema.get("properties", {})
+    if properties.get("schema_version", {}).get("const") != (
+        "advanced-seed-release-evidence-v1.0.0"
+    ):
+        errors.append("release evidence JSON schema still uses legacy Stage26 schema_version")
+    if properties.get("release_mode", {}).get("enum") != [
+        "SCHEMA_ONLY",
+        "FULL_PRODUCT",
+    ]:
+        errors.append("release evidence JSON schema is not aligned with Advanced release modes")
+    plan_const = (
+        properties.get("migrations", {})
+        .get("properties", {})
+        .get("plan_version", {})
+        .get("const")
+    )
+    if plan_const != "advanced-schema-sequence-v1.0.0":
+        errors.append("release evidence JSON schema still uses legacy migration plan")
+
+# Stage 16/17 algorithms are reusable, but historical source provenance is a
+# deliberate warning until the actual Advanced source book is frozen.
 for rel in ("config/stage16_contract.json", "config/stage17_contract.json"):
     path = ROOT / rel
     if path.is_file():
