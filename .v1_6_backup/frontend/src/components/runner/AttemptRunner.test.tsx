@@ -1,4 +1,4 @@
-import { act, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { AttemptRunner } from "./AttemptRunner";
@@ -64,10 +64,7 @@ describe("AttemptRunner", () => {
     expect(await screen.findByRole("alert")).toHaveTextContent(/answer is safe/i);
     const pending = await getPendingAnswer(ids.attempt, ids.question);
     expect(pending?.selected_option_id).toBe(ids.optionB);
-    await act(async () => {
-      window.dispatchEvent(new Event("online"));
-      await Promise.resolve();
-    });
+    window.dispatchEvent(new Event("online"));
     expect(await screen.findByRole("heading", {name: "Correct answer"})).toBeInTheDocument();
     await waitFor(() => expect(answerAttempts).toBe(2));
     expect(seenKeys[0]).toBe(seenKeys[1]);

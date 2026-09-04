@@ -169,8 +169,8 @@ test("reveals misconception, related rule and mastery impact only after grading"
   expect(screen.getByRole("heading", {name: "قاعده مرتبط"})).toBeInTheDocument();
   expect(screen.getByText("dont replaces de + noun.")).toBeInTheDocument();
   expect(screen.getByRole("heading", {name: "اثر بر تسلط"})).toBeInTheDocument();
-  expect(screen.getAllByText(/۳۰/).length).toBeGreaterThan(0);
-  expect(screen.getAllByText(/۶۰/).length).toBeGreaterThan(0);
+  expect(screen.getByText(/۳۰/)).toBeInTheDocument();
+  expect(screen.getByText(/۶۰/)).toBeInTheDocument();
   expect(screen.getByText(/امتیاز آزمون اصلی بازنویسی نمی‌شود/)).toBeInTheDocument();
 });
 

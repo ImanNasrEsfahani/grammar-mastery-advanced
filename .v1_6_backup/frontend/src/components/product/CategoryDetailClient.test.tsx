@@ -118,7 +118,7 @@ test("renders category detail from real taxonomy/mastery/progress contracts", as
   expect(screen.getByText("ضمیرها و ارجاع")).toBeInTheDocument();
   expect(screen.getAllByText("Pronoms relatifs").length).toBeGreaterThan(0);
   expect(screen.getAllByText("Relatif dont").length).toBeGreaterThan(0);
-  expect(screen.getAllByText("۴۲%").length).toBeGreaterThan(0);
+  expect(screen.getByText("۴۲%")).toBeInTheDocument();
 
   const categoryPractice = screen.getAllByRole("link", {name: "تمرین این دسته"})[0];
   expect(categoryPractice?.getAttribute("href") ?? "").toContain("/fa/tests/new?mode=adaptive&scope=lessons");

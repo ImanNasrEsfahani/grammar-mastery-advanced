@@ -106,7 +106,7 @@ test("renders the real subcategory hierarchy, mastery, concept and lesson", asyn
 
   expect(await screen.findByRole("heading", {name: "Pronoms relatifs"})).toBeInTheDocument();
   expect(screen.getAllByText("dont").length).toBeGreaterThan(0);
-  expect(screen.getAllByText("۴۲%").length).toBeGreaterThan(0);
+  expect(screen.getByText("۴۲%")).toBeInTheDocument();
   expect(screen.getByText("LES RELATIFS")).toBeInTheDocument();
   expect(screen.getByText(/۷ خطای تکرارشونده/)).toBeInTheDocument();
   expect(screen.getByRole("link", {name: "تمرین زیرگروه"})).toHaveAttribute("href", expect.stringContaining(`group=${SUBCATEGORY_ID}`));

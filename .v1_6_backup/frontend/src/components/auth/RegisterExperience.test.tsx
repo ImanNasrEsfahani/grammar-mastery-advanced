@@ -26,8 +26,8 @@ test("requires confirmation and terms before sending registration", async () => 
 
   await user.type(screen.getByLabelText("Full name"), "Ada Learner");
   await user.type(screen.getByLabelText("Email address"), "ada@example.com");
-  await user.type(screen.getByLabelText("Password", {selector: "input"}), "ExamplePassword1!");
-  await user.type(screen.getByLabelText("Confirm password", {selector: "input"}), "DifferentPassword1!");
+  await user.type(screen.getByLabelText(/^Password/), "ExamplePassword1!");
+  await user.type(screen.getByLabelText(/^Confirm password/), "DifferentPassword1!");
   await user.click(screen.getByRole("button", {name: "Create my account"}));
 
   expect(screen.getByText("The confirmation does not match the password.")).toBeInTheDocument();
@@ -40,13 +40,13 @@ test("toggles password visibility and creates an authenticated session", async (
   vi.mocked(apiRequest).mockResolvedValue({});
   render(<RegisterExperience locale="en" />);
 
-  const password = screen.getByLabelText("Password", {selector: "input"}) as HTMLInputElement;
+  const password = screen.getByLabelText(/^Password/) as HTMLInputElement;
   await user.type(screen.getByLabelText("Full name"), "Ada Learner");
   await user.type(screen.getByLabelText("Email address"), "Ada@Example.com");
   await user.type(password, "ExamplePassword1!");
   await user.click(screen.getAllByRole("button", {name: "Show password"})[0]!);
   expect(password.type).toBe("text");
-  await user.type(screen.getByLabelText("Confirm password", {selector: "input"}), "ExamplePassword1!");
+  await user.type(screen.getByLabelText(/^Confirm password/), "ExamplePassword1!");
   await user.click(screen.getByRole("checkbox"));
   await user.click(screen.getByRole("button", {name: "Create my account"}));
 
