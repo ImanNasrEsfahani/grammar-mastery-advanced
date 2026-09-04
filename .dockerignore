@@ -32,35 +32,12 @@ backups/
 *.pdf
 *.zip
 
-# Large non-runtime artifacts do not need to be transferred in the Docker build context.
+# Large non-runtime/reference artifacts are intentionally excluded.
 artifacts/
-
-# Keep unrelated data out of the Docker build context, but allow the canonical
-# reference and Question Bank inputs required by the default migration pipeline.
-data/*
-!data/knowledge/
-!data/taxonomy/
-!data/planning/
-
-data/knowledge/*
-!data/knowledge/stage1_lessons_v1.0.csv
-!data/knowledge/stage1_subtopics_v1.0.csv
-
-data/taxonomy/*
-!data/taxonomy/stage2_categories_v1.0.csv
-!data/taxonomy/stage2_subcategories_v1.0.csv
-!data/taxonomy/stage2_controlled_tags_v1.0.csv
-!data/taxonomy/stage2_lesson_category_mapping_v1.0.csv
-!data/taxonomy/stage2_lesson_tags_v1.0.csv
-
-data/planning/*
-!data/planning/stage3_lesson_weights_v1.0.csv
-
-# Canonical Question Bank migration inputs.
-!data/question_authoring/
-!data/question_authoring/**
-!data/question_bank/
-!data/question_bank/**
-
 docs/stages/
 tests/
+
+# IMPORTANT:
+# Do NOT exclude data/ here. The Advanced content pipeline will create new,
+# versioned files whose names/counts are not known yet. docker/backend/Dockerfile
+# copies the active data/ tree into the runtime image.

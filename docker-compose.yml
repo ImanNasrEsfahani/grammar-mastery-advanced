@@ -33,7 +33,9 @@ services:
       DJANGO_DB_NAME: ${POSTGRES_DB:-grammar_mastery}
       DJANGO_DB_USER: ${POSTGRES_USER:-grammar_mastery}
       DJANGO_DB_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env.docker}
-      # Existing Stage 26 migration_runner.py consumes libpq PG* variables.
+      # The Advanced schema-only migration runner consumes libpq PG* variables
+      # when it is invoked explicitly. The application entrypoint never runs
+      # migrations automatically.
       PGHOST: postgres
       PGPORT: "5432"
       PGDATABASE: ${POSTGRES_DB:-grammar_mastery}

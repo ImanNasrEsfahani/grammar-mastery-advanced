@@ -1,14 +1,26 @@
-Grammar Mastery Advanced — Clean Seed Audit
-============================================
-Repository: C:\Users\Iman4\Downloads\grammar_mastery_advanced_export_kit_v1.0\dist\grammar-mastery-advanced-seed
-Structural errors: 0
-Old-content marker warnings: 5
+Grammar Mastery Advanced — Remediation Status
+==============================================
+Remediation package: v1.2
+Source snapshot: grammar-mastery-platform @ a52d206b9bb1a6c07ae4afd185c9c8d9c4b8df4f
 
-WARNINGS (review before first production deploy)
-- OLD-CONTENT marker 'Grammaire Progressive du Français - Niveau intermédiaire' found in config/stage16_contract.json
-- OLD-CONTENT marker 'Grammaire Progressive du Français - Niveau intermédiaire' found in config/stage17_contract.json
-- OLD-CONTENT marker 'Grammaire Progressive du Français — Niveau intermédiaire' found in frontend/src/lib/grammar-content/books.ts
-- OLD-CONTENT marker 'stage1_lessons_v1.0.csv' found in .dockerignore
-- OLD-CONTENT marker 'stage1_subtopics_v1.0.csv' found in .dockerignore
+This file replaces the initial audit report after the cleanup package is applied.
 
-STRUCTURE PASS: warnings are non-blocking unless --strict-markers is used.
+Blocking clean-seed expectations:
+- Intermediate static lesson directory: ABSENT
+- Intermediate default book registry: ABSENT
+- frontend/.env.example: PRESENT AND TRACKABLE
+- superseded Stage23 v1.0 SQL: ABSENT
+- schema-only Advanced migration runner: PRESENT
+- Advanced content bootstrap: DISABLED until content freeze
+- production release: BLOCKED until content freeze
+- CI boundary/build checks: PRESENT
+
+Known non-blocking Stage-1 follow-up:
+- Stage16/Stage17 algorithm contracts still contain historical Intermediate
+  source-provenance metadata. Their algorithms are reusable, but the provenance
+  metadata must be regenerated after the Advanced source book is frozen.
+
+Run:
+  python tools/check_advanced_content_boundary.py
+
+A PASS result means the repository is safe to begin Advanced Stage 1.

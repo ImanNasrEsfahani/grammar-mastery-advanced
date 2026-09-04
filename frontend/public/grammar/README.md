@@ -1,60 +1,38 @@
-# Static grammar lesson HTML
+# Static grammar lesson HTML — Advanced instance
 
 This directory is the runtime home for authored grammar lesson HTML files.
-The Next.js frontend serves files from `frontend/public/` at the same-origin
-URL that follows the directory structure below.
 
-## Canonical book in this patch
+## Current state
 
-Book slug:
+No canonical Advanced book is registered yet.
 
-`grammaire-progressive-francais-intermediaire-3e`
+Do not place copied Intermediate lesson HTML here. The real Advanced book slug,
+lesson count, titles, edition and source provenance must be frozen from Stage 1
+before learner lesson content is enabled.
 
-Repository directory:
+## When Stage 1 is frozen
 
-`frontend/public/grammar/grammaire-progressive-francais-intermediaire-3e/`
+1. Choose one stable ASCII book slug.
+2. Add the real book entry to `frontend/src/lib/grammar-content/books.ts`.
+3. Set `ready: true` and the exact `lessonCount`.
+4. Create `frontend/public/grammar/<book-slug>/`.
+5. Save lesson HTML as `L01.html`, `L02.html`, ... using the canonical lesson
+   number from the Advanced lesson map.
+6. Rebuild/redeploy the frontend.
 
-Runtime URL root:
-
-`/grammar/grammaire-progressive-francais-intermediaire-3e/`
-
-## Lesson naming contract
-
-Use the canonical lesson number from the lesson API and save exactly:
-
-- Lesson 1 -> `L01.html`
-- Lesson 2 -> `L02.html`
-- ...
-- Lesson 52 -> `L52.html`
-
-Adding another lesson HTML to this already-registered book does not require a
-code change. Put the correctly named HTML file in the directory and rebuild / redeploy
-the frontend so Docker includes the new static file.
-
-The learner route remains UUID-based:
-
-`/{locale}/lessons/{lessonId}?book=grammaire-progressive-francais-intermediaire-3e`
-
-The UI fetches the canonical lesson detail, reads `lesson_no`, then resolves the
-matching static file. The UUID therefore remains the stable application ID; the
-filename is only a presentation/content lookup derived from canonical lesson data.
+The learner route stays UUID-based. The lesson UUID is the stable application
+identifier; `LNN.html` is only the presentation lookup for authored lesson
+content.
 
 ## HTML authoring contract
 
-The existing L01/L02 style is supported: an HTML fragment may contain its own
-root wrapper and inline `<style>` block. Keep selectors scoped/prefixed to the
-lesson wrapper, especially for mixed Persian RTL and French LTR content.
+- HTML is fetched same-origin and rendered inside the lesson page.
+- The frontend sanitizer removes `script`, `iframe`, `object`, `embed`,
+  event-handler attributes and `javascript:` URLs.
+- Do not add JavaScript to authored lesson HTML.
+- Keep CSS scoped to the lesson wrapper.
+- Mixed Persian RTL and French LTR content must remain explicit.
+- Relative images/media belong under the same book directory, e.g. `assets/`.
 
-Do not add JavaScript to lesson HTML. The viewer uses a sandboxed iframe without
-`allow-scripts`, which keeps authored CSS isolated from the application and blocks
-script execution. Relative image/media paths are allowed and should be stored under
-the same book directory (for example `assets/...`).
-
-## Adding another book
-
-1. Create a new stable ASCII slug directory under `frontend/public/grammar/`.
-2. Add one registry entry to `frontend/src/lib/grammar-content/books.ts` with the
-   book title, edition, lesson count and public root.
-3. Put that book's `LNN.html` files in the new directory.
-
-Do not use the display title as a storage key; the slug is the stable system name.
+Do not use the display title as a storage key. The stable slug is the storage
+and routing key.

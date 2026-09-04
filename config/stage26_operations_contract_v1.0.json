@@ -1,0 +1,87 @@
+{
+  "stage": 26,
+  "name": "Advanced Seed - Schema Operations",
+  "contract_version": "advanced-seed-operations-v1.0.0",
+  "target_repository": "ImanNasrEsfahani/grammar-mastery-advanced",
+  "source_platform_snapshot": "a52d206b9bb1a6c07ae4afd185c9c8d9c4b8df4f",
+  "content_state": "ADVANCED_CANONICAL_CONTENT_EMPTY",
+  "production_release": "BLOCKED_UNTIL_ADVANCED_CANONICAL_CONTENT_FROZEN",
+  "migration_policy": {
+    "plan_version": "advanced-schema-sequence-v1.0.0",
+    "schema_only": true,
+    "automatic_entrypoint_migrations": false,
+    "on_error_stop_required": true,
+    "staging_before_production": true,
+    "superseded_files_forbidden": [
+      "database/postgres/007_stage23_import_pipeline_v1.0.sql"
+    ],
+    "canonical_sequence": [
+      {
+        "order": 1,
+        "path": "database/postgres/001_stage12_schema_v0.9.sql",
+        "git_blob_sha": "1a995db637493832a4988a977be7598444e221d9"
+      },
+      {
+        "order": 2,
+        "path": "database/postgres/002_stage15_mastery_patch_v0.9.sql",
+        "git_blob_sha": "a8314ab136f5f77523166e22e0be2f3a7bcaaab9"
+      },
+      {
+        "order": 3,
+        "path": "database/postgres/003_stage16_error_review_v0.9.sql",
+        "git_blob_sha": "828dd88c5f89740bcbee5d552a7d8705b3bff73c"
+      },
+      {
+        "order": 4,
+        "path": "database/postgres/004_stage17_spaced_repetition_v0.9.sql",
+        "git_blob_sha": "5dd96dad390cd6cf9c5dcf5497035f0f5bd5fe3b"
+      },
+      {
+        "order": 5,
+        "path": "database/postgres/005_stage20_audit_log_migration_v1.0.sql",
+        "git_blob_sha": "93f7a5b043894e2e270081b2b77ea11bbdcfae41"
+      },
+      {
+        "order": 6,
+        "path": "database/postgres/006_stage21_api_runtime_v1.0.sql",
+        "git_blob_sha": "068edb0f5fea7165be88ae56b74e9069022c7aab"
+      },
+      {
+        "order": 7,
+        "path": "database/postgres/007_stage23_import_pipeline_v1.1.sql",
+        "git_blob_sha": "9b695350bb1192d39ddf8363635dacba86854cc1"
+      },
+      {
+        "order": 8,
+        "path": "database/postgres/008_stage27_calibration_v1.0.sql",
+        "git_blob_sha": "e5dff19280615f9e8547d01dfad39c486e915aff"
+      },
+      {
+        "order": 9,
+        "path": "database/postgres/009_password_recovery_v1.0.sql",
+        "git_blob_sha": "b0731c3d9767ace9992932243ccff84413b3afb9"
+      },
+      {
+        "order": 10,
+        "path": "database/postgres/010_performance_indexes_v1.0.sql",
+        "git_blob_sha": "8490ac4ad55b103935bb4c4dd5df29da91ec1833"
+      },
+      {
+        "order": 11,
+        "path": "database/postgres/011_runtime_notifications_v1.0.sql",
+        "git_blob_sha": "ccbe68919211dc5adc8b07664632fbcd360a8e85"
+      }
+    ]
+  },
+  "canonical_data_bootstrap_policy": {
+    "enabled": false,
+    "status": "BLOCKED_UNTIL_ADVANCED_CONTENT_FREEZE",
+    "reason": "Advanced lessons, subtopics, taxonomy, weights and question bank have not been generated yet."
+  },
+  "required_regeneration_after_content_freeze": [
+    "canonical reference seed",
+    "question bank bootstrap",
+    "content-bound validation gates",
+    "Advanced Stage 26 production release contract"
+  ]
+}
