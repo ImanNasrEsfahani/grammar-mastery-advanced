@@ -144,12 +144,21 @@ USE_X_FORWARDED_HOST = True
 SECURE_SSL_REDIRECT = _bool("DJANGO_SECURE_SSL_REDIRECT", False)
 CSRF_TRUSTED_ORIGINS = _csv("DJANGO_CSRF_TRUSTED_ORIGINS")
 
+# Password-recovery URLs are domain-sensitive. Keep the public origin explicit
+# so this Advanced instance never emits links for the existing site.
+PASSWORD_RESET_PUBLIC_ORIGIN = os.getenv("PASSWORD_RESET_PUBLIC_ORIGIN", "").strip().rstrip("/")
+PASSWORD_RESET_TOKEN_TTL_SECONDS = _int("PASSWORD_RESET_TOKEN_TTL_SECONDS", 30 * 60)
+DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "noreply@grammar-mastery.local").strip()
+
 # The Stage 25 browser session boundary lives on the same-origin Next.js layer.
 SESSION_COOKIE_SECURE = APP_ENV == "production"
 CSRF_COOKIE_SECURE = APP_ENV == "production"
 SESSION_COOKIE_HTTPONLY = True
 SESSION_COOKIE_SAMESITE = "Lax"
 CSRF_COOKIE_SAMESITE = "Lax"
+# Explicit host-only cookie policy avoids accidental parent-domain sharing.
+SESSION_COOKIE_DOMAIN = None
+CSRF_COOKIE_DOMAIN = None
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
