@@ -1,85 +1,329 @@
-<article class="adv-lesson" data-lesson-id="ADV-L01">
+<article class="adv-lesson" data-lesson-id="ADV-L01" lang="fa" dir="rtl">
 <style>
-.adv-lesson{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.75;color:#172033;max-width:980px;margin:0 auto;padding:8px 2px 40px}
+/*
+  Grammar Mastery Advanced — Lesson 1
+  Site-compatible HTML fragment.
+  Theme contract: uses the application's shared CSS tokens (--ink, --surface, etc.)
+  and contains no JavaScript.
+*/
+.adv-lesson{
+  --adv-text:var(--ink,#17233c);
+  --adv-muted:var(--muted,#5a6477);
+  --adv-line:var(--line,#d9dfeb);
+  --adv-surface:var(--surface,#ffffff);
+  --adv-soft:var(--surface-soft,#f5f7fb);
+  --adv-primary:var(--primary,#2856c7);
+  --adv-primary-strong:var(--primary-strong,#1c3f99);
+  --adv-success:var(--success,#18794e);
+  --adv-success-soft:var(--success-soft,#e9f7f0);
+  --adv-danger:var(--danger,#b42318);
+  --adv-danger-soft:var(--danger-soft,#fff0ee);
+  --adv-warning:var(--warning,#8a4b08);
+  --adv-warning-soft:var(--warning-soft,#fff7e8);
+  --adv-shadow:var(--shadow,0 18px 50px rgba(34,53,90,.09));
+  --adv-radius:var(--radius,18px);
+  max-width:980px;
+  margin:0 auto;
+  padding:8px 2px 48px;
+  color:var(--adv-text);
+  font-family:var(--font-ui,Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif);
+  line-height:1.82;
+  background:transparent;
+  color-scheme:inherit;
+}
 .adv-lesson *{box-sizing:border-box}
-.adv-lesson .adv-hero{padding:24px;border:1px solid #e3e8f0;border-radius:18px;background:#fff;margin-bottom:22px}
-.adv-lesson .adv-kicker{font-size:.86rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.65;margin:0 0 6px}
-.adv-lesson h2,.adv-lesson h3{line-height:1.35}
-.adv-lesson h2{font-size:1.65rem;margin:0 0 4px}
-.adv-lesson .fa-title{direction:rtl;text-align:right;font-weight:650;margin:.2rem 0 .8rem}
-.adv-lesson .summary{direction:rtl;text-align:right;margin:0}
-.adv-lesson .meta{margin-top:12px;font-size:.9rem;opacity:.72}
-.adv-lesson .subtopic{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin:18px 0;background:#fff}
-.adv-lesson .subtopic h3{margin:0 0 2px;font-size:1.25rem}
-.adv-lesson .fa-subtitle{direction:rtl;text-align:right;font-weight:600;margin:.1rem 0 1rem}
-.adv-lesson .rule{direction:ltr;text-align:left;padding:12px 14px;border-left:4px solid currentColor;background:#f7f9fc;border-radius:8px;margin:12px 0}
-.adv-lesson .teaching,.adv-lesson .trap{direction:rtl;text-align:right}
-.adv-lesson .example{direction:ltr;text-align:left;font-style:italic;padding:10px 14px;background:#f7f9fc;border-radius:8px}
-.adv-lesson .trap{padding:10px 14px;border:1px dashed #c7ced9;border-radius:8px}
-.adv-lesson .source{font-size:.82rem;opacity:.65;margin-top:12px}
-.adv-lesson .notes{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin-top:22px}
-.adv-lesson .notes h3{margin-top:0}
-.adv-lesson .notes section{margin:16px 0}
-.adv-lesson .notes h4{margin:0 0 6px}
-.adv-lesson .notes ul{margin-top:4px}
+.adv-lesson :where(h2,h3,h4,p,ul,ol,figure,blockquote){margin-block-start:0}
+.adv-lesson :where(p,li){overflow-wrap:anywhere}
+.adv-lesson .fr,.adv-lesson [lang="fr"]{direction:ltr;text-align:left;unicode-bidi:isolate}
+.adv-lesson code,.adv-lesson .grammar{direction:ltr;unicode-bidi:isolate;display:inline;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;font-size:.95em}
+.adv-lesson code{padding:.1em .35em;border:1px solid var(--adv-line);border-radius:6px;background:var(--adv-soft);color:var(--adv-text)}
+.adv-lesson a{color:var(--adv-primary-strong)}
+.adv-lesson .adv-card{border:1px solid var(--adv-line);border-radius:var(--adv-radius);background:var(--adv-surface);box-shadow:var(--adv-shadow)}
+.adv-lesson .adv-hero{position:relative;overflow:hidden;padding:clamp(20px,4vw,34px);margin-bottom:20px}
+.adv-lesson .adv-hero::after{content:"";position:absolute;inline-size:220px;block-size:220px;inset-inline-end:-90px;inset-block-start:-110px;border-radius:999px;background:color-mix(in srgb,var(--adv-primary) 11%,transparent);pointer-events:none}
+.adv-lesson .adv-kicker{margin:0 0 7px;color:var(--adv-primary);font-size:.82rem;font-weight:850;letter-spacing:.065em}
+.adv-lesson .adv-hero h2{margin:0;font-size:clamp(1.9rem,5vw,2.7rem);line-height:1.2;color:var(--adv-text)}
+.adv-lesson .fa-title{margin:.35rem 0 .7rem;font-size:1.08rem;font-weight:800}
+.adv-lesson .summary{max-width:76ch;margin:0;color:var(--adv-muted)}
+.adv-lesson .meta-row{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:16px}
+.adv-lesson .meta-chip{display:inline-flex;align-items:center;min-height:32px;padding:.28rem .68rem;border:1px solid var(--adv-line);border-radius:999px;background:var(--adv-soft);color:var(--adv-muted);font-size:.82rem;font-weight:750}
+.adv-lesson .lesson-goal{padding:18px 20px;margin:0 0 18px;border-inline-start:4px solid var(--adv-primary)}
+.adv-lesson .lesson-goal h3{margin:0 0 6px;font-size:1.08rem}
+.adv-lesson .lesson-goal p{margin:0}
+.adv-lesson .toc{padding:18px 20px;margin:0 0 22px}
+.adv-lesson .toc h3{margin:0 0 10px;font-size:1.05rem}
+.adv-lesson .toc ol{margin:0;padding-inline-start:1.3rem;columns:2;column-gap:2rem}
+.adv-lesson .toc li{break-inside:avoid;margin:.25rem 0}
+.adv-lesson .toc a{text-decoration-thickness:.07em;text-underline-offset:.18em}
+.adv-lesson .subtopic{border:1px solid var(--adv-line);border-radius:var(--adv-radius);padding:clamp(18px,3vw,26px);margin:18px 0;background:var(--adv-surface)}
+.adv-lesson .subtopic>h3{margin:0 0 4px;font-size:clamp(1.18rem,3vw,1.45rem);line-height:1.35;color:var(--adv-text)}
+.adv-lesson .fa-subtitle{margin:.1rem 0 1rem;color:var(--adv-muted);font-weight:750}
+.adv-lesson .section-label{margin:1rem 0 .35rem;font-size:.88rem;color:var(--adv-primary-strong);font-weight:850}
+.adv-lesson .rule{margin:12px 0;padding:13px 15px;border-inline-start:4px solid var(--adv-primary);border-radius:10px;background:var(--adv-soft)}
+.adv-lesson .rule strong{color:var(--adv-primary-strong)}
+.adv-lesson .example{margin:10px 0;padding:12px 14px;border:1px solid var(--adv-line);border-radius:11px;background:var(--adv-soft)}
+.adv-lesson .example p{margin:0}
+.adv-lesson .translation{direction:rtl;text-align:right;margin-top:5px!important;color:var(--adv-muted);font-style:normal;font-size:.93rem}
+.adv-lesson .callout{margin:12px 0;padding:12px 14px;border:1px solid var(--adv-line);border-radius:11px;background:var(--adv-soft)}
+.adv-lesson .callout.tip{border-inline-start:4px solid var(--adv-primary)}
+.adv-lesson .callout.warn{border-color:color-mix(in srgb,var(--adv-warning) 46%,var(--adv-line));background:var(--adv-warning-soft)}
+.adv-lesson .callout.good{border-color:color-mix(in srgb,var(--adv-success) 45%,var(--adv-line));background:var(--adv-success-soft)}
+.adv-lesson .callout.bad{border-color:color-mix(in srgb,var(--adv-danger) 42%,var(--adv-line));background:var(--adv-danger-soft)}
+.adv-lesson .correct{color:var(--adv-success);font-weight:850}
+.adv-lesson .incorrect{color:var(--adv-danger);font-weight:850}
+.adv-lesson .source{margin:13px 0 0;color:var(--adv-muted);font-size:.8rem}
+.adv-lesson .table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--adv-line);border-radius:13px;background:var(--adv-surface)}
+.adv-lesson table{width:100%;min-width:650px;border-collapse:collapse;background:transparent}
+.adv-lesson th,.adv-lesson td{padding:11px 12px;border-block-end:1px solid var(--adv-line);vertical-align:top;text-align:start}
+.adv-lesson tr:last-child td{border-block-end:0}
+.adv-lesson th{background:var(--adv-soft);color:var(--adv-text);font-size:.9rem}
+.adv-lesson .compare-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0}
+.adv-lesson .compare-item{padding:14px;border:1px solid var(--adv-line);border-radius:12px;background:var(--adv-soft)}
+.adv-lesson .compare-item strong{display:block;margin-bottom:5px;color:var(--adv-primary-strong)}
+.adv-lesson .error-list{display:grid;gap:12px;margin-top:12px}
+.adv-lesson .error-item{padding:14px;border:1px solid var(--adv-line);border-radius:12px;background:var(--adv-soft)}
+.adv-lesson .error-item p{margin:.25rem 0}
+.adv-lesson .review-box{padding:20px;margin-top:22px;border:1px solid color-mix(in srgb,var(--adv-primary) 36%,var(--adv-line));border-radius:var(--adv-radius);background:color-mix(in srgb,var(--adv-primary) 7%,var(--adv-surface))}
+.adv-lesson .review-box h3{margin:0 0 10px}
+.adv-lesson .review-box ul{margin:0;padding-inline-start:1.25rem}
+.adv-lesson .exercise{padding:18px 20px;margin:12px 0;border:1px solid var(--adv-line);border-radius:14px;background:var(--adv-surface)}
+.adv-lesson .exercise .qno{display:inline-grid;place-items:center;min-width:30px;height:30px;margin-inline-end:.45rem;border-radius:999px;background:var(--adv-primary);color:#fff;font-weight:900;font-size:.82rem}
+.adv-lesson .exercise p{margin:.45rem 0}
+.adv-lesson .choices{margin:.45rem 0 0;padding-inline-start:1.4rem}
+.adv-lesson details.answers{margin-top:18px;border:1px solid var(--adv-line);border-radius:var(--adv-radius);background:var(--adv-surface);overflow:hidden}
+.adv-lesson details.answers>summary{cursor:pointer;list-style:none;padding:17px 20px;font-weight:850;color:var(--adv-primary-strong);background:var(--adv-soft)}
+.adv-lesson details.answers>summary::-webkit-details-marker{display:none}
+.adv-lesson details.answers>summary::before{content:"＋";display:inline-block;margin-inline-end:.5rem;font-weight:900}
+.adv-lesson details.answers[open]>summary::before{content:"−"}
+.adv-lesson .answer-body{padding:18px 20px}
+.adv-lesson .answer-body ol{margin:0;padding-inline-start:1.4rem}
+.adv-lesson .answer-body li{margin:.65rem 0}
+.adv-lesson .source-footer{margin-top:22px;padding:14px 16px;border-top:1px solid var(--adv-line);color:var(--adv-muted);font-size:.82rem}
+@media(max-width:720px){.adv-lesson{line-height:1.75}.adv-lesson .toc ol{columns:1}.adv-lesson .compare-grid{grid-template-columns:1fr}.adv-lesson .adv-hero,.adv-lesson .subtopic{border-radius:14px}.adv-lesson table{min-width:560px}}
+@media(prefers-reduced-motion:reduce){.adv-lesson *{scroll-behavior:auto!important}}
+@media(prefers-color-scheme:dark){html:not([data-theme]) .adv-lesson{--adv-text:#eef4ff;--adv-muted:#a8b7d1;--adv-line:#2b3a55;--adv-surface:#111d31;--adv-soft:#16243a;--adv-primary:#7ea2ff;--adv-primary-strong:#b2c8ff;--adv-success:#66d4a0;--adv-success-soft:#123629;--adv-danger:#ff8e87;--adv-danger-soft:#3b1d22;--adv-warning:#f4c46f;--adv-warning-soft:#3b2d16;--adv-shadow:0 18px 50px rgba(0,0,0,.28)}}
+@media(forced-colors:active){.adv-lesson .adv-card,.adv-lesson .subtopic,.adv-lesson .exercise,.adv-lesson details.answers{border:1px solid CanvasText}}
 </style>
-<header class="adv-hero">
-<p class="adv-kicker">Lesson 1 · ADV-L01</p>
-<h2 lang="fr" dir="ltr">L’article</h2>
-<p class="fa-title" lang="fa">حرف تعریف</p>
-<p class="summary" lang="fa">این درس روی «حرف تعریف» تمرکز دارد و زیرموضوع‌های حرف تعریف نامعین و معین، ارزش عام‌ساز، حرف تعریف جزئی، حذف حرف تعریف، تقابل معنایی سه حرف تعریف را پوشش می‌دهد.</p>
-<p class="meta">Printed pages 6–19 · PDF pages 8–21 · target 250 questions</p>
+
+<header class="adv-hero adv-card">
+  <p class="adv-kicker" dir="ltr">LESSON 01 · ADV-L01 · B1–B2</p>
+  <h2 lang="fr" dir="ltr">L’article</h2>
+  <p class="fa-title">حرف تعریف در زبان فرانسه</p>
+  <p class="summary">در این درس یاد می‌گیرید چگونه میان <span class="grammar">un / une / des</span>، <span class="grammar">le / la / les</span> و <span class="grammar">du / de la / de l’</span> انتخاب کنید، چه زمانی حرف تعریف حذف می‌شود و تغییر article چگونه معنای اسم را از «مورد مشخص» به «یک نمونه» یا «مقداری نامشخص» تغییر می‌دهد.</p>
+  <div class="meta-row" aria-label="مشخصات درس">
+    <span class="meta-chip">کتاب: صفحات 6 تا 19</span>
+    <span class="meta-chip">PDF: صفحات 8 تا 21</span>
+    <span class="meta-chip">موضوع: Articles &amp; absence d’article</span>
+  </div>
 </header>
-<section class="subtopic" id="ADV-L01-ST01">
-<h3 lang="fr" dir="ltr">Article indéfini et défini</h3>
-<p class="fa-subtitle" lang="fa">حرف تعریف نامعین و معین</p>
-<p class="rule" lang="fr">L’indéfini introduit ou particularise un référent; le défini vise un référent unique, spécifique ou partagé.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «حرف تعریف نامعین و معین» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">J’ai rencontré une architecte hier. L’architecte travaille sur notre projet.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز برای هر اسم نخست‌بارآمده حرف تعریف معین می‌گذارد و وضعیت اطلاعِ گوینده و شنونده را نادیده می‌گیرد.</p>
-<p class="source"><code>ADV-L01:book-p006-p007:def-indef</code> · printed 6–7 · PDF 8–9</p>
+
+<section class="lesson-goal adv-card" aria-labelledby="goal-title">
+  <h3 id="goal-title">هدف درس</h3>
+  <p>پس از این درس باید بتوانید تشخیص دهید یک اسم در بافت موردنظر «مشخص و قابل‌شناسایی» است، «یک عضو از یک گروه» است، «یک مفهوم کلی» را بیان می‌کند یا «مقداری نامشخص» از یک ماده/مفهوم است. همچنین باید قواعد مهم حذف article بعد از نفی، عبارت‌های کمّیت و برخی ساختارهای <span class="grammar">de</span> را درست به کار ببرید.</p>
 </section>
-<section class="subtopic" id="ADV-L01-ST02">
-<h3 lang="fr" dir="ltr">Valeur généralisante</h3>
-<p class="fa-subtitle" lang="fa">ارزش عام‌ساز</p>
-<p class="rule" lang="fr">Le défini peut désigner une notion ou une classe; l’indéfini singulier peut représenter un membre-type.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «ارزش عام‌ساز» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Le dauphin est un mammifère.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز جمع نامعین des را مانند مفرد نامعین برای بیان یک طبقهٔ کلی به کار می‌برد.</p>
-<p class="source"><code>ADV-L01:book-p008-p009:generic-value</code> · printed 8–9 · PDF 10–11</p>
+
+<nav class="toc adv-card" aria-label="فهرست درس">
+  <h3>در این درس</h3>
+  <ol>
+    <li><a href="#core-idea">ایدهٔ اصلی</a></li>
+    <li><a href="#indefini">L’article indéfini</a></li>
+    <li><a href="#defini">L’article défini</a></li>
+    <li><a href="#generalisation">Valeur généralisante</a></li>
+    <li><a href="#partitif">L’article partitif</a></li>
+    <li><a href="#absence">L’absence d’article</a></li>
+    <li><a href="#de-constructions">ساختارهای بدون article</a></li>
+    <li><a href="#semantic">تقابل معنایی سه article</a></li>
+    <li><a href="#errors">خطاهای رایج</a></li>
+    <li><a href="#register">Register</a></li>
+    <li><a href="#review">خلاصهٔ آزمونی</a></li>
+    <li><a href="#practice">تمرین</a></li>
+  </ol>
+</nav>
+
+<section class="subtopic" id="core-idea">
+  <h3 lang="fr">L’idée centrale</h3>
+  <p class="fa-subtitle">ایدهٔ اصلی</p>
+  <p>قبل از انتخاب article از خودتان بپرسید: «شنونده باید این اسم را چگونه تفسیر کند؟» آیا دربارهٔ یک نمونه از میان چند مورد حرف می‌زنم؟ آیا مرجع مشخص یا شناخته‌شده است؟ یا دربارهٔ مقداری نامشخص از یک ماده یا مفهوم صحبت می‌کنم؟</p>
+  <div class="table-wrap"><table><thead><tr><th>Article</th><th>شکل</th><th>ایدهٔ اصلی</th><th>مثال</th></tr></thead><tbody>
+    <tr><td lang="fr">indéfini</td><td class="fr"><code>un, une, des</code></td><td>یک یا چند مورد در میان موارد دیگر</td><td class="fr">J’ai rencontré une chercheuse.</td></tr>
+    <tr><td lang="fr">défini</td><td class="fr"><code>le, la, l’, les</code></td><td>مورد مشخص/شناخته‌شده، یکتا یا یک مفهوم کلی</td><td class="fr">Le sommeil est essentiel.</td></tr>
+    <tr><td lang="fr">partitif</td><td class="fr"><code>du, de la, de l’</code></td><td>مقداری نامشخص از یک ماده یا مفهوم</td><td class="fr">Je voudrais du café.</td></tr>
+  </tbody></table></div>
+  <p class="source"><code>ADV-L01:book-p006-p019:overview</code></p>
 </section>
-<section class="subtopic" id="ADV-L01-ST03">
-<h3 lang="fr" dir="ltr">Article partitif</h3>
-<p class="fa-subtitle" lang="fa">حرف تعریف جزئی</p>
-<p class="rule" lang="fr">Le partitif présente une quantité non comptée de matière ou de notion; il sert aussi dans plusieurs emplois lexicalisés.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «حرف تعریف جزئی» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Elle boit du thé après le déjeuner.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز میان du/de la و le/la برای مادهٔ محدود و ماده به‌عنوان مفهوم کلی تمایز نمی‌گذارد.</p>
-<p class="source"><code>ADV-L01:book-p010-p011:partitive</code> · printed 10–11 · PDF 12–13</p>
+
+<section class="subtopic" id="indefini">
+  <h3 lang="fr">L’article indéfini — un, une, des</h3><p class="fa-subtitle">حرف تعریف نامعین</p>
+  <div class="rule"><strong>قاعده:</strong> <span class="grammar">un / une / des + nom</span> معمولاً اسم را به عنوان یک یا چند موردِ نامشخص از میان موارد ممکن معرفی می‌کند.</div>
+  <p class="section-label">معرفی یک عنصر جدید</p>
+  <p>وقتی شخص یا شیء برای نخستین بار وارد گفت‌وگو می‌شود و هنوز برای شنونده مشخص نیست، article indéfini طبیعی است.</p>
+  <div class="example"><p lang="fr">Il y avait un homme devant l’entrée. L’homme attendait quelqu’un.</p><p class="translation">مردی جلوی ورودی بود. آن مرد منتظر کسی بود.</p></div>
+  <p>در جملهٔ اول <span class="grammar">un homme</span> هنوز ناشناخته است؛ در جملهٔ دوم همان شخص قبلاً معرفی شده و به <span class="grammar">l’homme</span> تبدیل می‌شود.</p>
+  <p class="section-label">اسم می‌تواند مشخصات بیشتری داشته باشد</p>
+  <p>وجود صفت، complément du nom یا proposition relative الزاماً اسم را «défini» نمی‌کند. اگر مرجع هنوز یکی از چند امکان باشد، indéfini باقی می‌ماند.</p>
+  <div class="example"><p lang="fr">Elle cherche un appartement lumineux.</p><p class="translation">او دنبال یک آپارتمان روشن است.</p></div>
+  <div class="example"><p lang="fr">Nous avons trouvé un hôtel qui donne sur la mer.</p><p class="translation">هتلی پیدا کردیم که رو به دریاست.</p></div>
+  <div class="callout tip"><strong>نکته:</strong> «اولین بار آمدن اسم» یک راهنمای خوب است، اما معیار نهایی نیست؛ معیار اصلی وضعیت مرجع در بافت است.</div>
+  <p class="source"><code>ADV-L01:book-p006-p007:def-indef</code> · صفحات کتاب 6–7</p>
 </section>
-<section class="subtopic" id="ADV-L01-ST04">
-<h3 lang="fr" dir="ltr">Absence d’article</h3>
-<p class="fa-subtitle" lang="fa">حذف حرف تعریف</p>
-<p class="rule" lang="fr">L’article disparaît après certaines quantités, négations, constructions en de et locutions figées, sous conditions précises.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «حذف حرف تعریف» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Nous avons besoin de patience.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز پس از هر de حرف تعریف را حذف می‌کند، حتی وقتی گروه اسمی مشخص یا معرفه است.</p>
-<p class="source"><code>ADV-L01:book-p012-p017:article-absence</code> · printed 12–17 · PDF 14–19</p>
+
+<section class="subtopic" id="defini">
+  <h3 lang="fr">L’article défini — le, la, l’, les</h3><p class="fa-subtitle">حرف تعریف معین</p>
+  <div class="rule"><strong>قاعده:</strong> article défini زمانی به کار می‌رود که مرجع برای گوینده و شنونده قابل‌شناسایی باشد، یکتا در نظر گرفته شود یا با ادامهٔ جمله دقیقاً مشخص شود.</div>
+  <p class="section-label">مرجع مشخص یا قابل‌شناسایی</p>
+  <div class="example"><p lang="fr">Ferme la fenêtre.</p><p class="translation">پنجره را ببند.</p></div>
+  <p>در موقعیتی که روشن است کدام پنجره منظور است، <span class="grammar">la</span> استفاده می‌شود.</p>
+  <p class="section-label">مشخص‌شدن با ادامهٔ جمله</p>
+  <div class="example"><p lang="fr">Passe-moi le dossier qui est sur la table.</p><p class="translation">پرونده‌ای را که روی میز است به من بده.</p></div>
+  <div class="compare-grid">
+    <div class="compare-item"><strong class="fr">Passe-moi un dossier.</strong><span>یک پرونده؛ مهم نیست کدام.</span></div>
+    <div class="compare-item"><strong class="fr">Passe-moi le dossier.</strong><span>پروندهٔ مشخصی که هر دو می‌شناسیم.</span></div>
+    <div class="compare-item"><strong class="fr">Passe-moi le dossier qui est sur la table.</strong><span>relative دقیقاً مرجع را تعیین می‌کند.</span></div>
+  </div>
+  <p class="section-label">کاربردهای متداول دیگر</p>
+  <ul><li>فصل‌ها و دوره‌های زمانی: <span class="fr">J’adore le printemps.</span></li><li>کشورها، قاره‌ها، مناطق و اقیانوس‌ها در ساختارهای لازم: <span class="fr">La France se trouve en Europe.</span></li><li>نرخ و واحد اندازه‌گیری: <span class="fr">quatre euros le kilo</span></li></ul>
+  <p class="source"><code>ADV-L01:book-p006-p007:definite</code> · صفحات کتاب 6–7</p>
 </section>
-<section class="subtopic" id="ADV-L01-ST05">
-<h3 lang="fr" dir="ltr">Valeur sémantique des trois articles</h3>
-<p class="fa-subtitle" lang="fa">تقابل معنایی سه حرف تعریف</p>
-<p class="rule" lang="fr">Le choix défini, indéfini ou partitif encode respectivement identification, membre non identifié ou quantité non comptée.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «تقابل معنایی سه حرف تعریف» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Je cherche un médecin; le médecin de mon quartier est absent, alors je demande de l’aide.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز گزینه را فقط از روی شمارپذیری اسم انتخاب می‌کند و محدودشدگی و وضعیت ارجاعی را نمی‌سنجد.</p>
-<p class="source"><code>ADV-L01:book-p018-p019:semantic-contrast</code> · printed 18–19 · PDF 20–21</p>
+
+<section class="subtopic" id="generalisation">
+  <h3 lang="fr">Valeur généralisante</h3><p class="fa-subtitle">ارزش عام‌ساز article défini و indéfini</p>
+  <p>article défini همیشه به معنی «آن چیز خاص» نیست. می‌تواند یک گونه، گروه، احساس، ماده یا مفهوم را به صورت کلی معرفی کند.</p>
+  <div class="example"><p lang="fr">Le sommeil est essentiel à la santé.</p><p class="translation">خواب برای سلامتی ضروری است.</p></div>
+  <div class="example"><p lang="fr">Les enfants ont besoin de sécurité.</p><p class="translation">کودکان به طور کلی به امنیت نیاز دارند.</p></div>
+  <p>مفرد نامعین نیز می‌تواند یک عضو فرضی را به عنوان نمایندهٔ کل طبقه نشان دهد:</p>
+  <div class="example"><p lang="fr">Un enfant a besoin de stabilité.</p><p class="translation">هر کودکی / یک کودک به عنوان نمایندهٔ گروه به ثبات نیاز دارد.</p></div>
+  <div class="callout warn"><strong>تفاوت مهم:</strong> <span class="grammar">les</span> می‌تواند دربارهٔ کل گروه باشد، اما <span class="grammar">des</span> معمولاً فقط «بعضی اعضای گروه» را بیان می‌کند.</div>
+  <div class="example"><p lang="fr">Les étudiants ont besoin de repos.</p><p class="translation">دانشجویان به طور کلی به استراحت نیاز دارند.</p></div>
+  <div class="example"><p lang="fr">Des étudiants ont besoin de repos.</p><p class="translation">تعدادی دانشجو به استراحت نیاز دارند.</p></div>
+  <p class="source"><code>ADV-L01:book-p008-p009:generic-value</code> · صفحات کتاب 8–9</p>
 </section>
-<aside class="notes"><h3>Notes avancées</h3>
-<section><h4>Exceptions / استثناها</h4><ul><li>Après une négation ou une expression de quantité, de remplace souvent l’indéfini/partitif, mais le défini subsiste et ce n’est pas suit le régime affirmatif.</li><li>La plupart, la majorité, la minorité et la moitié prennent un article après de.</li></ul></section>
-<section><h4>Contrastes / تقابل‌ها</h4><ul><li>défini spécifique vs défini générique</li><li>indéfini singulier générique vs des non générique</li><li>partitif limité vs défini de matière générale</li></ul></section>
-<section><h4>Restrictions / محدودیت‌ها</h4><ul><li>L’absence d’article dépend de constructions lexicales et ne se généralise pas à tout de.</li><li>Ni... ni, sans et aucun ont leurs propres contraintes de détermination.</li></ul></section>
-<section><h4>Register / سطح زبانی</h4><ul><li>L’emploi partitif avec un nom d’auteur ou de compositeur relève surtout de l’usage familier.</li></ul></section>
-<section><h4>Semantic notes / نکات معنایی</h4><ul><li>Le choix d’article encode l’identifiabilité, la classe, la quantité et la limitation du référent.</li></ul></section>
-</aside>
+
+<section class="subtopic" id="partitif">
+  <h3 lang="fr">L’article partitif — du, de la, de l’</h3><p class="fa-subtitle">حرف تعریف جزئی</p>
+  <div class="rule"><strong>قاعده:</strong> partitif برای مقدار نامشخص و شمارش‌نشده از یک ماده یا مفهوم به کار می‌رود.</div>
+  <div class="example"><p lang="fr">Je voudrais du café.</p><p class="translation">مقداری قهوه می‌خواهم.</p></div>
+  <div class="example"><p lang="fr">Il faut de la patience.</p><p class="translation">صبر لازم است.</p></div>
+  <div class="example"><p lang="fr">Nous avons eu de la chance.</p><p class="translation">شانس آوردیم.</p></div>
+  <p class="section-label">با فعالیت‌ها</p><div class="example"><p lang="fr">faire du sport · faire de la randonnée · faire de la musique</p></div>
+  <p>با این حال، بعضی عبارت‌ها lexicalisées هستند و باید به صورت یک واحد یاد گرفته شوند؛ مثلاً <span class="fr">faire le ménage</span>.</p>
+  <p class="section-label">پدیده‌های طبیعی</p><div class="example"><p lang="fr">Il y a du vent. · Il y aura de la neige demain.</p></div>
+  <p class="section-label">حیوان در برابر گوشت حیوان</p><div class="example"><p lang="fr">J’ai acheté un poulet. / Je mange du poulet.</p><p class="translation">در اولی یک واحد/حیوان مطرح است؛ در دومی گوشت مرغ به عنوان ماده.</p></div>
+  <p class="section-label">نام هنرمند</p><div class="example"><p lang="fr">On écoute du Mozart ce soir.</p><p class="translation">امشب مقداری/آثاری از موزار گوش می‌دهیم.</p></div>
+  <div class="callout tip">این کاربرد با نام هنرمند یا آهنگساز بیشتر رنگ گفتاری دارد.</div>
+  <p class="source"><code>ADV-L01:book-p010-p011:partitive</code> · صفحات کتاب 10–11</p>
+</section>
+
+<section class="subtopic" id="absence">
+  <h3 lang="fr">L’absence d’article</h3><p class="fa-subtitle">حذف حرف تعریف</p>
+  <p>در فرانسه نبودن article معمولاً نتیجهٔ یک ساختار مشخص است. مهم‌ترین موارد این درس عبارت‌اند از: نفی، عبارت‌های کمّیت، برخی ساختارهای <span class="grammar">de</span> و تعدادی عبارت ثابت.</p>
+  <p class="section-label">۱) بعد از نفی: indéfini/partitif → de</p>
+  <div class="example"><p lang="fr">J’ai des amis ici. → Je n’ai pas d’amis ici.</p></div>
+  <div class="example"><p lang="fr">Elle boit du café. → Elle ne boit pas de café.</p></div>
+  <div class="callout warn"><strong>اما article défini باقی می‌ماند:</strong> <span class="fr">Je n’aime pas le café.</span> چون <span class="grammar">le café</span> در اینجا قهوه را به صورت یک مفهوم کلی بیان می‌کند.</div>
+  <p class="section-label">۲) بعد از sans و aucun / aucune</p><div class="example"><p lang="fr">Il travaille sans motivation. · Je n’ai aucune information.</p></div>
+  <p class="section-label">۳) استثنای مهم: ce n’est pas / ce ne sont pas</p>
+  <div class="callout good"><p class="fr"><span class="correct">✓</span> Ce n’est pas un problème.</p><p class="fr"><span class="correct">✓</span> Ce ne sont pas des erreurs.</p></div>
+  <div class="callout bad"><p class="fr"><span class="incorrect">✗</span> Ce n’est pas de problème.</p></div>
+  <p class="section-label">۴) بعد از عبارت‌های کمّیت</p><div class="example"><p lang="fr">beaucoup de travail · peu de temps · trop de problèmes</p></div>
+  <div class="callout warn"><strong>گروه‌های مهمی که رفتار متفاوت دارند:</strong> <span class="fr">la plupart des candidats</span>، <span class="fr">la majorité de la population</span>، <span class="fr">la moitié de l’année</span>.</div>
+  <p class="source"><code>ADV-L01:book-p012-p015:article-absence</code> · صفحات کتاب 12–15</p>
+</section>
+
+<section class="subtopic" id="de-constructions">
+  <h3 lang="fr">Constructions sans article</h3><p class="fa-subtitle">ساختارهای مهم بدون article</p>
+  <p class="section-label">الف) برخی ساختارهای de + nom</p>
+  <p>در تعدادی از ساختارها، اسم پس از <span class="grammar">de</span> بدون article می‌آید:</p>
+  <div class="example"><p lang="fr">être couvert de neige · être entouré de silence · être rempli de monde</p></div>
+  <p>اما اگر اسم به شکل مشخص‌تری توصیف شود، article می‌تواند برگردد:</p>
+  <div class="example"><p lang="fr">La table était couverte de poussière.</p><p lang="fr">La table était couverte d’une épaisse couche de poussière.</p></div>
+  <p class="section-label">ب) احساسات، نیاز، کمبود و فقدان</p><div class="example"><p lang="fr">trembler de peur · pleurer de joie · mourir de faim · rougir de honte</p></div><div class="example"><p lang="fr">avoir besoin de temps · manquer de confiance · être privé de liberté</p></div>
+  <p class="section-label">ج) locutions verbales ثابت</p><div class="example"><p lang="fr">avoir faim · avoir peur · avoir sommeil · faire attention · faire signe · rendre service</p></div>
+  <p class="section-label">د) nom + de + nom برای نوع/دسته</p><div class="example"><p lang="fr">un billet de train · une salle de réunion · une table de cuisine</p></div>
+  <div class="compare-grid"><div class="compare-item"><strong class="fr">une lampe de bureau</strong><span>نوعِ چراغ: چراغ رومیزی/اداری</span></div><div class="compare-item"><strong class="fr">la lampe du bureau</strong><span>چراغِ آن دفتر مشخص</span></div><div class="compare-item"><strong class="fr">une table en bois</strong><span>جنسِ میز: چوبی</span></div></div>
+  <p class="section-label">هـ) مادهٔ سازنده با en</p><div class="example"><p lang="fr">une bague en argent · une veste en coton · une table en bois</p></div>
+  <p class="section-label">و) avec + nom abstrait</p><div class="example"><p lang="fr">avec patience · avec prudence · avec plaisir · avec calme</p></div>
+  <p>اگر اسم انتزاعی مشخص یا توصیف شود، article می‌تواند برگردد:</p><div class="example"><p lang="fr">Il a répondu avec une patience remarquable.</p></div>
+  <p class="section-label">ز) آگهی‌ها، تابلوها، عناوین و عبارت‌های تثبیت‌شده</p>
+  <p>در سبک فشردهٔ آگهی‌ها و تابلوها article ممکن است حذف شود. همچنین بعضی proverbes و expressions figées شکل تثبیت‌شدهٔ بدون article دارند. این حذف را نباید به نثر عادی تعمیم داد.</p>
+  <p class="source"><code>ADV-L01:book-p014-p017:de-and-zero-article</code> · صفحات کتاب 14–17</p>
+</section>
+
+<section class="subtopic" id="semantic">
+  <h3 lang="fr">Valeur sémantique des trois articles</h3><p class="fa-subtitle">تقابل معنایی سه حرف تعریف</p>
+  <p>بخش پایانی درس نشان می‌دهد که انتخاب article فقط یک انتخاب شکلی نیست؛ همان اسم با article متفاوت می‌تواند تفسیر معنایی متفاوتی بگیرد.</p>
+  <div class="compare-grid"><div class="compare-item"><strong class="fr">Le pain...</strong><span>نان به عنوان ماده/مفهوم یا مرجع مشخص.</span></div><div class="compare-item"><strong class="fr">un pain</strong><span>یک واحد قابل‌شمارش؛ مثلاً یک قرص نان.</span></div><div class="compare-item"><strong class="fr">du pain</strong><span>مقداری نامشخص نان.</span></div></div>
+  <p class="section-label">یک تقابل پیشرفته با اسم واحد</p>
+  <div class="example"><p lang="fr">Le vent s’est levé vers 5 heures.</p><p class="translation">بادِ موقعیت موردنظر/باد به عنوان پدیدهٔ مشخص مطرح شده است.</p></div>
+  <div class="example"><p lang="fr">Aujourd’hui, il y a un vent très violent.</p><p class="translation">یک نوع/وضعیت مشخص و توصیف‌شده از باد مطرح شده است.</p></div>
+  <div class="example"><p lang="fr">Il y a du vent aujourd’hui.</p><p class="translation">وجود مقداری نامشخص از پدیدهٔ باد.</p></div>
+  <div class="table-wrap"><table><thead><tr><th>منظور</th><th>ساختار</th><th>مثال</th></tr></thead><tbody>
+    <tr><td>یک مورد از چند مورد</td><td class="fr"><code>un / une / des</code></td><td class="fr">J’ai vu un médecin.</td></tr>
+    <tr><td>مورد مشخص</td><td class="fr"><code>le / la / les</code></td><td class="fr">Le médecin que tu connais...</td></tr>
+    <tr><td>کل یک مفهوم/طبقه</td><td class="fr"><code>le / la / les</code></td><td class="fr">Le sport est bénéfique.</td></tr>
+    <tr><td>عضو فرضی نمایندهٔ طبقه</td><td class="fr"><code>un / une</code></td><td class="fr">Un enfant a besoin d’attention.</td></tr>
+    <tr><td>بعضی اعضای گروه</td><td class="fr"><code>des</code></td><td class="fr">Des étudiants sont absents.</td></tr>
+    <tr><td>مقدار نامشخص</td><td class="fr"><code>du / de la / de l’</code></td><td class="fr">Il boit du lait.</td></tr>
+  </tbody></table></div>
+  <p class="source"><code>ADV-L01:book-p018-p019:semantic-contrast</code> · صفحات کتاب 18–19</p>
+</section>
+
+<section class="subtopic" id="errors">
+  <h3>خطاهای رایج</h3><p class="fa-subtitle">اشتباه‌هایی که باید فعالانه از آن‌ها جلوگیری کنید</p>
+  <div class="error-list">
+    <div class="error-item"><p class="fr"><span class="incorrect">✗</span> Des chiens ont besoin d’exercice.</p><p class="fr"><span class="correct">✓</span> Les chiens ont besoin d’exercice.</p><p><strong>دلیل:</strong> اگر منظور سگ‌ها به طور کلی است، <span class="grammar">les</span> لازم است؛ <span class="grammar">des</span> یعنی «بعضی سگ‌ها».</p></div>
+    <div class="error-item"><p class="fr"><span class="incorrect">✗</span> Je n’ai pas des questions.</p><p class="fr"><span class="correct">✓</span> Je n’ai pas de questions.</p><p><strong>دلیل:</strong> indéfini جمع بعد از نفی معمولاً به <span class="grammar">de</span> تبدیل می‌شود.</p></div>
+    <div class="error-item"><p class="fr"><span class="incorrect">✗</span> Je n’aime pas de musique classique.</p><p class="fr"><span class="correct">✓</span> Je n’aime pas la musique classique.</p><p><strong>دلیل:</strong> موضوع یک مفهوم کلی است؛ article défini در نفی حفظ می‌شود.</p></div>
+    <div class="error-item"><p class="fr"><span class="incorrect">✗</span> beaucoup des problèmes</p><p class="fr"><span class="correct">✓</span> beaucoup de problèmes</p><p><strong>دلیل:</strong> بعد از expression de quantité معمولاً <span class="grammar">de</span> می‌آید.</p></div>
+    <div class="error-item"><p class="fr"><span class="incorrect">✗</span> Elle manque de la confiance.</p><p class="fr"><span class="correct">✓</span> Elle manque de confiance.</p><p><strong>دلیل:</strong> <span class="fr">manquer de + nom</span> در این کاربرد اسم را بدون article می‌آورد.</p></div>
+    <div class="error-item"><p class="fr"><span class="incorrect">✗</span> Fais l’attention !</p><p class="fr"><span class="correct">✓</span> Fais attention !</p><p><strong>دلیل:</strong> <span class="fr">faire attention</span> یک locution تثبیت‌شده است.</p></div>
+  </div>
+  <div class="callout tip"><strong>توضیح تکمیلی آموزشی:</strong> <span class="fr">beaucoup des problèmes que nous avons rencontrés</span> ممکن است درست باشد، چون در آنجا <span class="grammar">des = de + les</span> و دربارهٔ مجموعهٔ مشخصِ «مشکلاتی که با آن‌ها روبه‌رو شدیم» صحبت می‌کنیم.</div>
+</section>
+
+<section class="subtopic" id="register">
+  <h3 lang="fr">Langue réelle et registre</h3><p class="fa-subtitle">زبان واقعی و سطح زبانی</p>
+  <ul><li>کاربرد partitif با نام هنرمند/آهنگساز، مانند <span class="fr">du Mozart</span>، بیشتر رنگ گفتاری دارد.</li><li>حذف article در annonces، titres، panneaux و style télégraphique ناشی از فشرده‌سازی زبان است و نباید به جمله‌های عادی نوشتاری تعمیم داده شود.</li><li>در مکالمه، نوشتار رسمی و آزمون، اصل انتخاب article بر اساس معنای مرجع همچنان ثابت است.</li></ul>
+</section>
+
+<section class="subtopic">
+  <h3>نکات کلیدی یادگیری</h3><p class="fa-subtitle">چگونه سریع‌تر انتخاب کنید؟</p>
+  <ul><li>اول «معنا و وضعیت مرجع» را تعیین کنید، بعد article را انتخاب کنید.</li><li><span class="grammar">les</span> را با <span class="grammar">des</span> یکی ندانید: کل گروه در برابر بعضی اعضا.</li><li>در نفی ابتدا ببینید article اولیه partitif/indéfini بوده یا défini؛ فقط گروه اول معمولاً به <span class="grammar">de</span> تبدیل می‌شود.</li><li>بعد از <span class="grammar">de</span> حذف article را خودکار فرض نکنید؛ نوع ساختار و مشخص‌بودن اسم مهم است.</li><li><span class="fr">de + nom</span> و <span class="fr">en + matière</span> را از هم جدا کنید: «نوع/دسته» در برابر «جنس ماده».</li></ul>
+</section>
+
+<section class="review-box" id="review">
+  <h3>خلاصه‌ای که باید به خاطر بسپارید</h3>
+  <ul><li><span class="grammar">un / une / des</span> → یک یا چند مورد نامشخص.</li><li><span class="grammar">le / la / les</span> → مورد مشخص، شناخته‌شده یا کل یک مفهوم/گروه.</li><li><span class="grammar">du / de la / de l’</span> → مقدار نامشخص از ماده یا مفهوم.</li><li><span class="fr">Les enfants...</span> → کودکان به طور کلی؛ <span class="fr">Des enfants...</span> → بعضی کودکان.</li><li>بعد از نفی: <span class="grammar">du / de la / des → de</span>، اما article défini معمولاً باقی می‌ماند.</li><li>بعد از quantity: <span class="fr">beaucoup de, peu de, trop de</span>.</li><li>عبارت‌های مهم بدون article: <span class="fr">avoir faim, faire attention, avoir besoin de, manquer de</span>.</li><li><span class="fr">une table de cuisine</span> → نوع/کاربرد؛ <span class="fr">une table en bois</span> → جنس.</li><li>استثنای مهم نفی: <span class="fr">Ce n’est pas un problème.</span></li></ul>
+</section>
+
+<section class="subtopic" id="practice">
+  <h3>تمرین</h3><p class="fa-subtitle">قواعد همین درس را در بافت تشخیص دهید</p>
+  <div class="exercise"><p><span class="qno">1</span>گزینهٔ درست را انتخاب کنید:</p><p class="fr">___ patience est indispensable dans ce métier.</p><ol class="choices" type="A"><li>Une</li><li>De la</li><li>La</li><li>Des</li></ol></div>
+  <div class="exercise"><p><span class="qno">2</span>جای خالی را پر کنید:</p><p class="fr">Je bois ___ café le matin, mais je ne bois jamais ___ café le soir.</p></div>
+  <div class="exercise"><p><span class="qno">3</span>کدام جمله یعنی «بعضی دانشجویان غایب‌اند»؟</p><p class="fr">A. Les étudiants sont absents.</p><p class="fr">B. Des étudiants sont absents.</p></div>
+  <div class="exercise"><p><span class="qno">4</span>جمله را اصلاح کنید:</p><p class="fr">Il n’a pas des amis dans cette ville.</p></div>
+  <div class="exercise"><p><span class="qno">5</span>کدام درست است؟</p><p class="fr">A. Elle a beaucoup des travail.</p><p class="fr">B. Elle a beaucoup de travail.</p></div>
+  <div class="exercise"><p><span class="qno">6</span>کامل کنید:</p><p class="fr">J’ai besoin ___ informations supplémentaires.</p></div>
+  <div class="exercise"><p><span class="qno">7</span>کامل کنید:</p><p class="fr">La route était couverte ___ neige.</p></div>
+  <div class="exercise"><p><span class="qno">8</span>فرق معنایی این دو را توضیح دهید:</p><p class="fr">une table de cuisine</p><p class="fr">une table en bois</p></div>
+  <div class="exercise"><p><span class="qno">9</span>اگر منظور «من شکلات را به طور کلی دوست ندارم» باشد، کدام درست است؟</p><p class="fr">A. Je n’aime pas de chocolat.</p><p class="fr">B. Je n’aime pas le chocolat.</p></div>
+  <div class="exercise"><p><span class="qno">10</span>در معنای کلی «با آرامش» کامل کنید:</p><p class="fr">Il a répondu avec ___ calme.</p></div>
+  <div class="exercise"><p><span class="qno">11</span>جمله را اصلاح کنید:</p><p class="fr">Faites l’attention en traversant.</p></div>
+  <div class="exercise"><p><span class="qno">12</span>تفاوت معنایی این سه جمله را توضیح دهید:</p><p class="fr">Le chien est intelligent.</p><p class="fr">Un chien peut apprendre beaucoup de choses.</p><p class="fr">Des chiens attendent devant la porte.</p></div>
+  <details class="answers"><summary>پاسخ تمرین‌ها</summary><div class="answer-body"><ol>
+    <li><strong>La patience</strong> — مفهوم انتزاعی به طور کلی مطرح است.</li>
+    <li><span class="fr">Je bois <strong>du</strong> café le matin, mais je ne bois jamais <strong>de</strong> café le soir.</span></li>
+    <li><strong>B</strong> — <span class="fr">Des étudiants...</span> یعنی تعدادی/بعضی دانشجویان.</li>
+    <li><span class="fr">Il n’a pas <strong>d’amis</strong> dans cette ville.</span></li>
+    <li><strong>B</strong> — <span class="fr">beaucoup de travail</span>.</li>
+    <li><span class="fr">J’ai besoin <strong>d’informations</strong> supplémentaires.</span></li>
+    <li><span class="fr">La route était couverte <strong>de neige</strong>.</span></li>
+    <li><span class="fr">de cuisine</span> نوع/کاربرد را می‌دهد؛ <span class="fr">en bois</span> جنس ماده را.</li>
+    <li><strong>B</strong> — برای «شکلات به طور کلی» article défini حفظ می‌شود.</li>
+    <li><span class="fr">avec calme</span> — در این کاربرد اسم انتزاعی بدون article می‌آید.</li>
+    <li><span class="fr">Faites attention en traversant.</span></li>
+    <li><span class="fr">Le chien...</span> گونه/طبقه را به طور کلی می‌بیند؛ <span class="fr">Un chien...</span> یک عضو فرضی را نمایندهٔ طبقه می‌کند؛ <span class="fr">Des chiens...</span> به تعدادی سگ نامشخص اشاره دارد.</li>
+  </ol></div></details>
+</section>
+
+<footer class="source-footer"><strong>Source:</strong> <span lang="fr">Grammaire Progressive du Français — Niveau Avancé — 3e édition</span>، درس ۱ <span lang="fr">L’article</span>، صفحات چاپی 6–19 (PDF 8–21). مثال‌های آموزشی این فایل برای آموزش بازنویسی/تولید شده‌اند و تمرین‌های کتاب را عیناً بازتولید نمی‌کنند.</footer>
 </article>

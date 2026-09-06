@@ -1,68 +1,616 @@
-<article class="adv-lesson" data-lesson-id="ADV-L02">
+<article class="adv-lesson adv-lesson-l02" data-lesson-id="ADV-L02">
 <style>
-.adv-lesson{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.75;color:#172033;max-width:980px;margin:0 auto;padding:8px 2px 40px}
+.adv-lesson{
+  --al-ink:var(--ink,#17233c);
+  --al-muted:var(--muted,#5a6477);
+  --al-line:var(--line,#d9dfeb);
+  --al-surface:var(--surface,#fff);
+  --al-soft:var(--surface-soft,#f5f7fb);
+  --al-canvas:var(--canvas,#eef2f8);
+  --al-primary:var(--primary,#2856c7);
+  --al-primary-strong:var(--primary-strong,#1c3f99);
+  --al-success:var(--success,#18794e);
+  --al-success-soft:var(--success-soft,#e9f7f0);
+  --al-danger:var(--danger,#b42318);
+  --al-danger-soft:var(--danger-soft,#fff0ee);
+  --al-warning:var(--warning,#8a4b08);
+  --al-warning-soft:var(--warning-soft,#fff7e8);
+  font-family:var(--font-ui,Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif);
+  color:var(--al-ink);
+  line-height:1.9;
+  max-width:980px;
+  margin:0 auto;
+  padding:4px 2px 40px;
+  overflow-wrap:anywhere;
+}
 .adv-lesson *{box-sizing:border-box}
-.adv-lesson .adv-hero{padding:24px;border:1px solid #e3e8f0;border-radius:18px;background:#fff;margin-bottom:22px}
-.adv-lesson .adv-kicker{font-size:.86rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.65;margin:0 0 6px}
-.adv-lesson h2,.adv-lesson h3{line-height:1.35}
-.adv-lesson h2{font-size:1.65rem;margin:0 0 4px}
-.adv-lesson .fa-title{direction:rtl;text-align:right;font-weight:650;margin:.2rem 0 .8rem}
-.adv-lesson .summary{direction:rtl;text-align:right;margin:0}
-.adv-lesson .meta{margin-top:12px;font-size:.9rem;opacity:.72}
-.adv-lesson .subtopic{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin:18px 0;background:#fff}
-.adv-lesson .subtopic h3{margin:0 0 2px;font-size:1.25rem}
-.adv-lesson .fa-subtitle{direction:rtl;text-align:right;font-weight:600;margin:.1rem 0 1rem}
-.adv-lesson .rule{direction:ltr;text-align:left;padding:12px 14px;border-left:4px solid currentColor;background:#f7f9fc;border-radius:8px;margin:12px 0}
-.adv-lesson .teaching,.adv-lesson .trap{direction:rtl;text-align:right}
-.adv-lesson .example{direction:ltr;text-align:left;font-style:italic;padding:10px 14px;background:#f7f9fc;border-radius:8px}
-.adv-lesson .trap{padding:10px 14px;border:1px dashed #c7ced9;border-radius:8px}
-.adv-lesson .source{font-size:.82rem;opacity:.65;margin-top:12px}
-.adv-lesson .notes{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin-top:22px}
-.adv-lesson .notes h3{margin-top:0}
-.adv-lesson .notes section{margin:16px 0}
-.adv-lesson .notes h4{margin:0 0 6px}
-.adv-lesson .notes ul{margin-top:4px}
+.adv-lesson h2,.adv-lesson h3,.adv-lesson h4{color:var(--al-ink);line-height:1.4}
+.adv-lesson h2{font-size:clamp(1.7rem,4vw,2.35rem);margin:0}
+.adv-lesson h3{font-size:clamp(1.25rem,3vw,1.55rem);margin:0}
+.adv-lesson h4{font-size:1.08rem;margin:1.15rem 0 .45rem}
+.adv-lesson p{margin:.55rem 0}
+.adv-lesson ul,.adv-lesson ol{margin:.55rem 0;padding-inline-start:1.4rem}
+.adv-lesson li{margin:.35rem 0}
+.adv-lesson code,.adv-lesson .fr{direction:ltr;unicode-bidi:isolate;text-align:left}
+.adv-lesson code{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;
+  color:var(--al-primary-strong);
+  background:var(--al-soft);
+  border:1px solid var(--al-line);
+  border-radius:7px;
+  padding:.06rem .32rem;
+  font-size:.92em;
+}
+.adv-lesson .fa{direction:rtl;text-align:right}
+.adv-lesson .adv-hero,
+.adv-lesson .lesson-card,
+.adv-lesson .summary-card,
+.adv-lesson .exercise-card{
+  border:1px solid var(--al-line);
+  background:var(--al-surface);
+  border-radius:18px;
+}
+.adv-lesson .adv-hero{
+  padding:clamp(20px,4vw,30px);
+  margin-bottom:22px;
+  box-shadow:var(--shadow,0 18px 50px rgba(34,53,90,.09));
+}
+.adv-lesson .adv-kicker{
+  margin:0 0 5px;
+  color:var(--al-primary);
+  font-size:.82rem;
+  font-weight:850;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.adv-lesson .fa-title{font-size:1.08rem;font-weight:800;margin:.2rem 0 .7rem}
+.adv-lesson .summary{max-width:75ch;margin:.3rem 0 0}
+.adv-lesson .meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px 12px;
+  margin-top:14px;
+  color:var(--al-muted);
+  font-size:.88rem;
+}
+.adv-lesson .meta span{
+  display:inline-flex;
+  align-items:center;
+  min-height:29px;
+  padding:3px 9px;
+  border:1px solid var(--al-line);
+  border-radius:999px;
+  background:var(--al-soft);
+}
+.adv-lesson .goal-box,
+.adv-lesson .idea-box{
+  margin-top:16px;
+  padding:15px 17px;
+  border-radius:14px;
+  background:var(--al-soft);
+  border-inline-start:4px solid var(--al-primary);
+}
+.adv-lesson .goal-box strong,.adv-lesson .idea-box strong{color:var(--al-primary-strong)}
+.adv-lesson .lesson-card{padding:clamp(18px,3vw,25px);margin:18px 0}
+.adv-lesson .section-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:14px;
+  padding-bottom:12px;
+  margin-bottom:14px;
+  border-bottom:1px solid var(--al-line);
+}
+.adv-lesson .section-no{
+  flex:0 0 auto;
+  display:grid;
+  place-items:center;
+  inline-size:38px;
+  block-size:38px;
+  border-radius:11px;
+  background:var(--al-soft);
+  color:var(--al-primary);
+  font-weight:900;
+  direction:ltr;
+}
+.adv-lesson .section-titles{min-width:0;flex:1}
+.adv-lesson .fa-subtitle{margin:.15rem 0 0;color:var(--al-muted);font-weight:700}
+.adv-lesson .rule-box,
+.adv-lesson .example-box,
+.adv-lesson .contrast-box,
+.adv-lesson .warning-box,
+.adv-lesson .success-box{
+  border-radius:13px;
+  padding:13px 15px;
+  margin:12px 0;
+}
+.adv-lesson .rule-box{background:var(--al-soft);border-inline-start:4px solid var(--al-primary)}
+.adv-lesson .example-box{background:var(--al-soft);border:1px solid var(--al-line)}
+.adv-lesson .contrast-box{background:var(--al-warning-soft);border:1px solid color-mix(in srgb,var(--al-warning) 40%,var(--al-line))}
+.adv-lesson .warning-box{background:var(--al-danger-soft);border:1px solid color-mix(in srgb,var(--al-danger) 40%,var(--al-line))}
+.adv-lesson .success-box{background:var(--al-success-soft);border:1px solid color-mix(in srgb,var(--al-success) 40%,var(--al-line))}
+.adv-lesson .label{
+  display:inline-block;
+  margin-bottom:5px;
+  color:var(--al-primary-strong);
+  font-size:.78rem;
+  font-weight:900;
+  letter-spacing:.02em;
+}
+.adv-lesson .fr-line{
+  direction:ltr;
+  unicode-bidi:isolate;
+  text-align:left;
+  margin:.35rem 0;
+  font-weight:650;
+}
+.adv-lesson .translation{direction:rtl;text-align:right;color:var(--al-muted);font-size:.94rem}
+.adv-lesson .pair{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:10px;
+  margin:12px 0;
+}
+.adv-lesson .correct,.adv-lesson .incorrect{
+  padding:11px 13px;
+  border-radius:11px;
+  border:1px solid var(--al-line);
+  background:var(--al-soft);
+}
+.adv-lesson .correct{border-inline-start:4px solid var(--al-success)}
+.adv-lesson .incorrect{border-inline-start:4px solid var(--al-danger)}
+.adv-lesson .correct .mark{color:var(--al-success);font-weight:900}
+.adv-lesson .incorrect .mark{color:var(--al-danger);font-weight:900}
+.adv-lesson .table-wrap{
+  width:100%;
+  overflow-x:auto;
+  margin:13px 0;
+  border:1px solid var(--al-line);
+  border-radius:14px;
+  background:var(--al-surface);
+}
+.adv-lesson table{width:100%;border-collapse:collapse;min-width:660px}
+.adv-lesson th,.adv-lesson td{padding:11px 12px;border-bottom:1px solid var(--al-line);vertical-align:top;text-align:start}
+.adv-lesson th{background:var(--al-soft);color:var(--al-ink);font-size:.9rem}
+.adv-lesson tr:last-child td{border-bottom:0}
+.adv-lesson td{color:var(--al-ink)}
+.adv-lesson .muted{color:var(--al-muted)}
+.adv-lesson .source-note{
+  margin-top:15px;
+  padding-top:11px;
+  border-top:1px dashed var(--al-line);
+  color:var(--al-muted);
+  font-size:.82rem;
+}
+.adv-lesson .summary-card,.adv-lesson .exercise-card{padding:clamp(18px,3vw,25px);margin:20px 0}
+.adv-lesson .summary-card{background:var(--al-soft)}
+.adv-lesson .memory-list{display:grid;gap:8px;padding:0;list-style:none}
+.adv-lesson .memory-list li{
+  padding:10px 12px;
+  border:1px solid var(--al-line);
+  border-radius:11px;
+  background:var(--al-surface);
+}
+.adv-lesson .exercise-list{counter-reset:item;padding:0;list-style:none}
+.adv-lesson .exercise-list li{
+  counter-increment:item;
+  position:relative;
+  padding:10px 44px 10px 12px;
+  border-bottom:1px solid var(--al-line);
+}
+.adv-lesson .exercise-list li::before{
+  content:counter(item);
+  position:absolute;
+  inset-inline-end:0;
+  top:10px;
+  inline-size:30px;
+  block-size:30px;
+  display:grid;
+  place-items:center;
+  border-radius:9px;
+  background:var(--al-soft);
+  color:var(--al-primary);
+  font-weight:900;
+  direction:ltr;
+}
+.adv-lesson details{
+  margin-top:14px;
+  border:1px solid var(--al-line);
+  border-radius:13px;
+  background:var(--al-soft);
+  overflow:hidden;
+}
+.adv-lesson summary{
+  cursor:pointer;
+  padding:12px 15px;
+  color:var(--al-primary-strong);
+  font-weight:850;
+}
+.adv-lesson details > div{padding:0 15px 14px}
+.adv-lesson .answer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.adv-lesson .answer-grid div{padding:8px 10px;border:1px solid var(--al-line);border-radius:9px;background:var(--al-surface)}
+.adv-lesson a{color:var(--al-primary)}
+@media (min-width:720px){
+  .adv-lesson .pair{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .adv-lesson{line-height:1.82}
+  .adv-lesson .adv-hero,.adv-lesson .lesson-card,.adv-lesson .summary-card,.adv-lesson .exercise-card{border-radius:15px}
+  .adv-lesson .section-head{gap:10px}
+  .adv-lesson .section-no{inline-size:34px;block-size:34px}
+  .adv-lesson .answer-grid{grid-template-columns:1fr}
+  .adv-lesson th,.adv-lesson td{padding:9px 10px}
+}
+@media (forced-colors:active){
+  .adv-lesson .adv-hero,.adv-lesson .lesson-card,.adv-lesson .summary-card,.adv-lesson .exercise-card,.adv-lesson .table-wrap{border:1px solid CanvasText}
+}
 </style>
+
 <header class="adv-hero">
-<p class="adv-kicker">Lesson 2 · ADV-L02</p>
-<h2 lang="fr" dir="ltr">L’adjectif</h2>
-<p class="fa-title" lang="fa">صفت</p>
-<p class="summary" lang="fa">این درس روی «صفت» تمرکز دارد و زیرموضوع‌های صفت‌های عددی، صفت‌های نامعین، جایگاه صفت را پوشش می‌دهد.</p>
-<p class="meta">Printed pages 20–25 · PDF pages 22–27 · target 220 questions</p>
+  <p class="adv-kicker">Lesson 2 · ADV-L02</p>
+  <h2 lang="fr" dir="ltr">L’ADJECTIF</h2>
+  <p class="fa fa-title" lang="fa">صفت؛ صفت‌های عددی، صفت‌های نامعین و جایگاه صفت</p>
+  <p class="fa summary" lang="fa">در این درس یاد می‌گیرید اعداد چگونه نقش صفت پیدا می‌کنند، صفت‌های نامعین چه تفاوت معنایی با یکدیگر دارند، و چرا جای صفت در فرانسه می‌تواند فقط یک تفاوت شکلی نباشد و حتی معنای جمله را تغییر دهد.</p>
+  <div class="meta">
+    <span>Printed pages 20–25</span>
+    <span>PDF pages 22–27</span>
+    <span>3 main subtopics</span>
+  </div>
+  <div class="goal-box fa" lang="fa"><strong>هدف درس:</strong> بعد از این درس باید بتوانید بین cardinal و ordinal، بین صفت‌های نامعین نزدیک به هم، و بین صفتِ پیش از اسم و پس از اسم انتخاب آگاهانه داشته باشید.</div>
+  <div class="idea-box fa" lang="fa"><strong>ایدهٔ اصلی:</strong> در فرانسه صفت فقط «ویژگی اسم» را بیان نمی‌کند. بعضی صفت‌ها مقدار یا رتبه را مشخص می‌کنند، بعضی اسم را عمداً نامعین نگه می‌دارند، و جای بعضی صفت‌ها nuance یا حتی معنی را عوض می‌کند.</div>
 </header>
-<section class="subtopic" id="ADV-L02-ST01">
-<h3 lang="fr" dir="ltr">Adjectifs numéraux</h3>
-<p class="fa-subtitle" lang="fa">صفت‌های عددی</p>
-<p class="rule" lang="fr">Les cardinaux indiquent nombre, rang conventionnel, date ou découpage; ordinaux, fractions et multiplicatifs ont des emplois distincts.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «صفت‌های عددی» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Le chapitre vingt est suivi du vingt et unième chapitre.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز در تاریخ، عنوان فرمانروا یا شمارهٔ قراردادی همیشه صفت ترتیبی به کار می‌برد.</p>
-<p class="source"><code>ADV-L02:book-p020-p021:numeral-adj</code> · printed 20–21 · PDF 22–23</p>
+
+<section class="lesson-card" id="ADV-L02-ST01">
+  <div class="section-head">
+    <div class="section-no">1</div>
+    <div class="section-titles">
+      <h3 lang="fr" dir="ltr">Les adjectifs numéraux</h3>
+      <p class="fa fa-subtitle" lang="fa">صفت‌های عددی</p>
+    </div>
+  </div>
+
+  <h4 class="fa" lang="fa">اعداد برای بیان مقدار</h4>
+  <div class="rule-box fa" lang="fa"><span class="label">قاعده</span><br>اعداد اصلی یا <span class="fr">nombres cardinaux</span> تعداد را مشخص می‌کنند و معمولاً پیش از اسم می‌آیند.</div>
+  <div class="example-box">
+    <p class="fr-line" lang="fr">Trois candidats attendent devant la salle.</p>
+    <p class="translation" lang="fa">سه داوطلب جلوی سالن منتظرند.</p>
+    <p class="fr-line" lang="fr">Ces quatre dossiers sont complets.</p>
+    <p class="translation" lang="fa">این چهار پرونده کامل‌اند.</p>
+    <p class="fr-line" lang="fr">Nous sommes huit dans l’équipe.</p>
+    <p class="translation" lang="fa">ما در تیم هشت نفر هستیم.</p>
+  </div>
+
+  <h4 class="fa" lang="fa">عدد به‌عنوان اسم</h4>
+  <p class="fa" lang="fa">در محاسبات، عدد می‌تواند بدون article به‌صورت اسم به کار برود:</p>
+  <div class="example-box"><p class="fr-line" lang="fr">Six et quatre font dix.</p><p class="translation" lang="fa">شش به‌علاوهٔ چهار می‌شود ده.</p></div>
+  <p class="fa" lang="fa">اما برای نمره یا یک عدد مشخص می‌توان article آورد:</p>
+  <div class="example-box"><p class="fr-line" lang="fr">J’ai eu un dix-huit en histoire.</p><p class="translation" lang="fa">من در تاریخ نمرهٔ ۱۸ گرفتم.</p></div>
+
+  <h4 class="fa" lang="fa">article défini قبل از عدد</h4>
+  <div class="contrast-box fa" lang="fa">
+    <p><span class="fr">Trois étudiants sont arrivés.</span> → سه دانشجو آمدند.</p>
+    <p><span class="fr">Les trois étudiants sont arrivés.</span> → آن سه دانشجو / هر سه دانشجوی موردنظر آمدند.</p>
+    <p>وجود <span class="fr">les</span> یعنی گروه قبلاً برای گوینده و شنونده مشخص است.</p>
+  </div>
+
+  <h4 class="fa" lang="fa">Cardinal به جای ordinal در شماره‌گذاری قراردادی</h4>
+  <p class="fa" lang="fa">یکی از نکات اصلی درس این است که در بعضی contextها برای رتبه یا شماره، فرانسه از عدد اصلی استفاده می‌کند.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Context</th><th>Forme</th><th>Exemple</th><th>نکته</th></tr></thead>
+      <tbody>
+        <tr><td class="fa">تاریخ</td><td class="fr">cardinal</td><td class="fr">le 18 septembre</td><td class="fa">روز اول استثناست: <span class="fr">le 1er / le premier</span></td></tr>
+        <tr><td class="fa">دهه</td><td class="fr">cardinal</td><td class="fr">les années soixante</td><td class="fa">برای نام‌گذاری دهه</td></tr>
+        <tr><td class="fa">فرمانروا</td><td class="fr">cardinal</td><td class="fr">Louis XIV → Louis quatorze</td><td class="fa"><span class="fr">Ier → premier</span> استثناست</td></tr>
+        <tr><td class="fa">بخش اثر</td><td class="fr">cardinal</td><td class="fr">chapitre trois, tome deux, acte quatre</td><td class="fa">وقتی شمارهٔ رسمی بخش را می‌گوییم</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pair">
+    <div class="incorrect fa" lang="fa"><span class="mark">✕</span> <span class="fr">le dix-huitième septembre</span><br><span class="muted">برای تاریخ، ordinal انتخاب معمول این درس نیست.</span></div>
+    <div class="correct fa" lang="fa"><span class="mark">✓</span> <span class="fr">le dix-huit septembre</span><br><span class="muted">برای روز ماه از cardinal استفاده می‌شود؛ به‌جز روز اول.</span></div>
+  </div>
+
+  <h4 class="fa" lang="fa">Les nombres ordinaux</h4>
+  <p class="fa" lang="fa">برای رتبهٔ واقعی یا ترتیب، از ordinal استفاده می‌کنیم:</p>
+  <div class="example-box">
+    <p class="fr-line" lang="fr">C’est ma troisième tentative.</p><p class="translation" lang="fa">این سومین تلاش من است.</p>
+    <p class="fr-line" lang="fr">Je viens ici pour la première fois.</p><p class="translation" lang="fa">برای اولین بار است که به اینجا می‌آیم.</p>
+  </div>
+  <div class="contrast-box fa" lang="fa"><span class="fr">chapitre cinq</span> = شمارهٔ فصل؛ <span class="fr">le cinquième chapitre</span> = پنجمین فصل در یک ترتیب.</div>
+
+  <h4 class="fa" lang="fa">Fractions</h4>
+  <p class="fa" lang="fa">کتاب چند شکل مهم برای کسرها را یادآوری می‌کند:</p>
+  <ul class="fa" lang="fa">
+    <li><span class="fr">un demi</span> → نصف</li>
+    <li><span class="fr">la moitié</span> → نیم / نصف</li>
+    <li><span class="fr">le tiers</span> → یک‌سوم</li>
+    <li><span class="fr">un cinquième</span> → یک‌پنجم</li>
+  </ul>
+  <div class="example-box"><p class="fr-line" lang="fr">la moitié d’une orange · un demi-cercle</p></div>
+
+  <h4 class="fa" lang="fa">Multiplication</h4>
+  <p class="fa" lang="fa">برای چندبرابر بودن می‌توان از <span class="fr">le double, le triple, le quadruple, le quintuple, le sextuple</span> استفاده کرد.</p>
+  <div class="example-box"><p class="fr-line" lang="fr">Il gagne le double de mon salaire.</p><p class="translation" lang="fa">او دو برابر حقوق من درآمد دارد.</p></div>
+  <p class="fa" lang="fa">برای اعداد بالاتر، ساختارهایی مانند <span class="fr">huit fois plus</span> و <span class="fr">neuf fois plus</span> طبیعی‌تر و شفاف‌ترند. مورد خاص <span class="fr">le centuple</span> به معنی «صد برابر» است.</p>
+
+  <h4 class="fa" lang="fa">Quantité globale ou approximative</h4>
+  <div class="example-box">
+    <p class="fr-line" lang="fr">une douzaine de personnes</p><p class="translation" lang="fa">حدود دوازده نفر</p>
+    <p class="fr-line" lang="fr">une huitaine de jours</p><p class="translation" lang="fa">حدود هشت روز</p>
+    <p class="fr-line" lang="fr">un millier de manifestants</p><p class="translation" lang="fa">حدود هزار تظاهرکننده</p>
+  </div>
+  <p class="source-note">ADV-L02:book-p020-p021:numeral-adj · Printed 20–21 · PDF 22–23</p>
 </section>
-<section class="subtopic" id="ADV-L02-ST02">
-<h3 lang="fr" dir="ltr">Adjectifs indéfinis</h3>
-<p class="fa-subtitle" lang="fa">صفت‌های نامعین</p>
-<p class="rule" lang="fr">Les indéfinis expriment imprécision, quantité limitée ou nulle, totalité, identité ou différence.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «صفت‌های نامعین» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Plusieurs candidats ont répondu, mais aucun n’a fourni tous les documents.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز chaque، tout، plusieurs و certains را صرفاً مترادف کمّی می‌بیند و دامنهٔ توزیعی آن‌ها را اشتباه می‌گیرد.</p>
-<p class="source"><code>ADV-L02:book-p022-p023:indefinite-adj</code> · printed 22–23 · PDF 24–25</p>
+
+<section class="lesson-card" id="ADV-L02-ST02">
+  <div class="section-head">
+    <div class="section-no">2</div>
+    <div class="section-titles">
+      <h3 lang="fr" dir="ltr">L’adjectif indéfini</h3>
+      <p class="fa fa-subtitle" lang="fa">صفت نامعین</p>
+    </div>
+  </div>
+
+  <div class="rule-box fa" lang="fa"><span class="label">ایدهٔ مرکزی</span><br><span class="fr">adjectif indéfini</span> اسم را به شکلی غیردقیق، کلی، محدود، صفر، توزیعی یا متفاوت مشخص می‌کند. برای انتخاب درست، باید معنی دقیق هر گروه را بدانید.</div>
+
+  <h4 class="fa" lang="fa">1) Imprécision totale — نامشخص بودن کامل</h4>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>ساختار</th><th>معنا/کاربرد</th><th>مثال</th></tr></thead>
+      <tbody>
+        <tr><td class="fr">certain</td><td class="fa">یک فرد یا چیز مشخص، اما بدون معرفی دقیق</td><td class="fr">Un certain monsieur Martin vous a appelé.</td></tr>
+        <tr><td class="fr">quelconque</td><td class="fa">هر موردی، بدون اهمیت اینکه کدام؛ گاهی «معمولی/بی‌ویژگی»</td><td class="fr">Choisissez un exemple quelconque.</td></tr>
+        <tr><td class="fr">je ne sais quel</td><td class="fa">چیزی که دقیقاً معلوم نیست کدام است</td><td class="fr">Ils demandent je ne sais quel document.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="warning-box fa" lang="fa"><strong>نکتهٔ معنایی:</strong> <span class="fr">quelconque</span> همیشه فقط «هر» نیست. در <span class="fr">un film quelconque</span> می‌تواند معنی «فیلم معمولی، بی‌ویژگی یا نه‌چندان خوب» بدهد.</div>
+
+  <h4 class="fa" lang="fa">2) Quantité indéterminée — مقدار نامشخص</h4>
+  <div class="example-box">
+    <p class="fr-line" lang="fr">J’ai quelques questions.</p><p class="translation" lang="fa"><span class="fr">quelques</span> = چند تا، معمولاً تعداد محدود.</p>
+    <p class="fr-line" lang="fr">Plusieurs clients ont appelé.</p><p class="translation" lang="fa"><span class="fr">plusieurs</span> = چندین؛ لزوماً تعداد خیلی کم نیست.</p>
+    <p class="fr-line" lang="fr">Certains étudiants préfèrent travailler seuls.</p><p class="translation" lang="fa"><span class="fr">certains</span> = برخی از اعضای یک گروه.</p>
+  </div>
+  <div class="contrast-box fa" lang="fa"><strong>Contrast:</strong> <span class="fr">quelques étudiants</span> بیشتر روی «تعداد» تمرکز دارد؛ <span class="fr">certains étudiants</span> بیشتر یعنی «بعضی از اعضای گروه».</div>
+
+  <h4 class="fa" lang="fa">3) Quantité nulle — مقدار صفر</h4>
+  <div class="example-box">
+    <p class="fr-line" lang="fr">Aucun candidat n’a répondu.</p><p class="translation" lang="fa">هیچ داوطلبی پاسخ نداد.</p>
+    <p class="fr-line" lang="fr">Je n’ai reçu aucune réponse.</p><p class="translation" lang="fa">هیچ پاسخی دریافت نکرده‌ام.</p>
+    <p class="fr-line" lang="fr">Il est nul en physique.</p><p class="translation" lang="fa">او در فیزیک بسیار ضعیف است.</p>
+  </div>
+
+  <h4 class="fa" lang="fa">4) Totalité — کلیت</h4>
+  <div class="contrast-box fa" lang="fa">
+    <p><span class="fr">Chaque étudiant reçoit un formulaire.</span> → هر دانشجو، تک‌به‌تک.</p>
+    <p><span class="fr">Tous les étudiants sont présents.</span> → همهٔ دانشجویان به‌عنوان یک مجموعه.</p>
+    <p><span class="fr">Tout le bâtiment a été évacué.</span> → کل ساختمان.</p>
+  </div>
+  <div class="pair">
+    <div class="incorrect fa" lang="fa"><span class="mark">✕</span> <span class="fr">chaque étudiants</span></div>
+    <div class="correct fa" lang="fa"><span class="mark">✓</span> <span class="fr">chaque étudiant</span><br><span class="muted">بعد از <span class="fr">chaque</span> اسم مفرد می‌آید.</span></div>
+  </div>
+
+  <h4 class="fa" lang="fa">5) Identité et différence — همانندی و تفاوت</h4>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>ساختار</th><th>معنی</th><th>مثال</th></tr></thead>
+      <tbody>
+        <tr><td class="fr">même</td><td class="fa">همان / یکسان</td><td class="fr">Nous avons choisi la même solution.</td></tr>
+        <tr><td class="fr">tel / telle / tels / telles</td><td class="fa">چنین، از آن نوع</td><td class="fr">Une telle décision aurait de lourdes conséquences.</td></tr>
+        <tr><td class="fr">autre</td><td class="fa">دیگر / یکی دیگر / متفاوت</td><td class="fr">Essayons une autre méthode.</td></tr>
+        <tr><td class="fr">différent</td><td class="fa">متفاوت</td><td class="fr">Ils ont proposé deux solutions différentes.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="source-note">ADV-L02:book-p022-p023:indefinite-adj · Printed 22–23 · PDF 24–25</p>
 </section>
-<section class="subtopic" id="ADV-L02-ST03">
-<h3 lang="fr" dir="ltr">Place de l’adjectif</h3>
-<p class="fa-subtitle" lang="fa">جایگاه صفت</p>
-<p class="rule" lang="fr">La position dépend de la classe de l’adjectif et peut opposer une lecture subjective à une lecture classifiante ou changer le sens.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «جایگاه صفت» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">C’est un grand homme, mais ce n’est pas forcément un homme grand.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز همهٔ صفت‌های کوتاه را پیش از اسم می‌گذارد و تغییر معنای cher، grand، dernier یا propre را نادیده می‌گیرد.</p>
-<p class="source"><code>ADV-L02:book-p024-p025:adj-position</code> · printed 24–25 · PDF 26–27</p>
+
+<section class="lesson-card" id="ADV-L02-ST03">
+  <div class="section-head">
+    <div class="section-no">3</div>
+    <div class="section-titles">
+      <h3 lang="fr" dir="ltr">La place de l’adjectif</h3>
+      <p class="fa fa-subtitle" lang="fa">جایگاه صفت</p>
+    </div>
+  </div>
+
+  <div class="rule-box fa" lang="fa"><span class="label">قاعدهٔ مرکزی</span><br>در فرانسه، جای صفت به نوع صفت و معنای موردنظر بستگی دارد. بعضی صفت‌ها معمولاً پس از اسم، بعضی پیش از اسم، و بعضی در هر دو جایگاه می‌آیند؛ در گروه سوم، جایگاه ممکن است nuance یا معنی را تغییر دهد.</div>
+
+  <h4 class="fa" lang="fa">صفات معمولاً پس از اسم</h4>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>نوع صفت</th><th>مثال</th></tr></thead>
+      <tbody>
+        <tr><td class="fa">ملیت</td><td class="fr">un écrivain canadien · une entreprise française</td></tr>
+        <tr><td class="fa">شکل هندسی</td><td class="fr">une table ronde · une boîte carrée</td></tr>
+        <tr><td class="fa">رنگ</td><td class="fr">une veste noire · des chaussures rouges</td></tr>
+        <tr><td class="fa">صفت رابطه‌ای / classifiant</td><td class="fr">une industrie textile · des produits chimiques</td></tr>
+        <tr><td class="fa">صفت نسبتاً بلند</td><td class="fr">un regard mélancolique</td></tr>
+        <tr><td class="fa">صفت دارای complément</td><td class="fr">un immeuble haut de dix étages</td></tr>
+        <tr><td class="fa">participe passé به‌صورت صفت</td><td class="fr">une porte fermée · une maison abandonnée</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4 class="fa" lang="fa">صفات معمولاً پیش از اسم</h4>
+  <p class="fa" lang="fa">کتاب گروهی کوچک اما بسیار پرتکرار را نشان می‌دهد:</p>
+  <div class="example-box"><p class="fr-line" lang="fr">grand · petit · gros · vieux · jeune · bon · mauvais · beau · joli · long · large · autre · même · nouveau · dernier · prochain</p></div>
+  <div class="example-box">
+    <p class="fr-line" lang="fr">une jeune femme · un vieux quartier · une belle journée · un mauvais résultat</p>
+  </div>
+
+  <h4 class="fa" lang="fa">دو صفت کنار یک اسم</h4>
+  <p class="fa" lang="fa">ممکن است یک صفت پیش و صفت دیگری پس از اسم قرار بگیرد:</p>
+  <div class="example-box"><p class="fr-line" lang="fr">une jolie robe longue · une belle jupe plissée</p></div>
+
+  <h4 class="fa" lang="fa">وقتی هر دو جایگاه ممکن است</h4>
+  <p class="fa" lang="fa">صفت‌های ارزیابی‌کننده وقتی قبل از اسم می‌آیند، اغلب subjective و expressive‌تر می‌شوند.</p>
+  <div class="contrast-box">
+    <p class="fr-line" lang="fr">C’est une histoire incroyable.</p>
+    <p class="translation" lang="fa">توصیف مستقیم‌تر.</p>
+    <p class="fr-line" lang="fr">C’est une incroyable histoire.</p>
+    <p class="translation" lang="fa">ارزیابی گوینده برجسته‌تر است.</p>
+    <hr style="border:0;border-top:1px solid var(--al-line);margin:10px 0">
+    <p class="fr-line" lang="fr">des résultats excellents → d’excellents résultats</p>
+  </div>
+
+  <h4 class="fa" lang="fa">قاعدهٔ مهم: <span class="fr">des → de / d’</span></h4>
+  <div class="rule-box fa" lang="fa">وقتی صفت پیش از اسم جمع می‌آید، <span class="fr">des</span> معمولاً به <span class="fr">de / d’</span> تبدیل می‌شود.</div>
+  <div class="pair">
+    <div class="incorrect fa" lang="fa"><span class="mark">✕</span> <span class="fr">des magnifiques tableaux</span></div>
+    <div class="correct fa" lang="fa"><span class="mark">✓</span> <span class="fr">de magnifiques tableaux</span></div>
+  </div>
+  <div class="example-box"><p class="fr-line" lang="fr">d’excellentes nouvelles · d’autres solutions · de telles erreurs</p></div>
+
+  <h4 class="fa" lang="fa">وقتی جای صفت معنی را عوض می‌کند</h4>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>بعد از اسم</th><th>معنی</th><th>قبل از اسم</th><th>معنی</th></tr></thead>
+      <tbody>
+        <tr><td class="fr">un livre cher</td><td class="fa">کتاب گران</td><td class="fr">mon cher ami</td><td class="fa">دوست عزیزم</td></tr>
+        <tr><td class="fr">les mains sales</td><td class="fa">دست‌های کثیف</td><td class="fr">un sale temps</td><td class="fa">هوای بسیار بد</td></tr>
+        <tr><td class="fr">un métal dur</td><td class="fa">فلز سخت</td><td class="fr">un dur métier</td><td class="fa">شغل دشوار</td></tr>
+        <tr><td class="fr">un homme grand</td><td class="fa">مرد قدبلند</td><td class="fr">un grand homme</td><td class="fa">مرد بزرگ / مهم</td></tr>
+        <tr><td class="fr">une voiture ancienne</td><td class="fa">ماشین قدیمی</td><td class="fr">mon ancienne voiture</td><td class="fa">ماشین قبلی من</td></tr>
+        <tr><td class="fr">un garçon curieux</td><td class="fa">پسر کنجکاو</td><td class="fr">un curieux garçon</td><td class="fa">پسر عجیب</td></tr>
+        <tr><td class="fr">un homme pauvre</td><td class="fa">مرد فقیر</td><td class="fr">un pauvre homme</td><td class="fa">مرد بیچاره / قابل‌ترحم</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warning-box fa" lang="fa"><strong>دام مهم:</strong> جای صفت را از روی ترجمهٔ فارسی حدس نزنید. در فرانسه <span class="fr">un grand homme</span> و <span class="fr">un homme grand</span> از نظر معنایی یکسان نیستند.</div>
+  <p class="source-note">ADV-L02:book-p024-p025:adj-position · Printed 24–25 · PDF 26–27</p>
 </section>
-<aside class="notes"><h3>Notes avancées</h3>
-<section><h4>Exceptions / استثناها</h4><ul><li>Des devient souvent de devant un adjectif pluriel antéposé.</li><li>La position de certains adjectifs est lexicalisée et plusieurs paires changent de sens selon la place.</li></ul></section>
-<section><h4>Contrastes / تقابل‌ها</h4><ul><li>cardinal vs ordinal</li><li>chaque vs tout</li><li>adjectif antéposé évaluatif vs postposé classifiant</li></ul></section>
-<section><h4>Restrictions / محدودیت‌ها</h4><ul><li>Nationalité, couleur, forme, relation, complément et participe passé se placent normalement après le nom.</li></ul></section>
-<section><h4>Register / سطح زبانی</h4><ul><li>Certaines lectures évaluatives antéposées relèvent davantage du style et du point de vue du locuteur.</li></ul></section>
-<section><h4>Temporal notes / نکات زمانی</h4><ul><li>Dernier et prochain changent de portée temporelle selon leur place.</li></ul></section>
-<section><h4>Semantic notes / نکات معنایی</h4><ul><li>La place peut opposer valeur descriptive, affective, figurée ou objective.</li></ul></section>
-</aside>
+
+<section class="lesson-card" id="ADV-L02-CONTRASTS">
+  <div class="section-head"><div class="section-no">4</div><div class="section-titles"><h3 class="fa" lang="fa">Contrastها و تفاوت‌های ظریف</h3><p class="fa fa-subtitle" lang="fa">جمع‌بندی مقایسه‌ای برای انتخاب سریع</p></div></div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>ساختار</th><th>تفاوت اصلی</th></tr></thead>
+      <tbody>
+        <tr><td class="fr">trois étudiants / les trois étudiants</td><td class="fa">سه فرد نامشخص / همان سه فرد مشخص</td></tr>
+        <tr><td class="fr">chapitre trois / le troisième chapitre</td><td class="fa">شمارهٔ رسمی فصل / سومین فصل در ترتیب</td></tr>
+        <tr><td class="fr">quelques / plusieurs</td><td class="fa">چند تا و معمولاً محدود / چندین</td></tr>
+        <tr><td class="fr">quelques / certains</td><td class="fa">تمرکز بر تعداد / تمرکز بر بخشی از یک گروه</td></tr>
+        <tr><td class="fr">chaque étudiant / tous les étudiants</td><td class="fa">تک‌تک افراد / کل مجموعه</td></tr>
+        <tr><td class="fr">tout le pays / chaque région</td><td class="fa">کل کشور / هر منطقه جداگانه</td></tr>
+        <tr><td class="fr">un sujet quelconque / un film quelconque</td><td class="fa">هر موضوعی / فیلم معمولی یا بی‌ویژگی، بسته به context</td></tr>
+        <tr><td class="fa">صفت بعد از اسم</td><td class="fa">اغلب توصیفی‌تر و عینی‌تر</td></tr>
+        <tr><td class="fa">صفت قبل از اسم</td><td class="fa">در بسیاری از صفات ارزیابی‌کننده، subjective و expressive‌تر</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="lesson-card" id="ADV-L02-RESTRICTIONS">
+  <div class="section-head"><div class="section-no">5</div><div class="section-titles"><h3 class="fa" lang="fa">استثناها و محدودیت‌ها</h3><p class="fa fa-subtitle" lang="fa">مواردی که باید جداگانه به خاطر داشته باشید</p></div></div>
+  <ul class="fa" lang="fa">
+    <li>در تاریخ، روز اول متفاوت است: <span class="fr">le 1er juin / le premier juin</span> اما <span class="fr">le 2 juin</span>.</li>
+    <li>در نام فرمانروایان، <span class="fr">premier</span> برای عدد I است: <span class="fr">François Ier → François premier</span>.</li>
+    <li><span class="fr">quelconque</span> می‌تواند برحسب context معنای ارزشی منفی «معمولی/بی‌ویژگی» بگیرد.</li>
+    <li><span class="fr">chaque</span> با اسم مفرد می‌آید.</li>
+    <li>در چارچوب قاعدهٔ این درس، پیش از صفت جمعِ antéposé، <span class="fr">des</span> را به <span class="fr">de / d’</span> تغییر دهید.</li>
+    <li>جایگاه صفت را فقط با ترجمهٔ فارسی تعیین نکنید؛ بعضی جفت‌ها lexicalized هستند و با جابه‌جایی معنی تغییر می‌کند.</li>
+  </ul>
+</section>
+
+<section class="lesson-card" id="ADV-L02-ERRORS">
+  <div class="section-head"><div class="section-no">6</div><div class="section-titles"><h3 class="fa" lang="fa">خطاهای رایج</h3><p class="fa fa-subtitle" lang="fa">اشتباه‌هایی که این درس می‌خواهد از آنها جلوگیری کند</p></div></div>
+
+  <div class="pair"><div class="incorrect fa" lang="fa"><span class="mark">✕</span> <span class="fr">le dixième septembre</span></div><div class="correct fa" lang="fa"><span class="mark">✓</span> <span class="fr">le dix septembre</span><br><span class="muted">تاریخ → cardinal، به‌جز روز اول.</span></div></div>
+  <div class="pair"><div class="incorrect fa" lang="fa"><span class="mark">✕</span> <span class="fr">chapitre cinquième</span></div><div class="correct fa" lang="fa"><span class="mark">✓</span> <span class="fr">chapitre cinq</span><br><span class="muted">برای شمارهٔ قراردادی فصل.</span></div></div>
+  <div class="pair"><div class="incorrect fa" lang="fa"><span class="mark">✕</span> <span class="fr">chaque personnes</span></div><div class="correct fa" lang="fa"><span class="mark">✓</span> <span class="fr">chaque personne</span><br><span class="muted"><span class="fr">chaque</span> → اسم مفرد.</span></div></div>
+  <div class="pair"><div class="incorrect fa" lang="fa"><span class="mark">✕</span> <span class="fr">des excellentes idées</span></div><div class="correct fa" lang="fa"><span class="mark">✓</span> <span class="fr">d’excellentes idées</span></div></div>
+  <div class="warning-box fa" lang="fa"><strong>خطای مفهومی:</strong> <span class="fr">un grand homme</span> و <span class="fr">un homme grand</span> را مترادف نگیرید؛ اولی «فرد بزرگ/مهم» و دومی «مرد قدبلند» است.</div>
+</section>
+
+<section class="lesson-card" id="ADV-L02-REGISTER">
+  <div class="section-head"><div class="section-no">7</div><div class="section-titles"><h3 class="fa" lang="fa">زبان واقعی و Register</h3><p class="fa fa-subtitle" lang="fa">نقش stylistic جای صفت</p></div></div>
+  <p class="fa" lang="fa">در این درس، تفاوت <span class="fr">familier / soutenu</span> محور اصلی نیست. نکتهٔ مهم‌تر این است که پیش‌گذاری بعضی صفت‌های ارزیابی‌کننده می‌تواند جمله را expressiveتر و subjectiveتر کند.</p>
+  <div class="contrast-box">
+    <p class="fr-line" lang="fr">une performance remarquable</p>
+    <p class="translation" lang="fa">توصیف نسبتاً خنثی‌تر.</p>
+    <p class="fr-line" lang="fr">une remarquable performance</p>
+    <p class="translation" lang="fa">ارزیابی گوینده برجسته‌تر است.</p>
+  </div>
+  <p class="fa" lang="fa">این موضوع به معنی «ادبی بودن» همهٔ صفت‌های پیش از اسم نیست؛ ساختارهای روزمره‌ای مثل <span class="fr">une belle journée</span> و <span class="fr">un grand problème</span> کاملاً عادی‌اند.</p>
+</section>
+
+<section class="lesson-card" id="ADV-L02-KEYS">
+  <div class="section-head"><div class="section-no">8</div><div class="section-titles"><h3 class="fa" lang="fa">نکات کلیدی یادگیری</h3><p class="fa fa-subtitle" lang="fa">تشخیص سریع بدون mnemonic ساختگی</p></div></div>
+  <ul class="fa" lang="fa">
+    <li>برای «تعداد» → cardinal: <span class="fr">trois livres</span>.</li>
+    <li>برای «رتبهٔ واقعی» → ordinal: <span class="fr">le troisième candidat</span>.</li>
+    <li>برای تاریخ، پادشاه و شمارهٔ فصل → اغلب cardinal.</li>
+    <li><span class="fr">quelques</span> را با «چند تا» و <span class="fr">certains</span> را با «برخی از» جدا کنید.</li>
+    <li><span class="fr">chaque</span> روی تک‌تک اعضا؛ <span class="fr">tout / tous</span> روی کل.</li>
+    <li>ملیت، رنگ، شکل، relation و participe passé را طبق الگوی درس معمولاً پس از اسم قرار دهید.</li>
+    <li><span class="fr">beau, bon, petit, grand, vieux, jeune, nouveau...</span> غالباً قبل از اسم‌اند.</li>
+    <li>هرجا صفت قبل از اسم جمع آمد، بررسی کنید آیا <span class="fr">des → de / d’</span> لازم است.</li>
+  </ul>
+</section>
+
+<section class="summary-card" id="ADV-L02-SUMMARY">
+  <h3 class="fa" lang="fa">خلاصه‌ای که باید به خاطر بسپارید</h3>
+  <ul class="memory-list fa" lang="fa">
+    <li>تعداد → <span class="fr">deux personnes, vingt euros</span></li>
+    <li>نمره/عدد به‌عنوان اسم → <span class="fr">un quinze</span></li>
+    <li>تاریخ → <span class="fr">le 20 mai</span>، اما <span class="fr">le 1er mai</span></li>
+    <li>شمارهٔ فصل → <span class="fr">chapitre quatre</span></li>
+    <li>رتبهٔ معمولی → <span class="fr">la quatrième fois</span></li>
+    <li>مقدار کم و نامشخص → <span class="fr">quelques</span></li>
+    <li>چندین → <span class="fr">plusieurs</span></li>
+    <li>برخی از یک گروه → <span class="fr">certains</span></li>
+    <li>هیچ → <span class="fr">aucun</span></li>
+    <li>هر کدام → <span class="fr">chaque + singulier</span></li>
+    <li>همه/کل → <span class="fr">tout / tous</span></li>
+    <li>همان → <span class="fr">même</span> · دیگر → <span class="fr">autre</span> · چنین → <span class="fr">tel</span> · هر/نامشخص → <span class="fr">quelconque</span></li>
+    <li>بیشتر صفت‌های ملیت، رنگ، شکل، relation و participe passé → بعد از اسم</li>
+    <li><span class="fr">grand, petit, beau, bon, vieux, jeune, nouveau...</span> → معمولاً قبل از اسم</li>
+    <li><span class="fr">des + nom</span> ولی <span class="fr">de + adjectif + nom pluriel</span></li>
+    <li><span class="fr">un homme grand ≠ un grand homme</span></li>
+    <li><span class="fr">un homme pauvre ≠ un pauvre homme</span></li>
+    <li><span class="fr">une voiture ancienne ≠ mon ancienne voiture</span></li>
+    <li><span class="fr">un garçon curieux ≠ un curieux garçon</span></li>
+  </ul>
+</section>
+
+<section class="exercise-card" id="ADV-L02-EXERCISES">
+  <h3 class="fa" lang="fa">تمرین کوتاه</h3>
+  <p class="fa muted" lang="fa">در هر مورد مناسب‌ترین گزینه را انتخاب کنید.</p>
+  <ol class="exercise-list">
+    <li class="fr" lang="fr">Nous avons visité ______ musées pendant le séjour. <span class="muted">(quelques / chaque)</span></li>
+    <li class="fr" lang="fr">______ étudiant doit présenter sa carte. <span class="muted">(Chaque / Tous)</span></li>
+    <li class="fr" lang="fr">C’est la ______ fois que je l’appelle. <span class="muted">(trois / troisième)</span></li>
+    <li class="fr" lang="fr">Ouvrez le ______ cinq. <span class="muted">(chapitre / cinquième chapitre)</span></li>
+    <li class="fr" lang="fr">Elle a acheté ______ magnifiques tableaux. <span class="muted">(des / de)</span></li>
+    <li class="fr" lang="fr">Il est très important dans l’histoire du pays : c’est ______. <span class="muted">(un homme grand / un grand homme)</span></li>
+    <li class="fr" lang="fr">Cette voiture appartenait auparavant à mon père : c’est ______. <span class="muted">(une voiture ancienne / son ancienne voiture)</span></li>
+    <li class="fr" lang="fr">Le ______ avril, nous partirons. <span class="muted">(premier / un)</span></li>
+    <li class="fr" lang="fr">______ clients se sont plaints, mais la majorité est satisfaite. <span class="muted">(Certains / Tout)</span></li>
+    <li class="fr" lang="fr">Je n’ai reçu ______ réponse. <span class="muted">(aucune / plusieurs)</span></li>
+  </ol>
+  <details>
+    <summary class="fa" lang="fa">نمایش پاسخ‌ها</summary>
+    <div class="answer-grid">
+      <div>1. <span class="fr">quelques</span></div>
+      <div>2. <span class="fr">Chaque</span></div>
+      <div>3. <span class="fr">troisième</span></div>
+      <div>4. <span class="fr">chapitre</span> → <span class="fr">le chapitre cinq</span></div>
+      <div>5. <span class="fr">de</span></div>
+      <div>6. <span class="fr">un grand homme</span></div>
+      <div>7. <span class="fr">son ancienne voiture</span></div>
+      <div>8. <span class="fr">premier</span></div>
+      <div>9. <span class="fr">Certains</span></div>
+      <div>10. <span class="fr">aucune</span></div>
+    </div>
+  </details>
+</section>
+
+<footer class="source-note fa" lang="fa">منبع آموزشی: <span class="fr">Grammaire Progressive du Français — Niveau Avancé — 3e édition</span>، درس ۲، صفحات چاپی 20–25 (PDF 22–27). این فایل برای رندر مستقیم در بخش محتوای درس سایت آماده شده است.</footer>
 </article>

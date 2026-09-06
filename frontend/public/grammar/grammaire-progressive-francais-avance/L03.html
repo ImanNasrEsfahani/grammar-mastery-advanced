@@ -1,59 +1,608 @@
-<article class="adv-lesson" data-lesson-id="ADV-L03">
+<article class="adv-lesson" data-lesson-id="ADV-L03" lang="fa" dir="rtl">
 <style>
-.adv-lesson{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.75;color:#172033;max-width:980px;margin:0 auto;padding:8px 2px 40px}
-.adv-lesson *{box-sizing:border-box}
-.adv-lesson .adv-hero{padding:24px;border:1px solid #e3e8f0;border-radius:18px;background:#fff;margin-bottom:22px}
-.adv-lesson .adv-kicker{font-size:.86rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.65;margin:0 0 6px}
-.adv-lesson h2,.adv-lesson h3{line-height:1.35}
-.adv-lesson h2{font-size:1.65rem;margin:0 0 4px}
-.adv-lesson .fa-title{direction:rtl;text-align:right;font-weight:650;margin:.2rem 0 .8rem}
-.adv-lesson .summary{direction:rtl;text-align:right;margin:0}
-.adv-lesson .meta{margin-top:12px;font-size:.9rem;opacity:.72}
-.adv-lesson .subtopic{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin:18px 0;background:#fff}
-.adv-lesson .subtopic h3{margin:0 0 2px;font-size:1.25rem}
-.adv-lesson .fa-subtitle{direction:rtl;text-align:right;font-weight:600;margin:.1rem 0 1rem}
-.adv-lesson .rule{direction:ltr;text-align:left;padding:12px 14px;border-left:4px solid currentColor;background:#f7f9fc;border-radius:8px;margin:12px 0}
-.adv-lesson .teaching,.adv-lesson .trap{direction:rtl;text-align:right}
-.adv-lesson .example{direction:ltr;text-align:left;font-style:italic;padding:10px 14px;background:#f7f9fc;border-radius:8px}
-.adv-lesson .trap{padding:10px 14px;border:1px dashed #c7ced9;border-radius:8px}
-.adv-lesson .source{font-size:.82rem;opacity:.65;margin-top:12px}
-.adv-lesson .notes{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin-top:22px}
-.adv-lesson .notes h3{margin-top:0}
-.adv-lesson .notes section{margin:16px 0}
-.adv-lesson .notes h4{margin:0 0 6px}
-.adv-lesson .notes ul{margin-top:4px}
+.adv-lesson {
+  --adv-ink: var(--ink, #17233c);
+  --adv-muted: var(--muted, #5a6477);
+  --adv-line: var(--line, #d9dfeb);
+  --adv-surface: var(--surface, #ffffff);
+  --adv-soft: var(--surface-soft, #f5f7fb);
+  --adv-canvas: var(--canvas, #eef2f8);
+  --adv-primary: var(--primary, #2856c7);
+  --adv-primary-strong: var(--primary-strong, #1c3f99);
+  --adv-success: var(--success, #18794e);
+  --adv-success-soft: var(--success-soft, #e9f7f0);
+  --adv-danger: var(--danger, #b42318);
+  --adv-danger-soft: var(--danger-soft, #fff0ee);
+  --adv-warning: var(--warning, #8a4b08);
+  --adv-warning-soft: var(--warning-soft, #fff7e8);
+  --adv-shadow: var(--shadow, 0 18px 50px rgba(34, 53, 90, .09));
+
+  max-width: 980px;
+  margin: 0 auto;
+  padding: clamp(14px, 2.6vw, 28px);
+  color: var(--adv-ink);
+  background: var(--adv-surface);
+  font-family: var(--font-ui, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
+  font-size: 1rem;
+  line-height: 1.9;
+  text-align: right;
+}
+
+.adv-lesson *, .adv-lesson *::before, .adv-lesson *::after { box-sizing: border-box; }
+.adv-lesson h1, .adv-lesson h2, .adv-lesson h3, .adv-lesson h4 { color: var(--adv-ink); line-height: 1.45; }
+.adv-lesson h2 { margin: 0 0 14px; font-size: clamp(1.35rem, 2.4vw, 1.75rem); }
+.adv-lesson h3 { margin: 0 0 10px; font-size: clamp(1.08rem, 2vw, 1.3rem); }
+.adv-lesson h4 { margin: 0 0 8px; font-size: 1.02rem; }
+.adv-lesson p { margin: 0 0 12px; }
+.adv-lesson ul, .adv-lesson ol { margin: 8px 0 0; padding-inline-start: 1.4rem; }
+.adv-lesson li + li { margin-top: 6px; }
+.adv-lesson strong { color: inherit; }
+.adv-lesson code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+
+.adv-lesson .fr,
+.adv-lesson .fr-block,
+.adv-lesson code[lang="fr"] {
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: left;
+  font-family: var(--font-ui, Inter, ui-sans-serif, system-ui, sans-serif);
+}
+.adv-lesson .fr { display: inline-block; }
+.adv-lesson .fr-block { display: block; }
+
+.adv-lesson .lesson-hero {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 22px;
+  padding: clamp(22px, 4vw, 36px);
+  border: 1px solid var(--adv-line);
+  border-radius: 22px;
+  background: var(--adv-soft);
+  box-shadow: var(--adv-shadow);
+}
+.adv-lesson .lesson-hero::after {
+  content: "3";
+  position: absolute;
+  inset-inline-start: clamp(12px, 3vw, 28px);
+  inset-block-start: -32px;
+  color: var(--adv-primary);
+  opacity: .08;
+  font-size: clamp(8rem, 22vw, 14rem);
+  font-weight: 950;
+  line-height: 1;
+  direction: ltr;
+  pointer-events: none;
+}
+.adv-lesson .hero-content { position: relative; z-index: 1; }
+.adv-lesson .kicker {
+  margin: 0 0 8px;
+  color: var(--adv-primary);
+  font-size: .8rem;
+  font-weight: 850;
+  letter-spacing: .04em;
+}
+.adv-lesson .lesson-title-fr {
+  margin: 0;
+  color: var(--adv-ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.08;
+  text-align: left;
+  direction: ltr;
+}
+.adv-lesson .lesson-title-fa { margin: 10px 0 4px; font-size: clamp(1.15rem, 2.4vw, 1.5rem); font-weight: 800; }
+.adv-lesson .hero-lead { max-width: 78ch; color: var(--adv-muted); }
+.adv-lesson .meta-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.adv-lesson .pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 4px 10px;
+  border: 1px solid var(--adv-line);
+  border-radius: 999px;
+  background: var(--adv-surface);
+  color: var(--adv-muted);
+  font-size: .78rem;
+  font-weight: 750;
+}
+
+.adv-lesson .section {
+  margin: 18px 0;
+  padding: clamp(18px, 3vw, 26px);
+  border: 1px solid var(--adv-line);
+  border-radius: 18px;
+  background: var(--adv-surface);
+}
+.adv-lesson .section-soft { background: var(--adv-soft); }
+.adv-lesson .section-number {
+  display: inline-grid;
+  place-items: center;
+  min-width: 34px;
+  height: 34px;
+  margin-inline-end: 8px;
+  border-radius: 10px;
+  background: var(--adv-primary);
+  color: #fff;
+  direction: ltr;
+  font-size: .9rem;
+  font-weight: 900;
+  vertical-align: middle;
+}
+.adv-lesson .section-heading { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+.adv-lesson .section-heading h2 { margin: 0; }
+
+.adv-lesson .goal-grid,
+.adv-lesson .quick-grid,
+.adv-lesson .two-col,
+.adv-lesson .mistake-grid {
+  display: grid;
+  gap: 12px;
+}
+.adv-lesson .goal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.adv-lesson .quick-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.adv-lesson .two-col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.adv-lesson .mistake-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+.adv-lesson .mini-card,
+.adv-lesson .subtopic-card,
+.adv-lesson .mistake-card {
+  min-width: 0;
+  padding: 15px 16px;
+  border: 1px solid var(--adv-line);
+  border-radius: 14px;
+  background: var(--adv-soft);
+}
+.adv-lesson .mini-card p:last-child,
+.adv-lesson .subtopic-card p:last-child,
+.adv-lesson .mistake-card p:last-child { margin-bottom: 0; }
+.adv-lesson .mini-label { color: var(--adv-primary); font-size: .78rem; font-weight: 850; }
+
+.adv-lesson .rule-box,
+.adv-lesson .example-box,
+.adv-lesson .note-box,
+.adv-lesson .warning-box,
+.adv-lesson .success-box,
+.adv-lesson .danger-box {
+  margin: 12px 0;
+  padding: 13px 15px;
+  border: 1px solid var(--adv-line);
+  border-radius: 12px;
+}
+.adv-lesson .rule-box { background: var(--adv-soft); border-inline-start: 4px solid var(--adv-primary); }
+.adv-lesson .example-box { background: var(--adv-soft); }
+.adv-lesson .note-box { background: var(--adv-soft); border-inline-start: 4px solid var(--adv-primary); }
+.adv-lesson .warning-box { background: var(--adv-warning-soft); border-color: color-mix(in srgb, var(--adv-warning) 38%, var(--adv-line)); }
+.adv-lesson .success-box { background: var(--adv-success-soft); border-color: color-mix(in srgb, var(--adv-success) 38%, var(--adv-line)); }
+.adv-lesson .danger-box { background: var(--adv-danger-soft); border-color: color-mix(in srgb, var(--adv-danger) 38%, var(--adv-line)); }
+.adv-lesson .box-title { display: block; margin-bottom: 5px; font-weight: 850; }
+.adv-lesson .warning-box .box-title { color: var(--adv-warning); }
+.adv-lesson .success-box .box-title { color: var(--adv-success); }
+.adv-lesson .danger-box .box-title { color: var(--adv-danger); }
+
+.adv-lesson .formula {
+  display: block;
+  margin: 8px 0;
+  padding: 10px 12px;
+  overflow-x: auto;
+  border: 1px dashed var(--adv-line);
+  border-radius: 10px;
+  background: var(--adv-soft);
+  color: var(--adv-ink);
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: left;
+  white-space: nowrap;
+}
+.adv-lesson .translation { color: var(--adv-muted); font-size: .93rem; }
+.adv-lesson .contrast-pair { display: grid; gap: 8px; margin-top: 10px; }
+.adv-lesson .correct, .adv-lesson .incorrect { padding: 9px 11px; border-radius: 10px; }
+.adv-lesson .correct { background: var(--adv-success-soft); color: var(--adv-ink); }
+.adv-lesson .incorrect { background: var(--adv-danger-soft); color: var(--adv-ink); }
+.adv-lesson .mark-good { color: var(--adv-success); font-weight: 900; }
+.adv-lesson .mark-bad { color: var(--adv-danger); font-weight: 900; }
+
+.adv-lesson .table-wrap { width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid var(--adv-line); border-radius: 14px; }
+.adv-lesson table { width: 100%; min-width: 720px; border-collapse: collapse; background: var(--adv-surface); }
+.adv-lesson th, .adv-lesson td { padding: 11px 12px; border-bottom: 1px solid var(--adv-line); vertical-align: top; text-align: right; }
+.adv-lesson th { background: var(--adv-soft); color: var(--adv-ink); font-size: .88rem; font-weight: 850; }
+.adv-lesson tbody tr:last-child td { border-bottom: 0; }
+.adv-lesson td .fr { text-align: left; }
+
+.adv-lesson .subtopic-stack { display: grid; gap: 14px; }
+.adv-lesson .subtopic-card h3 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; }
+.adv-lesson .subtopic-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--adv-primary) 10%, var(--adv-surface));
+  color: var(--adv-primary-strong);
+  font-size: .72rem;
+  font-weight: 850;
+}
+
+.adv-lesson .mistake-card { background: var(--adv-surface); }
+.adv-lesson .mistake-card h3 { font-size: 1rem; }
+.adv-lesson .why { margin-top: 8px; color: var(--adv-muted); font-size: .93rem; }
+
+.adv-lesson .summary-box {
+  padding: clamp(18px, 3vw, 26px);
+  border: 1px solid color-mix(in srgb, var(--adv-primary) 35%, var(--adv-line));
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--adv-primary) 6%, var(--adv-surface));
+}
+.adv-lesson .summary-box ul { margin-top: 0; }
+
+.adv-lesson .exercise-list { counter-reset: exercise; list-style: none; padding: 0; }
+.adv-lesson .exercise-list > li {
+  counter-increment: exercise;
+  position: relative;
+  margin: 10px 0;
+  padding: 13px 48px 13px 14px;
+  border: 1px solid var(--adv-line);
+  border-radius: 12px;
+  background: var(--adv-soft);
+}
+.adv-lesson .exercise-list > li::before {
+  content: counter(exercise);
+  position: absolute;
+  inset-inline-start: 12px;
+  inset-block-start: 12px;
+  display: grid;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  border-radius: 8px;
+  background: var(--adv-primary);
+  color: #fff;
+  direction: ltr;
+  font-size: .78rem;
+  font-weight: 900;
+}
+.adv-lesson details {
+  margin-top: 14px;
+  border: 1px solid var(--adv-line);
+  border-radius: 14px;
+  background: var(--adv-surface);
+}
+.adv-lesson summary {
+  cursor: pointer;
+  padding: 13px 15px;
+  color: var(--adv-primary-strong);
+  font-weight: 850;
+}
+.adv-lesson .answers { padding: 0 18px 16px; }
+.adv-lesson .answers ol { margin-top: 4px; }
+
+.adv-lesson .source-note {
+  margin-top: 24px;
+  padding-top: 14px;
+  border-top: 1px solid var(--adv-line);
+  color: var(--adv-muted);
+  font-size: .8rem;
+}
+
+@media (max-width: 760px) {
+  .adv-lesson { padding: 12px; line-height: 1.85; }
+  .adv-lesson .goal-grid,
+  .adv-lesson .quick-grid,
+  .adv-lesson .two-col,
+  .adv-lesson .mistake-grid { grid-template-columns: 1fr; }
+  .adv-lesson .lesson-hero, .adv-lesson .section, .adv-lesson .summary-box { border-radius: 15px; }
+  .adv-lesson .exercise-list > li { padding-inline-start: 46px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .adv-lesson * { scroll-behavior: auto !important; }
+}
 </style>
-<header class="adv-hero">
-<p class="adv-kicker">Lesson 3 · ADV-L03</p>
-<h2 lang="fr" dir="ltr">Les négations</h2>
-<p class="fa-title" lang="fa">ساخت‌های منفی</p>
-<p class="summary" lang="fa">این درس روی «ساخت‌های منفی» تمرکز دارد و زیرموضوع‌های انواع نفی، جایگاه اجزای نفی را پوشش می‌دهد.</p>
-<p class="meta">Printed pages 26–29 · PDF pages 28–31 · target 240 questions</p>
+
+<header class="lesson-hero">
+  <div class="hero-content">
+    <p class="kicker">ADV-L03 · درس ۳</p>
+    <h1 class="lesson-title-fr" lang="fr" dir="ltr">Les négations</h1>
+    <p class="lesson-title-fa">ساختارهای منفی و جایگاه عناصر منفی</p>
+    <p class="hero-lead">در این درس یاد می‌گیرید فقط جمله را «منفی» نکنید، بلکه دقیقاً مشخص کنید چه چیزی نفی می‌شود: ادامهٔ عمل، تکرار، شخص، شیء، مکان، مقدار یا هنوز رخ‌ندادن یک رویداد.</p>
+    <div class="meta-row" aria-label="مشخصات درس">
+      <span class="pill">صفحات کتاب: ۲۶ تا ۲۹</span>
+      <span class="pill">سطح: B1–B2 / Avancé</span>
+      <span class="pill">موضوع: Négation</span>
+    </div>
+  </div>
 </header>
-<section class="subtopic" id="ADV-L03-ST01">
-<h3 lang="fr" dir="ltr">Différentes négations</h3>
-<p class="fa-subtitle" lang="fa">انواع نفی</p>
-<p class="rule" lang="fr">Ne se combine avec pas, plus, rien, jamais, personne, aucun, guère ou ni selon la portée et la nuance.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «انواع نفی» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Je ne vois plus personne dans le couloir.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز در نفی چندجزئی pas را همراه rien، personne یا jamais نگه می‌دارد و دو نفی ناسازگار می‌سازد.</p>
-<p class="source"><code>ADV-L03:book-p026-p027:negative-forms</code> · printed 26–27 · PDF 28–29</p>
+
+<section class="section section-soft" aria-labelledby="goals-title">
+  <div class="section-heading"><span class="section-number">1</span><h2 id="goals-title">هدف درس</h2></div>
+  <div class="goal-grid">
+    <div class="mini-card"><span class="mini-label">انتخاب معنایی</span><p>بین <span class="fr" lang="fr">ne…plus, ne…jamais, ne…rien, ne…personne, ne…aucun, ne…pas encore</span> بر اساس معنی درست انتخاب کنید.</p></div>
+    <div class="mini-card"><span class="mini-label">جایگاه</span><p>عنصر منفی را در زمان ساده، زمان مرکب، مصدر و امر در جای درست قرار دهید.</p></div>
+    <div class="mini-card"><span class="mini-label">ترکیب نفی‌ها</span><p>چند عنصر منفی را بدون افزودنِ اشتباهِ <span class="fr" lang="fr">pas</span> با هم به کار ببرید.</p></div>
+    <div class="mini-card"><span class="mini-label">Nuance و Register</span><p><span class="fr" lang="fr">ne explétif</span> را از نفی واقعی و شکل‌های رسمیِ <span class="fr" lang="fr">ne</span> بدون <span class="fr" lang="fr">pas</span> تشخیص دهید.</p></div>
+  </div>
 </section>
-<section class="subtopic" id="ADV-L03-ST02">
-<h3 lang="fr" dir="ltr">Place de la négation</h3>
-<p class="fa-subtitle" lang="fa">جایگاه اجزای نفی</p>
-<p class="rule" lang="fr">La place des marqueurs varie avec temps simple ou composé, infinitif, impératif et pronoms comme personne ou nulle part.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «جایگاه اجزای نفی» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Elle n’a jamais voulu en parler.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز در زمان مرکب یا مصدر جای pas، plus، rien و personne را با الگوی زمان ساده یکسان می‌گیرد.</p>
-<p class="source"><code>ADV-L03:book-p028-p029:negation-position</code> · printed 28–29 · PDF 30–31</p>
+
+<section class="section" aria-labelledby="idea-title">
+  <div class="section-heading"><span class="section-number">2</span><h2 id="idea-title">ایدهٔ اصلی</h2></div>
+  <p>در فرانسه، <span class="fr" lang="fr">ne…pas</span> فقط یکی از انواع نفی است. عنصر دومِ نفی معمولاً اطلاعات دقیقی دربارهٔ نوع نفی می‌دهد.</p>
+  <div class="quick-grid">
+    <div class="mini-card"><span class="fr mini-label" lang="fr">encore / toujours → plus</span><p>چیزی قبلاً ادامه داشته و حالا متوقف شده است.</p></div>
+    <div class="mini-card"><span class="fr mini-label" lang="fr">quelque chose → rien</span><p>هیچ چیز.</p></div>
+    <div class="mini-card"><span class="fr mini-label" lang="fr">quelqu’un → personne</span><p>هیچ‌کس.</p></div>
+    <div class="mini-card"><span class="fr mini-label" lang="fr">quelque part → nulle part</span><p>هیچ‌جا.</p></div>
+    <div class="mini-card"><span class="fr mini-label" lang="fr">un / des → aucun(e)</span><p>حتی یک مورد هم نه.</p></div>
+    <div class="mini-card"><span class="fr mini-label" lang="fr">déjà → jamais / pas encore</span><p>«هرگز» یا «هنوز نه»؛ با تفاوت معنایی مهم.</p></div>
+  </div>
+  <div class="example-box">
+    <span class="fr-block" lang="fr">Je ne travaille pas.</span><span class="translation">کار نمی‌کنم.</span><br>
+    <span class="fr-block" lang="fr">Je ne travaille plus.</span><span class="translation">دیگر کار نمی‌کنم.</span><br>
+    <span class="fr-block" lang="fr">Je ne travaille jamais le dimanche.</span><span class="translation">هیچ‌وقت یکشنبه‌ها کار نمی‌کنم.</span>
+  </div>
 </section>
-<aside class="notes"><h3>Notes avancées</h3>
-<section><h4>Exceptions / استثناها</h4><ul><li>Ne explétif ne nie pas après certaines expressions de crainte, avant que ou à moins que.</li><li>Ne seul est possible dans un registre soutenu avec pouvoir, savoir, oser, cesser et certaines tournures temporelles.</li></ul></section>
-<section><h4>Contrastes / تقابل‌ها</h4><ul><li>pas encore vs jamais</li><li>aucun absolu vs pas de</li><li>ne explétif vs négation réelle</li></ul></section>
-<section><h4>Restrictions / محدودیت‌ها</h4><ul><li>Pas disparaît avec plusieurs marqueurs négatifs et dans ni... ni.</li><li>La place dépend du temps verbal, de l’infinitif et de l’impératif.</li></ul></section>
-<section><h4>Register / سطح زبانی</h4><ul><li>Ne sans pas et guère sont surtout soutenus; la chute de ne appartient à l’oral familier mais n’est pas le modèle de production écrit.</li></ul></section>
-<section><h4>Temporal notes / نکات زمانی</h4><ul><li>Plus marque cessation; pas encore présente un état provisoire orienté vers une réalisation future.</li></ul></section>
-<section><h4>Semantic notes / نکات معنایی</h4><ul><li>Les marqueurs négatifs distinguent quantité nulle, personne, lieu, fréquence, continuation et degré.</li></ul></section>
-</aside>
+
+<section class="section section-soft" aria-labelledby="forms-title">
+  <div class="section-heading"><span class="section-number">3</span><h2 id="forms-title">انواع نفی — <span class="fr" lang="fr">Les différentes négations</span></h2></div>
+  <div class="subtopic-stack">
+
+    <article class="subtopic-card">
+      <h3><span class="fr" lang="fr">ne…plus</span><span class="subtopic-tag">دیگر نه</span></h3>
+      <p><span class="fr" lang="fr">ne…plus</span> معمولاً می‌گوید وضعیتی که قبلاً وجود داشته یا عملی که قبلاً انجام می‌شده، اکنون متوقف شده است.</p>
+      <code class="formula" lang="fr">Sujet + ne + verbe + plus</code>
+      <div class="example-box"><span class="fr-block" lang="fr">Je ne travaille plus dans cette entreprise.</span><span class="translation">دیگر در این شرکت کار نمی‌کنم.</span></div>
+    </article>
+
+    <article class="subtopic-card">
+      <h3><span class="fr" lang="fr">ne…rien</span><span class="subtopic-tag">هیچ‌چیز</span></h3>
+      <p><span class="fr" lang="fr">rien</span> در برابر <span class="fr" lang="fr">quelque chose</span> قرار می‌گیرد.</p>
+      <code class="formula" lang="fr">Sujet + ne + verbe + rien</code>
+      <div class="example-box"><span class="fr-block" lang="fr">Tu veux quelque chose ? — Non, je ne veux rien.</span><span class="translation">چیزی می‌خواهی؟ — نه، هیچ‌چیز.</span></div>
+      <div class="note-box"><span class="box-title">در زمان مرکب</span><span class="fr-block" lang="fr">Je n’ai rien compris.</span><span class="translation"><span class="fr" lang="fr">rien</span> بین فعل کمکی و participe passé قرار گرفته است.</span></div>
+    </article>
+
+    <article class="subtopic-card">
+      <h3><span class="fr" lang="fr">ne…jamais</span><span class="subtopic-tag">هرگز</span></h3>
+      <p><span class="fr" lang="fr">jamais</span> برای نفیِ تجربه یا تکرار به کار می‌رود.</p>
+      <div class="example-box"><span class="fr-block" lang="fr">Tu as déjà visité Montréal ? — Non, je n’y suis jamais allé.</span><span class="translation">تا حالا مونترال رفته‌ای؟ — نه، هرگز نرفته‌ام.</span></div>
+      <div class="warning-box"><span class="box-title">تفاوت کلیدی: jamais ≠ pas encore</span>
+        <p><span class="fr" lang="fr">Je n’ai jamais visité Tokyo.</span> = هیچ‌وقت توکیو را ندیده‌ام.</p>
+        <p><span class="fr" lang="fr">Je n’ai pas encore visité Tokyo, mais j’aimerais y aller.</span> = هنوز توکیو را ندیده‌ام، ولی دوست دارم بروم.</p>
+      </div>
+    </article>
+
+    <article class="subtopic-card">
+      <h3><span class="fr" lang="fr">ne…personne</span><span class="subtopic-tag">هیچ‌کس</span></h3>
+      <p><span class="fr" lang="fr">personne</span> در برابر <span class="fr" lang="fr">quelqu’un</span> قرار می‌گیرد.</p>
+      <div class="example-box"><span class="fr-block" lang="fr">Il y a quelqu’un dans le bureau ? — Non, il n’y a personne.</span></div>
+      <div class="note-box"><span class="box-title">جایگاه مهم</span><span class="fr-block" lang="fr">Je n’ai rencontré personne.</span><span class="translation">برخلاف <span class="fr" lang="fr">rien</span>، <span class="fr" lang="fr">personne</span> معمولاً بعد از participe passé می‌آید.</span></div>
+    </article>
+
+    <article class="subtopic-card">
+      <h3><span class="fr" lang="fr">ne…aucun / aucune</span><span class="subtopic-tag">هیچ / حتی یک … هم نه</span></h3>
+      <p><span class="fr" lang="fr">aucun(e)</span> قبل از اسم می‌آید و نبود کاملِ یک مورد را بیان می‌کند.</p>
+      <code class="formula" lang="fr">ne + verbe + aucun(e) + nom</code>
+      <div class="example-box"><span class="fr-block" lang="fr">Je n’ai aucune idée.</span><span class="translation">هیچ ایده‌ای ندارم.</span><br><span class="fr-block" lang="fr">Tu as reçu des nouvelles ? — Non, aucune.</span></div>
+    </article>
+
+    <article class="subtopic-card">
+      <h3><span class="fr" lang="fr">ne…guère</span><span class="subtopic-tag">چندان نه / خیلی کم</span></h3>
+      <p><span class="fr" lang="fr">guère</span> معنایی نزدیک به «چندان نه» یا «خیلی کم» دارد و بیشتر رنگ نوشتاری یا رسمی دارد.</p>
+      <div class="example-box"><span class="fr-block" lang="fr">Il ne voit guère sa famille.</span><span class="translation">او خانواده‌اش را چندان نمی‌بیند.</span></div>
+    </article>
+
+    <article class="subtopic-card">
+      <h3><span class="fr" lang="fr">sans</span><span class="subtopic-tag">بدون</span></h3>
+      <p><span class="fr" lang="fr">sans</span> می‌تواند با مصدر یا اسم بیاید.</p>
+      <div class="two-col">
+        <div class="example-box"><strong class="fr-block" lang="fr">sans + infinitif</strong><span class="fr-block" lang="fr">Elle est partie sans répondre.</span><span class="translation">بدون پاسخ دادن رفت.</span></div>
+        <div class="example-box"><strong class="fr-block" lang="fr">sans + nom</strong><span class="fr-block" lang="fr">Il a répondu sans hésitation.</span><span class="translation">بدون تردید پاسخ داد.</span></div>
+      </div>
+    </article>
+
+    <article class="subtopic-card">
+      <h3><span class="fr" lang="fr">Renforcement de la négation</span><span class="subtopic-tag">تقویت نفی</span></h3>
+      <div class="table-wrap"><table><thead><tr><th>ساختار</th><th>معنا</th><th>مثال</th></tr></thead><tbody>
+        <tr><td><span class="fr" lang="fr">pas du tout</span></td><td>اصلاً / به‌هیچ‌وجه</td><td><span class="fr" lang="fr">Je ne le connais pas du tout.</span></td></tr>
+        <tr><td><span class="fr" lang="fr">plus du tout</span></td><td>دیگر اصلاً</td><td><span class="fr" lang="fr">Je ne regarde plus du tout la télévision.</span></td></tr>
+        <tr><td><span class="fr" lang="fr">pas un seul / une seule</span></td><td>حتی یک … هم نه</td><td><span class="fr" lang="fr">Je n’ai pas lu un seul de ses articles.</span></td></tr>
+        <tr><td><span class="fr" lang="fr">plus un seul</span></td><td>دیگر حتی یکی هم نه</td><td><span class="fr" lang="fr">Il ne reste plus un seul billet.</span></td></tr>
+        <tr><td><span class="fr" lang="fr">sans aucun / aucune</span></td><td>بدون هیچ…</td><td><span class="fr" lang="fr">Il est parti sans aucune explication.</span></td></tr>
+      </tbody></table></div>
+    </article>
+
+    <article class="subtopic-card">
+      <h3>چند عنصر منفی در یک جمله</h3>
+      <p>وقتی چند عنصر منفی مثل <span class="fr" lang="fr">jamais, personne, rien, plus</span> با هم می‌آیند، معمولاً دیگر <span class="fr" lang="fr">pas</span> به جمله اضافه نمی‌شود.</p>
+      <div class="contrast-pair">
+        <div class="correct"><span class="mark-good">✅</span> <span class="fr" lang="fr">Il n’y a jamais personne ici.</span></div>
+        <div class="correct"><span class="mark-good">✅</span> <span class="fr" lang="fr">Je ne vois plus rien.</span></div>
+        <div class="incorrect"><span class="mark-bad">❌</span> <span class="fr" lang="fr">Je ne vois pas plus rien.</span></div>
+      </div>
+      <div class="example-box"><span class="fr-block" lang="fr">Elle est partie sans rien dire.</span><span class="fr-block" lang="fr">Il est parti sans saluer personne.</span><span class="fr-block" lang="fr">Elle a réussi sans jamais demander d’aide.</span></div>
+    </article>
+
+    <article class="subtopic-card">
+      <h3><span class="fr" lang="fr">ne…ni…ni…</span><span class="subtopic-tag">نه X نه Y</span></h3>
+      <code class="formula" lang="fr">ne + verbe + ni X + ni Y</code>
+      <div class="example-box"><span class="fr-block" lang="fr">Je ne prends ni fromage ni dessert.</span><span class="translation">نه پنیر می‌خورم، نه دسر.</span><br><span class="fr-block" lang="fr">Ni Paul ni Marie ne sont disponibles.</span></div>
+      <div class="contrast-pair"><div class="correct"><span class="mark-good">✅</span> <span class="fr" lang="fr">Je ne mange ni viande ni poisson.</span></div><div class="incorrect"><span class="mark-bad">❌</span> <span class="fr" lang="fr">Je ne mange pas ni viande ni poisson.</span></div></div>
+      <p class="why">ساختار <span class="fr" lang="fr">Je ne prends pas de fromage ni de dessert.</span> نیز ممکن است، اما ساخت آن با الگوی مستقیم <span class="fr" lang="fr">ne…ni…ni</span> یکسان نیست.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="ne-title">
+  <div class="section-heading"><span class="section-number">4</span><h2 id="ne-title"><span class="fr" lang="fr">ne explétif</span> و <span class="fr" lang="fr">ne</span> واقعی</h2></div>
+
+  <article class="subtopic-card">
+    <h3><span class="fr" lang="fr">ne explétif</span> — «ne» بدون معنای منفی</h3>
+    <p>گاهی <span class="fr" lang="fr">ne</span> در جمله حضور دارد، اما جمله را منفی نمی‌کند. این کاربرد بیشتر در زبان نوشتاری و <span class="fr" lang="fr">français soutenu</span> دیده می‌شود.</p>
+    <div class="example-box"><span class="fr-block" lang="fr">J’ai peur qu’il ne tombe malade.</span><span class="translation">می‌ترسم مریض شود. <strong>نه:</strong> «می‌ترسم مریض نشود.»</span></div>
+    <p>این <span class="fr" lang="fr">ne</span> می‌تواند بعد از بعضی عبارت‌های ترس و برخی conjunctionها، به‌ویژه <span class="fr" lang="fr">avant que</span> و <span class="fr" lang="fr">à moins que</span> ظاهر شود.</p>
+    <div class="two-col">
+      <div class="example-box"><span class="fr-block" lang="fr">Il est parti avant qu’elle n’ait pu répondre.</span></div>
+      <div class="example-box"><span class="fr-block" lang="fr">La grève continuera à moins que le gouvernement ne fasse des concessions.</span></div>
+    </div>
+    <div class="note-box"><span class="box-title">نکتهٔ register</span><p>در زبان روزمره حذف <span class="fr" lang="fr">ne explétif</span> طبیعی است؛ بنابراین <span class="fr" lang="fr">avant qu’il parte</span> نیز طبیعی است.</p></div>
+  </article>
+
+  <article class="subtopic-card" style="margin-top:14px">
+    <h3><span class="fr" lang="fr">ne</span> بدون <span class="fr" lang="fr">pas</span>، اما با معنای منفی واقعی</h3>
+    <p>در بعضی ساختارهای رسمی، به‌خصوص با <span class="fr" lang="fr">pouvoir, savoir, oser, cesser</span>، خودِ <span class="fr" lang="fr">ne</span> می‌تواند نفی واقعی را حمل کند.</p>
+    <div class="two-col">
+      <div class="example-box"><span class="fr-block" lang="fr">Nous ne pourrons accueillir les élèves ce jour-là.</span><span class="translation">آن روز نمی‌توانیم دانش‌آموزان را بپذیریم.</span></div>
+      <div class="example-box"><span class="fr-block" lang="fr">Il n’a cessé de pleuvoir toute la journée.</span><span class="translation">تمام روز باران بند نیامد.</span></div>
+    </div>
+    <div class="warning-box"><span class="box-title">تقابل مهم</span><p><span class="fr" lang="fr">J’ai peur qu’il ne tombe.</span> → <span class="fr" lang="fr">ne</span> منفی نیست.<br><span class="fr" lang="fr">Je ne puis vous répondre.</span> → <span class="fr" lang="fr">ne</span> واقعاً منفی است.</p></div>
+  </article>
+
+  <article class="subtopic-card" style="margin-top:14px">
+    <h3>ساخت رسمیِ <span class="fr" lang="fr">il y a… que… ne</span></h3>
+    <div class="example-box"><span class="fr-block" lang="fr">Il y a plusieurs mois que nous ne l’avons vu.</span><span class="translation">چند ماه است که او را ندیده‌ایم.</span><br><span class="fr-block" lang="fr">Il y avait longtemps que nous n’y étions allés.</span><span class="translation">مدت زیادی بود که آنجا نرفته بودیم.</span></div>
+    <p class="why">این کاربرد نیز رنگ نوشتاری و رسمی دارد.</p>
+  </article>
+</section>
+
+<section class="section section-soft" aria-labelledby="place-title">
+  <div class="section-heading"><span class="section-number">5</span><h2 id="place-title">جایگاه نفی — <span class="fr" lang="fr">La place de la négation</span></h2></div>
+
+  <div class="subtopic-stack">
+    <article class="subtopic-card">
+      <h3>زمان ساده — <span class="fr" lang="fr">Temps simple</span></h3>
+      <code class="formula" lang="fr">Sujet + ne + verbe conjugué + élément négatif</code>
+      <div class="example-box"><span class="fr-block" lang="fr">Ils n’iront pas à la piscine.</span><span class="fr-block" lang="fr">Je ne travaille plus ici.</span><span class="fr-block" lang="fr">Elle ne vient jamais le lundi.</span></div>
+    </article>
+
+    <article class="subtopic-card">
+      <h3>زمان مرکب — <span class="fr" lang="fr">Temps composé</span></h3>
+      <p>با بیشتر عناصر منفی، <span class="fr" lang="fr">ne</span> قبل از auxiliaire و عنصر منفی بعد از auxiliaire می‌آید.</p>
+      <code class="formula" lang="fr">Sujet + ne + auxiliaire + pas / plus / jamais / rien + participe passé</code>
+      <div class="example-box"><span class="fr-block" lang="fr">Je ne suis jamais allé en Asie.</span><span class="fr-block" lang="fr">Elle n’avait rien fait.</span><span class="fr-block" lang="fr">On n’aurait jamais dû le dire.</span></div>
+      <div class="warning-box"><span class="box-title">اما personne و nulle part</span><p><span class="fr" lang="fr">On n’a rencontré personne.</span><br><span class="fr" lang="fr">Je ne l’ai trouvé nulle part.</span></p><p>مقایسه کنید: <span class="fr" lang="fr">Je n’ai rien trouvé.</span> ↔ <span class="fr" lang="fr">Je n’ai trouvé personne.</span></p></div>
+    </article>
+
+    <article class="subtopic-card">
+      <h3>با مصدر — <span class="fr" lang="fr">Infinitif</span></h3>
+      <p>در مصدر، اجزای نفی معمولاً قبل از infinitif قرار می‌گیرند.</p>
+      <div class="example-box"><span class="fr-block" lang="fr">de ne plus en parler</span><span class="fr-block" lang="fr">de ne jamais le répéter</span><span class="fr-block" lang="fr">de ne rien révéler</span><span class="fr-block" lang="fr">Je préfère ne pas sortir.</span></div>
+      <div class="note-box"><span class="box-title">personne دوباره متفاوت است</span><p><span class="fr" lang="fr">ne voir personne</span>، اما <span class="fr" lang="fr">ne rien dire</span>.</p></div>
+    </article>
+
+    <article class="subtopic-card">
+      <h3>امر منفی — <span class="fr" lang="fr">Impératif négatif</span></h3>
+      <code class="formula" lang="fr">ne + impératif + élément négatif</code>
+      <div class="example-box"><span class="fr-block" lang="fr">Ne parlez pas.</span><span class="fr-block" lang="fr">N’oubliez jamais vos clés.</span><span class="fr-block" lang="fr">Ne pensez à rien, détendez-vous !</span></div>
+    </article>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="contrast-title">
+  <div class="section-heading"><span class="section-number">6</span><h2 id="contrast-title">Contrastها و تفاوت‌های ظریف</h2></div>
+  <div class="table-wrap"><table><thead><tr><th>ساختار</th><th>معنا / کاربرد</th><th>مثال</th><th>نکتهٔ تمایز</th></tr></thead><tbody>
+    <tr><td><span class="fr" lang="fr">ne…pas</span></td><td>نفی ساده</td><td><span class="fr" lang="fr">Je ne viens pas.</span></td><td>فقط وقوع عمل را نفی می‌کند.</td></tr>
+    <tr><td><span class="fr" lang="fr">ne…plus</span></td><td>دیگر نه</td><td><span class="fr" lang="fr">Je ne fume plus.</span></td><td>پیش‌تر وجود داشته/انجام می‌شده است.</td></tr>
+    <tr><td><span class="fr" lang="fr">ne…jamais</span></td><td>هرگز</td><td><span class="fr" lang="fr">Je ne fume jamais.</span></td><td>فراوانی/تجربه را صفر می‌کند.</td></tr>
+    <tr><td><span class="fr" lang="fr">ne…pas encore</span></td><td>هنوز نه</td><td><span class="fr" lang="fr">Je n’ai pas encore fini.</span></td><td>وضعیت موقت و امکانِ وقوع بعدی.</td></tr>
+    <tr><td><span class="fr" lang="fr">ne…rien</span></td><td>هیچ‌چیز</td><td><span class="fr" lang="fr">Je n’ai rien vu.</span></td><td>در زمان مرکب معمولاً پیش از participe passé.</td></tr>
+    <tr><td><span class="fr" lang="fr">ne…personne</span></td><td>هیچ‌کس</td><td><span class="fr" lang="fr">Je n’ai vu personne.</span></td><td>معمولاً بعد از participe passé.</td></tr>
+    <tr><td><span class="fr" lang="fr">ne…aucun(e)</span></td><td>هیچ موردی</td><td><span class="fr" lang="fr">Je n’ai aucune idée.</span></td><td>همراه اسم می‌آید.</td></tr>
+    <tr><td><span class="fr" lang="fr">ne…ni…ni</span></td><td>نه X نه Y</td><td><span class="fr" lang="fr">Je ne prends ni café ni thé.</span></td><td><span class="fr" lang="fr">pas</span> معمولاً نمی‌آید.</td></tr>
+    <tr><td><span class="fr" lang="fr">ne explétif</span></td><td>بدون معنای نفی</td><td><span class="fr" lang="fr">avant qu’il ne parte</span></td><td>بیشتر در register رسمی/نوشتاری.</td></tr>
+  </tbody></table></div>
+</section>
+
+<section class="section section-soft" aria-labelledby="limits-title">
+  <div class="section-heading"><span class="section-number">7</span><h2 id="limits-title">استثناها و محدودیت‌ها</h2></div>
+  <ul>
+    <li>با چند عنصر منفی، <span class="fr" lang="fr">pas</span> را خودکار اضافه نکنید: <span class="fr" lang="fr">Je ne vois plus rien.</span></li>
+    <li><span class="fr" lang="fr">pas encore</span> و <span class="fr" lang="fr">jamais</span> هم‌معنا نیستند؛ اولی معمولاً امکان وقوع بعدی را باز می‌گذارد.</li>
+    <li><span class="fr" lang="fr">personne</span> و <span class="fr" lang="fr">rien</span> در زمان مرکب جای یکسان ندارند.</li>
+    <li>هر <span class="fr" lang="fr">ne</span> به معنی «نه» نیست؛ <span class="fr" lang="fr">ne explétif</span> منفی نیست.</li>
+    <li>در مقابل، بعضی <span class="fr" lang="fr">ne</span>های بدون <span class="fr" lang="fr">pas</span> واقعاً منفی‌اند، به‌ویژه در register رسمی.</li>
+  </ul>
+</section>
+
+<section class="section" aria-labelledby="mistakes-title">
+  <div class="section-heading"><span class="section-number">8</span><h2 id="mistakes-title">خطاهای رایج</h2></div>
+  <div class="mistake-grid">
+    <article class="mistake-card"><h3>۱) <span class="fr" lang="fr">pas + rien</span></h3><div class="incorrect"><span class="mark-bad">❌</span> <span class="fr" lang="fr">Je n’ai pas rien compris.</span></div><div class="correct"><span class="mark-good">✅</span> <span class="fr" lang="fr">Je n’ai rien compris.</span></div><p class="why"><span class="fr" lang="fr">rien</span> خودش عنصر منفی است.</p></article>
+    <article class="mistake-card"><h3>۲) <span class="fr" lang="fr">pas + plus</span></h3><div class="incorrect"><span class="mark-bad">❌</span> <span class="fr" lang="fr">Je ne travaille pas plus ici.</span></div><div class="correct"><span class="mark-good">✅</span> <span class="fr" lang="fr">Je ne travaille plus ici.</span></div><p class="why">اگر منظور «دیگر اینجا کار نمی‌کنم» باشد، <span class="fr" lang="fr">ne…plus</span> لازم است.</p></article>
+    <article class="mistake-card"><h3>۳) <span class="fr" lang="fr">jamais</span> به‌جای <span class="fr" lang="fr">pas encore</span></h3><div class="correct"><span class="mark-good">✅</span> <span class="fr" lang="fr">Je ne suis pas encore allé au Japon, mais j’y vais le mois prochain.</span></div><p class="why">«هنوز نه» با یک برنامهٔ آینده، معنای موردنظر را دقیق‌تر می‌رساند.</p></article>
+    <article class="mistake-card"><h3>۴) جایگاه <span class="fr" lang="fr">personne</span></h3><div class="incorrect"><span class="mark-bad">❌</span> <span class="fr" lang="fr">Je n’ai personne rencontré.</span></div><div class="correct"><span class="mark-good">✅</span> <span class="fr" lang="fr">Je n’ai rencontré personne.</span></div></article>
+    <article class="mistake-card"><h3>۵) تفسیر منفیِ <span class="fr" lang="fr">ne explétif</span></h3><div class="example-box"><span class="fr-block" lang="fr">J’ai peur qu’il ne soit malade.</span><span class="translation">معنی: «می‌ترسم مریض باشد.»</span></div><p class="why"><span class="fr" lang="fr">ne</span> اینجا منفی نیست.</p></article>
+    <article class="mistake-card"><h3>۶) <span class="fr" lang="fr">pas</span> با <span class="fr" lang="fr">ni…ni</span></h3><div class="incorrect"><span class="mark-bad">❌</span> <span class="fr" lang="fr">Je ne veux pas ni café ni thé.</span></div><div class="correct"><span class="mark-good">✅</span> <span class="fr" lang="fr">Je ne veux ni café ni thé.</span></div></article>
+    <article class="mistake-card"><h3>۷) جایگاه نفی در infinitif</h3><div class="incorrect"><span class="mark-bad">❌</span> <span class="fr" lang="fr">Je préfère sortir ne pas.</span></div><div class="correct"><span class="mark-good">✅</span> <span class="fr" lang="fr">Je préfère ne pas sortir.</span></div></article>
+  </div>
+</section>
+
+<section class="section section-soft" aria-labelledby="register-title">
+  <div class="section-heading"><span class="section-number">9</span><h2 id="register-title">زبان واقعی و Register</h2></div>
+  <div class="two-col">
+    <div class="mini-card"><h3><span class="fr" lang="fr">ne explétif</span></h3><p>بیشتر در زبان نوشتاری و <span class="fr" lang="fr">soutenu</span> دیده می‌شود. در گفتار روزمره حذف آن طبیعی است.</p><div class="example-box"><span class="fr-block" lang="fr">Avant qu’il ne parte…</span><span class="fr-block" lang="fr">Avant qu’il parte…</span></div></div>
+    <div class="mini-card"><h3><span class="fr" lang="fr">ne</span> بدون <span class="fr" lang="fr">pas</span></h3><p>ساخت‌هایی مانند <span class="fr" lang="fr">Je ne puis vous répondre.</span> رسمی‌ترند؛ در مکالمه معمولاً شکل کامل و شفاف‌تر رایج‌تر است.</p><div class="example-box"><span class="fr-block" lang="fr">Je ne peux pas vous répondre.</span></div></div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="tips-title">
+  <div class="section-heading"><span class="section-number">10</span><h2 id="tips-title">نکات کلیدی یادگیری</h2></div>
+  <ul>
+    <li>«دیگر نه» → <span class="fr" lang="fr">ne…plus</span></li>
+    <li>«هرگز» → <span class="fr" lang="fr">ne…jamais</span></li>
+    <li>«هنوز نه» → <span class="fr" lang="fr">ne…pas encore</span></li>
+    <li>«هیچ‌چیز» → <span class="fr" lang="fr">ne…rien</span></li>
+    <li>«هیچ‌کس» → <span class="fr" lang="fr">ne…personne</span></li>
+    <li>«حتی یک … هم نه» → <span class="fr" lang="fr">ne…aucun(e)</span></li>
+    <li>برای نفی دو عنصر → <span class="fr" lang="fr">ni…ni</span></li>
+    <li>در passé composé: <span class="fr" lang="fr">rien / jamais / plus</span> معمولاً قبل از participe passé؛ <span class="fr" lang="fr">personne / nulle part</span> معمولاً بعد از آن.</li>
+    <li><span class="fr" lang="fr">avant que…ne</span> را خودکار منفی ترجمه نکنید.</li>
+  </ul>
+</section>
+
+<section class="summary-box" aria-labelledby="summary-title">
+  <h2 id="summary-title">خلاصه‌ای که باید به خاطر بسپارید</h2>
+  <ul>
+    <li><span class="fr" lang="fr">encore → ne…plus</span>: <span class="fr" lang="fr">Il travaille encore. → Il ne travaille plus.</span></li>
+    <li><span class="fr" lang="fr">quelque chose → rien</span>: <span class="fr" lang="fr">Je n’ai rien vu.</span></li>
+    <li><span class="fr" lang="fr">quelqu’un → personne</span>: <span class="fr" lang="fr">Je n’ai vu personne.</span></li>
+    <li><span class="fr" lang="fr">jamais</span> = هرگز؛ <span class="fr" lang="fr">pas encore</span> = هنوز نه.</li>
+    <li>چند عنصر منفی → معمولاً <span class="fr" lang="fr">pas</span> حذف می‌شود: <span class="fr" lang="fr">Je ne vois plus rien.</span></li>
+    <li>مصدر: <span class="fr" lang="fr">ne pas sortir / ne plus parler / ne rien dire</span>.</li>
+    <li><span class="fr" lang="fr">ne explétif</span> منفی نیست؛ ولی بعضی <span class="fr" lang="fr">ne</span>های رسمیِ بدون <span class="fr" lang="fr">pas</span> واقعاً منفی‌اند.</li>
+  </ul>
+</section>
+
+<section class="section section-soft" aria-labelledby="exercise-title">
+  <div class="section-heading"><span class="section-number">11</span><h2 id="exercise-title">تمرین</h2></div>
+  <ol class="exercise-list">
+    <li><span class="fr-block" lang="fr">Tu as déjà visité Québec ? — Non, je n’y suis ______ allé, mais j’aimerais y aller.</span></li>
+    <li><span class="fr-block" lang="fr">Il reste encore du café ? — Non, il n’en reste ______.</span></li>
+    <li><span class="fr-block" lang="fr">Qu’est-ce que tu as acheté ? — Je n’ai ______ acheté.</span></li>
+    <li><span class="fr-block" lang="fr">Tu as rencontré quelqu’un ? — Non, je n’ai rencontré ______.</span></li>
+    <li>جمله را طوری بازنویسی کنید که معنی «هنوز تمام نکرده‌ام» بدهد: <span class="fr" lang="fr">Je n’ai jamais terminé le rapport.</span></li>
+    <li>با <span class="fr" lang="fr">ni…ni</span> منفی کنید: <span class="fr" lang="fr">Je prends du thé et du café.</span></li>
+    <li>در <span class="fr" lang="fr">J’ai peur qu’il ne soit en retard.</span>، <span class="fr" lang="fr">ne</span> نفی واقعی است یا <span class="fr" lang="fr">ne explétif</span>؟</li>
+    <li>جمله را اصلاح کنید: <span class="fr" lang="fr">Je n’ai personne vu.</span></li>
+    <li>با infinitif بازنویسی کنید: <span class="fr" lang="fr">Le médecin m’a conseillé : « Ne faites plus de sport. »</span></li>
+    <li>جملهٔ درست را انتخاب کنید: <span class="fr" lang="fr">A. Je ne vois pas plus rien. &nbsp;&nbsp; B. Je ne vois plus rien.</span></li>
+  </ol>
+
+  <details>
+    <summary>نمایش پاسخ‌ها</summary>
+    <div class="answers">
+      <ol>
+        <li><span class="fr" lang="fr">jamais</span> → <span class="fr" lang="fr">Je n’y suis jamais allé.</span></li>
+        <li><span class="fr" lang="fr">plus</span> → <span class="fr" lang="fr">Il n’en reste plus.</span></li>
+        <li><span class="fr" lang="fr">rien</span> → <span class="fr" lang="fr">Je n’ai rien acheté.</span></li>
+        <li><span class="fr" lang="fr">personne</span> → <span class="fr" lang="fr">Je n’ai rencontré personne.</span></li>
+        <li><span class="fr" lang="fr">Je n’ai pas encore terminé le rapport.</span></li>
+        <li><span class="fr" lang="fr">Je ne prends ni thé ni café.</span></li>
+        <li><span class="fr" lang="fr">ne explétif</span>؛ جمله را منفی نمی‌کند.</li>
+        <li><span class="fr" lang="fr">Je n’ai vu personne.</span></li>
+        <li><span class="fr" lang="fr">Le médecin m’a conseillé de ne plus faire de sport.</span></li>
+        <li><strong>B</strong>: <span class="fr" lang="fr">Je ne vois plus rien.</span></li>
+      </ol>
+    </div>
+  </details>
+</section>
+
+<p class="source-note">مبنای آموزشی: درس ۳ کتاب <span class="fr" lang="fr">Grammaire Progressive du Français — Niveau Avancé, 3e édition</span>، صفحات چاپی ۲۶ تا ۲۹. متن آموزشی بازنویسی و مثال‌ها برای آموزش مستقل تنظیم شده‌اند.</p>
 </article>
