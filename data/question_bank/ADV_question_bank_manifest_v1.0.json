@@ -1,0 +1,633 @@
+{
+  "artifact": "ADV_question_bank_manifest_v1.0",
+  "schema_version": "ADV-QB-SCHEMA-v1.0",
+  "question_bank_version": "ADV-QB-v1.0",
+  "generated_at": "2026-09-06T02:31:06+00:00",
+  "source": "Google Drive Advanced active batches",
+  "repository_contract": "ImanNasrEsfahani/grammar-mastery-advanced (read-only)",
+  "lesson_count": 27,
+  "total_batches_scanned": 130,
+  "batches_used": 130,
+  "archived_batch_folders_ignored": [
+    "B002_LEGACY_DUPLICATE",
+    "B037_LEGACY_DUPLICATE_IDENTICAL",
+    "B052_LEGACY_OBSOLETE"
+  ],
+  "non_batch_archive_artifacts_ignored": [
+    "ADV_checkpoint_after_B001_v1.0_DUPLICATE_IDENTICAL.json"
+  ],
+  "total_input_rows": 6130,
+  "total_unique_valid_questions": 6130,
+  "total_output_rows": 6130,
+  "exact_duplicates_removed": 0,
+  "duplicate_external_ids": 0,
+  "revision_conflicts": 0,
+  "invalid_rows": 0,
+  "normalizations_applied": [
+    {
+      "field": "difficulty_model_version",
+      "from": "ADV-DIFF-v1.0",
+      "to": "ADV-DIFFICULTY-v1.0",
+      "count": 1250,
+      "affected_batches": [
+        "B067",
+        "B068",
+        "B069",
+        "B070",
+        "B071",
+        "B072",
+        "B073",
+        "B074",
+        "B075",
+        "B076",
+        "B077",
+        "B078",
+        "B079",
+        "B080",
+        "B081",
+        "B082",
+        "B083",
+        "B084",
+        "B085",
+        "B086",
+        "B087",
+        "B088",
+        "B089",
+        "B090",
+        "B091",
+        "B092",
+        "B093"
+      ],
+      "reason": "Current repository difficulty plan/version registry uses ADV-DIFFICULTY-v1.0; this is metadata-only normalization required by current contract."
+    }
+  ],
+  "source_batches": [
+    "ADV-B001",
+    "ADV-B002",
+    "ADV-B003",
+    "ADV-B004",
+    "ADV-B005",
+    "ADV-B006",
+    "ADV-B007",
+    "ADV-B008",
+    "ADV-B009",
+    "ADV-B010",
+    "ADV-B011",
+    "ADV-B012",
+    "ADV-B013",
+    "ADV-B014",
+    "ADV-B015",
+    "ADV-B016",
+    "ADV-B017",
+    "ADV-B018",
+    "ADV-B019",
+    "ADV-B020",
+    "ADV-B021",
+    "ADV-B022",
+    "ADV-B023",
+    "ADV-B024",
+    "ADV-B025",
+    "ADV-B026",
+    "ADV-B027",
+    "ADV-B028",
+    "ADV-B029",
+    "ADV-B030",
+    "ADV-B031",
+    "ADV-B032",
+    "ADV-B033",
+    "ADV-B034",
+    "ADV-B035",
+    "ADV-B036",
+    "ADV-B037",
+    "ADV-B038",
+    "ADV-B039",
+    "ADV-B040",
+    "ADV-B041",
+    "ADV-B042",
+    "ADV-B043",
+    "ADV-B044",
+    "ADV-B045",
+    "ADV-B046",
+    "ADV-B047",
+    "ADV-B048",
+    "ADV-B049",
+    "ADV-B050",
+    "ADV-B051",
+    "ADV-B052",
+    "ADV-B053",
+    "ADV-B054",
+    "ADV-B055",
+    "ADV-B056",
+    "ADV-B057",
+    "ADV-B058",
+    "ADV-B059",
+    "ADV-B060",
+    "ADV-B061",
+    "ADV-B062",
+    "ADV-B063",
+    "ADV-B064",
+    "ADV-B065",
+    "ADV-B066",
+    "ADV-B067",
+    "ADV-B068",
+    "ADV-B069",
+    "ADV-B070",
+    "ADV-B071",
+    "ADV-B072",
+    "ADV-B073",
+    "ADV-B074",
+    "ADV-B075",
+    "ADV-B076",
+    "ADV-B077",
+    "ADV-B078",
+    "ADV-B079",
+    "ADV-B080",
+    "ADV-B081",
+    "ADV-B082",
+    "ADV-B083",
+    "ADV-B084",
+    "ADV-B085",
+    "ADV-B086",
+    "ADV-B087",
+    "ADV-B088",
+    "ADV-B089",
+    "ADV-B090",
+    "ADV-B091",
+    "ADV-B092",
+    "ADV-B093",
+    "ADV-B094",
+    "ADV-B095",
+    "ADV-B096",
+    "ADV-B097",
+    "ADV-B098",
+    "ADV-B099",
+    "ADV-B100",
+    "ADV-B101",
+    "ADV-B102",
+    "ADV-B103",
+    "ADV-B104",
+    "ADV-B105",
+    "ADV-B106",
+    "ADV-B107",
+    "ADV-B108",
+    "ADV-B109",
+    "ADV-B110",
+    "ADV-B111",
+    "ADV-B112",
+    "ADV-B113",
+    "ADV-B114",
+    "ADV-B115",
+    "ADV-B116",
+    "ADV-B117",
+    "ADV-B118",
+    "ADV-B119",
+    "ADV-B120",
+    "ADV-B121",
+    "ADV-B122",
+    "ADV-B123",
+    "ADV-B124",
+    "ADV-B125",
+    "ADV-B126",
+    "ADV-B127",
+    "ADV-B128",
+    "ADV-B129",
+    "ADV-B130"
+  ],
+  "lesson_files": [
+    {
+      "lesson_no": 1,
+      "lesson_id": "ADV-L01",
+      "lesson_code": "ADV_ARTICLES",
+      "lesson_title": "L’article",
+      "file": "lessons/ADV_L01_questions_v1.0.csv",
+      "question_count": 250,
+      "source_batches": [
+        "B001",
+        "B002",
+        "B003",
+        "B004",
+        "B005"
+      ],
+      "sha256": "2126294a1f54ca71030f698ca5585d787508c051cf81a463eca67b51dd261ec7"
+    },
+    {
+      "lesson_no": 2,
+      "lesson_id": "ADV-L02",
+      "lesson_code": "ADV_ADJECTIVES",
+      "lesson_title": "L’adjectif",
+      "file": "lessons/ADV_L02_questions_v1.0.csv",
+      "question_count": 220,
+      "source_batches": [
+        "B006",
+        "B007",
+        "B008",
+        "B009",
+        "B010"
+      ],
+      "sha256": "b2d6cbc3a2d0bbc652237e7c753c5b211c85beddb1b412f1bdd9ca2d1139115d"
+    },
+    {
+      "lesson_no": 3,
+      "lesson_id": "ADV-L03",
+      "lesson_code": "ADV_NEGATIONS",
+      "lesson_title": "Les négations",
+      "file": "lessons/ADV_L03_questions_v1.0.csv",
+      "question_count": 240,
+      "source_batches": [
+        "B011",
+        "B012",
+        "B013",
+        "B014",
+        "B015"
+      ],
+      "sha256": "0c42ba016ef5b46ce479573672bdebe84812e8b7d2a6b0f8aaf6fa4ab22957a4"
+    },
+    {
+      "lesson_no": 4,
+      "lesson_id": "ADV-L04",
+      "lesson_code": "ADV_INDICATIVE_TENSES",
+      "lesson_title": "Les temps de l’indicatif",
+      "file": "lessons/ADV_L04_questions_v1.0.csv",
+      "question_count": 450,
+      "source_batches": [
+        "B016",
+        "B017",
+        "B018",
+        "B019",
+        "B020",
+        "B021",
+        "B022",
+        "B023",
+        "B024"
+      ],
+      "sha256": "157fbe81f15fc2808bed4db56db34878aa700661d6cd31798fab669e58bf39a1"
+    },
+    {
+      "lesson_no": 5,
+      "lesson_id": "ADV-L05",
+      "lesson_code": "ADV_SUBJUNCTIVE",
+      "lesson_title": "Le subjonctif",
+      "file": "lessons/ADV_L05_questions_v1.0.csv",
+      "question_count": 320,
+      "source_batches": [
+        "B025",
+        "B026",
+        "B027",
+        "B028",
+        "B029",
+        "B030",
+        "B031"
+      ],
+      "sha256": "df656b5888275d6532e58ad5182a9ac3addd5dfd0923163c96186be7b563b194"
+    },
+    {
+      "lesson_no": 6,
+      "lesson_id": "ADV-L06",
+      "lesson_code": "ADV_CONDITIONAL",
+      "lesson_title": "Le conditionnel",
+      "file": "lessons/ADV_L06_questions_v1.0.csv",
+      "question_count": 250,
+      "source_batches": [
+        "B032",
+        "B033",
+        "B034",
+        "B035",
+        "B036"
+      ],
+      "sha256": "5ac3ab098b175a569f9aa297b59361089f2551a308a16a8a7d96c582dbbd9ffb"
+    },
+    {
+      "lesson_no": 7,
+      "lesson_id": "ADV-L07",
+      "lesson_code": "ADV_INFINITIVE",
+      "lesson_title": "L’infinitif",
+      "file": "lessons/ADV_L07_questions_v1.0.csv",
+      "question_count": 220,
+      "source_batches": [
+        "B037",
+        "B038",
+        "B039",
+        "B040",
+        "B041"
+      ],
+      "sha256": "976fb46925ff3778b47baa193743094e739ca89a82531ed0e59ba38f3636910e"
+    },
+    {
+      "lesson_no": 8,
+      "lesson_id": "ADV-L08",
+      "lesson_code": "ADV_PRESENT_PARTICIPLE",
+      "lesson_title": "Le participe présent",
+      "file": "lessons/ADV_L08_questions_v1.0.csv",
+      "question_count": 150,
+      "source_batches": [
+        "B042",
+        "B043",
+        "B044"
+      ],
+      "sha256": "10e60569e493ca5c7b41828c89a1adc7cace7f13b74e45afa2661c5e05bb978c"
+    },
+    {
+      "lesson_no": 9,
+      "lesson_id": "ADV-L09",
+      "lesson_code": "ADV_GERUND",
+      "lesson_title": "Le gérondif",
+      "file": "lessons/ADV_L09_questions_v1.0.csv",
+      "question_count": 140,
+      "source_batches": [
+        "B045",
+        "B046",
+        "B047"
+      ],
+      "sha256": "1b12e154153ad378980938426a64b83ee11313a370d7b3190f3287174428c315"
+    },
+    {
+      "lesson_no": 10,
+      "lesson_id": "ADV-L10",
+      "lesson_code": "ADV_VERBAL_ADJECTIVE",
+      "lesson_title": "L’adjectif verbal",
+      "file": "lessons/ADV_L10_questions_v1.0.csv",
+      "question_count": 100,
+      "source_batches": [
+        "B048",
+        "B049"
+      ],
+      "sha256": "56e43552875bfdc85ca5b70c2754337edb3f0687221aab90e7249c277b0e5ec9"
+    },
+    {
+      "lesson_no": 11,
+      "lesson_id": "ADV-L11",
+      "lesson_code": "ADV_PASSIVE_VOICE",
+      "lesson_title": "La forme passive",
+      "file": "lessons/ADV_L11_questions_v1.0.csv",
+      "question_count": 200,
+      "source_batches": [
+        "B050",
+        "B051",
+        "B052",
+        "B053"
+      ],
+      "sha256": "cf64ea3fc9fcf8d5c22df678dd222f783e8c8fa1c0544e615b30dcf13cbde0a5"
+    },
+    {
+      "lesson_no": 12,
+      "lesson_id": "ADV-L12",
+      "lesson_code": "ADV_PRONOMINAL_FORM",
+      "lesson_title": "La forme pronominale",
+      "file": "lessons/ADV_L12_questions_v1.0.csv",
+      "question_count": 200,
+      "source_batches": [
+        "B054",
+        "B055",
+        "B056",
+        "B057"
+      ],
+      "sha256": "316bdd0a569c92ed34795c43a09d1a4ef40826d02818781bae04f06625b3943e"
+    },
+    {
+      "lesson_no": 13,
+      "lesson_id": "ADV-L13",
+      "lesson_code": "ADV_IMPERSONAL_FORM",
+      "lesson_title": "La forme impersonnelle",
+      "file": "lessons/ADV_L13_questions_v1.0.csv",
+      "question_count": 150,
+      "source_batches": [
+        "B058",
+        "B059",
+        "B060"
+      ],
+      "sha256": "947a5e484cdad965dbd6712ac1de931b64ccf515f11fde1d057339546e8b4ae6"
+    },
+    {
+      "lesson_no": 14,
+      "lesson_id": "ADV-L14",
+      "lesson_code": "ADV_INDIRECT_SPEECH",
+      "lesson_title": "Le discours indirect",
+      "file": "lessons/ADV_L14_questions_v1.0.csv",
+      "question_count": 280,
+      "source_batches": [
+        "B061",
+        "B062",
+        "B063",
+        "B064",
+        "B065",
+        "B066"
+      ],
+      "sha256": "d4f00f6a19362c69665810f9a459070a71302f190987ede2c255532a87b84203"
+    },
+    {
+      "lesson_no": 15,
+      "lesson_id": "ADV-L15",
+      "lesson_code": "ADV_ADVERBS",
+      "lesson_title": "L’adverbe",
+      "file": "lessons/ADV_L15_questions_v1.0.csv",
+      "question_count": 220,
+      "source_batches": [
+        "B067",
+        "B068",
+        "B069",
+        "B070",
+        "B071"
+      ],
+      "sha256": "e89ba4d9a0f78e6badcd2e852f08e6ffca1382f8ce302239a2827d6ae2f9a599"
+    },
+    {
+      "lesson_no": 16,
+      "lesson_id": "ADV-L16",
+      "lesson_code": "ADV_PREPOSITIONS",
+      "lesson_title": "Les prépositions",
+      "file": "lessons/ADV_L16_questions_v1.0.csv",
+      "question_count": 260,
+      "source_batches": [
+        "B072",
+        "B073",
+        "B074",
+        "B075",
+        "B076",
+        "B077"
+      ],
+      "sha256": "4d70f85df86cb535ebc25bd0a4a3ef4a4ee107c120aeb0c7f93fc07b518e32cd"
+    },
+    {
+      "lesson_no": 17,
+      "lesson_id": "ADV-L17",
+      "lesson_code": "ADV_RELATIVE_PRONOUNS",
+      "lesson_title": "Les pronoms relatifs",
+      "file": "lessons/ADV_L17_questions_v1.0.csv",
+      "question_count": 240,
+      "source_batches": [
+        "B078",
+        "B079",
+        "B080",
+        "B081",
+        "B082"
+      ],
+      "sha256": "01c52f02e4ec5f9161e560320ae6dd2d6ec8314e6983b9b318e3024a3da21a0b"
+    },
+    {
+      "lesson_no": 18,
+      "lesson_id": "ADV-L18",
+      "lesson_code": "ADV_OBJECT_PRONOUNS",
+      "lesson_title": "Les pronoms personnels compléments",
+      "file": "lessons/ADV_L18_questions_v1.0.csv",
+      "question_count": 300,
+      "source_batches": [
+        "B083",
+        "B084",
+        "B085",
+        "B086",
+        "B087",
+        "B088"
+      ],
+      "sha256": "d024873ddd6683aff5cedcc3347a849fab0f56522ec2de959cdabec1ddfb33db"
+    },
+    {
+      "lesson_no": 19,
+      "lesson_id": "ADV-L19",
+      "lesson_code": "ADV_INDEFINITE_PRONOUNS",
+      "lesson_title": "Les pronoms indéfinis",
+      "file": "lessons/ADV_L19_questions_v1.0.csv",
+      "question_count": 180,
+      "source_batches": [
+        "B089",
+        "B090",
+        "B091",
+        "B092"
+      ],
+      "sha256": "e9c8b361c4ee88207c95db5b66afdfee49213292fbc3f443b199a7e093fb3192"
+    },
+    {
+      "lesson_no": 20,
+      "lesson_id": "ADV-L20",
+      "lesson_code": "ADV_TIME_SITUATION",
+      "lesson_title": "La situation dans le temps",
+      "file": "lessons/ADV_L20_questions_v1.0.csv",
+      "question_count": 240,
+      "source_batches": [
+        "B093",
+        "B094",
+        "B095",
+        "B096",
+        "B097"
+      ],
+      "sha256": "a05148c85f8b4c2aefe69e109fc591ed2fc7538f342800451b58dd29e407cec3"
+    },
+    {
+      "lesson_no": 21,
+      "lesson_id": "ADV-L21",
+      "lesson_code": "ADV_CAUSE",
+      "lesson_title": "L’expression de la cause",
+      "file": "lessons/ADV_L21_questions_v1.0.csv",
+      "question_count": 200,
+      "source_batches": [
+        "B098",
+        "B099",
+        "B100",
+        "B101"
+      ],
+      "sha256": "d44e163c1259f401071aeafb73c3243d08fc5d1e81fdef09487d9fc04560d205"
+    },
+    {
+      "lesson_no": 22,
+      "lesson_id": "ADV-L22",
+      "lesson_code": "ADV_CONSEQUENCE",
+      "lesson_title": "L’expression de la conséquence",
+      "file": "lessons/ADV_L22_questions_v1.0.csv",
+      "question_count": 200,
+      "source_batches": [
+        "B102",
+        "B103",
+        "B104",
+        "B105"
+      ],
+      "sha256": "4c917ec2443389817828b0088a31346a383661c2b083ea8137a93fabd8cc2686"
+    },
+    {
+      "lesson_no": 23,
+      "lesson_id": "ADV-L23",
+      "lesson_code": "ADV_COMPARISON",
+      "lesson_title": "L’expression de la comparaison",
+      "file": "lessons/ADV_L23_questions_v1.0.csv",
+      "question_count": 200,
+      "source_batches": [
+        "B106",
+        "B107",
+        "B108",
+        "B109"
+      ],
+      "sha256": "f39ec1554013f743038360e93b8055e3c342c5b494a5247e8e21099584fbe4e4"
+    },
+    {
+      "lesson_no": 24,
+      "lesson_id": "ADV-L24",
+      "lesson_code": "ADV_OPPOSITION_CONCESSION",
+      "lesson_title": "L’expression de l’opposition et de la concession",
+      "file": "lessons/ADV_L24_questions_v1.0.csv",
+      "question_count": 220,
+      "source_batches": [
+        "B110",
+        "B111",
+        "B112",
+        "B113",
+        "B114"
+      ],
+      "sha256": "e50564870524c3bfdcbe5222a56b40c80c96f694571cfd35d6f9bf92f0971732"
+    },
+    {
+      "lesson_no": 25,
+      "lesson_id": "ADV-L25",
+      "lesson_code": "ADV_PURPOSE",
+      "lesson_title": "L’expression du but",
+      "file": "lessons/ADV_L25_questions_v1.0.csv",
+      "question_count": 160,
+      "source_batches": [
+        "B115",
+        "B116",
+        "B117",
+        "B118"
+      ],
+      "sha256": "22b0423de72974fd82f8d38e6ced35ecf59b97924db0214bdf3b0ff7ddc0e700"
+    },
+    {
+      "lesson_no": 26,
+      "lesson_id": "ADV-L26",
+      "lesson_code": "ADV_CONDITION_HYPOTHESIS",
+      "lesson_title": "L’expression de la condition et de l’hypothèse",
+      "file": "lessons/ADV_L26_questions_v1.0.csv",
+      "question_count": 260,
+      "source_batches": [
+        "B119",
+        "B120",
+        "B121",
+        "B122",
+        "B123",
+        "B124"
+      ],
+      "sha256": "d1db4ba3e48f303378d1cac2e098b7adf92993dadfdf12affcd72732bda94738"
+    },
+    {
+      "lesson_no": 27,
+      "lesson_id": "ADV-L27",
+      "lesson_code": "ADV_COMMUNICATION_NUANCES",
+      "lesson_title": "Communication : mécanismes et nuances",
+      "file": "lessons/ADV_L27_questions_v1.0.csv",
+      "question_count": 280,
+      "source_batches": [
+        "B125",
+        "B126",
+        "B127",
+        "B128",
+        "B129",
+        "B130"
+      ],
+      "sha256": "aedac9e5ec1bf4c667fdcad1be3668db11b886d18ded16fa45a6031f02fe0113"
+    }
+  ],
+  "transformer_compatibility": {
+    "tool": "ops/question_bank/transform_advanced_batch.py",
+    "files_tested": 27,
+    "files_passed": 27,
+    "rows_transformed": 6130,
+    "requires_pythonpath_when_invoked_directly_from_repo_root": true
+  },
+  "overall_status": "PASS"
+}

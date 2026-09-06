@@ -1,0 +1,28 @@
+lesson_no,lesson_id,lesson_code,lesson_title,question_count,subtopic_count_with_questions,easy_count,medium_count,hard_count,very_hard_count,source_batch_count,output_file
+1,ADV-L01,ADV_ARTICLES,L’article,250,5,50,100,75,25,5,lessons/ADV_L01_questions_v1.0.csv
+2,ADV-L02,ADV_ADJECTIVES,L’adjectif,220,3,44,88,66,22,5,lessons/ADV_L02_questions_v1.0.csv
+3,ADV-L03,ADV_NEGATIONS,Les négations,240,2,48,96,72,24,5,lessons/ADV_L03_questions_v1.0.csv
+4,ADV-L04,ADV_INDICATIVE_TENSES,Les temps de l’indicatif,450,8,90,180,135,45,9,lessons/ADV_L04_questions_v1.0.csv
+5,ADV-L05,ADV_SUBJUNCTIVE,Le subjonctif,320,4,64,128,96,32,7,lessons/ADV_L05_questions_v1.0.csv
+6,ADV-L06,ADV_CONDITIONAL,Le conditionnel,250,4,50,100,75,25,5,lessons/ADV_L06_questions_v1.0.csv
+7,ADV-L07,ADV_INFINITIVE,L’infinitif,220,4,44,88,66,22,5,lessons/ADV_L07_questions_v1.0.csv
+8,ADV-L08,ADV_PRESENT_PARTICIPLE,Le participe présent,150,4,30,60,45,15,3,lessons/ADV_L08_questions_v1.0.csv
+9,ADV-L09,ADV_GERUND,Le gérondif,140,4,28,56,42,14,3,lessons/ADV_L09_questions_v1.0.csv
+10,ADV-L10,ADV_VERBAL_ADJECTIVE,L’adjectif verbal,100,3,20,40,30,10,2,lessons/ADV_L10_questions_v1.0.csv
+11,ADV-L11,ADV_PASSIVE_VOICE,La forme passive,200,4,40,80,60,20,4,lessons/ADV_L11_questions_v1.0.csv
+12,ADV-L12,ADV_PRONOMINAL_FORM,La forme pronominale,200,3,40,80,60,20,4,lessons/ADV_L12_questions_v1.0.csv
+13,ADV-L13,ADV_IMPERSONAL_FORM,La forme impersonnelle,150,4,30,60,45,15,3,lessons/ADV_L13_questions_v1.0.csv
+14,ADV-L14,ADV_INDIRECT_SPEECH,Le discours indirect,280,5,56,112,84,28,6,lessons/ADV_L14_questions_v1.0.csv
+15,ADV-L15,ADV_ADVERBS,L’adverbe,220,5,44,88,66,22,5,lessons/ADV_L15_questions_v1.0.csv
+16,ADV-L16,ADV_PREPOSITIONS,Les prépositions,260,5,52,104,78,26,6,lessons/ADV_L16_questions_v1.0.csv
+17,ADV-L17,ADV_RELATIVE_PRONOUNS,Les pronoms relatifs,240,5,48,96,72,24,5,lessons/ADV_L17_questions_v1.0.csv
+18,ADV-L18,ADV_OBJECT_PRONOUNS,Les pronoms personnels compléments,300,5,60,120,90,30,6,lessons/ADV_L18_questions_v1.0.csv
+19,ADV-L19,ADV_INDEFINITE_PRONOUNS,Les pronoms indéfinis,180,4,36,72,54,18,4,lessons/ADV_L19_questions_v1.0.csv
+20,ADV-L20,ADV_TIME_SITUATION,La situation dans le temps,240,4,48,96,72,24,5,lessons/ADV_L20_questions_v1.0.csv
+21,ADV-L21,ADV_CAUSE,L’expression de la cause,200,4,40,80,60,20,4,lessons/ADV_L21_questions_v1.0.csv
+22,ADV-L22,ADV_CONSEQUENCE,L’expression de la conséquence,200,4,40,80,60,20,4,lessons/ADV_L22_questions_v1.0.csv
+23,ADV-L23,ADV_COMPARISON,L’expression de la comparaison,200,4,40,80,60,20,4,lessons/ADV_L23_questions_v1.0.csv
+24,ADV-L24,ADV_OPPOSITION_CONCESSION,L’expression de l’opposition et de la concession,220,4,44,88,66,22,5,lessons/ADV_L24_questions_v1.0.csv
+25,ADV-L25,ADV_PURPOSE,L’expression du but,160,4,32,64,48,16,4,lessons/ADV_L25_questions_v1.0.csv
+26,ADV-L26,ADV_CONDITION_HYPOTHESIS,L’expression de la condition et de l’hypothèse,260,5,52,104,78,26,6,lessons/ADV_L26_questions_v1.0.csv
+27,ADV-L27,ADV_COMMUNICATION_NUANCES,Communication : mécanismes et nuances,280,6,56,112,84,28,6,lessons/ADV_L27_questions_v1.0.csv
