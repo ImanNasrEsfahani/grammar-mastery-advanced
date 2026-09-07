@@ -1,77 +1,293 @@
-<article class="adv-lesson" data-lesson-id="ADV-L05">
+<!--
+Grammar Mastery Advanced — ADV-L05 / Le subjonctif
+Embeddable HTML fragment for the existing site.
+Uses the site's theme tokens and falls back to accessible light/dark values only if needed.
+-->
 <style>
-.adv-lesson{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.75;color:#172033;max-width:980px;margin:0 auto;padding:8px 2px 40px}
-.adv-lesson *{box-sizing:border-box}
-.adv-lesson .adv-hero{padding:24px;border:1px solid #e3e8f0;border-radius:18px;background:#fff;margin-bottom:22px}
-.adv-lesson .adv-kicker{font-size:.86rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.65;margin:0 0 6px}
-.adv-lesson h2,.adv-lesson h3{line-height:1.35}
-.adv-lesson h2{font-size:1.65rem;margin:0 0 4px}
-.adv-lesson .fa-title{direction:rtl;text-align:right;font-weight:650;margin:.2rem 0 .8rem}
-.adv-lesson .summary{direction:rtl;text-align:right;margin:0}
-.adv-lesson .meta{margin-top:12px;font-size:.9rem;opacity:.72}
-.adv-lesson .subtopic{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin:18px 0;background:#fff}
-.adv-lesson .subtopic h3{margin:0 0 2px;font-size:1.25rem}
-.adv-lesson .fa-subtitle{direction:rtl;text-align:right;font-weight:600;margin:.1rem 0 1rem}
-.adv-lesson .rule{direction:ltr;text-align:left;padding:12px 14px;border-left:4px solid currentColor;background:#f7f9fc;border-radius:8px;margin:12px 0}
-.adv-lesson .teaching,.adv-lesson .trap{direction:rtl;text-align:right}
-.adv-lesson .example{direction:ltr;text-align:left;font-style:italic;padding:10px 14px;background:#f7f9fc;border-radius:8px}
-.adv-lesson .trap{padding:10px 14px;border:1px dashed #c7ced9;border-radius:8px}
-.adv-lesson .source{font-size:.82rem;opacity:.65;margin-top:12px}
-.adv-lesson .notes{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin-top:22px}
-.adv-lesson .notes h3{margin-top:0}
-.adv-lesson .notes section{margin:16px 0}
-.adv-lesson .notes h4{margin:0 0 6px}
-.adv-lesson .notes ul{margin-top:4px}
+.gma-lesson{
+  --fb-ink:#17233c;--fb-muted:#5a6477;--fb-line:#d9dfeb;--fb-surface:#fff;--fb-soft:#f5f7fb;
+  --fb-primary:#2856c7;--fb-primary-strong:#1c3f99;--fb-success:#18794e;--fb-success-soft:#e9f7f0;
+  --fb-danger:#b42318;--fb-danger-soft:#fff0ee;--fb-warning:#8a4b08;--fb-warning-soft:#fff7e8;
+  color:var(--ink,var(--fb-ink));background:var(--surface,var(--fb-surface));
+  border:1px solid var(--line,var(--fb-line));border-radius:var(--radius,18px);
+  padding:clamp(1rem,3vw,2rem);font:inherit;line-height:1.9;direction:rtl;text-align:right;
+  max-width:980px;margin-inline:auto;overflow-wrap:anywhere
+}
+@media(prefers-color-scheme:dark){.gma-lesson{
+  --fb-ink:#eef4ff;--fb-muted:#a8b7d1;--fb-line:#2b3a55;--fb-surface:#111d31;--fb-soft:#16243a;
+  --fb-primary:#7ea2ff;--fb-primary-strong:#b2c8ff;--fb-success:#66d4a0;--fb-success-soft:#123629;
+  --fb-danger:#ff8e87;--fb-danger-soft:#3b1d22;--fb-warning:#f4c46f;--fb-warning-soft:#3b2d16}}
+.gma-lesson *{box-sizing:border-box}.gma-lesson h1,.gma-lesson h2,.gma-lesson h3,.gma-lesson h4{color:var(--ink,var(--fb-ink));line-height:1.45;scroll-margin-top:5rem}
+.gma-lesson h1{margin:0;font-size:clamp(1.7rem,4vw,2.5rem)}
+.gma-lesson h2{margin:2.2rem 0 .85rem;padding-bottom:.5rem;border-bottom:1px solid var(--line,var(--fb-line));font-size:clamp(1.3rem,3vw,1.8rem)}
+.gma-lesson h3{margin:1.65rem 0 .6rem;font-size:clamp(1.1rem,2.5vw,1.4rem)}.gma-lesson h4{margin:1.25rem 0 .45rem;font-size:1.05rem}
+.gma-lesson p{margin:.65rem 0}.gma-lesson ul,.gma-lesson ol{margin:.7rem 0;padding-inline-start:1.35rem}.gma-lesson li+li{margin-top:.32rem}
+.gma-lesson .kicker{margin:0 0 .35rem;color:var(--primary,var(--fb-primary));font-size:.8rem;font-weight:850;letter-spacing:.04em}
+.gma-lesson .subtitle{margin-top:.45rem;color:var(--muted,var(--fb-muted));font-size:1.05rem}
+.gma-lesson .meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem;margin-top:1.2rem}
+.gma-lesson .meta>div{border:1px solid var(--line,var(--fb-line));background:var(--surface-soft,var(--fb-soft));border-radius:14px;padding:.8rem .9rem}
+.gma-lesson .label{display:block;color:var(--muted,var(--fb-muted));font-size:.78rem;font-weight:800;margin-bottom:.12rem}
+.gma-lesson .fr,.gma-lesson code,.gma-lesson .formula{direction:ltr;unicode-bidi:isolate;text-align:left}
+.gma-lesson .fr{display:block;margin:.38rem 0 .1rem;line-height:1.7}.gma-lesson .fr.inline{display:inline;margin:0}
+.gma-lesson code,.gma-lesson .formula{display:inline-block;max-width:100%;background:var(--surface-soft,var(--fb-soft));color:var(--primary-strong,var(--fb-primary-strong));border:1px solid var(--line,var(--fb-line));border-radius:8px;padding:.08rem .38rem;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92em}
+.gma-lesson .example{margin:.85rem 0;padding:.82rem 1rem;border-inline-start:4px solid var(--primary,var(--fb-primary));border-radius:12px;background:var(--surface-soft,var(--fb-soft))}
+.gma-lesson .translation{display:block;margin-top:.18rem;color:var(--muted,var(--fb-muted));font-size:.94rem}
+.gma-lesson .callout{margin:1rem 0;padding:1rem;border:1px solid var(--line,var(--fb-line));border-radius:14px;background:var(--surface-soft,var(--fb-soft))}.gma-lesson .callout>strong{display:block;margin-bottom:.25rem}.gma-lesson .info{border-color:var(--primary,var(--fb-primary))}.gma-lesson .warn{background:var(--warning-soft,var(--fb-warning-soft));border-color:var(--warning,var(--fb-warning))}
+.gma-lesson .pair{margin:.8rem 0;display:grid;gap:.42rem}.gma-lesson .bad,.gma-lesson .good,.gma-lesson .why{border-radius:10px;padding:.62rem .78rem}.gma-lesson .bad{background:var(--danger-soft,var(--fb-danger-soft));border:1px solid var(--danger,var(--fb-danger))}.gma-lesson .good{background:var(--success-soft,var(--fb-success-soft));border:1px solid var(--success,var(--fb-success))}.gma-lesson .why{background:var(--surface-soft,var(--fb-soft));border:1px solid var(--line,var(--fb-line));color:var(--muted,var(--fb-muted))}
+.gma-lesson .table-wrap{width:100%;overflow-x:auto;margin:1rem 0;border:1px solid var(--line,var(--fb-line));border-radius:14px}.gma-lesson table{width:100%;min-width:620px;border-collapse:collapse;background:var(--surface,var(--fb-surface))}.gma-lesson th,.gma-lesson td{padding:.68rem .78rem;border-bottom:1px solid var(--line,var(--fb-line));vertical-align:top;text-align:right}.gma-lesson th{background:var(--surface-soft,var(--fb-soft));font-weight:850}.gma-lesson tr:last-child td{border-bottom:0}.gma-lesson .table-fr{direction:ltr;unicode-bidi:isolate;text-align:left}
+.gma-lesson .summary,.gma-lesson .answers{margin-top:1rem;border:1px solid var(--primary,var(--fb-primary));border-radius:16px;padding:1rem 1.1rem;background:var(--surface-soft,var(--fb-soft))}.gma-lesson .answers{border-color:var(--line,var(--fb-line))}
+.gma-lesson .exercise{counter-reset:x;list-style:none;padding:0}.gma-lesson .exercise>li{counter-increment:x;position:relative;padding:.82rem 3rem .82rem .8rem;border-bottom:1px solid var(--line,var(--fb-line))}.gma-lesson .exercise>li:before{content:counter(x);position:absolute;inset-inline-end:0;top:.82rem;width:2rem;height:2rem;display:grid;place-items:center;border-radius:999px;background:var(--primary,var(--fb-primary));color:#fff;font-weight:850;line-height:1}
+.gma-lesson .source{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--line,var(--fb-line));color:var(--muted,var(--fb-muted));font-size:.88rem}
+@media(max-width:700px){.gma-lesson{padding:1rem;border-radius:14px;line-height:1.85}.gma-lesson .meta{grid-template-columns:1fr}.gma-lesson h2{margin-top:1.85rem}}
+@media(forced-colors:active){.gma-lesson,.gma-lesson .example,.gma-lesson .callout,.gma-lesson .summary,.gma-lesson .answers,.gma-lesson .bad,.gma-lesson .good,.gma-lesson .why{border:1px solid CanvasText}}
 </style>
-<header class="adv-hero">
-<p class="adv-kicker">Lesson 5 · ADV-L05</p>
-<h2 lang="fr" dir="ltr">Le subjonctif</h2>
-<p class="fa-title" lang="fa">وجه التزامی</p>
-<p class="summary" lang="fa">این درس روی «وجه التزامی» تمرکز دارد و زیرموضوع‌های ساخت و ویژگی‌های subjonctif، کاربردهای subjonctif، زمان‌های subjonctif، تقابل subjonctif و indicatif را پوشش می‌دهد.</p>
-<p class="meta">Printed pages 52–61 · PDF pages 54–63 · target 320 questions</p>
+
+<article class="gma-lesson" lang="fa" dir="rtl" aria-labelledby="adv-l05-title">
+<header>
+  <p class="kicker">ADV-L05 · درس پنجم</p>
+  <h1 id="adv-l05-title"><span lang="fr" dir="ltr">LE SUBJONCTIF</span></h1>
+  <p class="subtitle">وجه التزامی؛ بیان خواست، الزام، احساس، امکان، تردید، هدف و تفاوت آن با <span lang="fr" dir="ltr">l’indicatif</span></p>
+  <div class="meta" aria-label="مشخصات درس">
+    <div><span class="label">شماره درس</span>5</div>
+    <div><span class="label">صفحات کتاب</span>52 تا 61</div>
+    <div><span class="label">عنوان رسمی</span><span class="fr" lang="fr">Le subjonctif</span></div>
+    <div><span class="label">موضوع اصلی</span>انتخاب و کاربرد <span lang="fr" dir="ltr">subjonctif</span> در برابر <span lang="fr" dir="ltr">indicatif</span>، زمان‌های subjonctif و تأثیر معنا بر انتخاب mode</div>
+  </div>
 </header>
-<section class="subtopic" id="ADV-L05-ST01">
-<h3 lang="fr" dir="ltr">Formation et caractéristiques</h3>
-<p class="fa-subtitle" lang="fa">ساخت و ویژگی‌های subjonctif</p>
-<p class="rule" lang="fr">Le présent du subjonctif se forme généralement sur la troisième personne du pluriel du présent avec des formes irrégulières.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «ساخت و ویژگی‌های subjonctif» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Il faut que vous fassiez attention.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز همهٔ شخص‌ها را مستقیماً از مصدر می‌سازد و دو بنِ برخی افعال را نادیده می‌گیرد.</p>
-<p class="source"><code>ADV-L05:book-p052-p053:subj-form</code> · printed 52–53 · PDF 54–55</p>
+
+<section>
+<h2>1. هدف درس</h2>
+<p>بعد از این درس باید بتوانید <span lang="fr" dir="ltr">subjonctif présent</span> و <span lang="fr" dir="ltr">subjonctif passé</span> را درست بسازید، میان <span lang="fr" dir="ltr">indicatif</span> و <span lang="fr" dir="ltr">subjonctif</span> انتخاب کنید و بفهمید چرا میزان قطعیت، نوع فعل یا conjunction می‌تواند mode جمله را تغییر دهد.</p>
+<ul>
+<li>تشخیص تفاوت <span lang="fr" dir="ltr">possibilité / probabilité / certitude</span></li>
+<li>تشخیص فعل‌های بیان‌کنندهٔ خواست، احساس، تردید، گزارش واقعیت و دستور</li>
+<li>انتخاب درست بعد از <span lang="fr" dir="ltr">avant que, après que, bien que, même si, pourvu que, si</span></li>
+<li>انتخاب <span lang="fr" dir="ltr">subjonctif présent</span> یا <span lang="fr" dir="ltr">passé</span> بر اساس رابطه زمانی دو عمل</li>
+</ul>
 </section>
-<section class="subtopic" id="ADV-L05-ST02">
-<h3 lang="fr" dir="ltr">Emplois du subjonctif</h3>
-<p class="fa-subtitle" lang="fa">کاربردهای subjonctif</p>
-<p class="rule" lang="fr">Nécessité, volonté, sentiment, jugement, doute, but, condition et concession peuvent sélectionner le subjonctif.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «کاربردهای subjonctif» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Je souhaite qu’elle puisse participer à la réunion.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز وجود que را به‌تنهایی نشانهٔ subjonctif می‌داند و معنای فعل یا پیوند را بررسی نمی‌کند.</p>
-<p class="source"><code>ADV-L05:book-p054-p055:subj-triggers</code> · printed 54–55 · PDF 56–57</p>
+
+<section>
+<h2>2. ایده اصلی</h2>
+<div class="callout info"><strong>قاعدهٔ مرکزی</strong>وجود <code>que</code> به‌تنهایی دلیل استفاده از <span lang="fr" dir="ltr">subjonctif</span> نیست. انتخاب mode تا حد زیادی به این بستگی دارد که گوینده عمل جملهٔ وابسته را چگونه می‌بیند.</div>
+<h3>Indicatif</h3>
+<p>وقتی عمل به صورت واقعیت، تحقق‌یافته، احتمال قوی یا قطعیت ارائه می‌شود:</p>
+<div class="example"><span class="fr" lang="fr">Je crois qu'il viendra.</span><span class="translation">فکر می‌کنم او خواهد آمد.</span><span class="fr" lang="fr">Il est certain qu'il viendra.</span><span class="translation">قطعی است که خواهد آمد.</span></div>
+<h3>Subjonctif</h3>
+<p>وقتی عمل در حوزهٔ خواست، امکان، تردید، احساس، الزام، هدف یا شرایط خاص قرار دارد:</p>
+<div class="example"><span class="fr" lang="fr">Je voudrais qu'il vienne.</span><span class="translation">دوست دارم / می‌خواهم بیاید.</span><span class="fr" lang="fr">Il est possible qu'il vienne.</span><span class="translation">ممکن است بیاید.</span></div>
+<div class="table-wrap"><table><thead><tr><th>درجهٔ تحقق</th><th>مثال</th><th>Mode</th></tr></thead><tbody>
+<tr><td>possibilité</td><td class="table-fr" lang="fr">Il est possible qu'il vienne.</td><td>subjonctif</td></tr>
+<tr><td>probabilité</td><td class="table-fr" lang="fr">Il est probable qu'il viendra.</td><td>indicatif</td></tr>
+<tr><td>certitude</td><td class="table-fr" lang="fr">Il est certain qu'il viendra.</td><td>indicatif</td></tr>
+</tbody></table></div>
 </section>
-<section class="subtopic" id="ADV-L05-ST03">
-<h3 lang="fr" dir="ltr">Temps du subjonctif</h3>
-<p class="fa-subtitle" lang="fa">زمان‌های subjonctif</p>
-<p class="rule" lang="fr">Subjonctif présent marque simultanéité ou postériorité; subjonctif passé marque antériorité ou accomplissement.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «زمان‌های subjonctif» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Je suis ravi que vous ayez terminé à temps.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز زمان subjonctif را از زمان فعل اصلی تقلید می‌کند و رابطهٔ زمانی دو رخداد را نمی‌سنجد.</p>
-<p class="source"><code>ADV-L05:book-p056-p057:subj-tenses</code> · printed 56–57 · PDF 58–59</p>
+
+<section>
+<h2>3. ساخت <span lang="fr" dir="ltr">Subjonctif présent</span></h2>
+<p>کتاب ساخت subjonctif را از شکل سوم‌شخص جمع <span lang="fr" dir="ltr">présent de l’indicatif</span> معرفی می‌کند:</p>
+<div class="example"><span class="fr" lang="fr">ils partent → part-</span><span class="fr" lang="fr">que je parte · que tu partes · qu'il parte · que nous partions · que vous partiez · qu'ils partent</span></div>
+<p><span class="formula" lang="fr">-e, -es, -e, -ions, -iez, -ent</span></p>
+<h3>فعل‌های مهم</h3>
+<div class="table-wrap"><table><thead><tr><th>فعل</th><th>شکل‌های مهم</th></tr></thead><tbody>
+<tr><td class="table-fr" lang="fr">être</td><td class="table-fr" lang="fr">sois, soit, soyons, soyez, soient</td></tr>
+<tr><td class="table-fr" lang="fr">avoir</td><td class="table-fr" lang="fr">aie, ait, ayons, ayez, aient</td></tr>
+<tr><td class="table-fr" lang="fr">aller</td><td class="table-fr" lang="fr">aille, allions, alliez, aillent</td></tr>
+<tr><td class="table-fr" lang="fr">faire</td><td class="table-fr" lang="fr">fasse, fassions, fassiez, fassent</td></tr>
+<tr><td class="table-fr" lang="fr">pouvoir</td><td class="table-fr" lang="fr">puisse, puissions, puissiez, puissent</td></tr>
+<tr><td class="table-fr" lang="fr">savoir</td><td class="table-fr" lang="fr">sache, sachions, sachiez, sachent</td></tr>
+<tr><td class="table-fr" lang="fr">vouloir</td><td class="table-fr" lang="fr">veuille, voulions, vouliez, veuillent</td></tr>
+<tr><td class="table-fr" lang="fr">venir</td><td class="table-fr" lang="fr">vienne, venions, veniez, viennent</td></tr>
+</tbody></table></div>
+<div class="example"><span class="fr" lang="fr">Il faut que j'aille au bureau.</span><span class="translation">باید به اداره بروم.</span><span class="fr" lang="fr">Je voudrais que tu fasses attention.</span><span class="translation">می‌خواهم دقت کنی.</span></div>
 </section>
-<section class="subtopic" id="ADV-L05-ST04">
-<h3 lang="fr" dir="ltr">Subjonctif ou indicatif</h3>
-<p class="fa-subtitle" lang="fa">تقابل subjonctif و indicatif</p>
-<p class="rule" lang="fr">Indicatif présente un fait comme effectif ou probable; subjonctif le cadre comme voulu, évalué, possible, nié ou non assuré.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «تقابل subjonctif و indicatif» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Je pense qu’il vient, mais je ne pense pas qu’il vienne.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز croire یا penser را همیشه با indicatif می‌آورد، حتی در نفی یا پرسشِ واقعیِ شک‌آمیز.</p>
-<p class="source"><code>ADV-L05:book-p058-p061:subj-vs-ind</code> · printed 58–61 · PDF 60–63</p>
+
+<section>
+<h2>4. تفاوت فاعل‌ها و infinitif</h2>
+<p>وقتی دو فاعل متفاوت داریم، ساختار <code>que + subjonctif</code> طبیعی است:</p>
+<div class="example"><span class="fr" lang="fr">J'aimerais qu'il vienne.</span><span class="translation">دوست دارم او بیاید.</span></div>
+<p>اگر فاعل هر دو فعل یک نفر باشد، معمولاً infinitif می‌آید:</p>
+<div class="example"><span class="fr" lang="fr">J'aimerais venir.</span><span class="translation">دوست دارم بیایم.</span></div>
+<p><span class="formula" lang="fr">Sujet 1 + verbe + que + sujet 2 + subjonctif</span></p>
+<p><span class="formula" lang="fr">Sujet + verbe + infinitif</span></p>
+<div class="pair"><div class="bad">❌ <span class="fr inline" lang="fr">J'aimerais que je vienne.</span></div><div class="good">✅ <span class="fr inline" lang="fr">J'aimerais venir.</span></div><div class="why">💡 فاعل هر دو فعل یکی است.</div></div>
+<div class="callout warn"><strong>محدودیت</strong>این قاعده را به همه conjunctionهای دارای subjonctif تعمیم ندهید. بعد از <span lang="fr" dir="ltr">bien que, à condition que, pourvu que</span> فاعل‌ها حتی می‌توانند یکسان باشند.<span class="fr" lang="fr">Je viendrai à condition que je sois en forme.</span></div>
 </section>
-<aside class="notes"><h3>Notes avancées</h3>
-<section><h4>Exceptions / استثناها</h4><ul><li>Avec certains verbes d’opinion, négation et interrogation favorisent le subjonctif sans le rendre toujours mécanique.</li><li>Un même sujet peut néanmoins apparaître avec certaines conjonctions; la contrainte infinitive dépend de la construction.</li></ul></section>
-<section><h4>Contrastes / تقابل‌ها</h4><ul><li>possibilité au subjonctif vs probabilité/certitude à l’indicatif</li><li>subjonctif présent vs passé</li><li>sens déclaratif vs injonctif de verbes polysémiques</li></ul></section>
-<section><h4>Restrictions / محدودیت‌ها</h4><ul><li>Le déclencheur réel est sémantique et syntaxique; que seul ne suffit pas.</li></ul></section>
-<section><h4>Register / سطح زبانی</h4><ul><li>Le ne explétif est plus visible en langue écrite soutenue.</li></ul></section>
-<section><h4>Temporal notes / نکات زمانی</h4><ul><li>Présent du subjonctif: simultanéité/postériorité; passé: antériorité ou accomplissement avant une échéance.</li></ul></section>
-<section><h4>Semantic notes / نکات معنایی</h4><ul><li>Le mode code la manière dont le locuteur prend en charge l’effectivité du contenu.</li></ul></section>
-</aside>
+
+<section>
+<h2>5. کاربردهای اصلی Subjonctif</h2>
+<h3>5.1. الزام و ضرورت</h3>
+<p><span class="formula" lang="fr">Il faut que / Il est nécessaire que / Il est indispensable que + subjonctif</span></p>
+<div class="example"><span class="fr" lang="fr">Il faut que vous répondiez aujourd'hui.</span><span class="translation">لازم است امروز پاسخ بدهید.</span><span class="fr" lang="fr">Il est nécessaire qu'elle soit présente.</span><span class="translation">لازم است او حضور داشته باشد.</span></div>
+<h3>5.2. احساس، ارزیابی و نگرش شخصی</h3>
+<p>ساختارهای بیان‌کنندهٔ شادی، تأسف، اندوه، شرم، تعجب، ترس، خواست، ترجیح، اجازه و منع معمولاً subjonctif می‌گیرند.</p>
+<div class="example"><span class="fr" lang="fr">Je suis content que tu sois ici.</span><span class="translation">خوشحالم که اینجایی.</span><span class="fr" lang="fr">Elle regrette que nous partions si tôt.</span><span class="translation">او متأسف است که ما این‌قدر زود می‌رویم.</span><span class="fr" lang="fr">Je trouve normal qu'il soit inquiet.</span><span class="translation">طبیعی می‌دانم که نگران باشد.</span></div>
+<div class="callout info"><strong>نکتهٔ معنایی</strong>وجود واقعی رویداد لزوماً مانع subjonctif نمی‌شود. در <span class="fr inline" lang="fr">Je regrette qu'il soit parti.</span> رفتن واقعاً اتفاق افتاده، اما clause زیر مجموعهٔ regret قرار گرفته است.</div>
+<h3>5.3. Proposition relative و وجود نامطمئن</h3>
+<div class="example"><span class="fr" lang="fr">Je cherche un traducteur qui connaisse parfaitement le japonais.</span><span class="translation">وجود مترجم موردنظر قطعی نیست → subjonctif.</span><span class="fr" lang="fr">Je connais un traducteur qui connaît parfaitement le japonais.</span><span class="translation">فرد مشخص و واقعی است → indicatif.</span></div>
+<h3>5.4. زمان</h3>
+<p><span class="formula" lang="fr">avant que · jusqu'à ce que · en attendant que + subjonctif</span></p>
+<div class="example"><span class="fr" lang="fr">Nous attendrons jusqu'à ce qu'il revienne.</span><span class="translation">صبر می‌کنیم تا او برگردد.</span><span class="fr" lang="fr">Fermez les fenêtres avant qu'il pleuve.</span><span class="translation">قبل از اینکه باران بگیرد پنجره‌ها را ببندید.</span></div>
+<h3>5.5. <span lang="fr" dir="ltr">avant que</span> در برابر <span lang="fr" dir="ltr">après que</span></h3>
+<div class="table-wrap"><table><thead><tr><th>ساختار</th><th>Mode</th><th>مثال</th></tr></thead><tbody><tr><td class="table-fr" lang="fr">avant que</td><td>subjonctif</td><td class="table-fr" lang="fr">Nous partirons avant qu'il arrive.</td></tr><tr><td class="table-fr" lang="fr">après que</td><td>indicatif</td><td class="table-fr" lang="fr">Nous partirons après qu'il sera arrivé.</td></tr></tbody></table></div>
+<div class="callout warn"><strong>زبان واقعی در برابر قاعدهٔ معیار</strong>در گفتار روزمره گاهی subjonctif بعد از <span lang="fr" dir="ltr">après que</span> شنیده می‌شود؛ اما برای نوشتار رسمی و چارچوب آموزشی کتاب، <span lang="fr" dir="ltr">après que + indicatif</span> را رعایت کنید.</div>
+<h3>5.6. هدف</h3>
+<p><span class="formula" lang="fr">pour que · afin que · de peur que · de crainte que + subjonctif</span></p>
+<div class="example"><span class="fr" lang="fr">Je parle lentement pour que tout le monde comprenne.</span><span class="translation">آرام صحبت می‌کنم تا همه بفهمند.</span><span class="fr" lang="fr">Elle a fermé la porte de peur que le bruit ne réveille le bébé.</span><span class="translation">در را بست از ترس اینکه سروصدا بچه را بیدار کند.</span></div>
+<h3>5.7. شرط</h3>
+<p><span class="formula" lang="fr">à condition que · pourvu que + subjonctif</span></p>
+<div class="example"><span class="fr" lang="fr">Vous pourrez participer à condition que vous soyez inscrit.</span><span class="translation">به شرط اینکه ثبت‌نام کرده باشید می‌توانید شرکت کنید.</span><span class="fr" lang="fr">Pourvu qu'il fasse beau, nous irons à la plage.</span><span class="translation">به شرط اینکه هوا خوب باشد، به ساحل می‌رویم.</span></div>
+<h3>5.8. Concession، restriction و opposition</h3>
+<p><span class="formula" lang="fr">bien que · quoique · sans que · à moins que · où que · qui que · quoi que</span></p>
+<div class="example"><span class="fr" lang="fr">Bien qu'il soit fatigué, il continue à travailler.</span><span class="translation">با اینکه خسته است، به کار ادامه می‌دهد.</span><span class="fr" lang="fr">Il est parti sans que personne le remarque.</span><span class="translation">رفت بدون اینکه کسی متوجه شود.</span><span class="fr" lang="fr">Quoi qu'il dise, je ne changerai pas d'avis.</span><span class="translation">هر چه بگوید، نظرم را عوض نمی‌کنم.</span></div>
+<h4><span lang="fr" dir="ltr">quoique</span> در برابر <span lang="fr" dir="ltr">quoi que</span></h4>
+<div class="table-wrap"><table><thead><tr><th>ساختار</th><th>معنا</th><th>مثال</th></tr></thead><tbody><tr><td class="table-fr" lang="fr">quoique</td><td>با اینکه</td><td class="table-fr" lang="fr">Quoiqu'il soit riche, il vit simplement.</td></tr><tr><td class="table-fr" lang="fr">quoi que</td><td>هر چه</td><td class="table-fr" lang="fr">Quoi qu'il achète, il compare toujours les prix.</td></tr></tbody></table></div>
+<h3>5.9. <span lang="fr" dir="ltr">ne explétif</span></h3>
+<div class="example"><span class="fr" lang="fr">Partons avant qu'il ne soit trop tard.</span><span class="translation">قبل از اینکه خیلی دیر شود برویم.</span></div>
+<p>این <code>ne</code> منفی نیست و معمولاً با <code>pas</code> همراه نمی‌شود. این کاربرد بیشتر در زبان نوشتاری و register soutenu دیده می‌شود.</p>
+</section>
+
+<section>
+<h2>6. زمان‌های Subjonctif</h2>
+<h3>6.1. Subjonctif présent</h3>
+<p>برای هم‌زمانی یا عملی بعد از فعل اصلی:</p>
+<div class="example"><span class="fr" lang="fr">Je regrette qu'il soit absent.</span><span class="translation">هم‌زمانی</span><span class="fr" lang="fr">J'aimerais que tu viennes demain.</span><span class="translation">عمل بعدی</span></div>
+<div class="callout info"><strong>نکته</strong>برای آینده، futur du subjonctif نداریم. می‌گوییم <span class="fr" lang="fr">Je veux que tu viennes demain.</span> نه <span class="fr" lang="fr">✗ Je veux que tu viendras demain.</span></div>
+<h3>6.2. Subjonctif passé</h3>
+<p><span class="formula" lang="fr">avoir / être au subjonctif + participe passé</span></p>
+<div class="example"><span class="fr" lang="fr">que j'aie terminé · que tu sois arrivé</span></div>
+<p>برای عملی که نسبت به فعل یا حالت اصلی زودتر انجام شده است:</p>
+<div class="example"><span class="fr" lang="fr">Je suis heureux que vous ayez réussi.</span><span class="translation">خوشحالم که موفق شده‌اید.</span><span class="fr" lang="fr">Elle regrette qu'il soit parti.</span><span class="translation">او متأسف است که او رفته است.</span></div>
+<p>برای deadline نیز:</p><div class="example"><span class="fr" lang="fr">Il faut que vous ayez terminé avant 18 heures.</span><span class="translation">باید تا قبل از ساعت ۶ تمام کرده باشید.</span></div>
+<p>با <span lang="fr" dir="ltr">être</span>، accord معمول participe passé حفظ می‌شود: <span class="fr inline" lang="fr">Je suis content qu'elles soient arrivées.</span></p>
+</section>
+
+<section>
+<h2>7. Subjonctif یا Indicatif؟</h2>
+<h3>7.1. فعل‌هایی که معمولاً Indicatif می‌گیرند</h3>
+<p>وقتی گوینده عمل را یک واقعیت، ادراک یا باور مثبت می‌بیند:</p>
+<ul><li><span lang="fr" dir="ltr">penser que, croire que, trouver que, avoir l'impression que</span></li><li><span lang="fr" dir="ltr">être certain / sûr que, savoir que, ignorer que</span></li><li><span lang="fr" dir="ltr">s'apercevoir que, voir que, constater que, comprendre que, apprendre que, observer que</span></li></ul>
+<div class="example"><span class="fr" lang="fr">Je crois qu'il viendra.</span><span class="fr" lang="fr">Je sais que la réunion est annulée.</span></div>
+<h3>7.2. گفتن و گزارش واقعیت</h3>
+<p><span lang="fr" dir="ltr">dire, affirmer, déclarer, assurer, répéter, répondre, prétendre</span> در معنای statement معمولاً indicatif می‌گیرند.</p>
+<div class="example"><span class="fr" lang="fr">Elle affirme qu'elle connaît la réponse.</span></div>
+<h3>7.3. احتمال قوی و évidence</h3>
+<p><span class="formula" lang="fr">Il est probable que... · Il paraît que... · Il est évident que... · Il est certain que...</span></p>
+<h3>7.4. منفی کردن certainty و سؤال</h3>
+<div class="example"><span class="fr" lang="fr">Je crois qu'il viendra.</span><span class="translation">باور مثبت → indicatif</span><span class="fr" lang="fr">Je ne crois pas qu'il vienne.</span><span class="translation">قطعیت ضعیف‌شده → معمولاً subjonctif</span><span class="fr" lang="fr">Croyez-vous qu'il soit prêt ?</span><span class="translation">پرسش می‌تواند certainty را ضعیف کند.</span></div>
+<h3>7.5. فعل‌هایی که Subjonctif می‌گیرند</h3>
+<div class="table-wrap"><table><thead><tr><th>گروه</th><th>نمونه‌ها</th><th>مثال</th></tr></thead><tbody>
+<tr><td>دستور، منع، درخواست، اجازه</td><td class="table-fr" lang="fr">ordonner, interdire, refuser, accepter, autoriser, demander</td><td class="table-fr" lang="fr">Elle demande que nous soyons prêts à huit heures.</td></tr>
+<tr><td>احساس و ارزیابی</td><td class="table-fr" lang="fr">avoir peur, regretter, trouver bien/mal/normal</td><td class="table-fr" lang="fr">Je trouve étrange qu'il ne réponde pas.</td></tr>
+<tr><td>خواست و الزام</td><td class="table-fr" lang="fr">vouloir, désirer, souhaiter, il faut</td><td class="table-fr" lang="fr">Je voudrais qu'il me rappelle.</td></tr>
+<tr><td>امکان و تردید</td><td class="table-fr" lang="fr">il est possible, il est peu probable, douter</td><td class="table-fr" lang="fr">Il est possible que nous soyons en retard.</td></tr>
+</tbody></table></div>
+<h3>7.6. Probable در برابر Possible</h3>
+<div class="example"><span class="fr" lang="fr">Il est probable qu'il viendra.</span><span class="translation">احتمال قوی → indicatif</span><span class="fr" lang="fr">Il est possible qu'il vienne.</span><span class="translation">امکان → subjonctif</span><span class="fr" lang="fr">Il est peu probable qu'ils soient invités.</span><span class="translation">احتمال ضعیف → subjonctif</span></div>
+</section>
+
+<section>
+<h2>8. Conjunctionها و Mode</h2>
+<div class="table-wrap"><table><thead><tr><th>رابطه</th><th>Indicatif</th><th>Subjonctif</th></tr></thead><tbody>
+<tr><td>زمان</td><td class="table-fr" lang="fr">quand, lorsque, pendant que, tant que, tandis que, alors que, après que, dès que, aussitôt que</td><td class="table-fr" lang="fr">avant que, jusqu'à ce que, en attendant que</td></tr>
+<tr><td>علت/نتیجه</td><td class="table-fr" lang="fr">parce que, puisque, étant donné que, si bien que</td><td>—</td></tr>
+<tr><td>فرض/شرط</td><td class="table-fr" lang="fr">si, même si, comme si</td><td class="table-fr" lang="fr">à moins que, à condition que, pourvu que</td></tr>
+<tr><td>concession</td><td>—</td><td class="table-fr" lang="fr">bien que, quoique</td></tr>
+<tr><td>هدف</td><td>—</td><td class="table-fr" lang="fr">pour que, afin que, de sorte que (but)</td></tr>
+</tbody></table></div>
+<div class="pair"><div class="bad">❌ <span class="fr inline" lang="fr">Même s'il soit fatigué...</span></div><div class="good">✅ <span class="fr inline" lang="fr">Même s'il est fatigué...</span></div><div class="why">💡 <span lang="fr" dir="ltr">même si</span> با indicatif می‌آید.</div></div>
+<h3><span lang="fr" dir="ltr">de sorte que</span>: تفاوت معنایی</h3>
+<p>نتیجهٔ واقعی → indicatif:</p><div class="example"><span class="fr" lang="fr">Il a parlé clairement, de sorte que tout le monde a compris.</span></div>
+<p>هدف → subjonctif:</p><div class="example"><span class="fr" lang="fr">Parlez clairement de sorte que tout le monde comprenne.</span></div>
+</section>
+
+<section>
+<h2>9. یک فعل، دو Mode: معنا تعیین‌کننده است</h2>
+<h3><span lang="fr" dir="ltr">admettre</span></h3><div class="example"><span class="fr" lang="fr">J'admets qu'il a raison.</span><span class="translation">پذیرفتن یک واقعیت → indicatif</span><span class="fr" lang="fr">J'admets qu'il puisse être absent demain.</span><span class="translation">قبول کردن یک امکان → subjonctif</span></div>
+<h3><span lang="fr" dir="ltr">demander</span></h3><div class="example"><span class="fr" lang="fr">Il demande si tu vas bien.</span><span class="translation">پرسیدن → indicatif</span><span class="fr" lang="fr">Il demande que tu viennes.</span><span class="translation">درخواست → subjonctif</span></div>
+<h3><span lang="fr" dir="ltr">supposer</span></h3><div class="example"><span class="fr" lang="fr">Je suppose qu'il arrivera vers huit heures.</span><span class="translation">نظر/حدس → indicatif</span><span class="fr" lang="fr">Supposons qu'il ne vienne pas.</span><span class="translation">فرض ذهنی → subjonctif</span></div>
+<h3><span lang="fr" dir="ltr">dire</span></h3><div class="example"><span class="fr" lang="fr">Il dit que nous devons partir.</span><span class="translation">گزارش → indicatif</span><span class="fr" lang="fr">Le professeur a dit que nous fassions cet exercice.</span><span class="translation">دستور → subjonctif</span></div>
+<h3><span lang="fr" dir="ltr">comprendre</span></h3><div class="example"><span class="fr" lang="fr">J'ai compris qu'il voulait partir.</span><span class="translation">فهمیدن واقعیت → indicatif</span><span class="fr" lang="fr">Je comprends que tu veuilles changer de travail.</span><span class="translation">درک/پذیرش نگرش → subjonctif</span></div>
+</section>
+
+<section>
+<h2>10. Contrastهای اصلی</h2>
+<div class="table-wrap"><table><thead><tr><th>ساختار</th><th>معنا</th><th>Mode</th></tr></thead><tbody>
+<tr><td class="table-fr" lang="fr">Il est certain que...</td><td>قطعیت</td><td>indicatif</td></tr><tr><td class="table-fr" lang="fr">Il est probable que...</td><td>احتمال قوی</td><td>indicatif</td></tr><tr><td class="table-fr" lang="fr">Il est possible que...</td><td>امکان</td><td>subjonctif</td></tr><tr><td class="table-fr" lang="fr">Je crois que...</td><td>باور مثبت</td><td>indicatif</td></tr><tr><td class="table-fr" lang="fr">Je ne crois pas que...</td><td>قطعیت ضعیف‌شده</td><td>غالباً subjonctif</td></tr><tr><td class="table-fr" lang="fr">après que</td><td>عمل تحقق‌یافته</td><td>indicatif</td></tr><tr><td class="table-fr" lang="fr">avant que</td><td>عمل هنوز تحقق‌نیافته</td><td>subjonctif</td></tr><tr><td class="table-fr" lang="fr">même si</td><td>حتی اگر</td><td>indicatif</td></tr><tr><td class="table-fr" lang="fr">bien que</td><td>با اینکه</td><td>subjonctif</td></tr><tr><td class="table-fr" lang="fr">si</td><td>اگر</td><td>indicatif</td></tr><tr><td class="table-fr" lang="fr">pourvu que</td><td>به شرط اینکه</td><td>subjonctif</td></tr><tr><td class="table-fr" lang="fr">demander si</td><td>پرسیدن آیا</td><td>indicatif</td></tr><tr><td class="table-fr" lang="fr">demander que</td><td>درخواست کردن</td><td>subjonctif</td></tr>
+</tbody></table></div>
+</section>
+
+<section>
+<h2>11. استثناها و محدودیت‌ها</h2>
+<ul>
+<li><code>que</code> مساوی subjonctif نیست: <span class="fr inline" lang="fr">Je sais qu'il vient.</span> در برابر <span class="fr inline" lang="fr">Je veux qu'il vienne.</span></li>
+<li>فاعل یکسان معمولاً infinitif می‌گیرد: <span class="fr inline" lang="fr">Je préfère partir.</span></li>
+<li>این قاعده برای همه conjunctionها نیست: <span class="fr inline" lang="fr">Je partirai à condition que je sois prêt.</span></li>
+<li><span lang="fr" dir="ltr">après que</span> در قاعدهٔ معیار کتاب indicatif می‌گیرد.</li>
+<li><span lang="fr" dir="ltr">si, même si, comme si</span> subjonctif نمی‌گیرند.</li>
+<li><span lang="fr" dir="ltr">ne explétif</span> منفی نیست.</li>
+<li>برای آینده نیز subjonctif présent استفاده می‌شود: <span class="fr inline" lang="fr">Je veux qu'il vienne demain.</span></li>
+<li>برای عمل قبلی یا تکمیل‌شده، subjonctif passé می‌آید.</li>
+</ul>
+</section>
+
+<section>
+<h2>12. خطاهای رایج</h2>
+<div class="pair"><div class="bad">❌ <span class="fr inline" lang="fr">Il faut que tu fais attention.</span></div><div class="good">✅ <span class="fr inline" lang="fr">Il faut que tu fasses attention.</span></div><div class="why">💡 <span lang="fr" dir="ltr">il faut que</span> → subjonctif.</div></div>
+<div class="pair"><div class="bad">❌ <span class="fr inline" lang="fr">Je veux que je parte.</span></div><div class="good">✅ <span class="fr inline" lang="fr">Je veux partir.</span></div><div class="why">💡 فاعل هر دو فعل یکسان است.</div></div>
+<div class="pair"><div class="bad">❌ <span class="fr inline" lang="fr">Il est probable qu'il vienne.</span></div><div class="good">✅ <span class="fr inline" lang="fr">Il est probable qu'il viendra.</span></div><div class="why">💡 در چارچوب این درس، احتمال قوی → indicatif.</div></div>
+<div class="pair"><div class="bad">❌ <span class="fr inline" lang="fr">Même s'il soit malade, il viendra.</span></div><div class="good">✅ <span class="fr inline" lang="fr">Même s'il est malade, il viendra.</span></div><div class="why">💡 <span lang="fr" dir="ltr">même si</span> → indicatif.</div></div>
+<div class="pair"><div class="bad">❌ <span class="fr inline" lang="fr">Bien qu'il est malade, il travaille.</span></div><div class="good">✅ <span class="fr inline" lang="fr">Bien qu'il soit malade, il travaille.</span></div><div class="why">💡 <span lang="fr" dir="ltr">bien que</span> → subjonctif.</div></div>
+<div class="pair"><div class="bad">❌ <span class="fr inline" lang="fr">Nous partirons après qu'il soit arrivé.</span></div><div class="good">✅ <span class="fr inline" lang="fr">Nous partirons après qu'il sera arrivé.</span></div><div class="why">💡 طبق قاعدهٔ کتاب، <span lang="fr" dir="ltr">après que</span> → indicatif.</div></div>
+<div class="pair"><div class="bad">❌ <span class="fr inline" lang="fr">Nous attendrons jusqu'à ce qu'il revient.</span></div><div class="good">✅ <span class="fr inline" lang="fr">Nous attendrons jusqu'à ce qu'il revienne.</span></div><div class="why">💡 <span lang="fr" dir="ltr">jusqu'à ce que</span> → subjonctif.</div></div>
+<div class="pair"><div class="bad">❌ <span class="fr inline" lang="fr">Je regrette qu'il refuse hier.</span></div><div class="good">✅ <span class="fr inline" lang="fr">Je regrette qu'il ait refusé hier.</span></div><div class="why">💡 اتفاق قبل از احساس regret انجام شده → subjonctif passé.</div></div>
+<div class="pair"><div class="bad">❌ تصور اینکه <span class="fr inline" lang="fr">ne</span> در <span class="fr inline" lang="fr">Je partirai avant qu'il ne soit trop tard.</span> منفی است.</div><div class="good">✅ جمله مثبت است.</div><div class="why">💡 این <span lang="fr" dir="ltr">ne</span> یک <span lang="fr" dir="ltr">ne explétif</span> است.</div></div>
+<div class="pair"><div class="bad">❌ <span class="fr inline" lang="fr">Il demande que tu vas bien.</span></div><div class="good">✅ <span class="fr inline" lang="fr">Il demande si tu vas bien.</span> / <span class="fr inline" lang="fr">Il demande que tu lui écrives.</span></div><div class="why">💡 معنای <span lang="fr" dir="ltr">demander</span> ساختار را تعیین می‌کند.</div></div>
+</section>
+
+<section>
+<h2>13. زبان واقعی و Register</h2>
+<p><span lang="fr" dir="ltr">Subjonctif présent</span> کاملاً جزو français courant و standard است. <span lang="fr" dir="ltr">ne explétif</span> بیشتر در français soutenu و زبان نوشتاری دیده می‌شود.</p>
+<div class="example"><span class="fr" lang="fr">avant qu'il soit trop tard</span><span class="translation">گفتار و زبان معمول</span><span class="fr" lang="fr">avant qu'il ne soit trop tard</span><span class="translation">نوشتاری‌تر / soutenu</span></div>
+<p>در زبان واقعی ممکن است subjonctif بعد از <span lang="fr" dir="ltr">après que</span> شنیده شود؛ ولی برای آزمون و نوشتار معیار، <span lang="fr" dir="ltr">après que + indicatif</span> را رعایت کنید.</p>
+</section>
+
+<section>
+<h2>14. نکات کلیدی یادگیری</h2>
+<div class="table-wrap"><table><thead><tr><th>نشانه</th><th>انتخاب معمول</th></tr></thead><tbody>
+<tr><td>fait / constat / certitude / forte probabilité</td><td>indicatif</td></tr><tr><td>volonté / obligation / émotion / doute / possibilité / but</td><td>subjonctif</td></tr><tr><td>avant / jusqu'à / en attendant</td><td>subjonctif</td></tr><tr><td>après / dès / aussitôt / quand</td><td>indicatif</td></tr><tr><td>si / même si / comme si</td><td>indicatif</td></tr><tr><td>pourvu que / à condition que / à moins que</td><td>subjonctif</td></tr><tr><td>هم‌زمان یا بعدتر</td><td>subjonctif présent</td></tr><tr><td>قبل‌تر یا از قبل تکمیل‌شده</td><td>subjonctif passé</td></tr>
+</tbody></table></div>
+</section>
+
+<section>
+<h2>15. خلاصه‌ای که باید به خاطر بسپارید</h2>
+<div class="summary"><ul>
+<li><span lang="fr" dir="ltr">Il faut que...</span> → subjonctif</li><li>احساس و ارزیابی → معمولاً subjonctif</li><li>خواست و دستور → subjonctif</li><li>امکان و تردید → subjonctif</li><li>certainty و fact → indicatif</li><li><span lang="fr" dir="ltr">Il est probable que</span> → indicatif</li><li><span lang="fr" dir="ltr">Il est possible que</span> → subjonctif</li><li><span lang="fr" dir="ltr">Je crois que</span> → indicatif</li><li><span lang="fr" dir="ltr">Je ne crois pas que</span> → معمولاً subjonctif</li><li><span lang="fr" dir="ltr">avant que</span> → subjonctif</li><li><span lang="fr" dir="ltr">après que</span> → indicatif</li><li><span lang="fr" dir="ltr">jusqu'à ce que</span> → subjonctif</li><li><span lang="fr" dir="ltr">bien que</span> → subjonctif</li><li><span lang="fr" dir="ltr">même si</span> → indicatif</li><li><span lang="fr" dir="ltr">si</span> → indicatif، نه subjonctif</li><li><span lang="fr" dir="ltr">pourvu que / à condition que / à moins que</span> → subjonctif</li><li>relative با referent نامطمئن → subjonctif</li><li>عمل هم‌زمان یا بعدی → subjonctif présent</li><li>عمل قبلی یا تمام‌شده → subjonctif passé</li><li><span lang="fr" dir="ltr">ne explétif</span> منفی نیست.</li><li>در افعالی مثل <span lang="fr" dir="ltr">demander, admettre, supposer, comprendre, dire</span> معنا می‌تواند mode را تغییر دهد.</li>
+</ul></div>
+</section>
+
+<section>
+<h2>16. تمرین</h2>
+<p>فعل داخل پرانتز را به mode و زمان مناسب ببرید.</p>
+<ol class="exercise">
+<li><span class="fr" lang="fr">Il est certain que Léa (être) ______ chez elle.</span></li>
+<li><span class="fr" lang="fr">Je doute qu'elle (pouvoir) ______ venir ce soir.</span></li>
+<li><span class="fr" lang="fr">Nous partirons après que Paul (terminer) ______ son travail.</span></li>
+<li><span class="fr" lang="fr">Nous attendrons jusqu'à ce que Paul (terminer) ______ son travail.</span></li>
+<li><span class="fr" lang="fr">Même s'il (pleuvoir) ______, nous sortirons.</span></li>
+<li><span class="fr" lang="fr">Bien qu'il (pleuvoir) ______, ils continuent le match.</span></li>
+<li><span class="fr" lang="fr">Je cherche quelqu'un qui (savoir) ______ réparer ce logiciel.</span></li>
+<li><span class="fr" lang="fr">Je connais quelqu'un qui (savoir) ______ réparer ce logiciel.</span></li>
+<li><span class="fr" lang="fr">Le directeur demande que vous (envoyer) ______ le document aujourd'hui.</span></li>
+<li><span class="fr" lang="fr">Le directeur demande si vous (avoir) ______ déjà envoyé le document.</span></li>
+<li><span class="fr" lang="fr">Je suis ravi que vous (venir) ______ hier.</span></li>
+<li><span class="fr" lang="fr">Il faut que vous (finir) ______ ce dossier avant demain matin.</span></li>
+<li>اصلاح کنید: <span class="fr inline" lang="fr">J'aimerais que je parte plus tôt.</span></li>
+<li>در جملهٔ <span class="fr inline" lang="fr">Je rentrerai avant qu'il ne fasse nuit.</span> آیا <span lang="fr" dir="ltr">ne</span> منفی است؟</li>
+</ol>
+<div class="answers"><h3>پاسخ تمرین‌ها</h3><ol>
+<li><span class="fr inline" lang="fr">est</span> — certitude → indicatif.</li><li><span class="fr inline" lang="fr">puisse</span> — doute → subjonctif présent.</li><li><span class="fr inline" lang="fr">aura terminé</span> — <span lang="fr" dir="ltr">après que</span> → indicatif.</li><li><span class="fr inline" lang="fr">termine</span> — <span lang="fr" dir="ltr">jusqu'à ce que</span> → subjonctif.</li><li><span class="fr inline" lang="fr">pleut</span> — <span lang="fr" dir="ltr">même si</span> → indicatif.</li><li><span class="fr inline" lang="fr">pleuve</span> — <span lang="fr" dir="ltr">bien que</span> → subjonctif.</li><li><span class="fr inline" lang="fr">sache</span> — وجود شخص موردنظر قطعی نیست.</li><li><span class="fr inline" lang="fr">sait</span> — شخص مشخص و واقعی است.</li><li><span class="fr inline" lang="fr">envoyiez</span> — درخواست → subjonctif.</li><li><span class="fr inline" lang="fr">avez</span> — پرسش غیرمستقیم → indicatif.</li><li><span class="fr inline" lang="fr">soyez venus</span> — عمل قبل‌تر → subjonctif passé.</li><li><span class="fr inline" lang="fr">ayez fini</span> — تکمیل تا deadline.</li><li><span class="fr inline" lang="fr">J'aimerais partir plus tôt.</span></li><li>خیر؛ <span lang="fr" dir="ltr">ne</span> یک <span lang="fr" dir="ltr">ne explétif</span> است.</li>
+</ol></div>
+</section>
+
+<footer class="source">منبع آموزشی: <span lang="fr" dir="ltr">Grammaire Progressive du Français — Niveau Avancé — 3e édition</span>، درس 5، صفحات 52 تا 61.</footer>
 </article>

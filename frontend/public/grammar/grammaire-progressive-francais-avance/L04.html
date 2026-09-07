@@ -1,113 +1,161 @@
-<article class="adv-lesson" data-lesson-id="ADV-L04">
+<article class="adv-lesson" data-lesson-id="ADV-L04" lang="fa" dir="rtl">
 <style>
-.adv-lesson{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.75;color:#172033;max-width:980px;margin:0 auto;padding:8px 2px 40px}
-.adv-lesson *{box-sizing:border-box}
-.adv-lesson .adv-hero{padding:24px;border:1px solid #e3e8f0;border-radius:18px;background:#fff;margin-bottom:22px}
-.adv-lesson .adv-kicker{font-size:.86rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.65;margin:0 0 6px}
-.adv-lesson h2,.adv-lesson h3{line-height:1.35}
-.adv-lesson h2{font-size:1.65rem;margin:0 0 4px}
-.adv-lesson .fa-title{direction:rtl;text-align:right;font-weight:650;margin:.2rem 0 .8rem}
-.adv-lesson .summary{direction:rtl;text-align:right;margin:0}
-.adv-lesson .meta{margin-top:12px;font-size:.9rem;opacity:.72}
-.adv-lesson .subtopic{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin:18px 0;background:#fff}
-.adv-lesson .subtopic h3{margin:0 0 2px;font-size:1.25rem}
-.adv-lesson .fa-subtitle{direction:rtl;text-align:right;font-weight:600;margin:.1rem 0 1rem}
-.adv-lesson .rule{direction:ltr;text-align:left;padding:12px 14px;border-left:4px solid currentColor;background:#f7f9fc;border-radius:8px;margin:12px 0}
-.adv-lesson .teaching,.adv-lesson .trap{direction:rtl;text-align:right}
-.adv-lesson .example{direction:ltr;text-align:left;font-style:italic;padding:10px 14px;background:#f7f9fc;border-radius:8px}
-.adv-lesson .trap{padding:10px 14px;border:1px dashed #c7ced9;border-radius:8px}
-.adv-lesson .source{font-size:.82rem;opacity:.65;margin-top:12px}
-.adv-lesson .notes{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin-top:22px}
-.adv-lesson .notes h3{margin-top:0}
-.adv-lesson .notes section{margin:16px 0}
-.adv-lesson .notes h4{margin:0 0 6px}
-.adv-lesson .notes ul{margin-top:4px}
+/* Grammar Mastery Advanced — Lesson 4. Site-compatible fragment; no JS/external assets. */
+.adv-lesson{
+  --a-text:var(--ink,#17233c);--a-muted:var(--muted,#5a6477);--a-line:var(--line,#d9dfeb);
+  --a-surface:var(--surface,#fff);--a-soft:var(--surface-soft,#f5f7fb);--a-primary:var(--primary,#2856c7);
+  --a-primary-strong:var(--primary-strong,#1c3f99);--a-success:var(--success,#18794e);
+  --a-success-soft:var(--success-soft,#e9f7f0);--a-danger:var(--danger,#b42318);
+  --a-danger-soft:var(--danger-soft,#fff0ee);--a-warning:var(--warning,#8a4b08);
+  --a-warning-soft:var(--warning-soft,#fff7e8);--a-shadow:var(--shadow,0 18px 50px rgba(34,53,90,.09));
+  --a-radius:var(--radius,18px);max-width:980px;margin:0 auto;padding:8px 2px 48px;color:var(--a-text);
+  background:transparent;font-family:var(--font-ui,Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif);
+  line-height:1.82;color-scheme:inherit
+}
+.adv-lesson *{box-sizing:border-box}.adv-lesson :where(h2,h3,h4,p,ul,ol){margin-block-start:0}.adv-lesson :where(p,li){overflow-wrap:anywhere}
+.adv-lesson .fr,.adv-lesson [lang="fr"]{direction:ltr;text-align:left;unicode-bidi:isolate}.adv-lesson .grammar,.adv-lesson code{direction:ltr;unicode-bidi:isolate;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:.95em}
+.adv-lesson code{padding:.1em .35em;border:1px solid var(--a-line);border-radius:6px;background:var(--a-soft);color:var(--a-text)}
+.adv-lesson a{color:var(--a-primary-strong)}.adv-lesson .card{border:1px solid var(--a-line);border-radius:var(--a-radius);background:var(--a-surface);box-shadow:var(--a-shadow)}
+.adv-hero{position:relative;overflow:hidden;padding:clamp(20px,4vw,34px);margin-bottom:20px}.adv-hero:after{content:"";position:absolute;width:240px;height:240px;inset-inline-end:-95px;top:-120px;border-radius:50%;background:color-mix(in srgb,var(--a-primary) 11%,transparent);pointer-events:none}
+.adv-kicker{margin:0 0 7px;color:var(--a-primary);font-size:.82rem;font-weight:850;letter-spacing:.065em}.adv-hero h2{margin:0;font-size:clamp(1.9rem,5vw,2.7rem);line-height:1.2}.fa-title{margin:.35rem 0 .7rem;font-size:1.08rem;font-weight:800}.summary{max-width:78ch;margin:0;color:var(--a-muted)}
+.meta-row{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:16px}.meta-chip{display:inline-flex;align-items:center;min-height:32px;padding:.28rem .68rem;border:1px solid var(--a-line);border-radius:999px;background:var(--a-soft);color:var(--a-muted);font-size:.82rem;font-weight:750}
+.lesson-goal{padding:18px 20px;margin:0 0 18px;border-inline-start:4px solid var(--a-primary)}.lesson-goal h3{margin:0 0 6px;font-size:1.08rem}.lesson-goal p{margin:0}.toc{padding:18px 20px;margin:0 0 22px}.toc h3{margin:0 0 10px;font-size:1.05rem}.toc ol{margin:0;padding-inline-start:1.3rem;columns:2;column-gap:2rem}.toc li{break-inside:avoid;margin:.25rem 0}.toc a{text-decoration-thickness:.07em;text-underline-offset:.18em}
+.subtopic{border:1px solid var(--a-line);border-radius:var(--a-radius);padding:clamp(18px,3vw,26px);margin:18px 0;background:var(--a-surface)}.subtopic>h3{margin:0 0 4px;font-size:clamp(1.18rem,3vw,1.45rem);line-height:1.35}.fa-subtitle{margin:.1rem 0 1rem;color:var(--a-muted);font-weight:750}.section-label{margin:1rem 0 .35rem;font-size:.9rem;color:var(--a-primary-strong);font-weight:850}
+.rule,.formula,.example,.callout,.error-item{margin:12px 0;padding:13px 15px;border-radius:11px;background:var(--a-soft)}.rule{border-inline-start:4px solid var(--a-primary)}.rule strong{color:var(--a-primary-strong)}.formula{direction:ltr;text-align:left;unicode-bidi:isolate;border:1px solid var(--a-line);font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-weight:750}.example{border:1px solid var(--a-line)}.example p{margin:0}.translation{direction:rtl;text-align:right;margin-top:5px!important;color:var(--a-muted);font-size:.93rem}.callout{border:1px solid var(--a-line)}.callout.tip{border-inline-start:4px solid var(--a-primary)}.callout.warn{border-color:color-mix(in srgb,var(--a-warning) 46%,var(--a-line));background:var(--a-warning-soft)}.correct{color:var(--a-success);font-weight:850}.incorrect{color:var(--a-danger);font-weight:850}.source{margin:13px 0 0;color:var(--a-muted);font-size:.8rem}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--a-line);border-radius:13px;background:var(--a-surface)}table{width:100%;min-width:650px;border-collapse:collapse}th,td{padding:11px 12px;border-block-end:1px solid var(--a-line);vertical-align:top;text-align:start}tr:last-child td{border-block-end:0}th{background:var(--a-soft);font-size:.9rem}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0}.grid3>div{padding:14px;border:1px solid var(--a-line);border-radius:12px;background:var(--a-soft)}.grid3 strong{display:block;margin-bottom:5px;color:var(--a-primary-strong)}
+.error-list{display:grid;gap:12px}.error-item{border:1px solid var(--a-line)}.error-item p{margin:.25rem 0}.review-box{padding:20px;margin-top:22px;border:1px solid color-mix(in srgb,var(--a-primary) 36%,var(--a-line));border-radius:var(--a-radius);background:color-mix(in srgb,var(--a-primary) 7%,var(--a-surface))}.review-box h3{margin:0 0 10px}.review-box ul{margin:0;padding-inline-start:1.25rem}
+.exercise{padding:15px 18px;margin:10px 0;border:1px solid var(--a-line);border-radius:14px;background:var(--a-surface)}.qno{display:inline-grid;place-items:center;min-width:30px;height:30px;margin-inline-end:.45rem;border-radius:999px;background:var(--a-primary);color:#fff;font-weight:900;font-size:.82rem}details.answers{margin-top:18px;border:1px solid var(--a-line);border-radius:var(--a-radius);background:var(--a-surface);overflow:hidden}details.answers>summary{cursor:pointer;list-style:none;padding:17px 20px;font-weight:850;color:var(--a-primary-strong);background:var(--a-soft)}details.answers>summary::-webkit-details-marker{display:none}details.answers>summary:before{content:"＋";display:inline-block;margin-inline-end:.5rem;font-weight:900}details.answers[open]>summary:before{content:"−"}.answer-body{padding:18px 20px}.answer-body li{margin:.65rem 0}.source-footer{margin-top:22px;padding:14px 16px;border-top:1px solid var(--a-line);color:var(--a-muted);font-size:.82rem}
+@media(max-width:720px){.adv-lesson{line-height:1.75}.toc ol{columns:1}.grid3{grid-template-columns:1fr}.adv-hero,.subtopic{border-radius:14px}table{min-width:560px}}
+@media(prefers-color-scheme:dark){html:not([data-theme]) .adv-lesson{--a-text:#eef4ff;--a-muted:#a8b7d1;--a-line:#2b3a55;--a-surface:#111d31;--a-soft:#16243a;--a-primary:#7ea2ff;--a-primary-strong:#b2c8ff;--a-success:#66d4a0;--a-success-soft:#123629;--a-danger:#ff8e87;--a-danger-soft:#3b1d22;--a-warning:#f4c46f;--a-warning-soft:#3b2d16;--a-shadow:0 18px 50px rgba(0,0,0,.28)}}
+@media(forced-colors:active){.card,.subtopic,.exercise,details.answers{border:1px solid CanvasText}}
 </style>
-<header class="adv-hero">
-<p class="adv-kicker">Lesson 4 · ADV-L04</p>
-<h2 lang="fr" dir="ltr">Les temps de l’indicatif</h2>
-<p class="fa-title" lang="fa">زمان‌های وجه اخباری</p>
-<p class="summary" lang="fa">این درس روی «زمان‌های وجه اخباری» تمرکز دارد و زیرموضوع‌های حال اخباری، سامان زمان‌های گذشته، ماضی استمراری / imparfait، گذشتهٔ مرکب، گذشتهٔ سادهٔ روایی، آیندهٔ ساده و نزدیک، تقدّم زمانی، تأخّر زمانی را پوشش می‌دهد.</p>
-<p class="meta">Printed pages 34–49 · PDF pages 36–51 · target 450 questions</p>
+
+<header class="adv-hero card">
+  <p class="adv-kicker" dir="ltr">LESSON 04 · ADV-L04 · B1–B2</p>
+  <h2 lang="fr" dir="ltr">Les temps de l’indicatif</h2>
+  <p class="fa-title">زمان‌های وجه اخباری و روابط زمانی</p>
+  <p class="summary">در این درس انتخاب زمان فعل را نه فقط بر اساس «گذشته، حال یا آینده»، بلکه بر اساس <strong>زاویهٔ دید گوینده، کامل یا در جریان بودن رویداد، و رابطهٔ زمانی آن با رویدادهای دیگر</strong> یاد می‌گیرید.</p>
+  <div class="meta-row"><span class="meta-chip">کتاب: صفحات 34 تا 49</span><span class="meta-chip">PDF: صفحات 36 تا 51</span><span class="meta-chip">موضوع: Temps de l’indicatif</span></div>
 </header>
-<section class="subtopic" id="ADV-L04-ST01">
-<h3 lang="fr" dir="ltr">Présent</h3>
-<p class="fa-subtitle" lang="fa">حال اخباری</p>
-<p class="rule" lang="fr">Le présent marque actuel, habitude, futur certain contextualisé ou présent historique; être en train de n’est pas universel.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «حال اخباری» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Demain, je pars à Montréal à huit heures.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز être en train de را با افعال حالت، مالکیت یا زیست به‌طور مکانیکی به کار می‌برد.</p>
-<p class="source"><code>ADV-L04:book-p034-p035:present</code> · printed 34–35 · PDF 36–37</p>
-</section>
-<section class="subtopic" id="ADV-L04-ST02">
-<h3 lang="fr" dir="ltr">Organisation des temps du passé</h3>
-<p class="fa-subtitle" lang="fa">سامان زمان‌های گذشته</p>
-<p class="rule" lang="fr">Imparfait présente le procès en cours; passé composé et passé simple le bornent, avec distribution orale, journalistique et narrative.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «سامان زمان‌های گذشته» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Il pleuvait quand le train est arrivé.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز زمان گذشته را فقط از روی کوتاه یا بلند بودن کنش انتخاب می‌کند، نه از روی دیدگاه و بافت روایی.</p>
-<p class="source"><code>ADV-L04:book-p036-p037:past-overview</code> · printed 36–37 · PDF 38–39</p>
-</section>
-<section class="subtopic" id="ADV-L04-ST03">
-<h3 lang="fr" dir="ltr">Imparfait</h3>
-<p class="fa-subtitle" lang="fa">ماضی استمراری / imparfait</p>
-<p class="rule" lang="fr">L’imparfait sert au cadre, à l’habitude, au procès non borné, au discours indirect et à quelques valeurs modales.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «ماضی استمراری / imparfait» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Quand j’étais étudiant, je travaillais le soir.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز هر رویداد تکراری را imparfait می‌گذارد حتی وقتی مجموعه‌ای بسته و کامل روایت می‌شود.</p>
-<p class="source"><code>ADV-L04:book-p038-p039:imperfect</code> · printed 38–39 · PDF 40–41</p>
-</section>
-<section class="subtopic" id="ADV-L04-ST04">
-<h3 lang="fr" dir="ltr">Passé composé</h3>
-<p class="fa-subtitle" lang="fa">گذشتهٔ مرکب</p>
-<p class="rule" lang="fr">Le passé composé marque un fait accompli, ponctuel ou borné et peut conserver un résultat pertinent au présent.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «گذشتهٔ مرکب» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">J’ai terminé le rapport; tu peux maintenant le relire.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز passé composé را فقط «گذشتهٔ نزدیک» می‌داند و با رویداد دور اما مرتبط با حال رد می‌کند.</p>
-<p class="source"><code>ADV-L04:book-p040-p041:passe-compose</code> · printed 40–41 · PDF 42–43</p>
-</section>
-<section class="subtopic" id="ADV-L04-ST05">
-<h3 lang="fr" dir="ltr">Passé simple</h3>
-<p class="fa-subtitle" lang="fa">گذشتهٔ سادهٔ روایی</p>
-<p class="rule" lang="fr">Le passé simple est le temps accompli du récit écrit, de l’histoire et de la biographie, sans lien présenté avec le présent.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «گذشتهٔ سادهٔ روایی» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">En 1789, la Révolution française bouleversa l’ordre politique.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز passé simple را جایگزین آزاد passé composé در گفت‌وگوی روزمره می‌داند.</p>
-<p class="source"><code>ADV-L04:book-p042-p043:passe-simple</code> · printed 42–43 · PDF 44–45</p>
-</section>
-<section class="subtopic" id="ADV-L04-ST06">
-<h3 lang="fr" dir="ltr">Futur simple et futur proche</h3>
-<p class="fa-subtitle" lang="fa">آیندهٔ ساده و نزدیک</p>
-<p class="rule" lang="fr">Futur proche suggère continuité ou imminence; futur simple peut marquer projection, rupture, ordre, promesse ou prévision.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «آیندهٔ ساده و نزدیک» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Regarde ces nuages: il va pleuvoir; demain, le vent faiblira.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز تفاوت دو آینده را فقط فاصلهٔ زمانی می‌پندارد و زاویهٔ دید و پیوستگی با حال را نادیده می‌گیرد.</p>
-<p class="source"><code>ADV-L04:book-p044-p045:future</code> · printed 44–45 · PDF 46–47</p>
-</section>
-<section class="subtopic" id="ADV-L04-ST07">
-<h3 lang="fr" dir="ltr">Antériorité</h3>
-<p class="fa-subtitle" lang="fa">تقدّم زمانی</p>
-<p class="rule" lang="fr">Passé composé, plus-que-parfait, passé antérieur et futur antérieur situent un fait accompli avant un repère donné.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «تقدّم زمانی» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Quand tu arriveras, j’aurai déjà préparé le dossier.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز برای هر رخداد نخستِ داستان plus-que-parfait می‌آورد، حتی وقتی repère passé لازم وجود ندارد.</p>
-<p class="source"><code>ADV-L04:book-p046-p047:anteriority</code> · printed 46–47 · PDF 48–49</p>
-</section>
-<section class="subtopic" id="ADV-L04-ST08">
-<h3 lang="fr" dir="ltr">Postériorité</h3>
-<p class="fa-subtitle" lang="fa">تأخّر زمانی</p>
-<p class="rule" lang="fr">Futur, conditionnel futur-dans-le-passé و ساخت‌های aller/être sur le point de رابطهٔ پسینی را نسبت به repère می‌سازند.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «تأخّر زمانی» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Il a annoncé qu’il reviendrait le lendemain.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز پس از فعل گزارشی در گذشته futur simple را حفظ می‌کند و futur dans le passé را نمی‌سازد.</p>
-<p class="source"><code>ADV-L04:book-p048-p049:posteriority</code> · printed 48–49 · PDF 50–51</p>
-</section>
-<aside class="notes"><h3>Notes avancées</h3>
-<section><h4>Exceptions / استثناها</h4><ul><li>Être en train de convient mal aux états stables et à plusieurs verbes de sentiment ou d’existence.</li><li>Le passé composé ne remplace pas toujours le passé simple lorsque le récit présente explicitement une rupture avec le présent.</li></ul></section>
-<section><h4>Contrastes / تقابل‌ها</h4><ul><li>imparfait non borné vs passé composé/passé simple borné</li><li>futur proche en continuité vs futur simple en projection</li><li>temps relatif d’antériorité vs simple ordre chronologique</li></ul></section>
-<section><h4>Restrictions / محدودیت‌ها</h4><ul><li>Le choix temporel doit être justifié par le repère et l’aspect, pas par un adverbe isolé.</li></ul></section>
-<section><h4>Register / سطح زبانی</h4><ul><li>Passé simple: récit écrit, histoire, biographie; passé composé: oral, presse et narration moderne.</li></ul></section>
-<section><h4>Temporal notes / نکات زمانی</h4><ul><li>Chaque temps d’antériorité se calcule depuis un repère présent, passé ou futur.</li><li>Le conditionnel sert de futur depuis un repère passé.</li></ul></section>
-<section><h4>Semantic notes / نکات معنایی</h4><ul><li>Les temps organisent point de vue, accomplissement, arrière-plan, premier plan et lien au présent.</li></ul></section>
-</aside>
+
+<section class="lesson-goal card" aria-labelledby="goal"><h3 id="goal">هدف درس</h3><p>بعد از این درس باید بتوانید بین <span class="grammar">présent</span>، <span class="grammar">imparfait</span>، <span class="grammar">passé composé</span> و <span class="grammar">passé simple</span> بر اساس معنا و بافت انتخاب کنید؛ تفاوت آینده‌ها را بفهمید؛ و برای بیان <span class="grammar">antériorité</span> و <span class="grammar">postériorité</span> زمان مناسب را انتخاب کنید.</p></section>
+
+<nav class="toc card" aria-label="فهرست درس"><h3>در این درس</h3><ol>
+<li><a href="#idea">ایدهٔ اصلی</a></li><li><a href="#present">Le présent</a></li><li><a href="#passes">Les passés</a></li><li><a href="#imparfait">L’imparfait</a></li><li><a href="#pc">Le passé composé</a></li><li><a href="#ps">Le passé simple</a></li><li><a href="#futur">Le futur</a></li><li><a href="#anteriorite">L’antériorité</a></li><li><a href="#posteriorite">La postériorité</a></li><li><a href="#contrastes">Contrastها</a></li><li><a href="#restrictions">محدودیت‌ها</a></li><li><a href="#errors">خطاهای رایج</a></li><li><a href="#register">Register</a></li><li><a href="#review">خلاصه</a></li><li><a href="#practice">تمرین</a></li>
+</ol></nav>
+
+<section class="subtopic" id="idea"><h3 lang="fr">L’idée centrale</h3><p class="fa-subtitle">ایدهٔ اصلی</p>
+<div class="rule"><strong>اصل مرکزی:</strong> انتخاب زمان در فرانسه فقط با سؤال «این اتفاق چه زمانی افتاد؟» تعیین نمی‌شود. باید ببینیم گوینده عمل را در جریان، کامل‌شده، قبل‌تر یا بعدتر از یک نقطهٔ مرجع می‌بیند.</div>
+<div class="example"><p class="fr" lang="fr">Je lisais quand Paul est arrivé.</p><p class="translation">داشتم می‌خواندم که پل رسید.</p></div>
+<p><span class="grammar">lisais</span> عمل را در جریان نشان می‌دهد؛ <span class="grammar">est arrivé</span> یک رویداد کامل‌شده را وارد روایت می‌کند.</p>
+<div class="callout tip"><strong>پرسش تشخیصی:</strong> نقطهٔ مرجع زمانی کجاست و این عمل نسبت به آن چه رابطه‌ای دارد؟</div></section>
+
+<section class="subtopic" id="present"><h3 lang="fr">Le présent</h3><p class="fa-subtitle">حال اخباری و ارزش‌های مختلف آن</p>
+<p class="section-label">1) عمل در لحظهٔ صحبت</p><p>présent می‌تواند عمل در حال انجام را بدون ساختار استمراری جداگانه نشان دهد.</p>
+<div class="example"><p class="fr" lang="fr">Qu’est-ce qu’il fait ? — Il rit.</p><p class="translation">چه کار می‌کند؟ — دارد می‌خندد.</p></div>
+<div class="example"><p class="fr" lang="fr">Je travaille.</p><p class="translation">کار می‌کنم / دارم کار می‌کنم.</p></div>
+<p class="section-label">2) Être en train de + infinitif</p><div class="formula">Sujet + être conjugué + en train de + infinitif</div><p>برای تأکید بر <span class="grammar">déroulement de l’action</span>، یعنی «وسط انجام عمل بودن».</p>
+<div class="example"><p class="fr" lang="fr">Ne me dérange pas, je suis en train de travailler.</p><p class="translation">مزاحمم نشو؛ الان وسط کار هستم.</p></div>
+<div class="callout warn"><strong>محدودیت:</strong> کتاب یادآوری می‌کند این ساختار با برخی افعال حالت، احساس و افعالی مانند <span class="grammar">vivre</span> و <span class="grammar">habiter</span> مناسب نیست.</div>
+<div class="error-item"><p><span class="incorrect">❌</span> <span class="fr" lang="fr">Je suis en train d’habiter à Montréal.</span></p><p><span class="correct">✅</span> <span class="fr" lang="fr">J’habite à Montréal.</span></p></div>
+<p class="section-label">3) عادت و تکرار</p><div class="example"><p class="fr" lang="fr">Ils vont souvent au cinéma.</p><p class="translation">آن‌ها اغلب به سینما می‌روند.</p></div><div class="example"><p class="fr" lang="fr">Je me lève vers 8 heures.</p><p class="translation">حدود ساعت هشت بیدار می‌شوم.</p></div>
+<p class="section-label">4) Présent با ارزش آینده</p><p>اگر آینده قطعی یا برنامه‌ریزی‌شده باشد و زمان آن روشن باشد، présent نیز ممکن است.</p><div class="example"><p class="fr" lang="fr">Nous décollons dans une heure.</p><p class="translation">یک ساعت دیگر پرواز می‌کنیم.</p></div><div class="example"><p class="fr" lang="fr">On s’installe en Suède l’année prochaine.</p><p class="translation">سال آینده در سوئد ساکن می‌شویم.</p></div>
+<p class="section-label">5) Présent historique</p><p>برای زنده‌تر کردن یک روایت گذشته.</p><div class="example"><p class="fr" lang="fr">Un matin, le facteur arrive et apporte une lettre.</p><p class="translation">یک صبح، پستچی می‌آید و نامه‌ای می‌آورد.</p></div><p class="source">مرجع: صفحات 34–35.</p></section>
+
+<section class="subtopic" id="passes"><h3 lang="fr">Les passés : imparfait, passé composé, passé simple</h3><p class="fa-subtitle">منطق کلی زمان‌های گذشته</p>
+<div class="rule"><strong>Imparfait:</strong> عمل/وضعیت را در جریان نشان می‌دهد. <strong>Passé composé و passé simple:</strong> عمل را به‌صورت رخداد کامل‌شده می‌بینند.</div>
+<div class="example"><p class="fr" lang="fr">Je lisais quand il est arrivé.</p><p class="translation">داشتم می‌خواندم که او رسید.</p></div>
+<div class="grid3"><div><strong lang="fr">Imparfait</strong>پس‌زمینه، وضعیت، توصیف، عادت.</div><div><strong lang="fr">Passé composé</strong>رویداد کامل‌شده در زبان رایج امروز.</div><div><strong lang="fr">Passé simple</strong>رویداد کامل‌شده در روایت مکتوب و ادبی.</div></div>
+<div class="callout tip"><strong>نکته:</strong> کوتاه یا بلند بودن عمل معیار اصلی انتخاب زمان نیست.</div><p class="source">مرجع: صفحات 36–37.</p></section>
+
+<section class="subtopic" id="imparfait"><h3 lang="fr">L’imparfait</h3><p class="fa-subtitle">وضعیت، عادت، توصیف و ارزش‌های فرضی</p>
+<p class="section-label">1) وضعیت در گذشته</p><div class="example"><p class="fr" lang="fr">Il y a 2 000 ans, la France s’appelait la Gaule.</p><p class="translation">دو هزار سال پیش، فرانسه «گل» نامیده می‌شد.</p></div>
+<p class="section-label">2) عادت</p><div class="example"><p class="fr" lang="fr">Il sortait toujours après le déjeuner.</p><p class="translation">همیشه بعد از ناهار بیرون می‌رفت.</p></div>
+<p class="section-label">3) Description</p><div class="example"><p class="fr" lang="fr">Il faisait beau. C’était un dimanche. Les gens se promenaient dans les rues.</p><p class="translation">هوا خوب بود. یکشنبه بود. مردم در خیابان‌ها قدم می‌زدند.</p></div>
+<p class="section-label">4) Discours indirect</p><div class="example"><p class="fr" lang="fr">Il m’a fait savoir qu’il voulait partir.</p><p class="translation">به من اطلاع داد که می‌خواست برود.</p></div><p>اینجا <span class="grammar">voulait</span> می‌تواند présent منتقل‌شده به نقطهٔ دید گذشته باشد.</p>
+<p class="section-label">5) پیشنهاد فرضی</p><div class="example"><p class="fr" lang="fr">Si on lui offrait un sac de voyage ?</p><p class="translation">اگر یک کیف سفر برایش می‌گرفتیم چطور؟</p></div>
+<p class="section-label">6) Comme si</p><div class="example"><p class="fr" lang="fr">Le ciel est gris comme s’il allait pleuvoir.</p><p class="translation">آسمان طوری خاکستری است انگار قرار است باران ببارد.</p></div>
+<p class="section-label">7) Near miss</p><div class="example"><p class="fr" lang="fr">Encore un peu et tu tombais !</p><p class="translation">یک ذرهٔ دیگر و می‌افتادی!</p></div><p>معنی ضمنی: اتفاق رخ نداد، اما بسیار نزدیک بود.</p><p class="source">مرجع: صفحات 38–39.</p></section>
+
+<section class="subtopic" id="pc"><h3 lang="fr">Le passé composé</h3><p class="fa-subtitle">رویداد کامل‌شده و پیوند با حال</p>
+<p class="section-label">1) عمل کامل‌شده</p><div class="example"><p class="fr" lang="fr">Ils sont arrivés à 8 heures.</p><p class="translation">آن‌ها ساعت هشت رسیدند.</p></div><div class="example"><p class="fr" lang="fr">Nous avons dansé toute la nuit.</p><p class="translation">تمام شب رقصیدیم.</p></div><div class="example"><p class="fr" lang="fr">J’ai travaillé pendant deux heures.</p><p class="translation">دو ساعت کار کردم.</p></div><div class="callout warn"><strong>دام:</strong> یک durée terminée حتی اگر طولانی باشد می‌تواند با passé composé بیاید.</div>
+<p class="section-label">2) Passé composé + imparfait</p><div class="example"><p class="fr" lang="fr">Il pleuvait quand l’accident s’est produit.</p><p class="translation">باران می‌بارید که تصادف رخ داد.</p></div>
+<p class="section-label">3) نتیجهٔ مرتبط با حال</p><div class="example"><p class="fr" lang="fr">J’ai travaillé toute la journée, je suis fatigué.</p><p class="translation">تمام روز کار کردم؛ الان خسته‌ام.</p></div><div class="example"><p class="fr" lang="fr">Ça va mieux, j’ai retrouvé mon calme.</p><p class="translation">حالم بهتر است؛ آرامشم را دوباره پیدا کرده‌ام.</p></div>
+<p class="section-label">4) Après « si »</p><div class="formula">Si + passé composé → futur / impératif / conséquence</div><div class="example"><p class="fr" lang="fr">Si nous n’avons pas fini ce soir, nous ne pourrons pas aller au théâtre.</p><p class="translation">اگر امشب کارمان تمام نشده باشد، نمی‌توانیم به تئاتر برویم.</p></div>
+<div class="error-item"><p><span class="incorrect">❌</span> <span class="fr" lang="fr">Si tu auras fini, appelle-moi.</span></p><p><span class="correct">✅</span> <span class="fr" lang="fr">Si tu as fini, appelle-moi.</span></p></div><p class="source">مرجع: صفحات 40–41.</p></section>
+
+<section class="subtopic" id="ps"><h3 lang="fr">Le passé simple</h3><p class="fa-subtitle">گذشتهٔ سادهٔ روایی</p>
+<p class="section-label">1) Formation</p><div class="table-wrap"><table><thead><tr><th>نمونه</th><th>je</th><th>tu</th><th>il</th><th>nous</th><th>vous</th><th>ils</th></tr></thead><tbody>
+<tr><td lang="fr" dir="ltr"><strong>PARLER</strong></td><td>parlai</td><td>parlas</td><td>parla</td><td>parlâmes</td><td>parlâtes</td><td>parlèrent</td></tr>
+<tr><td lang="fr" dir="ltr"><strong>DIRE</strong></td><td>dis</td><td>dis</td><td>dit</td><td>dîmes</td><td>dîtes</td><td>dirent</td></tr>
+<tr><td lang="fr" dir="ltr"><strong>CROIRE</strong></td><td>crus</td><td>crus</td><td>crut</td><td>crûmes</td><td>crûtes</td><td>crurent</td></tr></tbody></table></div>
+<div class="grid3"><div><strong lang="fr">ÊTRE</strong><span class="fr" lang="fr">je fus · tu fus · il fut · nous fûmes · vous fûtes · ils furent</span></div><div><strong lang="fr">AVOIR</strong><span class="fr" lang="fr">j’eus · tu eus · il eut · nous eûmes · vous eûtes · ils eurent</span></div><div><strong>نقش</strong>رویداد کامل‌شده در روایت مکتوب.</div></div>
+<p class="section-label">2) معنای اصلی</p><div class="example"><p class="fr" lang="fr">Il mourut le 17 janvier 2002.</p><p class="translation">او در ۱۷ ژانویهٔ ۲۰۰۲ درگذشت.</p></div><p>رویداد کامل‌شده و در روایت از زمان حال جدا ارائه می‌شود.</p>
+<p class="section-label">3) Register</p><div class="table-wrap"><table><thead><tr><th>زمان</th><th>محیط طبیعی</th><th>مثال</th></tr></thead><tbody><tr><td>passé composé</td><td>مکالمه، خبر، نوشتار مدرن</td><td lang="fr" dir="ltr">Napoléon est mort en 1821.</td></tr><tr><td>passé simple</td><td>رمان، تاریخ، زندگی‌نامه</td><td lang="fr" dir="ltr">Napoléon mourut en 1821.</td></tr></tbody></table></div>
+<p class="section-label">4) Imparfait + passé simple</p><div class="example"><p class="fr" lang="fr">Les invités étaient dans le salon quand il se présenta.</p><p class="translation">مهمان‌ها در سالن بودند که او ظاهر شد.</p></div><p class="source">مرجع: صفحات 42–43.</p></section>
+
+<section class="subtopic" id="futur"><h3 lang="fr">Le futur</h3><p class="fa-subtitle">Futur simple، futur proche و imminence</p>
+<p class="section-label">1) Futur simple</p><div class="example"><p class="fr" lang="fr">Bientôt nous serons en vacances.</p><p class="translation">به‌زودی در تعطیلات خواهیم بود.</p></div><div class="example"><p class="fr" lang="fr">L’année prochaine, je ferai mes études à Londres.</p><p class="translation">سال آینده در لندن تحصیل خواهم کرد.</p></div>
+<ul><li><strong>Projection:</strong> <span class="fr" lang="fr">Quand je serai grand, je serai pilote.</span></li><li><strong>Directive:</strong> <span class="fr" lang="fr">Vous ferez cet exercice pour demain.</span></li><li><strong>Promesse:</strong> <span class="fr" lang="fr">Je ne recommencerai plus.</span></li><li><strong>Prévision:</strong> <span class="fr" lang="fr">Il pleuvra sur la majeure partie du pays.</span></li></ul>
+<p class="section-label">2) Futur proche</p><div class="formula">aller au présent + infinitif</div><div class="example"><p class="fr" lang="fr">Attention, tu vas tomber !</p><p class="translation">مواظب باش، الان می‌افتی!</p></div><p>نکتهٔ مهم کتاب، <strong>پیوستگی با وضعیت حال</strong> است؛ نه صرفاً فاصلهٔ زمانی کوتاه.</p>
+<div class="example"><p class="fr" lang="fr">Je vais te parler franchement, écoute-moi.</p><p class="translation">الان می‌خواهم صریح با تو حرف بزنم؛ گوش کن.</p></div><div class="example"><p class="fr" lang="fr">Je t’en reparlerai plus tard.</p><p class="translation">بعداً دوباره درباره‌اش صحبت خواهم کرد.</p></div>
+<p class="section-label">3) Être sur le point de</p><div class="formula">être sur le point de + infinitif</div><div class="example"><p class="fr" lang="fr">Je suis sur le point de partir.</p><p class="translation">در آستانهٔ رفتنم.</p></div><p class="source">مرجع: صفحات 44–45.</p></section>
+
+<section class="subtopic" id="anteriorite"><h3 lang="fr">L’antériorité</h3><p class="fa-subtitle">عملی که قبل از نقطهٔ مرجع دیگر کامل می‌شود</p>
+<div class="rule">ابتدا <strong>repère temporel</strong> را پیدا کنید. زمان anterior بر اساس زمان همین مرجع انتخاب می‌شود.</div>
+<div class="table-wrap"><table><thead><tr><th>نقطهٔ مرجع</th><th>عمل قبلی</th><th>مثال</th></tr></thead><tbody>
+<tr><td>présent</td><td>passé composé</td><td lang="fr" dir="ltr">Il a remporté les élections ; aujourd’hui, il est président.</td></tr>
+<tr><td>passé / imparfait</td><td>plus-que-parfait</td><td lang="fr" dir="ltr">Elle lisait un livre qu’elle avait acheté le matin même.</td></tr>
+<tr><td>passé simple</td><td>passé antérieur</td><td lang="fr" dir="ltr">Aussitôt qu’ils eurent dépassé la frontière, ils remarquèrent...</td></tr>
+<tr><td>futur</td><td>futur antérieur</td><td lang="fr" dir="ltr">Dès que je serai arrivé, je vous téléphonerai.</td></tr></tbody></table></div>
+<p class="section-label">1) Plus-que-parfait</p><div class="rule"><strong>تعریف عملی:</strong> «گذشته‌ای قبل از یک گذشتهٔ مرجع»، نه صرفاً «گذشتهٔ خیلی دور».</div><div class="example"><p class="fr" lang="fr">Elle lisait un livre qu’elle avait acheté le matin même.</p><p class="translation">کتابی را می‌خواند که همان صبح خریده بود.</p></div><div class="example"><p class="fr" lang="fr">J’ai raté le train. Je t’avais bien dit de partir plus tôt.</p><p class="translation">قطار را از دست دادم. گفته بودم زودتر راه بیفتی.</p></div>
+<p class="section-label">2) Si + plus-que-parfait</p><div class="formula">Si + plus-que-parfait → conditionnel passé</div><div class="example"><p class="fr" lang="fr">Si j’avais su qui elle était, je me serais méfié d’elle.</p><p class="translation">اگر می‌دانستم او چه کسی است، از او برحذر می‌بودم.</p></div><div class="error-item"><p><span class="incorrect">❌</span> <span class="fr" lang="fr">Si j’aurais su...</span></p><p><span class="correct">✅</span> <span class="fr" lang="fr">Si j’avais su...</span></p></div>
+<p class="section-label">3) Passé antérieur</p><div class="formula">avoir / être au passé simple + participe passé</div><p>برای عملی که قبل از یک passé simple کامل شده و عمدتاً در روایت ادبی/تاریخی دیده می‌شود.</p><div class="example"><p class="fr" lang="fr">Aussitôt qu’ils eurent dépassé la frontière, ils remarquèrent...</p></div>
+<p class="section-label">4) Futur antérieur</p><div class="formula">avoir / être au futur simple + participe passé</div><div class="example"><p class="fr" lang="fr">Nous aurons fini avant 18 heures.</p><p class="translation">تا قبل از ساعت ۱۸ کار را تمام کرده خواهیم بود.</p></div><div class="example"><p class="fr" lang="fr">Dès que je serai arrivé, je vous téléphonerai.</p><p class="translation">به محض اینکه رسیدم/رسیده باشم، به شما تلفن می‌کنم.</p></div><p class="source">مرجع: صفحات 46–47.</p></section>
+
+<section class="subtopic" id="posteriorite"><h3 lang="fr">La postériorité</h3><p class="fa-subtitle">عملی که بعد از یک نقطهٔ مرجع رخ می‌دهد</p>
+<p class="section-label">1) بعد از حال</p><div class="example"><p class="fr" lang="fr">Il promet qu’il reviendra demain.</p><p class="translation">قول می‌دهد که فردا برمی‌گردد.</p></div>
+<p class="section-label">2) Futur dans le passé</p><div class="rule">اگر مرجع در گذشته باشد و عمل نسبت به آن هنوز آینده باشد، <span class="grammar">conditionnel présent</span> نقش «آینده از دیدگاه گذشته» دارد و الزاماً شرطی نیست.</div><div class="example"><p class="fr" lang="fr">Je savais qu’il rentrerait tôt.</p><p class="translation">می‌دانستم که زود برخواهد گشت.</p></div><div class="example"><p class="fr" lang="fr">Elle a dit qu’elle finirait dans la matinée.</p><p class="translation">گفت که در طول صبح کار را تمام خواهد کرد.</p></div>
+<p class="section-label">3) Conditionnel passé</p><div class="example"><p class="fr" lang="fr">Elle a dit qu’elle aurait fini avant midi.</p><p class="translation">گفت که تا قبل از ظهر کار را تمام کرده خواهد بود.</p></div>
+<p class="section-label">4) Aller à l’imparfait + infinitif</p><div class="formula">aller à l’imparfait + infinitif</div><div class="example"><p class="fr" lang="fr">Elle nous a dit de nous dépêcher parce que le repas allait être froid.</p><p class="translation">گفت عجله کنیم چون غذا داشت سرد می‌شد / قرار بود سرد شود.</p></div>
+<p class="section-label">5) Être sur le point de در گذشته</p><div class="example"><p class="fr" lang="fr">Il nous a appelé pour nous dire qu’il était sur le point de sortir.</p><p class="translation">تماس گرفت تا بگوید در آستانهٔ بیرون رفتن است.</p></div>
+<p class="section-label">6) دو آیندهٔ متوالی</p><div class="example"><p class="fr" lang="fr">Nous irons la chercher et nous la déposerons à son hôtel.</p><p class="translation">می‌رویم دنبالش و او را به هتلش می‌رسانیم.</p></div><p class="source">مرجع: صفحات 48–49.</p></section>
+
+<section class="subtopic" id="contrastes"><h3>Contrastها و تفاوت‌های ظریف</h3><p class="fa-subtitle">انتخاب مستقیم میان ساختارهای رقیب</p>
+<div class="table-wrap"><table><thead><tr><th>ساختار</th><th>معنا/دیدگاه</th><th>مثال</th><th>نکته</th></tr></thead><tbody><tr><td>imparfait</td><td>در جریان / پس‌زمینه</td><td lang="fr" dir="ltr">Je lisais.</td><td>عمل از داخل دیده می‌شود.</td></tr><tr><td>passé composé</td><td>کامل‌شده</td><td lang="fr" dir="ltr">J’ai lu le livre.</td><td>گذشتهٔ طبیعی در زبان امروز.</td></tr><tr><td>passé simple</td><td>کامل‌شده</td><td lang="fr" dir="ltr">Il lut le livre.</td><td>عمدتاً روایت مکتوب.</td></tr></tbody></table></div>
+<div class="table-wrap"><table><thead><tr><th>ساختار</th><th>معنا</th><th>مثال</th></tr></thead><tbody><tr><td>futur simple</td><td>projection</td><td lang="fr" dir="ltr">Je partirai demain.</td></tr><tr><td>aller + infinitif</td><td>آیندهٔ پیوسته به حال</td><td lang="fr" dir="ltr">Je vais partir.</td></tr><tr><td>être sur le point de</td><td>imminence</td><td lang="fr" dir="ltr">Je suis sur le point de partir.</td></tr></tbody></table></div></section>
+
+<section class="subtopic" id="restrictions"><h3>استثناها و محدودیت‌های مهم</h3><ul><li><span class="grammar">être en train de</span> برای هر فعل مناسب نیست.</li><li>طولانی بودن عمل به‌تنهایی دلیل imparfait نیست.</li><li>passé simple جایگزین روزمرهٔ passé composé نیست؛ register متفاوت دارد.</li><li>plus-que-parfait فقط «گذشتهٔ خیلی دور» نیست؛ باید نسبت به یک مرجع گذشته anterior باشد.</li><li>conditionnel در discours indirect می‌تواند فقط futur dans le passé باشد.</li><li>passé antérieur عمدتاً همراه با نظام روایی passé simple است.</li><li>futur antérieur یعنی تکمیل عمل پیش از یک مرجع آینده.</li></ul></section>
+
+<section class="subtopic" id="errors"><h3>خطاهای رایج</h3><div class="error-list">
+<div class="error-item"><p><strong>1) Background / event</strong></p><p><span class="incorrect">❌</span> <span class="fr" lang="fr">Quand je suis arrivé, Paul a dormi.</span></p><p><span class="correct">✅</span> <span class="fr" lang="fr">Quand je suis arrivé, Paul dormait.</span></p><p>💡 اگر پل هنگام رسیدن من از قبل خواب بوده، خوابیدن پس‌زمینه است.</p></div>
+<div class="error-item"><p><strong>2) Passé simple در گفت‌وگوی عادی</strong></p><p><span class="incorrect">❌</span> <span class="fr" lang="fr">Hier, je rencontrai Marie au supermarché.</span></p><p><span class="correct">✅</span> <span class="fr" lang="fr">Hier, j’ai rencontré Marie au supermarché.</span></p></div>
+<div class="error-item"><p><strong>3) Antériorité در گذشته</strong></p><p><span class="incorrect">❌</span> <span class="fr" lang="fr">Quand je suis arrivé, il est déjà parti.</span></p><p><span class="correct">✅</span> <span class="fr" lang="fr">Quand je suis arrivé, il était déjà parti.</span></p></div>
+<div class="error-item"><p><strong>4) Futur après si</strong></p><p><span class="incorrect">❌</span> <span class="fr" lang="fr">Si tu auras terminé, appelle-moi.</span></p><p><span class="correct">✅</span> <span class="fr" lang="fr">Si tu as terminé, appelle-moi.</span></p></div>
+<div class="error-item"><p><strong>5) Si + conditionnel passé</strong></p><p><span class="incorrect">❌</span> <span class="fr" lang="fr">Si j’aurais su, je ne serais pas venu.</span></p><p><span class="correct">✅</span> <span class="fr" lang="fr">Si j’avais su, je ne serais pas venu.</span></p></div>
+<div class="error-item"><p><strong>6) Futur antérieur</strong></p><p><span class="incorrect">❌</span> <span class="fr" lang="fr">Dès que je finirai, je partirai.</span> (اگر منظور تکمیل اول باشد)</p><p><span class="correct">✅</span> <span class="fr" lang="fr">Dès que j’aurai fini, je partirai.</span></p></div>
+</div></section>
+
+<section class="subtopic" id="register"><h3>زبان واقعی و Register</h3><div class="table-wrap"><table><thead><tr><th>ساختار</th><th>محیط</th><th>نکتهٔ عملی</th></tr></thead><tbody><tr><td>passé composé</td><td>français courant، گفتار، خبر، نوشتار مدرن</td><td>زمان پایه برای تولید طبیعی گذشته.</td></tr><tr><td>passé simple</td><td>رمان، تاریخ، زندگی‌نامه</td><td>برای B2 شناخت آن بسیار مهم است، حتی اگر در گفتار کم استفاده شود.</td></tr><tr><td>présent historique</td><td>روایت و متن تاریخی</td><td>انتخاب سبکی برای زنده کردن روایت.</td></tr><tr><td>passé antérieur</td><td>نوشتار ادبی/تاریخی</td><td>بیشتر برای compréhension écrite مهم است.</td></tr></tbody></table></div></section>
+
+<section class="review-box" id="review"><h3>خلاصه‌ای که باید به خاطر بسپارید</h3><ul>
+<li>عمل الآن → <span class="grammar">présent</span></li><li>«وسط انجام عمل» → <span class="grammar">être en train de + infinitif</span></li><li>عادت/توصیف/پس‌زمینهٔ گذشته → <span class="grammar">imparfait</span></li><li>رخداد کامل‌شده در زبان معمول → <span class="grammar">passé composé</span></li><li>رخداد کامل‌شده در روایت ادبی → <span class="grammar">passé simple</span></li><li>قبل از یک گذشته → <span class="grammar">plus-que-parfait</span></li><li>قبل از passé simple → <span class="grammar">passé antérieur</span></li><li>قبل از یک آینده → <span class="grammar">futur antérieur</span></li><li>آینده بعد از حال → <span class="grammar">futur / futur proche</span></li><li>در آستانهٔ وقوع → <span class="grammar">être sur le point de</span></li><li>آینده از دید گذشته → <span class="grammar">conditionnel présent</span></li><li>futur proche از دید گذشته → <span class="grammar">allait + infinitif</span></li>
+</ul><div class="callout tip"><strong>نقشه:</strong><br><span class="grammar">présent → passé composé</span> برای قبل از حال<br><span class="grammar">passé → plus-que-parfait</span> برای قبل از گذشته<br><span class="grammar">futur → futur antérieur</span> برای قبل از آینده<br><br><span class="grammar">présent → futur</span> برای بعد از حال<br><span class="grammar">passé → conditionnel</span> برای بعد از گذشته</div></section>
+
+<section class="subtopic" id="practice"><h3>تمرین جمع‌بندی</h3><p class="fa-subtitle">زمان مناسب را انتخاب و فعل را صرف کنید.</p>
+<div class="exercise"><span class="qno">1</span><span class="fr" lang="fr">Quand je suis arrivé, les enfants ________ dans le jardin. (jouer)</span></div>
+<div class="exercise"><span class="qno">2</span><span class="fr" lang="fr">Hier soir, nous ________ ce film jusqu’à minuit. (regarder)</span></div>
+<div class="exercise"><span class="qno">3</span><span class="fr" lang="fr">Il faisait froid quand soudain quelqu’un ________ la porte. (ouvrir)</span></div>
+<div class="exercise"><span class="qno">4</span><span class="fr" lang="fr">Dès que j’________ le rapport, je vous l’enverrai. (terminer)</span></div>
+<div class="exercise"><span class="qno">5</span><span class="fr" lang="fr">Elle lisait le message qu’elle ________ quelques minutes auparavant. (recevoir)</span></div>
+<div class="exercise"><span class="qno">6</span><span class="fr" lang="fr">Paul a dit qu’il ________ le lendemain. (revenir)</span></div>
+<div class="exercise"><span class="qno">7</span><span class="fr" lang="fr">Dépêche-toi ! Le train ________ partir. (être sur le point de)</span></div>
+<div class="exercise"><span class="qno">8</span><span class="fr" lang="fr">Quand j’étais enfant, nous ________ chaque été chez mes grands-parents. (aller)</span></div>
+<div class="exercise"><span class="qno">9</span><span class="fr" lang="fr">Si tu ________ ton travail, tu peux sortir. (finir — accomplissement)</span></div>
+<div class="exercise"><span class="qno">10</span><span class="fr" lang="fr">Si j’________ la vérité, je ne lui aurais pas fait confiance. (savoir)</span></div>
+<div class="exercise"><span class="qno">11</span>در récit littéraire: <span class="fr" lang="fr">Le roi ________ dans la salle et salua les invités. (entrer)</span></div>
+<div class="exercise"><span class="qno">12</span><span class="fr" lang="fr">Je suis épuisé : je ________ toute la journée. (travailler)</span></div>
+<details class="answers"><summary>پاسخ تمرین‌ها</summary><div class="answer-body"><ol><li><strong>jouaient</strong> — عمل در جریان.</li><li><strong>avons regardé</strong> — مدت کامل‌شده.</li><li><strong>a ouvert</strong> — رویداد ناگهانی.</li><li><strong>aurai terminé</strong> — قبل از آیندهٔ بعدی.</li><li><strong>avait reçu</strong> — قبل از مرجع گذشته.</li><li><strong>reviendrait</strong> — futur dans le passé.</li><li><strong>est sur le point de</strong> — imminence.</li><li><strong>allions</strong> — عادت گذشته.</li><li><strong>as fini</strong> — si + passé composé.</li><li><strong>avais su</strong> — فرض خلاف واقع گذشته.</li><li><strong>entra</strong> — passé simple در récit littéraire.</li><li><strong>ai travaillé</strong> — عمل کامل‌شده با نتیجهٔ حال.</li></ol></div></details></section>
+
+<footer class="source-footer">منبع آموزشی: <span lang="fr" dir="ltr">Grammaire Progressive du Français — Niveau Avancé — 3e édition</span>، درس 4، صفحات 34 تا 49. این فایل به‌صورت HTML fragment برای همان سیستم نمایش محتوای سایت آماده شده است.</footer>
 </article>

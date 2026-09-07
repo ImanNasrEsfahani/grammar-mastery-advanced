@@ -1,77 +1,140 @@
-<article class="adv-lesson" data-lesson-id="ADV-L06">
+<!-- Grammar Mastery Advanced — Lesson 06 | Embeddable, theme-aware HTML -->
 <style>
-.adv-lesson{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.75;color:#172033;max-width:980px;margin:0 auto;padding:8px 2px 40px}
-.adv-lesson *{box-sizing:border-box}
-.adv-lesson .adv-hero{padding:24px;border:1px solid #e3e8f0;border-radius:18px;background:#fff;margin-bottom:22px}
-.adv-lesson .adv-kicker{font-size:.86rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.65;margin:0 0 6px}
-.adv-lesson h2,.adv-lesson h3{line-height:1.35}
-.adv-lesson h2{font-size:1.65rem;margin:0 0 4px}
-.adv-lesson .fa-title{direction:rtl;text-align:right;font-weight:650;margin:.2rem 0 .8rem}
-.adv-lesson .summary{direction:rtl;text-align:right;margin:0}
-.adv-lesson .meta{margin-top:12px;font-size:.9rem;opacity:.72}
-.adv-lesson .subtopic{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin:18px 0;background:#fff}
-.adv-lesson .subtopic h3{margin:0 0 2px;font-size:1.25rem}
-.adv-lesson .fa-subtitle{direction:rtl;text-align:right;font-weight:600;margin:.1rem 0 1rem}
-.adv-lesson .rule{direction:ltr;text-align:left;padding:12px 14px;border-left:4px solid currentColor;background:#f7f9fc;border-radius:8px;margin:12px 0}
-.adv-lesson .teaching,.adv-lesson .trap{direction:rtl;text-align:right}
-.adv-lesson .example{direction:ltr;text-align:left;font-style:italic;padding:10px 14px;background:#f7f9fc;border-radius:8px}
-.adv-lesson .trap{padding:10px 14px;border:1px dashed #c7ced9;border-radius:8px}
-.adv-lesson .source{font-size:.82rem;opacity:.65;margin-top:12px}
-.adv-lesson .notes{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin-top:22px}
-.adv-lesson .notes h3{margin-top:0}
-.adv-lesson .notes section{margin:16px 0}
-.adv-lesson .notes h4{margin:0 0 6px}
-.adv-lesson .notes ul{margin-top:4px}
+.gma-lesson{--i:var(--ink,#17233c);--m:var(--muted,#5a6477);--l:var(--line,#d9dfeb);--s:var(--surface,#fff);--ss:var(--surface-soft,#f5f7fb);--p:var(--primary,#2856c7);--ps:var(--primary-strong,#1c3f99);--ok:var(--success,#18794e);--oks:var(--success-soft,#e9f7f0);--bad:var(--danger,#b42318);--bads:var(--danger-soft,#fff0ee);--warn:var(--warning,#8a4b08);--warns:var(--warning-soft,#fff7e8);color:var(--i);font-family:var(--font-ui,Inter,system-ui,-apple-system,"Segoe UI",sans-serif);direction:rtl;text-align:right;line-height:1.9;max-width:980px;margin:auto;padding:.5rem}
+@media(prefers-color-scheme:dark){html:not([data-theme]) .gma-lesson{--i:#eef4ff;--m:#a8b7d1;--l:#2b3a55;--s:#111d31;--ss:#16243a;--p:#7ea2ff;--ps:#b2c8ff;--ok:#66d4a0;--oks:#123629;--bad:#ff8e87;--bads:#3b1d22;--warn:#f4c46f;--warns:#3b2d16}}
+.gma-lesson *{box-sizing:border-box}.gma-lesson h1,.gma-lesson h2,.gma-lesson h3{color:var(--i);line-height:1.45}.gma-lesson h1{font-size:clamp(1.8rem,4vw,2.6rem);margin:.2rem 0}.gma-lesson h2{font-size:clamp(1.35rem,3vw,1.8rem);margin:0 0 1rem;padding-bottom:.6rem;border-bottom:1px solid var(--l)}.gma-lesson h3{font-size:clamp(1.08rem,2.5vw,1.35rem);margin:0 0 .7rem}.gma-lesson p{margin:.55rem 0}.gma-hero,.gma-section,.gma-summary,.gma-exercises{background:var(--s);border:1px solid var(--l);border-radius:18px;padding:clamp(1rem,2.8vw,1.7rem);margin:1rem 0}.gma-hero{box-shadow:var(--shadow,0 18px 50px rgba(34,53,90,.09))}.gma-num{display:inline-grid;place-items:center;min-width:48px;height:48px;padding:0 .7rem;border-radius:14px;background:var(--ss);border:1px solid var(--l);color:var(--ps);font-weight:900;direction:ltr}.gma-subtitle,.gma-tr{color:var(--m)}.gma-meta{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}.gma-chip{border:1px solid var(--l);border-radius:999px;background:var(--ss);padding:.3rem .65rem;color:var(--m);font-size:.86rem;font-weight:700}.gma-sub{padding:1rem 0;border-bottom:1px dashed var(--l)}.gma-sub:last-child{border-bottom:0}.gma-fr,.gma-formula,.gma-ltr{direction:ltr;unicode-bidi:isolate;text-align:left}.gma-fr{display:block;font-weight:700;line-height:1.7;overflow-wrap:anywhere}.gma-tr{display:block;margin-top:.18rem;font-size:.95rem}.gma-example,.gma-card,.gma-q{padding:.8rem 1rem;margin:.65rem 0;background:var(--ss);border:1px solid var(--l);border-radius:14px}.gma-note{border-inline-start:4px solid var(--p)}.gma-correct{background:var(--oks);border-color:var(--ok)}.gma-incorrect{background:var(--bads);border-color:var(--bad)}.gma-warning{background:var(--warns);border-color:var(--warn)}.gma-formula{display:block;width:fit-content;max-width:100%;margin:.65rem 0;padding:.65rem .85rem;border:1px solid var(--l);border-radius:12px;background:var(--ss);color:var(--ps);font-weight:850;overflow-wrap:anywhere}.gma-lesson code{direction:ltr;unicode-bidi:isolate;padding:.08em .3em;border-radius:.4em;background:var(--ss);color:var(--ps);border:1px solid var(--l);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}.gma-table{overflow-x:auto;border:1px solid var(--l);border-radius:14px;margin:.85rem 0}.gma-lesson table{width:100%;min-width:620px;border-collapse:collapse;background:var(--s)}.gma-lesson th,.gma-lesson td{padding:.75rem;border-bottom:1px solid var(--l);vertical-align:top;text-align:right}.gma-lesson th{background:var(--ss);font-weight:850}.gma-lesson tr:last-child td{border-bottom:0}.gma-summary{background:var(--ss);border-inline-start:5px solid var(--p)}.gma-lesson ul,.gma-lesson ol{padding-inline-start:1.4rem}.gma-q{margin:.7rem 0}.gma-q strong{color:var(--p)}.gma-lesson details{margin-top:1rem;border:1px solid var(--l);border-radius:14px;overflow:hidden;background:var(--s)}.gma-lesson summary{cursor:pointer;padding:.85rem 1rem;background:var(--ss);font-weight:850}.gma-answers{padding:1rem}.gma-a{padding:.7rem 0;border-bottom:1px dashed var(--l)}.gma-a:last-child{border-bottom:0}@media(max-width:700px){.gma-lesson{padding:0}.gma-hero,.gma-section,.gma-summary,.gma-exercises{border-radius:14px;padding:1rem}}
 </style>
-<header class="adv-hero">
-<p class="adv-kicker">Lesson 6 · ADV-L06</p>
-<h2 lang="fr" dir="ltr">Le conditionnel</h2>
-<p class="fa-title" lang="fa">وجه شرطی</p>
-<p class="summary" lang="fa">این درس روی «وجه شرطی» تمرکز دارد و زیرموضوع‌های ساخت و ویژگی‌های conditionnel، آینده در گذشته، ارزش‌های وجهی conditionnel، فرض، شرط و ادب را پوشش می‌دهد.</p>
-<p class="meta">Printed pages 62–67 · PDF pages 64–69 · target 250 questions</p>
+
+<article class="gma-lesson" lang="fa" dir="rtl" aria-labelledby="lesson06-title">
+<header class="gma-hero">
+  <div class="gma-num">06</div>
+  <h1 id="lesson06-title"><span class="gma-fr" lang="fr">Le conditionnel</span></h1>
+  <p class="gma-subtitle">وجه شرطی؛ احتمال، فرض، آرزو، ادب، پشیمانی و «آینده در گذشته»</p>
+  <div class="gma-meta"><span class="gma-chip">صفحات 62 تا 67</span><span class="gma-chip">Niveau Avancé</span><span class="gma-chip">Conditionnel présent &amp; passé</span></div>
 </header>
-<section class="subtopic" id="ADV-L06-ST01">
-<h3 lang="fr" dir="ltr">Formation et caractéristiques</h3>
-<p class="fa-subtitle" lang="fa">ساخت و ویژگی‌های conditionnel</p>
-<p class="rule" lang="fr">Conditionnel présent combine radical du futur et terminaisons de l’imparfait; le passé combine auxiliaire conditionnel et participe passé.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «ساخت و ویژگی‌های conditionnel» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Je viendrais volontiers si j’avais le temps.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز بن آینده و پایان‌های imparfait را با هم ترکیب نمی‌کند و آن را صرفاً زمان مستقل حفظ‌شدنی می‌پندارد.</p>
-<p class="source"><code>ADV-L06:book-p062-p063:cond-form</code> · printed 62–63 · PDF 64–65</p>
+
+<section class="gma-section"><h2>1. هدف درس</h2>
+<p>بعد از این درس باید بتوانید تشخیص دهید که <code>conditionnel</code> فقط برای جمله‌های دارای «اگر» نیست. این وجه برای امکان و فرض، دنیای خیالی، آرزو، پشیمانی و سرزنش گذشته، خبر تأییدنشده، درخواست مؤدبانه، پیشنهاد و توصیه، احتمال، فرض با <code>si</code> و <span class="gma-fr" lang="fr">futur dans le passé</span> به کار می‌رود.</p>
 </section>
-<section class="subtopic" id="ADV-L06-ST02">
-<h3 lang="fr" dir="ltr">Futur dans le passé</h3>
-<p class="fa-subtitle" lang="fa">آینده در گذشته</p>
-<p class="rule" lang="fr">Le conditionnel présent ou passé situe respectivement postériorité ou antériorité accomplie depuis un repère passé.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «آینده در گذشته» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Elle savait qu’elle recevrait la réponse le lendemain.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز conditionnel آینده در گذشته را با فرض غیرواقعی اشتباه می‌گیرد و repère زمانی را تشخیص نمی‌دهد.</p>
-<p class="source"><code>ADV-L06:book-p062-p065:future-in-past</code> · printed 62–65 · PDF 64–67</p>
+
+<section class="gma-section"><h2>2. ایده اصلی</h2>
+<p>در بسیاری از کاربردها، <code>conditionnel</code> نشان می‌دهد که گوینده اتفاق را مستقیماً به‌عنوان واقعیت قطعی عرضه نمی‌کند؛ آن را فرضی، احتمالی، مطلوب، مؤدبانه یا گزارش‌شده ارائه می‌کند.</p>
+<div class="gma-example"><span class="gma-fr" lang="fr">Il viendra demain.</span><span class="gma-tr">او فردا خواهد آمد.</span></div>
+<div class="gma-example"><span class="gma-fr" lang="fr">Il pourrait venir demain.</span><span class="gma-tr">ممکن است فردا بیاید.</span></div>
+<p>در جمله دوم وقوع فقط یک <span class="gma-fr" lang="fr">éventualité</span> است.</p>
 </section>
-<section class="subtopic" id="ADV-L06-ST03">
-<h3 lang="fr" dir="ltr">Valeurs modales</h3>
-<p class="fa-subtitle" lang="fa">ارزش‌های وجهی conditionnel</p>
-<p class="rule" lang="fr">Le conditionnel exprime souhait, regret, reproche, atténuation, conseil, rumeur ou information non confirmée.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «ارزش‌های وجهی conditionnel» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Selon plusieurs témoins, le ministre aurait quitté la ville.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز هر conditionnel را نتیجهٔ جملهٔ si می‌گیرد و ارزش احتیاط خبری یا ادب را از دست می‌دهد.</p>
-<p class="source"><code>ADV-L06:book-p064-p067:cond-modal</code> · printed 64–67 · PDF 66–69</p>
+
+<section class="gma-section"><h2>3. Formation</h2>
+<div class="gma-sub"><h3>3.1. Conditionnel présent</h3>
+<p>از <strong>radical du futur</strong> همراه با پایان‌های <strong>imparfait</strong> ساخته می‌شود.</p>
+<span class="gma-formula">radical du futur + -ais / -ais / -ait / -ions / -iez / -aient</span>
+<div class="gma-table"><table><thead><tr><th>فعل</th><th>Futur</th><th>Conditionnel présent</th></tr></thead><tbody><tr><td><span class="gma-fr">aimer</span></td><td><span class="gma-fr">j'aimerai</span></td><td><span class="gma-fr">j'aimerais</span></td></tr><tr><td><span class="gma-fr">venir</span></td><td><span class="gma-fr">il viendra</span></td><td><span class="gma-fr">il viendrait</span></td></tr><tr><td><span class="gma-fr">avoir</span></td><td><span class="gma-fr">nous aurons</span></td><td><span class="gma-fr">nous aurions</span></td></tr></tbody></table></div>
+<div class="gma-example"><span class="gma-fr">Je parlerais. — Tu parlerais. — Il parlerait. — Nous parlerions. — Vous parleriez. — Ils parleraient.</span></div>
+<div class="gma-card gma-note"><strong>Radicaux irréguliers utiles</strong><div class="gma-ltr"><code>être → ser- → je serais</code><br><code>avoir → aur- → j'aurais</code><br><code>aller → ir- → j'irais</code><br><code>faire → fer- → je ferais</code><br><code>venir → viendr- → je viendrais</code><br><code>pouvoir → pourr- → je pourrais</code><br><code>vouloir → voudr- → je voudrais</code><br><code>devoir → devr- → je devrais</code></div></div>
+</div>
+<div class="gma-sub"><h3>3.2. Conditionnel passé</h3>
+<span class="gma-formula">avoir / être au conditionnel présent + participe passé</span>
+<div class="gma-example"><span class="gma-fr">J'aurais accepté.</span><span class="gma-tr">قبول می‌کردم / قبول کرده بودم اگر شرایط فراهم بود.</span></div>
+<div class="gma-example"><span class="gma-fr">Elle serait venue.</span><span class="gma-tr">او می‌آمد / آمده بود اگر شرایط فراهم بود.</span></div>
+<div class="gma-example"><span class="gma-fr">Nous nous serions rencontrés.</span><span class="gma-tr">ما همدیگر را ملاقات می‌کردیم.</span></div>
+<p>با <code>être</code> قواعد accord اعمال می‌شوند: <span class="gma-fr">Elle serait arrivée.</span></p>
+</div></section>
+
+<section class="gma-section"><h2>4. کاربردهای اصلی</h2>
+<div class="gma-sub"><h3>4.1. Éventualité</h3><div class="gma-example"><span class="gma-fr">On pourrait aller à la piscine.</span><span class="gma-tr">می‌توانیم / شاید بتوانیم به استخر برویم.</span></div><div class="gma-table"><table><thead><tr><th>ساختار</th><th>مثال</th><th>معنا</th></tr></thead><tbody><tr><td>Futur</td><td><span class="gma-fr">Il pleuvra demain.</span></td><td>پیش‌بینی مستقیم</td></tr><tr><td>Conditionnel</td><td><span class="gma-fr">Il pourrait pleuvoir demain.</span></td><td>امکان، نه قطعیت</td></tr></tbody></table></div></div>
+
+<div class="gma-sub"><h3>4.2. Conditionnel در برابر subjonctif</h3><div class="gma-example"><span class="gma-fr">Il se peut qu'il pleuve demain.</span></div><div class="gma-example"><span class="gma-fr">Il pourrait pleuvoir demain.</span></div><p>در اولی امکان با ساختار <code>il se peut que + subjonctif</code> بیان می‌شود؛ در دومی خود conditionnel دیدگاه احتمالی را منتقل می‌کند.</p></div>
+
+<div class="gma-sub"><h3>4.3. Futur dans le passé</h3><span class="gma-formula">futur → conditionnel présent</span><div class="gma-example"><span class="gma-fr">Il dit qu'il téléphonera ce soir.</span></div><div class="gma-example"><span class="gma-fr">Il a dit qu'il téléphonerait ce soir-là.</span><span class="gma-tr">او گفت که آن شب تلفن خواهد کرد.</span></div><span class="gma-formula">futur antérieur → conditionnel passé</span><div class="gma-example"><span class="gma-fr">Il avait promis qu'il écrirait dès qu'il serait arrivé.</span></div><div class="gma-card gma-note">اینجا conditionnel الزاماً «فرضی» نیست؛ فقط آینده نسبت به یک نقطه در گذشته را نشان می‌دهد.</div></div>
+
+<div class="gma-sub"><h3>4.4. Faits fictifs و vie imaginaire</h3><div class="gma-example"><span class="gma-fr">On habiterait près de la mer.</span><span class="gma-tr">نزدیک دریا زندگی می‌کردیم.</span></div><div class="gma-example"><span class="gma-fr">Dans ma vie idéale, je travaillerais quatre jours par semaine.</span><span class="gma-tr">در زندگی ایده‌آلم، هفته‌ای چهار روز کار می‌کردم.</span></div><p>در این کاربرد ممکن است اصلاً جمله <code>si</code> وجود نداشته باشد؛ context خیالی بودن وضعیت را روشن می‌کند.</p></div>
+
+<div class="gma-sub"><h3>4.5. Souhait و désir</h3><div class="gma-example"><span class="gma-fr">J'aimerais vivre près de la mer.</span><span class="gma-tr">دوست داشتم نزدیک دریا زندگی کنم.</span></div><div class="gma-example"><span class="gma-fr">Je voudrais tellement revoir mes anciens amis.</span><span class="gma-tr">خیلی دوست داشتم دوستان قدیمی‌ام را دوباره ببینم.</span></div><div class="gma-example"><span class="gma-fr">Ça me ferait plaisir de te revoir.</span><span class="gma-tr">از دیدنت خوشحال می‌شدم.</span></div><p><code>Je veux partir.</code> مستقیم‌تر است؛ <code>Je voudrais partir.</code> نرم‌تر و مؤدبانه‌تر است.</p></div>
+
+<div class="gma-sub"><h3>4.6. Regret</h3><div class="gma-example"><span class="gma-fr">J'aurais aimé étudier à l'étranger.</span><span class="gma-tr">دوست داشتم خارج از کشور درس بخوانم، ولی نشد.</span></div><div class="gma-example"><span class="gma-fr">Elle aurait voulu devenir médecin.</span><span class="gma-tr">او دوست داشت پزشک شود، اما این اتفاق نیفتاد.</span></div></div>
+
+<div class="gma-sub"><h3>4.7. Reproche</h3><div class="gma-example"><span class="gma-fr">Tu aurais pu me prévenir.</span><span class="gma-tr">می‌توانستی به من خبر بدهی.</span></div><div class="gma-example"><span class="gma-fr">Vous auriez dû vérifier les documents.</span><span class="gma-tr">باید مدارک را بررسی می‌کردید.</span></div><div class="gma-example"><span class="gma-fr">Il aurait fallu appeler la police.</span><span class="gma-tr">لازم بود / بهتر بود با پلیس تماس گرفته شود.</span></div><div class="gma-card"><span class="gma-fr">aurais pu + infinitif</span><span class="gma-tr">می‌توانستی ... ولی نکردی</span><span class="gma-fr">aurais dû + infinitif</span><span class="gma-tr">باید ... می‌کردی</span><span class="gma-fr">il aurait fallu + infinitif</span><span class="gma-tr">لازم بود ... شود</span></div></div>
+
+<div class="gma-sub"><h3>4.8. Information non confirmée</h3><p>در زبان خبری، conditionnel نشان می‌دهد که رسانه یا گوینده صحت خبر را تضمین نمی‌کند.</p><div class="gma-example"><span class="gma-fr">Le ministre aurait démissionné.</span><span class="gma-tr">گفته می‌شود وزیر استعفا داده است.</span></div><div class="gma-example"><span class="gma-fr">La société serait en difficulté financière.</span><span class="gma-tr">گفته می‌شود شرکت با مشکلات مالی روبه‌روست.</span></div><div class="gma-example"><span class="gma-fr">Plusieurs personnes auraient été blessées.</span><span class="gma-tr">گزارش شده چند نفر زخمی شده‌اند.</span></div><div class="gma-card gma-note">این کاربرد در presse، journal télévisé و گزارش رسمی محتاطانه بسیار رایج است.</div></div>
+
+<div class="gma-sub"><h3>4.9. درخواست مؤدبانه</h3><div class="gma-example"><span class="gma-fr">Je voudrais connaître les horaires.</span><span class="gma-tr">مایلم ساعت‌ها را بدانم.</span></div><div class="gma-example"><span class="gma-fr">J'aimerais réserver une table pour deux personnes.</span><span class="gma-tr">مایلم برای دو نفر میز رزرو کنم.</span></div><div class="gma-example"><span class="gma-fr">J'aurais voulu un billet pour samedi.</span></div><p>شکل سوم می‌تواند یک <span class="gma-fr">demande très atténuée</span> باشد.</p></div>
+
+<div class="gma-sub"><h3>4.10. Conseil و suggestion</h3><div class="gma-example"><span class="gma-fr">Tu devrais consulter un médecin.</span><span class="gma-tr">بهتر است / باید به پزشک مراجعه کنی.</span></div><div class="gma-example"><span class="gma-fr">Tu ferais mieux de partir maintenant.</span><span class="gma-tr">بهتر است الان بروی.</span></div><div class="gma-example"><span class="gma-fr">Il vaudrait mieux partir tôt.</span></div><div class="gma-example"><span class="gma-fr">Il vaudrait mieux que nous partions tôt.</span></div><div class="gma-example"><span class="gma-fr">Vous pourriez lui envoyer un message.</span><span class="gma-tr">بد نیست / می‌توانید برایش پیامی بفرستید.</span></div></div>
+
+<div class="gma-sub"><h3>4.11. Probabilité با devoir</h3><div class="gma-example"><span class="gma-fr">Son train devrait arriver vers 18 heures.</span><span class="gma-tr">قطارش احتمالاً حدود ساعت ۶ خواهد رسید.</span></div><div class="gma-example"><span class="gma-fr">Ils devraient être chez eux maintenant.</span><span class="gma-tr">احتمالاً الان خانه هستند.</span></div><div class="gma-card gma-note"><strong><span class="gma-fr">aurait dû</span></strong> بسته به context می‌تواند سرزنش یا انتظار تحقق‌نیافته باشد:<br><span class="gma-fr">Tu aurais dû m'appeler.</span><span class="gma-tr">باید به من زنگ می‌زدی.</span><span class="gma-fr">Son train aurait dû arriver à 18 heures.</span><span class="gma-tr">قرار بود / انتظار می‌رفت قطار ساعت ۶ برسد.</span></div></div>
 </section>
-<section class="subtopic" id="ADV-L06-ST04">
-<h3 lang="fr" dir="ltr">Hypothèse et politesse</h3>
-<p class="fa-subtitle" lang="fa">فرض، شرط و ادب</p>
-<p class="rule" lang="fr">Si + imparfait appelle le conditionnel présent; si + plus-que-parfait appelle présent ou passé selon la conséquence visée.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «فرض، شرط و ادب» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Si j’avais davantage de temps, je voyagerais plus souvent.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز پس از si خودِ conditionnel می‌آورد یا زمان فرض و زمان نتیجه را ناهماهنگ می‌سازد.</p>
-<p class="source"><code>ADV-L06:book-p066-p067:cond-si</code> · printed 66–67 · PDF 68–69</p>
+
+<section class="gma-section"><h2>5. Conditionnel با si و فرض</h2>
+<div class="gma-sub"><h3>5.1. فرض حال یا آینده</h3><span class="gma-formula">Si + imparfait → conditionnel présent</span><div class="gma-example"><span class="gma-fr">Si j'avais plus de temps, je voyagerais davantage.</span><span class="gma-tr">اگر وقت بیشتری داشتم، بیشتر سفر می‌کردم.</span></div><div class="gma-example"><span class="gma-fr">Si j'avais de l'argent, je t'en prêterais.</span></div></div>
+<div class="gma-sub"><h3>5.2. فرض خلاف واقع گذشته</h3><span class="gma-formula">Si + plus-que-parfait → conditionnel passé</span><div class="gma-example"><span class="gma-fr">Si elle avait étudié davantage, elle aurait réussi.</span><span class="gma-tr">اگر بیشتر درس خوانده بود، موفق شده بود.</span></div></div>
+<div class="gma-sub"><h3>5.3. فرض گذشته، نتیجه حال</h3><span class="gma-formula">Si + plus-que-parfait → conditionnel présent</span><div class="gma-example"><span class="gma-fr">Si tu avais suivi ce cours, tu comprendrais mieux ce sujet aujourd'hui.</span><span class="gma-tr">اگر آن دوره را گذرانده بودی، امروز این موضوع را بهتر می‌فهمیدی.</span></div></div>
+<div class="gma-sub"><h3>5.4. Hypothèse بدون si</h3><div class="gma-example"><span class="gma-fr">J'aurais 15 euros, je vous les donnerais.</span><span class="gma-tr">تقریباً معادل: Si j'avais 15 euros, je vous les donnerais.</span></div><div class="gma-example"><span class="gma-fr">Vous auriez pris l'avion, vous seriez arrivés plus tôt.</span><span class="gma-tr">معادل: Si vous aviez pris l'avion, vous seriez arrivés plus tôt.</span></div></div>
 </section>
-<aside class="notes"><h3>Notes avancées</h3>
-<section><h4>Exceptions / استثناها</h4><ul><li>Le conditionnel journalistique signale une information non confirmée et non une condition implicite obligatoire.</li><li>Une hypothèse peut exceptionnellement être juxtaposée sans si dans des tours discursifs.</li></ul></section>
-<section><h4>Contrastes / تقابل‌ها</h4><ul><li>futur dans le passé vs hypothèse</li><li>souhait présent vs regret passé</li><li>obligation/probabilité avec devoir</li></ul></section>
-<section><h4>Restrictions / محدودیت‌ها</h4><ul><li>Si n’introduit pas le conditionnel dans la protase standard.</li></ul></section>
-<section><h4>Register / سطح زبانی</h4><ul><li>Conditionnel d’atténuation dans la politesse; conditionnel de rumeur dans la presse.</li></ul></section>
-<section><h4>Temporal notes / نکات زمانی</h4><ul><li>Conditionnel présent et passé distinguent résultat contemporain/postérieur et résultat accompli.</li></ul></section>
-<section><h4>Semantic notes / نکات معنایی</h4><ul><li>La même morphologie peut coder postériorité temporelle, éventualité, distance énonciative ou politesse.</li></ul></section>
-</aside>
+
+<section class="gma-section"><h2>6. Contrastها و تفاوت‌های ظریف</h2><div class="gma-table"><table><thead><tr><th>ساختار</th><th>معنا</th><th>مثال</th><th>تمایز</th></tr></thead><tbody>
+<tr><td>futur</td><td>آینده مستقیم</td><td><span class="gma-fr">Il viendra.</span></td><td>وقوع به‌صورت مستقیم مطرح می‌شود.</td></tr>
+<tr><td>conditionnel présent</td><td>امکان / فرض</td><td><span class="gma-fr">Il pourrait venir.</span></td><td>وقوع قطعی نیست.</td></tr>
+<tr><td>subjonctif</td><td>امکان در ساختار وابسته</td><td><span class="gma-fr">Il se peut qu'il vienne.</span></td><td>وابسته به introducer با que است.</td></tr>
+<tr><td><span class="gma-fr">je voudrais</span></td><td>خواسته / ادب</td><td><span class="gma-fr">Je voudrais réserver.</span></td><td>بسیار رایج.</td></tr>
+<tr><td><span class="gma-fr">j'aurais voulu</span></td><td>پشیمانی یا درخواست بسیار نرم</td><td><span class="gma-fr">J'aurais voulu réserver.</span></td><td>context تعیین‌کننده است.</td></tr>
+<tr><td><span class="gma-fr">tu devrais</span></td><td>توصیه حال/آینده</td><td><span class="gma-fr">Tu devrais dormir.</span></td><td>conseil</td></tr>
+<tr><td><span class="gma-fr">tu aurais dû</span></td><td>وظیفه انجام‌نشده گذشته</td><td><span class="gma-fr">Tu aurais dû appeler.</span></td><td>reproche / regret</td></tr>
+<tr><td>futur dans le passé</td><td>آینده نسبت به گذشته</td><td><span class="gma-fr">Il a dit qu'il partirait.</span></td><td>الزاماً فرضی نیست.</td></tr>
+<tr><td>conditionnel journalistique</td><td>خبر تأییدنشده</td><td><span class="gma-fr">Il aurait démissionné.</span></td><td>فاصله و احتیاط خبری.</td></tr>
+</tbody></table></div></section>
+
+<section class="gma-section"><h2>7. استثناها و محدودیت‌ها</h2>
+<div class="gma-sub"><h3>7.1. در بخش شرطی با si، conditionnel نگذارید</h3><div class="gma-card gma-incorrect"><span class="gma-fr">❌ Si j'aurais le temps, je viendrais.</span></div><div class="gma-card gma-correct"><span class="gma-fr">✅ Si j'avais le temps, je viendrais.</span></div><div class="gma-card gma-incorrect"><span class="gma-fr">❌ Si j'aurais su, je serais venu.</span></div><div class="gma-card gma-correct"><span class="gma-fr">✅ Si j'avais su, je serais venu.</span></div></div>
+<div class="gma-sub"><h3>7.2. Conditionnel passé همیشه یک معنی ندارد</h3><p>بسته به context می‌تواند regret، reproche، hypothèse passée، information non confirmée، futur antérieur dans le passé یا انتظار تحقق‌نیافته با devoir را بیان کند.</p></div>
+<div class="gma-sub"><h3>7.3. Conditionnel présent هم فقط برای شرط نیست</h3><div class="gma-example"><span class="gma-fr">Je voudrais un café.</span></div><p>در این جمله شرط صریحی وجود ندارد؛ نقش آن politesse است.</p></div>
+</section>
+
+<section class="gma-section"><h2>8. خطاهای رایج</h2>
+<div class="gma-sub"><h3>خطای 1 — si + conditionnel</h3><div class="gma-card gma-incorrect"><span class="gma-fr">❌ Si j'aurais plus d'argent, j'achèterais une voiture.</span></div><div class="gma-card gma-correct"><span class="gma-fr">✅ Si j'avais plus d'argent, j'achèterais une voiture.</span></div></div>
+<div class="gma-sub"><h3>خطای 2 — سرزنش گذشته با زمان نامناسب</h3><div class="gma-card gma-incorrect"><span class="gma-fr">❌ Tu devrais me prévenir hier.</span></div><div class="gma-card gma-correct"><span class="gma-fr">✅ Tu aurais dû me prévenir hier.</span></div></div>
+<div class="gma-sub"><h3>خطای 3 — فرض دانستن futur dans le passé</h3><div class="gma-example"><span class="gma-fr">Il a dit qu'il viendrait.</span></div><p><code>viendrait</code> می‌تواند صرفاً آینده نسبت به یک فعل گزارش‌کننده در گذشته باشد.</p></div>
+<div class="gma-sub"><h3>خطای 4 — قطعی دانستن conditionnel journalistique</h3><div class="gma-example"><span class="gma-fr">Le président aurait accepté la proposition.</span></div><p>معنای مناسب: طبق گزارش‌ها / ظاهراً رئیس‌جمهور پیشنهاد را پذیرفته است.</p></div>
+<div class="gma-sub"><h3>خطای 5 — futur به جای suggestion</h3><div class="gma-example"><span class="gma-fr">Vous l'appellerez.</span><span class="gma-tr">شما به او زنگ خواهید زد.</span></div><div class="gma-example"><span class="gma-fr">Vous pourriez l'appeler.</span><span class="gma-tr">بد نیست / می‌توانید به او زنگ بزنید.</span></div></div>
+<div class="gma-sub"><h3>خطای 6 — نادیده گرفتن زمان نتیجه</h3><div class="gma-example"><span class="gma-fr">Si j'avais accepté ce poste il y a deux ans, je travaillerais aujourd'hui à Montréal.</span></div><p>شرط در گذشته است اما نتیجه در حال؛ conditionnel présent درست است.</p></div>
+</section>
+
+<section class="gma-section"><h2>9. زبان واقعی و Register</h2>
+<div class="gma-sub"><h3>Français courant</h3><div class="gma-card"><span class="gma-fr">Je voudrais...</span><span class="gma-fr">J'aimerais...</span><span class="gma-fr">Tu devrais...</span><span class="gma-fr">On pourrait...</span></div><p>هم در گفتار و هم در نوشتار بسیار رایج‌اند.</p></div>
+<div class="gma-sub"><h3>موقعیت رسمی</h3><div class="gma-example"><span class="gma-fr">J'aimerais connaître les conditions d'inscription.</span></div><p>از <code>Je veux connaître...</code> مؤدبانه‌تر است.</p></div>
+<div class="gma-sub"><h3>سبک خبری</h3><div class="gma-example"><span class="gma-fr">Le gouvernement envisagerait une réforme.</span></div><p>اطلاعات هنوز تأیید قطعی نشده است.</p></div>
+<div class="gma-sub"><h3>برای آزمون</h3><span class="gma-formula">Si + imparfait → conditionnel présent</span><span class="gma-formula">Si + plus-que-parfait → conditionnel passé</span><span class="gma-formula">Si + plus-que-parfait → conditionnel présent (résultat actuel)</span></div>
+</section>
+
+<section class="gma-section"><h2>10. نکات کلیدی یادگیری</h2><ol><li>Conditionnel présent = radical futur + پایان‌های imparfait.</li><li>با دیدن <code>aurais / aurait / serions / seraient + participe passé</code> فوراً دنبال شرط نگردید؛ context را بررسی کنید.</li><li>در discours indirect: <code>futur → conditionnel présent</code> و <code>futur antérieur → conditionnel passé</code>.</li><li><code>devrait</code> می‌تواند معنی «احتمالاً» بدهد: <span class="gma-fr">Il devrait arriver bientôt.</span></li><li>برای سرزنش گذشته: <code>aurais pu</code>، <code>aurais dû</code> و <code>il aurait fallu</code>.</li></ol></section>
+
+<section class="gma-summary"><h2>11. خلاصه‌ای که باید به خاطر بسپارید</h2><ul><li><strong>Conditionnel présent</strong> = radical du futur + terminaisons de l’imparfait.</li><li><strong>Conditionnel passé</strong> = <code>avoir/être</code> au conditionnel + participe passé.</li><li>امکان → <span class="gma-fr">Il pourrait venir.</span></li><li>دنیای خیالی → <span class="gma-fr">On vivrait au bord de la mer.</span></li><li>آرزو → <span class="gma-fr">J'aimerais partir.</span></li><li>درخواست مؤدبانه → <span class="gma-fr">Je voudrais...</span></li><li>توصیه → <span class="gma-fr">Tu devrais...</span></li><li>پیشنهاد → <span class="gma-fr">Tu pourrais...</span></li><li>پشیمانی → <span class="gma-fr">J'aurais aimé...</span></li><li>سرزنش گذشته → <span class="gma-fr">Tu aurais dû...</span></li><li>خبر تأییدنشده → <span class="gma-fr">Il aurait démissionné.</span></li><li>futur در discours indirect با فعل گذشته → conditionnel.</li><li><code>Si + imparfait → conditionnel présent</code></li><li><code>Si + plus-que-parfait → conditionnel passé</code></li><li>اگر نتیجه فرض گذشته هنوز در حال اثر دارد → conditionnel présent هم ممکن است.</li><li><span class="gma-fr">❌ Si j'aurais...</span></li><li><span class="gma-fr">✅ Si j'avais...</span></li></ul></section>
+
+<section class="gma-exercises"><h2>12. تمرین</h2>
+<div class="gma-q"><strong>1.</strong> فعل را صرف کنید:<span class="gma-fr">À ta place, je _______ (attendre) encore quelques jours.</span></div>
+<div class="gma-q"><strong>2.</strong> به futur dans le passé ببرید:<span class="gma-fr">Elle dit qu'elle reviendra lundi.</span><span class="gma-fr">Elle a dit que...</span></div>
+<div class="gma-q"><strong>3.</strong> درخواست را مؤدبانه کنید:<span class="gma-fr">Je veux parler au responsable.</span></div>
+<div class="gma-q"><strong>4.</strong> با <code>pouvoir</code> suggestion بسازید:<span class="gma-fr">Appelle Marie pour lui demander son avis.</span></div>
+<div class="gma-q"><strong>5.</strong> با <code>devoir</code> توصیه کنید:<span class="gma-fr">Va te coucher plus tôt.</span></div>
+<div class="gma-q"><strong>6.</strong> با <code>devoir</code> سرزنش گذشته بسازید:<span class="gma-fr">Tu ne m'as pas prévenu.</span></div>
+<div class="gma-q"><strong>7.</strong> خبر را تأییدنشده گزارش کنید:<span class="gma-fr">Le directeur a quitté son poste.</span></div>
+<div class="gma-q"><strong>8.</strong> کامل کنید:<span class="gma-fr">Si j'avais plus de vacances, je _______ davantage. (voyager)</span></div>
+<div class="gma-q"><strong>9.</strong> کامل کنید:<span class="gma-fr">Si nous avions réservé plus tôt, nous _______ une chambre moins chère. (trouver)</span></div>
+<div class="gma-q"><strong>10.</strong> نتیجه حال برای فرض گذشته بسازید:<span class="gma-fr">Si j'avais appris le français plus tôt, aujourd'hui je _______ plus facilement. (parler)</span></div>
+<div class="gma-q"><strong>11.</strong> خطا را اصلاح کنید:<span class="gma-fr">Si j'aurais su, je ne serais pas venu.</span></div>
+<div class="gma-q"><strong>12.</strong> معنای conditionnel را مشخص کنید:<span class="gma-fr">D'après plusieurs médias, l'entreprise serait sur le point d'être vendue.</span><ol><li>آینده در گذشته</li><li>خبر تأییدنشده</li><li>پشیمانی</li><li>توصیه</li></ol></div>
+<details><summary>پاسخ تمرین‌ها</summary><div class="gma-answers">
+<div class="gma-a"><strong>1.</strong><span class="gma-fr">j'attendrais</span></div>
+<div class="gma-a"><strong>2.</strong><span class="gma-fr">Elle a dit qu'elle reviendrait lundi.</span></div>
+<div class="gma-a"><strong>3.</strong><span class="gma-fr">Je voudrais parler au responsable.</span><span class="gma-tr">یا: J'aimerais parler au responsable.</span></div>
+<div class="gma-a"><strong>4.</strong><span class="gma-fr">Tu pourrais appeler Marie pour lui demander son avis.</span></div>
+<div class="gma-a"><strong>5.</strong><span class="gma-fr">Tu devrais te coucher plus tôt.</span></div>
+<div class="gma-a"><strong>6.</strong><span class="gma-fr">Tu aurais dû me prévenir.</span></div>
+<div class="gma-a"><strong>7.</strong><span class="gma-fr">Le directeur aurait quitté son poste.</span></div>
+<div class="gma-a"><strong>8.</strong><span class="gma-fr">Si j'avais plus de vacances, je voyagerais davantage.</span></div>
+<div class="gma-a"><strong>9.</strong><span class="gma-fr">Si nous avions réservé plus tôt, nous aurions trouvé une chambre moins chère.</span></div>
+<div class="gma-a"><strong>10.</strong><span class="gma-fr">Si j'avais appris le français plus tôt, aujourd'hui je parlerais plus facilement.</span></div>
+<div class="gma-a"><strong>11.</strong><span class="gma-fr">✅ Si j'avais su, je ne serais pas venu.</span></div>
+<div class="gma-a"><strong>12.</strong> پاسخ صحیح: <strong>خبر تأییدنشده</strong>؛ <code>serait</code> اینجا conditionnel journalistique است.</div>
+</div></details>
+</section>
 </article>

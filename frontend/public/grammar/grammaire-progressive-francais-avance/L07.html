@@ -1,77 +1,419 @@
-<article class="adv-lesson" data-lesson-id="ADV-L07">
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>درس ۷ — L’infinitif</title>
 <style>
-.adv-lesson{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.75;color:#172033;max-width:980px;margin:0 auto;padding:8px 2px 40px}
-.adv-lesson *{box-sizing:border-box}
-.adv-lesson .adv-hero{padding:24px;border:1px solid #e3e8f0;border-radius:18px;background:#fff;margin-bottom:22px}
-.adv-lesson .adv-kicker{font-size:.86rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.65;margin:0 0 6px}
-.adv-lesson h2,.adv-lesson h3{line-height:1.35}
-.adv-lesson h2{font-size:1.65rem;margin:0 0 4px}
-.adv-lesson .fa-title{direction:rtl;text-align:right;font-weight:650;margin:.2rem 0 .8rem}
-.adv-lesson .summary{direction:rtl;text-align:right;margin:0}
-.adv-lesson .meta{margin-top:12px;font-size:.9rem;opacity:.72}
-.adv-lesson .subtopic{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin:18px 0;background:#fff}
-.adv-lesson .subtopic h3{margin:0 0 2px;font-size:1.25rem}
-.adv-lesson .fa-subtitle{direction:rtl;text-align:right;font-weight:600;margin:.1rem 0 1rem}
-.adv-lesson .rule{direction:ltr;text-align:left;padding:12px 14px;border-left:4px solid currentColor;background:#f7f9fc;border-radius:8px;margin:12px 0}
-.adv-lesson .teaching,.adv-lesson .trap{direction:rtl;text-align:right}
-.adv-lesson .example{direction:ltr;text-align:left;font-style:italic;padding:10px 14px;background:#f7f9fc;border-radius:8px}
-.adv-lesson .trap{padding:10px 14px;border:1px dashed #c7ced9;border-radius:8px}
-.adv-lesson .source{font-size:.82rem;opacity:.65;margin-top:12px}
-.adv-lesson .notes{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin-top:22px}
-.adv-lesson .notes h3{margin-top:0}
-.adv-lesson .notes section{margin:16px 0}
-.adv-lesson .notes h4{margin:0 0 6px}
-.adv-lesson .notes ul{margin-top:4px}
+.lesson7,.lesson7 *{box-sizing:border-box}
+.lesson7{
+  --a:#2563eb;--good:#15803d;--bad:#b91c1c;
+  --line:color-mix(in srgb,currentColor 16%,transparent);
+  --soft:color-mix(in srgb,currentColor 5%,transparent);
+  --soft2:color-mix(in srgb,currentColor 8%,transparent);
+  --muted:color-mix(in srgb,currentColor 68%,transparent);
+  max-width:980px;margin:auto;padding:clamp(16px,3vw,34px);
+  color:inherit;background:transparent;font:inherit;line-height:1.95;text-align:right
+}
+.lesson7 h1,.lesson7 h2,.lesson7 h3{color:inherit;line-height:1.45;margin:0}
+.lesson7 h1{font-size:clamp(1.9rem,4vw,2.7rem)}
+.lesson7 h2{font-size:clamp(1.3rem,2.6vw,1.75rem);margin-top:2.2rem;padding-bottom:.5rem;border-bottom:1px solid var(--line)}
+.lesson7 h3{font-size:1.15rem;margin-top:1.45rem}
+.lesson7 p{margin:.7rem 0}
+.lesson7 ul,.lesson7 ol{padding-right:1.35rem}
+.lesson7 li+li{margin-top:.35rem}
+.lesson7 .hero,.lesson7 .box,.lesson7 .example,.lesson7 .exercise{border:1px solid var(--line);border-radius:16px;background:var(--soft);padding:16px 18px;margin:1rem 0}
+.lesson7 .hero{border-radius:22px;padding:clamp(18px,3vw,30px);margin-top:0}
+.lesson7 .tag{display:inline-block;color:var(--a);background:color-mix(in srgb,var(--a) 10%,transparent);border:1px solid color-mix(in srgb,var(--a) 25%,transparent);border-radius:999px;padding:.25rem .7rem;font-weight:700;font-size:.88rem;margin-bottom:.7rem}
+.lesson7 .meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:18px}
+.lesson7 .meta>div{border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:var(--soft)}
+.lesson7 .meta small{display:block;color:var(--muted)}
+.lesson7 .callout{border-right:4px solid var(--a);background:color-mix(in srgb,var(--a) 9%,transparent);padding:14px 16px;border-radius:12px;margin:1rem 0}
+.lesson7 .fr,.lesson7 code,.lesson7 .formula{direction:ltr;unicode-bidi:isolate;text-align:left}
+.lesson7 .fr{display:block;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-weight:650;line-height:1.7;margin:.25rem 0}
+.lesson7 .fa{color:var(--muted)}
+.lesson7 .formula{display:block;width:fit-content;max-width:100%;padding:.45rem .7rem;border:1px solid var(--line);border-radius:9px;background:var(--soft2);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;margin:.6rem 0;overflow-wrap:anywhere}
+.lesson7 .ok{color:var(--good);font-weight:750}
+.lesson7 .no{color:var(--bad);font-weight:750}
+.lesson7 .why{color:var(--muted)}
+.lesson7 .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;margin:1rem 0}
+.lesson7 table{width:100%;min-width:720px;border-collapse:collapse;color:inherit}
+.lesson7 th,.lesson7 td{padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top;text-align:right}
+.lesson7 th{background:var(--soft2)}
+.lesson7 tr:last-child td{border-bottom:0}
+.lesson7 .summary{display:grid;gap:9px}
+.lesson7 .summary>div{border:1px solid var(--line);border-radius:11px;padding:10px 12px;background:var(--soft)}
+.lesson7 .answers div{padding:6px 0;border-bottom:1px dashed var(--line)}
+.lesson7 .answers div:last-child{border-bottom:0}
+@media(max-width:680px){.lesson7{padding:14px}.lesson7 .meta{grid-template-columns:1fr}.lesson7 .hero{border-radius:14px}}
+@media(prefers-color-scheme:dark){.lesson7{--a:#60a5fa;--good:#86efac;--bad:#fca5a5}}
+.dark .lesson7,[data-theme="dark"] .lesson7,[data-mode="dark"] .lesson7{--a:#60a5fa;--good:#86efac;--bad:#fca5a5}
+.light .lesson7,[data-theme="light"] .lesson7,[data-mode="light"] .lesson7{--a:#2563eb;--good:#15803d;--bad:#b91c1c}
 </style>
-<header class="adv-hero">
-<p class="adv-kicker">Lesson 7 · ADV-L07</p>
-<h2 lang="fr" dir="ltr">L’infinitif</h2>
-<p class="fa-title" lang="fa">مصدر</p>
-<p class="summary" lang="fa">این درس روی «مصدر» تمرکز دارد و زیرموضوع‌های صورت‌های مصدر، مصدر پس از افعال حاکم، یکسانی فاعل و جایگزینی بند، ارزش اسمی و دستوری مصدر را پوشش می‌دهد.</p>
-<p class="meta">Printed pages 70–73 · PDF pages 72–75 · target 220 questions</p>
+</head>
+<body style="margin:0;background:transparent;color:inherit">
+<article class="lesson7" lang="fa" dir="rtl">
+
+<header class="hero">
+<span class="tag">درس ۷ · Niveau Avancé</span>
+<h1 dir="ltr">L’infinitif</h1>
+<p class="fa">مصدر در زبان فرانسه: شکل‌ها، کاربردها، رابطهٔ زمانی و انتخاب میان infinitif، indicatif و subjonctif</p>
+<div class="meta">
+<div><small>شماره درس</small><strong>7</strong></div>
+<div><small>عنوان رسمی</small><strong dir="ltr">L’infinitif</strong></div>
+<div><small>صفحات کتاب</small><strong>70 تا 73</strong></div>
+<div><small>موضوع اصلی</small><strong>کاربرد و محدودیت‌های infinitif</strong></div>
+</div>
 </header>
-<section class="subtopic" id="ADV-L07-ST01">
-<h3 lang="fr" dir="ltr">Formes de l’infinitif</h3>
-<p class="fa-subtitle" lang="fa">صورت‌های مصدر</p>
-<p class="rule" lang="fr">L’infinitif possède formes pronominale, passive, négative et passée; l’infinitif passé marque l’antériorité.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «صورت‌های مصدر» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Après avoir envoyé le message, il a éteint son téléphone.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز نفی یا ضمیر را در مصدر با الگوی فعل صرف‌شده جای‌گذاری می‌کند.</p>
-<p class="source"><code>ADV-L07:book-p070-p071:inf-forms</code> · printed 70–71 · PDF 72–73</p>
+
+<section>
+<h2>هدف درس</h2>
+<p>بعد از این درس باید بتوانید شکل ساده، ضمیری، مجهول، منفی و گذشتهٔ infinitif را بسازید؛ تشخیص دهید چه فعل‌هایی infinitif می‌گیرند؛ رابطهٔ زمانی میان <span dir="ltr">infinitif présent</span> و <span dir="ltr">infinitif passé</span> را بفهمید؛ و تصمیم بگیرید چه زمانی به‌جای جمله‌ای با <span dir="ltr">que + indicatif/subjonctif</span> از infinitif استفاده کنید.</p>
 </section>
-<section class="subtopic" id="ADV-L07-ST02">
-<h3 lang="fr" dir="ltr">Infinitif après certains verbes</h3>
-<p class="fa-subtitle" lang="fa">مصدر پس از افعال حاکم</p>
-<p class="rule" lang="fr">Mouvement, modalité, croyance, désir et perception autorisent des constructions infinitives différentes.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «مصدر پس از افعال حاکم» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">J’entends les enfants jouer dans le jardin.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز میان مصدر مستقیم و مصدر با à/de تمایز نمی‌گذارد و حاکمیت فعل را حدس می‌زند.</p>
-<p class="source"><code>ADV-L07:book-p072-p073:inf-governed</code> · printed 72–73 · PDF 74–75</p>
+
+<section>
+<h2>ایدهٔ اصلی</h2>
+<p><strong>Infinitif</strong> شکل صرف‌نشدهٔ فعل است:</p>
+<span class="formula">partir · réfléchir · vendre · pouvoir</span>
+<p>در فرانسه infinitif فقط شکل لغت‌نامه‌ای فعل نیست. می‌تواند یک عمل را به‌صورت فشرده بیان کند، بعد از فعل یا حرف اضافه بیاید، در دستورالعمل‌ها استفاده شود و حتی جای یک proposition کامل را بگیرد.</p>
+<div class="callout"><strong>قاعدهٔ مرکزی:</strong> وقتی دو عمل فاعل یکسان دارند، فرانسه در بسیاری از ساختارها به‌جای جملهٔ دوم با <span dir="ltr">que</span> از infinitif استفاده می‌کند.</div>
+<div class="example">
+<span class="fr">Partir, c'est mourir un peu.</span><div class="fa">رفتن، کمی مردن است.</div>
+<span class="fr">Je préfère rester ici.</span><div class="fa">ترجیح می‌دهم اینجا بمانم.</div>
+<span class="fr">Ne pas marcher sur la pelouse.</span><div class="fa">روی چمن راه نروید.</div>
+</div>
 </section>
-<section class="subtopic" id="ADV-L07-ST03">
-<h3 lang="fr" dir="ltr">Identité du sujet</h3>
-<p class="fa-subtitle" lang="fa">یکسانی فاعل و جایگزینی بند</p>
-<p class="rule" lang="fr">Quand les sujets sont identiques, l’infinitif remplace obligatoirement ou préférentiellement plusieurs subordonnées en que.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «یکسانی فاعل و جایگزینی بند» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Je préfère partir tôt plutôt que d’attendre la dernière minute.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز با فاعل یکسان همچنان pour que یا avant que + subjonctif می‌آورد.</p>
-<p class="source"><code>ADV-L07:book-p072-p073:inf-subject-identity</code> · printed 72–73 · PDF 74–75</p>
+
+<section>
+<h2>1) شکل پایهٔ infinitif</h2>
+<span class="formula">aimer · réfléchir · vendre · pouvoir · dire · répondre</span>
+<div class="example"><span class="fr">Avant de répondre, il faut réfléchir.</span><div class="fa">پیش از پاسخ دادن، باید فکر کرد.</div></div>
 </section>
-<section class="subtopic" id="ADV-L07-ST04">
-<h3 lang="fr" dir="ltr">Valeurs nominale et injonctive</h3>
-<p class="fa-subtitle" lang="fa">ارزش اسمی و دستوری مصدر</p>
-<p class="rule" lang="fr">L’infinitif peut fonctionner comme nom, consigne, conseil ou directive, souvent dans un registre écrit condensé.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «ارزش اسمی و دستوری مصدر» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Ne pas toucher aux appareils électriques.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز مصدر دستوری در دستورالعمل و تابلو را جمله‌ای ناقص و الزاماً نادرست می‌داند.</p>
-<p class="source"><code>ADV-L07:book-p070-p071:inf-directives</code> · printed 70–71 · PDF 72–73</p>
+
+<section>
+<h2>2) Infinitif pronominal</h2>
+<p>فعل‌های pronominal در مصدر نیز ضمیر خود را حفظ می‌کنند:</p>
+<span class="formula">se lever · se souvenir · s'apercevoir</span>
+<div class="example">
+<span class="fr">Je n'arrive pas à me lever tôt.</span><div class="fa">نمی‌توانم صبح زود بلند شوم.</div>
+<span class="fr">Nous essayons de nous lever plus tôt.</span><div class="fa">سعی می‌کنیم زودتر بلند شویم.</div>
+</div>
+<p class="no">❌ J'essaie de se lever tôt.</p>
+<p class="ok">✅ J'essaie de me lever tôt.</p>
+<p class="why">💡 چون فاعل عمل دوم <span dir="ltr">je</span> است، ضمیر باید <span dir="ltr">me</span> باشد.</p>
 </section>
-<aside class="notes"><h3>Notes avancées</h3>
-<section><h4>Exceptions / استثناها</h4><ul><li>Avec faire et laisser, la chaîne infinitive obéit à des contraintes pronominales et sémantiques propres.</li><li>L’infinitif peut remplacer l’indicatif à sujet identique dans un registre plus soutenu, mais pas sans vérifier la construction du verbe.</li></ul></section>
-<section><h4>Contrastes / تقابل‌ها</h4><ul><li>infinitif présent vs passé</li><li>infinitif vs subordonnée à sujets identiques ou distincts</li><li>valeur verbale vs nominale/injonctive</li></ul></section>
-<section><h4>Restrictions / محدودیت‌ها</h4><ul><li>Le choix de à, de ou absence de préposition dépend du verbe, de l’adjectif ou de la locution.</li></ul></section>
-<section><h4>Register / سطح زبانی</h4><ul><li>L’infinitif de consigne est fréquent dans notices, recettes et règlements; certaines réductions infinitives sont soutenues.</li></ul></section>
-<section><h4>Temporal notes / نکات زمانی</h4><ul><li>L’infinitif passé marque l’antériorité par rapport au verbe principal.</li></ul></section>
-<section><h4>Semantic notes / نکات معنایی</h4><ul><li>Après perception, mouvement, modalité, opinion ou désir, l’infinitif entretient des relations argumentales distinctes.</li></ul></section>
-</aside>
+
+<section>
+<h2>3) Infinitif passif</h2>
+<span class="formula">être + participe passé</span>
+<div class="example">
+<span class="fr">Cette porte doit être fermée la nuit.</span><div class="fa">این در باید شب‌ها بسته باشد.</div>
+<span class="fr">La porte doit être fermée.</span>
+<span class="fr">Les portes doivent être fermées.</span>
+</div>
+<p>در ساختار مجهول، participe passé طبق قواعد <span dir="ltr">être</span> با اسم مربوط accord می‌کند.</p>
+</section>
+
+<section>
+<h2>4) Infinitif négatif</h2>
+<span class="formula">ne pas aimer · ne jamais dormir · ne plus venir · ne rien dire</span>
+<div class="example">
+<span class="fr">Il vaut mieux ne rien dire.</span><div class="fa">بهتر است چیزی نگوییم.</div>
+<span class="fr">Ne pas se pencher par la fenêtre !</span><div class="fa">از پنجره به بیرون خم نشوید!</div>
+</div>
+<p class="no">❌ Il vaut mieux ne dire rien.</p>
+<p class="ok">✅ Il vaut mieux ne rien dire.</p>
+</section>
+
+<section>
+<h2>5) L'infinitif passé</h2>
+<p>Infinitif passé نشان می‌دهد عمل infinitif <strong>پیش از عمل فعل اصلی</strong> انجام شده است.</p>
+<span class="formula">avoir / être à l'infinitif + participe passé</span>
+<div class="example">
+<span class="fr">Il me semble le lui avoir dit.</span><div class="fa">به نظرم قبلاً این را به او گفته‌ام.</div>
+<span class="fr">Elle espère être arrivée avant midi.</span><div class="fa">او امیدوار است تا پیش از ظهر رسیده باشد.</div>
+</div>
+<h3>Contrast زمانی</h3>
+<div class="example">
+<span class="fr">Il pense finir avant midi.</span><div class="fa">فکر می‌کند تا ظهر کار را تمام کند.</div>
+<span class="fr">Il pense avoir fini avant midi.</span><div class="fa">فکر می‌کند تا پیش از ظهر کار را تمام کرده باشد.</div>
+</div>
+</section>
+
+<section>
+<h2>6) Infinitif به‌عنوان forme nominale</h2>
+<div class="example">
+<span class="fr">Il aime lire.</span>
+<span class="fr">Il aime la lecture.</span>
+</div>
+<p>برخی infinitifها نیز به‌صورت اسم تثبیت شده‌اند:</p>
+<span class="formula">le dîner · le déjeuner · le boire · le manger</span>
+</section>
+
+<section>
+<h2>7) Infinitif بعد از preposition</h2>
+<p>Infinitif می‌تواند بعد از prepositionهایی مانند <span dir="ltr">de, à, pour, après, sans</span> بیاید.</p>
+<div class="example">
+<span class="fr">Elle est contente de partir.</span><div class="fa">او از رفتن خوشحال است.</div>
+<span class="fr">Sortez sans faire de bruit.</span><div class="fa">بدون سروصدا بیرون بروید.</div>
+</div>
+
+<h3 dir="ltr">avant de + infinitif</h3>
+<div class="example"><span class="fr">Avant de répondre, réfléchissez.</span><div class="fa">قبل از پاسخ دادن، فکر کنید.</div></div>
+
+<h3 dir="ltr">sans + infinitif</h3>
+<div class="example"><span class="fr">Il est parti sans dire au revoir.</span><div class="fa">بدون خداحافظی رفت.</div></div>
+
+<h3 dir="ltr">pour + infinitif</h3>
+<div class="example"><span class="fr">Je travaille pour réussir.</span><div class="fa">کار می‌کنم تا موفق شوم.</div></div>
+
+<h3 dir="ltr">après + infinitif passé</h3>
+<div class="example"><span class="fr">Après avoir terminé le rapport, il est parti.</span><div class="fa">بعد از تمام کردن گزارش، رفت.</div></div>
+</section>
+
+<section>
+<h2>8) Infinitif برای ordre، conseil و directives</h2>
+<p>Infinitif بدون فاعل صریح در تابلوها، دستورالعمل‌ها، توصیه‌ها و دستور آشپزی بسیار رایج است.</p>
+<div class="example">
+<span class="fr">Ne pas marcher sur la pelouse.</span><div class="fa">روی چمن راه نروید.</div>
+<span class="fr">Boire frais de préférence.</span><div class="fa">ترجیحاً خنک نوشیده شود.</div>
+<span class="fr">Prendre 100 g de farine et mélanger avec deux œufs.</span><div class="fa">۱۰۰ گرم آرد بردارید و با دو تخم‌مرغ مخلوط کنید.</div>
+</div>
+</section>
+
+<section>
+<h2>9) بعد از verbes de mouvement</h2>
+<p>افعالی مانند <span dir="ltr">aller, venir, descendre, monter, courir, partir, sortir</span> می‌توانند مستقیم با infinitif بیایند و اغلب هدف حرکت را بیان کنند.</p>
+<div class="example">
+<span class="fr">Il est sorti acheter du pain.</span><div class="fa">او بیرون رفت تا نان بخرد.</div>
+<span class="fr">Elle est venue rapporter les livres.</span><div class="fa">او آمد تا کتاب‌ها را پس بدهد.</div>
+</div>
+<p class="no">❌ Je vais pour acheter du pain.</p>
+<p class="ok">✅ Je vais acheter du pain.</p>
+</section>
+
+<section>
+<h2>10) بعد از verbes modaux</h2>
+<span class="formula">falloir · devoir · pouvoir · savoir · vouloir · oser · paraître · sembler · faire · laisser</span>
+<div class="example">
+<span class="fr">Je n'ai pas voulu y aller.</span>
+<span class="fr">Elle n'a pas su répondre.</span>
+<span class="fr">Il a failli mourir.</span>
+<span class="fr">Laissez-moi passer !</span>
+<span class="fr">J'ai fait attendre les clients.</span>
+</div>
+<h3 dir="ltr">faire + infinitif</h3>
+<div class="example"><span class="fr">J'ai fait réparer la voiture.</span><div class="fa">ماشین را دادم تعمیر کنند.</div></div>
+<h3 dir="ltr">laisser + infinitif</h3>
+<div class="example"><span class="fr">Laissez-moi parler.</span><div class="fa">بگذارید صحبت کنم.</div></div>
+</section>
+
+<section>
+<h2>11) افعال croyance و supposition</h2>
+<span class="formula">croire · estimer · penser · dire · supposer · déclarer</span>
+<div class="example">
+<span class="fr">Ils pensent avoir fini avant midi.</span>
+<span class="fr">Elle suppose pouvoir venir en été.</span>
+<span class="fr">Elle estime avoir raison.</span>
+</div>
+<p>وقتی فاعل یکسان است، infinitif می‌تواند جمله را فشرده کند:</p>
+<div class="example"><span class="fr">Elle estime qu'elle a raison. → Elle estime avoir raison.</span></div>
+</section>
+
+<section>
+<h2>12) افعال désir و intention</h2>
+<span class="formula">espérer · souhaiter · désirer · aimer · adorer · préférer · détester · aimer mieux · il vaut mieux</span>
+<div class="example">
+<span class="fr">Nous espérons recevoir bientôt de vos nouvelles.</span><div class="fa">امیدواریم به‌زودی خبری از شما دریافت کنیم.</div>
+<span class="fr">Je préfère rester ici.</span><div class="fa">ترجیح می‌دهم اینجا بمانم.</div>
+<span class="fr">Il vaut mieux réserver avant d'y aller.</span><div class="fa">بهتر است پیش از رفتن رزرو کنیم.</div>
+</div>
+</section>
+
+<section>
+<h2>13) افعال perception</h2>
+<span class="formula">voir · regarder · apercevoir · entendre · écouter · sentir</span>
+<span class="formula">verbe de perception + personne/chose + infinitif</span>
+<div class="example">
+<span class="fr">J'ai vu les enfants traverser.</span><div class="fa">دیدم بچه‌ها عبور کردند.</div>
+<span class="fr">Je l'ai entendu rire.</span><div class="fa">شنیدم که می‌خندید.</div>
+<span class="fr">On a senti quelqu'un bouger.</span><div class="fa">احساس کردیم کسی حرکت کرد.</div>
+</div>
+<h3>مقایسه با relative clause</h3>
+<div class="example"><span class="fr">J'ai vu les troupeaux qui traversaient la rivière. → J'ai vu les troupeaux traverser la rivière.</span></div>
+</section>
+
+<section>
+<h2>14) Infinitif در برابر Subjonctif</h2>
+<div class="callout"><strong>قاعدهٔ بسیار مهم:</strong> اگر فاعل فعل اصلی و فاعل عمل دوم یکی باشد، در این نوع ساختارها infinitif به‌کار می‌رود.</div>
+<p class="no">❌ Je voudrais que je sorte.</p>
+<p class="ok">✅ Je voudrais sortir.</p>
+<div class="example">
+<span class="fr">Je veux partir.</span><div class="fa">می‌خواهم بروم.</div>
+<span class="fr">Je veux que tu partes.</span><div class="fa">می‌خواهم تو بروی.</div>
+</div>
+</section>
+
+<section>
+<h2>15) Conjonctionها و یکسان‌بودن فاعل</h2>
+<span class="formula">pour que · afin que · avant que · sans que · de peur que · de crainte que · en attendant que</span>
+
+<h3 dir="ltr">pour que → pour + infinitif</h3>
+<div class="example">
+<span class="fr">Je travaille pour réussir.</span>
+<span class="fr">Je travaille pour que mes enfants réussissent.</span>
+</div>
+
+<h3 dir="ltr">avant que → avant de + infinitif</h3>
+<div class="example">
+<span class="fr">Avant de partir, je ferme les fenêtres.</span>
+<span class="fr">Avant que tu partes, ferme les fenêtres.</span>
+</div>
+
+<h3 dir="ltr">sans que → sans + infinitif</h3>
+<div class="example">
+<span class="fr">Il est parti sans prévenir.</span>
+<span class="fr">Il est parti sans que je le voie.</span>
+</div>
+
+<h3 dir="ltr">de peur que → de peur de + infinitif</h3>
+<div class="example">
+<span class="fr">Il parle doucement de peur de réveiller le bébé.</span>
+<span class="fr">Il parle doucement de peur que le bébé se réveille.</span>
+</div>
+</section>
+
+<section>
+<h2>16) Infinitif در برابر Indicatif</h2>
+<p>وقتی فاعل جملهٔ اصلی و جملهٔ وابسته یکسان است، در بعضی موارد infinitif می‌تواند جای indicatif را بگیرد.</p>
+<div class="example">
+<span class="fr">J'espère que je recevrai bientôt de vos nouvelles.</span>
+<span class="fr">→ J'espère recevoir bientôt de vos nouvelles.</span>
+</div>
+<p>هر دو درست‌اند. فرم infinitif فشرده‌تر است و در بعضی contextها می‌تواند نوشتاری‌تر یا soutenuتر به نظر برسد.</p>
+</section>
+
+<section>
+<h2>Contrastها و تفاوت‌های ظریف</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>ساختار</th><th>شرط</th><th>مثال</th><th>نکته</th></tr></thead>
+<tbody>
+<tr><td dir="ltr">vouloir + infinitif</td><td>فاعل یکسان</td><td dir="ltr">Je veux partir.</td><td>خود فاعل عمل دوم را انجام می‌دهد.</td></tr>
+<tr><td dir="ltr">vouloir que + subjonctif</td><td>فاعل متفاوت</td><td dir="ltr">Je veux que tu partes.</td><td>شخص دیگری عمل دوم را انجام می‌دهد.</td></tr>
+<tr><td dir="ltr">pour + infinitif</td><td>فاعل یکسان</td><td dir="ltr">Je travaille pour réussir.</td><td>هدف مربوط به همان فاعل است.</td></tr>
+<tr><td dir="ltr">pour que + subjonctif</td><td>فاعل متفاوت</td><td dir="ltr">Je travaille pour que tu réussisses.</td><td>هدف مربوط به فاعل دیگری است.</td></tr>
+<tr><td dir="ltr">avant de + infinitif</td><td>فاعل یکسان</td><td dir="ltr">Avant de partir, appelle-moi.</td><td>یک فاعل برای دو عمل.</td></tr>
+<tr><td dir="ltr">avant que + subjonctif</td><td>فاعل متفاوت</td><td dir="ltr">Avant que tu partes...</td><td>دو فاعل.</td></tr>
+<tr><td>infinitif présent</td><td>عمل هم‌زمان یا بعدی</td><td dir="ltr">Il espère venir.</td><td>عمل هنوز انجام نشده است.</td></tr>
+<tr><td>infinitif passé</td><td>عمل مقدم</td><td dir="ltr">Il pense avoir terminé.</td><td>عمل قبلاً کامل شده است.</td></tr>
+</tbody></table></div>
+</section>
+
+<section>
+<h2>استثناها و محدودیت‌ها</h2>
+<div class="box"><ol>
+<li><strong>قبل از حذف <span dir="ltr">que</span> فاعل‌ها را بررسی کنید.</strong> اگر فاعل‌ها متفاوت باشند، نمی‌توان صرفاً جملهٔ دوم را infinitif کرد.</li>
+<li><strong>Infinitif passé</strong> را با infinitif présent اشتباه نگیرید: <span dir="ltr">Je pense le voir demain</span> در برابر <span dir="ltr">Je pense l'avoir vu hier</span>.</li>
+<li>افعال pronominal ضمیرشان را از دست نمی‌دهند: <span dir="ltr">Elle essaie de se souvenir.</span></li>
+<li>برای عمل کامل‌شده پس از <span dir="ltr">après</span> از infinitif passé استفاده می‌شود: <span dir="ltr">Après avoir terminé...</span></li>
+<li>همهٔ افعال الگوی یکسان ندارند؛ بعضی مستقیم، بعضی با <span dir="ltr">à</span> و بعضی با <span dir="ltr">de</span> به infinitif متصل می‌شوند.</li>
+</ol></div>
+</section>
+
+<section>
+<h2>خطاهای رایج</h2>
+<div class="box"><p class="no">❌ Je souhaite que je parte tôt.</p><p class="ok">✅ Je souhaite partir tôt.</p><p class="why">💡 هر دو فعل فاعل <span dir="ltr">je</span> دارند.</p></div>
+<div class="box"><p class="no">❌ Je veux partir. <span style="font-weight:400">اگر منظورتان «می‌خواهم او برود» باشد.</span></p><p class="ok">✅ Je veux qu'il parte.</p></div>
+<div class="box"><p class="no">❌ Je veux lever tôt.</p><p class="ok">✅ Je veux me lever tôt.</p></div>
+<div class="box"><p class="no">❌ Il vaut mieux ne dire rien.</p><p class="ok">✅ Il vaut mieux ne rien dire.</p></div>
+<div class="box"><p class="no">❌ Je pense avoir voir ce film.</p><p class="ok">✅ Je pense avoir vu ce film.</p><p class="why">💡 بعد از <span dir="ltr">avoir</span> باید participe passé بیاید.</p></div>
+<div class="box"><p class="no">❌ Après finir le travail, il est parti.</p><p class="ok">✅ Après avoir fini le travail, il est parti.</p></div>
+<div class="box"><p class="no">❌ Je vais pour acheter du pain.</p><p class="ok">✅ Je vais acheter du pain.</p></div>
+<div class="box"><p class="no">❌ J'ai vu que Paul traverser la rue.</p><p class="ok">✅ J'ai vu Paul traverser la rue.</p><p class="ok">✅ J'ai vu que Paul traversait la rue.</p></div>
+</section>
+
+<section>
+<h2>زبان واقعی و Register</h2>
+<p>خود infinitif لزوماً رسمی نیست. ساختارهایی مانند <span dir="ltr">Je veux partir</span>، <span dir="ltr">Je préfère rester</span> و <span dir="ltr">Je vais acheter du pain</span> کاملاً روزمره‌اند. بااین‌حال بعضی بازنویسی‌های فشرده با infinitif در نوشتار می‌توانند soutenuتر به نظر برسند.</p>
+</section>
+
+<section>
+<h2>نکات کلیدی یادگیری</h2>
+<div class="summary">
+<div><strong>۱.</strong> اولین سؤال: فاعل عمل دوم چه کسی است؟</div>
+<div><strong>۲.</strong> فاعل یکسان → احتمال infinitif زیاد است.</div>
+<div><strong>۳.</strong> فاعل متفاوت → اغلب <span dir="ltr">que + verbe conjugué</span>.</div>
+<div><strong>۴.</strong> عمل مقدم و انجام‌شده → infinitif passé.</div>
+<div><strong>۵.</strong> chunkهای مهم: <span dir="ltr">avant de, sans, pour, après avoir/être, voir quelqu'un + infinitif</span>.</div>
+</div>
+</section>
+
+<section>
+<h2>خلاصه‌ای که باید به خاطر بسپارید</h2>
+<div class="box"><ul>
+<li><strong>Infinitif ساده:</strong> <span dir="ltr">partir, venir, répondre</span></li>
+<li><strong>Pronominal:</strong> <span dir="ltr">se lever, se souvenir</span></li>
+<li><strong>Passif:</strong> <span dir="ltr">être + participe passé</span></li>
+<li><strong>Négatif:</strong> <span dir="ltr">ne pas / ne jamais / ne plus / ne rien + infinitif</span></li>
+<li><strong>Infinitif passé:</strong> <span dir="ltr">avoir/être + participe passé</span></li>
+<li>فاعل یکسان → اغلب infinitif.</li>
+<li>فاعل متفاوت → اغلب <span dir="ltr">que + subjonctif</span>.</li>
+<li><span dir="ltr">Je veux partir</span> با <span dir="ltr">Je veux que tu partes</span> یک معنا ندارد.</li>
+</ul></div>
+</section>
+
+<section>
+<h2>تمرین</h2>
+<div class="exercise"><h3>1. Infinitif présent یا passé؟</h3><ol>
+<li><span dir="ltr">Il pense ______ son portefeuille dans le taxi hier. (oublier)</span></li>
+<li><span dir="ltr">Nous espérons ______ avant 18 heures. (arriver)</span></li>
+<li><span dir="ltr">Elle affirme ______ ce document hier matin. (envoyer)</span></li>
+<li><span dir="ltr">Je crois ______ la réponse maintenant. (comprendre)</span></li>
+</ol></div>
+
+<div class="exercise"><h3>2. Infinitif یا subjonctif؟</h3><ol start="5">
+<li><span dir="ltr">Je voudrais ______ plus tôt ce soir. (partir)</span></li>
+<li><span dir="ltr">Je voudrais que vous ______ plus tôt. (partir)</span></li>
+<li><span dir="ltr">Elle travaille pour ______ son examen. (réussir)</span></li>
+<li><span dir="ltr">Elle aide son fils pour qu'il ______ son examen. (réussir)</span></li>
+</ol></div>
+
+<div class="exercise"><h3>3. جمله را اصلاح کنید</h3><ol start="9">
+<li><span dir="ltr">Avant que je parte, je dois fermer l'ordinateur.</span> — با infinitif بازنویسی کنید.</li>
+<li><span dir="ltr">Il vaut mieux ne dire rien.</span></li>
+<li><span dir="ltr">Après finir son travail, elle est rentrée.</span></li>
+<li><span dir="ltr">Je vais pour acheter du pain.</span></li>
+</ol></div>
+
+<div class="exercise"><h3>4. با فعل perception بازنویسی کنید</h3><ol start="13">
+<li><span dir="ltr">J'ai vu les enfants qui traversaient la rue.</span></li>
+<li><span dir="ltr">Nous avons entendu quelqu'un qui criait.</span></li>
+</ol></div>
+</section>
+
+<section>
+<h2>پاسخ تمرین‌ها</h2>
+<div class="box answers">
+<div><strong>1.</strong> <span dir="ltr">avoir oublié</span></div>
+<div><strong>2.</strong> <span dir="ltr">arriver</span></div>
+<div><strong>3.</strong> <span dir="ltr">avoir envoyé</span></div>
+<div><strong>4.</strong> <span dir="ltr">comprendre</span></div>
+<div><strong>5.</strong> <span dir="ltr">partir</span></div>
+<div><strong>6.</strong> <span dir="ltr">partiez</span></div>
+<div><strong>7.</strong> <span dir="ltr">réussir</span></div>
+<div><strong>8.</strong> <span dir="ltr">réussisse</span></div>
+<div><strong>9.</strong> <span dir="ltr">Avant de partir, je dois fermer l'ordinateur.</span></div>
+<div><strong>10.</strong> <span dir="ltr">Il vaut mieux ne rien dire.</span></div>
+<div><strong>11.</strong> <span dir="ltr">Après avoir fini son travail, elle est rentrée.</span></div>
+<div><strong>12.</strong> <span dir="ltr">Je vais acheter du pain.</span></div>
+<div><strong>13.</strong> <span dir="ltr">J'ai vu les enfants traverser la rue.</span></div>
+<div><strong>14.</strong> <span dir="ltr">Nous avons entendu quelqu'un crier.</span></div>
+</div>
+</section>
+
+<div class="callout" style="margin-top:2rem"><strong>نکتهٔ تعیین‌کنندهٔ درس ۷:</strong> قبل از انتخاب میان infinitif و یک proposition با <span dir="ltr">que</span>، همیشه <strong>فاعل دو عمل</strong> و <strong>رابطهٔ زمانی آنها</strong> را مشخص کنید.</div>
+
 </article>
+</body>
+</html>

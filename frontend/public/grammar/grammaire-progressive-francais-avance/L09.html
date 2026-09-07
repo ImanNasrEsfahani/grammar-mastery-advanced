@@ -1,77 +1,816 @@
-<article class="adv-lesson" data-lesson-id="ADV-L09">
 <style>
-.adv-lesson{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.75;color:#172033;max-width:980px;margin:0 auto;padding:8px 2px 40px}
-.adv-lesson *{box-sizing:border-box}
-.adv-lesson .adv-hero{padding:24px;border:1px solid #e3e8f0;border-radius:18px;background:#fff;margin-bottom:22px}
-.adv-lesson .adv-kicker{font-size:.86rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.65;margin:0 0 6px}
-.adv-lesson h2,.adv-lesson h3{line-height:1.35}
-.adv-lesson h2{font-size:1.65rem;margin:0 0 4px}
-.adv-lesson .fa-title{direction:rtl;text-align:right;font-weight:650;margin:.2rem 0 .8rem}
-.adv-lesson .summary{direction:rtl;text-align:right;margin:0}
-.adv-lesson .meta{margin-top:12px;font-size:.9rem;opacity:.72}
-.adv-lesson .subtopic{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin:18px 0;background:#fff}
-.adv-lesson .subtopic h3{margin:0 0 2px;font-size:1.25rem}
-.adv-lesson .fa-subtitle{direction:rtl;text-align:right;font-weight:600;margin:.1rem 0 1rem}
-.adv-lesson .rule{direction:ltr;text-align:left;padding:12px 14px;border-left:4px solid currentColor;background:#f7f9fc;border-radius:8px;margin:12px 0}
-.adv-lesson .teaching,.adv-lesson .trap{direction:rtl;text-align:right}
-.adv-lesson .example{direction:ltr;text-align:left;font-style:italic;padding:10px 14px;background:#f7f9fc;border-radius:8px}
-.adv-lesson .trap{padding:10px 14px;border:1px dashed #c7ced9;border-radius:8px}
-.adv-lesson .source{font-size:.82rem;opacity:.65;margin-top:12px}
-.adv-lesson .notes{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin-top:22px}
-.adv-lesson .notes h3{margin-top:0}
-.adv-lesson .notes section{margin:16px 0}
-.adv-lesson .notes h4{margin:0 0 6px}
-.adv-lesson .notes ul{margin-top:4px}
+/* ADV-L09 — Le gérondif
+   Scoped lesson styles. Uses the site's existing theme tokens when available. */
+.gma-lesson {
+  --lesson-accent: var(--primary, #2856c7);
+  --lesson-accent-strong: var(--primary-strong, #1c3f99);
+  --lesson-text: var(--ink, #17233c);
+  --lesson-muted: var(--muted, #5a6477);
+  --lesson-line: var(--line, #d9dfeb);
+  --lesson-surface: var(--surface, #ffffff);
+  --lesson-soft: var(--surface-soft, #f5f7fb);
+  --lesson-success: var(--success, #18794e);
+  --lesson-success-soft: var(--success-soft, #e9f7f0);
+  --lesson-danger: var(--danger, #b42318);
+  --lesson-danger-soft: var(--danger-soft, #fff0ee);
+  --lesson-warning: var(--warning, #8a4b08);
+  --lesson-warning-soft: var(--warning-soft, #fff7e8);
+  color: var(--lesson-text);
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.9;
+  direction: rtl;
+  text-align: right;
+  max-width: 920px;
+  margin-inline: auto;
+}
+
+.gma-lesson *,
+.gma-lesson *::before,
+.gma-lesson *::after {
+  box-sizing: border-box;
+}
+
+.gma-lesson h1,
+.gma-lesson h2,
+.gma-lesson h3,
+.gma-lesson h4,
+.gma-lesson p,
+.gma-lesson ul,
+.gma-lesson ol,
+.gma-lesson table,
+.gma-lesson blockquote {
+  margin-top: 0;
+}
+
+.gma-lesson h1 {
+  margin-bottom: .55rem;
+  font-size: clamp(1.75rem, 4vw, 2.4rem);
+  line-height: 1.35;
+}
+
+.gma-lesson h2 {
+  margin: 2.1rem 0 .9rem;
+  font-size: clamp(1.3rem, 3vw, 1.65rem);
+  line-height: 1.45;
+  color: var(--lesson-text);
+}
+
+.gma-lesson h3 {
+  margin: 1.35rem 0 .65rem;
+  font-size: 1.13rem;
+  line-height: 1.55;
+  color: var(--lesson-text);
+}
+
+.gma-lesson p,
+.gma-lesson li {
+  color: var(--lesson-text);
+}
+
+.gma-lesson .muted {
+  color: var(--lesson-muted);
+}
+
+.gma-lesson .lesson-hero {
+  padding: clamp(1.15rem, 3vw, 2rem);
+  border: 1px solid var(--lesson-line);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--lesson-accent) 7%, var(--lesson-surface)), var(--lesson-surface));
+  box-shadow: var(--shadow, 0 18px 50px rgba(34,53,90,.09));
+  margin-bottom: 1.35rem;
+}
+
+.gma-lesson .lesson-kicker {
+  margin: 0 0 .4rem;
+  color: var(--lesson-accent);
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: .03em;
+}
+
+.gma-lesson .lesson-subtitle {
+  margin: 0;
+  color: var(--lesson-muted);
+}
+
+.gma-lesson .lesson-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .7rem;
+  margin-top: 1rem;
+}
+
+.gma-lesson .meta-item {
+  padding: .7rem .8rem;
+  border: 1px solid var(--lesson-line);
+  border-radius: 12px;
+  background: var(--lesson-soft);
+}
+
+.gma-lesson .meta-label {
+  display: block;
+  margin-bottom: .15rem;
+  color: var(--lesson-muted);
+  font-size: .78rem;
+  font-weight: 700;
+}
+
+.gma-lesson .section-card {
+  padding: clamp(1rem, 2.5vw, 1.4rem);
+  margin-bottom: 1rem;
+  border: 1px solid var(--lesson-line);
+  border-radius: 16px;
+  background: var(--lesson-surface);
+}
+
+.gma-lesson .objective-list,
+.gma-lesson .key-list,
+.gma-lesson .exercise-list {
+  margin-bottom: 0;
+  padding-right: 1.25rem;
+}
+
+.gma-lesson .formula {
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: left;
+  margin: .85rem 0;
+  padding: .8rem 1rem;
+  border: 1px solid var(--lesson-line);
+  border-radius: 12px;
+  background: var(--lesson-soft);
+  color: var(--lesson-accent-strong);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .95rem;
+  overflow-wrap: anywhere;
+}
+
+.gma-lesson .fr {
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: left;
+  font-family: inherit;
+}
+
+.gma-lesson .example {
+  margin: .7rem 0;
+  padding: .85rem 1rem;
+  border-inline-start: 4px solid var(--lesson-accent);
+  border-radius: 10px;
+  background: var(--lesson-soft);
+}
+
+.gma-lesson .example .fr {
+  display: block;
+  font-weight: 750;
+}
+
+.gma-lesson .example .fa {
+  display: block;
+  margin-top: .28rem;
+  color: var(--lesson-muted);
+}
+
+.gma-lesson .callout {
+  margin: .85rem 0;
+  padding: .9rem 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--lesson-line);
+}
+
+.gma-lesson .callout strong {
+  color: inherit;
+}
+
+.gma-lesson .callout-tip {
+  background: var(--lesson-success-soft);
+  border-color: color-mix(in srgb, var(--lesson-success) 35%, var(--lesson-line));
+}
+
+.gma-lesson .callout-warn {
+  background: var(--lesson-warning-soft);
+  border-color: color-mix(in srgb, var(--lesson-warning) 35%, var(--lesson-line));
+}
+
+.gma-lesson .error-pair {
+  display: grid;
+  gap: .55rem;
+  margin: .8rem 0;
+}
+
+.gma-lesson .bad,
+.gma-lesson .good {
+  padding: .75rem .9rem;
+  border-radius: 11px;
+  border: 1px solid var(--lesson-line);
+}
+
+.gma-lesson .bad {
+  background: var(--lesson-danger-soft);
+  border-color: color-mix(in srgb, var(--lesson-danger) 35%, var(--lesson-line));
+}
+
+.gma-lesson .good {
+  background: var(--lesson-success-soft);
+  border-color: color-mix(in srgb, var(--lesson-success) 35%, var(--lesson-line));
+}
+
+.gma-lesson .reason {
+  margin: .1rem 0 0;
+  color: var(--lesson-muted);
+  font-size: .94rem;
+}
+
+.gma-lesson .table-wrap {
+  overflow-x: auto;
+  margin: .9rem 0;
+  border: 1px solid var(--lesson-line);
+  border-radius: 14px;
+}
+
+.gma-lesson table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+  background: var(--lesson-surface);
+}
+
+.gma-lesson th,
+.gma-lesson td {
+  padding: .8rem .85rem;
+  border-bottom: 1px solid var(--lesson-line);
+  vertical-align: top;
+  text-align: right;
+}
+
+.gma-lesson th {
+  background: var(--lesson-soft);
+  color: var(--lesson-text);
+  font-weight: 800;
+}
+
+.gma-lesson tr:last-child td {
+  border-bottom: 0;
+}
+
+.gma-lesson .summary {
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--lesson-line);
+  border-radius: 15px;
+  background: var(--lesson-soft);
+}
+
+.gma-lesson .summary ul {
+  margin-bottom: 0;
+  padding-right: 1.2rem;
+}
+
+.gma-lesson .answer-key {
+  counter-reset: answer;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.gma-lesson .answer-key li {
+  counter-increment: answer;
+  margin-bottom: .55rem;
+  padding: .7rem .85rem;
+  border: 1px solid var(--lesson-line);
+  border-radius: 10px;
+  background: var(--lesson-soft);
+}
+
+.gma-lesson .answer-key li::before {
+  content: counter(answer) ".";
+  display: inline-block;
+  margin-left: .45rem;
+  color: var(--lesson-accent);
+  font-weight: 850;
+}
+
+.gma-lesson code {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+  padding: .08rem .32rem;
+  border-radius: 6px;
+  background: var(--lesson-soft);
+  color: var(--lesson-accent-strong);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+html[data-theme="dark"] .gma-lesson .lesson-hero {
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--lesson-accent) 8%, var(--lesson-surface)), var(--lesson-surface));
+}
+
+html[data-theme="dark"] .gma-lesson .callout-tip,
+html[data-theme="dark"] .gma-lesson .good {
+  color: var(--lesson-text);
+}
+
+html[data-theme="dark"] .gma-lesson .callout-warn,
+html[data-theme="dark"] .gma-lesson .bad {
+  color: var(--lesson-text);
+}
+
+@media (max-width: 640px) {
+  .gma-lesson {
+    font-size: .97rem;
+    line-height: 1.85;
+  }
+
+  .gma-lesson .lesson-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .gma-lesson .section-card,
+  .gma-lesson .lesson-hero {
+    border-radius: 14px;
+  }
+
+  .gma-lesson th,
+  .gma-lesson td {
+    padding: .7rem;
+  }
+}
+
+@media (forced-colors: active) {
+  .gma-lesson .section-card,
+  .gma-lesson .lesson-hero,
+  .gma-lesson .example,
+  .gma-lesson .callout,
+  .gma-lesson .bad,
+  .gma-lesson .good,
+  .gma-lesson .table-wrap {
+    border: 1px solid CanvasText;
+  }
+}
 </style>
-<header class="adv-hero">
-<p class="adv-kicker">Lesson 9 · ADV-L09</p>
-<h2 lang="fr" dir="ltr">Le gérondif</h2>
-<p class="fa-title" lang="fa">ژروندیف</p>
-<p class="summary" lang="fa">این درس روی «ژروندیف» تمرکز دارد و زیرموضوع‌های ساخت gérondif، هم‌زمانی و یکسانی فاعل، علت، وسیله و شیوه، شرط و امتیاز را پوشش می‌دهد.</p>
-<p class="meta">Printed pages 76–77 · PDF pages 78–79 · target 140 questions</p>
-</header>
-<section class="subtopic" id="ADV-L09-ST01">
-<h3 lang="fr" dir="ltr">Formation du gérondif</h3>
-<p class="fa-subtitle" lang="fa">ساخت gérondif</p>
-<p class="rule" lang="fr">Le gérondif se forme avec en + participe présent, y compris en étant, en ayant et en sachant.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «ساخت gérondif» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Il apprend le français en regardant des documentaires.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز en را حذف می‌کند یا مصدر را پس از en می‌آورد.</p>
-<p class="source"><code>ADV-L09:book-p076-p077:gerund-form</code> · printed 76–77 · PDF 78–79</p>
-</section>
-<section class="subtopic" id="ADV-L09-ST02">
-<h3 lang="fr" dir="ltr">Simultanéité et identité du sujet</h3>
-<p class="fa-subtitle" lang="fa">هم‌زمانی و یکسانی فاعل</p>
-<p class="rule" lang="fr">Le gérondif exprime notamment la simultanéité et exige le même sujet logique dans les deux procès.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «هم‌زمانی و یکسانی فاعل» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Elle écoute de la musique en travaillant.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز gérondif معلّق می‌سازد که فاعل آن با فاعل جملهٔ اصلی یکی نیست.</p>
-<p class="source"><code>ADV-L09:book-p076-p077:gerund-simult</code> · printed 76–77 · PDF 78–79</p>
-</section>
-<section class="subtopic" id="ADV-L09-ST03">
-<h3 lang="fr" dir="ltr">Cause, moyen et manière</h3>
-<p class="fa-subtitle" lang="fa">علت، وسیله و شیوه</p>
-<p class="rule" lang="fr">Selon le contexte, le gérondif encode cause, moyen ou manière sans changer l’identité du sujet.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «علت، وسیله و شیوه» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">En prenant le métro, vous gagnerez du temps.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز همهٔ gérondifها را صرفاً «در حالِ» هم‌زمان ترجمه می‌کند و رابطهٔ علّی یا ابزاری را از دست می‌دهد.</p>
-<p class="source"><code>ADV-L09:book-p076-p077:gerund-cause-means</code> · printed 76–77 · PDF 78–79</p>
-</section>
-<section class="subtopic" id="ADV-L09-ST04">
-<h3 lang="fr" dir="ltr">Condition et concession</h3>
-<p class="fa-subtitle" lang="fa">شرط و امتیاز</p>
-<p class="rule" lang="fr">Le gérondif peut exprimer la condition; tout en + gérondif peut marquer une concession ou opposition.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «شرط و امتیاز» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Tout en comprenant son argument, je ne partage pas sa conclusion.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز tout en را فقط تقویت‌کنندهٔ هم‌زمانی می‌گیرد و تقابل معنایی را تشخیص نمی‌دهد.</p>
-<p class="source"><code>ADV-L09:book-p076-p077:gerund-cond-conc</code> · printed 76–77 · PDF 78–79</p>
-</section>
-<aside class="notes"><h3>Notes avancées</h3>
-<section><h4>Exceptions / استثناها</h4><ul><li>Tout en + gérondif peut exprimer concession/opposition, non simple simultanéité.</li></ul></section>
-<section><h4>Contrastes / تقابل‌ها</h4><ul><li>gérondif vs participe présent</li><li>simultanéité vs cause/moyen/condition</li><li>en + participe présent vs en + nom</li></ul></section>
-<section><h4>Restrictions / محدودیت‌ها</h4><ul><li>Le sujet logique du gérondif doit être identique à celui du verbe principal.</li></ul></section>
-<section><h4>Register / سطح زبانی</h4><ul><li>La construction reste naturelle dans plusieurs registres; tout en possède souvent une valeur argumentative.</li></ul></section>
-<section><h4>Temporal notes / نکات زمانی</h4><ul><li>La relation de base est simultanée, même quand le contexte ajoute cause ou moyen.</li></ul></section>
-<section><h4>Semantic notes / نکات معنایی</h4><ul><li>Le lien circonstanciel se déduit du contexte, pas de la morphologie seule.</li></ul></section>
-</aside>
+
+<article class="gma-lesson" dir="rtl" lang="fa">
+  <header class="lesson-hero">
+    <p class="lesson-kicker">درس ۹ · Niveau Avancé</p>
+    <h1><span class="fr" lang="fr">Le gérondif</span></h1>
+    <p class="lesson-subtitle">ساخت و کاربرد <span class="fr" lang="fr">en + participe présent</span> برای بیان هم‌زمانی، روش، علت، شرط و تقابل.</p>
+
+    <div class="lesson-meta">
+      <div class="meta-item">
+        <span class="meta-label">صفحات کتاب</span>
+        <strong>76–77</strong>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">موضوع اصلی</span>
+        <strong><span class="fr" lang="fr">Le gérondif</span></strong>
+      </div>
+    </div>
+  </header>
+
+  <section class="section-card">
+    <h2>هدف درس</h2>
+    <p>پس از این درس باید بتوانید <span class="fr" lang="fr">gérondif</span> را درست بسازید، آن را از <span class="fr" lang="fr">participe présent</span> تشخیص دهید و رابطه‌ای را که میان دو عمل ایجاد می‌کند درست تفسیر کنید.</p>
+    <ul class="objective-list">
+      <li>ساخت صحیح <span class="fr" lang="fr">en + participe présent</span></li>
+      <li>تشخیص <span class="fr" lang="fr">simultanéité</span>، <span class="fr" lang="fr">manière / moyen</span>، <span class="fr" lang="fr">cause</span> و <span class="fr" lang="fr">condition</span></li>
+      <li>درک کاربرد <span class="fr" lang="fr">tout en + participe présent</span> برای تقابل یا <span class="fr" lang="fr">concession</span></li>
+      <li>رعایت محدودیت مهمِ یکسان بودن فاعل دو عمل</li>
+    </ul>
+  </section>
+
+  <section class="section-card">
+    <h2>ایده اصلی</h2>
+    <p><span class="fr" lang="fr">Gérondif</span> فقط یک شکل فعلی نیست؛ مهم‌تر از آن، رابطه میان دو عمل را نشان می‌دهد.</p>
+    <div class="formula">en + participe présent</div>
+
+    <div class="example">
+      <span class="fr" lang="fr">Elle prend son café en écoutant les informations.</span>
+      <span class="fa">او در حالی که اخبار را گوش می‌دهد، قهوه‌اش را می‌نوشد.</span>
+    </div>
+
+    <p>در این مثال دو عمل تقریباً هم‌زمان انجام می‌شوند و فاعل هر دو عمل <span class="fr" lang="fr">elle</span> است.</p>
+  </section>
+
+  <section class="section-card">
+    <h2>1. Formation — ساخت gérondif</h2>
+
+    <h3>قاعده</h3>
+    <p><span class="fr" lang="fr">Gérondif</span> از شکل <span class="fr" lang="fr">participe présent</span> ساخته می‌شود و قبل از آن <code>en</code> می‌آید.</p>
+
+    <div class="formula">en + participe présent</div>
+
+    <p>برای بیشتر فعل‌ها، <span class="fr" lang="fr">participe présent</span> را از ریشه شکل <code>nous</code> در زمان حال می‌سازیم:</p>
+
+    <div class="example">
+      <span class="fr" lang="fr">nous écoutons → écoutant → en écoutant</span>
+    </div>
+    <div class="example">
+      <span class="fr" lang="fr">nous lisons → lisant → en lisant</span>
+    </div>
+    <div class="example">
+      <span class="fr" lang="fr">nous faisons → faisant → en faisant</span>
+    </div>
+
+    <h3>شکل‌های خاص مهم</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>فعل</th>
+            <th><span class="fr" lang="fr">participe présent</span></th>
+            <th><span class="fr" lang="fr">gérondif</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="fr" lang="fr">être</span></td>
+            <td><span class="fr" lang="fr">étant</span></td>
+            <td><span class="fr" lang="fr">en étant</span></td>
+          </tr>
+          <tr>
+            <td><span class="fr" lang="fr">avoir</span></td>
+            <td><span class="fr" lang="fr">ayant</span></td>
+            <td><span class="fr" lang="fr">en ayant</span></td>
+          </tr>
+          <tr>
+            <td><span class="fr" lang="fr">savoir</span></td>
+            <td><span class="fr" lang="fr">sachant</span></td>
+            <td><span class="fr" lang="fr">en sachant</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="example">
+      <span class="fr" lang="fr">En sachant la vérité, il a changé d'avis.</span>
+      <span class="fa">با دانستن حقیقت، نظرش را عوض کرد.</span>
+    </div>
+  </section>
+
+  <section class="section-card">
+    <h2>2. La simultanéité — هم‌زمانی</h2>
+    <p>یکی از کاربردهای اصلی <span class="fr" lang="fr">gérondif</span> این است که نشان دهد یک عمل هم‌زمان با عمل اصلی در حال انجام است.</p>
+
+    <div class="formula">Sujet + verbe principal + en + participe présent</div>
+
+    <div class="example">
+      <span class="fr" lang="fr">Il téléphone en marchant.</span>
+      <span class="fa">او در حالی که راه می‌رود تلفن می‌کند.</span>
+    </div>
+
+    <div class="example">
+      <span class="fr" lang="fr">Elle faisait ses devoirs en écoutant de la musique.</span>
+      <span class="fa">او در حالی که موسیقی گوش می‌داد، تکالیفش را انجام می‌داد.</span>
+    </div>
+
+    <div class="callout callout-warn">
+      <strong>نکته بسیار مهم:</strong>
+      فاعلِ فعل اصلی و فاعلِ عملی که با <span class="fr" lang="fr">gérondif</span> بیان می‌شود باید یکی باشد.
+    </div>
+
+    <div class="example">
+      <span class="fr" lang="fr">Paul conduit en parlant au téléphone.</span>
+      <span class="fa">هر دو عمل را Paul انجام می‌دهد.</span>
+    </div>
+
+    <div class="error-pair">
+      <div class="bad">
+        ❌ <span class="fr" lang="fr">Paul conduit en Marie parlant au téléphone.</span>
+      </div>
+      <div class="good">
+        ✅ <span class="fr" lang="fr">Paul conduit pendant que Marie parle au téléphone.</span>
+      </div>
+    </div>
+    <p class="reason">وقتی دو فاعل متفاوت داریم، باید از ساختار دیگری مثل <span class="fr" lang="fr">pendant que + proposition</span> استفاده کنیم.</p>
+  </section>
+
+  <section class="section-card">
+    <h2>3. بیان هم‌زمانی به شکل فشرده</h2>
+    <p><span class="fr" lang="fr">Gérondif</span> می‌تواند یک عبارت زمانی طولانی‌تر را فشرده کند.</p>
+
+    <div class="example">
+      <span class="fr" lang="fr">Fais attention au moment où tu traverseras le boulevard.</span>
+    </div>
+    <p class="muted">می‌توان آن را به شکل طبیعی‌تر و فشرده‌تر بازنویسی کرد:</p>
+    <div class="example">
+      <span class="fr" lang="fr">Fais attention en traversant le boulevard.</span>
+      <span class="fa">هنگام عبور از بلوار مراقب باش.</span>
+    </div>
+  </section>
+
+  <section class="section-card">
+    <h2>4. La manière / le moyen — روش یا وسیله</h2>
+    <p>در این کاربرد، <span class="fr" lang="fr">gérondif</span> توضیح می‌دهد عملی چگونه یا با چه روشی انجام می‌شود.</p>
+
+    <div class="example">
+      <span class="fr" lang="fr">Il s'est cassé la jambe en skiant.</span>
+      <span class="fa">او هنگام اسکی کردن پایش را شکست.</span>
+    </div>
+
+    <div class="example">
+      <span class="fr" lang="fr">On apprend beaucoup en voyageant.</span>
+      <span class="fa">با سفر کردن چیزهای زیادی یاد می‌گیریم.</span>
+    </div>
+
+    <div class="example">
+      <span class="fr" lang="fr">Elle a amélioré son français en regardant des films.</span>
+      <span class="fa">او با دیدن فیلم‌ها زبان فرانسه‌اش را بهتر کرده است.</span>
+    </div>
+
+    <div class="example">
+      <span class="fr" lang="fr">Il a ouvert la boîte en utilisant un couteau.</span>
+      <span class="fa">او با استفاده از چاقو جعبه را باز کرد.</span>
+    </div>
+  </section>
+
+  <section class="section-card">
+    <h2>5. La cause — علت</h2>
+    <p>بسته به بافت، <span class="fr" lang="fr">gérondif</span> می‌تواند رابطه علت و نتیجه ایجاد کند.</p>
+
+    <div class="example">
+      <span class="fr" lang="fr">Comme il a fait trop de sport, il s'est fait mal au dos.</span>
+    </div>
+    <p class="muted">می‌توان این رابطه را با <span class="fr" lang="fr">gérondif</span> بیان کرد:</p>
+    <div class="example">
+      <span class="fr" lang="fr">En faisant trop de sport, il s'est fait mal au dos.</span>
+      <span class="fa">به خاطر ورزش بیش از حد، به کمرش آسیب زد.</span>
+    </div>
+
+    <div class="example">
+      <span class="fr" lang="fr">En roulant trop vite, il a perdu le contrôle de la voiture.</span>
+      <span class="fa">چون خیلی سریع رانندگی کرد، کنترل ماشین را از دست داد.</span>
+    </div>
+
+    <div class="callout callout-tip">
+      <strong>دقت کنید:</strong>
+      خودِ <span class="fr" lang="fr">gérondif</span> همیشه به معنای «چون» نیست. این <strong>context</strong> است که نشان می‌دهد رابطه، علت است یا هم‌زمانی یا روش.
+    </div>
+  </section>
+
+  <section class="section-card">
+    <h2>6. La condition — شرط</h2>
+    <p>در برخی جمله‌ها، <span class="fr" lang="fr">gérondif</span> می‌تواند معنایی نزدیک به <span class="fr" lang="fr">si + proposition</span> داشته باشد.</p>
+
+    <div class="example">
+      <span class="fr" lang="fr">Tu pourras me contacter si tu appelles chez mon frère.</span>
+    </div>
+    <p class="muted">با <span class="fr" lang="fr">gérondif</span>:</p>
+    <div class="example">
+      <span class="fr" lang="fr">Tu pourras me contacter en appelant chez mon frère.</span>
+      <span class="fa">با تماس گرفتن به خانه برادرم می‌توانی با من تماس بگیری.</span>
+    </div>
+
+    <div class="example">
+      <span class="fr" lang="fr">En travaillant régulièrement, tu progresseras vite.</span>
+      <span class="fa">اگر مرتب کار کنی، سریع پیشرفت خواهی کرد.</span>
+    </div>
+
+    <div class="example">
+      <span class="fr" lang="fr">En partant maintenant, tu arriveras à l'heure.</span>
+      <span class="fa">اگر الان حرکت کنی، به‌موقع می‌رسی.</span>
+    </div>
+  </section>
+
+  <section class="section-card">
+    <h2>7. <span class="fr" lang="fr">tout en + participe présent</span> — تقابل و concession</h2>
+    <p>با اضافه شدن <code>tout</code>، ساختار می‌تواند علاوه بر هم‌زمانی، نوعی تقابل یا امتیازدهی معنایی ایجاد کند: «در عین اینکه...» یا «با وجود اینکه...».</p>
+
+    <div class="formula">tout en + participe présent</div>
+
+    <div class="example">
+      <span class="fr" lang="fr">Elle reste mince tout en mangeant beaucoup.</span>
+      <span class="fa">با اینکه زیاد غذا می‌خورد، همچنان لاغر می‌ماند.</span>
+    </div>
+
+    <div class="example">
+      <span class="fr" lang="fr">Il souriait tout en étant très inquiet.</span>
+      <span class="fa">با اینکه بسیار نگران بود، لبخند می‌زد.</span>
+    </div>
+
+    <div class="example">
+      <span class="fr" lang="fr">Elle a accepté tout en précisant qu'elle n'était pas entièrement d'accord.</span>
+      <span class="fa">او قبول کرد، هرچند توضیح داد که کاملاً موافق نیست.</span>
+    </div>
+  </section>
+
+  <section class="section-card">
+    <h2>Contrastها و تفاوت‌های ظریف</h2>
+
+    <h3><span class="fr" lang="fr">Gérondif</span> در برابر <span class="fr" lang="fr">participe présent</span></h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ساختار</th>
+            <th>شکل</th>
+            <th>کاربرد اصلی</th>
+            <th>مثال</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="fr" lang="fr">participe présent</span></td>
+            <td><span class="fr" lang="fr">travaillant</span></td>
+            <td>مثلاً توصیف اسم یا جایگزینی بخشی از جمله موصولی</td>
+            <td><span class="fr" lang="fr">Les étudiants habitant ici...</span></td>
+          </tr>
+          <tr>
+            <td><span class="fr" lang="fr">gérondif</span></td>
+            <td><span class="fr" lang="fr">en travaillant</span></td>
+            <td>بیان رابطه میان دو عمل</td>
+            <td><span class="fr" lang="fr">Il écoute la radio en travaillant.</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><span class="fr" lang="fr">Les étudiants habitant ici ont accès à cette salle.</span> یعنی «دانشجویانی که اینجا زندگی می‌کنند...». اما در <span class="fr" lang="fr">Les étudiants apprennent beaucoup en travaillant ensemble.</span> عبارت <span class="fr" lang="fr">en travaillant</span> رابطه میان دو عمل را نشان می‌دهد.</p>
+
+    <h3><span class="fr" lang="fr">en + gérondif</span> در برابر <span class="fr" lang="fr">tout en + gérondif</span></h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ساختار</th>
+            <th>معنای غالب</th>
+            <th>مثال</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="fr" lang="fr">en + participe présent</span></td>
+            <td>هم‌زمانی، روش، علت یا شرط</td>
+            <td><span class="fr" lang="fr">Elle écoute de la musique en travaillant.</span></td>
+          </tr>
+          <tr>
+            <td><span class="fr" lang="fr">tout en + participe présent</span></td>
+            <td>هم‌زمانی همراه با تقابل یا concession</td>
+            <td><span class="fr" lang="fr">Elle reste concentrée tout en écoutant de la musique.</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section-card">
+    <h2>استثناها و محدودیت‌ها</h2>
+
+    <h3>1. فاعل مشترک</h3>
+    <p>مهم‌ترین محدودیت این است که فاعلِ <span class="fr" lang="fr">gérondif</span> باید همان فاعل فعل اصلی باشد.</p>
+
+    <div class="example">
+      <span class="fr" lang="fr">En sortant de chez lui, Marc a rencontré Paul.</span>
+      <span class="fa">کسی که بیرون آمده Marc است.</span>
+    </div>
+
+    <h3>2. زمان مستقل ندارد</h3>
+    <p><span class="fr" lang="fr">Gérondif</span> خودش صرف زمانی مستقل ندارد. زمان از فعل اصلی فهمیده می‌شود.</p>
+
+    <div class="example"><span class="fr" lang="fr">Il apprend en travaillant.</span></div>
+    <div class="example"><span class="fr" lang="fr">Il a appris en travaillant.</span></div>
+    <div class="example"><span class="fr" lang="fr">Il progressera en travaillant régulièrement.</span></div>
+
+    <h3>3. <span class="fr" lang="fr">tout</span> همیشه لازم نیست</h3>
+    <p>برای هم‌زمانی ساده <span class="fr" lang="fr">en + participe présent</span> کافی است. <span class="fr" lang="fr">tout en</span> بیشتر وقتی به کار می‌رود که بخواهیم تضاد یا concession را برجسته کنیم.</p>
+  </section>
+
+  <section class="section-card">
+    <h2>خطاهای رایج</h2>
+
+    <h3>خطا 1: حذف <span class="fr" lang="fr">en</span></h3>
+    <div class="error-pair">
+      <div class="bad">❌ <span class="fr" lang="fr">Il apprend le français regardant des films.</span></div>
+      <div class="good">✅ <span class="fr" lang="fr">Il apprend le français en regardant des films.</span></div>
+    </div>
+    <p class="reason">بدون <span class="fr" lang="fr">en</span> دیگر <span class="fr" lang="fr">gérondif</span> نداریم.</p>
+
+    <h3>خطا 2: مصدر بعد از <span class="fr" lang="fr">en</span></h3>
+    <div class="error-pair">
+      <div class="bad">❌ <span class="fr" lang="fr">en regarder</span></div>
+      <div class="good">✅ <span class="fr" lang="fr">en regardant</span></div>
+    </div>
+    <p class="reason"><span class="fr" lang="fr">Gérondif = en + participe présent</span>، نه <span class="fr" lang="fr">en + infinitif</span>.</p>
+
+    <h3>خطا 3: دو فاعل متفاوت</h3>
+    <div class="error-pair">
+      <div class="bad">❌ <span class="fr" lang="fr">En sortant du bureau, la pluie a commencé.</span></div>
+      <div class="good">✅ <span class="fr" lang="fr">Quand je suis sorti du bureau, la pluie a commencé.</span></div>
+      <div class="good">✅ <span class="fr" lang="fr">En sortant du bureau, j'ai vu qu'il pleuvait.</span></div>
+    </div>
+    <p class="reason">در جمله غلط، از نظر ساختاری انگار «باران» از اداره بیرون آمده است.</p>
+
+    <h3>خطا 4: شکل‌های خاص</h3>
+    <div class="error-pair">
+      <div class="bad">❌ <span class="fr" lang="fr">en être · en avoir · en savant</span></div>
+      <div class="good">✅ <span class="fr" lang="fr">en étant · en ayant · en sachant</span></div>
+    </div>
+
+    <h3>خطا 5: تصور اینکه gérondif همیشه یعنی «در حالی که»</h3>
+    <div class="example">
+      <span class="fr" lang="fr">Il a réussi en travaillant beaucoup.</span>
+      <span class="fa">اینجا بیشتر معنی «با زیاد کار کردن» می‌دهد: روش/وسیله.</span>
+    </div>
+    <div class="example">
+      <span class="fr" lang="fr">Il chantait en préparant le dîner.</span>
+      <span class="fa">اینجا معنی «در حالی که شام آماده می‌کرد» می‌دهد: هم‌زمانی.</span>
+    </div>
+  </section>
+
+  <section class="section-card">
+    <h2>زبان واقعی و Register</h2>
+    <p><span class="fr" lang="fr">Gérondif</span> در <span class="fr" lang="fr">français courant</span> و در نوشتار استاندارد ساختاری کاملاً طبیعی و رایج است. شکل‌هایی مانند <span class="fr" lang="fr">en travaillant</span>، <span class="fr" lang="fr">en faisant</span> و <span class="fr" lang="fr">en parlant</span> هم در گفتار و هم در نوشتار دیده می‌شوند.</p>
+
+    <p>ساخت <span class="fr" lang="fr">tout en + participe présent</span> برای بیان یک تقابل ظریف، به‌ویژه در نوشتار استدلالی و سطح B2، بسیار مفید است.</p>
+
+    <div class="example">
+      <span class="fr" lang="fr">Il critique cette décision tout en reconnaissant qu'elle était nécessaire.</span>
+      <span class="fa">او از این تصمیم انتقاد می‌کند، در عین اینکه می‌پذیرد تصمیم لازم بوده است.</span>
+    </div>
+  </section>
+
+  <section class="section-card">
+    <h2>نکات کلیدی یادگیری</h2>
+    <ol class="key-list">
+      <li>اول ببینید آیا ساختار <span class="fr" lang="fr">en + participe présent</span> است.</li>
+      <li>بررسی کنید آیا همان شخص هر دو عمل را انجام می‌دهد.</li>
+      <li>رابطه دو عمل را از context تشخیص دهید: هم‌زمانی، روش، علت یا شرط.</li>
+      <li>اگر <span class="fr" lang="fr">tout en</span> دیدید، احتمال تقابل یا concession بیشتر است.</li>
+      <li><span class="fr" lang="fr">participe présent</span> و <span class="fr" lang="fr">gérondif</span> را فقط به دلیل شباهت ظاهری یکی ندانید.</li>
+    </ol>
+  </section>
+
+  <section class="section-card">
+    <h2>خلاصه‌ای که باید به خاطر بسپارید</h2>
+    <div class="summary">
+      <ul>
+        <li><strong><span class="fr" lang="fr">Gérondif = en + participe présent</span></strong></li>
+        <li><span class="fr" lang="fr">nous travaillons → en travaillant</span></li>
+        <li>شکل‌های خاص: <span class="fr" lang="fr">en étant · en ayant · en sachant</span></li>
+        <li>برای دو عمل هم‌زمان → <span class="fr" lang="fr">gérondif</span> می‌تواند مناسب باشد.</li>
+        <li>برای روش/وسیله → <span class="fr" lang="fr">en + participe présent</span></li>
+        <li>در context مناسب می‌تواند علت یا شرط را نیز برساند.</li>
+        <li><strong>فاعل gérondif و فعل اصلی باید یکی باشد.</strong></li>
+        <li><span class="fr" lang="fr">tout en + participe présent</span> می‌تواند تقابل یا concession ایجاد کند.</li>
+        <li><span class="fr" lang="fr">travaillant</span> و <span class="fr" lang="fr">en travaillant</span> نقش دستوری یکسانی ندارند.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section-card">
+    <h2>تمرین کوتاه</h2>
+    <ol class="exercise-list">
+      <li>
+        جمله را با gérondif بازنویسی کنید:
+        <div class="example">
+          <span class="fr" lang="fr">Elle regarde la télévision et elle mange.</span>
+          <span class="fr" lang="fr">→ Elle mange __________ la télévision.</span>
+        </div>
+      </li>
+      <li>
+        <div class="example">
+          <span class="fr" lang="fr">Si tu travailles régulièrement, tu progresseras.</span>
+          <span class="fr" lang="fr">→ __________ régulièrement, tu progresseras.</span>
+        </div>
+      </li>
+      <li>
+        <div class="example">
+          <span class="fr" lang="fr">Comme il conduisait trop vite, il a eu un accident.</span>
+          <span class="fr" lang="fr">→ __________ trop vite, il a eu un accident.</span>
+        </div>
+      </li>
+      <li>
+        <div class="example">
+          <span class="fr" lang="fr">Il est très fatigué, mais il continue à travailler.</span>
+          <span class="fr" lang="fr">→ Il continue à travailler __________ très fatigué.</span>
+        </div>
+      </li>
+      <li>
+        کدام جمله مشکل دارد؟
+        <div class="example">
+          <span class="fr" lang="fr">A. En rentrant chez moi, j'ai rencontré Paul.</span>
+          <span class="fr" lang="fr">B. En étudiant régulièrement, tu progresseras.</span>
+          <span class="fr" lang="fr">C. En sortant de la gare, le train est parti.</span>
+          <span class="fr" lang="fr">D. Elle apprend beaucoup en voyageant.</span>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="section-card">
+    <h2>پاسخ تمرین‌ها</h2>
+    <ol class="answer-key">
+      <li><span class="fr" lang="fr">en regardant</span></li>
+      <li><span class="fr" lang="fr">En travaillant</span></li>
+      <li><span class="fr" lang="fr">En conduisant</span></li>
+      <li><span class="fr" lang="fr">tout en étant</span></li>
+      <li>
+        <strong>C</strong> — فاعل منطقی <span class="fr" lang="fr">en sortant</span> باید همان فاعل جمله اصلی باشد. شکل مناسب مثلاً:
+        <div class="example">
+          <span class="fr" lang="fr">En sortant de la gare, j'ai vu le train partir.</span>
+        </div>
+      </li>
+    </ol>
+  </section>
 </article>
