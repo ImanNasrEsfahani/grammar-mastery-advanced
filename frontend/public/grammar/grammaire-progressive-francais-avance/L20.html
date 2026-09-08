@@ -1,77 +1,964 @@
-<article class="adv-lesson" data-lesson-id="ADV-L20">
+<article class="adv-lesson" data-lesson-id="ADV-L20" data-book-pages="130-133" lang="fa" dir="rtl">
 <style>
-.adv-lesson{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.75;color:#172033;max-width:980px;margin:0 auto;padding:8px 2px 40px}
-.adv-lesson *{box-sizing:border-box}
-.adv-lesson .adv-hero{padding:24px;border:1px solid #e3e8f0;border-radius:18px;background:#fff;margin-bottom:22px}
-.adv-lesson .adv-kicker{font-size:.86rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.65;margin:0 0 6px}
-.adv-lesson h2,.adv-lesson h3{line-height:1.35}
-.adv-lesson h2{font-size:1.65rem;margin:0 0 4px}
-.adv-lesson .fa-title{direction:rtl;text-align:right;font-weight:650;margin:.2rem 0 .8rem}
-.adv-lesson .summary{direction:rtl;text-align:right;margin:0}
-.adv-lesson .meta{margin-top:12px;font-size:.9rem;opacity:.72}
-.adv-lesson .subtopic{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin:18px 0;background:#fff}
-.adv-lesson .subtopic h3{margin:0 0 2px;font-size:1.25rem}
-.adv-lesson .fa-subtitle{direction:rtl;text-align:right;font-weight:600;margin:.1rem 0 1rem}
-.adv-lesson .rule{direction:ltr;text-align:left;padding:12px 14px;border-left:4px solid currentColor;background:#f7f9fc;border-radius:8px;margin:12px 0}
-.adv-lesson .teaching,.adv-lesson .trap{direction:rtl;text-align:right}
-.adv-lesson .example{direction:ltr;text-align:left;font-style:italic;padding:10px 14px;background:#f7f9fc;border-radius:8px}
-.adv-lesson .trap{padding:10px 14px;border:1px dashed #c7ced9;border-radius:8px}
-.adv-lesson .source{font-size:.82rem;opacity:.65;margin-top:12px}
-.adv-lesson .notes{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin-top:22px}
-.adv-lesson .notes h3{margin-top:0}
-.adv-lesson .notes section{margin:16px 0}
-.adv-lesson .notes h4{margin:0 0 6px}
-.adv-lesson .notes ul{margin-top:4px}
+/*
+  ADV-L20 — static lesson fragment
+  Site contract: no JavaScript; all styles are scoped under .adv-lesson.
+  Theme contract: follows the host site's CSS variables and html[data-theme].
+*/
+.adv-lesson {
+  --adv-bg: var(--surface, #ffffff);
+  --adv-bg-soft: var(--surface-soft, #f5f7fb);
+  --adv-bg-accent: #eef3ff;
+  --adv-text: var(--ink, #17233c);
+  --adv-muted: var(--muted, #5a6477);
+  --adv-line: var(--line, #d9dfeb);
+  --adv-primary: var(--primary, #2856c7);
+  --adv-primary-strong: var(--primary-strong, #1c3f99);
+  --adv-success: var(--success, #18794e);
+  --adv-success-soft: var(--success-soft, #e9f7f0);
+  --adv-danger: var(--danger, #b42318);
+  --adv-danger-soft: var(--danger-soft, #fff0ee);
+  --adv-warning: var(--warning, #8a4b08);
+  --adv-warning-soft: var(--warning-soft, #fff7e8);
+  --adv-code-bg: #edf1f7;
+  --adv-shadow: 0 12px 34px rgba(23, 35, 60, .07);
+
+  max-width: 980px;
+  margin-inline: auto;
+  padding: 4px 2px 42px;
+  color: var(--adv-text);
+  font-family: var(--font-ui, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
+  font-size: 1rem;
+  line-height: 1.85;
+  text-align: right;
+}
+
+html[data-theme="dark"] .adv-lesson {
+  --adv-bg: #111827;
+  --adv-bg-soft: #182235;
+  --adv-bg-accent: #172554;
+  --adv-text: #e8edf6;
+  --adv-muted: #aeb8c8;
+  --adv-line: #334155;
+  --adv-primary: #8fb2ff;
+  --adv-primary-strong: #b7ccff;
+  --adv-success: #72d6a9;
+  --adv-success-soft: #12352a;
+  --adv-danger: #ff9b92;
+  --adv-danger-soft: #3b1f23;
+  --adv-warning: #f5c277;
+  --adv-warning-soft: #3a2b13;
+  --adv-code-bg: #202c40;
+  --adv-shadow: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) .adv-lesson {
+    --adv-bg: #111827;
+    --adv-bg-soft: #182235;
+    --adv-bg-accent: #172554;
+    --adv-text: #e8edf6;
+    --adv-muted: #aeb8c8;
+    --adv-line: #334155;
+    --adv-primary: #8fb2ff;
+    --adv-primary-strong: #b7ccff;
+    --adv-success: #72d6a9;
+    --adv-success-soft: #12352a;
+    --adv-danger: #ff9b92;
+    --adv-danger-soft: #3b1f23;
+    --adv-warning: #f5c277;
+    --adv-warning-soft: #3a2b13;
+    --adv-code-bg: #202c40;
+    --adv-shadow: none;
+  }
+}
+
+.adv-lesson,
+.adv-lesson * { box-sizing: border-box; }
+
+.adv-lesson h2,
+.adv-lesson h3,
+.adv-lesson h4,
+.adv-lesson p,
+.adv-lesson ul,
+.adv-lesson ol { margin-block-start: 0; }
+
+.adv-lesson a { color: var(--adv-primary); }
+
+.adv-lesson .adv-hero,
+.adv-lesson .adv-section,
+.adv-lesson .adv-card,
+.adv-lesson .adv-summary,
+.adv-lesson .adv-exercises {
+  border: 1px solid var(--adv-line);
+  background: var(--adv-bg);
+  box-shadow: var(--adv-shadow);
+}
+
+.adv-lesson .adv-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(20px, 4vw, 34px);
+  border-radius: 22px;
+  margin-block-end: 22px;
+}
+
+.adv-lesson .adv-hero::before {
+  content: "";
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  width: 7px;
+  height: 100%;
+  background: var(--adv-primary);
+}
+
+.adv-lesson .adv-kicker {
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: left;
+  margin: 0 0 8px;
+  color: var(--adv-primary);
+  font-size: .82rem;
+  font-weight: 850;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.adv-lesson .adv-hero h2 {
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: left;
+  margin: 0;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  line-height: 1.2;
+  color: var(--adv-text);
+}
+
+.adv-lesson .adv-fa-title {
+  margin: .45rem 0 .8rem;
+  font-size: clamp(1.05rem, 3vw, 1.25rem);
+  font-weight: 800;
+}
+
+.adv-lesson .adv-lead {
+  max-width: 78ch;
+  margin: 0;
+  color: var(--adv-muted);
+}
+
+.adv-lesson .adv-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-block-start: 16px;
+}
+
+.adv-lesson .adv-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 3px 10px;
+  border: 1px solid var(--adv-line);
+  border-radius: 999px;
+  background: var(--adv-bg-soft);
+  color: var(--adv-muted);
+  font-size: .78rem;
+  font-weight: 750;
+}
+
+.adv-lesson .adv-section {
+  padding: clamp(18px, 3.5vw, 26px);
+  border-radius: 18px;
+  margin-block: 18px;
+}
+
+.adv-lesson .adv-section > h3,
+.adv-lesson .adv-summary > h3,
+.adv-lesson .adv-exercises > h3 {
+  margin-block-end: 12px;
+  font-size: clamp(1.2rem, 3vw, 1.45rem);
+  line-height: 1.45;
+}
+
+.adv-lesson .adv-section > h3[lang="fr"],
+.adv-lesson .adv-fr-heading {
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: left;
+}
+
+.adv-lesson .adv-subtitle {
+  color: var(--adv-muted);
+  font-size: .94rem;
+  margin-block: -6px 16px;
+}
+
+.adv-lesson .adv-goals {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.adv-lesson .adv-goals li {
+  padding: 12px 14px;
+  border-radius: 13px;
+  background: var(--adv-bg-soft);
+  border: 1px solid var(--adv-line);
+}
+
+.adv-lesson .adv-callout {
+  margin-block: 14px;
+  padding: 14px 16px;
+  border-inline-start: 4px solid var(--adv-primary);
+  border-radius: 12px;
+  background: var(--adv-bg-soft);
+}
+
+.adv-lesson .adv-callout p:last-child { margin-bottom: 0; }
+
+.adv-lesson .adv-rule {
+  margin-block: 13px;
+  padding: 13px 15px;
+  border: 1px solid var(--adv-line);
+  border-radius: 12px;
+  background: var(--adv-bg-soft);
+}
+
+.adv-lesson .adv-rule strong {
+  display: block;
+  margin-block-end: 4px;
+  color: var(--adv-primary-strong);
+}
+
+.adv-lesson .adv-formula,
+.adv-lesson code,
+.adv-lesson .fr {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.adv-lesson .adv-formula {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin-block: 8px;
+  padding: 8px 11px;
+  border-radius: 9px;
+  background: var(--adv-code-bg);
+  color: var(--adv-text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .92rem;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+
+.adv-lesson .adv-example {
+  margin-block: 10px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--adv-bg-soft);
+  border: 1px solid var(--adv-line);
+}
+
+.adv-lesson .adv-example .fr,
+.adv-lesson .adv-example [lang="fr"] {
+  display: block;
+  text-align: left;
+  font-weight: 720;
+}
+
+.adv-lesson .adv-translation {
+  display: block;
+  margin-block-start: 4px;
+  color: var(--adv-muted);
+  font-size: .92rem;
+}
+
+.adv-lesson .adv-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-block: 14px;
+}
+
+.adv-lesson .adv-card {
+  padding: 15px;
+  border-radius: 14px;
+  box-shadow: none;
+}
+
+.adv-lesson .adv-card h4 {
+  margin: 0 0 8px;
+  font-size: 1.02rem;
+}
+
+.adv-lesson .adv-card p:last-child { margin-bottom: 0; }
+
+.adv-lesson .adv-ok,
+.adv-lesson .adv-bad,
+.adv-lesson .adv-tip,
+.adv-lesson .adv-register {
+  padding: 12px 14px;
+  border-radius: 12px;
+  margin-block: 10px;
+}
+
+.adv-lesson .adv-ok {
+  background: var(--adv-success-soft);
+  border: 1px solid color-mix(in srgb, var(--adv-success) 45%, transparent);
+}
+
+.adv-lesson .adv-bad {
+  background: var(--adv-danger-soft);
+  border: 1px solid color-mix(in srgb, var(--adv-danger) 45%, transparent);
+}
+
+.adv-lesson .adv-tip {
+  background: var(--adv-warning-soft);
+  border: 1px solid color-mix(in srgb, var(--adv-warning) 45%, transparent);
+}
+
+.adv-lesson .adv-register {
+  background: var(--adv-bg-accent);
+  border: 1px solid var(--adv-line);
+}
+
+.adv-lesson .adv-ok strong { color: var(--adv-success); }
+.adv-lesson .adv-bad strong { color: var(--adv-danger); }
+.adv-lesson .adv-tip strong { color: var(--adv-warning); }
+.adv-lesson .adv-register strong { color: var(--adv-primary-strong); }
+
+.adv-lesson .adv-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin-block: 14px;
+  border: 1px solid var(--adv-line);
+  border-radius: 14px;
+  background: var(--adv-bg);
+  -webkit-overflow-scrolling: touch;
+}
+
+.adv-lesson table {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: collapse;
+  font-size: .93rem;
+}
+
+.adv-lesson th,
+.adv-lesson td {
+  padding: 11px 12px;
+  border-block-end: 1px solid var(--adv-line);
+  vertical-align: top;
+  text-align: right;
+}
+
+.adv-lesson th {
+  background: var(--adv-bg-soft);
+  color: var(--adv-text);
+  font-weight: 850;
+}
+
+.adv-lesson tr:last-child td { border-block-end: 0; }
+
+.adv-lesson td[lang="fr"],
+.adv-lesson th[lang="fr"] {
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: left;
+}
+
+.adv-lesson .adv-summary,
+.adv-lesson .adv-exercises {
+  padding: clamp(18px, 3.5vw, 26px);
+  border-radius: 18px;
+  margin-block: 20px;
+}
+
+.adv-lesson .adv-summary {
+  border-inline-start: 5px solid var(--adv-primary);
+}
+
+.adv-lesson .adv-summary ul,
+.adv-lesson .adv-section ul,
+.adv-lesson .adv-section ol {
+  padding-inline-start: 0;
+  padding-inline-end: 1.25rem;
+}
+
+.adv-lesson .adv-summary li + li,
+.adv-lesson .adv-section li + li { margin-block-start: 5px; }
+
+.adv-lesson .adv-exercise-list {
+  margin: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 1.35rem;
+}
+
+.adv-lesson .adv-exercise-list li {
+  margin-block: 10px;
+  padding-block-end: 9px;
+  border-block-end: 1px dashed var(--adv-line);
+}
+
+.adv-lesson .adv-choices {
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: left;
+  margin-block: 6px;
+  color: var(--adv-muted);
+}
+
+.adv-lesson details {
+  margin-block-start: 16px;
+  border: 1px solid var(--adv-line);
+  border-radius: 13px;
+  background: var(--adv-bg-soft);
+  overflow: hidden;
+}
+
+.adv-lesson summary {
+  cursor: pointer;
+  padding: 12px 14px;
+  font-weight: 850;
+  color: var(--adv-primary-strong);
+}
+
+.adv-lesson details[open] summary {
+  border-block-end: 1px solid var(--adv-line);
+}
+
+.adv-lesson .adv-answer-body { padding: 14px 16px; }
+.adv-lesson .adv-answer-body ol { margin-bottom: 0; }
+
+.adv-lesson .adv-footnote {
+  color: var(--adv-muted);
+  font-size: .82rem;
+  margin-block-start: 18px;
+}
+
+@media (max-width: 720px) {
+  .adv-lesson { line-height: 1.78; }
+  .adv-lesson .adv-goals,
+  .adv-lesson .adv-grid { grid-template-columns: 1fr; }
+  .adv-lesson .adv-hero,
+  .adv-lesson .adv-section,
+  .adv-lesson .adv-summary,
+  .adv-lesson .adv-exercises { border-radius: 15px; }
+  .adv-lesson .adv-hero { padding: 18px; }
+  .adv-lesson .adv-section,
+  .adv-lesson .adv-summary,
+  .adv-lesson .adv-exercises { padding: 16px; }
+}
+
+@media (forced-colors: active) {
+  .adv-lesson .adv-hero,
+  .adv-lesson .adv-section,
+  .adv-lesson .adv-card,
+  .adv-lesson .adv-summary,
+  .adv-lesson .adv-exercises,
+  .adv-lesson .adv-table-wrap { border: 1px solid CanvasText; }
+}
 </style>
+
 <header class="adv-hero">
-<p class="adv-kicker">Lesson 20 · ADV-L20</p>
-<h2 lang="fr" dir="ltr">La situation dans le temps</h2>
-<p class="fa-title" lang="fa">موقعیت و مدت در زمان</p>
-<p class="summary" lang="fa">این درس روی «موقعیت و مدت در زمان» تمرکز دارد و زیرموضوع‌های تاریخ و دورهٔ مرجع، تقدّم، هم‌زمانی و تأخّر، تکرار و بسامد، بیان مدت را پوشش می‌دهد.</p>
-<p class="meta">Printed pages 130–133 · PDF pages 132–135 · target 240 questions</p>
+  <p class="adv-kicker">Lesson 20 · ADV-L20</p>
+  <h2 lang="fr" dir="ltr">La situation dans le temps</h2>
+  <p class="adv-fa-title">موقعیت و رابطهٔ رویدادها در زمان</p>
+  <p class="adv-lead">در این درس یاد می‌گیریم یک رویداد را نسبت به «الان»، نسبت به یک دورهٔ زمانی، یا نسبت به رویدادی دیگر جای‌گذاری کنیم و مدت، تکرار و فاصلهٔ زمانی را با ساختار مناسب بیان کنیم.</p>
+  <div class="adv-meta" aria-label="مشخصات درس">
+    <span class="adv-chip">صفحات کتاب: ۱۳۰ تا ۱۳۳</span>
+    <span class="adv-chip">موضوع: repérage temporel و durée</span>
+    <span class="adv-chip">سطح: B1–B2 / Avancé</span>
+  </div>
 </header>
-<section class="subtopic" id="ADV-L20-ST01">
-<h3 lang="fr" dir="ltr">Date et époque de référence</h3>
-<p class="fa-subtitle" lang="fa">تاریخ و دورهٔ مرجع</p>
-<p class="rule" lang="fr">Hier/demain se calculent depuis l’énonciation; la veille/le lendemain et prochainement se calculent depuis un repère narratif.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «تاریخ و دورهٔ مرجع» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Il a téléphoné mardi et a promis de revenir le lendemain.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز deictique و anaphorique زمانی را جابه‌جا می‌کند و repère را تغییر نمی‌دهد.</p>
-<p class="source"><code>ADV-L20:book-p130-p131:time-reference</code> · printed 130–131 · PDF 132–133</p>
+
+<section class="adv-section" aria-labelledby="adv20-goal">
+  <h3 id="adv20-goal">هدف درس</h3>
+  <ul class="adv-goals">
+    <li>تشخیص مرجع زمانی: لحظهٔ صحبت، یک دوره، یا رویدادی دیگر.</li>
+    <li>بیان <span class="fr" lang="fr">antériorité, simultanéité, postériorité</span>.</li>
+    <li>تفکیک <span class="fr" lang="fr">depuis, il y a, pendant, en, dans, pour</span>.</li>
+    <li>بیان تکرار، تناوب و فراوانی یک عمل با ابزار مناسب.</li>
+  </ul>
 </section>
-<section class="subtopic" id="ADV-L20-ST02">
-<h3 lang="fr" dir="ltr">Antériorité, simultanéité, postériorité</h3>
-<p class="fa-subtitle" lang="fa">تقدّم، هم‌زمانی و تأخّر</p>
-<p class="rule" lang="fr">Avant, dès que, au moment où, après, puis, depuis et désormais organisent les relations entre événements.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «تقدّم، هم‌زمانی و تأخّر» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Dès qu’il aura fini, nous partirons.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز پیوند زمانی را فقط ترجمه می‌کند و رابطهٔ زمان فعل‌ها یا نقطهٔ مبدأ را کنترل نمی‌کند.</p>
-<p class="source"><code>ADV-L20:book-p130-p131:time-order</code> · printed 130–131 · PDF 132–133</p>
+
+<section class="adv-section" aria-labelledby="adv20-idea">
+  <h3 id="adv20-idea">ایدهٔ اصلی</h3>
+  <div class="adv-callout">
+    <p><strong>سؤال کلیدی این درس:</strong> زمان را نسبت به چه چیزی می‌سنجم؟</p>
+    <div class="adv-example">
+      <span class="fr" lang="fr">Je partirai dans trois jours.</span>
+      <span class="adv-translation">سه روز دیگر می‌روم. ← مرجع: همین لحظهٔ صحبت</span>
+    </div>
+    <div class="adv-example">
+      <span class="fr" lang="fr">Il est arrivé à midi et il est reparti deux heures plus tard.</span>
+      <span class="adv-translation">ظهر رسید و دو ساعت بعد دوباره رفت. ← مرجع: رویداد «رسیدن»</span>
+    </div>
+  </div>
+  <p>پس انتخاب یک عبارت زمانی فقط به ترجمهٔ فارسی آن بستگی ندارد؛ باید <strong>repère temporel</strong> یا همان «نقطهٔ مرجع زمانی» را نیز مشخص کنید.</p>
 </section>
-<section class="subtopic" id="ADV-L20-ST03">
-<h3 lang="fr" dir="ltr">Répétition et fréquence</h3>
-<p class="fa-subtitle" lang="fa">تکرار و بسامد</p>
-<p class="rule" lang="fr">Chaque, tous les, fois par, périodiquement, parfois, souvent et toujours distinguent périodicité et fréquence.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «تکرار و بسامد» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Nous nous réunissons deux fois par mois.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز chaque jour و tous les jours را با chaque les یا صورت‌های مخلوط می‌سازد.</p>
-<p class="source"><code>ADV-L20:book-p130-p133:time-frequency</code> · printed 130–133 · PDF 132–135</p>
+
+<section class="adv-section" id="ADV-L20-ST01" aria-labelledby="adv20-st01">
+  <h3 id="adv20-st01" lang="fr" dir="ltr">1. Se situer, situer un événement dans le temps</h3>
+  <p class="adv-subtitle">قرار دادن خود یا یک رویداد روی محور زمان</p>
+
+  <h4>الف) نسبت به لحظهٔ صحبت</h4>
+  <p>برای رویدادهایی که مستقیماً نسبت به «الان» سنجیده می‌شوند، از نشانه‌هایی مثل <span class="fr" lang="fr">hier, aujourd’hui, demain, avant-hier, après-demain</span> یا یک تاریخ و فاصلهٔ زمانی مشخص استفاده می‌کنیم.</p>
+  <div class="adv-example">
+    <span class="fr" lang="fr">Elle arrivera demain matin.</span>
+    <span class="adv-translation">او فردا صبح می‌رسد.</span>
+  </div>
+  <div class="adv-example">
+    <span class="fr" lang="fr">Elle partira dans trois semaines.</span>
+    <span class="adv-translation">او سه هفتهٔ دیگر خواهد رفت.</span>
+  </div>
+
+  <h4>ب) نسبت به یک دوره یا époque</h4>
+  <p>گاهی مرجع ما یک نقطهٔ دقیق نیست، بلکه یک دوره است. کتاب ابزارهایی مانند <span class="fr" lang="fr">dernièrement, à cette époque, maintenant, bientôt, récemment, prochainement, à partir de maintenant</span> را در این گروه قرار می‌دهد.</p>
+  <div class="adv-grid">
+    <div class="adv-card">
+      <h4 lang="fr" dir="ltr">À cette époque</h4>
+      <p>برای اشاره به «آن دوره / آن زمان» در روایت.</p>
+      <div class="adv-example">
+        <span class="fr" lang="fr">À cette époque, je travaillais à Lyon.</span>
+        <span class="adv-translation">آن زمان در لیون کار می‌کردم.</span>
+      </div>
+    </div>
+    <div class="adv-card">
+      <h4 lang="fr" dir="ltr">Récemment / prochainement</h4>
+      <p><span class="fr" lang="fr">récemment</span> به گذشتهٔ نزدیک و <span class="fr" lang="fr">prochainement</span> به آیندهٔ نزدیک اشاره می‌کند.</p>
+      <div class="adv-example">
+        <span class="fr" lang="fr">Le groupe se produira prochainement à Paris.</span>
+        <span class="adv-translation">گروه به‌زودی در پاریس اجرا خواهد داشت.</span>
+      </div>
+    </div>
+  </div>
 </section>
-<section class="subtopic" id="ADV-L20-ST04">
-<h3 lang="fr" dir="ltr">Expression de la durée</h3>
-<p class="fa-subtitle" lang="fa">بیان مدت</p>
-<p class="rule" lang="fr">Depuis/il y a que signalent continuité ou repère; dans/après évaluent attente; pendant, en, pour et durant bornent différemment.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «بیان مدت» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Elle vit ici depuis trois ans et a terminé le projet en six mois.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز depuis، il y a، pendant، en و pour را فقط بر اساس ترجمهٔ «برای/از» انتخاب می‌کند.</p>
-<p class="source"><code>ADV-L20:book-p132-p133:duration</code> · printed 132–133 · PDF 134–135</p>
+
+<section class="adv-section" id="ADV-L20-ST02" aria-labelledby="adv20-st02">
+  <h3 id="adv20-st02" lang="fr" dir="ltr">2. Antériorité, simultanéité, postériorité</h3>
+  <p class="adv-subtitle">قبل‌تر بودن، هم‌زمانی و بعدتر بودن یک رویداد نسبت به رویداد دیگر</p>
+
+  <div class="adv-grid">
+    <div class="adv-card">
+      <h4 lang="fr" dir="ltr">Antériorité</h4>
+      <p>برای نشان دادن اینکه یک اتفاق قبل از اتفاق دیگر رخ می‌دهد: <span class="fr" lang="fr">avant, déjà, dès, dès que</span>.</p>
+      <span class="adv-formula">avant de + infinitif</span>
+      <div class="adv-example">
+        <span class="fr" lang="fr">Je viendrai vous saluer avant de partir.</span>
+        <span class="adv-translation">قبل از رفتن می‌آیم با شما خداحافظی کنم.</span>
+      </div>
+    </div>
+
+    <div class="adv-card">
+      <h4 lang="fr" dir="ltr">Simultanéité</h4>
+      <p>برای دو رویداد هم‌زمان: <span class="fr" lang="fr">simultanément, au moment où</span>.</p>
+      <div class="adv-example">
+        <span class="fr" lang="fr">Au moment où je sortais, le téléphone a sonné.</span>
+        <span class="adv-translation">درست زمانی که بیرون می‌رفتم، تلفن زنگ زد.</span>
+      </div>
+    </div>
+
+    <div class="adv-card">
+      <h4 lang="fr" dir="ltr">Postériorité</h4>
+      <p>برای نشان دادن رویدادی که بعد از رویداد دیگری رخ می‌دهد: <span class="fr" lang="fr">après, puis, ensuite</span>.</p>
+      <div class="adv-example">
+        <span class="fr" lang="fr">Il a fermé son ordinateur, puis il est parti.</span>
+        <span class="adv-translation">کامپیوترش را بست و سپس رفت.</span>
+      </div>
+    </div>
+
+    <div class="adv-card">
+      <h4 lang="fr" dir="ltr">Origine d’une situation</h4>
+      <p>برای مشخص کردن نقطهٔ شروع یا آغاز یک وضعیت جدید: <span class="fr" lang="fr">depuis, désormais, dorénavant</span>.</p>
+      <div class="adv-example">
+        <span class="fr" lang="fr">Désormais, les demandes se feront en ligne.</span>
+        <span class="adv-translation">از این پس درخواست‌ها آنلاین انجام خواهند شد.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="adv-tip">
+    <strong>نکته:</strong> <span class="fr" lang="fr">depuis</span> معمولاً یک نقطهٔ شروع را به وضعیتی که تا زمان مرجع ادامه دارد وصل می‌کند؛ اما <span class="fr" lang="fr">désormais / dorénavant</span> معنای «از این پس» دارند.
+  </div>
 </section>
-<aside class="notes"><h3>Notes avancées</h3>
-<section><h4>Exceptions / استثناها</h4><ul><li>Dans se calcule depuis le moment du locuteur; après/plus tard depuis un autre repère.</li><li>Sous huitaine relève d’un usage administratif approximatif.</li></ul></section>
-<section><h4>Contrastes / تقابل‌ها</h4><ul><li>hier/demain vs la veille/le lendemain</li><li>depuis continuité vs il y a repérage</li><li>pendant durée vécue vs en durée nécessaire vs pour durée prévue</li></ul></section>
-<section><h4>Restrictions / محدودیت‌ها</h4><ul><li>Le marqueur doit être cohérent avec le repère temporel et l’aspect du procès.</li></ul></section>
-<section><h4>Register / سطح زبانی</h4><ul><li>Sous + durée est administratif; plusieurs locutions narratives appartiennent surtout à l’écrit.</li></ul></section>
-<section><h4>Temporal notes / نکات زمانی</h4><ul><li>Date, époque, ordre relatif, origine, périodicité, fréquence et durée constituent des axes distincts.</li></ul></section>
-<section><h4>Semantic notes / نکات معنایی</h4><ul><li>Une durée peut être ouverte, close, prévue, nécessaire ou évaluée avant accomplissement.</li></ul></section>
-</aside>
+
+<section class="adv-section" id="ADV-L20-ST03" aria-labelledby="adv20-st03">
+  <h3 id="adv20-st03" lang="fr" dir="ltr">3. Répétition, périodicité et fréquence</h3>
+  <p class="adv-subtitle">تکرار، دوره‌ای بودن و بسامد</p>
+
+  <p>برای تکرار منظم یا بیان تعداد دفعات، کتاب ساختارهایی مانند <span class="fr" lang="fr">chaque jour, tous les jours, quotidiennement, annuellement, deux fois par mois, périodiquement</span> را مطرح می‌کند.</p>
+  <div class="adv-example">
+    <span class="fr" lang="fr">Nous nous réunissons deux fois par mois.</span>
+    <span class="adv-translation">ما ماهی دو بار جلسه داریم.</span>
+  </div>
+
+  <p>برای بیان فراوانی بدون لزوماً مشخص کردن تعداد دقیق، از واژه‌هایی مانند <span class="fr" lang="fr">jamais, parfois, souvent, quelquefois, de temps en temps, toujours</span> استفاده می‌شود.</p>
+  <div class="adv-example">
+    <span class="fr" lang="fr">Il n’oubliait jamais de lui envoyer des fleurs.</span>
+    <span class="adv-translation">هیچ‌وقت فراموش نمی‌کرد برای او گل بفرستد.</span>
+  </div>
+
+  <div class="adv-table-wrap" role="region" aria-label="مقایسه تکرار و فراوانی" tabindex="0">
+    <table>
+      <thead>
+        <tr>
+          <th>نوع بیان</th>
+          <th lang="fr">Exemple</th>
+          <th>نکته</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>دوره‌ای و منظم</td>
+          <td lang="fr">chaque jour / tous les jours</td>
+          <td>فاصله یا چرخهٔ تکرار روشن است.</td>
+        </tr>
+        <tr>
+          <td>تعداد دقیق</td>
+          <td lang="fr">deux fois par semaine</td>
+          <td>تعداد دفعات مشخص است.</td>
+        </tr>
+        <tr>
+          <td>فراوانی تقریبی</td>
+          <td lang="fr">souvent / parfois</td>
+          <td>تعداد دقیق داده نمی‌شود.</td>
+        </tr>
+        <tr>
+          <td>فراوانی نامنظم</td>
+          <td lang="fr">de temps en temps</td>
+          <td>گاه‌به‌گاه، بدون نظم عددی.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="adv-section" id="ADV-L20-ST04" aria-labelledby="adv20-st04">
+  <h3 id="adv20-st04" lang="fr" dir="ltr">4. L’expression de la durée</h3>
+  <p class="adv-subtitle">بیان مدت و فاصلهٔ زمانی</p>
+
+  <div class="adv-callout">
+    <p><strong>سؤال مرکزی:</strong> <span class="fr" lang="fr">Combien de temps ?</span> — چه مدت؟</p>
+    <p>اما پاسخ این سؤال یک ساختار واحد ندارد. باید بدانیم عمل هنوز ادامه دارد، تمام شده، قرار است در آینده رخ دهد، یا می‌خواهیم زمان لازم برای تکمیل آن را اندازه بگیریم.</p>
+  </div>
+
+  <h4 lang="fr" dir="ltr">Depuis / il y a ... que / ça fait ... que</h4>
+  <p>برای حالتی که یک وضعیت در گذشته شروع شده و تا زمان مرجع ادامه دارد، <span class="fr" lang="fr">depuis</span> یا ساختارهای معادل آن به کار می‌روند.</p>
+  <span class="adv-formula">Sujet + présent + depuis + durée / point de départ</span>
+  <span class="adv-formula">Ça fait + durée + que + présent</span>
+  <div class="adv-example">
+    <span class="fr" lang="fr">J’habite ici depuis trois ans.</span>
+    <span class="adv-translation">سه سال است که اینجا زندگی می‌کنم.</span>
+  </div>
+  <div class="adv-example">
+    <span class="fr" lang="fr">Ça fait trois ans que j’habite ici.</span>
+    <span class="adv-translation">سه سال است که اینجا زندگی می‌کنم.</span>
+  </div>
+
+  <h4 lang="fr" dir="ltr">Depuis vs il y a</h4>
+  <div class="adv-grid">
+    <div class="adv-card">
+      <h4 lang="fr" dir="ltr">depuis</h4>
+      <p>آغاز در گذشته + ادامه تا زمان مرجع.</p>
+      <div class="adv-example">
+        <span class="fr" lang="fr">Je travaille ici depuis 2022.</span>
+        <span class="adv-translation">از ۲۰۲۲ تا حالا اینجا کار می‌کنم.</span>
+      </div>
+    </div>
+    <div class="adv-card">
+      <h4 lang="fr" dir="ltr">il y a</h4>
+      <p>یک اتفاق در گذشته را نسبت به حال مکان‌یابی می‌کند.</p>
+      <div class="adv-example">
+        <span class="fr" lang="fr">Je suis arrivé ici il y a trois ans.</span>
+        <span class="adv-translation">سه سال پیش به اینجا رسیدم.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="adv-bad">
+    <strong>❌ خطای رایج</strong>
+    <span class="fr" lang="fr">Je suis arrivé depuis trois ans.</span>
+  </div>
+  <div class="adv-ok">
+    <strong>✅ درست</strong>
+    <span class="fr" lang="fr">Je suis arrivé il y a trois ans.</span>
+  </div>
+
+  <h4 lang="fr" dir="ltr">Dans — فاصله تا یک رویداد آینده</h4>
+  <p>وقتی نقطهٔ مرجع لحظهٔ صحبت است، <span class="fr" lang="fr">dans + durée</span> معمولاً می‌گوید پس از گذشت چه مقدار زمان، رویداد آینده اتفاق می‌افتد.</p>
+  <div class="adv-example">
+    <span class="fr" lang="fr">Le train partira dans dix minutes.</span>
+    <span class="adv-translation">قطار ده دقیقهٔ دیگر حرکت می‌کند.</span>
+  </div>
+
+  <h4 lang="fr" dir="ltr">Après / plus tard — فاصله نسبت به یک مرجع دیگر</h4>
+  <p>وقتی در یک روایت گذشته، فاصله را نسبت به رویداد گذشتهٔ دیگری می‌سنجیم، <span class="fr" lang="fr">plus tard</span> یا <span class="fr" lang="fr">après</span> مناسب است.</p>
+  <div class="adv-example">
+    <span class="fr" lang="fr">Il est arrivé à midi et il est reparti deux heures plus tard.</span>
+    <span class="adv-translation">ظهر رسید و دو ساعت بعد دوباره رفت.</span>
+  </div>
+
+  <div class="adv-tip">
+    <strong>مقایسهٔ سریع:</strong><br>
+    <span class="fr" lang="fr">Il partira dans deux heures.</span> = دو ساعت دیگر می‌رود.<br>
+    <span class="fr" lang="fr">Il est reparti deux heures plus tard.</span> = دو ساعت بعد رفت.
+  </div>
+
+  <h4 lang="fr" dir="ltr">Pendant — مدت خود عمل</h4>
+  <p><span class="fr" lang="fr">pendant + durée</span> مدت زمانی را بیان می‌کند که خود فعالیت یا وضعیت در آن جریان داشته است.</p>
+  <div class="adv-example">
+    <span class="fr" lang="fr">J’ai travaillé pendant six heures.</span>
+    <span class="adv-translation">شش ساعت کار کردم.</span>
+  </div>
+
+  <h4 lang="fr" dir="ltr">En — زمان لازم برای تکمیل عمل</h4>
+  <p><span class="fr" lang="fr">en + durée</span> معمولاً مدت لازم برای به پایان رساندن یک عمل را بیان می‌کند.</p>
+  <div class="adv-example">
+    <span class="fr" lang="fr">Il a construit son garage en une semaine.</span>
+    <span class="adv-translation">گاراژش را ظرف یک هفته ساخت.</span>
+  </div>
+
+  <div class="adv-grid">
+    <div class="adv-card">
+      <h4 lang="fr" dir="ltr">pendant</h4>
+      <div class="adv-example">
+        <span class="fr" lang="fr">J’ai lu pendant deux heures.</span>
+        <span class="adv-translation">دو ساعت مطالعه کردم؛ الزاماً نمی‌گوید کتاب تمام شد.</span>
+      </div>
+    </div>
+    <div class="adv-card">
+      <h4 lang="fr" dir="ltr">en</h4>
+      <div class="adv-example">
+        <span class="fr" lang="fr">J’ai lu ce livre en deux heures.</span>
+        <span class="adv-translation">این کتاب را ظرف دو ساعت تمام کردم.</span>
+      </div>
+    </div>
+  </div>
+
+  <h4 lang="fr" dir="ltr">Pour — مدت پیش‌بینی‌شده</h4>
+  <p><span class="fr" lang="fr">pour + durée</span> می‌تواند مدت درنظرگرفته‌شده یا برنامه‌ریزی‌شدهٔ یک وضعیت را بیان کند.</p>
+  <div class="adv-example">
+    <span class="fr" lang="fr">Je pars à Paris pour trois jours.</span>
+    <span class="adv-translation">برای سه روز به پاریس می‌روم.</span>
+  </div>
+
+  <h4 lang="fr" dir="ltr">Au cours de / durant</h4>
+  <p><span class="fr" lang="fr">au cours de</span> رویداد را داخل یک دوره قرار می‌دهد؛ <span class="fr" lang="fr">durant</span> نیز برای بیان مدت یک بازه به کار می‌رود.</p>
+  <div class="adv-example">
+    <span class="fr" lang="fr">Au cours de l’année, plusieurs changements ont eu lieu.</span>
+    <span class="adv-translation">در طول سال چند تغییر رخ داد.</span>
+  </div>
+
+  <div class="adv-register">
+    <strong>Register — زبان اداری</strong>
+    <p>کتاب ساختاری مانند <span class="fr" lang="fr">sous huitaine</span> را به‌عنوان کاربرد اداری نشان می‌دهد؛ یعنی «ظرف حدود هشت روز / در مهلت هشت‌روزه». این ساختار برای مکالمهٔ روزمره انتخاب معمولی نیست.</p>
+  </div>
+</section>
+
+<section class="adv-section" aria-labelledby="adv20-contrast">
+  <h3 id="adv20-contrast">مقایسهٔ نهایی ساختارهای اصلی مدت</h3>
+  <div class="adv-table-wrap" role="region" aria-label="جدول مقایسه عبارات مدت" tabindex="0">
+    <table>
+      <thead>
+        <tr>
+          <th lang="fr">Structure</th>
+          <th>کاربرد اصلی</th>
+          <th lang="fr">Exemple</th>
+          <th>نکتهٔ تمایز</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td lang="fr">depuis</td>
+          <td>شروع در گذشته و ادامه تا مرجع</td>
+          <td lang="fr">J’habite ici depuis deux ans.</td>
+          <td>عمل/وضعیت هنوز ادامه دارد.</td>
+        </tr>
+        <tr>
+          <td lang="fr">il y a</td>
+          <td>مکان‌یابی یک اتفاق در گذشته</td>
+          <td lang="fr">Il est parti il y a deux jours.</td>
+          <td>«دو روز پیش»، نه «دو روز است».</td>
+        </tr>
+        <tr>
+          <td lang="fr">ça fait ... que</td>
+          <td>بیان مدت سپری‌شده</td>
+          <td lang="fr">Ça fait deux ans que j’habite ici.</td>
+          <td>با <span class="fr" lang="fr">depuis</span> قابل مقایسه است.</td>
+        </tr>
+        <tr>
+          <td lang="fr">pendant</td>
+          <td>مدت خود فعالیت</td>
+          <td lang="fr">J’ai travaillé pendant deux heures.</td>
+          <td>بر طول فعالیت تمرکز دارد.</td>
+        </tr>
+        <tr>
+          <td lang="fr">en</td>
+          <td>مدت لازم برای تکمیل</td>
+          <td lang="fr">J’ai fini en deux heures.</td>
+          <td>نتیجه/پایان عمل برجسته است.</td>
+        </tr>
+        <tr>
+          <td lang="fr">dans</td>
+          <td>فاصله تا رویداد آینده</td>
+          <td lang="fr">Je partirai dans deux heures.</td>
+          <td>مرجع معمولاً «الان» است.</td>
+        </tr>
+        <tr>
+          <td lang="fr">plus tard / après</td>
+          <td>فاصله نسبت به مرجعی دیگر</td>
+          <td lang="fr">Il est reparti deux heures plus tard.</td>
+          <td>در روایت گذشته بسیار مهم است.</td>
+        </tr>
+        <tr>
+          <td lang="fr">pour</td>
+          <td>مدت پیش‌بینی/برنامه‌ریزی‌شده</td>
+          <td lang="fr">Je pars pour trois jours.</td>
+          <td>مدتی که برای وضعیت در نظر گرفته شده است.</td>
+        </tr>
+        <tr>
+          <td lang="fr">au cours de</td>
+          <td>قرار گرفتن رویداد داخل یک دوره</td>
+          <td lang="fr">Au cours de l’année...</td>
+          <td>تمرکز بر «در جریانِ یک بازه» است.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="adv-section" aria-labelledby="adv20-errors">
+  <h3 id="adv20-errors">خطاهای رایج</h3>
+
+  <div class="adv-bad">
+    <strong>❌ استفاده از pendant برای وضعیتی که هنوز ادامه دارد</strong>
+    <span class="fr" lang="fr">J’habite ici pendant cinq ans.</span>
+  </div>
+  <div class="adv-ok">
+    <strong>✅ اگر هنوز اینجا زندگی می‌کنید</strong>
+    <span class="fr" lang="fr">J’habite ici depuis cinq ans.</span>
+  </div>
+
+  <div class="adv-bad">
+    <strong>❌ اشتباه گرفتن dans با مدت خود فعالیت</strong>
+    <span class="fr" lang="fr">Je vais rester ici dans deux heures.</span>
+    <span class="adv-translation">اگر منظورتان «دو ساعت اینجا می‌مانم» باشد، این انتخاب مناسب نیست.</span>
+  </div>
+  <div class="adv-ok">
+    <strong>✅ مدت خود اقامت</strong>
+    <span class="fr" lang="fr">Je vais rester ici pendant deux heures.</span>
+  </div>
+
+  <div class="adv-tip">
+    <strong>💡 تفاوت معنایی، نه فقط شکلی</strong>
+    <div class="adv-example">
+      <span class="fr" lang="fr">J’ai écrit le rapport pendant deux heures.</span>
+      <span class="adv-translation">دو ساعت روی گزارش کار کردم؛ تمام شدنش قطعی نیست.</span>
+    </div>
+    <div class="adv-example">
+      <span class="fr" lang="fr">J’ai écrit le rapport en deux heures.</span>
+      <span class="adv-translation">گزارش را ظرف دو ساعت به پایان رساندم.</span>
+    </div>
+  </div>
+
+  <div class="adv-bad">
+    <strong>❌ تغییر ندادن نقطهٔ مرجع در روایت گذشته</strong>
+    <span class="fr" lang="fr">Il est arrivé à midi et il est reparti dans deux heures.</span>
+  </div>
+  <div class="adv-ok">
+    <strong>✅ فاصله نسبت به رویداد گذشته</strong>
+    <span class="fr" lang="fr">Il est arrivé à midi et il est reparti deux heures plus tard.</span>
+  </div>
+</section>
+
+<section class="adv-section" aria-labelledby="adv20-learning">
+  <h3 id="adv20-learning">نکات کلیدی برای انتخاب سریع</h3>
+  <ol>
+    <li><strong>آیا عمل از گذشته شروع شده و هنوز ادامه دارد؟</strong> → <span class="fr" lang="fr">depuis / ça fait ... que</span></li>
+    <li><strong>آیا فقط می‌گویید چه زمانی در گذشته اتفاق افتاد؟</strong> → <span class="fr" lang="fr">il y a</span></li>
+    <li><strong>آیا مدت خود فعالیت مهم است؟</strong> → <span class="fr" lang="fr">pendant</span></li>
+    <li><strong>آیا می‌گویید تکمیل عمل چقدر زمان برد؟</strong> → <span class="fr" lang="fr">en</span></li>
+    <li><strong>آیا می‌پرسید چند وقت دیگر اتفاق می‌افتد؟</strong> → <span class="fr" lang="fr">dans</span></li>
+    <li><strong>آیا نقطهٔ مرجع در روایت گذشته است؟</strong> → <span class="fr" lang="fr">plus tard / après</span></li>
+  </ol>
+</section>
+
+<section class="adv-summary" aria-labelledby="adv20-summary">
+  <h3 id="adv20-summary">خلاصه‌ای که باید به خاطر بسپارید</h3>
+  <ul>
+    <li>گذشته → حال و هنوز ادامه دارد → <span class="fr" lang="fr">depuis</span></li>
+    <li>«سه سال پیش» → <span class="fr" lang="fr">il y a trois ans</span></li>
+    <li>«سه سال است که...» → <span class="fr" lang="fr">ça fait trois ans que...</span></li>
+    <li>مدت خود فعالیت → <span class="fr" lang="fr">pendant</span></li>
+    <li>مدت لازم برای تمام کردن → <span class="fr" lang="fr">en</span></li>
+    <li>«دو ساعت دیگر» → <span class="fr" lang="fr">dans deux heures</span></li>
+    <li>«دو ساعت بعد» در یک روایت → <span class="fr" lang="fr">deux heures plus tard / après</span></li>
+    <li>مدت برنامه‌ریزی‌شده → <span class="fr" lang="fr">pour</span></li>
+    <li>تکرار منظم → <span class="fr" lang="fr">chaque..., tous les..., deux fois par...</span></li>
+    <li>فراوانی → <span class="fr" lang="fr">souvent, parfois, jamais, toujours</span></li>
+    <li><span class="fr" lang="fr">sous huitaine</span> → کاربرد رسمی/اداری.</li>
+  </ul>
+</section>
+
+<section class="adv-exercises" aria-labelledby="adv20-exercises">
+  <h3 id="adv20-exercises">تمرین</h3>
+  <p class="adv-subtitle">جای خالی را با مناسب‌ترین ساختار کامل کنید.</p>
+  <ol class="adv-exercise-list">
+    <li><span class="fr" lang="fr">J’habite à Montréal ______ trois ans.</span></li>
+    <li><span class="fr" lang="fr">Je suis arrivé au Canada ______ trois ans.</span></li>
+    <li><span class="fr" lang="fr">Le train partira ______ vingt minutes.</span></li>
+    <li><span class="fr" lang="fr">Hier, le directeur est arrivé à 9 h et il est reparti deux heures ______.</span></li>
+    <li><span class="fr" lang="fr">Nous avons travaillé ______ toute la matinée.</span></li>
+    <li><span class="fr" lang="fr">Elle a terminé ce rapport ______ deux heures.</span></li>
+    <li><span class="fr" lang="fr">Je pars à Toronto ______ quatre jours.</span></li>
+    <li><span class="fr" lang="fr">______ cinq ans que nous travaillons ensemble.</span></li>
+    <li><span class="fr" lang="fr">______ l’année dernière, plusieurs changements ont été introduits.</span></li>
+    <li><span class="fr" lang="fr">Il téléphone à ses parents deux fois ______ semaine.</span></li>
+  </ol>
+
+  <h4>انتخاب معنایی</h4>
+  <p><strong>11.</strong> کدام جمله یعنی «کتاب را ظرف دو ساعت تمام کردم»؟</p>
+  <div class="adv-choices">
+    A. J’ai lu ce livre depuis deux heures.<br>
+    B. J’ai lu ce livre pendant deux heures.<br>
+    C. J’ai lu ce livre en deux heures.<br>
+    D. J’ai lu ce livre dans deux heures.
+  </div>
+
+  <p><strong>12.</strong> کدام جمله یعنی «دو ساعت دیگر می‌روم»؟</p>
+  <div class="adv-choices">
+    A. Je partirai pendant deux heures.<br>
+    B. Je partirai en deux heures.<br>
+    C. Je partirai il y a deux heures.<br>
+    D. Je partirai dans deux heures.
+  </div>
+
+  <details>
+    <summary>نمایش پاسخ تمرین‌ها</summary>
+    <div class="adv-answer-body">
+      <ol>
+        <li><span class="fr" lang="fr">depuis</span></li>
+        <li><span class="fr" lang="fr">il y a</span></li>
+        <li><span class="fr" lang="fr">dans</span></li>
+        <li><span class="fr" lang="fr">plus tard</span> / <span class="fr" lang="fr">après</span></li>
+        <li><span class="fr" lang="fr">pendant</span></li>
+        <li><span class="fr" lang="fr">en</span></li>
+        <li><span class="fr" lang="fr">pour</span></li>
+        <li><span class="fr" lang="fr">Ça fait</span></li>
+        <li><span class="fr" lang="fr">Au cours de</span></li>
+        <li><span class="fr" lang="fr">par</span></li>
+        <li><strong>C</strong> — <span class="fr" lang="fr">en deux heures</span> زمان لازم برای تکمیل عمل را نشان می‌دهد.</li>
+        <li><strong>D</strong> — <span class="fr" lang="fr">dans deux heures</span> فاصلهٔ میان اکنون و رویداد آینده را بیان می‌کند.</li>
+      </ol>
+    </div>
+  </details>
+
+  <p class="adv-footnote">مرجع محتوایی: <span lang="fr" dir="ltr">Grammaire Progressive du Français — Niveau Avancé — 3e édition</span>، درس ۲۰، صفحات چاپی ۱۳۰ تا ۱۳۳. مثال‌های آموزشی این صفحه بازنویسی/تولید آموزشی هستند و تمرین‌های کتاب عیناً بازنشر نشده‌اند.</p>
+</section>
 </article>

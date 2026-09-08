@@ -1,86 +1,411 @@
-<article class="adv-lesson" data-lesson-id="ADV-L16">
+<!--
+Grammar Mastery Advanced — Lesson 16
+Embeddable HTML fragment (no iframe, no external dependency)
+Theme-aware: uses the site's existing CSS variables (--ink, --muted, --surface, etc.)
+-->
 <style>
-.adv-lesson{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.75;color:#172033;max-width:980px;margin:0 auto;padding:8px 2px 40px}
-.adv-lesson *{box-sizing:border-box}
-.adv-lesson .adv-hero{padding:24px;border:1px solid #e3e8f0;border-radius:18px;background:#fff;margin-bottom:22px}
-.adv-lesson .adv-kicker{font-size:.86rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.65;margin:0 0 6px}
-.adv-lesson h2,.adv-lesson h3{line-height:1.35}
-.adv-lesson h2{font-size:1.65rem;margin:0 0 4px}
-.adv-lesson .fa-title{direction:rtl;text-align:right;font-weight:650;margin:.2rem 0 .8rem}
-.adv-lesson .summary{direction:rtl;text-align:right;margin:0}
-.adv-lesson .meta{margin-top:12px;font-size:.9rem;opacity:.72}
-.adv-lesson .subtopic{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin:18px 0;background:#fff}
-.adv-lesson .subtopic h3{margin:0 0 2px;font-size:1.25rem}
-.adv-lesson .fa-subtitle{direction:rtl;text-align:right;font-weight:600;margin:.1rem 0 1rem}
-.adv-lesson .rule{direction:ltr;text-align:left;padding:12px 14px;border-left:4px solid currentColor;background:#f7f9fc;border-radius:8px;margin:12px 0}
-.adv-lesson .teaching,.adv-lesson .trap{direction:rtl;text-align:right}
-.adv-lesson .example{direction:ltr;text-align:left;font-style:italic;padding:10px 14px;background:#f7f9fc;border-radius:8px}
-.adv-lesson .trap{padding:10px 14px;border:1px dashed #c7ced9;border-radius:8px}
-.adv-lesson .source{font-size:.82rem;opacity:.65;margin-top:12px}
-.adv-lesson .notes{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin-top:22px}
-.adv-lesson .notes h3{margin-top:0}
-.adv-lesson .notes section{margin:16px 0}
-.adv-lesson .notes h4{margin:0 0 6px}
-.adv-lesson .notes ul{margin-top:4px}
+  .gm-lesson.gm-l16 {
+    --gm-text: var(--ink, #17233c);
+    --gm-muted: var(--muted, #5a6477);
+    --gm-line: var(--line, #d9dfeb);
+    --gm-surface: var(--surface, #ffffff);
+    --gm-soft: var(--surface-soft, #f5f7fb);
+    --gm-accent: var(--primary, #2856c7);
+    --gm-accent-strong: var(--primary-strong, #1c3f99);
+    --gm-success: var(--success, #18794e);
+    --gm-success-soft: var(--success-soft, #e9f7f0);
+    --gm-danger: var(--danger, #b42318);
+    --gm-danger-soft: var(--danger-soft, #fff0ee);
+    --gm-warning: var(--warning, #8a4b08);
+    --gm-warning-soft: var(--warning-soft, #fff7e8);
+    --gm-shadow: var(--shadow, 0 18px 50px rgba(34, 53, 90, 0.09));
+    --gm-radius: var(--radius, 18px);
+    width: min(100%, 980px);
+    margin-inline: auto;
+    color: var(--gm-text);
+    font-family: var(--font-ui, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
+    font-size: 1rem;
+    line-height: 1.85;
+    direction: rtl;
+    text-align: right;
+  }
+  .gm-lesson.gm-l16, .gm-lesson.gm-l16 * { box-sizing: border-box; }
+  .gm-l16 .gm-hero, .gm-l16 .gm-section, .gm-l16 .gm-card, .gm-l16 .gm-table-wrap, .gm-l16 details {
+    background: var(--gm-surface);
+    border: 1px solid var(--gm-line);
+  }
+  .gm-l16 .gm-hero {
+    position: relative; overflow: hidden; border-radius: calc(var(--gm-radius) + 4px);
+    padding: clamp(1.3rem, 3vw, 2.2rem); box-shadow: var(--gm-shadow); margin-block-end: 1.25rem;
+  }
+  .gm-l16 .gm-hero::before { content: ""; position: absolute; inset-block: 0; inset-inline-start: 0; width: 6px; background: var(--gm-accent); }
+  .gm-l16 .gm-kicker { margin: 0 0 .4rem; color: var(--gm-accent); font-weight: 850; font-size: .82rem; letter-spacing: .04em; }
+  .gm-l16 h1, .gm-l16 h2, .gm-l16 h3, .gm-l16 h4 { color: var(--gm-text); line-height: 1.35; text-wrap: balance; }
+  .gm-l16 h1 { margin: 0; font-size: clamp(1.65rem, 4vw, 2.45rem); }
+  .gm-l16 .gm-subtitle { margin: .55rem 0 0; color: var(--gm-muted); font-size: 1.05rem; }
+  .gm-l16 .gm-meta { display: flex; flex-wrap: wrap; gap: .55rem; margin-block-start: 1rem; }
+  .gm-l16 .gm-chip { display: inline-flex; align-items: center; min-height: 32px; padding: .28rem .65rem; border-radius: 999px; border: 1px solid var(--gm-line); background: var(--gm-soft); color: var(--gm-muted); font-size: .83rem; font-weight: 750; }
+  .gm-l16 .gm-section { border-radius: var(--gm-radius); padding: clamp(1.1rem, 2.5vw, 1.7rem); margin-block: 1rem; }
+  .gm-l16 .gm-section > h2 { margin: 0 0 1rem; padding-block-end: .65rem; border-block-end: 1px solid var(--gm-line); font-size: clamp(1.25rem, 3vw, 1.65rem); }
+  .gm-l16 h3 { margin: 1.35rem 0 .65rem; font-size: 1.12rem; }
+  .gm-l16 h4 { margin: 1rem 0 .45rem; font-size: 1rem; }
+  .gm-l16 p { margin: .55rem 0; }
+  .gm-l16 ul, .gm-l16 ol { margin: .65rem 0; padding-inline-start: 0; padding-inline-end: 1.35rem; }
+  .gm-l16 li { margin-block: .35rem; }
+  .gm-l16 .gm-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .85rem; margin-block: .85rem; }
+  .gm-l16 .gm-card { border-radius: 14px; padding: 1rem; }
+  .gm-l16 .gm-card h3, .gm-l16 .gm-card h4 { margin-block-start: 0; }
+  .gm-l16 .gm-note, .gm-l16 .gm-tip, .gm-l16 .gm-ok, .gm-l16 .gm-bad { border-radius: 14px; padding: .9rem 1rem; margin-block: .8rem; border: 1px solid var(--gm-line); }
+  .gm-l16 .gm-note { background: var(--gm-soft); }
+  .gm-l16 .gm-tip { background: var(--gm-warning-soft); border-color: var(--gm-line); }
+  .gm-l16 .gm-ok { background: var(--gm-success-soft); border-color: var(--gm-line); }
+  .gm-l16 .gm-bad { background: var(--gm-danger-soft); border-color: var(--gm-line); }
+  .gm-l16 .gm-label { display: block; font-weight: 850; margin-block-end: .25rem; }
+  .gm-l16 .gm-label.ok { color: var(--gm-success); } .gm-l16 .gm-label.bad { color: var(--gm-danger); } .gm-l16 .gm-label.tip { color: var(--gm-warning); }
+  .gm-l16 .gm-fr, .gm-l16 code, .gm-l16 .gm-formula { direction: ltr; unicode-bidi: isolate; text-align: left; }
+  .gm-l16 .gm-fr { display: inline-block; font-weight: 650; }
+  .gm-l16 .gm-fr-block, .gm-l16 .gm-formula { display: block; width: 100%; direction: ltr; unicode-bidi: isolate; text-align: left; }
+  .gm-l16 .gm-formula { margin-block: .55rem; padding: .7rem .85rem; background: var(--gm-soft); border: 1px solid var(--gm-line); border-radius: 10px; overflow-wrap: anywhere; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .93rem; }
+  .gm-l16 code { display: inline-block; max-width: 100%; padding: .08rem .34rem; border-radius: 6px; background: var(--gm-soft); border: 1px solid var(--gm-line); color: var(--gm-accent-strong); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .92em; vertical-align: baseline; }
+  .gm-l16 .gm-example { margin-block: .7rem; padding: .8rem .9rem; border-inline-start: 4px solid var(--gm-accent); background: var(--gm-soft); border-radius: 10px; }
+  .gm-l16 .gm-example .gm-fr-block { color: var(--gm-text); font-weight: 700; }
+  .gm-l16 .gm-translation { display: block; color: var(--gm-muted); margin-block-start: .2rem; font-size: .94rem; }
+  .gm-l16 .gm-table-wrap { overflow-x: auto; border-radius: 14px; margin-block: .85rem; -webkit-overflow-scrolling: touch; }
+  .gm-l16 table { width: 100%; min-width: 620px; border-collapse: collapse; background: var(--gm-surface); color: var(--gm-text); }
+  .gm-l16 th, .gm-l16 td { padding: .72rem .8rem; vertical-align: top; border-block-end: 1px solid var(--gm-line); }
+  .gm-l16 th { background: var(--gm-soft); color: var(--gm-text); font-weight: 850; }
+  .gm-l16 tr:last-child td { border-block-end: 0; }
+  .gm-l16 .gm-compare td:first-child, .gm-l16 .gm-compare th:first-child { white-space: nowrap; }
+  .gm-l16 .gm-summary { border-color: var(--gm-accent); }
+  .gm-l16 details { border-radius: 12px; overflow: clip; margin-block: .7rem; }
+  .gm-l16 summary { cursor: pointer; padding: .8rem 1rem; background: var(--gm-soft); font-weight: 850; color: var(--gm-text); }
+  .gm-l16 details > div { padding: .85rem 1rem; }
+  .gm-l16 .gm-exercises { counter-reset: exercise; list-style: none; padding: 0; }
+  .gm-l16 .gm-exercises > li { counter-increment: exercise; position: relative; padding: .72rem 2.35rem .72rem .8rem; border-block-end: 1px solid var(--gm-line); }
+  .gm-l16 .gm-exercises > li::before { content: counter(exercise); position: absolute; inset-inline-end: .35rem; inset-block-start: .72rem; width: 1.55rem; height: 1.55rem; display: grid; place-items: center; border-radius: 999px; background: var(--gm-accent); color: #fff; font-weight: 850; font-size: .82rem; }
+  .gm-l16 .gm-exercises > li:last-child { border-block-end: 0; }
+  .gm-l16 .gm-source { margin-block-start: 1rem; color: var(--gm-muted); font-size: .86rem; text-align: center; }
+  @media (max-width: 720px) { .gm-l16 .gm-grid { grid-template-columns: 1fr; } .gm-l16 { line-height: 1.8; } .gm-l16 .gm-section, .gm-l16 .gm-hero { border-radius: 15px; } .gm-l16 .gm-section { padding: 1rem; } }
+  @media (prefers-color-scheme: dark) {
+    html:not([data-theme]) .gm-lesson.gm-l16 {
+      --gm-text: #eef4ff; --gm-muted: #a8b7d1; --gm-line: #2b3a55; --gm-surface: #111d31; --gm-soft: #16243a;
+      --gm-accent: #7ea2ff; --gm-accent-strong: #b2c8ff; --gm-success: #66d4a0; --gm-success-soft: #123629;
+      --gm-danger: #ff8e87; --gm-danger-soft: #3b1d22; --gm-warning: #f4c46f; --gm-warning-soft: #3b2d16; --gm-shadow: 0 18px 50px rgba(0,0,0,.28);
+    }
+  }
 </style>
-<header class="adv-hero">
-<p class="adv-kicker">Lesson 16 · ADV-L16</p>
-<h2 lang="fr" dir="ltr">Les prépositions</h2>
-<p class="fa-title" lang="fa">حروف اضافه</p>
-<p class="summary" lang="fa">این درس روی «حروف اضافه» تمرکز دارد و زیرموضوع‌های حرف اضافهٔ à، حرف اضافهٔ de، حرف اضافهٔ en، حرف اضافهٔ par، حرف اضافهٔ pour را پوشش می‌دهد.</p>
-<p class="meta">Printed pages 104–111 · PDF pages 106–113 · target 260 questions</p>
-</header>
-<section class="subtopic" id="ADV-L16-ST01">
-<h3 lang="fr" dir="ltr">Préposition à</h3>
-<p class="fa-subtitle" lang="fa">حرف اضافهٔ à</p>
-<p class="rule" lang="fr">À marque lieu, direction relationnelle, but atteint, complément adjectival, manière, mesure, usage ou composition.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «حرف اضافهٔ à» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Cette machine sert à couper le bois.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز à را فقط نشانگر مکان می‌داند و آن را در افعال و صفاتِ حاکم با de جایگزین می‌کند.</p>
-<p class="source"><code>ADV-L16:book-p104-p105:prep-a</code> · printed 104–105 · PDF 106–107</p>
-</section>
-<section class="subtopic" id="ADV-L16-ST02">
-<h3 lang="fr" dir="ltr">Préposition de</h3>
-<p class="fa-subtitle" lang="fa">حرف اضافهٔ de</p>
-<p class="rule" lang="fr">De marque provenance, dépendance verbale ou adjectivale, relation nominale, cause, manière, quantité et mesure.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «حرف اضافهٔ de» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Il revient de Lyon et parle de son nouveau projet.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز de رابطهٔ اسمی را همیشه مالکیت ترجمه می‌کند و مقوله یا نوع را از مالکیت جدا نمی‌کند.</p>
-<p class="source"><code>ADV-L16:book-p106-p107:prep-de</code> · printed 106–107 · PDF 108–109</p>
-</section>
-<section class="subtopic" id="ADV-L16-ST03">
-<h3 lang="fr" dir="ltr">Préposition en</h3>
-<p class="fa-subtitle" lang="fa">حرف اضافهٔ en</p>
-<p class="rule" lang="fr">En sert avec pays/régions, transport, matière, tenue, état, langue et durée close; en général s’oppose à dans spécifique.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «حرف اضافهٔ en» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Nous voyageons en train et discutons en français.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز en و dans را فقط بر اساس ترجمهٔ «در» انتخاب می‌کند و تقابل عام/خاص را نادیده می‌گیرد.</p>
-<p class="source"><code>ADV-L16:book-p108-p109:prep-en</code> · printed 108–109 · PDF 110–111</p>
-</section>
-<section class="subtopic" id="ADV-L16-ST04">
-<h3 lang="fr" dir="ltr">Préposition par</h3>
-<p class="fa-subtitle" lang="fa">حرف اضافهٔ par</p>
-<p class="rule" lang="fr">Par exprime passage, moyen, cause-motif, distribution, agent passif et étapes de début ou fin.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «حرف اضافهٔ par» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Le colis a été envoyé par courrier express.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز par علّی را با pour علّی یا par عامل را با de عامل بدون توجه به ساخت جابه‌جا می‌کند.</p>
-<p class="source"><code>ADV-L16:book-p110-p111:prep-par</code> · printed 110–111 · PDF 112–113</p>
-</section>
-<section class="subtopic" id="ADV-L16-ST05">
-<h3 lang="fr" dir="ltr">Préposition pour</h3>
-<p class="fa-subtitle" lang="fa">حرف اضافهٔ pour</p>
-<p class="rule" lang="fr">Pour exprime destination, but, cause attribuée et durée prévue, avec nom ou infinitif selon la construction.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «حرف اضافهٔ pour» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Je pars pour Québec pour rencontrer un client.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز pour + durée prévue را با pendant + durée réalisée یکسان می‌گیرد.</p>
-<p class="source"><code>ADV-L16:book-p110-p111:prep-pour</code> · printed 110–111 · PDF 112–113</p>
-</section>
-<aside class="notes"><h3>Notes avancées</h3>
-<section><h4>Exceptions / استثناها</h4><ul><li>En introduit souvent une généralité et dans une occurrence spécifique.</li><li>Les prépositions doivent être répétées devant plusieurs compléments dans plusieurs constructions en à/de.</li></ul></section>
-<section><h4>Contrastes / تقابل‌ها</h4><ul><li>à destination/rapport vs de provenance/dépendance</li><li>en général vs dans spécifique</li><li>par moyen/cause vs pour but/destination</li></ul></section>
-<section><h4>Restrictions / محدودیت‌ها</h4><ul><li>La préposition est souvent gouvernée lexicalement par verbe, adjectif ou nom et ne se traduit pas mot à mot.</li></ul></section>
-<section><h4>Register / سطح زبانی</h4><ul><li>En raison de et plusieurs locutions sont plus fréquents à l’écrit administratif.</li></ul></section>
-<section><h4>Temporal notes / نکات زمانی</h4><ul><li>En exprime durée nécessaire close; pour durée prévue; par fréquence distributive.</li></ul></section>
-<section><h4>Semantic notes / نکات معنایی</h4><ul><li>Une même préposition organise lieu, argument, manière, cause, matière, moyen, destination ou durée.</li></ul></section>
-</aside>
+
+<article class="gm-lesson gm-l16" dir="rtl" lang="fa">
+  <header class="gm-hero">
+    <p class="gm-kicker">درس ۱۶ · GRAMMAIRE PROGRESSIVE DU FRANÇAIS — AVANCÉ</p>
+    <h1><span class="gm-fr" lang="fr">LES PRÉPOSITIONS</span></h1>
+    <p class="gm-subtitle">حروف اضافه‌ی <span class="gm-fr" lang="fr">à, de, en, par, pour</span> و تفاوت‌های معنایی و ساختاری آن‌ها</p>
+    <div class="gm-meta">
+      <span class="gm-chip">صفحات کتاب: 104–111</span>
+      <span class="gm-chip">سطح: B1–B2 / Avancé</span>
+      <span class="gm-chip">موضوع: Prépositions</span>
+    </div>
+  </header>
+
+  <section class="gm-section">
+    <h2>هدف درس</h2>
+    <p>پس از این درس باید بتوانید بر اساس <strong>رابطه‌ی معنایی و ساختار دستوری</strong> حرف اضافه‌ی مناسب را انتخاب کنید؛ به‌خصوص برای مکان و کشورها، مبدأ و مقصد، وسیله، علت، هدف، مدت و ساختارهای ثابتِ فعل یا صفت.</p>
+    <div class="gm-note">
+      <span class="gm-label">ایده‌ی اصلی</span>
+      <p>حروف اضافه‌ی فرانسه معمولاً ترجمه‌ی یک‌به‌یک فارسی ندارند. بهتر است آن‌ها را همراه با <strong>construction</strong> یا رابطه‌ی معنایی‌شان یاد بگیرید.</p>
+      <div class="gm-formula">être content de · s'intéresser à · voyager en train · finir par + infinitif · partir pour + lieu</div>
+    </div>
+  </section>
+
+  <section class="gm-section">
+    <h2>۱) <span class="gm-fr" lang="fr">La préposition « à »</span></h2>
+    <h3>الف) مکان و شهرها</h3>
+    <div class="gm-formula">à + ville</div>
+    <div class="gm-example"><span class="gm-fr-block" lang="fr">J'habite à Montréal.</span><span class="gm-translation">من در مونترآل زندگی می‌کنم.</span></div>
+    <p><code>à la maison</code> · <code>à l'école</code> · <code>au bureau</code> · <code>au cinéma</code> · <code>à la piscine</code></p>
+
+    <h3>انقباض‌های اجباری</h3>
+    <div class="gm-table-wrap"><table><thead><tr><th>ساختار</th><th>نتیجه</th></tr></thead><tbody>
+      <tr><td><span class="gm-fr">à + le</span></td><td><code>au</code></td></tr>
+      <tr><td><span class="gm-fr">à + les</span></td><td><code>aux</code></td></tr>
+      <tr><td><span class="gm-fr">à + la</span></td><td><code>à la</code></td></tr>
+      <tr><td><span class="gm-fr">à + l'</span></td><td><code>à l'</code></td></tr>
+    </tbody></table></div>
+    <div class="gm-bad"><span class="gm-label bad">❌ نادرست</span><span class="gm-fr-block">Je vais à le musée.</span></div>
+    <div class="gm-ok"><span class="gm-label ok">✅ درست</span><span class="gm-fr-block">Je vais au musée.</span></div>
+
+    <h3>کشورها</h3>
+    <ul>
+      <li>کشور مذکر با consonne: <code>au Portugal</code>, <code>au Danemark</code>, <code>au Maroc</code></li>
+      <li>کشور جمع: <code>aux États-Unis</code></li>
+      <li>کشور مؤنث یا کشور مذکر با voyelle: <code>en France</code>, <code>en Iran</code></li>
+    </ul>
+
+    <h3>جزایر</h3>
+    <p>نمونه‌های درس شامل <code>à Madagascar</code>، <code>à Chypre</code>، <code>à la Réunion</code>، <code>en Corse</code> و <code>en Sicile</code> هستند. پس برای نام جزیره‌ها نباید یک قانون ساده را به همه‌ی موارد تعمیم داد.</p>
+
+    <h3>locutionهای مکانی</h3>
+    <p><code>à côté</code> · <code>au milieu</code> · <code>au centre</code> · <code>à la surface</code> · <code>au fond</code> · <code>au bord</code> · <code>à l'intérieur</code></p>
+
+    <h3>ب) فعل + <span class="gm-fr">à</span></h3>
+    <h4>گرفتن چیزی از کسی</h4>
+    <div class="gm-formula">arracher / enlever / voler / prendre quelque chose à quelqu'un</div>
+    <h4>گرایش یا توجه</h4>
+    <p><code>penser à</code> · <code>s'intéresser à</code> · <code>s'adresser à</code> · <code>aspirer à</code></p>
+    <div class="gm-example"><span class="gm-fr-block">Je m'intéresse à la littérature française.</span><span class="gm-translation">من به ادبیات فرانسه علاقه دارم.</span></div>
+    <div class="gm-tip"><span class="gm-label tip">💡 تکرار حرف اضافه</span><span class="gm-fr-block">Il s'intéresse à la philosophie, à l'histoire et à la littérature.</span></div>
+
+    <h4>رسیدن به یک هدف</h4>
+    <p><code>arriver à</code> · <code>réussir à</code> · <code>parvenir à</code></p>
+    <div class="gm-formula">verbe + à + infinitif</div>
+    <div class="gm-example"><span class="gm-fr-block">Elle a réussi à résoudre le problème.</span><span class="gm-translation">او موفق شد مشکل را حل کند.</span></div>
+
+    <h3>ج) صفت + <span class="gm-fr">à</span></h3>
+    <p><code>prêt à</code> · <code>hostile à</code> · <code>favorable à</code> · <code>opposé à</code></p>
+    <p><code>supérieur à</code> · <code>inférieur à</code> · <code>semblable à</code> · <code>comparable à</code></p>
+
+    <h3>د) عبارت‌های ثابت</h3>
+    <div class="gm-grid">
+      <div class="gm-card"><h4>شیوه</h4><p><code>à voix basse</code><br><code>à pas lents</code><br><code>à reculons</code><br><code>à gros sanglots</code></p></div>
+      <div class="gm-card"><h4>تدریجی بودن</h4><p><code>petit à petit</code><br><code>peu à peu</code><br><code>au fur et à mesure</code><br><code>goutte à goutte</code></p></div>
+      <div class="gm-card"><h4>روش حرکت</h4><p><code>à pied</code><br><code>à vélo</code></p></div>
+      <div class="gm-card"><h4>واحد یا روش انجام</h4><p><code>au kilo</code><br><code>au mètre</code><br><code>à la douzaine</code><br><code>à la main</code><br><code>à la machine</code></p></div>
+    </div>
+
+    <h3>هـ) <span class="gm-fr">nom + à + nom</span></h3>
+    <div class="gm-grid">
+      <div class="gm-card"><h4>کاربرد</h4><p><code>une tasse à thé</code><br><code>une brosse à cheveux</code></p></div>
+      <div class="gm-card"><h4>ترکیب</h4><p><code>une tarte aux fraises</code><br><code>un chou à la crème</code></p></div>
+    </div>
+  </section>
+
+  <section class="gm-section">
+    <h2>۲) <span class="gm-fr" lang="fr">La préposition « de »</span></h2>
+    <h3>الف) مبدأ و منشأ</h3>
+    <p><code>de France</code> · <code>du Portugal</code> · <code>d'Espagne</code> · <code>des États-Unis</code></p>
+    <div class="gm-formula">venir / arriver + de + lieu</div>
+    <div class="gm-example"><span class="gm-fr-block">Il revient du Portugal.</span><span class="gm-translation">او از پرتغال برمی‌گردد.</span></div>
+
+    <h3>انقباض‌ها</h3>
+    <div class="gm-table-wrap"><table><thead><tr><th>ساختار</th><th>نتیجه</th></tr></thead><tbody>
+      <tr><td><span class="gm-fr">de + le</span></td><td><code>du</code></td></tr>
+      <tr><td><span class="gm-fr">de + les</span></td><td><code>des</code></td></tr>
+      <tr><td><span class="gm-fr">de + la</span></td><td><code>de la</code></td></tr>
+      <tr><td><span class="gm-fr">de + l'</span></td><td><code>de l'</code></td></tr>
+    </tbody></table></div>
+
+    <h3>نقطه‌ی شروع و موقعیت</h3>
+    <p><code>de la maison à la mairie</code> · <code>du parc à la gare</code></p>
+    <p><code>loin de</code> · <code>près de</code> · <code>en face de</code> · <code>au-dessus de</code> · <code>en bas de</code></p>
+
+    <h3>ب) فعل + <span class="gm-fr">de</span></h3>
+    <p><code>parler de</code> · <code>se soucier de</code> · <code>se moquer de</code> · <code>jouer de</code> · <code>dépendre de</code></p>
+    <div class="gm-example"><span class="gm-fr-block">Cela dépend de la situation.</span><span class="gm-translation">این به شرایط بستگی دارد.</span></div>
+    <div class="gm-tip"><span class="gm-label tip">💡 تکرار <span class="gm-fr">de</span></span><span class="gm-fr-block">Ils parlent de leur voyage et de leurs projets.</span></div>
+
+    <h3>ج) صفت + <span class="gm-fr">de</span></h3>
+    <p><code>être fier de</code> · <code>être content de</code> · <code>être sûr de</code> · <code>être responsable de</code> · <code>être satisfait de</code></p>
+    <div class="gm-formula">Il est important / nécessaire / possible de + infinitif</div>
+
+    <h3>د) <span class="gm-fr">de</span> بین دو اسم</h3>
+    <div class="gm-grid">
+      <div class="gm-card"><h4>مالکیت</h4><p><code>la voiture de Paul</code><br><code>le vélo de Julie</code></p></div>
+      <div class="gm-card"><h4>نوع / catégorie</h4><p><code>une table de cuisine</code><br><code>une lampe de bureau</code><br><code>un chien de chasse</code></p></div>
+    </div>
+
+    <h3>هـ) معنی‌های دیگر</h3>
+    <div class="gm-grid">
+      <div class="gm-card"><h4>علت یا حالت</h4><p><code>mourir de faim</code><br><code>trembler de peur</code><br><code>danser de joie</code><br><code>crier de douleur</code></p></div>
+      <div class="gm-card"><h4>شیوه</h4><p><code>répondre d'un ton sec</code><br><code>regarder d'un air surpris</code></p></div>
+      <div class="gm-card"><h4>مقدار</h4><p><code>une centaine de personnes</code><br><code>un kilo de fruits</code><br><code>une tasse de café</code></p></div>
+      <div class="gm-card"><h4>میزان تفاوت</h4><p><code>vieillir de dix ans</code><br><code>avancer de cinq minutes</code></p></div>
+    </div>
+
+    <h3>و) بعد از بعضی pronoms</h3>
+    <div class="gm-formula">quelqu'un / quelque chose / rien / personne + de + adjectif</div>
+    <div class="gm-example"><span class="gm-fr-block">Il n'y a rien de grave.</span><span class="gm-translation">چیز جدی‌ای نیست.</span></div>
+  </section>
+
+  <section class="gm-section">
+    <h2>۳) <span class="gm-fr" lang="fr">La préposition « en »</span></h2>
+    <h3>الف) کشورها و مناطق</h3>
+    <ul>
+      <li>کشور مؤنث: <code>en France</code>, <code>en Suède</code></li>
+      <li>کشور مذکر با voyelle: <code>en Iran</code>, <code>en Angola</code></li>
+      <li>مناطق: <code>en Normandie</code>, <code>en Provence</code>, <code>en Anjou</code></li>
+      <li>برخی جزایر: <code>en Corse</code>, <code>en Sicile</code></li>
+    </ul>
+
+    <h3>ب) وسیله‌ی نقلیه</h3>
+    <p><code>en avion</code> · <code>en train</code> · <code>en bus</code> · <code>en métro</code></p>
+    <div class="gm-tip"><span class="gm-label tip">💡 Contrast</span><p><code>à pied</code> / <code>à vélo</code> ولی <code>en train</code> / <code>en avion</code></p></div>
+
+    <h3>ج) جنس یا ماده</h3><p><code>une bague en or</code> · <code>un pot en terre</code></p>
+    <h3>د) لباس و ظاهر</h3><p><code>en pantalon</code> · <code>en robe</code> · <code>en jupe</code> · <code>en noir</code> · <code>en blanc</code></p>
+    <h3>هـ) تقسیم یا تبدیل به بخش‌ها</h3><p><code>couper en tranches</code> · <code>plier en deux</code> · <code>diviser en petits morceaux</code> · <code>un roman en trois volumes</code></p>
+    <h3>و) وضعیت فضایی</h3><p><code>s'asseoir en rond</code> · <code>se ranger en ligne</code> · <code>mettre en tas</code> · <code>marcher en zigzag</code></p>
+    <h3>ز) حالت جسمی یا روانی</h3><p><code>en larmes</code> · <code>en colère</code> · <code>en forme</code> · <code>en bonne santé</code> · <code>en paix</code></p>
+    <h3>ح) زبان یا شیوه‌ی بیان</h3><p><code>parler en français</code> · <code>dire en quelques mots</code> · <code>s'exprimer en vers</code></p>
+    <h3>ط) مدت لازم برای کامل شدن یک عمل</h3>
+    <div class="gm-formula">en + durée</div>
+    <div class="gm-example"><span class="gm-fr-block">Je fais le trajet en vingt minutes.</span><span class="gm-translation">این مسیر را در بیست دقیقه طی می‌کنم.</span></div>
+    <h3>ی) ساختارهای ثابت</h3>
+    <p><code>espérer en l'avenir</code> · <code>croire en Dieu</code> · <code>avoir confiance en quelqu'un</code></p>
+    <p><code>changer en</code> · <code>transformer en</code> · <code>traduire en</code></p>
+  </section>
+
+  <section class="gm-section">
+    <h2>۴) تفاوت <span class="gm-fr">en</span> و <span class="gm-fr">dans</span></h2>
+    <ul><li><code>en</code> → بیشتر برای حالت یا مفهوم عمومی‌تر</li><li><code>dans</code> → برای یک مورد مشخص‌تر و déterminé</li></ul>
+    <div class="gm-example"><span class="gm-fr-block">Il vit en banlieue, dans une banlieue calme.</span><span class="gm-translation"><span class="gm-fr">en banlieue</span> = به طور کلی در حومه؛ <span class="gm-fr">dans une banlieue calme</span> = در یک حومه‌ی مشخص و آرام.</span></div>
+    <div class="gm-grid">
+      <div class="gm-card"><code>en Norvège</code><br><code>dans une petite ville</code></div>
+      <div class="gm-card"><code>en forme</code><br><code>dans une forme incroyable</code></div>
+      <div class="gm-card"><code>en paix</code><br><code>dans une paix durable</code></div>
+      <div class="gm-card"><code>en famille</code><br><code>dans une famille très accueillante</code></div>
+    </div>
+  </section>
+
+  <section class="gm-section">
+    <h2>۵) <span class="gm-fr" lang="fr">La préposition « par »</span></h2>
+    <h3>الف) مسیر یا passage</h3>
+    <p><code>passer par la porte</code> · <code>sortir par la fenêtre</code> · <code>regarder par le trou de la serrure</code></p>
+    <div class="gm-example"><span class="gm-fr-block">Nous sommes passés par Lyon.</span><span class="gm-translation">از مسیر لیون عبور کردیم.</span></div>
+    <h3>ب) وسیله یا روش</h3><p><code>envoyer par avion</code> · <code>appeler par son nom</code> · <code>prendre quelqu'un par la taille</code></p>
+    <div class="gm-tip"><span class="gm-label tip">💡 <span class="gm-fr">en avion</span> در برابر <span class="gm-fr">par avion</span></span><span class="gm-fr-block">Je voyage en avion.</span><span class="gm-translation">خودِ شخص با هواپیما سفر می‌کند.</span><span class="gm-fr-block">J'envoie le colis par avion.</span><span class="gm-translation">بسته از طریق حمل هوایی فرستاده می‌شود.</span></div>
+    <h3>ج) علت یا انگیزه</h3><p><code>par courtoisie</code> · <code>par amour</code> · <code>par jalousie</code> · <code>par intérêt</code> · <code>par gentillesse</code></p>
+    <h3>د) توزیع و تناوب</h3><p><code>une fois par semaine</code> · <code>trois fois par an</code></p>
+    <h3>هـ) عبارت‌های ثابت</h3><p><code>par hasard</code> · <code>par conséquent</code> · <code>par bonheur</code> · <code>par malheur</code> · <code>par exemple</code></p>
+    <h3>و) complément d'agent در passive</h3><div class="gm-example"><span class="gm-fr-block">Le tableau a été peint par cet artiste.</span></div>
+    <h3>ز) آغاز یا پایان یک sequence</h3><p><code>commencer par</code> · <code>débuter par</code> · <code>finir par</code> · <code>terminer par</code></p>
+    <div class="gm-example"><span class="gm-fr-block">Il a fini par accepter.</span><span class="gm-translation">بالاخره قبول کرد.</span></div>
+  </section>
+
+  <section class="gm-section">
+    <h2>۶) <span class="gm-fr" lang="fr">La préposition « pour »</span></h2>
+    <h3>الف) مقصد</h3><div class="gm-formula">partir pour + destination</div><div class="gm-example"><span class="gm-fr-block">Ils sont partis pour Montréal.</span></div>
+    <div class="gm-tip"><span class="gm-label tip">💡 تفاوت مهم</span><p><code>passer par Lyon</code> = عبور از مسیر لیون</p><p><code>partir pour Lyon</code> = حرکت به مقصد لیون</p></div>
+    <h3>ب) گیرنده</h3><div class="gm-example"><span class="gm-fr-block">Cette lettre est pour vous.</span><span class="gm-translation">این نامه برای شماست.</span></div>
+    <h3>ج) هدف</h3><div class="gm-formula">pour + nom / pour + infinitif / pour ne pas + infinitif</div><div class="gm-example"><span class="gm-fr-block">Je suis venu pour vous parler.</span><span class="gm-translation">آمده‌ام تا با شما صحبت کنم.</span></div>
+    <h3>د) علت یا دلیل</h3><p><code>fermé pour travaux</code> · <code>fermé pour congés annuels</code> · <code>condamné pour vol</code> · <code>apprécié pour sa gentillesse</code></p>
+    <h3>هـ) مدت پیش‌بینی‌شده</h3><div class="gm-formula">pour + durée prévue</div><div class="gm-example"><span class="gm-fr-block">Elle est partie pour deux semaines.</span><span class="gm-translation">قرار است دو هفته برود.</span></div>
+  </section>
+
+  <section class="gm-section">
+    <h2>۷) Contrastها و تفاوت‌های ظریف</h2>
+    <div class="gm-table-wrap"><table class="gm-compare"><thead><tr><th>ساختار</th><th>کاربرد</th><th>مثال</th><th>نکته تمایز</th></tr></thead><tbody>
+      <tr><td><code>à Paris</code></td><td>شهر</td><td><span class="gm-fr">Il vit à Paris.</span></td><td>برای شهرها</td></tr>
+      <tr><td><code>au Portugal</code></td><td>کشور مذکر با consonne</td><td><span class="gm-fr">Il va au Portugal.</span></td><td><span class="gm-fr">à + le → au</span></td></tr>
+      <tr><td><code>aux États-Unis</code></td><td>کشور جمع</td><td><span class="gm-fr">Elle vit aux États-Unis.</span></td><td><span class="gm-fr">à + les → aux</span></td></tr>
+      <tr><td><code>en France</code></td><td>کشور مؤنث</td><td><span class="gm-fr">Je travaille en France.</span></td><td>نه <span class="gm-fr">à France</span></td></tr>
+      <tr><td><code>en Iran</code></td><td>کشور مذکر با voyelle</td><td><span class="gm-fr">Il vit en Iran.</span></td><td>نه <span class="gm-fr">au Iran</span></td></tr>
+      <tr><td><code>de France</code></td><td>مبدأ</td><td><span class="gm-fr">Il revient de France.</span></td><td>«از»</td></tr>
+      <tr><td><code>du Portugal</code></td><td>مبدأ</td><td><span class="gm-fr">Il revient du Portugal.</span></td><td><span class="gm-fr">de + le → du</span></td></tr>
+      <tr><td><code>à vélo</code></td><td>وسیله حرکت</td><td><span class="gm-fr">Je vais au travail à vélo.</span></td><td>الگوی درس</td></tr>
+      <tr><td><code>en train</code></td><td>وسیله نقلیه</td><td><span class="gm-fr">Je voyage en train.</span></td><td>نه <span class="gm-fr">à train</span></td></tr>
+      <tr><td><code>en avion</code></td><td>خودِ سفر</td><td><span class="gm-fr">Je voyage en avion.</span></td><td>mode de transport</td></tr>
+      <tr><td><code>par avion</code></td><td>شیوه ارسال</td><td><span class="gm-fr">Le colis part par avion.</span></td><td>moyen</td></tr>
+      <tr><td><code>en</code></td><td>عمومی‌تر</td><td><span class="gm-fr">Il vit en banlieue.</span></td><td>généralité</td></tr>
+      <tr><td><code>dans</code></td><td>مشخص‌تر</td><td><span class="gm-fr">dans une banlieue calme</span></td><td>spécificité</td></tr>
+      <tr><td><code>par amour</code></td><td>انگیزه / علت رفتاری</td><td><span class="gm-fr">Il l'a fait par amour.</span></td><td>motivation</td></tr>
+      <tr><td><code>pour travaux</code></td><td>دلیل وضعیت یا تصمیم</td><td><span class="gm-fr">Fermé pour travaux.</span></td><td>raison</td></tr>
+      <tr><td><code>passer par Lyon</code></td><td>مسیر</td><td>—</td><td>via</td></tr>
+      <tr><td><code>partir pour Lyon</code></td><td>مقصد</td><td>—</td><td>destination</td></tr>
+      <tr><td><code>en dix minutes</code></td><td>زمان لازم برای انجام</td><td><span class="gm-fr">Je finis en dix minutes.</span></td><td>durée fermée</td></tr>
+      <tr><td><code>pour deux semaines</code></td><td>مدت پیش‌بینی‌شده</td><td><span class="gm-fr">Elle part pour deux semaines.</span></td><td>durée prévue</td></tr>
+    </tbody></table></div>
+
+    <h3>سه ساختار شبیه، سه معنی متفاوت</h3>
+    <div class="gm-grid">
+      <div class="gm-card"><h4><code>une tasse à thé</code></h4><p><strong><span class="gm-fr">à</span> → کاربرد</strong></p><p>فنجانی مخصوص چای.</p></div>
+      <div class="gm-card"><h4><code>une tasse de thé</code></h4><p><strong><span class="gm-fr">de</span> → محتوا / مقدار</strong></p><p>یک فنجان چای.</p></div>
+      <div class="gm-card"><h4><code>une tasse en métal</code></h4><p><strong><span class="gm-fr">en</span> → جنس</strong></p><p>فنجانی ساخته‌شده از فلز.</p></div>
+    </div>
+  </section>
+
+  <section class="gm-section">
+    <h2>۸) استثناها و محدودیت‌ها</h2>
+    <ul>
+      <li>حرف اضافه‌ی فعل‌ها را نمی‌توان فقط از ترجمه‌ی فارسی حدس زد: <code>penser à</code> ولی <code>parler de</code>.</li>
+      <li>همین موضوع برای صفت‌ها وجود دارد: <code>prêt à</code> ولی <code>content de</code>.</li>
+      <li>انقباض‌های <code>au / aux / du / des</code> اجباری‌اند.</li>
+      <li>در فهرست چند complément، تکرار <code>à</code> یا <code>de</code> معمولاً ساختار را روشن‌تر می‌کند.</li>
+      <li>نام جزایر را بیش از حد قاعده‌مند نکنید: <code>à Madagascar</code>، <code>à la Réunion</code>، <code>en Corse</code>.</li>
+      <li><code>en</code> و <code>dans</code> همیشه قابل‌جایگزینی نیستند.</li>
+    </ul>
+  </section>
+
+  <section class="gm-section">
+    <h2>۹) خطاهای رایج</h2>
+    <div class="gm-bad"><span class="gm-label bad">❌</span><span class="gm-fr-block">Je vais en Portugal.</span></div><div class="gm-ok"><span class="gm-label ok">✅</span><span class="gm-fr-block">Je vais au Portugal.</span></div>
+    <div class="gm-bad"><span class="gm-label bad">❌</span><span class="gm-fr-block">Il habite au Iran.</span></div><div class="gm-ok"><span class="gm-label ok">✅</span><span class="gm-fr-block">Il habite en Iran.</span></div>
+    <div class="gm-bad"><span class="gm-label bad">❌</span><span class="gm-fr-block">Je vais au travail en vélo.</span></div><div class="gm-ok"><span class="gm-label ok">✅</span><span class="gm-fr-block">Je vais au travail à vélo.</span></div>
+    <div class="gm-bad"><span class="gm-label bad">❌</span><span class="gm-fr-block">Je voyage à train.</span></div><div class="gm-ok"><span class="gm-label ok">✅</span><span class="gm-fr-block">Je voyage en train.</span></div>
+    <div class="gm-bad"><span class="gm-label bad">❌</span><span class="gm-fr-block">Elle est contente à son résultat.</span></div><div class="gm-ok"><span class="gm-label ok">✅</span><span class="gm-fr-block">Elle est contente de son résultat.</span></div>
+    <div class="gm-bad"><span class="gm-label bad">❌</span><span class="gm-fr-block">Je suis prêt de partir.</span></div><div class="gm-ok"><span class="gm-label ok">✅</span><span class="gm-fr-block">Je suis prêt à partir.</span></div>
+    <div class="gm-bad"><span class="gm-label bad">❌</span><span class="gm-fr-block">Il n'y a rien grave.</span></div><div class="gm-ok"><span class="gm-label ok">✅</span><span class="gm-fr-block">Il n'y a rien de grave.</span></div>
+    <div class="gm-bad"><span class="gm-label bad">❌</span><span class="gm-fr-block">Il a fini à accepter.</span></div><div class="gm-ok"><span class="gm-label ok">✅</span><span class="gm-fr-block">Il a fini par accepter.</span></div>
+    <div class="gm-bad"><span class="gm-label bad">❌</span><span class="gm-fr-block">Il l'a aidée pour gentillesse.</span></div><div class="gm-ok"><span class="gm-label ok">✅</span><span class="gm-fr-block">Il l'a aidée par gentillesse.</span></div>
+    <div class="gm-bad"><span class="gm-label bad">❌</span><span class="gm-fr-block">Le musée est fermé par travaux.</span></div><div class="gm-ok"><span class="gm-label ok">✅</span><span class="gm-fr-block">Le musée est fermé pour travaux.</span></div>
+    <div class="gm-bad"><span class="gm-label bad">❌</span><span class="gm-fr-block">Elle est partie par deux semaines.</span></div><div class="gm-ok"><span class="gm-label ok">✅</span><span class="gm-fr-block">Elle est partie pour deux semaines.</span></div>
+  </section>
+
+  <section class="gm-section">
+    <h2>۱۰) زبان واقعی و Register</h2>
+    <p>کتاب در این درس contrast مستقلی میان <span class="gm-fr">familier / courant / soutenu</span> معرفی نمی‌کند. ساختارهای اصلی درس متعلق به <strong>français standard</strong> هستند و هم در گفتار و هم در نوشتار کاربرد دارند.</p>
+  </section>
+
+  <section class="gm-section">
+    <h2>۱۱) نکات کلیدی برای یادگیری سریع</h2>
+    <div class="gm-grid">
+      <div class="gm-card"><h3>مکان و کشور</h3><ul><li>شهر → <code>à</code></li><li>کشور مؤنث → <code>en</code></li><li>کشور مذکر با consonne → <code>au</code></li><li>کشور جمع → <code>aux</code></li><li>مبدأ → خانواده‌ی <code>de</code></li></ul></div>
+      <div class="gm-card"><h3>حرکت</h3><p><code>à pied</code> · <code>à vélo</code></p><p><code>en train</code> · <code>en bus</code> · <code>en avion</code></p></div>
+      <div class="gm-card"><h3>اسم + حرف اضافه</h3><p>کاربرد → اغلب <code>à</code></p><p>نوع/مقدار/مالکیت → اغلب <code>de</code></p><p>جنس → <code>en</code></p></div>
+      <div class="gm-card"><h3><span class="gm-fr">par / pour</span></h3><p><strong>par:</strong> مسیر، وسیله، انگیزه</p><p><strong>pour:</strong> مقصد، هدف، دلیل، مدت پیش‌بینی‌شده</p></div>
+    </div>
+  </section>
+
+  <section class="gm-section gm-summary">
+    <h2>۱۲) خلاصه‌ای که باید به خاطر بسپارید</h2>
+    <ul>
+      <li>شهر → <code>à Paris</code></li><li>کشور مؤنث → <code>en France</code></li><li>کشور مذکر با مصوت → <code>en Iran</code></li><li>کشور مذکر با consonne → <code>au Portugal</code></li><li>کشور جمع → <code>aux États-Unis</code></li>
+      <li>مبدأ → <code>de France / du Portugal / des États-Unis</code></li><li>پیاده/دوچرخه → <code>à pied / à vélo</code></li><li>قطار/هواپیما → <code>en train / en avion</code></li>
+      <li>جنس → <code>en or</code></li><li>کاربرد → <code>une tasse à thé</code></li><li>مقدار یا محتوا → <code>une tasse de café</code></li>
+      <li>فعل‌ها را با حرف اضافه‌شان حفظ کنید: <code>réussir à</code>, <code>parler de</code></li><li>صفت‌ها را نیز با حرف اضافه‌شان حفظ کنید: <code>prêt à</code>, <code>content de</code></li>
+      <li><code>en</code> معمولاً عمومی‌تر و <code>dans</code> مشخص‌تر است.</li><li>مسیر → <code>passer par</code></li><li>وسیله‌ی ارسال → <code>par avion</code></li><li>انگیزه → <code>par amour</code></li>
+      <li>agent در passive → <code>par</code></li><li>نتیجه‌ی نهایی → <code>finir par + infinitif</code></li><li>مقصد → <code>partir pour</code></li><li>هدف → <code>pour + infinitif</code></li>
+      <li>دلیل عملی/رسمی → <code>pour travaux</code></li><li>زمان لازم برای انجام → <code>en dix minutes</code></li><li>مدت پیش‌بینی‌شده → <code>pour deux semaines</code></li>
+    </ul>
+  </section>
+
+  <section class="gm-section">
+    <h2>۱۳) تمرین کوتاه</h2>
+    <ol class="gm-exercises">
+      <li><span class="gm-fr">Elle vit ___ Canada mais travaille souvent ___ États-Unis.</span></li>
+      <li><span class="gm-fr">Nous revenons ___ Portugal.</span></li>
+      <li><span class="gm-fr">Il s'intéresse ___ l'histoire et ___ la philosophie.</span></li>
+      <li><span class="gm-fr">Je suis très satisfait ___ résultat.</span></li>
+      <li><span class="gm-fr">Elle va au travail ___ vélo.</span></li>
+      <li><span class="gm-fr">Nous avons fait le trajet ___ train.</span></li>
+      <li><span class="gm-fr">Cette bague est ___ argent.</span></li>
+      <li><span class="gm-fr">Il n'y a rien ___ inquiétant.</span></li>
+      <li><span class="gm-fr">Nous habitons ___ banlieue, ___ un quartier très calme.</span></li>
+      <li><span class="gm-fr">J'ai envoyé les documents ___ avion.</span></li>
+      <li><span class="gm-fr">Elle a accepté ___ gentillesse.</span></li>
+      <li><span class="gm-fr">Le musée est fermé ___ travaux.</span></li>
+      <li><span class="gm-fr">Il a fini ___ comprendre son erreur.</span></li>
+      <li><span class="gm-fr">Ils sont partis ___ Lyon.</span></li>
+      <li><span class="gm-fr">Je peux terminer ce travail ___ vingt minutes.</span></li>
+      <li><span class="gm-fr">Elle est partie ___ trois semaines.</span></li>
+    </ol>
+    <details>
+      <summary>نمایش پاسخ تمرین‌ها</summary>
+      <div><ol>
+        <li><code>au Canada / aux États-Unis</code></li><li><code>du Portugal</code></li><li><code>à / à</code></li><li><code>du résultat</code></li><li><code>à vélo</code></li><li><code>en train</code></li><li><code>en argent</code></li><li><code>d'inquiétant</code></li>
+        <li><code>en banlieue / dans un quartier très calme</code></li><li><code>par avion</code></li><li><code>par gentillesse</code></li><li><code>pour travaux</code></li><li><code>par</code> → <span class="gm-fr">Il a fini par comprendre son erreur.</span></li><li><code>pour Lyon</code></li><li><code>en vingt minutes</code></li><li><code>pour trois semaines</code></li>
+      </ol></div>
+    </details>
+  </section>
+
+  <p class="gm-source">منبع آموزشی: <span class="gm-fr">Grammaire Progressive du Français — Niveau Avancé, 3e édition</span>، درس ۱۶، صفحات 104–111</p>
 </article>

@@ -1,77 +1,546 @@
-<article class="adv-lesson" data-lesson-id="ADV-L24">
+<article class="adv-lesson adv-lesson-24" data-lesson-id="ADV-L24" lang="fa" dir="rtl">
 <style>
-.adv-lesson{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.75;color:#172033;max-width:980px;margin:0 auto;padding:8px 2px 40px}
-.adv-lesson *{box-sizing:border-box}
-.adv-lesson .adv-hero{padding:24px;border:1px solid #e3e8f0;border-radius:18px;background:#fff;margin-bottom:22px}
-.adv-lesson .adv-kicker{font-size:.86rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.65;margin:0 0 6px}
-.adv-lesson h2,.adv-lesson h3{line-height:1.35}
-.adv-lesson h2{font-size:1.65rem;margin:0 0 4px}
-.adv-lesson .fa-title{direction:rtl;text-align:right;font-weight:650;margin:.2rem 0 .8rem}
-.adv-lesson .summary{direction:rtl;text-align:right;margin:0}
-.adv-lesson .meta{margin-top:12px;font-size:.9rem;opacity:.72}
-.adv-lesson .subtopic{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin:18px 0;background:#fff}
-.adv-lesson .subtopic h3{margin:0 0 2px;font-size:1.25rem}
-.adv-lesson .fa-subtitle{direction:rtl;text-align:right;font-weight:600;margin:.1rem 0 1rem}
-.adv-lesson .rule{direction:ltr;text-align:left;padding:12px 14px;border-left:4px solid currentColor;background:#f7f9fc;border-radius:8px;margin:12px 0}
-.adv-lesson .teaching,.adv-lesson .trap{direction:rtl;text-align:right}
-.adv-lesson .example{direction:ltr;text-align:left;font-style:italic;padding:10px 14px;background:#f7f9fc;border-radius:8px}
-.adv-lesson .trap{padding:10px 14px;border:1px dashed #c7ced9;border-radius:8px}
-.adv-lesson .source{font-size:.82rem;opacity:.65;margin-top:12px}
-.adv-lesson .notes{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin-top:22px}
-.adv-lesson .notes h3{margin-top:0}
-.adv-lesson .notes section{margin:16px 0}
-.adv-lesson .notes h4{margin:0 0 6px}
-.adv-lesson .notes ul{margin-top:4px}
+.adv-lesson-24{
+  --l24-text:var(--ink,#17233c);
+  --l24-muted:var(--muted,#5a6477);
+  --l24-line:var(--line,#d9dfeb);
+  --l24-surface:var(--surface,#ffffff);
+  --l24-soft:var(--surface-soft,#f5f7fb);
+  --l24-primary:var(--primary,#2856c7);
+  --l24-primary-strong:var(--primary-strong,#1c3f99);
+  --l24-success:var(--success,#18794e);
+  --l24-success-soft:var(--success-soft,#e9f7f0);
+  --l24-danger:var(--danger,#b42318);
+  --l24-danger-soft:var(--danger-soft,#fff0ee);
+  --l24-warning:var(--warning,#8a4b08);
+  --l24-warning-soft:var(--warning-soft,#fff7e8);
+  box-sizing:border-box;
+  max-width:980px;
+  margin:0 auto;
+  padding:clamp(10px,2vw,20px) clamp(8px,2vw,16px) 44px;
+  color:var(--l24-text);
+  background:transparent;
+  font-family:var(--font-ui,Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif);
+  font-size:1rem;
+  line-height:1.85;
+  overflow-wrap:anywhere;
+}
+.adv-lesson-24 *{box-sizing:border-box}
+.adv-lesson-24 :where(h1,h2,h3,h4,p,ul,ol){margin-top:0}
+.adv-lesson-24 a{color:var(--l24-primary)}
+.adv-lesson-24 .l24-hero,
+.adv-lesson-24 .l24-section,
+.adv-lesson-24 .l24-summary-card,
+.adv-lesson-24 .l24-practice{
+  border:1px solid var(--l24-line);
+  background:var(--l24-surface);
+  border-radius:18px;
+}
+.adv-lesson-24 .l24-hero{
+  padding:clamp(20px,4vw,34px);
+  margin-bottom:20px;
+  border-top:5px solid var(--l24-primary);
+}
+.adv-lesson-24 .l24-kicker{
+  margin:0 0 8px;
+  color:var(--l24-primary);
+  font-size:.82rem;
+  font-weight:850;
+  letter-spacing:.05em;
+  direction:ltr;
+  text-align:left;
+}
+.adv-lesson-24 h1{
+  margin:0;
+  color:var(--l24-text);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(1.7rem,4.5vw,2.55rem);
+  line-height:1.25;
+  direction:ltr;
+  text-align:left;
+  unicode-bidi:isolate;
+}
+.adv-lesson-24 .l24-fa-title{
+  margin:10px 0 0;
+  font-size:clamp(1.15rem,2.8vw,1.4rem);
+  font-weight:850;
+}
+.adv-lesson-24 .l24-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:16px;
+}
+.adv-lesson-24 .l24-chip,
+.adv-lesson-24 .l24-nav a{
+  display:inline-flex;
+  align-items:center;
+  min-height:34px;
+  padding:4px 10px;
+  border:1px solid var(--l24-line);
+  border-radius:999px;
+  background:var(--l24-soft);
+  color:var(--l24-muted);
+  font-size:.8rem;
+  font-weight:750;
+  text-decoration:none;
+}
+.adv-lesson-24 .l24-nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:0 0 20px;
+}
+.adv-lesson-24 .l24-nav a:hover{border-color:var(--l24-primary);color:var(--l24-primary)}
+.adv-lesson-24 .l24-section{
+  padding:clamp(18px,3vw,28px);
+  margin:18px 0;
+}
+.adv-lesson-24 .l24-section > h2,
+.adv-lesson-24 .l24-practice > h2,
+.adv-lesson-24 .l24-summary-card > h2{
+  margin:0 0 14px;
+  color:var(--l24-primary-strong);
+  font-size:clamp(1.3rem,3vw,1.65rem);
+  line-height:1.4;
+}
+.adv-lesson-24 .l24-section h3{
+  margin:26px 0 8px;
+  color:var(--l24-text);
+  font-size:1.12rem;
+  line-height:1.5;
+}
+.adv-lesson-24 .l24-section h3:first-of-type{margin-top:10px}
+.adv-lesson-24 .l24-lead{font-size:1.04rem}
+.adv-lesson-24 .l24-fr,
+.adv-lesson-24 code,
+.adv-lesson-24 .l24-formula{
+  direction:ltr;
+  text-align:left;
+  unicode-bidi:isolate;
+}
+.adv-lesson-24 .l24-fr{font-family:var(--font-ui,Inter,ui-sans-serif,system-ui,sans-serif)}
+.adv-lesson-24 code{
+  display:inline-block;
+  max-width:100%;
+  padding:.08em .42em;
+  border:1px solid var(--l24-line);
+  border-radius:6px;
+  background:var(--l24-soft);
+  color:var(--l24-primary-strong);
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:.93em;
+  white-space:normal;
+}
+.adv-lesson-24 .l24-formula{
+  margin:10px 0;
+  padding:11px 14px;
+  border-inline-start:4px solid var(--l24-primary);
+  border-radius:9px;
+  background:var(--l24-soft);
+  color:var(--l24-text);
+  font-weight:750;
+}
+.adv-lesson-24 .l24-example{
+  margin:10px 0 4px;
+  padding:13px 15px;
+  border:1px solid var(--l24-line);
+  border-radius:12px;
+  background:var(--l24-soft);
+  direction:ltr;
+  text-align:left;
+  unicode-bidi:isolate;
+  font-size:1.01rem;
+}
+.adv-lesson-24 .l24-translation{
+  margin:0 0 12px;
+  color:var(--l24-muted);
+  font-size:.93rem;
+}
+.adv-lesson-24 .l24-callout{
+  margin:14px 0;
+  padding:13px 15px;
+  border:1px solid var(--l24-line);
+  border-radius:12px;
+  background:var(--l24-soft);
+}
+.adv-lesson-24 .l24-callout strong{color:var(--l24-primary-strong)}
+.adv-lesson-24 .l24-correct{
+  border-color:color-mix(in srgb,var(--l24-success) 42%,var(--l24-line));
+  background:var(--l24-success-soft);
+}
+.adv-lesson-24 .l24-wrong{
+  border-color:color-mix(in srgb,var(--l24-danger) 42%,var(--l24-line));
+  background:var(--l24-danger-soft);
+}
+.adv-lesson-24 .l24-note{
+  border-color:color-mix(in srgb,var(--l24-warning) 40%,var(--l24-line));
+  background:var(--l24-warning-soft);
+}
+.adv-lesson-24 .l24-table-wrap{overflow-x:auto;margin:14px 0;-webkit-overflow-scrolling:touch}
+.adv-lesson-24 table{
+  width:100%;
+  min-width:620px;
+  border-collapse:collapse;
+  background:var(--l24-surface);
+  color:var(--l24-text);
+  direction:rtl;
+}
+.adv-lesson-24 th,
+.adv-lesson-24 td{
+  padding:11px 12px;
+  border:1px solid var(--l24-line);
+  vertical-align:top;
+  text-align:right;
+}
+.adv-lesson-24 th{background:var(--l24-soft);font-weight:850}
+.adv-lesson-24 td[lang="fr"],
+.adv-lesson-24 th[lang="fr"]{direction:ltr;text-align:left;unicode-bidi:isolate}
+.adv-lesson-24 ul,
+.adv-lesson-24 ol{padding-inline-start:0;padding-inline-end:1.35rem}
+.adv-lesson-24 li{margin:.35rem 0}
+.adv-lesson-24 .l24-error{
+  margin:12px 0;
+  padding:14px 15px;
+  border:1px solid var(--l24-line);
+  border-radius:12px;
+  background:var(--l24-soft);
+}
+.adv-lesson-24 .l24-error .bad{color:var(--l24-danger);font-weight:800}
+.adv-lesson-24 .l24-error .good{color:var(--l24-success);font-weight:800}
+.adv-lesson-24 .l24-summary-card,
+.adv-lesson-24 .l24-practice{padding:clamp(18px,3vw,28px);margin-top:20px}
+.adv-lesson-24 .l24-memory-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+.adv-lesson-24 .l24-memory{
+  padding:12px 14px;
+  border:1px solid var(--l24-line);
+  border-radius:12px;
+  background:var(--l24-soft);
+}
+.adv-lesson-24 .l24-questions{margin-bottom:0}
+.adv-lesson-24 .l24-answer-key{margin-top:20px}
+.adv-lesson-24 details{
+  margin:10px 0;
+  border:1px solid var(--l24-line);
+  border-radius:12px;
+  background:var(--l24-soft);
+  overflow:hidden;
+}
+.adv-lesson-24 summary{
+  padding:11px 14px;
+  cursor:pointer;
+  color:var(--l24-primary-strong);
+  font-weight:850;
+}
+.adv-lesson-24 details > div{padding:0 14px 12px}
+.adv-lesson-24 .l24-source{
+  margin:20px 0 0;
+  color:var(--l24-muted);
+  font-size:.82rem;
+}
+@media (max-width:700px){
+  .adv-lesson-24{line-height:1.78;padding-inline:4px}
+  .adv-lesson-24 .l24-hero,.adv-lesson-24 .l24-section,.adv-lesson-24 .l24-practice,.adv-lesson-24 .l24-summary-card{border-radius:14px}
+  .adv-lesson-24 .l24-memory-grid{grid-template-columns:1fr}
+  .adv-lesson-24 table{font-size:.92rem}
+}
+@media (prefers-reduced-motion:reduce){.adv-lesson-24 *{scroll-behavior:auto!important}}
+@media (prefers-color-scheme:dark){
+  .adv-lesson-24{
+    --l24-text:var(--ink,#eef4ff);
+    --l24-muted:var(--muted,#a8b7d1);
+    --l24-line:var(--line,#2b3a55);
+    --l24-surface:var(--surface,#111d31);
+    --l24-soft:var(--surface-soft,#16243a);
+    --l24-primary:var(--primary,#7ea2ff);
+    --l24-primary-strong:var(--primary-strong,#b2c8ff);
+    --l24-success:var(--success,#66d4a0);
+    --l24-success-soft:var(--success-soft,#123629);
+    --l24-danger:var(--danger,#ff8e87);
+    --l24-danger-soft:var(--danger-soft,#3b1d22);
+    --l24-warning:var(--warning,#f4c46f);
+    --l24-warning-soft:var(--warning-soft,#3b2d16);
+  }
+}
+@media (forced-colors:active){
+  .adv-lesson-24 .l24-hero,.adv-lesson-24 .l24-section,.adv-lesson-24 .l24-summary-card,.adv-lesson-24 .l24-practice,.adv-lesson-24 .l24-callout,.adv-lesson-24 .l24-example{border:1px solid CanvasText}
+}
 </style>
-<header class="adv-hero">
-<p class="adv-kicker">Lesson 24 · ADV-L24</p>
-<h2 lang="fr" dir="ltr">L’expression de l’opposition et de la concession</h2>
-<p class="fa-title" lang="fa">بیان تقابل و امتیاز</p>
-<p class="summary" lang="fa">این درس روی «بیان تقابل و امتیاز» تمرکز دارد و زیرموضوع‌های پیوندهای تقابل، به‌جای و پیوندگرهای تقابل، امتیاز با پیوندها، malgré، pourtant و سطح زبان را پوشش می‌دهد.</p>
-<p class="meta">Printed pages 148–151 · PDF pages 150–153 · target 220 questions</p>
+
+<header class="l24-hero">
+  <p class="l24-kicker">LESSON 24 · ADV-L24</p>
+  <h1 lang="fr">L’expression de l’opposition et de la concession</h1>
+  <p class="l24-fa-title">بیان تضاد و امتیاز / خلافِ انتظار</p>
+  <p class="l24-lead">در این درس یاد می‌گیریم چگونه در فرانسه دو واقعیت را در برابر هم قرار دهیم (<span class="l24-fr" lang="fr" dir="ltr">opposition</span>) و چگونه نشان دهیم با وجود یک مانع یا علت، نتیجهٔ مورد انتظار رخ نداده است (<span class="l24-fr" lang="fr" dir="ltr">concession</span>).</p>
+  <div class="l24-meta">
+    <span class="l24-chip">درس ۲۴</span>
+    <span class="l24-chip">صفحات کتاب 148–151</span>
+    <span class="l24-chip">سطح B1–B2 رو به پیشرفته</span>
+  </div>
 </header>
-<section class="subtopic" id="ADV-L24-ST01">
-<h3 lang="fr" dir="ltr">Alors que, tandis que, pendant que</h3>
-<p class="fa-subtitle" lang="fa">پیوندهای تقابل</p>
-<p class="rule" lang="fr">Alors que et tandis que opposent; tandis que/pendant que peuvent ajouter une simultanéité durative.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «پیوندهای تقابل» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Paul préfère travailler tôt, tandis que Léa est plus efficace le soir.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز tandis que را همیشه زمانی می‌خواند و تقابل گفتمانی را تشخیص نمی‌دهد.</p>
-<p class="source"><code>ADV-L24:book-p148-p149:opp-conj</code> · printed 148–149 · PDF 150–151</p>
+
+<nav class="l24-nav" aria-label="فهرست بخش‌های درس">
+  <a href="#l24-core">ایدهٔ اصلی</a>
+  <a href="#l24-opposition">Opposition</a>
+  <a href="#l24-concession">Concession</a>
+  <a href="#l24-contrasts">مقایسه‌ها</a>
+  <a href="#l24-errors">خطاهای رایج</a>
+  <a href="#l24-register">Register</a>
+  <a href="#l24-summary">خلاصه</a>
+  <a href="#l24-practice">تمرین</a>
+</nav>
+
+<section class="l24-section" id="l24-core">
+  <h2>هدف و ایدهٔ اصلی درس</h2>
+  <p>پس از این درس باید بتوانید رابطهٔ <strong>تقابل ساده</strong> را از <strong>خلافِ انتظار</strong> جدا کنید و بر اساس معنا، نوع ساختار و سطح زبان، رابط مناسب را انتخاب کنید.</p>
+
+  <h3><span lang="fr" dir="ltr">Opposition</span> — تضاد ساده</h3>
+  <p>در opposition فقط دو واقعیت متفاوت یا متضاد را روبه‌روی هم قرار می‌دهیم؛ لازم نیست بین آنها رابطهٔ علت و نتیجه وجود داشته باشد.</p>
+  <p class="l24-example" lang="fr">Paul adore la ville, alors que sa sœur préfère la campagne.</p>
+  <p class="l24-translation">پل عاشق شهر است، در حالی که خواهرش زندگی در حومه/روستا را ترجیح می‌دهد.</p>
+
+  <h3><span lang="fr" dir="ltr">Concession</span> — خلافِ انتظار</h3>
+  <p>در concession یک علت یا مانع وجود دارد که معمولاً باید نتیجه‌ای ایجاد کند، اما آن نتیجه رخ نمی‌دهد.</p>
+  <p class="l24-example" lang="fr">Bien qu’il pleuve, ils sortent.</p>
+  <p class="l24-translation">با اینکه باران می‌بارد، آنها بیرون می‌روند.</p>
+  <div class="l24-callout l24-note"><strong>تشخیص سریع:</strong> اگر از گزارهٔ اول انتظار یک نتیجهٔ طبیعی دارید اما جملهٔ دوم خلاف آن را نشان می‌دهد، رابطه غالباً <span lang="fr" dir="ltr">concession</span> است.</div>
 </section>
-<section class="subtopic" id="ADV-L24-ST02">
-<h3 lang="fr" dir="ltr">Au lieu de et connecteurs d’opposition</h3>
-<p class="fa-subtitle" lang="fa">به‌جای و پیوندگرهای تقابل</p>
-<p class="rule" lang="fr">Au lieu de + nom/infinitif et contrairement à marquent opposition; en revanche est plus soutenu que par contre.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «به‌جای و پیوندگرهای تقابل» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Au lieu de protester, il a proposé une solution; en revanche, son collègue est resté silencieux.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز au lieu de را با بند صرف‌شده می‌آورد یا تفاوت سبکی en revanche و par contre را حذف می‌کند.</p>
-<p class="source"><code>ADV-L24:book-p148-p149:opp-linkers</code> · printed 148–149 · PDF 150–151</p>
+
+<section class="l24-section" id="l24-opposition">
+  <h2>۱) L’opposition — بیان تقابل</h2>
+
+  <h3><span lang="fr" dir="ltr">alors que / tandis que</span></h3>
+  <p>این دو از رایج‌ترین conjunctionها برای قرار دادن دو واقعیت در برابر یکدیگر هستند.</p>
+  <div class="l24-formula">proposition 1 + alors que / tandis que + proposition 2</div>
+  <p class="l24-example" lang="fr">Léa est très réservée, alors que son frère parle à tout le monde.</p>
+  <p class="l24-translation">لئا بسیار کم‌حرف است، در حالی که برادرش با همه صحبت می‌کند.</p>
+  <p class="l24-example" lang="fr">Julie travaille dans la finance, tandis que son mari est musicien.</p>
+  <p class="l24-translation">ژولی در امور مالی کار می‌کند، در حالی که شوهرش موسیقی‌دان است.</p>
+
+  <h3><span lang="fr" dir="ltr">tandis que / pendant que</span> و nuance زمانی</h3>
+  <p>کتاب نشان می‌دهد که <span class="l24-fr" lang="fr" dir="ltr">tandis que</span> و <span class="l24-fr" lang="fr" dir="ltr">pendant que</span> می‌توانند تقابل را همراه با مفهوم هم‌زمانی و مدت بیان کنند.</p>
+  <p class="l24-example" lang="fr">Pendant que je travaillais, mes amis faisaient la fête.</p>
+  <p class="l24-translation">در حالی که من کار می‌کردم، دوستانم مهمانی گرفته بودند.</p>
+  <div class="l24-callout"><strong>محدودیت:</strong> <span lang="fr" dir="ltr">pendant que</span> همیشه opposition نمی‌سازد. در جملهٔ <span class="l24-fr" lang="fr" dir="ltr">Pendant que je cuisinais, Paul mettait la table.</span> فقط هم‌زمانی داریم.</div>
+
+  <h3><span lang="fr" dir="ltr">au lieu de</span></h3>
+  <p>برای بیان «به‌جایِ» یک عمل یا چیز دیگر استفاده می‌شود.</p>
+  <div class="l24-formula">au lieu de + infinitif / nom</div>
+  <p class="l24-example" lang="fr">Au lieu de reconnaître son erreur, il a accusé son collègue.</p>
+  <p class="l24-translation">به‌جای پذیرفتن اشتباهش، همکارش را متهم کرد.</p>
+  <p class="l24-example" lang="fr">Nous avons pris le train au lieu de l’avion.</p>
+  <p class="l24-translation">به‌جای هواپیما قطار گرفتیم.</p>
+
+  <h3><span lang="fr" dir="ltr">contrairement à</span></h3>
+  <div class="l24-formula">contrairement à + nom / pronom</div>
+  <p class="l24-example" lang="fr">Contrairement à son frère, Marc est très patient.</p>
+  <p class="l24-translation">برخلاف برادرش، مارک بسیار صبور است.</p>
+  <div class="l24-callout l24-wrong"><span class="l24-fr bad" lang="fr" dir="ltr">❌ contrairement de lui</span><br><span class="l24-fr good" lang="fr" dir="ltr">✅ contrairement à lui</span></div>
+
+  <h3><span lang="fr" dir="ltr">mais / au contraire</span></h3>
+  <p><span class="l24-fr" lang="fr" dir="ltr">mais</span> عمومی‌ترین رابط تقابل است. <span class="l24-fr" lang="fr" dir="ltr">au contraire</span> جهت گفته یا تصور قبلی را برمی‌گرداند.</p>
+  <p class="l24-example" lang="fr">Il n’est pas paresseux. Au contraire, il travaille énormément.</p>
+  <p class="l24-translation">او تنبل نیست؛ برعکس، خیلی زیاد کار می‌کند.</p>
+
+  <h3><span lang="fr" dir="ltr">en revanche / par contre</span></h3>
+  <p>هر دو تقابل را پررنگ می‌کنند، اما register متفاوتی دارند.</p>
+  <div class="l24-table-wrap">
+    <table>
+      <thead><tr><th lang="fr">Structure</th><th>کاربرد</th><th>Register</th><th>مثال</th></tr></thead>
+      <tbody>
+        <tr><td lang="fr">en revanche</td><td>تقابل روشن، گاهی با ارزش جبرانی</td><td>رسمی‌تر / <span lang="fr" dir="ltr">plus soutenu</span></td><td lang="fr">Le poste est intéressant ; en revanche, le salaire est bas.</td></tr>
+        <tr><td lang="fr">par contre</td><td>تقابل مستقیم و روزمره</td><td>کمتر رسمی / <span lang="fr" dir="ltr">moins soutenu</span></td><td lang="fr">Il déteste les légumes ; par contre, il adore les fruits.</td></tr>
+      </tbody>
+    </table>
+  </div>
 </section>
-<section class="subtopic" id="ADV-L24-ST03">
-<h3 lang="fr" dir="ltr">Concession avec conjonctions</h3>
-<p class="fa-subtitle" lang="fa">امتیاز با پیوندها</p>
-<p class="rule" lang="fr">Bien que/quoique/sans que prennent le subjonctif; même si prend l’indicatif et peut porter une hypothèse.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «امتیاز با پیوندها» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Bien qu’il soit fatigué, il continue; même s’il pleut, il sortira.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز پس از même si subjonctif می‌آورد چون آن را هم‌معنای bien que می‌داند.</p>
-<p class="source"><code>ADV-L24:book-p150-p151:concess-conj</code> · printed 150–151 · PDF 152–153</p>
+
+<section class="l24-section" id="l24-concession">
+  <h2>۲) La concession — بیان خلافِ انتظار</h2>
+  <p>کتاب concession را رابطه‌ای می‌داند که opposition و restriction را دربرمی‌گیرد: یک علت وجود دارد، اما نتیجه‌ای که از آن انتظار می‌رفت حاصل نمی‌شود.</p>
+
+  <h3><span lang="fr" dir="ltr">bien que / quoique + subjonctif</span></h3>
+  <div class="l24-formula">bien que / quoique + subjonctif</div>
+  <p class="l24-example" lang="fr">Bien qu’il soit fatigué, il continue à travailler.</p>
+  <p class="l24-translation">با اینکه خسته است، به کار ادامه می‌دهد.</p>
+  <p class="l24-example" lang="fr">Quoiqu’elle ait beaucoup travaillé, elle n’a pas réussi l’examen.</p>
+  <p class="l24-translation">با اینکه بسیار درس خوانده بود، در امتحان موفق نشد.</p>
+  <div class="l24-callout l24-wrong"><span class="l24-fr bad" lang="fr" dir="ltr">❌ Bien qu’il est fatigué...</span><br><span class="l24-fr good" lang="fr" dir="ltr">✅ Bien qu’il soit fatigué...</span><br>بعد از <span lang="fr" dir="ltr">bien que</span> و <span lang="fr" dir="ltr">quoique</span> باید <strong>subjonctif</strong> بیاید.</div>
+
+  <h3><span lang="fr" dir="ltr">même si</span>: indicatif، نه subjonctif</h3>
+  <p><span class="l24-fr" lang="fr" dir="ltr">même si</span> هم می‌تواند opposition/concession و هم condition/hypothèse را بیان کند؛ اما برخلاف <span class="l24-fr" lang="fr" dir="ltr">bien que</span>، با subjonctif نمی‌آید.</p>
+  <p class="l24-example" lang="fr">C’est un excellent écrivain même s’il n’a jamais reçu de prix.</p>
+  <p class="l24-translation">او نویسنده بسیار خوبی است، با اینکه هیچ‌وقت جایزه‌ای نگرفته است.</p>
+  <div class="l24-callout l24-wrong"><span class="l24-fr bad" lang="fr" dir="ltr">❌ Même s’il soit fatigué...</span><br><span class="l24-fr good" lang="fr" dir="ltr">✅ Même s’il est fatigué...</span></div>
+  <p>وقتی <span lang="fr" dir="ltr">même si</span> فرض را بیان می‌کند، الگوی زمانی <span lang="fr" dir="ltr">si</span> را دنبال می‌کند:</p>
+  <div class="l24-formula">même si + imparfait → conditionnel présent</div>
+  <p class="l24-example" lang="fr">Même s’il avait beaucoup d’argent, il ne m’en prêterait pas.</p>
+  <div class="l24-formula">même si + plus-que-parfait → conditionnel passé</div>
+  <p class="l24-example" lang="fr">Il ne nous aurait rien dit, même s’il l’avait su.</p>
+
+  <h3><span lang="fr" dir="ltr">sans que + subjonctif</span></h3>
+  <div class="l24-formula">proposition + sans que + sujet différent + subjonctif</div>
+  <p class="l24-example" lang="fr">Ils sont partis sans que je puisse leur parler.</p>
+  <p class="l24-translation">آنها رفتند بدون اینکه من بتوانم با آنها صحبت کنم.</p>
+  <p class="l24-example" lang="fr">Elle a pris la décision sans que ses collègues le sachent.</p>
+  <p class="l24-translation">او تصمیم را گرفت بدون اینکه همکارانش بدانند.</p>
+
+  <h3><span lang="fr" dir="ltr">sans que</span> در برابر <span lang="fr" dir="ltr">sans + infinitif</span></h3>
+  <div class="l24-table-wrap">
+    <table>
+      <thead><tr><th>فاعل‌ها</th><th lang="fr">Structure</th><th>مثال</th></tr></thead>
+      <tbody>
+        <tr><td>فاعل یکسان</td><td lang="fr">sans + infinitif</td><td lang="fr">Il est entré sans frapper.</td></tr>
+        <tr><td>فاعل متفاوت</td><td lang="fr">sans que + subjonctif</td><td lang="fr">Il est entré sans que je l’entende.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3><span lang="fr" dir="ltr">malgré / en dépit de / sans + nom</span></h3>
+  <div class="l24-formula">malgré / en dépit de / sans + nom</div>
+  <p class="l24-example" lang="fr">Malgré la pluie, nous sommes sortis.</p>
+  <p class="l24-translation">با وجود باران، بیرون رفتیم.</p>
+  <p class="l24-example" lang="fr">En dépit de ses difficultés, elle a terminé le projet.</p>
+  <p class="l24-translation">با وجود مشکلاتش، پروژه را تمام کرد.</p>
+  <div class="l24-callout l24-wrong"><span class="l24-fr bad" lang="fr" dir="ltr">❌ Malgré il pleut...</span><br><span class="l24-fr good" lang="fr" dir="ltr">✅ Malgré la pluie...</span><br><span class="l24-fr good" lang="fr" dir="ltr">✅ Bien qu’il pleuve...</span></div>
+
+  <h3><span lang="fr" dir="ltr">mais / pourtant / cependant</span></h3>
+  <p>اینها از رایج‌ترین mots de liaison برای concession هستند.</p>
+  <p class="l24-example" lang="fr">Il pleuvait beaucoup ; pourtant, ils sont sortis.</p>
+  <p class="l24-translation">باران شدیدی می‌بارید؛ با این حال بیرون رفتند.</p>
+  <p class="l24-example" lang="fr">Le travail est difficile ; cependant, il reste motivé.</p>
+  <p class="l24-translation">کار دشوار است؛ با این حال انگیزه‌اش را حفظ کرده است.</p>
+
+  <h3><span lang="fr" dir="ltr">néanmoins / toutefois</span></h3>
+  <p>کتاب این دو را در سطح زبان <strong><span lang="fr" dir="ltr">soutenu</span></strong> قرار می‌دهد.</p>
+  <p class="l24-example" lang="fr">Les mesures ont été nombreuses. Néanmoins, la situation ne s’est pas améliorée.</p>
+  <p class="l24-example" lang="fr">L’expérience est risquée. Toutefois, elle mérite d’être tentée.</p>
 </section>
-<section class="subtopic" id="ADV-L24-ST04">
-<h3 lang="fr" dir="ltr">Malgré, pourtant et registre</h3>
-<p class="fa-subtitle" lang="fa">malgré، pourtant و سطح زبان</p>
-<p class="rule" lang="fr">Malgré/en dépit de/sans prennent un nom; pourtant/cependant sont courants, néanmoins/toutefois plus soutenus.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «malgré، pourtant و سطح زبان» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Malgré le retard, nous avons terminé; néanmoins, une vérification reste nécessaire.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز malgré que را به‌جای malgré + nom یا bien que + proposition می‌سازد.</p>
-<p class="source"><code>ADV-L24:book-p150-p151:concess-linkers</code> · printed 150–151 · PDF 152–153</p>
+
+<section class="l24-section" id="l24-contrasts">
+  <h2>۳) Contrastها و تفاوت‌های ظریف</h2>
+  <div class="l24-table-wrap">
+    <table>
+      <thead><tr><th>ساختار</th><th>رابطه/معنا</th><th>Mode یا مکمل</th><th>نکتهٔ تمایز</th></tr></thead>
+      <tbody>
+        <tr><td lang="fr">alors que</td><td>تقابل ساده</td><td lang="fr">proposition</td><td>دو واقعیت را مقابل هم می‌گذارد.</td></tr>
+        <tr><td lang="fr">bien que</td><td>خلاف انتظار</td><td lang="fr">subjonctif</td><td>واقعیت اول باید به‌طور طبیعی نتیجه دیگری می‌داد.</td></tr>
+        <tr><td lang="fr">même si</td><td>concession / condition</td><td lang="fr">indicatif</td><td>با وجود شباهت معنایی با bien que، subjonctif نمی‌گیرد.</td></tr>
+        <tr><td lang="fr">malgré</td><td>concession</td><td lang="fr">nom</td><td>پس از آن جملهٔ صرف‌شده نمی‌آید.</td></tr>
+        <tr><td lang="fr">pourtant</td><td>خلاف انتظار</td><td>mot de liaison</td><td>تضاد با نتیجهٔ مورد انتظار را برجسته می‌کند.</td></tr>
+        <tr><td lang="fr">en revanche</td><td>opposition</td><td>mot de liaison</td><td>تقابل، رسمی‌تر از par contre.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3><span lang="fr" dir="ltr">pourtant</span> در برابر <span lang="fr" dir="ltr">en revanche</span></h3>
+  <p class="l24-example" lang="fr">Il gagne peu ; pourtant, il dépense énormément.</p>
+  <p>اینجا concession است: درآمد کم معمولاً باید به خرج کمتر منجر شود.</p>
+  <p class="l24-example" lang="fr">Il gagne peu ; en revanche, sa femme gagne très bien sa vie.</p>
+  <p>اینجا فقط دو وضعیت مالی در برابر هم قرار گرفته‌اند.</p>
+
+  <h3><span lang="fr" dir="ltr">au contraire</span> در برابر <span lang="fr" dir="ltr">en revanche</span></h3>
+  <p><span class="l24-fr" lang="fr" dir="ltr">au contraire</span> حرف یا تصور قبلی را مستقیماً نفی یا وارونه می‌کند؛ <span class="l24-fr" lang="fr" dir="ltr">en revanche</span> یک نکتهٔ مقابل یا جبرانی اضافه می‌کند.</p>
 </section>
-<aside class="notes"><h3>Notes avancées</h3>
-<section><h4>Exceptions / استثناها</h4><ul><li>Même si prend l’indicatif malgré sa proximité sémantique avec bien que.</li><li>Sans que prend le subjonctif; même sujet impose sans + infinitif.</li></ul></section>
-<section><h4>Contrastes / تقابل‌ها</h4><ul><li>opposition symétrique vs concession contraire à l’attente</li><li>bien que + subjonctif vs même si + indicatif</li><li>en revanche soutenu vs par contre courant</li></ul></section>
-<section><h4>Restrictions / محدودیت‌ها</h4><ul><li>Le choix de mode et la réduction infinitive dépendent du connecteur et de l’identité des sujets.</li></ul></section>
-<section><h4>Register / سطح زبانی</h4><ul><li>Néanmoins/toutefois et en revanche sont plus soutenus; par contre est moins soutenu.</li></ul></section>
-<section><h4>Temporal notes / نکات زمانی</h4><ul><li>Tandis que et pendant que peuvent superposer opposition et durée simultanée.</li></ul></section>
-<section><h4>Semantic notes / نکات معنایی</h4><ul><li>La concession affirme qu’une cause attendue n’entraîne pas le résultat prévu.</li></ul></section>
-</aside>
+
+<section class="l24-section" id="l24-errors">
+  <h2>۴) خطاهای رایج</h2>
+
+  <div class="l24-error">
+    <div class="bad l24-fr" lang="fr" dir="ltr">❌ Bien qu’il est malade, il travaille.</div>
+    <div class="good l24-fr" lang="fr" dir="ltr">✅ Bien qu’il soit malade, il travaille.</div>
+    <div>دلیل: <span lang="fr" dir="ltr">bien que + subjonctif</span>.</div>
+  </div>
+
+  <div class="l24-error">
+    <div class="bad l24-fr" lang="fr" dir="ltr">❌ Même s’il soit malade, il viendra.</div>
+    <div class="good l24-fr" lang="fr" dir="ltr">✅ Même s’il est malade, il viendra.</div>
+    <div>دلیل: <span lang="fr" dir="ltr">même si</span> با subjonctif نمی‌آید.</div>
+  </div>
+
+  <div class="l24-error">
+    <div class="bad l24-fr" lang="fr" dir="ltr">❌ Malgré il pleut, nous sortons.</div>
+    <div class="good l24-fr" lang="fr" dir="ltr">✅ Malgré la pluie, nous sortons.</div>
+    <div class="good l24-fr" lang="fr" dir="ltr">✅ Bien qu’il pleuve, nous sortons.</div>
+    <div>دلیل: <span lang="fr" dir="ltr">malgré + nom</span>، اما <span lang="fr" dir="ltr">bien que + proposition au subjonctif</span>.</div>
+  </div>
+
+  <div class="l24-error">
+    <div class="bad l24-fr" lang="fr" dir="ltr">❌ Contrairement de moi...</div>
+    <div class="good l24-fr" lang="fr" dir="ltr">✅ Contrairement à moi...</div>
+    <div>دلیل: حرف اضافهٔ ثابت این ساختار <span lang="fr" dir="ltr">à</span> است.</div>
+  </div>
+
+  <div class="l24-callout"><strong>نکته:</strong> <span lang="fr" dir="ltr">par contre</span> غلط نیست. طبق درس، فقط از <span lang="fr" dir="ltr">en revanche</span> کمتر soutenu است.</div>
+</section>
+
+<section class="l24-section" id="l24-register">
+  <h2>۵) زبان واقعی و Register</h2>
+  <div class="l24-table-wrap">
+    <table>
+      <thead><tr><th lang="fr">Structure</th><th>Register تقریبی</th><th>کاربرد پیشنهادی</th></tr></thead>
+      <tbody>
+        <tr><td lang="fr">mais</td><td lang="fr">courant</td><td>گفتار و نوشتار</td></tr>
+        <tr><td lang="fr">alors que</td><td lang="fr">courant</td><td>بسیار رایج</td></tr>
+        <tr><td lang="fr">tandis que</td><td lang="fr">courant / écrit</td><td>تقابل، گاهی همراه با هم‌زمانی</td></tr>
+        <tr><td lang="fr">par contre</td><td lang="fr">moins soutenu</td><td>گفتار و زبان روزمره</td></tr>
+        <tr><td lang="fr">en revanche</td><td lang="fr">plus soutenu</td><td>نوشتار رسمی‌تر</td></tr>
+        <tr><td lang="fr">pourtant</td><td lang="fr">courant</td><td>گفتار و نوشتار</td></tr>
+        <tr><td lang="fr">cependant</td><td lang="fr">courant / écrit</td><td>نوشتار بسیار طبیعی</td></tr>
+        <tr><td lang="fr">néanmoins / toutefois</td><td lang="fr">soutenu</td><td>مقاله، گزارش و نوشتار رسمی</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="l24-summary-card" id="l24-summary">
+  <h2>۶) خلاصه‌ای که باید به خاطر بسپارید</h2>
+  <div class="l24-memory-grid">
+    <div class="l24-memory">تضاد ساده → <span lang="fr" dir="ltr">alors que / tandis que</span></div>
+    <div class="l24-memory">تقابل همراه با هم‌زمانی → <span lang="fr" dir="ltr">tandis que / pendant que</span></div>
+    <div class="l24-memory">«به‌جای» → <span lang="fr" dir="ltr">au lieu de + nom/infinitif</span></div>
+    <div class="l24-memory">«برخلاف» → <span lang="fr" dir="ltr">contrairement à + nom/pronom</span></div>
+    <div class="l24-memory">خلاف انتظار → <span lang="fr" dir="ltr">bien que / pourtant / malgré...</span></div>
+    <div class="l24-memory"><span lang="fr" dir="ltr">bien que / quoique + subjonctif</span></div>
+    <div class="l24-memory"><span lang="fr" dir="ltr">même si + indicatif</span></div>
+    <div class="l24-memory"><span lang="fr" dir="ltr">sans que + subjonctif</span></div>
+    <div class="l24-memory">فاعل یکسان → <span lang="fr" dir="ltr">sans + infinitif</span></div>
+    <div class="l24-memory"><span lang="fr" dir="ltr">malgré / en dépit de / sans + nom</span></div>
+    <div class="l24-memory">رسمی‌تر → <span lang="fr" dir="ltr">en revanche, néanmoins, toutefois</span></div>
+    <div class="l24-memory">کمتر رسمی → <span lang="fr" dir="ltr">par contre</span></div>
+  </div>
+</section>
+
+<section class="l24-practice" id="l24-practice">
+  <h2>۷) تمرین</h2>
+  <ol class="l24-questions">
+    <li><span class="l24-fr" lang="fr" dir="ltr">Bien qu’il ___ fatigué, il continue à travailler. (être)</span></li>
+    <li><span class="l24-fr" lang="fr" dir="ltr">Même si elle ___ peu de temps, elle viendra. (avoir)</span></li>
+    <li><span class="l24-fr" lang="fr" dir="ltr">Quoiqu’ils ___ beaucoup d’efforts, le projet a échoué. (faire)</span></li>
+    <li><span class="l24-fr" lang="fr" dir="ltr">Ils sont partis sans que nous ___ les prévenir. (pouvoir)</span></li>
+    <li><span class="l24-fr" lang="fr" dir="ltr">___ la pluie, le match a continué.</span> — <span lang="fr" dir="ltr">Bien que / Malgré / Alors que</span></li>
+    <li><span class="l24-fr" lang="fr" dir="ltr">Paul adore voyager, ___ sa sœur préfère rester chez elle.</span> — <span lang="fr" dir="ltr">alors que / malgré / sans que</span></li>
+    <li><span class="l24-fr" lang="fr" dir="ltr">Il gagne très peu ; ___, il dépense énormément.</span> — <span lang="fr" dir="ltr">pourtant / contrairement à / au lieu de</span></li>
+    <li>اصلاح کنید: <span class="l24-fr" lang="fr" dir="ltr">Même s’il soit riche, il vit simplement.</span></li>
+    <li>اصلاح کنید: <span class="l24-fr" lang="fr" dir="ltr">Malgré il était malade, il est venu.</span></li>
+    <li>اصلاح کنید: <span class="l24-fr" lang="fr" dir="ltr">Contrairement de ses collègues, elle arrive toujours à l’heure.</span></li>
+    <li>با <span lang="fr" dir="ltr">sans</span> بازنویسی کنید: <span class="l24-fr" lang="fr" dir="ltr">Il n’a pas téléphoné. Il est venu directement.</span></li>
+    <li>با <span lang="fr" dir="ltr">bien que</span> بازنویسی کنید: <span class="l24-fr" lang="fr" dir="ltr">La météo était mauvaise. Nous sommes partis.</span></li>
+    <li>با <span lang="fr" dir="ltr">en revanche</span> بازنویسی کنید: <span class="l24-fr" lang="fr" dir="ltr">L’hôtel est cher. Il est extrêmement confortable.</span></li>
+  </ol>
+
+  <div class="l24-answer-key">
+    <h3>پاسخ تمرین‌ها</h3>
+    <details><summary>پاسخ‌های ۱ تا ۴</summary><div><ol><li><span lang="fr" dir="ltr">soit</span></li><li><span lang="fr" dir="ltr">a</span></li><li><span lang="fr" dir="ltr">aient fait</span></li><li><span lang="fr" dir="ltr">puissions</span></li></ol></div></details>
+    <details><summary>پاسخ‌های ۵ تا ۷</summary><div><ol start="5"><li><span lang="fr" dir="ltr">Malgré</span></li><li><span lang="fr" dir="ltr">alors que</span></li><li><span lang="fr" dir="ltr">pourtant</span></li></ol></div></details>
+    <details><summary>پاسخ‌های ۸ تا ۱۰</summary><div><ol start="8"><li><span class="l24-fr" lang="fr" dir="ltr">Même s’il est riche, il vit simplement.</span></li><li><span class="l24-fr" lang="fr" dir="ltr">Malgré sa maladie, il est venu.</span> یا <span class="l24-fr" lang="fr" dir="ltr">Bien qu’il ait été malade, il est venu.</span></li><li><span class="l24-fr" lang="fr" dir="ltr">Contrairement à ses collègues, elle arrive toujours à l’heure.</span></li></ol></div></details>
+    <details><summary>پاسخ‌های ۱۱ تا ۱۳</summary><div><ol start="11"><li><span class="l24-fr" lang="fr" dir="ltr">Il est venu directement sans téléphoner.</span></li><li><span class="l24-fr" lang="fr" dir="ltr">Bien que la météo soit mauvaise, nous sommes partis.</span></li><li><span class="l24-fr" lang="fr" dir="ltr">L’hôtel est cher ; en revanche, il est extrêmement confortable.</span></li></ol></div></details>
+  </div>
+
+  <p class="l24-source">مرجع محتوا: <span lang="fr" dir="ltr">Grammaire Progressive du Français — Niveau Avancé — 3e édition</span>، درس ۲۴، صفحات چاپی 148–151 (PDF صفحات 150–153). مثال‌ها و توضیحات آموزشی بازنویسی و تکمیل شده‌اند و تمرین‌های کتاب عیناً کپی نشده‌اند.</p>
+</section>
 </article>

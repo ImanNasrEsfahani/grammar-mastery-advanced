@@ -1,86 +1,763 @@
-<article class="adv-lesson" data-lesson-id="ADV-L26">
+<!--
+  Grammar Mastery Advanced — Lesson 26
+  Embeddable, dependency-free HTML fragment.
+  - Scoped styles: everything lives under .gm-lesson
+  - No JavaScript / external fonts / external CSS
+  - Inherits host text color and background
+  - Supports .dark, [data-theme="dark"], and prefers-color-scheme
+-->
 <style>
-.adv-lesson{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.75;color:#172033;max-width:980px;margin:0 auto;padding:8px 2px 40px}
-.adv-lesson *{box-sizing:border-box}
-.adv-lesson .adv-hero{padding:24px;border:1px solid #e3e8f0;border-radius:18px;background:#fff;margin-bottom:22px}
-.adv-lesson .adv-kicker{font-size:.86rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.65;margin:0 0 6px}
-.adv-lesson h2,.adv-lesson h3{line-height:1.35}
-.adv-lesson h2{font-size:1.65rem;margin:0 0 4px}
-.adv-lesson .fa-title{direction:rtl;text-align:right;font-weight:650;margin:.2rem 0 .8rem}
-.adv-lesson .summary{direction:rtl;text-align:right;margin:0}
-.adv-lesson .meta{margin-top:12px;font-size:.9rem;opacity:.72}
-.adv-lesson .subtopic{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin:18px 0;background:#fff}
-.adv-lesson .subtopic h3{margin:0 0 2px;font-size:1.25rem}
-.adv-lesson .fa-subtitle{direction:rtl;text-align:right;font-weight:600;margin:.1rem 0 1rem}
-.adv-lesson .rule{direction:ltr;text-align:left;padding:12px 14px;border-left:4px solid currentColor;background:#f7f9fc;border-radius:8px;margin:12px 0}
-.adv-lesson .teaching,.adv-lesson .trap{direction:rtl;text-align:right}
-.adv-lesson .example{direction:ltr;text-align:left;font-style:italic;padding:10px 14px;background:#f7f9fc;border-radius:8px}
-.adv-lesson .trap{padding:10px 14px;border:1px dashed #c7ced9;border-radius:8px}
-.adv-lesson .source{font-size:.82rem;opacity:.65;margin-top:12px}
-.adv-lesson .notes{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin-top:22px}
-.adv-lesson .notes h3{margin-top:0}
-.adv-lesson .notes section{margin:16px 0}
-.adv-lesson .notes h4{margin:0 0 6px}
-.adv-lesson .notes ul{margin-top:4px}
+  .gm-lesson {
+    --gm-accent: #5557b7;
+    --gm-accent-2: #167d78;
+    --gm-success: #16834c;
+    --gm-danger: #c33d4c;
+    --gm-warning: #9a6500;
+    --gm-radius: 16px;
+    --gm-border: color-mix(in srgb, currentColor 16%, transparent);
+    --gm-soft: color-mix(in srgb, currentColor 5%, transparent);
+    --gm-softer: color-mix(in srgb, currentColor 2.5%, transparent);
+    --gm-accent-soft: color-mix(in srgb, var(--gm-accent) 10%, transparent);
+    --gm-success-soft: color-mix(in srgb, var(--gm-success) 10%, transparent);
+    --gm-danger-soft: color-mix(in srgb, var(--gm-danger) 10%, transparent);
+    --gm-warning-soft: color-mix(in srgb, var(--gm-warning) 11%, transparent);
+
+    direction: rtl;
+    text-align: right;
+    color: inherit;
+    background: transparent;
+    font: inherit;
+    line-height: 1.9;
+    max-width: 980px;
+    margin-inline: auto;
+    padding: clamp(12px, 2.5vw, 28px);
+  }
+
+  .dark .gm-lesson,
+  [data-theme="dark"] .gm-lesson,
+  [data-color-scheme="dark"] .gm-lesson {
+    --gm-accent: #aeb0ff;
+    --gm-accent-2: #78d9d0;
+    --gm-success: #73d99a;
+    --gm-danger: #ff9baa;
+    --gm-warning: #f5c86d;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .gm-lesson {
+      --gm-accent: #aeb0ff;
+      --gm-accent-2: #78d9d0;
+      --gm-success: #73d99a;
+      --gm-danger: #ff9baa;
+      --gm-warning: #f5c86d;
+    }
+  }
+
+  .gm-lesson *,
+  .gm-lesson *::before,
+  .gm-lesson *::after { box-sizing: border-box; }
+
+  .gm-lesson h1,
+  .gm-lesson h2,
+  .gm-lesson h3,
+  .gm-lesson h4,
+  .gm-lesson p,
+  .gm-lesson ul,
+  .gm-lesson ol { margin-top: 0; }
+
+  .gm-lesson h1 {
+    font-size: clamp(1.65rem, 4vw, 2.5rem);
+    line-height: 1.35;
+    margin-bottom: .6rem;
+    letter-spacing: -.02em;
+  }
+
+  .gm-lesson h2 {
+    font-size: clamp(1.25rem, 2.8vw, 1.6rem);
+    line-height: 1.45;
+    margin: 2.2rem 0 1rem;
+    padding-bottom: .55rem;
+    border-bottom: 1px solid var(--gm-border);
+  }
+
+  .gm-lesson h3 {
+    font-size: clamp(1.08rem, 2.3vw, 1.3rem);
+    line-height: 1.55;
+    margin: 1.65rem 0 .7rem;
+  }
+
+  .gm-lesson h4 {
+    font-size: 1rem;
+    margin: 1rem 0 .45rem;
+  }
+
+  .gm-lesson .gm-hero {
+    border: 1px solid var(--gm-border);
+    border-radius: calc(var(--gm-radius) + 4px);
+    padding: clamp(18px, 4vw, 32px);
+    background: linear-gradient(135deg, var(--gm-accent-soft), transparent 68%);
+    margin-bottom: 1.5rem;
+  }
+
+  .gm-lesson .gm-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+    padding: .28rem .7rem;
+    border: 1px solid var(--gm-border);
+    border-radius: 999px;
+    font-size: .86rem;
+    margin-bottom: .85rem;
+    background: var(--gm-softer);
+  }
+
+  .gm-lesson .gm-subtitle {
+    margin: 0;
+    opacity: .82;
+    font-size: 1.02rem;
+  }
+
+  .gm-lesson .gm-meta {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: .65rem;
+    margin-top: 1.25rem;
+  }
+
+  .gm-lesson .gm-meta > div {
+    border: 1px solid var(--gm-border);
+    border-radius: 12px;
+    padding: .75rem .85rem;
+    background: var(--gm-softer);
+  }
+
+  .gm-lesson .gm-meta dt {
+    font-size: .76rem;
+    opacity: .66;
+    margin-bottom: .15rem;
+  }
+
+  .gm-lesson .gm-meta dd {
+    margin: 0;
+    font-weight: 700;
+  }
+
+  .gm-lesson .gm-card,
+  .gm-lesson .gm-rule,
+  .gm-lesson .gm-note,
+  .gm-lesson .gm-error,
+  .gm-lesson .gm-success-box,
+  .gm-lesson .gm-summary {
+    border: 1px solid var(--gm-border);
+    border-radius: var(--gm-radius);
+    padding: clamp(14px, 2.6vw, 22px);
+    margin: 1rem 0;
+    background: var(--gm-softer);
+  }
+
+  .gm-lesson .gm-rule { border-inline-start: 4px solid var(--gm-accent); }
+  .gm-lesson .gm-note { border-inline-start: 4px solid var(--gm-warning); background: var(--gm-warning-soft); }
+  .gm-lesson .gm-error { border-inline-start: 4px solid var(--gm-danger); background: var(--gm-danger-soft); }
+  .gm-lesson .gm-success-box { border-inline-start: 4px solid var(--gm-success); background: var(--gm-success-soft); }
+  .gm-lesson .gm-summary { border-color: color-mix(in srgb, var(--gm-accent) 35%, transparent); background: var(--gm-accent-soft); }
+
+  .gm-lesson .gm-label {
+    display: block;
+    font-weight: 800;
+    margin-bottom: .4rem;
+  }
+
+  .gm-lesson .gm-formula,
+  .gm-lesson code.gm-inline {
+    direction: ltr;
+    unicode-bidi: isolate;
+    text-align: left;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  }
+
+  .gm-lesson .gm-formula {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: .85rem 1rem;
+    margin: .65rem 0;
+    border: 1px solid var(--gm-border);
+    border-radius: 12px;
+    background: var(--gm-soft);
+    font-weight: 700;
+  }
+
+  .gm-lesson code.gm-inline {
+    display: inline-block;
+    padding: .05rem .35rem;
+    border-radius: 6px;
+    background: var(--gm-soft);
+    border: 1px solid var(--gm-border);
+  }
+
+  .gm-lesson .fr {
+    direction: ltr;
+    unicode-bidi: isolate;
+    text-align: left;
+    font-family: inherit;
+  }
+
+  .gm-lesson .gm-example {
+    border: 1px solid var(--gm-border);
+    border-radius: 12px;
+    padding: .85rem 1rem;
+    margin: .7rem 0;
+    background: var(--gm-softer);
+  }
+
+  .gm-lesson .gm-example .fr {
+    font-weight: 650;
+    margin-bottom: .22rem;
+  }
+
+  .gm-lesson .gm-translation {
+    opacity: .76;
+    margin: .15rem 0 0;
+    font-size: .94rem;
+  }
+
+  .gm-lesson .correct { color: var(--gm-success); font-weight: 800; }
+  .gm-lesson .incorrect { color: var(--gm-danger); font-weight: 800; }
+
+  .gm-lesson ul,
+  .gm-lesson ol { padding-right: 1.25rem; }
+  .gm-lesson li { margin: .35rem 0; }
+
+  .gm-lesson .gm-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--gm-border);
+    border-radius: var(--gm-radius);
+    margin: 1rem 0;
+  }
+
+  .gm-lesson table {
+    width: 100%;
+    min-width: 720px;
+    border-collapse: collapse;
+    background: transparent;
+  }
+
+  .gm-lesson th,
+  .gm-lesson td {
+    padding: .8rem .9rem;
+    border-bottom: 1px solid var(--gm-border);
+    border-inline-start: 1px solid var(--gm-border);
+    vertical-align: top;
+  }
+
+  .gm-lesson tr:last-child td { border-bottom: 0; }
+  .gm-lesson th:first-child,
+  .gm-lesson td:first-child { border-inline-start: 0; }
+  .gm-lesson th { background: var(--gm-soft); font-weight: 800; }
+
+  .gm-lesson .gm-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .85rem;
+  }
+
+  .gm-lesson .gm-chip-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin: .8rem 0;
+  }
+
+  .gm-lesson .gm-chip {
+    direction: ltr;
+    unicode-bidi: isolate;
+    border: 1px solid var(--gm-border);
+    border-radius: 999px;
+    padding: .28rem .7rem;
+    background: var(--gm-soft);
+    font-size: .9rem;
+  }
+
+  .gm-lesson details {
+    border: 1px solid var(--gm-border);
+    border-radius: 12px;
+    padding: .8rem 1rem;
+    margin: .65rem 0;
+    background: var(--gm-softer);
+  }
+
+  .gm-lesson summary {
+    cursor: pointer;
+    font-weight: 800;
+  }
+
+  .gm-lesson .gm-exercises {
+    counter-reset: gm-ex;
+    list-style: none;
+    padding: 0;
+  }
+
+  .gm-lesson .gm-exercises > li {
+    counter-increment: gm-ex;
+    border-bottom: 1px solid var(--gm-border);
+    padding: .7rem 0;
+  }
+
+  .gm-lesson .gm-exercises > li::before {
+    content: counter(gm-ex) ".";
+    display: inline-block;
+    min-width: 1.5rem;
+    margin-left: .3rem;
+    font-weight: 800;
+    color: var(--gm-accent);
+  }
+
+  .gm-lesson .gm-source {
+    margin-top: 2.4rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--gm-border);
+    opacity: .68;
+    font-size: .86rem;
+  }
+
+  @media (max-width: 760px) {
+    .gm-lesson .gm-meta { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .gm-lesson .gm-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 460px) {
+    .gm-lesson { padding-inline: 8px; }
+    .gm-lesson .gm-meta { grid-template-columns: 1fr; }
+    .gm-lesson .gm-card,
+    .gm-lesson .gm-rule,
+    .gm-lesson .gm-note,
+    .gm-lesson .gm-error,
+    .gm-lesson .gm-success-box,
+    .gm-lesson .gm-summary { border-radius: 13px; padding: 13px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .gm-lesson * { scroll-behavior: auto !important; }
+  }
 </style>
-<header class="adv-hero">
-<p class="adv-kicker">Lesson 26 · ADV-L26</p>
-<h2 lang="fr" dir="ltr">L’expression de la condition et de l’hypothèse</h2>
-<p class="fa-title" lang="fa">بیان شرط و فرض</p>
-<p class="summary" lang="fa">این درس روی «بیان شرط و فرض» تمرکز دارد و زیرموضوع‌های شرط واقعی با si، شرط با à condition que و pourvu que، فرض‌های حال، آینده و گذشته، فرض‌های آمیخته، au cas où و فرض‌گذاری را پوشش می‌دهد.</p>
-<p class="meta">Printed pages 154–155 · PDF pages 156–157 · target 260 questions</p>
-</header>
-<section class="subtopic" id="ADV-L26-ST01">
-<h3 lang="fr" dir="ltr">Condition réelle avec si</h3>
-<p class="fa-subtitle" lang="fa">شرط واقعی با si</p>
-<p class="rule" lang="fr">Si + présent ou passé présente une condition tenue pour réalisable; la conséquence se construit à l’indicatif ou à l’impératif.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «شرط واقعی با si» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Si vous avez une question, appelez-moi.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز بعد از si مربوط به آینده futur simple می‌آورد.</p>
-<p class="source"><code>ADV-L26:book-p154-p155:cond-si-ind</code> · printed 154–155 · PDF 156–157</p>
-</section>
-<section class="subtopic" id="ADV-L26-ST02">
-<h3 lang="fr" dir="ltr">À condition que et pourvu que</h3>
-<p class="fa-subtitle" lang="fa">شرط با à condition que و pourvu que</p>
-<p class="rule" lang="fr">À condition que et pourvu que sélectionnent le subjonctif et ajoutent contrainte ou souhait de suffisance.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «شرط با à condition que و pourvu que» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Vous pouvez emprunter ma voiture à condition que vous la rameniez ce soir.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز pourvu que را فقط «به شرط اینکه» خنثی می‌گیرد و ارزش آرزویی آن را از دست می‌دهد.</p>
-<p class="source"><code>ADV-L26:book-p154-p155:cond-other</code> · printed 154–155 · PDF 156–157</p>
-</section>
-<section class="subtopic" id="ADV-L26-ST03">
-<h3 lang="fr" dir="ltr">Hypothèses présente, future et passée</h3>
-<p class="fa-subtitle" lang="fa">فرض‌های حال، آینده و گذشته</p>
-<p class="rule" lang="fr">Si + imparfait mène au conditionnel présent; si + plus-que-parfait au conditionnel passé pour le contrefactuel passé.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «فرض‌های حال، آینده و گذشته» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Si j’avais su, je serais venu plus tôt.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز زمان‌ها را مکانیکی جفت می‌کند و واقعی/غیرواقعی بودن و repère را بررسی نمی‌کند.</p>
-<p class="source"><code>ADV-L26:book-p154-p155:hyp-timelines</code> · printed 154–155 · PDF 156–157</p>
-</section>
-<section class="subtopic" id="ADV-L26-ST04">
-<h3 lang="fr" dir="ltr">Hypothèses mixtes</h3>
-<p class="fa-subtitle" lang="fa">فرض‌های آمیخته</p>
-<p class="rule" lang="fr">Une condition passée peut avoir conséquence présente, et un état intemporel peut expliquer une conséquence passée.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «فرض‌های آمیخته» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Si j’avais accepté ce poste, je travaillerais aujourd’hui à Toronto.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز در شرط‌های آمیخته هر دو بند را در یک زمان می‌گذارد و رابطهٔ علّی میان زمان‌ها را حذف می‌کند.</p>
-<p class="source"><code>ADV-L26:book-p154-p155:hyp-mixed</code> · printed 154–155 · PDF 156–157</p>
-</section>
-<section class="subtopic" id="ADV-L26-ST05">
-<h3 lang="fr" dir="ltr">Au cas où et suppositions</h3>
-<p class="fa-subtitle" lang="fa">au cas où و فرض‌گذاری</p>
-<p class="rule" lang="fr">Au cas où prend le conditionnel; en supposant/admettant que prennent le subjonctif.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «au cas où و فرض‌گذاری» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Au cas où le train serait annulé, nous prendrions le bus.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز پس از au cas où subjonctif می‌آورد چون آن را با pourvu que هم‌گروه می‌کند.</p>
-<p class="source"><code>ADV-L26:book-p154-p155:hyp-other</code> · printed 154–155 · PDF 156–157</p>
-</section>
-<aside class="notes"><h3>Notes avancées</h3>
-<section><h4>Exceptions / استثناها</h4><ul><li>Au cas où se construit avec le conditionnel, non le subjonctif.</li><li>Les hypothèses mixtes combinent légitimement des temps différents si les repères diffèrent.</li></ul></section>
-<section><h4>Contrastes / تقابل‌ها</h4><ul><li>condition réalisable à l’indicatif vs hypothèse éventuelle/irréelle au conditionnel</li><li>présent/imparfait vs plus-que-parfait dans la protase</li><li>si vs pourvu que/à condition que</li></ul></section>
-<section><h4>Restrictions / محدودیت‌ها</h4><ul><li>Dans la structure standard, futur et conditionnel ne suivent pas si dans la protase.</li></ul></section>
-<section><h4>Register / سطح زبانی</h4><ul><li>En supposant que/en admettant que sont utiles dans raisonnement formel et argumentatif.</li></ul></section>
-<section><h4>Temporal notes / نکات زمانی</h4><ul><li>Les combinaisons couvrent futur, présent, passé, état intemporel et conséquences mixtes.</li></ul></section>
-<section><h4>Semantic notes / نکات معنایی</h4><ul><li>Condition est posée comme nécessaire; hypothèse est imaginée et sa conséquence éventuelle ou contrefactuelle.</li></ul></section>
-</aside>
+
+<article class="gm-lesson" lang="fa" dir="rtl" aria-labelledby="gm-l26-title">
+  <header class="gm-hero">
+    <div class="gm-eyebrow">درس ۲۶ · Niveau avancé</div>
+    <h1 id="gm-l26-title"><span lang="fr" dir="ltr">L’expression de la condition et de l’hypothèse</span></h1>
+    <p class="gm-subtitle">بیان شرط و فرض؛ انتخاب درست زمان و mode در ساختارهای شرطی و فرضی</p>
+
+    <dl class="gm-meta">
+      <div><dt>شماره درس</dt><dd>26</dd></div>
+      <div><dt>صفحات کتاب</dt><dd>154–155</dd></div>
+      <div><dt>موضوع</dt><dd>Condition &amp; hypothèse</dd></div>
+      <div><dt>سطح</dt><dd>B1–B2 / Avancé</dd></div>
+    </dl>
+  </header>
+
+  <section>
+    <h2>هدف درس</h2>
+    <p>پس از این درس باید بتوانید تشخیص دهید یک جمله <strong>شرط واقعی یا قابل تحقق</strong> بیان می‌کند یا یک <strong>فرضِ تصورشده یا خلاف واقع</strong>؛ سپس بر اساس زمان رویداد و نوع رابط، بین <span class="fr" lang="fr">indicatif</span>، <span class="fr" lang="fr">conditionnel</span> و <span class="fr" lang="fr">subjonctif</span> انتخاب کنید.</p>
+  </section>
+
+  <section>
+    <h2>ایده اصلی</h2>
+    <div class="gm-grid">
+      <div class="gm-card">
+        <span class="gm-label">La condition</span>
+        <p>یک واقعیت یا حالت را به‌عنوان <strong>شرط ضروری</strong> برای وقوع نتیجه مطرح می‌کند.</p>
+        <div class="gm-example">
+          <div class="fr" lang="fr">Si tu acceptes, nous commencerons demain.</div>
+          <p class="gm-translation">اگر قبول کنی، فردا شروع می‌کنیم.</p>
+        </div>
+      </div>
+      <div class="gm-card">
+        <span class="gm-label">L’hypothèse</span>
+        <p>یک وضعیت را <strong>تصور</strong> می‌کند؛ نتیجه‌ی آن نیز احتمالی، فرضی یا خلاف واقع است.</p>
+        <div class="gm-example">
+          <div class="fr" lang="fr">Si tu habitais plus près, nous nous verrions plus souvent.</div>
+          <p class="gm-translation">اگر نزدیک‌تر زندگی می‌کردی، بیشتر همدیگر را می‌دیدیم.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>1. La condition avec « si »</h2>
+    <div class="gm-rule">
+      <span class="gm-label">قاعده</span>
+      <p>در بخش <span class="fr" lang="fr">condition</span>، <span class="fr" lang="fr">si</span> با <span class="fr" lang="fr">indicatif</span> می‌آید و نتیجه نیز به صورت یک واقعیت یا پیامد قابل تحقق بیان می‌شود.</p>
+      <div class="gm-formula">Si + présent → futur simple</div>
+    </div>
+
+    <div class="gm-example">
+      <div class="fr" lang="fr">Si vous confirmez aujourd’hui, nous préparerons le dossier demain.</div>
+      <p class="gm-translation">اگر امروز تأیید کنید، فردا پرونده را آماده می‌کنیم.</p>
+    </div>
+
+    <h3>شرط در گذشته، نتیجه در آینده</h3>
+    <p>کتاب یادآوری می‌کند که شرط می‌تواند از نظر زمانی در گذشته قرار داشته باشد و نتیجه هنوز مربوط به آینده باشد؛ در این حالت <span class="fr" lang="fr">passé composé</span> نیز می‌تواند در جمله‌ی شرط بیاید.</p>
+    <div class="gm-example">
+      <div class="fr" lang="fr">Si vous avez terminé le dossier, nous l’enverrons demain.</div>
+      <p class="gm-translation">اگر پرونده را تمام کرده‌اید، فردا آن را می‌فرستیم.</p>
+    </div>
+
+    <h3>وقتی خودِ شرط هم مربوط به آینده است</h3>
+    <div class="gm-note">
+      <span class="gm-label">نکته کلیدی</span>
+      <p>در این ساختار، حتی اگر شرط از نظر معنایی مربوط به آینده باشد، بعد از <span class="fr" lang="fr">si</span> معمولاً <strong>futur simple</strong> نمی‌آوریم.</p>
+    </div>
+    <div class="gm-success-box">
+      <div class="fr correct" lang="fr">✓ Si j’ai assez d’argent demain, j’achèterai ce billet.</div>
+    </div>
+    <div class="gm-error">
+      <div class="fr incorrect" lang="fr">✗ Si j’aurai assez d’argent demain, j’achèterai ce billet.</div>
+      <p>رویداد «داشتن پول» آینده است، اما زمان دستوری در جمله‌ی <span class="fr" lang="fr">si</span>، <span class="fr" lang="fr">présent</span> باقی می‌ماند.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. شرط با « à condition que » و « pourvu que »</h2>
+
+    <h3><span lang="fr" dir="ltr">à condition que + subjonctif</span></h3>
+    <div class="gm-formula">Proposition principale + à condition que + subjonctif</div>
+    <div class="gm-example">
+      <div class="fr" lang="fr">Vous pourrez participer à condition que vous soyez inscrit.</div>
+      <p class="gm-translation">می‌توانید شرکت کنید، به شرط اینکه ثبت‌نام کرده باشید.</p>
+    </div>
+
+    <h3><span lang="fr" dir="ltr">pourvu que + subjonctif</span></h3>
+    <div class="gm-example">
+      <div class="fr" lang="fr">Nous partirons demain pourvu qu’il ne pleuve pas.</div>
+      <p class="gm-translation">فردا راه می‌افتیم، به شرط اینکه باران نبارد.</p>
+    </div>
+
+    <div class="gm-note">
+      <span class="gm-label">توضیح تکمیلی آموزشی</span>
+      <p><span class="fr" lang="fr">à condition que</span> معمولاً شرط را خنثی‌تر بیان می‌کند؛ <span class="fr" lang="fr">pourvu que</span> می‌تواند کمی حالت خواست، امید یا اهمیت داشتن آن شرط را نیز منتقل کند.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>3. L’hypothèse dans le futur</h2>
+    <div class="gm-rule">
+      <span class="gm-label">ساختار</span>
+      <div class="gm-formula">Si + imparfait → conditionnel présent</div>
+      <p>برای یک وضعیت آینده که به شکل فرضی‌تر تصور می‌شود، <span class="fr" lang="fr">imparfait</span> نقش فاصله گرفتن از واقعیت را دارد.</p>
+    </div>
+
+    <div class="gm-example">
+      <div class="fr" lang="fr">Si vous veniez demain, nous pourrions en discuter.</div>
+      <p class="gm-translation">اگر فردا می‌آمدید، می‌توانستیم درباره‌اش صحبت کنیم.</p>
+    </div>
+
+    <div class="gm-card">
+      <span class="gm-label">مقایسه</span>
+      <div class="fr" lang="fr">Si tu viens demain, je serai content.</div>
+      <p class="gm-translation">شرط مستقیم‌تر و واقعی‌تر.</p>
+      <div class="fr" lang="fr">Si tu venais demain, je serais content.</div>
+      <p class="gm-translation">فرضی‌تر؛ گوینده وضعیت را تصور می‌کند.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>4. L’hypothèse dans le présent</h2>
+    <div class="gm-formula">Si + imparfait → conditionnel présent</div>
+    <p>همین الگو برای یک وضعیت غیرواقعی یا خلاف واقع در زمان حال نیز استفاده می‌شود.</p>
+    <div class="gm-example">
+      <div class="fr" lang="fr">Si j’avais une voiture, je partirais plus souvent en week-end.</div>
+      <p class="gm-translation">اگر ماشین داشتم، بیشتر آخر هفته‌ها سفر می‌رفتم. <strong>مفهوم ضمنی:</strong> اکنون ماشین ندارم.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>5. L’hypothèse dans le passé</h2>
+    <div class="gm-rule">
+      <span class="gm-label">فرض خلاف واقع گذشته</span>
+      <div class="gm-formula">Si + plus-que-parfait → conditionnel passé</div>
+    </div>
+    <div class="gm-example">
+      <div class="fr" lang="fr">Si tu m’avais prévenu, je serais venu.</div>
+      <p class="gm-translation">اگر به من خبر داده بودی، می‌آمدم. در واقع خبر ندادی و من هم نیامدم.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>6. رابطه‌های زمانی ظریف‌تر</h2>
+
+    <h3>فرض در گذشته، پیامد مرتبط با زمان حال</h3>
+    <p>کتاب نشان می‌دهد که زمانِ فرض و زمانِ پیامد الزاماً یکسان نیستند. ممکن است فرض مربوط به گذشته باشد اما پیامد در موقعیت «اکنون» مطرح شود.</p>
+    <div class="gm-example">
+      <div class="fr" lang="fr">Si j’avais reçu ma bourse hier, je t’aurais invité à dîner aujourd’hui.</div>
+      <p class="gm-translation">اگر دیروز بورسیه‌ام را گرفته بودم، امروز تو را به شام دعوت می‌کردم.</p>
+    </div>
+
+    <h3>Hypothèse intemporelle + conséquence passée</h3>
+    <div class="gm-rule">
+      <div class="gm-formula">Si + imparfait → conditionnel passé</div>
+      <p>اگر شرط یک ویژگی کلی یا نسبتاً پایدار باشد ولی نتیجه مربوط به گذشته باشد، این ترکیب ممکن است.</p>
+    </div>
+    <div class="gm-example">
+      <div class="fr" lang="fr">Si j’étais moins distrait, je n’aurais pas oublié mes clés hier.</div>
+      <p class="gm-translation">اگر کم‌حواس‌تر بودم، دیروز کلیدهایم را فراموش نمی‌کردم.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>7. « au cas où » + conditionnel</h2>
+    <div class="gm-formula">au cas où + conditionnel</div>
+    <p>برای یک احتمال احتیاطی: «در صورتی که / اگر احیاناً».</p>
+    <div class="gm-example">
+      <div class="fr" lang="fr">Prenez mon numéro au cas où vous auriez un problème.</div>
+      <p class="gm-translation">شماره‌ام را بردارید، برای حالتی که احیاناً مشکلی پیش بیاید.</p>
+    </div>
+    <div class="gm-error">
+      <div class="fr incorrect" lang="fr">✗ Au cas où il pleuve…</div>
+      <div class="fr correct" lang="fr">✓ Au cas où il pleuvrait…</div>
+      <p>در ساخت آموزش‌داده‌شده در این درس، <span class="fr" lang="fr">au cas où</span> با <span class="fr" lang="fr">conditionnel</span> می‌آید، نه <span class="fr" lang="fr">subjonctif</span>.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>8. « en supposant que » و « en admettant que »</h2>
+    <div class="gm-grid">
+      <div class="gm-card">
+        <span class="gm-label fr" lang="fr">en supposant que + subjonctif</span>
+        <div class="gm-example">
+          <div class="fr" lang="fr">En supposant qu’il accepte, quand commencerons-nous ?</div>
+          <p class="gm-translation">با فرض اینکه قبول کند، چه زمانی شروع می‌کنیم؟</p>
+        </div>
+      </div>
+      <div class="gm-card">
+        <span class="gm-label fr" lang="fr">en admettant que + subjonctif</span>
+        <div class="gm-example">
+          <div class="fr" lang="fr">En admettant qu’elle soit disponible, il faudra encore la convaincre.</div>
+          <p class="gm-translation">با فرض اینکه او وقت داشته باشد، باز هم باید متقاعدش کنیم.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contrastها و تفاوت‌های ظریف</h2>
+    <div class="gm-table-wrap" role="region" aria-label="جدول مقایسه ساختارهای شرط و فرض" tabindex="0">
+      <table>
+        <thead>
+          <tr>
+            <th>ساختار</th>
+            <th>کاربرد</th>
+            <th>Mode / Temps</th>
+            <th>مثال</th>
+            <th>نکته تمایز</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="fr" lang="fr">si + présent</td>
+            <td>شرط واقعی/قابل تحقق</td>
+            <td class="fr" lang="fr">indicatif → futur</td>
+            <td class="fr" lang="fr">Si tu viens, je t’aiderai.</td>
+            <td>بعد از <span class="fr" lang="fr">si</span> futur نیاورید.</td>
+          </tr>
+          <tr>
+            <td class="fr" lang="fr">si + imparfait</td>
+            <td>فرض حال یا آینده</td>
+            <td class="fr" lang="fr">conditionnel présent</td>
+            <td class="fr" lang="fr">Si tu venais, je t’aiderais.</td>
+            <td><span class="fr" lang="fr">imparfait</span> می‌تواند مرجع آینده داشته باشد.</td>
+          </tr>
+          <tr>
+            <td class="fr" lang="fr">si + plus-que-parfait</td>
+            <td>فرض خلاف واقع گذشته</td>
+            <td class="fr" lang="fr">conditionnel passé</td>
+            <td class="fr" lang="fr">Si tu étais venu, je t’aurais aidé.</td>
+            <td>شرط دیگر در گذشته قابل تحقق نیست.</td>
+          </tr>
+          <tr>
+            <td class="fr" lang="fr">à condition que</td>
+            <td>شرط صریح</td>
+            <td class="fr" lang="fr">subjonctif</td>
+            <td class="fr" lang="fr">à condition que tu viennes</td>
+            <td>«به شرط اینکه»</td>
+          </tr>
+          <tr>
+            <td class="fr" lang="fr">pourvu que</td>
+            <td>شرط</td>
+            <td class="fr" lang="fr">subjonctif</td>
+            <td class="fr" lang="fr">pourvu qu’il fasse beau</td>
+            <td>می‌تواند بار عاطفی/امید بیشتری داشته باشد.</td>
+          </tr>
+          <tr>
+            <td class="fr" lang="fr">au cas où</td>
+            <td>احتمال احتیاطی</td>
+            <td class="fr" lang="fr">conditionnel</td>
+            <td class="fr" lang="fr">au cas où il pleuvrait</td>
+            <td>دام مهم: نه subjonctif.</td>
+          </tr>
+          <tr>
+            <td class="fr" lang="fr">en supposant que</td>
+            <td>فرض ذهنی</td>
+            <td class="fr" lang="fr">subjonctif</td>
+            <td class="fr" lang="fr">en supposant qu’il accepte</td>
+            <td>برای فرض کردن یک وضعیت.</td>
+          </tr>
+          <tr>
+            <td class="fr" lang="fr">en admettant que</td>
+            <td>پذیرش موقت یک فرض</td>
+            <td class="fr" lang="fr">subjonctif</td>
+            <td class="fr" lang="fr">en admettant qu’il ait raison</td>
+            <td>به‌ویژه در استدلال مفید است.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>استثناها و محدودیت‌ها</h2>
+    <div class="gm-error">
+      <span class="gm-label">1) Futur بعد از si</span>
+      <div class="fr incorrect" lang="fr">✗ Si tu viendras demain…</div>
+      <div class="fr correct" lang="fr">✓ Si tu viens demain…</div>
+    </div>
+    <div class="gm-error">
+      <span class="gm-label">2) Conditionnel بعد از si در الگوی فرضی معیار</span>
+      <div class="fr incorrect" lang="fr">✗ Si j’aurais plus de temps, je voyagerais.</div>
+      <div class="fr correct" lang="fr">✓ Si j’avais plus de temps, je voyagerais.</div>
+    </div>
+    <div class="gm-note">
+      <span class="gm-label">3) Imparfait را فقط «گذشته» ترجمه نکنید</span>
+      <div class="fr" lang="fr">Si tu venais demain…</div>
+      <p>فعل از نظر دستوری <span class="fr" lang="fr">imparfait</span> است، اما مرجع زمانی «فردا» است. نقش آن اینجا ساختن فرض و فاصله از واقعیت است.</p>
+    </div>
+    <div class="gm-note">
+      <span class="gm-label">4) au cas où یک الگوی متفاوت دارد</span>
+      <div class="gm-chip-list">
+        <span class="gm-chip">à condition que → subjonctif</span>
+        <span class="gm-chip">pourvu que → subjonctif</span>
+        <span class="gm-chip">en supposant que → subjonctif</span>
+        <span class="gm-chip">en admettant que → subjonctif</span>
+        <span class="gm-chip">au cas où → conditionnel</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>خطاهای رایج</h2>
+
+    <div class="gm-card">
+      <h3>فکر کردن به «زمان واقعی» به جای «زمان دستوری»</h3>
+      <div class="fr incorrect" lang="fr">✗ Si elle arrivera tôt, nous sortirons.</div>
+      <div class="fr correct" lang="fr">✓ Si elle arrive tôt, nous sortirons.</div>
+      <p>آینده بودنِ رویداد الزاماً به معنی futur گرفتنِ فعل بعد از <span class="fr" lang="fr">si</span> نیست.</p>
+    </div>
+
+    <div class="gm-card">
+      <h3>Conditionnel در هر دو بخش</h3>
+      <div class="fr incorrect" lang="fr">✗ Si j’aurais une voiture, je voyagerais.</div>
+      <div class="fr correct" lang="fr">✓ Si j’avais une voiture, je voyagerais.</div>
+    </div>
+
+    <div class="gm-card">
+      <h3>زمان اشتباه برای فرض گذشته</h3>
+      <div class="fr incorrect" lang="fr">✗ Si tu venais hier, je serais venu.</div>
+      <div class="fr correct" lang="fr">✓ Si tu étais venu hier, je serais venu.</div>
+      <p>چون خودِ شرط مربوط به گذشته‌ی تحقق‌نیافته است، <span class="fr" lang="fr">plus-que-parfait</span> لازم است.</p>
+    </div>
+
+    <div class="gm-card">
+      <h3>Mode اشتباه بعد از conjunction</h3>
+      <div class="fr incorrect" lang="fr">✗ à condition que tu es là</div>
+      <div class="fr correct" lang="fr">✓ à condition que tu sois là</div>
+      <br>
+      <div class="fr incorrect" lang="fr">✗ pourvu qu’il fait beau</div>
+      <div class="fr correct" lang="fr">✓ pourvu qu’il fasse beau</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>زبان واقعی و Register</h2>
+    <div class="gm-note">
+      <span class="gm-label">توضیح تکمیلی آموزشی</span>
+      <p>خود صفحه‌ی درس این موارد را به شکل یک جدول register طبقه‌بندی نمی‌کند، اما در کاربرد واقعی:</p>
+      <ul>
+        <li><span class="fr" lang="fr">si</span>: بسیار طبیعی در گفتار و نوشتار و انتخاب پیش‌فرض.</li>
+        <li><span class="fr" lang="fr">au cas où</span>: بسیار رایج، به‌ویژه برای احتیاط.</li>
+        <li><span class="fr" lang="fr">à condition que</span>: استاندارد و مناسب گفتار و نوشتار رسمی.</li>
+        <li><span class="fr" lang="fr">pourvu que</span>: رایج و کمی expressiveتر.</li>
+        <li><span class="fr" lang="fr">en supposant que</span> و <span class="fr" lang="fr">en admettant que</span>: مناسب توضیح و استدلال، به‌خصوص در نوشتار.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>نکات کلیدی یادگیری</h2>
+    <div class="gm-grid">
+      <div class="gm-card">
+        <span class="gm-label">1. شرط واقعی است یا فرضی؟</span>
+        <ul>
+          <li>واقعی‌تر → <span class="fr" lang="fr">si + présent</span></li>
+          <li>فرضی حال/آینده → <span class="fr" lang="fr">si + imparfait</span></li>
+          <li>خلاف واقع گذشته → <span class="fr" lang="fr">si + plus-que-parfait</span></li>
+        </ul>
+      </div>
+      <div class="gm-card">
+        <span class="gm-label">2. نتیجه مربوط به چه زمانی است؟</span>
+        <ul>
+          <li>حال/آینده فرضی → <span class="fr" lang="fr">conditionnel présent</span></li>
+          <li>گذشته‌ی تحقق‌نیافته → <span class="fr" lang="fr">conditionnel passé</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>خلاصه‌ای که باید به خاطر بسپارید</h2>
+    <div class="gm-summary">
+      <ul>
+        <li>شرط واقعی/قابل تحقق → <span class="fr" lang="fr">si + indicatif</span>؛ برای آینده معمولاً <span class="fr" lang="fr">si + présent → futur</span>.</li>
+        <li>فرض حال یا آینده → <span class="fr" lang="fr">si + imparfait → conditionnel présent</span>.</li>
+        <li>فرض تحقق‌نیافته در گذشته → <span class="fr" lang="fr">si + plus-que-parfait → conditionnel passé</span>.</li>
+        <li>ویژگی کلی + نتیجه‌ی گذشته نیز می‌تواند → <span class="fr" lang="fr">si + imparfait → conditionnel passé</span>.</li>
+        <li><span class="fr" lang="fr">à condition que / pourvu que / en supposant que / en admettant que</span> → <strong>subjonctif</strong>.</li>
+        <li><span class="fr" lang="fr">au cas où</span> → <strong>conditionnel</strong>.</li>
+        <li>در این ساخت‌ها از <span class="fr" lang="fr">si + futur</span> و <span class="fr" lang="fr">si + conditionnel</span> اجتناب کنید.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>تمرین</h2>
+    <p>فعل‌ها را به شکل مناسب صرف کنید.</p>
+    <ol class="gm-exercises">
+      <li><span class="fr" lang="fr">Si tu (finir) ______ tôt ce soir, nous (aller) ______ au cinéma.</span></li>
+      <li><span class="fr" lang="fr">Si j’(avoir) ______ plus de temps, je (apprendre) ______ l’italien.</span></li>
+      <li><span class="fr" lang="fr">Si vous me (prévenir) ______ hier, je (pouvoir) ______ vous aider.</span></li>
+      <li><span class="fr" lang="fr">Tu peux utiliser ma voiture à condition que tu la (ramener) ______ avant minuit.</span></li>
+      <li><span class="fr" lang="fr">Nous déjeunerons dehors pourvu qu’il ne (pleuvoir) ______ pas.</span></li>
+      <li><span class="fr" lang="fr">Prenez une copie de votre passeport au cas où vous la (perdre) ______.</span></li>
+      <li><span class="fr" lang="fr">En supposant qu’il (avoir) ______ raison, que devons-nous faire ?</span></li>
+      <li><span class="fr" lang="fr">Si j’(être) ______ moins distrait, je n’(oublier) ______ pas mon rendez-vous hier.</span></li>
+    </ol>
+
+    <details>
+      <summary>نمایش پاسخ تمرین‌ها</summary>
+      <ol>
+        <li><span class="fr" lang="fr">finis / irons</span></li>
+        <li><span class="fr" lang="fr">avais / apprendrais</span></li>
+        <li><span class="fr" lang="fr">aviez prévenu / aurais pu</span></li>
+        <li><span class="fr" lang="fr">ramènes</span></li>
+        <li><span class="fr" lang="fr">pleuve</span></li>
+        <li><span class="fr" lang="fr">perdriez</span></li>
+        <li><span class="fr" lang="fr">ait</span></li>
+        <li><span class="fr" lang="fr">étais / aurais oublié</span></li>
+      </ol>
+      <p>در شماره ۸، <span class="fr" lang="fr">étais</span> یک ویژگی کلی را به‌صورت فرضی مطرح می‌کند، اما نتیجه مربوط به گذشته است؛ بنابراین <span class="fr" lang="fr">conditionnel passé</span> می‌آید.</p>
+    </details>
+  </section>
+
+  <footer class="gm-source">
+    مبنای آموزشی: <span lang="fr" dir="ltr">Grammaire Progressive du Français — Niveau Avancé — 3e édition</span>، درس ۲۶، صفحات 154–155. مثال‌های آموزشی این صفحه بازنویسی/تألیف شده‌اند و متن تمرین‌های کتاب عیناً بازتولید نشده است.
+  </footer>
 </article>

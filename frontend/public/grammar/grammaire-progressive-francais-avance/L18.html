@@ -1,85 +1,259 @@
-<article class="adv-lesson" data-lesson-id="ADV-L18">
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>درس ۱۸ — Les pronoms personnels compléments</title>
 <style>
-.adv-lesson{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.75;color:#172033;max-width:980px;margin:0 auto;padding:8px 2px 40px}
-.adv-lesson *{box-sizing:border-box}
-.adv-lesson .adv-hero{padding:24px;border:1px solid #e3e8f0;border-radius:18px;background:#fff;margin-bottom:22px}
-.adv-lesson .adv-kicker{font-size:.86rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.65;margin:0 0 6px}
-.adv-lesson h2,.adv-lesson h3{line-height:1.35}
-.adv-lesson h2{font-size:1.65rem;margin:0 0 4px}
-.adv-lesson .fa-title{direction:rtl;text-align:right;font-weight:650;margin:.2rem 0 .8rem}
-.adv-lesson .summary{direction:rtl;text-align:right;margin:0}
-.adv-lesson .meta{margin-top:12px;font-size:.9rem;opacity:.72}
-.adv-lesson .subtopic{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin:18px 0;background:#fff}
-.adv-lesson .subtopic h3{margin:0 0 2px;font-size:1.25rem}
-.adv-lesson .fa-subtitle{direction:rtl;text-align:right;font-weight:600;margin:.1rem 0 1rem}
-.adv-lesson .rule{direction:ltr;text-align:left;padding:12px 14px;border-left:4px solid currentColor;background:#f7f9fc;border-radius:8px;margin:12px 0}
-.adv-lesson .teaching,.adv-lesson .trap{direction:rtl;text-align:right}
-.adv-lesson .example{direction:ltr;text-align:left;font-style:italic;padding:10px 14px;background:#f7f9fc;border-radius:8px}
-.adv-lesson .trap{padding:10px 14px;border:1px dashed #c7ced9;border-radius:8px}
-.adv-lesson .source{font-size:.82rem;opacity:.65;margin-top:12px}
-.adv-lesson .notes{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin-top:22px}
-.adv-lesson .notes h3{margin-top:0}
-.adv-lesson .notes section{margin:16px 0}
-.adv-lesson .notes h4{margin:0 0 6px}
-.adv-lesson .notes ul{margin-top:4px}
+.gm-lesson{
+  --gm-fg:var(--foreground,#111827);
+  --gm-card:var(--card,#f8fafc);
+  --gm-card-fg:var(--card-foreground,var(--foreground,#111827));
+  --gm-muted:var(--muted,#f1f5f9);
+  --gm-muted-fg:var(--muted-foreground,#64748b);
+  --gm-border:var(--border,#e2e8f0);
+  --gm-primary:var(--primary,#2563eb);
+  --gm-accent:var(--accent,#eef2ff);
+  --gm-accent-fg:var(--accent-foreground,#1e3a8a);
+  --gm-success:#16a34a;--gm-danger:#dc2626;--gm-warning:#d97706;
+  color:var(--gm-fg);background:transparent;font-family:inherit;line-height:1.9;
+  max-width:980px;margin:auto;padding:1rem;text-align:right
+}
+@media (prefers-color-scheme:dark){
+.gm-lesson{--gm-fg:var(--foreground,#e5e7eb);--gm-card:var(--card,#111827);
+--gm-card-fg:var(--card-foreground,#e5e7eb);--gm-muted:var(--muted,#172033);
+--gm-muted-fg:var(--muted-foreground,#9ca3af);--gm-border:var(--border,#273449);
+--gm-accent:var(--accent,#172554);--gm-accent-fg:var(--accent-foreground,#dbeafe)}
+}
+.dark .gm-lesson,[data-theme=dark] .gm-lesson,[data-mode=dark] .gm-lesson{
+--gm-fg:var(--foreground,#e5e7eb);--gm-card:var(--card,#111827);
+--gm-card-fg:var(--card-foreground,#e5e7eb);--gm-muted:var(--muted,#172033);
+--gm-muted-fg:var(--muted-foreground,#9ca3af);--gm-border:var(--border,#273449);
+--gm-accent:var(--accent,#172554);--gm-accent-fg:var(--accent-foreground,#dbeafe)
+}
+.gm-lesson *{box-sizing:border-box}
+.gm-hero,.gm-box,.gm-summary{border:1px solid var(--gm-border);background:var(--gm-card);
+color:var(--gm-card-fg);border-radius:1rem;padding:1rem;margin:.85rem 0}
+.gm-hero{padding:1.25rem;margin-top:0}
+.gm-kicker{color:var(--gm-primary);font-weight:800;font-size:.9rem}
+.gm-lesson h1,.gm-lesson h2,.gm-lesson h3{color:var(--gm-fg);line-height:1.45}
+.gm-lesson h1{font-size:clamp(1.5rem,3vw,2.1rem);margin:.2rem 0}
+.gm-lesson h2{font-size:1.3rem;margin-top:1.8rem;padding-bottom:.45rem;border-bottom:1px solid var(--gm-border)}
+.gm-lesson h3{font-size:1.08rem;margin:1.2rem 0 .4rem}
+.gm-meta{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.8rem}
+.gm-badge{border:1px solid var(--gm-border);background:var(--gm-muted);border-radius:999px;padding:.3rem .65rem;font-size:.88rem}
+.gm-box.tip{border-inline-start:4px solid var(--gm-primary);background:var(--gm-accent);color:var(--gm-accent-fg)}
+.gm-box.bad{border-inline-start:4px solid var(--gm-danger)}
+.gm-box.warn{border-inline-start:4px solid var(--gm-warning)}
+.gm-fr{direction:ltr;unicode-bidi:isolate;text-align:left}
+.gm-fr.inline{display:inline;font-weight:650}
+.gm-example{direction:ltr;text-align:left;unicode-bidi:isolate;background:var(--gm-muted);
+border:1px solid var(--gm-border);border-radius:.7rem;padding:.75rem .9rem;margin:.5rem 0}
+.gm-translation{direction:rtl;text-align:right;color:var(--gm-muted-fg);font-size:.93rem;margin-top:.25rem}
+.gm-formula{direction:ltr;text-align:center;unicode-bidi:isolate;font-family:ui-monospace,monospace;font-weight:700;
+padding:.7rem;border:1px dashed var(--gm-border);border-radius:.7rem;background:var(--gm-muted);margin:.7rem 0;overflow-x:auto}
+.gm-table-wrap{overflow-x:auto;margin:.85rem 0;border:1px solid var(--gm-border);border-radius:.8rem}
+.gm-lesson table{width:100%;border-collapse:collapse;min-width:620px;background:var(--gm-card);color:var(--gm-card-fg)}
+.gm-lesson th,.gm-lesson td{padding:.7rem .8rem;border-bottom:1px solid var(--gm-border);vertical-align:top}
+.gm-lesson th{background:var(--gm-muted);font-weight:800}.gm-lesson tr:last-child td{border-bottom:0}
+.gm-lesson ul,.gm-lesson ol{padding-right:1.25rem}.gm-ok{color:var(--gm-success);font-weight:800}.gm-no{color:var(--gm-danger);font-weight:800}
+.gm-footer-note{color:var(--gm-muted-fg);font-size:.9rem;margin-top:1.2rem}
+@media(max-width:640px){.gm-lesson{padding:.75rem;font-size:.96rem}.gm-hero,.gm-box,.gm-summary{padding:.85rem;border-radius:.75rem}.gm-lesson h2{font-size:1.16rem}}
 </style>
-<header class="adv-hero">
-<p class="adv-kicker">Lesson 18 · ADV-L18</p>
-<h2 lang="fr" dir="ltr">Les pronoms personnels compléments</h2>
-<p class="fa-title" lang="fa">ضمیرهای مفعولی</p>
-<p class="summary" lang="fa">این درس روی «ضمیرهای مفعولی» تمرکز دارد و زیرموضوع‌های جایگاه یک ضمیر مفعولی، ترتیب دو ضمیر، ضمیرها در امری، le خنثی، en و y خنثی را پوشش می‌دهد.</p>
-<p class="meta">Printed pages 122–125 · PDF pages 124–127 · target 300 questions</p>
+</head>
+<body>
+<article class="gm-lesson">
+<header class="gm-hero">
+<div class="gm-kicker">درس ۱۸</div>
+<h1><span class="gm-fr inline" lang="fr">Les pronoms personnels compléments</span></h1>
+<p>ضمایر شخصی مفعولی، ترتیب قرارگیری آن‌ها، کاربرد در امر مثبت و منفی، و ضمایر خنثای <span class="gm-fr inline">le / en / y</span>.</p>
+<div class="gm-meta"><span class="gm-badge">صفحات 122 تا 125</span><span class="gm-badge">سطح B1–B2 / Avancé</span><span class="gm-badge">Pronoms compléments</span></div>
 </header>
-<section class="subtopic" id="ADV-L18-ST01">
-<h3 lang="fr" dir="ltr">Place d’un pronom</h3>
-<p class="fa-subtitle" lang="fa">جایگاه یک ضمیر مفعولی</p>
-<p class="rule" lang="fr">Le pronom précède le verbe aux temps simples et composés; impératif affirmatif et négatif ont des placements différents.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «جایگاه یک ضمیر مفعولی» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Je lui ai déjà répondu.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز ضمیر را پس از فعل صرف‌شده یا پس از participe passé قرار می‌دهد.</p>
-<p class="source"><code>ADV-L18:book-p122-p123:one-pronoun</code> · printed 122–123 · PDF 124–125</p>
+
+<section>
+<h2>هدف درس</h2>
+<p>پس از این درس باید بتوانید جای صحیح ضمایر مفعولی را در زمان‌های ساده و مرکب پیدا کنید، ترتیب دو ضمیر را رعایت کنید، تفاوت <span class="gm-fr inline">impératif affirmatif</span> و <span class="gm-fr inline">impératif négatif</span> را تشخیص دهید و بین <span class="gm-fr inline">le</span>، <span class="gm-fr inline">en</span>، <span class="gm-fr inline">y</span> و <span class="gm-fr inline">lui / leur</span> انتخاب درست انجام دهید.</p>
 </section>
-<section class="subtopic" id="ADV-L18-ST02">
-<h3 lang="fr" dir="ltr">Ordre de deux pronoms</h3>
-<p class="fa-subtitle" lang="fa">ترتیب دو ضمیر</p>
-<p class="rule" lang="fr">L’ordre me/te/se/nous/vous + le/la/les + lui/leur + y + en dépend des classes, non de l’ordre français libre.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «ترتیب دو ضمیر» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Je le lui donnerai demain.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز ترتیب ضمیرها را از ترتیب متمم‌های اسمی یا ترجمهٔ فارسی تقلید می‌کند.</p>
-<p class="source"><code>ADV-L18:book-p122-p123:two-pronouns</code> · printed 122–123 · PDF 124–125</p>
+
+<section>
+<h2>ایده اصلی</h2>
+<div class="gm-box tip">در فرانسه، ضمیر فقط «جای اسم» را نمی‌گیرد؛ جایگاه آن در جمله نیز قاعده دارد. برای انتخاب ضمیر، ابتدا construction فعل را پیدا کنید: مستقیم، با <span class="gm-fr inline">à</span> یا با <span class="gm-fr inline">de</span>.</div>
+<div class="gm-example">Je vois Marie. → Je la vois.<div class="gm-translation">من ماری را می‌بینم. ← او را می‌بینم.</div></div>
+<div class="gm-example">Je téléphone à Paul. → Je lui téléphone.</div>
+<div class="gm-example">Je pense à ce problème. → J’y pense.</div>
+<div class="gm-example">Je parle de ce problème. → J’en parle.</div>
 </section>
-<section class="subtopic" id="ADV-L18-ST03">
-<h3 lang="fr" dir="ltr">Pronoms à l’impératif</h3>
-<p class="fa-subtitle" lang="fa">ضمیرها در امری</p>
-<p class="rule" lang="fr">L’impératif affirmatif place les pronoms après le verbe et modifie ordre et formes moi/toi; le négatif revient à l’ordre préverbal.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «ضمیرها در امری» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Donne-le-moi, mais ne me le prête pas.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز ترتیب امری مثبت را در امری منفی هم نگه می‌دارد یا me/te را به‌جای moi/toi می‌آورد.</p>
-<p class="source"><code>ADV-L18:book-p122-p125:imperative-pronouns</code> · printed 122–125 · PDF 124–127</p>
+
+<section>
+<h2>1) جای یک ضمیر مفعولی</h2>
+<h3>زمان ساده</h3><div class="gm-formula">Sujet + pronom + verbe</div>
+<div class="gm-example">Je vois Paul. → Je le vois.</div>
+<div class="gm-example">Je téléphone à Marie. → Je lui téléphone.</div>
+<h3>زمان مرکب</h3><p>ضمیر قبل از <span class="gm-fr inline">auxiliaire</span> می‌آید.</p>
+<div class="gm-formula">Sujet + pronom + auxiliaire + participe passé</div>
+<div class="gm-example">J’ai vu mes amis. → Je les ai vus.</div>
+<div class="gm-example">J’ai téléphoné à Marie. → Je lui ai téléphoné.</div>
+<h3>جمله منفی</h3><div class="gm-formula">Sujet + ne + pronom + verbe + pas / plus / jamais...</div>
+<div class="gm-example">Je ne le vois plus.</div>
+<div class="gm-example">Je ne lui ai pas téléphoné.</div>
+<div class="gm-box bad"><span class="gm-no">❌</span> <span class="gm-fr inline">Je ne téléphone lui pas.</span><br><span class="gm-ok">✅</span> <span class="gm-fr inline">Je ne lui téléphone pas.</span></div>
 </section>
-<section class="subtopic" id="ADV-L18-ST04">
-<h3 lang="fr" dir="ltr">Le neutre</h3>
-<p class="fa-subtitle" lang="fa">le خنثی</p>
-<p class="rule" lang="fr">Le neutre reprend une proposition, un adjectif ou un attribut avec construction directe.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «le خنثی» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Elle est prête et elle le sait.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز le خنثی را با جنس و شمارِ صفت یا جملهٔ مرجع مطابق می‌کند.</p>
-<p class="source"><code>ADV-L18:book-p124-p125:neutral-le</code> · printed 124–125 · PDF 126–127</p>
+
+<section>
+<h2>2) مرور سریع نوع ضمیرها</h2>
+<div class="gm-table-wrap"><table>
+<thead><tr><th>ضمیر</th><th>کاربرد</th><th>مثال</th></tr></thead>
+<tbody>
+<tr><td class="gm-fr">me, te, se, nous, vous</td><td>شخص / انعکاسی</td><td class="gm-fr">Il me parle.</td></tr>
+<tr><td class="gm-fr">le, la, les</td><td>COD</td><td class="gm-fr">Je les vois.</td></tr>
+<tr><td class="gm-fr">lui, leur</td><td><span class="gm-fr inline">à + personne</span></td><td class="gm-fr">Je lui téléphone.</td></tr>
+<tr><td class="gm-fr">y</td><td>مکان یا <span class="gm-fr inline">à + chose / idée</span></td><td class="gm-fr">J’y pense.</td></tr>
+<tr><td class="gm-fr">en</td><td><span class="gm-fr inline">de + chose / idée</span> یا مقدار</td><td class="gm-fr">J’en parle.</td></tr>
+</tbody></table></div>
 </section>
-<section class="subtopic" id="ADV-L18-ST05">
-<h3 lang="fr" dir="ltr">En et y neutres</h3>
-<p class="fa-subtitle" lang="fa">en و y خنثی</p>
-<p class="rule" lang="fr">En reprend de + groupe ou proposition; y reprend à + groupe ou proposition, avec contraintes de référence.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «en و y خنثی» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Je pense à ce problème et j’y pense souvent; je parle de cette solution et j’en parle aussi.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز en و y را تنها ضمیر مکان می‌داند و حاکمیت de/à در فعل یا صفت را نادیده می‌گیرد.</p>
-<p class="source"><code>ADV-L18:book-p124-p125:en-y</code> · printed 124–125 · PDF 126–127</p>
+
+<section>
+<h2>3) ترتیب دو ضمیر در جمله عادی</h2>
+<div class="gm-formula">me / te / se / nous / vous → le / la / les → lui / leur → y → en</div>
+<div class="gm-example">Il donne le document à Marie. → Il le lui donne.</div>
+<div class="gm-example">Elle me donne la clé. → Elle me la donne.</div>
+<div class="gm-example">Il me parle de son projet. → Il m’en parle.</div>
+<div class="gm-example">Je m’intéresse à ce sujet. → Je m’y intéresse.</div>
+<div class="gm-example">Tu donnes de l’argent à Paul. → Tu lui en donnes.</div>
+<div class="gm-box bad"><span class="gm-no">❌</span> <span class="gm-fr inline">Il lui le donne.</span><br><span class="gm-ok">✅</span> <span class="gm-fr inline">Il le lui donne.</span></div>
+<h3>نفی ترتیب را عوض نمی‌کند</h3><div class="gm-example">Elle me la donne. → Elle ne me la donne pas.</div>
+<h3>ساختار مهم <span class="gm-fr inline">il y en a</span></h3><div class="gm-example">Il y a des restaurants dans ce quartier. → Il y en a plusieurs.</div>
 </section>
-<aside class="notes"><h3>Notes avancées</h3>
-<section><h4>Exceptions / استثناها</h4><ul><li>L’impératif affirmatif change l’ordre et emploie moi/toi; l’impératif négatif reprend l’ordre préverbal.</li><li>Le, en et y peuvent reprendre une proposition entière et sont alors neutres.</li></ul></section>
-<section><h4>Contrastes / تقابل‌ها</h4><ul><li>le/la/les COD vs lui/leur COI</li><li>en lié à de vs y lié à à</li><li>ordre déclaratif vs impératif affirmatif</li></ul></section>
-<section><h4>Restrictions / محدودیت‌ها</h4><ul><li>L’ordre des groupes de pronoms est fixe; la référence humaine et le type de préposition limitent en/y.</li></ul></section>
-<section><h4>Temporal notes / نکات زمانی</h4><ul><li>Aux temps composés, les pronoms précèdent l’auxiliaire; l’accord du participe peut dépendre du COD antéposé.</li></ul></section>
-<section><h4>Semantic notes / نکات معنایی</h4><ul><li>Les pronoms neutres reprennent contenu propositionnel, état ou relation, pas seulement un nom.</li></ul></section>
-</aside>
+
+<section>
+<h2>4) Impératif affirmatif</h2>
+<p>در امر مثبت، ضمیر بعد از فعل می‌آید و با خط تیره متصل می‌شود.</p>
+<div class="gm-formula">Verbe + pronom</div>
+<div class="gm-example">Dis-le !</div><div class="gm-example">Téléphone-lui !</div><div class="gm-example">Vas-y !</div><div class="gm-example">Penses-y !</div><div class="gm-example">Prends-en !</div>
+<div class="gm-box tip">جمله عادی: <span class="gm-fr inline">Tu le prends.</span><br>امر مثبت: <span class="gm-fr inline">Prends-le !</span></div>
+</section>
+
+<section>
+<h2>5) Impératif négatif</h2>
+<div class="gm-formula">Ne + pronom + verbe + pas</div>
+<div class="gm-table-wrap"><table><thead><tr><th>امر مثبت</th><th>امر منفی</th></tr></thead><tbody>
+<tr><td class="gm-fr">Dis-le !</td><td class="gm-fr">Ne le dis pas !</td></tr>
+<tr><td class="gm-fr">Téléphone-lui !</td><td class="gm-fr">Ne lui téléphone pas !</td></tr>
+<tr><td class="gm-fr">Vas-y !</td><td class="gm-fr">N’y va pas !</td></tr>
+<tr><td class="gm-fr">Prends-en !</td><td class="gm-fr">N’en prends pas !</td></tr>
+</tbody></table></div>
+</section>
+
+<section>
+<h2>6) ترتیب دو ضمیر در impératif affirmatif</h2>
+<div class="gm-formula">le / la / les → moi / toi / nous / vous / lui / leur → y → en</div>
+<div class="gm-example">Donne le livre à moi. → Donne-le-moi !</div>
+<div class="gm-example">Donnez cette lettre à Paul. → Donnez-la-lui !</div>
+<div class="gm-example">Donnez-nous des nouvelles. → Donnez-nous-en !</div>
+<div class="gm-example">Donne-moi de l’argent. → Donne-m’en !</div>
+<div class="gm-box warn">قبل از <span class="gm-fr inline">en</span>، شکل‌های <span class="gm-fr inline">moi / toi</span> به <span class="gm-fr inline">m’ / t’</span> تبدیل می‌شوند.</div>
+</section>
+
+<section>
+<h2>7) امر مثبت و منفی با دو ضمیر</h2>
+<div class="gm-example">Donne-le-moi !</div><div class="gm-example">Ne me le donne pas !</div>
+<div class="gm-example">Montre-les-moi !</div><div class="gm-example">Ne me les montre pas !</div>
+<div class="gm-example">Donne-nous-en !</div><div class="gm-example">Ne nous en donne pas !</div>
+</section>
+
+<section>
+<h2>8) ضمیر خنثای le / l’</h2>
+<p><span class="gm-fr inline">le / l’</span> می‌تواند جای یک گروه کلمات یا یک proposition کامل را بگیرد.</p>
+<div class="gm-example">Tu crois qu’il réussira ? → Oui, je le crois.</div>
+<div class="gm-example">Vous savez qu’elle a changé de travail ? → Oui, nous le savons.</div>
+<div class="gm-example">Il viendra demain ? → Je l’espère.</div>
+<div class="gm-example">Elle savait qu’il était marié ? → Elle l’ignorait.</div>
+<h3>صفت یا وضعیت بعد از être</h3>
+<div class="gm-example">Elle est prête ? → Oui, elle l’est.</div>
+<div class="gm-example">Elle était en colère ? → Oui, elle l’était.</div>
+<div class="gm-box tip">این <span class="gm-fr inline">le</span> خنثی است و با جنس مرجع تغییر نمی‌کند.</div>
+</section>
+
+<section>
+<h2>9) ضمیر خنثای en</h2>
+<div class="gm-formula">de cela / de ce fait / de ce que... → en</div>
+<div class="gm-example">Tu te souviens de cette histoire ? → Oui, je m’en souviens.</div>
+<div class="gm-example">Tu te souviens qu’il est venu hier ? → Oui, je m’en souviens.</div>
+<div class="gm-example">Vous êtes satisfait de la nouvelle organisation ? → Oui, j’en suis satisfait.</div>
+<div class="gm-example">Il s’est rendu compte de son erreur. → Il s’en est rendu compte.</div>
+<div class="gm-box">ساختارهای رایج: <span class="gm-fr inline">parler de, se souvenir de, avoir besoin de, avoir envie de, être content de, se rendre compte de, s’apercevoir de</span>.</div>
+</section>
+
+<section>
+<h2>10) ضمیر خنثای y</h2>
+<div class="gm-formula">à cela / à cette idée / à ce que... → y</div>
+<div class="gm-example">Tu réfléchis à cette proposition ? → Oui, j’y réfléchis.</div>
+<div class="gm-example">Vous avez pensé à ce qu’il vous a dit ? → Oui, nous y avons pensé.</div>
+<div class="gm-example">Elle s’oppose à la construction de cette route. → Elle s’y oppose.</div>
+</section>
+
+<section>
+<h2>11) تفاوت‌های مهم</h2>
+<div class="gm-table-wrap"><table><thead><tr><th>ساختار</th><th>ضمیر</th><th>مثال</th></tr></thead><tbody>
+<tr><td class="gm-fr">à + personne</td><td class="gm-fr">lui / leur</td><td class="gm-fr">Je téléphone à Paul → Je lui téléphone.</td></tr>
+<tr><td class="gm-fr">à + chose / idée</td><td class="gm-fr">y</td><td class="gm-fr">Je pense au projet → J’y pense.</td></tr>
+<tr><td>مفعول مستقیم / proposition</td><td class="gm-fr">le</td><td class="gm-fr">Je crois qu’il viendra → Je le crois.</td></tr>
+<tr><td class="gm-fr">de + chose / idée</td><td class="gm-fr">en</td><td class="gm-fr">Je parle de ce problème → J’en parle.</td></tr>
+</tbody></table></div>
+<div class="gm-example">Je pense qu’il réussira. → Je le pense.</div>
+<div class="gm-example">Je pense à son avenir. → J’y pense.</div>
+<div class="gm-example">Je parle de ce problème. → J’en parle.</div>
+<div class="gm-example">Je pense à ce problème. → J’y pense.</div>
+</section>
+
+<section>
+<h2>12) خطاهای رایج</h2>
+<div class="gm-box bad"><span class="gm-no">❌</span> <span class="gm-fr inline">Je lui le donne.</span><br><span class="gm-ok">✅</span> <span class="gm-fr inline">Je le lui donne.</span></div>
+<div class="gm-box bad"><span class="gm-no">❌</span> <span class="gm-fr inline">Me le donne !</span><br><span class="gm-ok">✅</span> <span class="gm-fr inline">Donne-le-moi !</span></div>
+<div class="gm-box bad"><span class="gm-no">❌</span> <span class="gm-fr inline">Ne donne-le-moi pas !</span><br><span class="gm-ok">✅</span> <span class="gm-fr inline">Ne me le donne pas !</span></div>
+<div class="gm-box bad"><span class="gm-no">❌</span> <span class="gm-fr inline">Je y téléphone souvent.</span><br><span class="gm-ok">✅</span> <span class="gm-fr inline">Je lui téléphone souvent.</span></div>
+<div class="gm-box bad"><span class="gm-no">❌</span> <span class="gm-fr inline">J’en pense.</span><br><span class="gm-ok">✅</span> <span class="gm-fr inline">J’y pense.</span></div>
+<div class="gm-box bad"><span class="gm-no">❌</span> <span class="gm-fr inline">Marie la est.</span><br><span class="gm-ok">✅</span> <span class="gm-fr inline">Marie l’est.</span></div>
+<div class="gm-box bad"><span class="gm-no">❌</span> <span class="gm-fr inline">J’ai les vus.</span><br><span class="gm-ok">✅</span> <span class="gm-fr inline">Je les ai vus.</span></div>
+</section>
+
+<section>
+<h2>13) زبان واقعی و Register</h2>
+<p>در گفتار غیررسمی ممکن است <span class="gm-fr inline">ne</span> حذف شود، ولی ترتیب ضمیرها تغییر نمی‌کند.</p>
+<div class="gm-example">Standard / écrit : Je ne lui parle pas.</div>
+<div class="gm-example">Oral courant : Je lui parle pas.</div>
+<div class="gm-box tip">برای آزمون و نوشتار رسمی: <span class="gm-fr inline">Je ne lui en parle pas.</span></div>
+</section>
+
+<section>
+<h2>14) تشخیص سریع</h2>
+<ol>
+<li>فعل مستقیم است؟ → اغلب <span class="gm-fr inline">le</span>.</li>
+<li><span class="gm-fr inline">de + chose / idée</span>؟ → <span class="gm-fr inline">en</span>.</li>
+<li><span class="gm-fr inline">à + chose / idée</span>؟ → <span class="gm-fr inline">y</span>.</li>
+<li><span class="gm-fr inline">à + personne</span>؟ → معمولاً <span class="gm-fr inline">lui / leur</span>.</li>
+<li>امر مثبت؟ ضمیر بعد از فعل. امر منفی؟ ضمیر قبل از فعل.</li>
+</ol>
+<div class="gm-box tip"><span class="gm-fr inline">Je sais cela. → Je le sais.</span><br><span class="gm-fr inline">Je parle de cela. → J’en parle.</span><br><span class="gm-fr inline">Je pense à cela. → J’y pense.</span></div>
+</section>
+
+<section>
+<h2>خلاصه‌ای که باید به خاطر بسپارید</h2>
+<div class="gm-summary"><ul>
+<li><span class="gm-fr inline">Je le vois.</span></li>
+<li><span class="gm-fr inline">Je l’ai vu.</span></li>
+<li><span class="gm-fr inline">Je ne le lui donne pas.</span></li>
+<li><span class="gm-fr inline">me/te/se/nous/vous → le/la/les → lui/leur → y → en</span></li>
+<li><span class="gm-fr inline">Donne-le-moi !</span> / <span class="gm-fr inline">Ne me le donne pas !</span></li>
+<li>مستقیم / proposition → <span class="gm-fr inline">le</span></li>
+<li><span class="gm-fr inline">de + idée</span> → <span class="gm-fr inline">en</span></li>
+<li><span class="gm-fr inline">à + chose / idée</span> → <span class="gm-fr inline">y</span></li>
+<li><span class="gm-fr inline">à + personne</span> → <span class="gm-fr inline">lui / leur</span></li>
+<li><span class="gm-fr inline">Elle est prête. → Elle l’est.</span></li>
+</ul></div>
+</section>
+
+<p class="gm-footer-note">این فایل با CSS variables رایج سایت و همچنین <span class="gm-fr inline">.dark</span>، <span class="gm-fr inline">data-theme="dark"</span> و تنظیم Dark/Light سیستم سازگار است.</p>
 </article>
+</body>
+</html>

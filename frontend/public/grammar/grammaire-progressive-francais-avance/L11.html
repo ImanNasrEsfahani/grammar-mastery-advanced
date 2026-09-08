@@ -1,77 +1,553 @@
-<article class="adv-lesson" data-lesson-id="ADV-L11">
+<article class="adv-lesson" data-lesson-id="ADV-L11" lang="fa" dir="rtl">
 <style>
-.adv-lesson{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.75;color:#172033;max-width:980px;margin:0 auto;padding:8px 2px 40px}
+/* Grammar Mastery Advanced — Lesson 11
+   Drop-in HTML fragment for:
+   frontend/public/grammar/grammaire-progressive-francais-avance/L11.html
+   No JavaScript. All styles are scoped under .adv-lesson.
+   Theme-aware: follows html[data-theme="light|dark"] and site CSS variables. */
+.adv-lesson{
+  --adv-text:var(--ink,#17233c);--adv-muted:var(--muted,#5a6477);--adv-line:var(--line,#d9dfeb);
+  --adv-surface:var(--surface,#fff);--adv-soft:var(--surface-soft,#f5f7fb);
+  --adv-primary:var(--primary,#2856c7);--adv-primary-strong:var(--primary-strong,#1c3f99);
+  --adv-success:var(--success,#18794e);--adv-success-soft:var(--success-soft,#e9f7f0);
+  --adv-danger:var(--danger,#b42318);--adv-danger-soft:var(--danger-soft,#fff0ee);
+  --adv-warning:var(--warning,#8a4b08);--adv-warning-soft:var(--warning-soft,#fff7e8);
+  --adv-shadow:var(--shadow,0 18px 50px rgba(34,53,90,.09));--adv-radius:var(--radius,18px);
+  max-width:980px;margin:0 auto;padding:8px 2px 48px;color:var(--adv-text);background:transparent;
+  font-family:var(--font-ui,Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif);
+  line-height:1.82;color-scheme:inherit
+}
+html[data-theme="light"] .adv-lesson{
+  --adv-text:#17233c;--adv-muted:#5a6477;--adv-line:#d9dfeb;--adv-surface:#fff;--adv-soft:#f5f7fb;
+  --adv-primary:#2856c7;--adv-primary-strong:#1c3f99;--adv-success:#18794e;--adv-success-soft:#e9f7f0;
+  --adv-danger:#b42318;--adv-danger-soft:#fff0ee;--adv-warning:#8a4b08;--adv-warning-soft:#fff7e8;
+  --adv-shadow:0 18px 50px rgba(34,53,90,.09)
+}
+html[data-theme="dark"] .adv-lesson{
+  --adv-text:#eef4ff;--adv-muted:#a8b7d1;--adv-line:#2b3a55;--adv-surface:#111d31;--adv-soft:#16243a;
+  --adv-primary:#86a8ff;--adv-primary-strong:#bfd0ff;--adv-success:#74d8aa;--adv-success-soft:#123629;
+  --adv-danger:#ff9a94;--adv-danger-soft:#3b1d22;--adv-warning:#f4c46f;--adv-warning-soft:#3b2d16;
+  --adv-shadow:0 18px 50px rgba(0,0,0,.28)
+}
 .adv-lesson *{box-sizing:border-box}
-.adv-lesson .adv-hero{padding:24px;border:1px solid #e3e8f0;border-radius:18px;background:#fff;margin-bottom:22px}
-.adv-lesson .adv-kicker{font-size:.86rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.65;margin:0 0 6px}
-.adv-lesson h2,.adv-lesson h3{line-height:1.35}
-.adv-lesson h2{font-size:1.65rem;margin:0 0 4px}
-.adv-lesson .fa-title{direction:rtl;text-align:right;font-weight:650;margin:.2rem 0 .8rem}
-.adv-lesson .summary{direction:rtl;text-align:right;margin:0}
-.adv-lesson .meta{margin-top:12px;font-size:.9rem;opacity:.72}
-.adv-lesson .subtopic{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin:18px 0;background:#fff}
-.adv-lesson .subtopic h3{margin:0 0 2px;font-size:1.25rem}
-.adv-lesson .fa-subtitle{direction:rtl;text-align:right;font-weight:600;margin:.1rem 0 1rem}
-.adv-lesson .rule{direction:ltr;text-align:left;padding:12px 14px;border-left:4px solid currentColor;background:#f7f9fc;border-radius:8px;margin:12px 0}
-.adv-lesson .teaching,.adv-lesson .trap{direction:rtl;text-align:right}
-.adv-lesson .example{direction:ltr;text-align:left;font-style:italic;padding:10px 14px;background:#f7f9fc;border-radius:8px}
-.adv-lesson .trap{padding:10px 14px;border:1px dashed #c7ced9;border-radius:8px}
-.adv-lesson .source{font-size:.82rem;opacity:.65;margin-top:12px}
-.adv-lesson .notes{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin-top:22px}
-.adv-lesson .notes h3{margin-top:0}
-.adv-lesson .notes section{margin:16px 0}
-.adv-lesson .notes h4{margin:0 0 6px}
-.adv-lesson .notes ul{margin-top:4px}
+.adv-lesson :where(h2,h3,h4,p,ul,ol){margin-block-start:0}
+.adv-lesson :where(p,li){overflow-wrap:anywhere}
+.adv-lesson .fr,.adv-lesson [lang="fr"]{direction:ltr;text-align:left;unicode-bidi:isolate}
+.adv-lesson .grammar,.adv-lesson code{direction:ltr;unicode-bidi:isolate;display:inline;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;font-size:.94em}
+.adv-lesson code{padding:.1em .35em;border:1px solid var(--adv-line);border-radius:6px;background:var(--adv-soft);color:var(--adv-text)}
+.adv-lesson a{color:var(--adv-primary-strong);text-decoration-thickness:.07em;text-underline-offset:.18em}
+.adv-lesson .adv-card{border:1px solid var(--adv-line);border-radius:var(--adv-radius);background:var(--adv-surface);box-shadow:var(--adv-shadow)}
+.adv-lesson .adv-hero{position:relative;overflow:hidden;padding:clamp(20px,4vw,34px);margin-bottom:20px}
+.adv-lesson .adv-hero::after{content:"";position:absolute;inline-size:220px;block-size:220px;inset-inline-end:-90px;inset-block-start:-110px;border-radius:999px;background:color-mix(in srgb,var(--adv-primary) 11%,transparent);pointer-events:none}
+.adv-lesson .adv-kicker{margin:0 0 7px;color:var(--adv-primary);font-size:.82rem;font-weight:850;letter-spacing:.065em}
+.adv-lesson .adv-hero h2{margin:0;font-size:clamp(1.9rem,5vw,2.7rem);line-height:1.2;color:var(--adv-text)}
+.adv-lesson .fa-title{margin:.35rem 0 .7rem;font-size:1.08rem;font-weight:800}
+.adv-lesson .summary{max-width:78ch;margin:0;color:var(--adv-muted)}
+.adv-lesson .meta-row{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:16px}
+.adv-lesson .meta-chip{display:inline-flex;align-items:center;min-height:32px;padding:.28rem .68rem;border:1px solid var(--adv-line);border-radius:999px;background:var(--adv-soft);color:var(--adv-muted);font-size:.82rem;font-weight:750}
+.adv-lesson .lesson-goal{padding:18px 20px;margin:0 0 18px;border-inline-start:4px solid var(--adv-primary)}
+.adv-lesson .lesson-goal h3{margin:0 0 6px;font-size:1.08rem}.adv-lesson .lesson-goal p{margin:0}
+.adv-lesson .toc{padding:18px 20px;margin:0 0 22px}.adv-lesson .toc h3{margin:0 0 10px;font-size:1.05rem}
+.adv-lesson .toc ol{margin:0;padding-inline-start:1.3rem;columns:2;column-gap:2rem}.adv-lesson .toc li{break-inside:avoid;margin:.25rem 0}
+.adv-lesson .subtopic{border:1px solid var(--adv-line);border-radius:var(--adv-radius);padding:clamp(18px,3vw,26px);margin:18px 0;background:var(--adv-surface)}
+.adv-lesson .subtopic>h3{margin:0 0 4px;font-size:clamp(1.18rem,3vw,1.45rem);line-height:1.35;color:var(--adv-text)}
+.adv-lesson .fa-subtitle{margin:.1rem 0 1rem;color:var(--adv-muted);font-weight:750}
+.adv-lesson .section-label{margin:1rem 0 .35rem;font-size:.88rem;color:var(--adv-primary-strong);font-weight:850}
+.adv-lesson .rule{margin:12px 0;padding:13px 15px;border-inline-start:4px solid var(--adv-primary);border-radius:10px;background:var(--adv-soft)}
+.adv-lesson .rule strong{color:var(--adv-primary-strong)}
+.adv-lesson .formula{direction:ltr;text-align:left;unicode-bidi:isolate;margin:12px 0;padding:13px 15px;border:1px solid var(--adv-line);border-radius:11px;background:var(--adv-soft);font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;font-size:.92rem;line-height:1.75;overflow-x:auto;white-space:pre-wrap}
+.adv-lesson .example{margin:10px 0;padding:12px 14px;border:1px solid var(--adv-line);border-radius:11px;background:var(--adv-soft)}
+.adv-lesson .example p{margin:0}.adv-lesson .example p+p{margin-top:.35rem}.adv-lesson .translation{direction:rtl;text-align:right;color:var(--adv-muted);font-style:normal;font-size:.93rem}
+.adv-lesson .callout{margin:12px 0;padding:12px 14px;border:1px solid var(--adv-line);border-radius:11px;background:var(--adv-soft)}
+.adv-lesson .callout.tip{border-inline-start:4px solid var(--adv-primary)}
+.adv-lesson .callout.warn{border-color:color-mix(in srgb,var(--adv-warning) 46%,var(--adv-line));background:var(--adv-warning-soft)}
+.adv-lesson .callout.good{border-color:color-mix(in srgb,var(--adv-success) 45%,var(--adv-line));background:var(--adv-success-soft)}
+.adv-lesson .callout.bad{border-color:color-mix(in srgb,var(--adv-danger) 42%,var(--adv-line));background:var(--adv-danger-soft)}
+.adv-lesson .correct{color:var(--adv-success);font-weight:850}.adv-lesson .incorrect{color:var(--adv-danger);font-weight:850}
+.adv-lesson .table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--adv-line);border-radius:13px;background:var(--adv-surface);-webkit-overflow-scrolling:touch}
+.adv-lesson table{width:100%;min-width:650px;border-collapse:collapse;background:transparent}
+.adv-lesson th,.adv-lesson td{padding:11px 12px;border-block-end:1px solid var(--adv-line);vertical-align:top;text-align:start}
+.adv-lesson tr:last-child td{border-block-end:0}.adv-lesson th{background:var(--adv-soft);color:var(--adv-text);font-size:.9rem}
+.adv-lesson .compare-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0}
+.adv-lesson .compare-item{padding:14px;border:1px solid var(--adv-line);border-radius:12px;background:var(--adv-soft)}
+.adv-lesson .compare-item strong{display:block;margin-bottom:5px;color:var(--adv-primary-strong)}
+.adv-lesson .error-list{display:grid;gap:12px;margin-top:12px}.adv-lesson .error-item{padding:14px;border:1px solid var(--adv-line);border-radius:12px;background:var(--adv-soft)}
+.adv-lesson .error-item p{margin:.25rem 0}.adv-lesson .mini-note{color:var(--adv-muted);font-size:.92rem}
+.adv-lesson .review-box{padding:20px;margin-top:22px;border:1px solid color-mix(in srgb,var(--adv-primary) 36%,var(--adv-line));border-radius:var(--adv-radius);background:color-mix(in srgb,var(--adv-primary) 7%,var(--adv-surface))}
+.adv-lesson .review-box h3{margin:0 0 10px}.adv-lesson .review-box ul{margin:0;padding-inline-start:1.25rem}
+.adv-lesson .source-footer{margin-top:22px;padding:14px 16px;border-top:1px solid var(--adv-line);color:var(--adv-muted);font-size:.82rem}
+@media(max-width:720px){
+  .adv-lesson{line-height:1.75}.adv-lesson .toc ol{columns:1}.adv-lesson .compare-grid{grid-template-columns:1fr}
+  .adv-lesson .adv-hero,.adv-lesson .subtopic{border-radius:14px}.adv-lesson table{min-width:560px}
+}
+@media(prefers-color-scheme:dark){
+  html:not([data-theme]) .adv-lesson{
+    --adv-text:#eef4ff;--adv-muted:#a8b7d1;--adv-line:#2b3a55;--adv-surface:#111d31;--adv-soft:#16243a;
+    --adv-primary:#86a8ff;--adv-primary-strong:#bfd0ff;--adv-success:#74d8aa;--adv-success-soft:#123629;
+    --adv-danger:#ff9a94;--adv-danger-soft:#3b1d22;--adv-warning:#f4c46f;--adv-warning-soft:#3b2d16;
+    --adv-shadow:0 18px 50px rgba(0,0,0,.28)
+  }
+}
+@media(prefers-reduced-motion:reduce){.adv-lesson *{scroll-behavior:auto!important}}
+@media(forced-colors:active){.adv-lesson .adv-card,.adv-lesson .subtopic{border:1px solid CanvasText}}
 </style>
-<header class="adv-hero">
-<p class="adv-kicker">Lesson 11 · ADV-L11</p>
-<h2 lang="fr" dir="ltr">La forme passive</h2>
-<p class="fa-title" lang="fa">ساخت مجهول</p>
-<p class="summary" lang="fa">این درس روی «ساخت مجهول» تمرکز دارد و زیرموضوع‌های ساخت، زمان و تطابق مجهول، افعال مجاز و حذف عامل، عامل با par یا de، جایگزین‌های مجهول را پوشش می‌دهد.</p>
-<p class="meta">Printed pages 80–83 · PDF pages 82–85 · target 200 questions</p>
+
+<header class="adv-hero adv-card">
+  <p class="adv-kicker" dir="ltr">LESSON 11 · ADV-L11 · B1–B2</p>
+  <h2 lang="fr" dir="ltr">La forme passive</h2>
+  <p class="fa-title">ساخت مجهول در زبان فرانسه</p>
+  <p class="summary">این درس ساخت مجهول را از سطح فرمول فراتر می‌برد: چه فعلی واقعاً می‌تواند مجهول شود، زمان و <span class="grammar">accord</span> چگونه حفظ می‌شوند، عامل چه زمانی با <span class="grammar">par</span> یا <span class="grammar">de</span> می‌آید، و چه زمانی فرانسه به‌جای مجهول کلاسیک از <span class="grammar">forme pronominale</span>، <span class="grammar">se faire</span> یا <span class="grammar">se laisser + infinitif</span> استفاده می‌کند.</p>
+  <div class="meta-row" aria-label="مشخصات درس">
+    <span class="meta-chip">کتاب: صفحات 80–83</span>
+    <span class="meta-chip">PDF: صفحات 82–85</span>
+    <span class="meta-chip">موضوع: La forme passive</span>
+  </div>
 </header>
-<section class="subtopic" id="ADV-L11-ST01">
-<h3 lang="fr" dir="ltr">Construction, temps et accord</h3>
-<p class="fa-subtitle" lang="fa">ساخت، زمان و تطابق مجهول</p>
-<p class="rule" lang="fr">Le COD actif devient sujet; être reprend le temps du verbe et le participe passé s’accorde avec le nouveau sujet.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «ساخت، زمان و تطابق مجهول» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Le contrat a été signé par les deux parties.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز زمان être یا تطابق participe passé را از صورت فعال درست منتقل نمی‌کند.</p>
-<p class="source"><code>ADV-L11:book-p080-p081:passive-build</code> · printed 80–81 · PDF 82–83</p>
+
+<section class="lesson-goal adv-card" aria-labelledby="goal-title">
+  <h3 id="goal-title">هدف درس</h3>
+  <p>پس از این درس باید بتوانید یک جملهٔ معلوم را فقط در صورت مجاز بودن به مجهول تبدیل کنید، زمان فعل و تطابق <span class="grammar">participe passé</span> را درست نگه دارید، حذف یا بیان عامل را آگاهانه انتخاب کنید، و تفاوت مجهول معمولی با ساخت‌های جایگزین را در زبان واقعی تشخیص دهید.</p>
 </section>
-<section class="subtopic" id="ADV-L11-ST02">
-<h3 lang="fr" dir="ltr">Verbes admissibles et agent absent</h3>
-<p class="fa-subtitle" lang="fa">افعال مجاز و حذف عامل</p>
-<p class="rule" lang="fr">Seuls les verbes transitifs directs se passivent normalement; l’agent est souvent omis s’il est inconnu ou non pertinent.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «افعال مجاز و حذف عامل» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">La décision a été annoncée hier.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز فعل دارای متمم à را مجهول می‌کند یا برای هر مجهول عامل با par می‌افزاید.</p>
-<p class="source"><code>ADV-L11:book-p080-p081:passive-eligibility</code> · printed 80–81 · PDF 82–83</p>
+
+<nav class="toc adv-card" aria-label="فهرست درس">
+  <h3>در این درس</h3>
+  <ol>
+    <li><a href="#core-idea">ایدهٔ اصلی</a></li>
+    <li><a href="#construction">ساخت مجهول</a></li>
+    <li><a href="#tense">حفظ زمان فعل</a></li>
+    <li><a href="#agreement">تطابق participe passé</a></li>
+    <li><a href="#modal">افعال modal و infinitif</a></li>
+    <li><a href="#agent-omission">حذف عامل</a></li>
+    <li><a href="#cod-only">محدودیت COD</a></li>
+    <li><a href="#uses">کاربردهای مجهول</a></li>
+    <li><a href="#par-de">عامل با par یا de</a></li>
+    <li><a href="#pronoun-agent">par + ضمیر شخصی</a></li>
+    <li><a href="#pronominal-passive">مجهول ضمیری</a></li>
+    <li><a href="#reflexive-contrast">مجهول ضمیری یا انعکاسی؟</a></li>
+    <li><a href="#se-faire">se faire + infinitif</a></li>
+    <li><a href="#se-laisser">se laisser + infinitif</a></li>
+    <li><a href="#contrasts">مقایسهٔ ساخت‌ها</a></li>
+    <li><a href="#restrictions">محدودیت‌ها</a></li>
+    <li><a href="#errors">خطاهای رایج</a></li>
+    <li><a href="#register">زبان واقعی و register</a></li>
+    <li><a href="#quick-check">تشخیص سریع</a></li>
+    <li><a href="#review">خلاصهٔ نهایی</a></li>
+  </ol>
+</nav>
+
+<section class="subtopic" id="core-idea">
+  <h3>1. ایدهٔ اصلی</h3>
+  <p class="fa-subtitle">از «انجام‌دهنده» به «کسی/چیزی که عمل روی آن انجام می‌شود»</p>
+  <p>در جملهٔ معلوم، تمرکز معمولاً روی انجام‌دهندهٔ عمل است. در جملهٔ مجهول، همان رویداد از زاویهٔ مفعول جملهٔ معلوم ارائه می‌شود؛ یعنی چیزی که تحت تأثیر عمل قرار گرفته در جایگاه فاعل می‌آید.</p>
+  <div class="example">
+    <p class="fr"><strong>Active :</strong> Le technicien répare l’ordinateur.</p>
+    <p class="translation">تکنسین کامپیوتر را تعمیر می‌کند.</p>
+  </div>
+  <div class="example">
+    <p class="fr"><strong>Passive :</strong> L’ordinateur est réparé par le technicien.</p>
+    <p class="translation">کامپیوتر توسط تکنسین تعمیر می‌شود.</p>
+  </div>
+  <div class="formula">Active  : Sujet + verbe + COD
+Passive : COD → sujet + être + participe passé + par + ancien sujet</div>
+  <div class="callout tip"><strong>نکتهٔ معنایی:</strong> مجهول فقط تغییر شکل فعل نیست؛ انتخاب مجهول، <span class="grammar">focus / mise en valeur</span> جمله را نیز تغییر می‌دهد.</div>
 </section>
-<section class="subtopic" id="ADV-L11-ST03">
-<h3 lang="fr" dir="ltr">Complément d’agent par ou de</h3>
-<p class="fa-subtitle" lang="fa">عامل با par یا de</p>
-<p class="rule" lang="fr">De remplace souvent par avec sentiments, connaissance ou états descriptifs; par reste l’agent événementiel ordinaire.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «عامل با par یا de» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Cette actrice est admirée de tous.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز par و de را آزادانه جابه‌جا می‌کند و نوع فعل و خوانش رویدادی یا وصفی را نادیده می‌گیرد.</p>
-<p class="source"><code>ADV-L11:book-p082-p083:passive-par-de</code> · printed 82–83 · PDF 84–85</p>
+
+<section class="subtopic" id="construction">
+  <h3>2. Construction — ساخت مجهول</h3>
+  <p class="fa-subtitle">تبدیل مرحله‌به‌مرحلهٔ active → passive</p>
+  <div class="rule"><strong>قاعده:</strong> COD جملهٔ معلوم به فاعل جملهٔ مجهول تبدیل می‌شود؛ <span class="grammar">être</span> در زمان فعل اصلی صرف می‌شود؛ فعل اصلی به <span class="grammar">participe passé</span> می‌رود و با فاعل جدید تطابق می‌گیرد. عامل، اگر ذکر شود، معمولاً با <span class="grammar">par</span> می‌آید.</div>
+  <div class="formula">Sujet actif + verbe + COD
+↓
+COD + être au même temps + participe passé + par + sujet actif</div>
+  <div class="example">
+    <p class="fr">Les employés préparent les dossiers.</p>
+    <p class="fr">→ Les dossiers sont préparés par les employés.</p>
+    <p class="translation">کارمندان پرونده‌ها را آماده می‌کنند. ← پرونده‌ها توسط کارمندان آماده می‌شوند.</p>
+  </div>
 </section>
-<section class="subtopic" id="ADV-L11-ST04">
-<h3 lang="fr" dir="ltr">Passif pronominal, se faire, se laisser</h3>
-<p class="fa-subtitle" lang="fa">جایگزین‌های مجهول</p>
-<p class="rule" lang="fr">Le pronominal passif vise souvent un sujet inanimé; se faire et se laisser + infinitif présentent un sujet animé qui subit l’action.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «جایگزین‌های مجهول» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Ce modèle se vend bien; il s’est fait voler son vélo.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز se faire و se laisser را انعکاسی واقعی تحلیل می‌کند یا معنای تحملِ عمل در se laisser را حذف می‌کند.</p>
-<p class="source"><code>ADV-L11:book-p082-p083:passive-alternatives</code> · printed 82–83 · PDF 84–85</p>
+
+<section class="subtopic" id="tense">
+  <h3>3. Le temps — زمان فعل باید حفظ شود</h3>
+  <p class="fa-subtitle">زمان فعل معلوم روی être منتقل می‌شود</p>
+  <p>در مجهول، فعل <span class="grammar">être</span> همان زمانی را می‌گیرد که فعل جملهٔ معلوم داشته است. بنابراین نباید هنگام تبدیل، زمان جمله را تغییر داد.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Active</th><th>Passive</th><th>زمان</th></tr></thead>
+      <tbody>
+        <tr><td class="fr">répare</td><td class="fr">est réparé</td><td>présent</td></tr>
+        <tr><td class="fr">a réparé</td><td class="fr">a été réparé</td><td>passé composé</td></tr>
+        <tr><td class="fr">réparera</td><td class="fr">sera réparé</td><td>futur simple</td></tr>
+        <tr><td class="fr">réparait</td><td class="fr">était réparé</td><td>imparfait</td></tr>
+        <tr><td class="fr">avait réparé</td><td class="fr">avait été réparé</td><td>plus-que-parfait</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="example">
+    <p class="fr">La mairie fermera cette rue.</p>
+    <p class="fr correct">✓ Cette rue sera fermée par la mairie.</p>
+    <p class="fr incorrect">✗ Cette rue est fermée par la mairie.</p>
+    <p class="translation">چون جملهٔ اصلی در futur است، مجهول نیز باید futur بماند.</p>
+  </div>
 </section>
-<aside class="notes"><h3>Notes avancées</h3>
-<section><h4>Exceptions / استثناها</h4><ul><li>Les verbes à complément indirect ne se passivent normalement pas; on recourt souvent à on.</li><li>Avec verbes modaux, la transformation porte sur l’infinitif.</li></ul></section>
-<section><h4>Contrastes / تقابل‌ها</h4><ul><li>agent en par vs complément en de</li><li>passif canonique vs passif pronominal</li><li>se faire vs se laisser</li></ul></section>
-<section><h4>Restrictions / محدودیت‌ها</h4><ul><li>La passivation standard exige un COD; le pronom personnel agent après par est généralement évité.</li></ul></section>
-<section><h4>Register / سطح زبانی</h4><ul><li>Agent omis fréquent dans presse, droit et administration; passif descriptif fréquent dans la description.</li></ul></section>
-<section><h4>Temporal notes / نکات زمانی</h4><ul><li>Être conserve le temps de l’actif et le participe passé porte l’accord.</li></ul></section>
-<section><h4>Semantic notes / نکات معنایی</h4><ul><li>Le passif change la perspective informationnelle en mettant le patient au premier plan.</li></ul></section>
-</aside>
+
+<section class="subtopic" id="agreement">
+  <h3>4. Accord du participe passé</h3>
+  <p class="fa-subtitle">تطابق با فاعل جدید</p>
+  <div class="rule">چون مجهول با <span class="grammar">être</span> ساخته می‌شود، <span class="grammar">participe passé</span> با فاعل جملهٔ مجهول از نظر جنس و تعداد تطابق می‌گیرد.</div>
+  <div class="compare-grid">
+    <div class="compare-item"><strong class="fr">Le document est signé.</strong><span>مذکر مفرد</span></div>
+    <div class="compare-item"><strong class="fr">La lettre est signée.</strong><span>مؤنث مفرد</span></div>
+    <div class="compare-item"><strong class="fr">Les documents sont signés.</strong><span>مذکر جمع</span></div>
+    <div class="compare-item"><strong class="fr">Les lettres sont signées.</strong><span>مؤنث جمع</span></div>
+  </div>
+  <div class="example">
+    <p class="fr">On a envoyé les invitations.</p>
+    <p class="fr correct">✓ Les invitations ont été envoyées.</p>
+    <p class="fr incorrect">✗ Les invitations ont été envoyé.</p>
+    <p class="translation">چون <span class="grammar">invitations</span> مؤنث جمع است، <span class="grammar">envoyées</span> نیز مؤنث جمع می‌شود.</p>
+  </div>
+</section>
+
+<section class="subtopic" id="modal">
+  <h3>5. Verbes modaux + infinitif passif</h3>
+  <p class="fa-subtitle">با devoir، pouvoir، sembler، paraître</p>
+  <p>وقتی فعل صرف‌شده‌ای مانند <span class="grammar">devoir</span> یا <span class="grammar">pouvoir</span> قبل از infinitif آمده است، تبدیل مجهول روی همان infinitif انجام می‌شود.</p>
+  <div class="formula">devoir / pouvoir / sembler / paraître + infinitif actif
+→
+devoir / pouvoir / sembler / paraître + être + participe passé</div>
+  <div class="example">
+    <p class="fr">On doit vérifier les documents.</p>
+    <p class="fr correct">✓ Les documents doivent être vérifiés.</p>
+  </div>
+  <div class="example">
+    <p class="fr">Ils pourront ouvrir la salle demain.</p>
+    <p class="fr correct">✓ La salle pourra être ouverte demain.</p>
+    <p class="fr incorrect">✗ La salle sera pouvoir ouverte.</p>
+  </div>
+</section>
+
+<section class="subtopic" id="agent-omission">
+  <h3>6. L’agent absent — حذف عامل</h3>
+  <p class="fa-subtitle">لازم نیست همیشه بگوییم چه کسی عمل را انجام داده است</p>
+  <p>اگر انجام‌دهنده ناشناخته، بدیهی یا از نظر اطلاعاتی کم‌اهمیت باشد، complément d’agent حذف می‌شود. کتاب این الگو را به‌ویژه در زبان روزنامه‌ها، حقوق و اداره‌ها رایج می‌داند.</p>
+  <div class="example">
+    <p class="fr">La banque a été cambriolée cette nuit.</p>
+    <p class="translation">بانک دیشب مورد سرقت قرار گرفت.</p>
+  </div>
+  <div class="example">
+    <p class="fr">Trois personnes ont été blessées.</p>
+    <p class="translation">سه نفر مجروح شدند.</p>
+  </div>
+  <div class="callout tip">در این نوع جمله، «چه اتفاقی افتاده؟» از «چه کسی آن را انجام داده؟» مهم‌تر است.</div>
+</section>
+
+<section class="subtopic" id="cod-only">
+  <h3>7. Contrainte essentielle — فقط COD</h3>
+  <p class="fa-subtitle">هر فعل فرانسوی را نمی‌توان به مجهول تبدیل کرد</p>
+  <div class="rule"><strong>قاعدهٔ اصلی درس:</strong> در تبدیل استاندارد به مجهول، فعل باید <span class="grammar">complément d’objet direct (COD)</span> داشته باشد.</div>
+  <div class="example">
+    <p class="fr">Une société construit l’immeuble.</p>
+    <p class="fr">→ L’immeuble est construit par une société.</p>
+    <p class="translation"><span class="grammar">construire quoi ? → l’immeuble</span>؛ پس متمم مستقیم است.</p>
+  </div>
+  <p class="section-label">COI را نمی‌توان مستقیماً فاعل مجهول کرد</p>
+  <div class="example">
+    <p class="fr">On a offert un cadeau à Mathilde.</p>
+    <p class="fr incorrect">✗ Mathilde a été offerte un cadeau.</p>
+    <p class="fr correct">✓ Un cadeau a été offert à Mathilde.</p>
+    <p class="translation"><span class="grammar">Mathilde</span> با <span class="grammar">à</span> آمده و COI است؛ اما <span class="grammar">un cadeau</span> COD است و می‌تواند فاعل مجهول شود.</p>
+  </div>
+  <div class="example">
+    <p class="fr">Tout le monde parle de cette affaire.</p>
+    <p class="fr incorrect">✗ Cette affaire est parlée de par tout le monde.</p>
+    <p class="translation"><span class="grammar">parler de</span> متمم غیرمستقیم می‌گیرد؛ این تبدیل استاندارد مجاز نیست.</p>
+  </div>
+  <div class="callout warn"><strong>دام مهم برای انگلیسی‌زبان‌ها:</strong> ساخت‌هایی مانند English <span class="grammar">She was offered a gift</span> را نباید کلمه‌به‌کلمه به فرانسه منتقل کرد.</div>
+</section>
+
+<section class="subtopic" id="uses">
+  <h3>8. Emplois — کاربردهای اصلی مجهول</h3>
+  <p class="fa-subtitle">چرا اصلاً passive را انتخاب می‌کنیم؟</p>
+  <div class="compare-grid">
+    <div class="compare-item">
+      <strong>برجسته کردن نتیجه یا مفعول</strong>
+      <p class="fr">Deux tableaux ont été volés au musée.</p>
+      <p class="translation">دو تابلو از موزه دزدیده شده‌اند.</p>
+    </div>
+    <div class="compare-item">
+      <strong>توصیف وضعیت یا نتیجه</strong>
+      <p class="fr">La façade a été entièrement rénovée.</p>
+      <p class="translation">نمای ساختمان کاملاً بازسازی شده است.</p>
+    </div>
+    <div class="compare-item">
+      <strong>جایگزین کردن on</strong>
+      <p class="fr">On a fermé la route.</p>
+      <p class="fr">→ La route a été fermée.</p>
+    </div>
+    <div class="compare-item">
+      <strong>وقتی عامل مهم نیست</strong>
+      <p class="fr">Une enquête a été ouverte.</p>
+      <p class="translation">تحقیقاتی آغاز شده است.</p>
+    </div>
+  </div>
+</section>
+
+<section class="subtopic" id="par-de">
+  <h3>9. Complément d’agent : par ou de ?</h3>
+  <p class="fa-subtitle">عامل معمولی با par؛ بعضی گروه‌های معنایی با de</p>
+  <p>در حالت پایه، عاملِ یک رویداد با <span class="grammar">par</span> معرفی می‌شود:</p>
+  <div class="example"><p class="fr">Le projet a été accepté par le directeur.</p></div>
+  <p>کتاب برای چند گروه مشخص، کاربرد <span class="grammar">de</span> را نشان می‌دهد:</p>
+  <ul>
+    <li>افعال احساس و نگرش: <span class="grammar">aimer, détester, haïr, adorer, estimer, respecter, admirer, apprécier</span></li>
+    <li>افعالی مانند <span class="grammar">connaître, oublier, ignorer</span></li>
+    <li>توصیف محتوا یا حالت: <span class="grammar">être orné de, décoré de, rempli de, couvert de, composé de</span></li>
+  </ul>
+  <div class="example">
+    <p class="fr">Elle est respectée de tous ses collègues.</p>
+    <p class="fr">Il est apprécié de tout le monde.</p>
+    <p class="fr">Cette chercheuse est connue de tous.</p>
+    <p class="fr">La salle était remplie de visiteurs.</p>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>ساختار</th><th>کاربرد اصلی</th><th>مثال</th></tr></thead>
+      <tbody>
+        <tr><td><code>par</code></td><td>عامل انجام‌دهندهٔ یک action</td><td class="fr">Le rapport a été rédigé par Léa.</td></tr>
+        <tr><td><code>de</code></td><td>sentiment / attitude</td><td class="fr">Il est admiré de tous.</td></tr>
+        <tr><td><code>de</code></td><td>connaissance</td><td class="fr">Elle est connue de tous.</td></tr>
+        <tr><td><code>de</code></td><td>description / contenu</td><td class="fr">La boîte est remplie de documents.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout bad"><span class="incorrect fr">✗ La salle était remplie par des visiteurs.</span><br>در معنای «پر بودن از بازدیدکننده» کتاب ساخت <span class="grammar">remplie de</span> را به‌کار می‌برد.</div>
+</section>
+
+<section class="subtopic" id="pronoun-agent">
+  <h3>10. Agent pronominal — par lui / par elle</h3>
+  <p class="fa-subtitle">در حالت عادی active طبیعی‌تر است</p>
+  <p>کتاب توصیه می‌کند وقتی عامل فقط یک ضمیر شخصی است و تأکید خاصی نداریم، جملهٔ active را ترجیح دهیم.</p>
+  <div class="example">
+    <p class="fr correct">✓ Il a écrit ce roman.</p>
+    <p class="fr">Ce roman a été écrit par lui.</p>
+  </div>
+  <div class="callout tip"><strong>توضیح تکمیلی زبان واقعی:</strong> <span class="grammar">par lui / par elle</span> ناممکن نیست؛ اگر contrast یا تأکید لازم باشد طبیعی می‌شود: <span class="fr">Ce texte a été écrit par lui, pas par moi.</span></div>
+</section>
+
+<section class="subtopic" id="pronominal-passive">
+  <h3>11. La forme pronominale de sens passif</h3>
+  <p class="fa-subtitle">ساخت se + verbe با معنای مجهول</p>
+  <p>فرانسه همیشه برای بیان معنای مجهول از <span class="grammar">être + participe passé</span> استفاده نمی‌کند. ساخت ضمیری می‌تواند معنای passive داشته باشد و فاعل آن در مثال‌های این درس معمولاً بی‌جان است.</p>
+  <div class="example">
+    <p class="fr">Cette langue se lit de droite à gauche.</p>
+    <p class="translation">این زبان از راست به چپ خوانده می‌شود.</p>
+  </div>
+  <div class="example">
+    <p class="fr">Ce médicament se prend après les repas.</p>
+    <p class="fr">Cette expression s’emploie surtout à l’écrit.</p>
+    <p class="fr">Ces chaussures se lavent facilement.</p>
+  </div>
+  <p>این ساخت به‌خصوص برای دستور مصرف، شیوهٔ استفاده، ویژگی یک شیء یا یک قاعدهٔ عمومی طبیعی است.</p>
+  <div class="compare-grid">
+    <div class="compare-item"><strong class="fr">On utilise cette expression à l’écrit.</strong><span>فاعل عمومی با on</span></div>
+    <div class="compare-item"><strong class="fr">Cette expression est utilisée à l’écrit.</strong><span>passif classique</span></div>
+    <div class="compare-item"><strong class="fr">Cette expression s’utilise à l’écrit.</strong><span>passif pronominal</span></div>
+  </div>
+</section>
+
+<section class="subtopic" id="reflexive-contrast">
+  <h3>12. Pronominal passif یا réflexif واقعی؟</h3>
+  <p class="fa-subtitle">وجود se به‌تنهایی به معنی «خودش» نیست</p>
+  <div class="compare-grid">
+    <div class="compare-item">
+      <strong>Réfléchi واقعی</strong>
+      <p class="fr">Paul se lave.</p>
+      <p>پل خودش را می‌شوید.</p>
+    </div>
+    <div class="compare-item">
+      <strong>Sens passif</strong>
+      <p class="fr">Ce tissu se lave facilement.</p>
+      <p>این پارچه به‌راحتی شسته می‌شود.</p>
+    </div>
+  </div>
+  <div class="callout tip">اگر ساخت را بتوانید طبیعی با <span class="grammar">être + participe passé</span> یا معنای «می‌شود/می‌گردد» بازنویسی کنید، احتمالاً با <span class="grammar">sens passif</span> روبه‌رو هستید.</div>
+</section>
+
+<section class="subtopic" id="se-faire">
+  <h3>13. Se faire + infinitif</h3>
+  <p class="fa-subtitle">وقتی عملی روی یک شخص انجام می‌شود</p>
+  <div class="formula">sujet animé + se faire + infinitif</div>
+  <div class="example">
+    <p class="fr">Je me suis fait vacciner.</p>
+    <p class="translation">واکسن زدم / واکسینه شدم.</p>
+  </div>
+  <p>این ساخت می‌تواند هم برای کاری باشد که شخص ترتیب انجام آن را می‌دهد و هم برای اتفاقی ناخواسته که بر او واقع می‌شود.</p>
+  <div class="example">
+    <p class="fr">Elle s’est fait couper les cheveux.</p>
+    <p class="translation">موهایش را کوتاه کرد / داد کوتاه کنند.</p>
+  </div>
+  <div class="example">
+    <p class="fr">Il s’est fait voler son téléphone.</p>
+    <p class="fr">Il s’est fait renverser par une voiture.</p>
+    <p class="translation">تلفنش را دزدیدند. / یک ماشین به او زد.</p>
+  </div>
+  <div class="callout warn"><strong>نوشتار:</strong> در <span class="grammar">se faire + infinitif</span>، شکل <span class="grammar">fait</span> پیش از infinitif ثابت می‌ماند: <span class="fr">Elle s’est fait arrêter.</span></div>
+</section>
+
+<section class="subtopic" id="se-laisser">
+  <h3>14. Se laisser + infinitif</h3>
+  <p class="fa-subtitle">تحمل عمل، اجازه دادن یا مقاومت نکردن</p>
+  <p>در این ساخت، فاعل تحت تأثیر عمل قرار می‌گیرد و معمولاً nuanceِ «گذاشتن/اجازه دادن/مقاومت نکردن» نیز وجود دارد.</p>
+  <div class="example">
+    <p class="fr">Elle s’est laissé convaincre.</p>
+    <p class="translation">گذاشت متقاعدش کنند / متقاعد شد.</p>
+  </div>
+  <div class="example">
+    <p class="fr">Il s’est laissé entraîner dans cette affaire.</p>
+    <p class="translation">گذاشت او را وارد این ماجرا کنند / بدون مقاومت وارد ماجرا شد.</p>
+  </div>
+  <div class="callout tip"><strong>مثال مستقیم کتاب:</strong> <span class="fr">Elle s’est laissé insulter sans rien dire.</span> در این مثال، شخص عمل را تحمل می‌کند و واکنش نشان نمی‌دهد.</div>
+</section>
+
+<section class="subtopic" id="contrasts">
+  <h3>15. Contrast — انتخاب بین ساخت‌های نزدیک</h3>
+  <p class="fa-subtitle">فرمول یکی نیست؛ زاویهٔ دید و register هم فرق می‌کند</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>ساختار</th><th>کاربرد / معنا</th><th>مثال</th><th>نکتهٔ تمایز</th></tr></thead>
+      <tbody>
+        <tr><td>Active</td><td>انجام‌دهنده برجسته است</td><td class="fr">Le comité a accepté le projet.</td><td>focus روی agent</td></tr>
+        <tr><td>Passive</td><td>نتیجه یا patient برجسته است</td><td class="fr">Le projet a été accepté.</td><td>عامل می‌تواند حذف شود</td></tr>
+        <tr><td>Passive + par</td><td>عامل مشخص و مرتبط است</td><td class="fr">Le projet a été accepté par le comité.</td><td>الگوی پایه</td></tr>
+        <tr><td>Passive + de</td><td>sentiment / connaissance / description در گروه‌های کتاب</td><td class="fr">Il est apprécié de tous.</td><td>جایگزینی آزادانه با par نیست</td></tr>
+        <tr><td><span class="grammar">on + verbe</span></td><td>فاعل عمومی یا نامعلوم</td><td class="fr">On vend ce produit ici.</td><td>active و بسیار رایج در گفتار</td></tr>
+        <tr><td>Passif pronominal</td><td>قاعده یا ویژگی عمومی؛ اغلب فاعل بی‌جان</td><td class="fr">Ce produit se vend bien.</td><td>ساخت فشرده و طبیعی</td></tr>
+        <tr><td><span class="grammar">se faire + inf.</span></td><td>عمل روی شخص انجام می‌شود</td><td class="fr">Il s’est fait arrêter.</td><td>فاعل animate</td></tr>
+        <tr><td><span class="grammar">se laisser + inf.</span></td><td>شخص عمل را تحمل می‌کند / مقاومت نمی‌کند</td><td class="fr">Elle s’est laissé convaincre.</td><td>nuanceٔ اجازه یا عدم مقاومت</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="subtopic" id="restrictions">
+  <h3>16. Exceptions et restrictions</h3>
+  <p class="fa-subtitle">محدودیت‌هایی که باید قبل از تبدیل بررسی شوند</p>
+  <ul>
+    <li><strong>COD لازم است:</strong> متمم غیرمستقیم را نمی‌توان مانند COD به فاعل مجهول تبدیل کرد.</li>
+    <li><strong>زمان حفظ می‌شود:</strong> زمان فعل active روی <span class="grammar">être</span> می‌رود.</li>
+    <li><strong>accord اجباری است:</strong> <span class="grammar">participe passé</span> با فاعل جدید تطابق می‌گیرد.</li>
+    <li><strong>عامل الزامی نیست:</strong> اگر ناشناخته یا غیرمهم باشد، حذف می‌شود.</li>
+    <li><strong>par / de انتخاب معنایی دارد:</strong> <span class="grammar">de</span> فقط در گروه‌های مشخص درس به‌کار می‌رود.</li>
+    <li><strong>passif pronominal:</strong> در الگوهای این درس معمولاً با فاعل بی‌جان و معنای عمومی/توصیفی دیده می‌شود.</li>
+  </ul>
+</section>
+
+<section class="subtopic" id="errors">
+  <h3>17. خطاهای رایج</h3>
+  <p class="fa-subtitle">اشتباه‌هایی که مستقیماً از قواعد این درس می‌آیند</p>
+  <div class="error-list">
+    <div class="error-item">
+      <p class="fr incorrect">✗ La porte a fermée par le gardien.</p>
+      <p class="fr correct">✓ La porte a été fermée par le gardien.</p>
+      <p class="mini-note">مجهول با <span class="grammar">être + participe passé</span> ساخته می‌شود.</p>
+    </div>
+    <div class="error-item">
+      <p class="fr incorrect">✗ Les fenêtres ont été cassé.</p>
+      <p class="fr correct">✓ Les fenêtres ont été cassées.</p>
+      <p class="mini-note">فاعل مؤنث جمع است؛ participe passé نیز باید مؤنث جمع شود.</p>
+    </div>
+    <div class="error-item">
+      <p class="fr">Active : Ils publieront le rapport demain.</p>
+      <p class="fr incorrect">✗ Le rapport est publié demain.</p>
+      <p class="fr correct">✓ Le rapport sera publié demain.</p>
+      <p class="mini-note">زمان futur باید حفظ شود.</p>
+    </div>
+    <div class="error-item">
+      <p class="fr">On a répondu à Marie.</p>
+      <p class="fr incorrect">✗ Marie a été répondue.</p>
+      <p class="mini-note"><span class="grammar">répondre à quelqu’un</span> متمم غیرمستقیم می‌گیرد.</p>
+    </div>
+    <div class="error-item">
+      <p class="fr incorrect">✗ Le panier est rempli par des pommes.</p>
+      <p class="fr correct">✓ Le panier est rempli de pommes.</p>
+      <p class="mini-note">در معنای توصیف محتوا، <span class="grammar">rempli de</span> به‌کار می‌رود.</p>
+    </div>
+    <div class="error-item">
+      <p class="fr correct">✓ Ce livre se vend bien.</p>
+      <p class="mini-note">یعنی «این کتاب خوب فروش می‌رود»، نه اینکه کتاب خودش خودش را می‌فروشد.</p>
+    </div>
+    <div class="error-item">
+      <p class="fr incorrect">✗ Elle s’est faite arrêter.</p>
+      <p class="fr correct">✓ Elle s’est fait arrêter.</p>
+      <p class="mini-note">در <span class="grammar">se faire + infinitif</span>، <span class="grammar">fait</span> پیش از infinitif ثابت می‌ماند.</p>
+    </div>
+  </div>
+</section>
+
+<section class="subtopic" id="register">
+  <h3>18. Langue réelle et register</h3>
+  <p class="fa-subtitle">خبر، اداره، مکالمه و دستورالعمل</p>
+  <div class="compare-grid">
+    <div class="compare-item">
+      <strong>پرس، حقوق و اداره</strong>
+      <p>مجهول بدون عامل بسیار رایج است.</p>
+      <p class="fr">Une enquête a été ouverte.</p>
+      <p class="fr">Trois personnes ont été interpellées.</p>
+    </div>
+    <div class="compare-item">
+      <strong>مکالمهٔ روزمره</strong>
+      <p>فاعل عمومی <span class="grammar">on</span> اغلب طبیعی و بسیار رایج است.</p>
+      <p class="fr">On a fermé la route.</p>
+    </div>
+    <div class="compare-item">
+      <strong>دستورالعمل و ویژگی اشیا</strong>
+      <p>passif pronominal بسیار طبیعی است.</p>
+      <p class="fr">Cette veste se lave à la main.</p>
+    </div>
+    <div class="compare-item">
+      <strong>گفتار با فاعل انسانی</strong>
+      <p><span class="grammar">se faire + infinitif</span> بسیار کاربردی است.</p>
+      <p class="fr">Il s’est fait voler son sac.</p>
+    </div>
+  </div>
+</section>
+
+<section class="subtopic" id="quick-check">
+  <h3>19. روش تشخیص سریع</h3>
+  <p class="fa-subtitle">قبل از ساختن passive این مسیر را بررسی کنید</p>
+  <ol>
+    <li>آیا فعل active یک <strong>COD واقعی</strong> دارد؟ اگر نه، تبدیل استاندارد انجام ندهید.</li>
+    <li>COD را به فاعل جملهٔ جدید تبدیل کنید.</li>
+    <li><span class="grammar">être</span> را در همان زمان فعل original صرف کنید.</li>
+    <li><span class="grammar">participe passé</span> را با فاعل جدید accord کنید.</li>
+    <li>اگر agent مهم است، معمولاً <span class="grammar">par</span> اضافه کنید؛ اگر مهم نیست، حذفش کنید.</li>
+    <li>اگر ساخت از نوع sentiment / connaissance / description مشخص‌شده در درس است، امکان <span class="grammar">de</span> را بررسی کنید.</li>
+    <li>برای قواعد عمومی و اشیای بی‌جان، ببینید آیا <span class="grammar">se + verbe</span> طبیعی‌تر است.</li>
+    <li>برای فاعل انسانی، در context مناسب <span class="grammar">se faire / se laisser + infinitif</span> را مقایسه کنید.</li>
+  </ol>
+  <div class="formula">COD → sujet
+être → même temps
+participe passé → accord</div>
+</section>
+
+<section class="review-box" id="review" aria-labelledby="review-title">
+  <h3 id="review-title">20. خلاصه‌ای که باید به خاطر بسپارید</h3>
+  <ul>
+    <li><strong>Passive =</strong> <span class="grammar">être + participe passé</span>.</li>
+    <li>COD جملهٔ active → فاعل جملهٔ passive.</li>
+    <li>زمان فعل active روی <span class="grammar">être</span> حفظ می‌شود.</li>
+    <li><span class="grammar">participe passé</span> با فاعل جدید تطابق می‌گیرد.</li>
+    <li>عامل معمولاً با <span class="grammar">par</span> می‌آید، اما لازم نیست همیشه ذکر شود.</li>
+    <li>فعل دارای فقط COI را مانند فعل متعدی مستقیم مجهول نکنید.</li>
+    <li>بعد از <span class="grammar">devoir / pouvoir</span> و ساخت‌های مشابه، infinitif را به <span class="grammar">être + participe passé</span> تبدیل کنید.</li>
+    <li>در بعضی افعال احساس، شناخت و توصیف، کتاب <span class="grammar">de</span> را به‌جای <span class="grammar">par</span> نشان می‌دهد.</li>
+    <li><span class="fr">Ce livre se vend bien.</span> یک <span class="grammar">forme pronominale de sens passif</span> است.</li>
+    <li><span class="grammar">se faire + infinitif</span> یعنی عملی روی شخص انجام می‌شود؛ <span class="grammar">se laisser + infinitif</span> اغلب nuanceِ تحمل/اجازه/عدم مقاومت دارد.</li>
+    <li>در خبر، حقوق و اداره، passive بدون agent بسیار رایج است؛ در گفتار روزمره <span class="grammar">on</span> هم بسیار پرکاربرد است.</li>
+  </ul>
+</section>
+
+<footer class="source-footer">
+  منبع آموزشی: <span lang="fr" dir="ltr">Grammaire Progressive du Français — Niveau Avancé — 3e édition</span>، درس 11، صفحات چاپی 80 تا 83. توضیحات تکمیلیِ زبان واقعی در متن با عنوان «توضیح تکمیلی» از محتوای مستقیم کتاب متمایز شده‌اند.
+</footer>
 </article>

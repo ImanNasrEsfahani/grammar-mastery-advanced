@@ -1,86 +1,673 @@
-<article class="adv-lesson" data-lesson-id="ADV-L15">
+<article class="adv-lesson" data-lesson-id="ADV-L15" lang="fa" dir="rtl">
 <style>
-.adv-lesson{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.75;color:#172033;max-width:980px;margin:0 auto;padding:8px 2px 40px}
-.adv-lesson *{box-sizing:border-box}
-.adv-lesson .adv-hero{padding:24px;border:1px solid #e3e8f0;border-radius:18px;background:#fff;margin-bottom:22px}
-.adv-lesson .adv-kicker{font-size:.86rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.65;margin:0 0 6px}
-.adv-lesson h2,.adv-lesson h3{line-height:1.35}
-.adv-lesson h2{font-size:1.65rem;margin:0 0 4px}
-.adv-lesson .fa-title{direction:rtl;text-align:right;font-weight:650;margin:.2rem 0 .8rem}
-.adv-lesson .summary{direction:rtl;text-align:right;margin:0}
-.adv-lesson .meta{margin-top:12px;font-size:.9rem;opacity:.72}
-.adv-lesson .subtopic{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin:18px 0;background:#fff}
-.adv-lesson .subtopic h3{margin:0 0 2px;font-size:1.25rem}
-.adv-lesson .fa-subtitle{direction:rtl;text-align:right;font-weight:600;margin:.1rem 0 1rem}
-.adv-lesson .rule{direction:ltr;text-align:left;padding:12px 14px;border-left:4px solid currentColor;background:#f7f9fc;border-radius:8px;margin:12px 0}
-.adv-lesson .teaching,.adv-lesson .trap{direction:rtl;text-align:right}
-.adv-lesson .example{direction:ltr;text-align:left;font-style:italic;padding:10px 14px;background:#f7f9fc;border-radius:8px}
-.adv-lesson .trap{padding:10px 14px;border:1px dashed #c7ced9;border-radius:8px}
-.adv-lesson .source{font-size:.82rem;opacity:.65;margin-top:12px}
-.adv-lesson .notes{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin-top:22px}
-.adv-lesson .notes h3{margin-top:0}
-.adv-lesson .notes section{margin:16px 0}
-.adv-lesson .notes h4{margin:0 0 6px}
-.adv-lesson .notes ul{margin-top:4px}
+.adv-lesson {
+  --lesson-ink: var(--ink, #17233c);
+  --lesson-muted: var(--muted, #5a6477);
+  --lesson-line: var(--line, #d9dfeb);
+  --lesson-surface: var(--surface, #ffffff);
+  --lesson-soft: var(--surface-soft, #f5f7fb);
+  --lesson-primary: var(--primary, #2856c7);
+  --lesson-primary-strong: var(--primary-strong, #1c3f99);
+  --lesson-success: var(--success, #18794e);
+  --lesson-success-soft: var(--success-soft, #e9f7f0);
+  --lesson-danger: var(--danger, #b42318);
+  --lesson-danger-soft: var(--danger-soft, #fff0ee);
+  --lesson-warning: var(--warning, #8a4b08);
+  --lesson-warning-soft: var(--warning-soft, #fff7e8);
+  --lesson-shadow: var(--shadow, 0 18px 50px rgba(34, 53, 90, .09));
+
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 4px 0 28px;
+  color: var(--lesson-ink);
+  font-family: var(--font-ui, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
+  font-size: 1rem;
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+}
+
+.adv-lesson *, .adv-lesson *::before, .adv-lesson *::after { box-sizing: border-box; }
+.adv-lesson h2, .adv-lesson h3, .adv-lesson h4 { color: var(--lesson-ink); line-height: 1.45; }
+.adv-lesson h2 { margin: 0; font-size: clamp(1.55rem, 4vw, 2.05rem); }
+.adv-lesson h3 { margin: 0 0 12px; font-size: clamp(1.18rem, 3vw, 1.45rem); }
+.adv-lesson h4 { margin: 20px 0 8px; font-size: 1.05rem; }
+.adv-lesson p { margin: 0 0 12px; }
+.adv-lesson ul, .adv-lesson ol { margin: 8px 0 14px; padding-inline-start: 1.5rem; }
+.adv-lesson li + li { margin-top: 5px; }
+.adv-lesson strong { color: var(--lesson-ink); }
+.adv-lesson code {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+  max-width: 100%;
+  padding: .08rem .35rem;
+  border: 1px solid var(--lesson-line);
+  border-radius: 6px;
+  background: var(--lesson-soft);
+  color: var(--lesson-ink);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: .92em;
+}
+
+.adv-lesson .lesson-card {
+  margin: 18px 0;
+  padding: clamp(18px, 3vw, 26px);
+  border: 1px solid var(--lesson-line);
+  border-radius: 18px;
+  background: var(--lesson-surface);
+}
+
+.adv-lesson .lesson-hero {
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--lesson-shadow);
+}
+.adv-lesson .lesson-hero::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: 5px;
+  background: var(--lesson-primary);
+}
+.adv-lesson .kicker {
+  margin: 0 0 5px;
+  color: var(--lesson-primary);
+  font-size: .8rem;
+  font-weight: 850;
+  letter-spacing: .04em;
+}
+.adv-lesson .fr-title {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: isolate;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.65rem, 4vw, 2.3rem);
+}
+.adv-lesson .fa-title { margin: 6px 0 10px; font-weight: 800; font-size: 1.08rem; }
+.adv-lesson .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.adv-lesson .chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 3px 10px;
+  border: 1px solid var(--lesson-line);
+  border-radius: 999px;
+  background: var(--lesson-soft);
+  color: var(--lesson-muted);
+  font-size: .82rem;
+  font-weight: 700;
+}
+
+.adv-lesson .section-label {
+  margin: 0 0 4px;
+  color: var(--lesson-primary);
+  font-size: .8rem;
+  font-weight: 850;
+}
+.adv-lesson .lead { color: var(--lesson-muted); font-size: 1.02rem; }
+
+.adv-lesson .fr,
+.adv-lesson .example-fr,
+.adv-lesson .formula {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: isolate;
+}
+.adv-lesson .example {
+  margin: 10px 0;
+  padding: 12px 14px;
+  border-inline-start: 4px solid var(--lesson-primary);
+  border-radius: 10px;
+  background: var(--lesson-soft);
+}
+.adv-lesson .example-fr { margin: 0; font-weight: 700; }
+.adv-lesson .translation { margin: 3px 0 0; color: var(--lesson-muted); font-size: .93rem; }
+.adv-lesson .formula {
+  margin: 10px 0;
+  padding: 10px 12px;
+  border: 1px dashed var(--lesson-line);
+  border-radius: 10px;
+  background: var(--lesson-soft);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: .92rem;
+}
+
+.adv-lesson .note,
+.adv-lesson .warning,
+.adv-lesson .success,
+.adv-lesson .danger {
+  margin: 12px 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--lesson-line);
+}
+.adv-lesson .note { background: var(--lesson-soft); }
+.adv-lesson .warning { background: var(--lesson-warning-soft); border-color: color-mix(in srgb, var(--lesson-warning) 35%, var(--lesson-line)); }
+.adv-lesson .success { background: var(--lesson-success-soft); border-color: color-mix(in srgb, var(--lesson-success) 35%, var(--lesson-line)); }
+.adv-lesson .danger { background: var(--lesson-danger-soft); border-color: color-mix(in srgb, var(--lesson-danger) 35%, var(--lesson-line)); }
+.adv-lesson .warning strong { color: var(--lesson-warning); }
+.adv-lesson .success strong { color: var(--lesson-success); }
+.adv-lesson .danger strong { color: var(--lesson-danger); }
+
+.adv-lesson .table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin: 12px 0 16px;
+  border: 1px solid var(--lesson-line);
+  border-radius: 12px;
+}
+.adv-lesson table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  background: var(--lesson-surface);
+}
+.adv-lesson th,
+.adv-lesson td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--lesson-line);
+  text-align: right;
+  vertical-align: top;
+}
+.adv-lesson th {
+  background: var(--lesson-soft);
+  color: var(--lesson-ink);
+  font-size: .9rem;
+}
+.adv-lesson tr:last-child td { border-bottom: 0; }
+.adv-lesson td[lang="fr"],
+.adv-lesson th[lang="fr"] { direction: ltr; text-align: left; unicode-bidi: isolate; }
+
+.adv-lesson .split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 12px 0;
+}
+.adv-lesson .mini-card {
+  padding: 14px;
+  border: 1px solid var(--lesson-line);
+  border-radius: 12px;
+  background: var(--lesson-soft);
+}
+.adv-lesson .mini-card h4 { margin-top: 0; }
+
+.adv-lesson .error-list { list-style: none; padding: 0; }
+.adv-lesson .error-item {
+  margin: 12px 0;
+  padding: 14px;
+  border: 1px solid var(--lesson-line);
+  border-radius: 12px;
+  background: var(--lesson-surface);
+}
+.adv-lesson .wrong, .adv-lesson .right { direction: ltr; text-align: left; unicode-bidi: isolate; font-weight: 750; }
+.adv-lesson .wrong { color: var(--lesson-danger); }
+.adv-lesson .right { color: var(--lesson-success); }
+.adv-lesson .why { margin-top: 5px; color: var(--lesson-muted); }
+
+.adv-lesson .exercise-list { counter-reset: ex; list-style: none; padding: 0; }
+.adv-lesson .exercise {
+  counter-increment: ex;
+  position: relative;
+  margin: 12px 0;
+  padding: 14px 48px 14px 14px;
+  border: 1px solid var(--lesson-line);
+  border-radius: 12px;
+  background: var(--lesson-surface);
+}
+.adv-lesson .exercise::before {
+  content: counter(ex);
+  position: absolute;
+  inset-block-start: 13px;
+  inset-inline-start: 13px;
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--lesson-primary);
+  color: #fff;
+  font-weight: 850;
+  font-size: .8rem;
+}
+.adv-lesson .choices { margin-top: 7px; color: var(--lesson-muted); }
+.adv-lesson details.answers {
+  margin-top: 16px;
+  border: 1px solid var(--lesson-line);
+  border-radius: 12px;
+  background: var(--lesson-soft);
+  overflow: hidden;
+}
+.adv-lesson details.answers summary {
+  cursor: pointer;
+  padding: 12px 14px;
+  color: var(--lesson-primary-strong);
+  font-weight: 850;
+}
+.adv-lesson .answer-body { padding: 0 16px 14px; }
+.adv-lesson .answer-body li { margin-bottom: 7px; }
+
+.adv-lesson .memory-list { margin-bottom: 0; }
+.adv-lesson .source-note { margin-top: 18px; color: var(--lesson-muted); font-size: .82rem; }
+
+@media (max-width: 720px) {
+  .adv-lesson { font-size: .97rem; line-height: 1.8; }
+  .adv-lesson .lesson-card { padding: 16px; border-radius: 15px; }
+  .adv-lesson .split { grid-template-columns: 1fr; }
+  .adv-lesson .exercise { padding-inline-end: 44px; }
+  .adv-lesson table { min-width: 560px; }
+}
+
+@media (forced-colors: active) {
+  .adv-lesson .example,
+  .adv-lesson .note,
+  .adv-lesson .warning,
+  .adv-lesson .success,
+  .adv-lesson .danger,
+  .adv-lesson .mini-card { border: 1px solid CanvasText; }
+}
 </style>
-<header class="adv-hero">
-<p class="adv-kicker">Lesson 15 · ADV-L15</p>
-<h2 lang="fr" dir="ltr">L’adverbe</h2>
-<p class="fa-title" lang="fa">قید</p>
-<p class="summary" lang="fa">این درس روی «قید» تمرکز دارد و زیرموضوع‌های ویژگی‌ها و دسته‌های قید، قیدهای وجهی، ساخت قیدهای -ment، قیدهای خاص و tout، جایگاه قید و وارونگی را پوشش می‌دهد.</p>
-<p class="meta">Printed pages 96–103 · PDF pages 98–105 · target 220 questions</p>
+
+<header class="lesson-card lesson-hero">
+  <p class="kicker">درس ۱۵ · ADV-L15</p>
+  <h2 class="fr-title" lang="fr" dir="ltr">L’ADVERBE</h2>
+  <p class="fa-title">قید در زبان فرانسه</p>
+  <p class="lead">این درس روی نقش و انواع قید، قیدهای وجهی، ساخت قیدهای <span dir="ltr">-ment</span>، کاربرد خاص <span dir="ltr">tout</span> و جایگاه قید در جمله تمرکز دارد.</p>
+  <div class="meta" aria-label="مشخصات درس">
+    <span class="chip">صفحات کتاب: 96–103</span>
+    <span class="chip">PDF: صفحات 98–105</span>
+    <span class="chip">موضوع: L’adverbe</span>
+  </div>
 </header>
-<section class="subtopic" id="ADV-L15-ST01">
-<h3 lang="fr" dir="ltr">Caractéristiques et catégories</h3>
-<p class="fa-subtitle" lang="fa">ویژگی‌ها و دسته‌های قید</p>
-<p class="rule" lang="fr">L’adverbe invariable modifie verbe, adjectif, adverbe ou phrase et encode quantité, intensité, temps, lieu, manière, etc.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «ویژگی‌ها و دسته‌های قید» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Il répond très calmement.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز نقش قید را فقط «توصیف فعل» می‌داند و قید جمله یا شدت‌دهندهٔ صفت را تشخیص نمی‌دهد.</p>
-<p class="source"><code>ADV-L15:book-p096-p097:adv-functions</code> · printed 96–97 · PDF 98–99</p>
+
+<section class="lesson-card" id="goal">
+  <p class="section-label">1. هدف درس</p>
+  <h3>پس از این درس چه چیزی باید بلد باشید؟</h3>
+  <p>باید بتوانید تشخیص دهید یک <span dir="ltr">adverbe</span> چه چیزی را تغییر می‌دهد، انواع اصلی قید را از هم جدا کنید، قیدهای <span dir="ltr">-ment</span> را درست بسازید، رفتار خاص <span dir="ltr">tout</span> را بفهمید و جای قید را در زمان‌های ساده و مرکب به‌درستی انتخاب کنید.</p>
+  <p>همچنین باید تفاوت کاربرد روزمره با ساختار نوشتاریِ وارونگی پس از قیدهایی مانند <span dir="ltr">peut-être</span> و <span dir="ltr">sans doute</span> را تشخیص دهید.</p>
 </section>
-<section class="subtopic" id="ADV-L15-ST02">
-<h3 lang="fr" dir="ltr">Adverbes de modalité</h3>
-<p class="fa-subtitle" lang="fa">قیدهای وجهی</p>
-<p class="rule" lang="fr">Les adverbes signalent jugement, certitude, organisation du discours, précision ou restriction du locuteur.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «قیدهای وجهی» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Heureusement, personne n’a été blessé.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز sans doute را به‌معنای «بی‌هیچ تردید» می‌گیرد و درجهٔ اطمینان را وارونه می‌کند.</p>
-<p class="source"><code>ADV-L15:book-p098-p099:modal-adverbs</code> · printed 98–99 · PDF 100–101</p>
+
+<section class="lesson-card" id="main-idea">
+  <p class="section-label">2. ایده اصلی</p>
+  <h3>قید فقط «فعل» را توصیف نمی‌کند</h3>
+  <p><span dir="ltr">Adverbe</span> معمولاً کلمه‌ای <strong>تغییرناپذیر (invariable)</strong> است که معنی یک فعل، صفت، قید دیگر یا حتی کل جمله را دقیق‌تر می‌کند.</p>
+  <div class="split">
+    <div class="mini-card">
+      <h4>تغییر فعل</h4>
+      <p class="fr" lang="fr">Il court vite.</p>
+      <p class="translation">او سریع می‌دود.</p>
+    </div>
+    <div class="mini-card">
+      <h4>تغییر صفت</h4>
+      <p class="fr" lang="fr">Ils sont très gentils.</p>
+      <p class="translation">آنها خیلی مهربان‌اند.</p>
+    </div>
+    <div class="mini-card">
+      <h4>تغییر یک قید دیگر</h4>
+      <p class="fr" lang="fr">Elle a assez bien réussi.</p>
+      <p class="translation">او نسبتاً خوب موفق شد.</p>
+    </div>
+    <div class="mini-card">
+      <h4>تغییر کل جمله</h4>
+      <p class="fr" lang="fr">Malheureusement, il est parti.</p>
+      <p class="translation">متأسفانه او رفت.</p>
+    </div>
+  </div>
+  <div class="note"><strong>سؤال کلیدی:</strong> هر بار قیدی می‌بینید، ابتدا بپرسید «این قید چه چیزی را modify می‌کند و چه nuanceای اضافه می‌کند؟»</div>
 </section>
-<section class="subtopic" id="ADV-L15-ST03">
-<h3 lang="fr" dir="ltr">Formation en -ment</h3>
-<p class="fa-subtitle" lang="fa">ساخت قیدهای -ment</p>
-<p class="rule" lang="fr">La base féminine ou masculine et les alternances -amment/-emment obéissent à la terminaison de l’adjectif.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «ساخت قیدهای -ment» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Elle répond poliment et patiemment.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز به هر صفت مستقیماً -ment می‌افزاید و تغییرهای مؤنث یا -ant/-ent را اعمال نمی‌کند.</p>
-<p class="source"><code>ADV-L15:book-p100-p101:ment-formation</code> · printed 100–101 · PDF 102–103</p>
+
+<section class="lesson-card" id="categories">
+  <p class="section-label">3. Caractéristiques et catégories</p>
+  <h3>دسته‌های معنایی مهم قیدها</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>دسته</th><th lang="fr">نمونه‌ها</th><th>کارکرد</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span dir="ltr">quantité</span></td><td lang="fr">beaucoup, trop, assez, peu, davantage, plus, moins, autant</td><td>مقدار</td></tr>
+        <tr><td><span dir="ltr">intensité</span></td><td lang="fr">très, tellement, si, tant</td><td>شدت</td></tr>
+        <tr><td><span dir="ltr">comparaison</span></td><td lang="fr">plus, moins, aussi, autant</td><td>مقایسه</td></tr>
+        <tr><td><span dir="ltr">temps</span></td><td lang="fr">hier, demain, déjà, depuis, bientôt, maintenant</td><td>زمان</td></tr>
+        <tr><td><span dir="ltr">lieu</span></td><td lang="fr">ici, ailleurs, partout, dehors, loin, près</td><td>مکان</td></tr>
+        <tr><td><span dir="ltr">interrogation</span></td><td lang="fr">quand, où, pourquoi, comment, combien</td><td>پرسش</td></tr>
+        <tr><td><span dir="ltr">négation</span></td><td lang="fr">non, ne, ni, pas du tout</td><td>نفی</td></tr>
+        <tr><td><span dir="ltr">affirmation</span></td><td lang="fr">oui, si</td><td>تأیید</td></tr>
+        <tr><td><span dir="ltr">exclamation</span></td><td lang="fr">comme, que</td><td>تعجب</td></tr>
+        <tr><td><span dir="ltr">manière</span></td><td lang="fr">bien, mal, vite, ensemble, exprès, par hasard</td><td>چگونگی انجام عمل</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4>Quantité در برابر Intensité</h4>
+  <p><span dir="ltr">quantité</span> میزان یا مقدار را مشخص می‌کند، در حالی که <span dir="ltr">intensité</span> درجه و شدت یک حالت یا ویژگی را نشان می‌دهد.</p>
+  <div class="example"><p class="example-fr" lang="fr">Elle travaille beaucoup.</p><p class="translation">او زیاد کار می‌کند. ← مقدار</p></div>
+  <div class="example"><p class="example-fr" lang="fr">Il faisait très chaud.</p><p class="translation">هوا خیلی گرم بود. ← شدت</p></div>
+  <div class="example"><p class="example-fr" lang="fr">Il faisait si chaud qu’on ne pouvait plus bouger.</p><p class="translation">آن‌قدر گرم بود که دیگر نمی‌شد حرکت کرد. ← شدت همراه با نتیجه</p></div>
+
+  <h4>Comparaison</h4>
+  <div class="example"><p class="example-fr" lang="fr">Elle a plus de patience que moi.</p><p class="translation">او از من صبر بیشتری دارد.</p></div>
+  <div class="example"><p class="example-fr" lang="fr">Elle a l’air plus jeune.</p><p class="translation">او جوان‌تر به نظر می‌رسد.</p></div>
+
+  <h4>Temps و Lieu</h4>
+  <div class="example"><p class="example-fr" lang="fr">J’ai déjà lu ce livre.</p><p class="translation">من این کتاب را قبلاً خوانده‌ام.</p></div>
+  <div class="example"><p class="example-fr" lang="fr">La prochaine fois, on pourrait se réunir ailleurs.</p><p class="translation">دفعهٔ بعد می‌توانیم جای دیگری دور هم جمع شویم.</p></div>
+
+  <h4>Interrogation</h4>
+  <p>قیدهای پرسشی مهم: <span dir="ltr">quand</span> (چه زمانی)، <span dir="ltr">où</span> (کجا)، <span dir="ltr">pourquoi</span> (چرا)، <span dir="ltr">comment</span> (چگونه)، <span dir="ltr">combien</span> (چقدر/چند).</p>
 </section>
-<section class="subtopic" id="ADV-L15-ST04">
-<h3 lang="fr" dir="ltr">Adverbes particuliers et tout</h3>
-<p class="fa-subtitle" lang="fa">قیدهای خاص و tout</p>
-<p class="rule" lang="fr">Bien change de valeur selon le contexte; tout adverbial reste souvent invariable mais s’accorde devant بعضی adjectifs féminins.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «قیدهای خاص و tout» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Elles sont tout heureuses de vous revoir.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز tout قیدی را همیشه بی‌تغییر یا همیشه مطابق می‌کند و واج آغازین صفت مؤنث را نمی‌سنجد.</p>
-<p class="source"><code>ADV-L15:book-p100-p101:special-adverbs</code> · printed 100–101 · PDF 102–103</p>
+
+<section class="lesson-card" id="oui-si">
+  <p class="section-label">4. Affirmation</p>
+  <h3>تفاوت مهم <span dir="ltr">oui</span> و <span dir="ltr">si</span></h3>
+  <p><span dir="ltr">oui</span> پاسخ مثبت عادی است؛ اما <span dir="ltr">si</span> وقتی استفاده می‌شود که یک سؤال یا گفتهٔ منفی را رد کنیم.</p>
+  <div class="example"><p class="example-fr" lang="fr">Tu viens ? — Oui.</p><p class="translation">می‌آیی؟ — بله.</p></div>
+  <div class="example"><p class="example-fr" lang="fr">Il n’a pas plu cette nuit ? — Si, regarde, tout est mouillé.</p><p class="translation">دیشب باران نیامده؟ — چرا، آمده؛ نگاه کن همه‌چیز خیس است.</p></div>
+  <div class="warning"><strong>نکته:</strong> برای فارسی‌زبان‌ها این تفاوت مهم است؛ <span dir="ltr">si</span> در این کاربرد یعنی «اتفاقاً چرا» و نفی قبلی را رد می‌کند.</div>
 </section>
-<section class="subtopic" id="ADV-L15-ST05">
-<h3 lang="fr" dir="ltr">Place de l’adverbe et inversion</h3>
-<p class="fa-subtitle" lang="fa">جایگاه قید و وارونگی</p>
-<p class="rule" lang="fr">La place varie avec temps simple/composé, longueur et portée; certains adverbes initiaux entraînent l’inversion écrite.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «جایگاه قید و وارونگی» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Il a beaucoup travaillé; ainsi a-t-il pu terminer à temps.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز همهٔ قیدها را پس از participe passé می‌گذارد یا وارونگی پس از peut-être/aussi/ainsi آغازین را حذف می‌کند.</p>
-<p class="source"><code>ADV-L15:book-p102-p103:adv-position</code> · printed 102–103 · PDF 104–105</p>
+
+<section class="lesson-card" id="manner-modalite">
+  <p class="section-label">5. Manière et modalité</p>
+  <h3>قیدهای نحوه و قیدهای وجهی</h3>
+
+  <h4>Adverbes de manière</h4>
+  <p>این قیدها چگونگی انجام عمل را نشان می‌دهند: <span dir="ltr">bien, mal, mieux, pire, ainsi, ensemble, soudain, vite, exprès, par hasard</span>.</p>
+  <div class="example"><p class="example-fr" lang="fr">Ils sont partis ensemble au théâtre.</p><p class="translation">آنها با هم به تئاتر رفتند.</p></div>
+  <div class="example"><p class="example-fr" lang="fr">Il l’a fait exprès.</p><p class="translation">او عمداً این کار را کرد.</p></div>
+
+  <h4>Adverbes de modalité</h4>
+  <p>این قیدها بیشتر نگرش، قضاوت، درجهٔ اطمینان یا نحوهٔ سازمان‌دهی سخنِ گوینده را نشان می‌دهند، نه صرفاً چگونگی انجام یک فعل.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>کارکرد</th><th lang="fr">قیدها / عبارت‌ها</th><th lang="fr">مثال</th></tr></thead>
+      <tbody>
+        <tr><td>قضاوت</td><td lang="fr">peut-être, évidemment, naturellement, certes, malheureusement, bien sûr, hélas</td><td lang="fr">Malheureusement, il ne pourra pas venir.</td></tr>
+        <tr><td>تأیید</td><td lang="fr">oui, si, certes, en effet, sans doute</td><td lang="fr">En effet, on a dîné ensemble hier.</td></tr>
+        <tr><td>نفی تقویت‌شده</td><td lang="fr">aucunement, nullement</td><td lang="fr">Je n’ai aucunement promis de l’emmener au cinéma.</td></tr>
+        <tr><td>تعجب</td><td lang="fr">comme, que, bravo, chapeau</td><td lang="fr">Comme tu es belle !</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4>سازمان‌دهی گفتار</h4>
+  <p><span dir="ltr">d’abord, ensuite, puis, enfin, finalement</span> برای نشان دادن ترتیب مراحل یا رویدادها استفاده می‌شوند.</p>
+  <div class="example"><p class="example-fr" lang="fr">Nous visiterons d’abord le musée, puis nous irons nous promener.</p><p class="translation">ابتدا موزه را می‌بینیم، سپس برای قدم‌زدن می‌رویم.</p></div>
+  <p>در نوشتار، عبارت‌هایی مانند <span dir="ltr">par ailleurs, de plus, en outre, enfin</span> برای سازمان‌دهی و سلسله‌مراتب ایده‌ها بسیار کاربردی‌اند.</p>
+
+  <h4>Précision و Restriction</h4>
+  <p>برای دقیق‌تر کردن گفته از مواردی مانند <span dir="ltr">même, notamment, plutôt, surtout, seulement</span> استفاده می‌شود.</p>
+  <div class="example"><p class="example-fr" lang="fr">On annonce des grèves, notamment dans les transports.</p><p class="translation">اعتصاب‌هایی اعلام شده، به‌خصوص در بخش حمل‌ونقل.</p></div>
+  <div class="split">
+    <div class="mini-card"><h4><span dir="ltr">au moins</span></h4><p>حداقل مقدار یا حداقل انتظار.</p><p class="fr" lang="fr">Ils auraient pu au moins envoyer un faire-part.</p></div>
+    <div class="mini-card"><h4><span dir="ltr">du moins</span></h4><p>محدود یا اصلاح کردن اعتبارِ گفتهٔ قبلی.</p><p class="fr" lang="fr">Il est très renommé ; du moins, c’est ce qu’on dit.</p></div>
+  </div>
 </section>
-<aside class="notes"><h3>Notes avancées</h3>
-<section><h4>Exceptions / استثناها</h4><ul><li>Tout adverbial s’accorde devant un adjectif féminin commençant par consonne ou h aspiré, et peut varier devant voyelle/h muet.</li><li>Les adverbes longs peuvent suivre le participe passé.</li></ul></section>
-<section><h4>Contrastes / تقابل‌ها</h4><ul><li>adverbe de manière vs modalité de phrase</li><li>bien quantité/intensité/manière/jugement</li><li>position neutre vs position à portée phrastique</li></ul></section>
-<section><h4>Restrictions / محدودیت‌ها</h4><ul><li>La place dépend de la portée, de la longueur et du temps verbal; le lieu suit l’auxiliaire dans les exemples traités.</li></ul></section>
-<section><h4>Register / سطح زبانی</h4><ul><li>Inversion après peut-être, aussi, ainsi, à peine ou sans doute initial est surtout écrite.</li></ul></section>
-<section><h4>Temporal notes / نکات زمانی</h4><ul><li>Les adverbes temporels peuvent porter sur événement, repère ou organisation du récit.</li></ul></section>
-<section><h4>Semantic notes / نکات معنایی</h4><ul><li>Déplacer un adverbe peut changer sa portée sur le verbe ou toute la phrase.</li></ul></section>
-</aside>
+
+<section class="lesson-card" id="formation-ment">
+  <p class="section-label">6. Les adverbes en « -ment »</p>
+  <h3>ساخت قیدهای <span dir="ltr">-ment</span></h3>
+
+  <h4>حالت ۱: پایهٔ مؤنث + <span dir="ltr">-ment</span></h4>
+  <p>وقتی صفت به consonne یا <span dir="ltr">e</span> ختم می‌شود، شکل مؤنث مبنای ساخت قید است.</p>
+  <div class="formula">lent → lente → lentement<br>doux → douce → doucement<br>vif → vive → vivement<br>cruel → cruelle → cruellement</div>
+  <p>اگر صفت از قبل به <span dir="ltr">e</span> ختم شده باشد:</p>
+  <div class="formula">rapide → rapidement<br>difficile → difficilement<br>incroyable → incroyablement<br>facile → facilement</div>
+
+  <h4>حالت ۲: پایان‌های <span dir="ltr">-i, -u, -ai, -é</span></h4>
+  <p>در این گروه، شکل مذکر معمولاً مستقیماً با <span dir="ltr">-ment</span> ترکیب می‌شود.</p>
+  <div class="formula">poli → poliment<br>absolu → absolument<br>vrai → vraiment<br>exagéré → exagérément</div>
+  <div class="example"><p class="example-fr" lang="fr">Vous avez absolument raison.</p><p class="translation">کاملاً حق با شماست.</p></div>
+
+  <h4><span dir="ltr">-ant → -amment</span> و <span dir="ltr">-ent → -emment</span></h4>
+  <div class="formula">constant → constamment<br>élégant → élégamment<br><br>violent → violemment<br>patient → patiemment</div>
+  <div class="example"><p class="example-fr" lang="fr">Elle nous a patiemment attendus.</p><p class="translation">او با صبر منتظر ما ماند.</p></div>
+  <div class="note"><strong>تلفظ:</strong> پایان‌های <span dir="ltr">-amment</span> و <span dir="ltr">-emment</span> با وجود املای متفاوت، یکسان تلفظ می‌شوند: <span dir="ltr">[amɑ̃]</span>.</div>
+</section>
+
+<section class="lesson-card" id="bien">
+  <p class="section-label">7. Adverbes particuliers</p>
+  <h3>یک قید می‌تواند چند ارزش معنایی داشته باشد</h3>
+  <p>کتاب <span dir="ltr">bien</span> را به‌عنوان نمونه‌ای نشان می‌دهد که بسته به context نقش معنایی متفاوتی پیدا می‌کند.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>نقش</th><th lang="fr">مثال</th><th>معنا</th></tr></thead>
+      <tbody>
+        <tr><td><span dir="ltr">manière</span></td><td lang="fr">Il travaille bien.</td><td>او خوب کار می‌کند.</td></tr>
+        <tr><td><span dir="ltr">quantité</span></td><td lang="fr">Il fait bien des erreurs.</td><td>اشتباهات زیادی می‌کند.</td></tr>
+        <tr><td><span dir="ltr">intensité</span></td><td lang="fr">Il est bien aimable.</td><td>واقعاً / خیلی مهربان است.</td></tr>
+        <tr><td>تأیید / قضاوت</td><td lang="fr">Ah, c’est bien lui.</td><td>آه، واقعاً خودش است.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="warning"><strong>نتیجه:</strong> معنی قید را فقط از خود کلمه تعیین نکنید؛ context مشخص می‌کند قید چه نقشی دارد.</div>
+</section>
+
+<section class="lesson-card" id="tout">
+  <p class="section-label">8. Le cas particulier de « tout »</p>
+  <h3>استثنای مهم: <span dir="ltr">tout</span> همیشه ثابت نیست</h3>
+  <p>وقتی <span dir="ltr">tout</span> قیدی و تقریباً به معنی <span dir="ltr">entièrement</span> («کاملاً») است، معمولاً تغییرناپذیر است اما در بعضی حالت‌های مؤنث accord می‌گیرد.</p>
+
+  <h4>قبل از قید یا حرف اضافه: ثابت</h4>
+  <div class="example"><p class="example-fr" lang="fr">Il habite tout à côté de chez moi.</p></div>
+  <div class="example"><p class="example-fr" lang="fr">On a passé la soirée tout tranquillement.</p></div>
+  <p>همچنین در عبارت‌های ثابت: <span dir="ltr">tout à coup, tout à l’heure, tout à fait</span>.</p>
+
+  <h4>قبل از صفت مذکر: ثابت</h4>
+  <div class="example"><p class="example-fr" lang="fr">Le salon est tout propre.</p></div>
+  <div class="example"><p class="example-fr" lang="fr">Les meubles sont tout sales.</p></div>
+
+  <h4>صفت مؤنث + consonne یا h aspiré: accord</h4>
+  <div class="example"><p class="example-fr" lang="fr">La cuisine est toute sale.</p></div>
+  <div class="example"><p class="example-fr" lang="fr">Les chambres sont toutes propres.</p></div>
+  <div class="example"><p class="example-fr" lang="fr">Elle a paru toute honteuse.</p></div>
+
+  <h4>صفت مؤنث + voyelle یا h muet</h4>
+  <p>طبق درس کتاب، در این حالت <span dir="ltr">tout</span> می‌تواند ثابت بماند یا accord بگیرد. نمونه‌های ارائه‌شده:</p>
+  <div class="example"><p class="example-fr" lang="fr">Elle a semblé tout étonnée.</p></div>
+  <div class="example"><p class="example-fr" lang="fr">Elle est tout heureuse.</p></div>
+</section>
+
+<section class="lesson-card" id="position">
+  <p class="section-label">9. La place de l’adverbe</p>
+  <h3>جای قید در جمله</h3>
+
+  <h4>قبل از صفت یا قید دیگر</h4>
+  <div class="formula">adverbe + adjectif<br>adverbe + adverbe</div>
+  <div class="example"><p class="example-fr" lang="fr">Ils sont très sympathiques.</p></div>
+  <div class="example"><p class="example-fr" lang="fr">Je vais plutôt bien.</p></div>
+  <div class="example"><p class="example-fr" lang="fr">C’est tout à fait vrai.</p></div>
+
+  <h4>با زمان ساده: معمولاً بعد از فعل</h4>
+  <div class="formula">Sujet + verbe conjugué + adverbe</div>
+  <div class="example"><p class="example-fr" lang="fr">Elle travaille beaucoup.</p></div>
+  <div class="example"><p class="example-fr" lang="fr">Parle doucement !</p></div>
+  <div class="example"><p class="example-fr" lang="fr">Je regarde souvent la télévision.</p></div>
+
+  <h4>با زمان مرکب: بسیاری از قیدهای رایج بین auxiliaire و participe passé</h4>
+  <div class="formula">Sujet + auxiliaire + adverbe + participe passé</div>
+  <div class="example"><p class="example-fr" lang="fr">Elle a toujours affirmé que c’était vrai.</p></div>
+  <div class="example"><p class="example-fr" lang="fr">Sa lettre est déjà arrivée.</p></div>
+  <div class="example"><p class="example-fr" lang="fr">Elle aurait au moins pu nous prévenir.</p></div>
+
+  <h4>قیدهای طولانی: جایگاه انعطاف‌پذیرتر</h4>
+  <p>قیدهای چند هجایی می‌توانند بعد از participe passé نیز قرار بگیرند.</p>
+  <div class="split">
+    <div class="mini-card"><p class="fr" lang="fr">Elle a violemment réagi.</p></div>
+    <div class="mini-card"><p class="fr" lang="fr">Elle a réagi violemment.</p></div>
+  </div>
+
+  <h4>قیدهای مکان در مثال کتاب</h4>
+  <div class="warning">
+    <strong>نکتهٔ دقیق درباره متن کتاب:</strong> جملهٔ توضیحی صفحه 102 می‌گوید قید مکان «بعد از auxiliaire» قرار می‌گیرد، اما مثال همان صفحه <span dir="ltr">Je l’ai cherché partout et je ne l’ai trouvé nulle part.</span> قیدهای <span dir="ltr">partout</span> و <span dir="ltr">nulle part</span> را بعد از participe passé نشان می‌دهد. برای کاربرد عملی، الگوی روشنِ خود مثال را دنبال کنید.
+  </div>
+
+  <h4>قیدی که کل جمله را تغییر می‌دهد</h4>
+  <p>وقتی قید scope کل جمله را دارد، جای آن آزادتر می‌شود:</p>
+  <div class="example"><p class="example-fr" lang="fr">Autrefois, les femmes ne travaillaient pas.</p></div>
+  <div class="example"><p class="example-fr" lang="fr">Les femmes ne travaillaient pas, autrefois.</p></div>
+  <div class="example"><p class="example-fr" lang="fr">Les femmes, autrefois, ne travaillaient pas.</p></div>
+</section>
+
+<section class="lesson-card" id="inversion">
+  <p class="section-label">10. Inversion et registre</p>
+  <h3>وارونگی پس از بعضی قیدهای آغازین</h3>
+  <p>قیدهایی مانند <span dir="ltr">peut-être, aussi, ainsi, à peine, sans doute</span> وقتی در آغاز جمله قرار می‌گیرند، به‌ویژه در نوشتار می‌توانند با inversion فعل و فاعل همراه شوند.</p>
+  <div class="split">
+    <div class="mini-card">
+      <h4>Courant</h4>
+      <p class="fr" lang="fr">Il va peut-être venir dans la soirée.</p>
+      <p class="fr" lang="fr">Elle sera sans doute présente.</p>
+    </div>
+    <div class="mini-card">
+      <h4>Écrit / plus soutenu</h4>
+      <p class="fr" lang="fr">Peut-être va-t-il venir dans la soirée.</p>
+      <p class="fr" lang="fr">Sans doute sera-t-elle présente.</p>
+    </div>
+  </div>
+  <div class="note">برای نوشتار B2، شناخت این ساختار مفید است؛ اما در مکالمه معمولاً جایگاه میانی قید طبیعی‌تر است.</div>
+</section>
+
+<section class="lesson-card" id="contrasts">
+  <p class="section-label">11. Contrastها و تفاوت‌های ظریف</p>
+  <h3>مقایسهٔ مستقیم ساختارهای نزدیک</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>ساختار</th><th>کاربرد/معنا</th><th lang="fr">مثال</th><th>نکته تمایز</th></tr></thead>
+      <tbody>
+        <tr><td><span dir="ltr">beaucoup</span></td><td>quantité</td><td lang="fr">Il travaille beaucoup.</td><td>مقدار</td></tr>
+        <tr><td><span dir="ltr">très</span></td><td>intensité</td><td lang="fr">Il est très fatigué.</td><td>شدت</td></tr>
+        <tr><td><span dir="ltr">plus</span></td><td>comparaison</td><td lang="fr">Il travaille plus que moi.</td><td>مقایسه</td></tr>
+        <tr><td><span dir="ltr">bien</span></td><td>چندمعنایی</td><td lang="fr">Il travaille bien.</td><td>نقش از context تعیین می‌شود</td></tr>
+        <tr><td><span dir="ltr">oui</span></td><td>تأیید معمولی</td><td lang="fr">Tu viens ? — Oui.</td><td>پاسخ به جمله مثبت</td></tr>
+        <tr><td><span dir="ltr">si</span></td><td>رد نفی</td><td lang="fr">Tu ne viens pas ? — Si.</td><td>نفی قبلی را رد می‌کند</td></tr>
+        <tr><td><span dir="ltr">au moins</span></td><td>حداقل</td><td lang="fr">Appelle-moi au moins.</td><td>minimum</td></tr>
+        <tr><td><span dir="ltr">du moins</span></td><td>محدودسازی گفته</td><td lang="fr">Du moins, c’est ce qu’il affirme.</td><td>اعتبار جمله قبلی را محدود می‌کند</td></tr>
+        <tr><td><span dir="ltr">tout propre</span></td><td>صفت مذکر</td><td lang="fr">Le salon est tout propre.</td><td><span dir="ltr">tout</span> ثابت</td></tr>
+        <tr><td><span dir="ltr">toute sale</span></td><td>مؤنث + consonne</td><td lang="fr">La cuisine est toute sale.</td><td>accord</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="lesson-card" id="restrictions">
+  <p class="section-label">12. استثناها و محدودیت‌ها</p>
+  <h3>مواردی که نباید ساده‌سازی شوند</h3>
+  <ul>
+    <li>قیدها اصولاً <span dir="ltr">invariables</span> هستند، اما <span dir="ltr">tout</span> استثنای مهمی است.</li>
+    <li>برای ساخت <span dir="ltr">-ment</span> نمی‌توان همیشه فقط <span dir="ltr">-ment</span> را به شکل مذکر صفت چسباند.</li>
+    <li><span dir="ltr">-ant</span> و <span dir="ltr">-ent</span> دو الگوی املایی متفاوت دارند: <span dir="ltr">-amment</span> و <span dir="ltr">-emment</span>.</li>
+    <li>جای قید در <span dir="ltr">temps composé</span> به نوع، طول و scope قید بستگی دارد.</li>
+    <li>قیدهای طولانی انعطاف بیشتری برای قرارگرفتن بعد از <span dir="ltr">participe passé</span> دارند.</li>
+    <li>وارونگی پس از قیدهای آغازین مانند <span dir="ltr">peut-être</span> و <span dir="ltr">sans doute</span> بیشتر ویژگی نوشتاری است.</li>
+  </ul>
+</section>
+
+<section class="lesson-card" id="errors">
+  <p class="section-label">13. خطاهای رایج</p>
+  <h3>اشتباه‌هایی که باید از آنها جلوگیری کنید</h3>
+  <ul class="error-list">
+    <li class="error-item"><p class="wrong" lang="fr">❌ Il parle lent.</p><p class="right" lang="fr">✅ Il parle lentement.</p><p class="why">برای توضیح نحوهٔ انجام <span dir="ltr">parler</span> به قید نیاز داریم، نه صفت.</p></li>
+    <li class="error-item"><p class="wrong" lang="fr">❌ Elle répond doux.</p><p class="right" lang="fr">✅ Elle répond doucement.</p><p class="why"><span dir="ltr">doux → douce → doucement</span></p></li>
+    <li class="error-item"><p class="wrong" lang="fr">❌ patientamment</p><p class="right" lang="fr">✅ patiemment</p><p class="why"><span dir="ltr">patient</span> به <span dir="ltr">-ent</span> ختم می‌شود: <span dir="ltr">-ent → -emment</span>.</p></li>
+    <li class="error-item"><p class="wrong" lang="fr">❌ La cuisine est tout sale.</p><p class="right" lang="fr">✅ La cuisine est toute sale.</p><p class="why">صفت مؤنث است و با consonne شروع می‌شود؛ بنابراین <span dir="ltr">tout</span> accord می‌گیرد.</p></li>
+    <li class="error-item"><p class="wrong" lang="fr">❌ Les chambres sont tout propres.</p><p class="right" lang="fr">✅ Les chambres sont toutes propres.</p><p class="why">جمع مؤنث + consonne → <span dir="ltr">toutes</span>.</p></li>
+    <li class="error-item"><p class="wrong" lang="fr">❌ Tu n’as pas compris ? — Oui, j’ai compris.</p><p class="right" lang="fr">✅ Tu n’as pas compris ? — Si, j’ai compris.</p><p class="why">برای رد یک سؤال منفی از <span dir="ltr">si</span> استفاده می‌کنیم.</p></li>
+    <li class="error-item"><p class="wrong" lang="fr">❌ Elle rapidement a répondu.</p><p class="right" lang="fr">✅ Elle a répondu rapidement.</p><p class="why">جای قید با ساختار فعل و نوع قید تعیین می‌شود.</p></li>
+    <li class="error-item"><p class="wrong" lang="fr">❌ Peut-être il viendra ce soir. <span aria-hidden="true">(style écrit)</span></p><p class="right" lang="fr">✅ Peut-être viendra-t-il ce soir.</p><p class="why">در سبک نوشتاری، <span dir="ltr">peut-être</span> در آغاز جمله می‌تواند inversion ایجاد کند. در زبان courant نیز <span dir="ltr">Il viendra peut-être ce soir.</span> طبیعی است.</p></li>
+  </ul>
+</section>
+
+<section class="lesson-card" id="register">
+  <p class="section-label">14. زبان واقعی و Register</p>
+  <h3>Courant در برابر écrit / soutenu</h3>
+  <p>در گفتار و زبان courant، جایگاه میانی بسیار طبیعی است:</p>
+  <div class="example"><p class="example-fr" lang="fr">Il va peut-être venir.</p><p class="example-fr" lang="fr">Elle sera sans doute présente.</p></div>
+  <p>در نوشتار نسبتاً soutenu، همان قیدها می‌توانند در آغاز جمله بیایند و inversion ایجاد کنند:</p>
+  <div class="example"><p class="example-fr" lang="fr">Peut-être viendra-t-il.</p><p class="example-fr" lang="fr">Sans doute sera-t-elle présente.</p></div>
+  <p>رابط‌هایی مانند <span dir="ltr">par ailleurs, de plus, en outre, enfin</span> نیز برای سازمان‌دهی استدلال در نوشتار و آزمون‌های سطح B2 مفیدند.</p>
+</section>
+
+<section class="lesson-card" id="key-points">
+  <p class="section-label">15. نکات کلیدی یادگیری</p>
+  <h3>برای تشخیص سریع</h3>
+  <ul>
+    <li>اول مشخص کنید قید چه چیزی را modify می‌کند: فعل، صفت، قید دیگر یا کل جمله.</li>
+    <li><span dir="ltr">très</span> معمولاً شدت می‌دهد؛ <span dir="ltr">beaucoup</span> اغلب مقدار را.</li>
+    <li>برای ساخت <span dir="ltr">-ment</span> به پایان صفت نگاه کنید.</li>
+    <li><span dir="ltr">-ant → -amment</span> و <span dir="ltr">-ent → -emment</span>.</li>
+    <li><span dir="ltr">tout + adjectif masculin</span> معمولاً ثابت می‌ماند.</li>
+    <li><span dir="ltr">tout + adjectif féminin</span> با consonne یا h aspiré accord می‌گیرد.</li>
+    <li>در زمان مرکب، بسیاری از قیدهای کوتاه بین auxiliaire و participe passé قرار می‌گیرند.</li>
+    <li>سؤال منفی + پاسخ مخالف → <span dir="ltr">si</span>.</li>
+  </ul>
+</section>
+
+<section class="lesson-card" id="summary">
+  <p class="section-label">16. خلاصه‌ای که باید به خاطر بسپارید</p>
+  <h3>مرور سریع قبل از آزمون</h3>
+  <ul class="memory-list">
+    <li><span dir="ltr">adverbe</span> معمولاً <strong>invariable</strong> است.</li>
+    <li>قید می‌تواند فعل، صفت، قید دیگر یا کل جمله را تغییر دهد.</li>
+    <li><span dir="ltr">beaucoup</span> → مقدار؛ <span dir="ltr">très / tellement / si</span> → شدت.</li>
+    <li><span dir="ltr">plus / moins / aussi / autant</span> → مقایسه.</li>
+    <li><span dir="ltr">oui</span> → تأیید معمولی؛ <span dir="ltr">si</span> → رد کردن نفی.</li>
+    <li>قیدهای modalité نگرش گوینده را نشان می‌دهند: <span dir="ltr">peut-être, évidemment, malheureusement, certes...</span></li>
+    <li>صفت‌های معمولی → اغلب <span dir="ltr">forme féminine + ment</span>.</li>
+    <li><span dir="ltr">-ant → -amment</span>؛ <span dir="ltr">-ent → -emment</span>.</li>
+    <li><span dir="ltr">tout</span> استثناست و گاهی با صفت مؤنث accord می‌گیرد.</li>
+    <li><span dir="ltr">temps simple</span> → معمولاً <span dir="ltr">verbe + adverbe</span>.</li>
+    <li><span dir="ltr">temps composé</span> → بسیاری از قیدهای رایج: <span dir="ltr">auxiliaire + adverbe + participe passé</span>.</li>
+    <li>قیدهای طولانی می‌توانند بعد از participe passé بیایند.</li>
+    <li><span dir="ltr">Peut-être viendra-t-il...</span> و <span dir="ltr">Sans doute sera-t-elle...</span> بیشتر نوشتاری‌اند.</li>
+  </ul>
+</section>
+
+<section class="lesson-card" id="exercises">
+  <p class="section-label">17. تمرین</p>
+  <h3>تمرین‌های هدفمند</h3>
+  <ol class="exercise-list">
+    <li class="exercise"><p class="fr" lang="fr">Il faisait ______ froid que personne ne voulait sortir.</p><p class="choices" dir="ltr">a) beaucoup &nbsp; b) si &nbsp; c) partout</p></li>
+    <li class="exercise"><p>قید مناسب را بسازید:</p><p class="fr" lang="fr">doux → ______</p></li>
+    <li class="exercise"><p>قید مناسب را بسازید:</p><p class="fr" lang="fr">patient → ______</p></li>
+    <li class="exercise"><p>کدام جمله صحیح است؟</p><p class="choices" dir="ltr">a) La chambre est tout propre.<br>b) La chambre est toute propre.</p></li>
+    <li class="exercise"><p class="fr" lang="fr">Les garçons sont ______ contents.</p><p class="choices" dir="ltr">a) tout &nbsp; b) tous</p></li>
+    <li class="exercise"><p>پاسخ مناسب را انتخاب کنید:</p><p class="fr" lang="fr">Tu n’as pas reçu mon message ? — ______, je l’ai reçu hier.</p></li>
+    <li class="exercise"><p>قید را در جای مناسب قرار دهید:</p><p class="fr" lang="fr">Elle / a / terminé / déjà / son travail.</p></li>
+    <li class="exercise"><p>دو شکل صحیح بسازید:</p><p class="fr" lang="fr">Elle a réagi. + violemment</p></li>
+    <li class="exercise"><p>نقش <span dir="ltr">bien</span> را مشخص کنید:</p><p class="fr" lang="fr">Il travaille bien.</p><p class="choices" dir="ltr">a) manière &nbsp; b) quantité &nbsp; c) intensité</p></li>
+    <li class="exercise"><p>نقش <span dir="ltr">bien</span> را مشخص کنید:</p><p class="fr" lang="fr">Il fait bien des erreurs.</p><p class="choices" dir="ltr">a) manière &nbsp; b) quantité &nbsp; c) lieu</p></li>
+    <li class="exercise"><p>به سبک نوشتاری‌تر تبدیل کنید:</p><p class="fr" lang="fr">Il viendra peut-être demain.</p></li>
+    <li class="exercise"><p>بین <span dir="ltr">au moins</span> و <span dir="ltr">du moins</span> انتخاب کنید:</p><p class="fr" lang="fr">Il affirme qu’il a envoyé le dossier ; ______, c’est ce qu’il dit.</p></li>
+  </ol>
+
+  <details class="answers">
+    <summary>نمایش پاسخ تمرین‌ها</summary>
+    <div class="answer-body">
+      <ol>
+        <li><strong><span dir="ltr">si</span></strong> — ساختار <span dir="ltr">si ... que</span> شدت همراه نتیجه را بیان می‌کند.</li>
+        <li><span dir="ltr">doucement</span></li>
+        <li><span dir="ltr">patiemment</span></li>
+        <li><span dir="ltr">La chambre est toute propre.</span></li>
+        <li><span dir="ltr">tout</span> — صفت مذکر جمع است و <span dir="ltr">tout</span> در این کاربرد ثابت می‌ماند.</li>
+        <li><span dir="ltr">Si</span></li>
+        <li><span dir="ltr">Elle a déjà terminé son travail.</span></li>
+        <li><span dir="ltr">Elle a violemment réagi.</span> / <span dir="ltr">Elle a réagi violemment.</span></li>
+        <li><span dir="ltr">manière</span></li>
+        <li><span dir="ltr">quantité</span> — <span dir="ltr">bien des erreurs</span> ≈ تعداد زیادی اشتباه.</li>
+        <li><span dir="ltr">Peut-être viendra-t-il demain.</span></li>
+        <li><span dir="ltr">du moins</span> — گفتهٔ قبلی را محدود می‌کند.</li>
+      </ol>
+    </div>
+  </details>
+</section>
+
+<footer class="source-note">
+  منبع آموزشی: <span dir="ltr">Grammaire Progressive du Français — Niveau Avancé — 3e édition</span>، درس ۱۵، صفحات چاپی 96 تا 103. محتوای آموزشی بازنویسی شده و برای نمایش مستقیم در سایت آماده شده است.
+</footer>
 </article>

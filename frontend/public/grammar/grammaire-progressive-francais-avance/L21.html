@@ -1,76 +1,806 @@
-<article class="adv-lesson" data-lesson-id="ADV-L21">
+<article class="adv-lesson adv-lesson-l21" data-lesson-id="ADV-L21" lang="fa" dir="rtl">
 <style>
-.adv-lesson{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.75;color:#172033;max-width:980px;margin:0 auto;padding:8px 2px 40px}
-.adv-lesson *{box-sizing:border-box}
-.adv-lesson .adv-hero{padding:24px;border:1px solid #e3e8f0;border-radius:18px;background:#fff;margin-bottom:22px}
-.adv-lesson .adv-kicker{font-size:.86rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.65;margin:0 0 6px}
-.adv-lesson h2,.adv-lesson h3{line-height:1.35}
-.adv-lesson h2{font-size:1.65rem;margin:0 0 4px}
-.adv-lesson .fa-title{direction:rtl;text-align:right;font-weight:650;margin:.2rem 0 .8rem}
-.adv-lesson .summary{direction:rtl;text-align:right;margin:0}
-.adv-lesson .meta{margin-top:12px;font-size:.9rem;opacity:.72}
-.adv-lesson .subtopic{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin:18px 0;background:#fff}
-.adv-lesson .subtopic h3{margin:0 0 2px;font-size:1.25rem}
-.adv-lesson .fa-subtitle{direction:rtl;text-align:right;font-weight:600;margin:.1rem 0 1rem}
-.adv-lesson .rule{direction:ltr;text-align:left;padding:12px 14px;border-left:4px solid currentColor;background:#f7f9fc;border-radius:8px;margin:12px 0}
-.adv-lesson .teaching,.adv-lesson .trap{direction:rtl;text-align:right}
-.adv-lesson .example{direction:ltr;text-align:left;font-style:italic;padding:10px 14px;background:#f7f9fc;border-radius:8px}
-.adv-lesson .trap{padding:10px 14px;border:1px dashed #c7ced9;border-radius:8px}
-.adv-lesson .source{font-size:.82rem;opacity:.65;margin-top:12px}
-.adv-lesson .notes{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin-top:22px}
-.adv-lesson .notes h3{margin-top:0}
-.adv-lesson .notes section{margin:16px 0}
-.adv-lesson .notes h4{margin:0 0 6px}
-.adv-lesson .notes ul{margin-top:4px}
+.adv-lesson-l21{
+  --l-ink:var(--ink,#17233c);
+  --l-muted:var(--muted,#5a6477);
+  --l-line:var(--line,#d9dfeb);
+  --l-surface:var(--surface,#ffffff);
+  --l-soft:var(--surface-soft,#f5f7fb);
+  --l-primary:var(--primary,#2856c7);
+  --l-primary-strong:var(--primary-strong,#1c3f99);
+  --l-success:var(--success,#18794e);
+  --l-success-soft:var(--success-soft,#e9f7f0);
+  --l-danger:var(--danger,#b42318);
+  --l-danger-soft:var(--danger-soft,#fff0ee);
+  --l-warning:var(--warning,#8a4b08);
+  --l-warning-soft:var(--warning-soft,#fff7e8);
+  --l-shadow:var(--shadow,0 18px 50px rgba(34,53,90,.09));
+  font-family:var(--font-ui,Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif);
+  color:var(--l-ink);
+  line-height:1.85;
+  max-width:980px;
+  margin:0 auto;
+  padding:clamp(8px,2vw,20px);
+  text-align:right;
+}
+.adv-lesson-l21 *{box-sizing:border-box}
+.adv-lesson-l21 [lang="fr"],
+.adv-lesson-l21 .fr,
+.adv-lesson-l21 code{
+  direction:ltr;
+  unicode-bidi:isolate;
+}
+.adv-lesson-l21 .fr{display:inline-block}
+.adv-lesson-l21 .hero,
+.adv-lesson-l21 .section,
+.adv-lesson-l21 .subtopic,
+.adv-lesson-l21 .summary-box{
+  background:var(--l-surface);
+  border:1px solid var(--l-line);
+  box-shadow:var(--l-shadow);
+}
+.adv-lesson-l21 .hero{
+  border-radius:22px;
+  padding:clamp(20px,4vw,34px);
+  margin-bottom:22px;
+  position:relative;
+  overflow:hidden;
+}
+.adv-lesson-l21 .hero::before{
+  content:"";
+  position:absolute;
+  inset-block-start:0;
+  inset-inline-start:0;
+  inline-size:7px;
+  block-size:100%;
+  background:var(--l-primary);
+}
+.adv-lesson-l21 .kicker{
+  margin:0 0 8px;
+  color:var(--l-primary);
+  font-size:.82rem;
+  font-weight:850;
+  letter-spacing:.04em;
+}
+.adv-lesson-l21 h1,
+.adv-lesson-l21 h2,
+.adv-lesson-l21 h3,
+.adv-lesson-l21 h4{
+  color:var(--l-ink);
+  line-height:1.45;
+}
+.adv-lesson-l21 h1{
+  margin:0;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(1.8rem,5vw,2.7rem);
+  text-align:left;
+}
+.adv-lesson-l21 .fa-title{
+  margin:7px 0 10px;
+  font-size:clamp(1.15rem,3vw,1.45rem);
+  font-weight:850;
+}
+.adv-lesson-l21 .hero-desc{margin:0;color:var(--l-muted)}
+.adv-lesson-l21 .meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:16px;
+}
+.adv-lesson-l21 .chip{
+  display:inline-flex;
+  align-items:center;
+  min-height:30px;
+  padding:4px 10px;
+  border:1px solid var(--l-line);
+  border-radius:999px;
+  background:var(--l-soft);
+  color:var(--l-muted);
+  font-size:.78rem;
+  font-weight:750;
+}
+.adv-lesson-l21 .section{
+  border-radius:18px;
+  padding:clamp(18px,3vw,28px);
+  margin:18px 0;
+}
+.adv-lesson-l21 .section>h2{
+  margin:0 0 14px;
+  font-size:clamp(1.25rem,3vw,1.6rem);
+}
+.adv-lesson-l21 .lead{
+  margin:0;
+  font-size:1.02rem;
+}
+.adv-lesson-l21 .decision-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  margin-top:16px;
+}
+.adv-lesson-l21 .decision-card{
+  padding:14px;
+  border:1px solid var(--l-line);
+  border-radius:14px;
+  background:var(--l-soft);
+}
+.adv-lesson-l21 .decision-card strong{display:block;margin-bottom:5px;color:var(--l-primary)}
+.adv-lesson-l21 .subtopic{
+  border-radius:18px;
+  padding:clamp(18px,3vw,26px);
+  margin:16px 0;
+  box-shadow:none;
+}
+.adv-lesson-l21 .subtopic-head{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:8px 14px;
+  border-bottom:1px solid var(--l-line);
+  padding-bottom:10px;
+  margin-bottom:14px;
+}
+.adv-lesson-l21 .subtopic h3{
+  margin:0;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:1.35rem;
+  text-align:left;
+}
+.adv-lesson-l21 .subtopic-label{
+  color:var(--l-muted);
+  font-size:.86rem;
+  font-weight:750;
+}
+.adv-lesson-l21 .label{
+  display:inline-block;
+  margin:12px 0 5px;
+  color:var(--l-primary);
+  font-weight:850;
+}
+.adv-lesson-l21 .formula,
+.adv-lesson-l21 .example,
+.adv-lesson-l21 .note,
+.adv-lesson-l21 .correct,
+.adv-lesson-l21 .incorrect{
+  border-radius:12px;
+  padding:12px 14px;
+  margin:10px 0;
+}
+.adv-lesson-l21 .formula{
+  direction:ltr;
+  text-align:left;
+  unicode-bidi:isolate;
+  border-inline-start:4px solid var(--l-primary);
+  background:var(--l-soft);
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:.92rem;
+  overflow-wrap:anywhere;
+}
+.adv-lesson-l21 .example{
+  background:var(--l-soft);
+  border:1px solid var(--l-line);
+}
+.adv-lesson-l21 .example .fr-line{
+  direction:ltr;
+  text-align:left;
+  unicode-bidi:isolate;
+  font-weight:700;
+}
+.adv-lesson-l21 .translation{
+  margin-top:5px;
+  color:var(--l-muted);
+  font-size:.93rem;
+}
+.adv-lesson-l21 .note{
+  background:var(--l-warning-soft);
+  border:1px solid color-mix(in srgb,var(--l-warning) 28%,var(--l-line));
+}
+.adv-lesson-l21 .correct{
+  background:var(--l-success-soft);
+  border:1px solid color-mix(in srgb,var(--l-success) 28%,var(--l-line));
+}
+.adv-lesson-l21 .incorrect{
+  background:var(--l-danger-soft);
+  border:1px solid color-mix(in srgb,var(--l-danger) 28%,var(--l-line));
+}
+.adv-lesson-l21 .correct strong{color:var(--l-success)}
+.adv-lesson-l21 .incorrect strong{color:var(--l-danger)}
+.adv-lesson-l21 .contrast{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin:12px 0;
+}
+.adv-lesson-l21 .contrast>div{
+  border:1px solid var(--l-line);
+  border-radius:13px;
+  padding:13px;
+  background:var(--l-soft);
+}
+.adv-lesson-l21 .table-wrap{
+  width:100%;
+  overflow-x:auto;
+  margin:14px 0 4px;
+  border:1px solid var(--l-line);
+  border-radius:14px;
+  background:var(--l-surface);
+  -webkit-overflow-scrolling:touch;
+}
+.adv-lesson-l21 table{
+  width:100%;
+  min-width:680px;
+  border-collapse:collapse;
+  direction:rtl;
+}
+.adv-lesson-l21 th,
+.adv-lesson-l21 td{
+  padding:12px 13px;
+  border-bottom:1px solid var(--l-line);
+  vertical-align:top;
+  text-align:right;
+}
+.adv-lesson-l21 th{
+  background:var(--l-soft);
+  color:var(--l-ink);
+  font-size:.9rem;
+}
+.adv-lesson-l21 tr:last-child td{border-bottom:0}
+.adv-lesson-l21 td .fr,
+.adv-lesson-l21 th .fr{direction:ltr}
+.adv-lesson-l21 ul,
+.adv-lesson-l21 ol{padding-inline-start:0;padding-inline-end:1.25rem}
+.adv-lesson-l21 li{margin:.45rem 0}
+.adv-lesson-l21 .error-list{
+  display:grid;
+  gap:14px;
+}
+.adv-lesson-l21 .error-item{
+  border:1px solid var(--l-line);
+  border-radius:14px;
+  overflow:hidden;
+  background:var(--l-surface);
+}
+.adv-lesson-l21 .error-item .bad,
+.adv-lesson-l21 .error-item .good,
+.adv-lesson-l21 .error-item .why{
+  padding:10px 13px;
+}
+.adv-lesson-l21 .error-item .bad{background:var(--l-danger-soft)}
+.adv-lesson-l21 .error-item .good{background:var(--l-success-soft)}
+.adv-lesson-l21 .error-item .why{color:var(--l-muted)}
+.adv-lesson-l21 .quick-list{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  list-style:none;
+  padding:0;
+  margin:12px 0 0;
+}
+.adv-lesson-l21 .quick-list li{
+  margin:0;
+  padding:11px 13px;
+  border:1px solid var(--l-line);
+  border-radius:12px;
+  background:var(--l-soft);
+}
+.adv-lesson-l21 .summary-box{
+  border-radius:18px;
+  padding:clamp(18px,3vw,28px);
+  margin-top:20px;
+  border-inline-start:5px solid var(--l-primary);
+}
+.adv-lesson-l21 .summary-box h2{margin-top:0}
+.adv-lesson-l21 .source-note{
+  color:var(--l-muted);
+  font-size:.83rem;
+  margin-top:18px;
+  padding-top:12px;
+  border-top:1px solid var(--l-line);
+}
+@media (max-width:720px){
+  .adv-lesson-l21{padding:8px}
+  .adv-lesson-l21 .decision-grid,
+  .adv-lesson-l21 .contrast,
+  .adv-lesson-l21 .quick-list{grid-template-columns:1fr}
+  .adv-lesson-l21 .hero,
+  .adv-lesson-l21 .section,
+  .adv-lesson-l21 .subtopic,
+  .adv-lesson-l21 .summary-box{border-radius:15px}
+  .adv-lesson-l21 th,
+  .adv-lesson-l21 td{padding:10px}
+}
+html[data-theme="dark"] .adv-lesson-l21{
+  --l-ink:var(--ink,#e7edf7);
+  --l-muted:var(--muted,#aab6c8);
+  --l-line:var(--line,#314158);
+  --l-surface:var(--surface,#111d2f);
+  --l-soft:var(--surface-soft,#16243a);
+  --l-primary:var(--primary,#72a8e3);
+  --l-primary-strong:var(--primary-strong,#9fc5ee);
+  --l-success:var(--success,#68d5a0);
+  --l-success-soft:var(--success-soft,#123629);
+  --l-danger:var(--danger,#ff8e87);
+  --l-danger-soft:var(--danger-soft,#3b1d22);
+  --l-warning:var(--warning,#f4c46f);
+  --l-warning-soft:var(--warning-soft,#3b2d16);
+  --l-shadow:none;
+}
+@media (prefers-color-scheme:dark){
+  html:not([data-theme]) .adv-lesson-l21{
+    --l-ink:#e7edf7;
+    --l-muted:#aab6c8;
+    --l-line:#314158;
+    --l-surface:#111d2f;
+    --l-soft:#16243a;
+    --l-primary:#72a8e3;
+    --l-primary-strong:#9fc5ee;
+    --l-success:#68d5a0;
+    --l-success-soft:#123629;
+    --l-danger:#ff8e87;
+    --l-danger-soft:#3b1d22;
+    --l-warning:#f4c46f;
+    --l-warning-soft:#3b2d16;
+    --l-shadow:none;
+  }
+}
 </style>
-<header class="adv-hero">
-<p class="adv-kicker">Lesson 21 · ADV-L21</p>
-<h2 lang="fr" dir="ltr">L’expression de la cause</h2>
-<p class="fa-title" lang="fa">بیان علت</p>
-<p class="summary" lang="fa">این درس روی «بیان علت» تمرکز دارد و زیرموضوع‌های پیوندهای رایج علت، علت معلوم یا بهانه، حروف اضافهٔ علت، پیوندگرهای علّی را پوشش می‌دهد.</p>
-<p class="meta">Printed pages 134–137 · PDF pages 136–139 · target 200 questions</p>
+
+<header class="hero">
+  <p class="kicker" dir="ltr">Lesson 21 · ADV-L21</p>
+  <h1 lang="fr" dir="ltr">L’expression de la cause</h1>
+  <p class="fa-title">بیان علت و دلیل</p>
+  <p class="hero-desc">انتخاب ساختار مناسب برای بیان علت بر اساس نوع ساختار نحوی، معلوم یا مشکوک بودن علت، ارزش مثبت/منفی نتیجه و سطح زبانی.</p>
+  <div class="meta">
+    <span class="chip">صفحات کتاب: ۱۳۴ تا ۱۳۷</span>
+    <span class="chip">سطح: B1–B2 / Avancé</span>
+    <span class="chip">موضوع: Cause</span>
+  </div>
 </header>
-<section class="subtopic" id="ADV-L21-ST01">
-<h3 lang="fr" dir="ltr">Parce que, comme, puisque</h3>
-<p class="fa-subtitle" lang="fa">پیوندهای رایج علت</p>
-<p class="rule" lang="fr">Parce que répond à pourquoi; comme met la cause en tête; puisque la présente comme évidente ou partagée.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «پیوندهای رایج علت» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Comme la route était fermée, nous avons pris un autre chemin.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز parce que، comme و puisque را مترادف کامل می‌داند و وضعیت اطلاعاتی علت را نادیده می‌گیرد.</p>
-<p class="source"><code>ADV-L21:book-p134-p135:cause-common</code> · printed 134–135 · PDF 136–137</p>
+
+<section class="section" id="goal">
+  <h2>۱. هدف درس</h2>
+  <p class="lead">بعد از این درس باید بتوانید میان <span class="fr" lang="fr">parce que, comme, puisque, étant donné que, du fait que, sous prétexte que</span> و ساختارهای اسمی مانند <span class="fr" lang="fr">grâce à, à cause de, en raison de</span> انتخاب کنید و تفاوت معنایی و سبکی آن‌ها را تشخیص دهید.</p>
 </section>
-<section class="subtopic" id="ADV-L21-ST02">
-<h3 lang="fr" dir="ltr">Cause connue ou prétexte</h3>
-<p class="fa-subtitle" lang="fa">علت معلوم یا بهانه</p>
-<p class="rule" lang="fr">Étant donné que et du fait que présentent une cause admise; sous prétexte que la met à distance comme douteuse.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «علت معلوم یا بهانه» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Il est parti sous prétexte qu’il avait un rendez-vous urgent.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز sous prétexte que را علت خنثی ترجمه می‌کند و موضع شک‌آمیز گوینده را از دست می‌دهد.</p>
-<p class="source"><code>ADV-L21:book-p134-p135:cause-nuance</code> · printed 134–135 · PDF 136–137</p>
+
+<section class="section" id="core-idea">
+  <h2>۲. ایدهٔ اصلی</h2>
+  <p>در فرانسه همهٔ ساختارهایی که در فارسی ممکن است «چون»، «زیرا» یا «به‌خاطر» ترجمه شوند، یکسان نیستند. برای انتخاب درست چهار سؤال کلیدی دارید:</p>
+  <div class="decision-grid">
+    <div class="decision-card"><strong>۱) بعد از connector چه می‌آید؟</strong>یک جملهٔ کامل با فعل، یا فقط اسم/ضمیر؟</div>
+    <div class="decision-card"><strong>۲) وضعیت اطلاعاتی علت چیست؟</strong>علت تازه است، برجسته است، یا از قبل برای مخاطب معلوم است؟</div>
+    <div class="decision-card"><strong>۳) نتیجه چه ارزشی دارد؟</strong>مثبت، منفی یا خنثی؟</div>
+    <div class="decision-card"><strong>۴) Register چیست؟</strong>گفتار روزمره، نوشتار یا بیان رسمی‌تر؟</div>
+  </div>
+  <div class="contrast">
+    <div>
+      <div class="formula">parce que + proposition</div>
+      <div class="example">
+        <div class="fr-line" lang="fr">Je suis resté chez moi parce qu’il pleuvait.</div>
+        <div class="translation">در خانه ماندم چون باران می‌بارید.</div>
+      </div>
+    </div>
+    <div>
+      <div class="formula">à cause de + nom / pronom</div>
+      <div class="example">
+        <div class="fr-line" lang="fr">Je suis resté chez moi à cause de la pluie.</div>
+        <div class="translation">به‌خاطر باران در خانه ماندم.</div>
+      </div>
+    </div>
+  </div>
 </section>
-<section class="subtopic" id="ADV-L21-ST03">
-<h3 lang="fr" dir="ltr">Prépositions de cause</h3>
-<p class="fa-subtitle" lang="fa">حروف اضافهٔ علت</p>
-<p class="rule" lang="fr">Grâce à suggère résultat positif, à cause de souvent négatif, en raison de neutre ou écrit; du fait de reste factuel.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «حروف اضافهٔ علت» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Grâce à votre aide, nous avons terminé à temps.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز grâce à را با پیامد منفی یا à cause de را برای قدردانی مثبت بدون نشانهٔ سبکی به کار می‌برد.</p>
-<p class="source"><code>ADV-L21:book-p136-p137:cause-prep</code> · printed 136–137 · PDF 138–139</p>
+
+<section class="section" id="conjunctions">
+  <h2>۳. Conjonctions برای بیان علت</h2>
+
+  <article class="subtopic" id="ADV-L21-ST01-parce-que">
+    <div class="subtopic-head">
+      <h3 lang="fr" dir="ltr">Parce que</h3>
+      <span class="subtopic-label">علت عادی و مستقیم</span>
+    </div>
+    <span class="label">قاعده</span>
+    <p><span class="fr" lang="fr">Parce que</span> رایج‌ترین ساختار برای دادن یک علت ساده و مستقیم است و پاسخ طبیعی به سؤال <span class="fr" lang="fr">Pourquoi ?</span> محسوب می‌شود.</p>
+    <div class="formula">Conséquence + parce que + sujet + verbe</div>
+    <span class="label">کاربرد و معنا</span>
+    <p>وقتی فقط می‌خواهید دلیل یک اتفاق را توضیح دهید، بدون اینکه علت را «اطلاعات مشترک» یا «بهانه» معرفی کنید، <span class="fr" lang="fr">parce que</span> انتخاب پایه است.</p>
+    <div class="example">
+      <div class="fr-line" lang="fr">Pourquoi es-tu parti si tôt ? — Parce que j’étais fatigué.</div>
+      <div class="translation">چرا این‌قدر زود رفتی؟ — چون خسته بودم.</div>
+    </div>
+    <div class="example">
+      <div class="fr-line" lang="fr">Elle est allée chez le médecin parce qu’elle avait de la fièvre.</div>
+      <div class="translation">او نزد پزشک رفت چون تب داشت.</div>
+    </div>
+    <div class="note"><strong>نکتهٔ کتاب:</strong> در contrast این درس، <span class="fr" lang="fr">parce que</span> معمولاً در ابتدای جمله قرار نمی‌گیرد؛ برای برجسته کردن علت در آغاز جمله، <span class="fr" lang="fr">comme</span> ساختار مهم‌تری است.</div>
+  </article>
+
+  <article class="subtopic" id="ADV-L21-ST01-comme">
+    <div class="subtopic-head">
+      <h3 lang="fr" dir="ltr">Comme</h3>
+      <span class="subtopic-label">علت در ابتدای جمله و برجسته</span>
+    </div>
+    <p><span class="fr" lang="fr">Comme</span> در ابتدای جمله قرار می‌گیرد و علت را پیش از نتیجه مطرح می‌کند؛ در نتیجه علت از نظر discourse برجسته‌تر می‌شود.</p>
+    <div class="formula">Comme + cause, conséquence</div>
+    <div class="example">
+      <div class="fr-line" lang="fr">Comme il faisait très froid, nous sommes rentrés.</div>
+      <div class="translation">چون هوا خیلی سرد بود، برگشتیم.</div>
+    </div>
+    <div class="example">
+      <div class="fr-line" lang="fr">Comme je n’avais pas ton adresse, je n’ai pas pu t’écrire.</div>
+      <div class="translation">چون آدرست را نداشتم، نتوانستم برایت بنویسم.</div>
+    </div>
+    <div class="contrast">
+      <div><strong class="fr" lang="fr">parce que</strong><p>علت را به‌عنوان توضیح مستقیمِ نتیجه می‌دهد.</p></div>
+      <div><strong class="fr" lang="fr">comme</strong><p>علت را از همان ابتدا وارد صحنه و برجسته می‌کند.</p></div>
+    </div>
+  </article>
+
+  <article class="subtopic" id="ADV-L21-ST01-puisque">
+    <div class="subtopic-head">
+      <h3 lang="fr" dir="ltr">Puisque</h3>
+      <span class="subtopic-label">علت واضح یا مشترک</span>
+    </div>
+    <p><span class="fr" lang="fr">Puisque</span> زمانی به‌کار می‌رود که علت برای گوینده و مخاطب واضح، معلوم یا قابل‌قبول فرض می‌شود. در فارسی اغلب «حالا که...» یا «از آنجا که...» مناسب است.</p>
+    <div class="formula">Puisque + cause connue / évidente, conséquence</div>
+    <div class="example">
+      <div class="fr-line" lang="fr">Puisqu’il fait beau, déjeunons sur la terrasse !</div>
+      <div class="translation">حالا که هوا خوب است، روی تراس ناهار بخوریم!</div>
+    </div>
+    <div class="example">
+      <div class="fr-line" lang="fr">Puisque tu aimes Picasso, tu devrais voir cette exposition.</div>
+      <div class="translation">حالا که پیکاسو را دوست داری، بهتر است این نمایشگاه را ببینی.</div>
+    </div>
+    <div class="note"><span class="fr" lang="fr">Puisque</span> صرفاً نسخهٔ رسمی‌ترِ <span class="fr" lang="fr">parce que</span> نیست؛ تفاوت اصلی، «وضعیت اطلاعاتی» علت است.</div>
+  </article>
+
+  <article class="subtopic" id="ADV-L21-ST02-etant-donne-que">
+    <div class="subtopic-head">
+      <h3 lang="fr" dir="ltr">Étant donné que</h3>
+      <span class="subtopic-label">علت معلوم؛ بیشتر نوشتاری</span>
+    </div>
+    <p>علتی را معرفی می‌کند که به‌عنوان واقعیت یا داده‌ای پذیرفته‌شده مطرح می‌شود. کتاب آن را بیشتر متعلق به زبان نوشتاری معرفی می‌کند.</p>
+    <div class="formula">Étant donné que + proposition, conséquence</div>
+    <div class="example">
+      <div class="fr-line" lang="fr">Étant donné qu’il a dix-huit ans, il peut passer le permis de conduire.</div>
+      <div class="translation">با توجه به اینکه هجده سال دارد، می‌تواند برای گواهینامه اقدام کند.</div>
+    </div>
+    <div class="example">
+      <div class="fr-line" lang="fr">Les enfants sont restés à la maison étant donné que les professeurs étaient en grève.</div>
+      <div class="translation">بچه‌ها در خانه ماندند، با توجه به اینکه معلمان در اعتصاب بودند.</div>
+    </div>
+  </article>
+
+  <article class="subtopic" id="ADV-L21-ST02-du-fait-que">
+    <div class="subtopic-head">
+      <h3 lang="fr" dir="ltr">Du fait que</h3>
+      <span class="subtopic-label">علت معلوم؛ گفتار و نوشتار</span>
+    </div>
+    <p>از نظر معنایی به <span class="fr" lang="fr">étant donné que</span> نزدیک است و علت شناخته‌شده یا واقعی را معرفی می‌کند. طبق کتاب، هم در oral و هم در écrit به‌کار می‌رود.</p>
+    <div class="formula">Du fait que + proposition, conséquence</div>
+    <div class="example">
+      <div class="fr-line" lang="fr">Du fait que tout le monde était fatigué, nous avons arrêté la réunion.</div>
+      <div class="translation">به‌دلیل اینکه همه خسته بودند، جلسه را متوقف کردیم.</div>
+    </div>
+  </article>
+
+  <article class="subtopic" id="ADV-L21-ST02-sous-pretexte-que">
+    <div class="subtopic-head">
+      <h3 lang="fr" dir="ltr">Sous prétexte que</h3>
+      <span class="subtopic-label">علت ادعایی / بهانه</span>
+    </div>
+    <p>این ساختار نشان می‌دهد گوینده دلیل مطرح‌شده را واقعی، کافی یا قابل‌باور نمی‌داند و از آن فاصله می‌گیرد.</p>
+    <div class="formula">Sous prétexte que + proposition</div>
+    <div class="example">
+      <div class="fr-line" lang="fr">Il n’est pas venu sous prétexte qu’il était malade.</div>
+      <div class="translation">نیامد، به بهانهٔ اینکه بیمار بوده است.</div>
+    </div>
+    <div class="contrast">
+      <div><strong class="fr" lang="fr">parce qu’il était malade</strong><p>گوینده علت را به‌عنوان دلیل واقعی ارائه می‌کند.</p></div>
+      <div><strong class="fr" lang="fr">sous prétexte qu’il était malade</strong><p>گوینده نسبت به این دلیل فاصله یا تردید دارد.</p></div>
+    </div>
+  </article>
+
+  <article class="subtopic" id="coordination">
+    <div class="subtopic-head">
+      <h3 lang="fr" dir="ltr">Coordination de plusieurs causes</h3>
+      <span class="subtopic-label">چند علت در یک جمله</span>
+    </div>
+    <p>وقتی یک conjunction چند علت هم‌سطح را معرفی می‌کند، conjunction را سنگین و کامل تکرار نمی‌کنیم؛ علت دوم با <span class="fr" lang="fr">que</span> ادامه می‌یابد.</p>
+    <div class="correct">
+      <strong>✅ درست</strong>
+      <div class="fr-line" lang="fr" dir="ltr">Comme il faisait beau et que nous avions du temps, nous sommes partis à pied.</div>
+    </div>
+    <div class="example">
+      <div class="fr-line" lang="fr">Puisque tu es ici et que tu as le temps, aide-moi.</div>
+      <div class="translation">حالا که اینجایی و وقت هم داری، کمکم کن.</div>
+    </div>
+  </article>
 </section>
-<section class="subtopic" id="ADV-L21-ST04">
-<h3 lang="fr" dir="ltr">Car et en effet</h3>
-<p class="fa-subtitle" lang="fa">پیوندگرهای علّی</p>
-<p class="rule" lang="fr">Car introduit une justification plutôt écrite; en effet confirme ou explique l’énoncé précédent à l’oral ou à l’écrit.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «پیوندگرهای علّی» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Je resterai ici, car le train est annulé; en effet, la gare vient de le confirmer.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز en effet را مانند donc برای نتیجه به کار می‌برد و جهت رابطهٔ منطقی را وارونه می‌کند.</p>
-<p class="source"><code>ADV-L21:book-p136-p137:cause-linkers</code> · printed 136–137 · PDF 138–139</p>
+
+<section class="section" id="prepositions">
+  <h2>۴. Prépositions برای بیان علت</h2>
+
+  <article class="subtopic" id="ADV-L21-ST03-grace-a">
+    <div class="subtopic-head">
+      <h3 lang="fr" dir="ltr">Grâce à</h3>
+      <span class="subtopic-label">علت با نتیجهٔ مثبت</span>
+    </div>
+    <p><span class="fr" lang="fr">Grâce à</span> علتی را معرفی می‌کند که پیامد آن مثبت یا مطلوب تلقی می‌شود و بعد از آن اسم یا ضمیر می‌آید.</p>
+    <div class="formula">grâce à + nom / pronom</div>
+    <div class="example">
+      <div class="fr-line" lang="fr">Elle a trouvé un appartement grâce à des amis.</div>
+      <div class="translation">او به کمک دوستانش یک آپارتمان پیدا کرد.</div>
+    </div>
+    <div class="example">
+      <div class="fr-line" lang="fr">Nous avons réussi grâce à lui.</div>
+      <div class="translation">به لطف او موفق شدیم.</div>
+    </div>
+    <div class="note"><strong>چند علت:</strong> <span class="fr" lang="fr">grâce à X et à Y</span></div>
+  </article>
+
+  <article class="subtopic" id="ADV-L21-ST03-a-cause-de">
+    <div class="subtopic-head">
+      <h3 lang="fr" dir="ltr">À cause de</h3>
+      <span class="subtopic-label">معمولاً علت با نتیجهٔ منفی</span>
+    </div>
+    <p>در درس، <span class="fr" lang="fr">à cause de</span> در برابر <span class="fr" lang="fr">grâce à</span> قرار می‌گیرد و معمولاً علتی را معرفی می‌کند که نتیجهٔ آن منفی است.</p>
+    <div class="formula">à cause de + nom / pronom</div>
+    <div class="example">
+      <div class="fr-line" lang="fr">Le match a été annulé à cause du mauvais temps.</div>
+      <div class="translation">مسابقه به‌خاطر هوای بد لغو شد.</div>
+    </div>
+    <div class="example">
+      <div class="fr-line" lang="fr">Nous sommes arrivés en retard à cause de lui.</div>
+      <div class="translation">به‌خاطر او دیر رسیدیم.</div>
+    </div>
+    <div class="note"><strong>چند علت:</strong> <span class="fr" lang="fr">à cause de X et de Y</span></div>
+  </article>
+
+  <article class="subtopic" id="ADV-L21-ST03-en-raison-de">
+    <div class="subtopic-head">
+      <h3 lang="fr" dir="ltr">En raison de</h3>
+      <span class="subtopic-label">علت خنثی‌تر؛ بیشتر نوشتاری</span>
+    </div>
+    <p><span class="fr" lang="fr">En raison de</span> علت را خنثی‌تر و رسمی‌تر بیان می‌کند. کتاب آن را بیشتر در نوشتار قرار می‌دهد.</p>
+    <div class="formula">en raison de + nom</div>
+    <div class="example">
+      <div class="fr-line" lang="fr">Le magasin sera fermé en raison des fêtes de Pâques.</div>
+      <div class="translation">فروشگاه به‌دلیل تعطیلات عید پاک بسته خواهد بود.</div>
+    </div>
+    <div class="example">
+      <div class="fr-line" lang="fr">Le vol a été annulé en raison du brouillard.</div>
+      <div class="translation">پرواز به‌دلیل مه لغو شد.</div>
+    </div>
+    <div class="note"><strong>چند علت:</strong> <span class="fr" lang="fr">en raison de X et de Y</span></div>
+  </article>
+
+  <article class="subtopic" id="nominal-known-cause">
+    <div class="subtopic-head">
+      <h3 lang="fr" dir="ltr">Étant donné + nom / Du fait de + nom</h3>
+      <span class="subtopic-label">علت معلوم در ساختار اسمی</span>
+    </div>
+    <div class="formula">étant donné + nom</div>
+    <div class="example">
+      <div class="fr-line" lang="fr">Étant donné la pollution, beaucoup de familles quittent le centre-ville.</div>
+      <div class="translation">با توجه به آلودگی، بسیاری از خانواده‌ها مرکز شهر را ترک می‌کنند.</div>
+    </div>
+    <div class="formula">du fait de + nom</div>
+    <div class="example">
+      <div class="fr-line" lang="fr">Ils sont partis en banlieue du fait de l’augmentation des loyers.</div>
+      <div class="translation">آن‌ها به‌دلیل افزایش اجاره‌ها به حومه رفتند.</div>
+    </div>
+    <div class="contrast">
+      <div><span class="fr" lang="fr">étant donné que + proposition</span></div>
+      <div><span class="fr" lang="fr">étant donné + nom</span></div>
+      <div><span class="fr" lang="fr">du fait que + proposition</span></div>
+      <div><span class="fr" lang="fr">du fait de + nom</span></div>
+    </div>
+  </article>
 </section>
-<aside class="notes"><h3>Notes avancées</h3>
-<section><h4>Exceptions / استثناها</h4><ul><li>Sous prétexte que présente la cause comme fausse ou contestée.</li><li>Avec causes coordonnées, la préposition ou que peut devoir être repris selon la construction.</li></ul></section>
-<section><h4>Contrastes / تقابل‌ها</h4><ul><li>parce que réponse neutre vs comme cause mise en avant vs puisque cause partagée</li><li>grâce à positif vs à cause de négatif vs en raison de neutre</li><li>car/en effet cause vs donc conséquence</li></ul></section>
-<section><h4>Restrictions / محدودیت‌ها</h4><ul><li>La position et le statut informationnel de la cause conditionnent le connecteur.</li></ul></section>
-<section><h4>Register / سطح زبانی</h4><ul><li>Étant donné que, en raison de et car sont plus écrits; du fait que et en effet circulent aussi à l’oral.</li></ul></section>
-<section><h4>Semantic notes / نکات معنایی</h4><ul><li>Le connecteur exprime aussi l’évaluation positive, négative, neutre ou dubitative de la cause.</li></ul></section>
-</aside>
+
+<section class="section" id="linking-words">
+  <h2>۵. Mots de liaison: <span class="fr" lang="fr">car</span> و <span class="fr" lang="fr">en effet</span></h2>
+
+  <article class="subtopic" id="ADV-L21-ST04-car">
+    <div class="subtopic-head">
+      <h3 lang="fr" dir="ltr">Car</h3>
+      <span class="subtopic-label">توجیه/توضیح؛ بیشتر نوشتاری</span>
+    </div>
+    <p><span class="fr" lang="fr">Car</span> توضیح یا توجیهی برای گفته‌ای که درست قبل از آن آمده است اضافه می‌کند. کتاب آن را بیشتر متعلق به نوشتار می‌داند.</p>
+    <div class="formula">Proposition, car + proposition explicative</div>
+    <div class="example">
+      <div class="fr-line" lang="fr">Ils sont restés près du feu, car dehors il faisait très froid.</div>
+      <div class="translation">آن‌ها کنار آتش ماندند، زیرا بیرون بسیار سرد بود.</div>
+    </div>
+    <div class="note"><span class="fr" lang="fr">Car</span> از نظر نقش discourse دقیقاً معادل مکانیکی <span class="fr" lang="fr">parce que</span> نیست؛ بیشتر گفتهٔ قبلی را توجیه می‌کند.</div>
+  </article>
+
+  <article class="subtopic" id="ADV-L21-ST04-en-effet">
+    <div class="subtopic-head">
+      <h3 lang="fr" dir="ltr">En effet</h3>
+      <span class="subtopic-label">تأیید/توضیح؛ گفتار و نوشتار</span>
+    </div>
+    <p><span class="fr" lang="fr">En effet</span> نیز برای تأیید یا توضیح گفتهٔ قبلی به‌کار می‌رود و طبق کتاب هم در گفتار و هم در نوشتار دیده می‌شود.</p>
+    <div class="example">
+      <div class="fr-line" lang="fr">Ils commencèrent à se dépêcher ; en effet, le ciel s’assombrissait.</div>
+      <div class="translation">شروع کردند به عجله کردن؛ در واقع/زیرا آسمان داشت تیره می‌شد.</div>
+    </div>
+    <div class="incorrect">
+      <strong>❌ دام رایج</strong>
+      <div>از <span class="fr" lang="fr">en effet</span> مثل <span class="fr" lang="fr">donc</span> برای معرفی «نتیجه» استفاده نکنید؛ جهت رابطهٔ منطقی متفاوت است.</div>
+    </div>
+  </article>
+</section>
+
+<section class="section" id="contrasts">
+  <h2>۶. Contrastها و تفاوت‌های ظریف</h2>
+
+  <h4>Conjonctions</h4>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>ساختار</th>
+          <th>نوع علت / nuance</th>
+          <th>جایگاه و Register</th>
+          <th>مثال</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="fr" lang="fr">parce que</span></td><td>علت عادی و مستقیم</td><td>بسیار رایج؛ پاسخ طبیعی به <span class="fr" lang="fr">Pourquoi ?</span></td><td><span class="fr" lang="fr">Je pars parce que je suis fatigué.</span></td></tr>
+        <tr><td><span class="fr" lang="fr">comme</span></td><td>علت برجسته</td><td>معمولاً ابتدای جمله</td><td><span class="fr" lang="fr">Comme je suis fatigué, je pars.</span></td></tr>
+        <tr><td><span class="fr" lang="fr">puisque</span></td><td>علت واضح یا مشترک</td><td>گفتار و نوشتار</td><td><span class="fr" lang="fr">Puisque tu es là, aide-moi.</span></td></tr>
+        <tr><td><span class="fr" lang="fr">étant donné que</span></td><td>علت معلوم/پذیرفته</td><td>بیشتر نوشتاری</td><td><span class="fr" lang="fr">Étant donné qu’il pleut, restons ici.</span></td></tr>
+        <tr><td><span class="fr" lang="fr">du fait que</span></td><td>علت معلوم</td><td>گفتار و نوشتار</td><td><span class="fr" lang="fr">Du fait qu’il est absent, nous attendrons.</span></td></tr>
+        <tr><td><span class="fr" lang="fr">sous prétexte que</span></td><td>علت ادعایی/مشکوک</td><td>موضع فاصله‌گیرانهٔ گوینده</td><td><span class="fr" lang="fr">Il est parti sous prétexte qu’il était malade.</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4>Prépositions</h4>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>ساختار</th><th>ارزش معنایی</th><th>بعد از آن</th><th>نکتهٔ تمایز</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="fr" lang="fr">grâce à</span></td><td>نتیجهٔ مثبت</td><td>nom / pronom</td><td>کمک، عامل مطلوب یا نتیجهٔ مثبت</td></tr>
+        <tr><td><span class="fr" lang="fr">à cause de</span></td><td>معمولاً نتیجهٔ منفی</td><td>nom / pronom</td><td>در contrast درس در برابر <span class="fr" lang="fr">grâce à</span></td></tr>
+        <tr><td><span class="fr" lang="fr">en raison de</span></td><td>خنثی‌تر</td><td>nom</td><td>بیشتر نوشتاری/رسمی</td></tr>
+        <tr><td><span class="fr" lang="fr">étant donné</span></td><td>علت معلوم</td><td>nom</td><td>همتای اسمی <span class="fr" lang="fr">étant donné que</span></td></tr>
+        <tr><td><span class="fr" lang="fr">du fait de</span></td><td>علت معلوم</td><td>nom</td><td>همتای اسمی <span class="fr" lang="fr">du fait que</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section" id="restrictions">
+  <h2>۷. استثناها و محدودیت‌های مهم</h2>
+  <ul>
+    <li><strong>جملهٔ کامل یا اسم؟</strong> با <span class="fr" lang="fr">parce que / comme / puisque / étant donné que / du fait que</span> یک proposition می‌آید؛ با <span class="fr" lang="fr">grâce à / à cause de / en raison de</span> ساختار اسمی داریم.</li>
+    <li><strong>مثبت یا منفی بودن نتیجه:</strong> در contrast کتاب، <span class="fr" lang="fr">grâce à</span> با پیامد مثبت و <span class="fr" lang="fr">à cause de</span> با پیامد منفی همراه است.</li>
+    <li><strong>علت تازه یا معلوم:</strong> برای علت مستقیم <span class="fr" lang="fr">parce que</span>؛ برای علت واضح یا مشترک <span class="fr" lang="fr">puisque</span>.</li>
+    <li><strong>بهانه:</strong> <span class="fr" lang="fr">sous prétexte que</span> خنثی نیست و نگرش شک‌آمیز یا فاصله‌گیرانهٔ گوینده را منتقل می‌کند.</li>
+    <li><strong>تکرار حرف اضافه:</strong> <span class="fr" lang="fr">grâce à X et à Y</span>، <span class="fr" lang="fr">à cause de X et de Y</span> و <span class="fr" lang="fr">en raison de X et de Y</span>.</li>
+  </ul>
+
+  <div class="contrast">
+    <div>
+      <div class="correct"><strong>✅ درست</strong><div class="fr-line" lang="fr" dir="ltr">Je suis en retard parce que le métro est arrêté.</div></div>
+      <div class="formula">parce que + proposition</div>
+    </div>
+    <div>
+      <div class="correct"><strong>✅ درست</strong><div class="fr-line" lang="fr" dir="ltr">Je suis en retard à cause de la panne du métro.</div></div>
+      <div class="formula">à cause de + nom</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="common-errors">
+  <h2>۸. خطاهای رایج</h2>
+  <div class="error-list">
+    <div class="error-item">
+      <div class="bad" dir="ltr" lang="fr">❌ Nous sommes arrivés en retard à cause de le train était supprimé.</div>
+      <div class="good" dir="ltr" lang="fr">✅ Nous sommes arrivés en retard parce que le train était supprimé.</div>
+      <div class="why">💡 بعد از <span class="fr" lang="fr">à cause de</span> باید ساختار اسمی بیاید، نه یک جملهٔ صرف‌شده.</div>
+    </div>
+
+    <div class="error-item">
+      <div class="bad" dir="ltr" lang="fr">❌ J’ai raté mon examen grâce à mon manque de travail.</div>
+      <div class="good" dir="ltr" lang="fr">✅ J’ai raté mon examen à cause de mon manque de travail.</div>
+      <div class="why">💡 نتیجه منفی است؛ در contrast این درس <span class="fr" lang="fr">à cause de</span> مناسب است.</div>
+    </div>
+
+    <div class="error-item">
+      <div class="bad" dir="ltr" lang="fr">❌ J’ai réussi à cause de tes conseils.</div>
+      <div class="good" dir="ltr" lang="fr">✅ J’ai réussi grâce à tes conseils.</div>
+      <div class="why">💡 نتیجه و نقش «راهنمایی» مثبت است؛ <span class="fr" lang="fr">grâce à</span> این ارزش مثبت را منتقل می‌کند.</div>
+    </div>
+
+    <div class="error-item">
+      <div class="bad">❌ <span class="fr" lang="fr">puisque = parce que</span> در همهٔ contextها</div>
+      <div class="good">✅ <span class="fr" lang="fr">Puisque tu connais déjà la réponse, explique-la aux autres.</span></div>
+      <div class="why">💡 <span class="fr" lang="fr">puisque</span> علت را از قبل معلوم/واضح فرض می‌کند.</div>
+    </div>
+
+    <div class="error-item">
+      <div class="bad">❌ <span class="fr" lang="fr">sous prétexte que</span> را به‌عنوان علت خنثی به‌کار بردن</div>
+      <div class="good" dir="ltr" lang="fr">✅ Il est parti sous prétexte qu’il avait un rendez-vous.</div>
+      <div class="why">💡 معنی آن «به بهانهٔ اینکه...» است و فاصلهٔ گوینده نسبت به دلیل را نشان می‌دهد.</div>
+    </div>
+
+    <div class="error-item">
+      <div class="bad" dir="ltr" lang="fr">❌ Je suis parti en effet j’étais fatigué.</div>
+      <div class="good" dir="ltr" lang="fr">✅ Je suis parti. En effet, j’étais très fatigué.</div>
+      <div class="why">💡 <span class="fr" lang="fr">en effet</span> یک mot de liaison برای تأیید/توضیح گفتهٔ قبلی است.</div>
+    </div>
+
+    <div class="error-item">
+      <div class="bad" dir="ltr" lang="fr">⚠️ Comme il faisait beau et comme nous avions du temps...</div>
+      <div class="good" dir="ltr" lang="fr">✅ Comme il faisait beau et que nous avions du temps...</div>
+      <div class="why">💡 در هماهنگ‌سازی چند علت، کتاب الگوی <span class="fr" lang="fr">comme ... et que ...</span> را آموزش می‌دهد.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="register">
+  <h2>۹. زبان واقعی و Register</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>ساختار</th><th>Register غالب در درس</th><th>کاربرد عملی</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="fr" lang="fr">parce que</span></td><td>courant</td><td>بسیار رایج در مکالمه و نوشتار</td></tr>
+        <tr><td><span class="fr" lang="fr">comme</span></td><td>courant</td><td>گفتار و نوشتار؛ علت در ابتدا</td></tr>
+        <tr><td><span class="fr" lang="fr">puisque</span></td><td>courant</td><td>گفتار و نوشتار؛ علت معلوم</td></tr>
+        <tr><td><span class="fr" lang="fr">étant donné que</span></td><td>بیشتر écrit</td><td>نوشتار و بیان استدلالی‌تر</td></tr>
+        <tr><td><span class="fr" lang="fr">du fait que</span></td><td>oral + écrit</td><td>علت معلوم</td></tr>
+        <tr><td><span class="fr" lang="fr">grâce à</span></td><td>courant</td><td>پیامد مثبت</td></tr>
+        <tr><td><span class="fr" lang="fr">à cause de</span></td><td>courant</td><td>معمولاً پیامد منفی</td></tr>
+        <tr><td><span class="fr" lang="fr">en raison de</span></td><td>بیشتر écrit</td><td>خنثی‌تر و رسمی‌تر</td></tr>
+        <tr><td><span class="fr" lang="fr">car</span></td><td>بیشتر écrit</td><td>توجیه گفتهٔ قبلی</td></tr>
+        <tr><td><span class="fr" lang="fr">en effet</span></td><td>oral + écrit</td><td>تأیید یا توضیح گفتهٔ قبلی</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note">برای آزمون یا نوشتار رسمی، تنوع connector مفید است؛ اما انتخاب ساختار باید اول از همه از nuance و construction درست پیروی کند، نه صرفاً از «رسمی‌تر به نظر رسیدن».</div>
+</section>
+
+<section class="section" id="quick-learning">
+  <h2>۱۰. نکات کلیدی برای تشخیص سریع</h2>
+  <ul class="quick-list">
+    <li>دلیل عادی → <span class="fr" lang="fr">parce que</span></li>
+    <li>علت در ابتدای جمله و برجسته → <span class="fr" lang="fr">comme</span></li>
+    <li>علت واضح/مشترک → <span class="fr" lang="fr">puisque</span></li>
+    <li>علت معلوم و نوشتاری‌تر → <span class="fr" lang="fr">étant donné que</span></li>
+    <li>«به بهانهٔ اینکه» → <span class="fr" lang="fr">sous prétexte que</span></li>
+    <li>نتیجهٔ مثبت → <span class="fr" lang="fr">grâce à</span></li>
+    <li>نتیجهٔ منفی → <span class="fr" lang="fr">à cause de</span></li>
+    <li>خنثی و رسمی‌تر → <span class="fr" lang="fr">en raison de</span></li>
+    <li>توجیه گفتهٔ قبلی → <span class="fr" lang="fr">car</span></li>
+    <li>تأیید/توضیح گفتهٔ قبلی → <span class="fr" lang="fr">en effet</span></li>
+  </ul>
+</section>
+
+<section class="summary-box" id="summary">
+  <h2>خلاصه‌ای که باید به خاطر بسپارید</h2>
+  <ul>
+    <li><span class="fr" lang="fr">Pourquoi ? → parce que</span></li>
+    <li>علت در آغاز جمله و برجسته → <span class="fr" lang="fr">comme</span></li>
+    <li>علت واضح و مشترک → <span class="fr" lang="fr">puisque</span></li>
+    <li>علت معلوم، به‌ویژه در نوشتار → <span class="fr" lang="fr">étant donné que</span></li>
+    <li><span class="fr" lang="fr">du fait que</span> → علت معلوم؛ هم oral و هم écrit</li>
+    <li>علت ادعایی که گوینده قبول ندارد → <span class="fr" lang="fr">sous prétexte que</span></li>
+    <li><span class="fr" lang="fr">grâce à + nom/pronom</span> → نتیجهٔ مثبت</li>
+    <li><span class="fr" lang="fr">à cause de + nom/pronom</span> → معمولاً نتیجهٔ منفی</li>
+    <li><span class="fr" lang="fr">en raison de + nom</span> → خنثی‌تر و بیشتر نوشتاری</li>
+    <li><span class="fr" lang="fr">car</span> → توجیه/توضیح گفتهٔ قبلی، بیشتر نوشتاری</li>
+    <li><span class="fr" lang="fr">en effet</span> → تأیید یا توضیح گفتهٔ قبلی، oral و écrit</li>
+    <li><strong>ساختار را کنترل کنید:</strong> <span class="fr" lang="fr">conjonction + proposition</span> در برابر <span class="fr" lang="fr">préposition + nom</span>.</li>
+    <li>چند علت با conjunction → معمولاً <span class="fr" lang="fr">comme ... et que ...</span></li>
+    <li>چند علت با preposition → <span class="fr" lang="fr">grâce à X et à Y / à cause de X et de Y</span></li>
+  </ul>
+  <p class="source-note">مرجع آموزشی: <span lang="fr" dir="ltr">Grammaire Progressive du Français — Niveau Avancé — 3e édition</span>، درس ۲۱، صفحات چاپی ۱۳۴ تا ۱۳۷.</p>
+</section>
 </article>

@@ -1,76 +1,199 @@
-<article class="adv-lesson" data-lesson-id="ADV-L23">
+<article class="adv-lesson" data-lesson-id="ADV-L23" lang="fa" dir="rtl">
 <style>
-.adv-lesson{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.75;color:#172033;max-width:980px;margin:0 auto;padding:8px 2px 40px}
-.adv-lesson *{box-sizing:border-box}
-.adv-lesson .adv-hero{padding:24px;border:1px solid #e3e8f0;border-radius:18px;background:#fff;margin-bottom:22px}
-.adv-lesson .adv-kicker{font-size:.86rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.65;margin:0 0 6px}
-.adv-lesson h2,.adv-lesson h3{line-height:1.35}
-.adv-lesson h2{font-size:1.65rem;margin:0 0 4px}
-.adv-lesson .fa-title{direction:rtl;text-align:right;font-weight:650;margin:.2rem 0 .8rem}
-.adv-lesson .summary{direction:rtl;text-align:right;margin:0}
-.adv-lesson .meta{margin-top:12px;font-size:.9rem;opacity:.72}
-.adv-lesson .subtopic{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin:18px 0;background:#fff}
-.adv-lesson .subtopic h3{margin:0 0 2px;font-size:1.25rem}
-.adv-lesson .fa-subtitle{direction:rtl;text-align:right;font-weight:600;margin:.1rem 0 1rem}
-.adv-lesson .rule{direction:ltr;text-align:left;padding:12px 14px;border-left:4px solid currentColor;background:#f7f9fc;border-radius:8px;margin:12px 0}
-.adv-lesson .teaching,.adv-lesson .trap{direction:rtl;text-align:right}
-.adv-lesson .example{direction:ltr;text-align:left;font-style:italic;padding:10px 14px;background:#f7f9fc;border-radius:8px}
-.adv-lesson .trap{padding:10px 14px;border:1px dashed #c7ced9;border-radius:8px}
-.adv-lesson .source{font-size:.82rem;opacity:.65;margin-top:12px}
-.adv-lesson .notes{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin-top:22px}
-.adv-lesson .notes h3{margin-top:0}
-.adv-lesson .notes section{margin:16px 0}
-.adv-lesson .notes h4{margin:0 0 6px}
-.adv-lesson .notes ul{margin-top:4px}
+.adv-lesson{
+  --c-text:var(--ink,#17233c);--c-muted:var(--muted,#5a6477);--c-line:var(--line,#d9dfeb);
+  --c-surface:var(--surface,#fff);--c-soft:var(--surface-soft,#f5f7fb);--c-primary:var(--primary,#2856c7);
+  --c-primary-strong:var(--primary-strong,#1c3f99);--c-success:var(--success,#18794e);--c-success-soft:var(--success-soft,#e9f7f0);
+  --c-danger:var(--danger,#b42318);--c-danger-soft:var(--danger-soft,#fff0ee);--c-warning:var(--warning,#8a4b08);
+  --c-warning-soft:var(--warning-soft,#fff7e8);--c-shadow:var(--shadow,0 18px 50px rgba(34,53,90,.09));
+  font-family:var(--font-ui,Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif);
+  color:var(--c-text);line-height:1.85;max-width:980px;margin:0 auto;padding:8px 2px 40px;overflow-wrap:anywhere
+}
+.adv-lesson *{box-sizing:border-box}.adv-lesson h2,.adv-lesson h3,.adv-lesson h4{color:var(--c-text);line-height:1.45}.adv-lesson p{margin:.65rem 0}.adv-lesson strong{font-weight:800}
+.adv-lesson .fr,.adv-lesson [lang="fr"]{direction:ltr;text-align:left;unicode-bidi:isolate}
+.adv-lesson .hero,.adv-lesson .card,.adv-lesson .subtopic{border:1px solid var(--c-line);border-radius:18px;background:var(--c-surface);padding:clamp(18px,3vw,25px);margin:18px 0}
+.adv-lesson .hero{position:relative;overflow:hidden;margin-top:0;box-shadow:var(--c-shadow);padding:clamp(22px,4vw,32px)}
+.adv-lesson .hero:before{content:"";position:absolute;inset-block:0;inset-inline-start:0;width:5px;background:var(--c-primary)}
+.adv-lesson .kicker{direction:ltr;text-align:left;margin:0 0 5px;color:var(--c-primary-strong);font-size:.82rem;font-weight:850;letter-spacing:.08em;text-transform:uppercase}
+.adv-lesson .hero h2{direction:ltr;text-align:left;font-size:clamp(1.65rem,4vw,2.25rem);margin:0}.adv-lesson .fa-title{font-size:1.08rem;font-weight:750;margin:.25rem 0 .8rem}.adv-lesson .lead{color:var(--c-muted);margin-top:0}
+.adv-lesson .meta{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:15px}.adv-lesson .meta span{padding:.25rem .65rem;border:1px solid var(--c-line);border-radius:999px;background:var(--c-soft);color:var(--c-muted);font-size:.82rem;font-weight:700}
+.adv-lesson .section-title{margin:0 0 12px;font-size:1.3rem}.adv-lesson .subtopic>h3{direction:ltr;text-align:left;margin:0;font-size:1.36rem}.adv-lesson .fa-subtitle{color:var(--c-muted);font-weight:700;margin:.1rem 0 1rem}.adv-lesson .minor{font-size:1.08rem;margin:1.45rem 0 .5rem}
+.adv-lesson ul,.adv-lesson ol{margin:.55rem 0;padding-inline-start:1.35rem}.adv-lesson li{margin:.35rem 0}
+.adv-lesson .formula{direction:ltr;text-align:left;unicode-bidi:isolate;overflow-x:auto;white-space:nowrap;margin:10px 0;padding:11px 13px;border:1px solid var(--c-line);border-radius:10px;background:var(--c-soft);font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-weight:750}
+.adv-lesson .example{margin:10px 0;padding:12px 14px;border-radius:11px;background:var(--c-soft)}.adv-lesson .example .fr{margin:0;font-weight:700}.adv-lesson .translation{margin:.35rem 0 0;color:var(--c-muted)}
+.adv-lesson .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0}.adv-lesson .mini{border:1px solid var(--c-line);border-radius:14px;padding:14px;background:var(--c-soft);min-width:0}.adv-lesson .mini h4{direction:ltr;text-align:left;margin:0 0 5px;color:var(--c-primary-strong)}
+.adv-lesson .note{border:1px solid var(--c-line);border-radius:12px;padding:12px 14px;margin:12px 0;background:var(--c-soft)}.adv-lesson .note.warn{background:var(--c-warning-soft)}
+.adv-lesson .ok,.adv-lesson .bad{display:block;direction:ltr;text-align:left;unicode-bidi:isolate;margin:.3rem 0;font-weight:750}.adv-lesson .ok{color:var(--c-success)}.adv-lesson .bad{color:var(--c-danger)}
+.adv-lesson .table-wrap{width:100%;overflow-x:auto;margin:14px 0;border:1px solid var(--c-line);border-radius:14px;background:var(--c-surface)}.adv-lesson table{width:100%;min-width:620px;border-collapse:collapse}.adv-lesson th,.adv-lesson td{padding:11px 13px;vertical-align:top;border-bottom:1px solid var(--c-line);text-align:right}.adv-lesson th{background:var(--c-soft);font-weight:800}.adv-lesson tr:last-child td{border-bottom:0}.adv-lesson .frc{direction:ltr;text-align:left;unicode-bidi:isolate}
+.adv-lesson .errors{display:grid;gap:12px}.adv-lesson .error{border:1px solid var(--c-line);border-radius:14px;padding:14px;background:var(--c-soft)}.adv-lesson .memory{list-style:none;padding:0;display:grid;gap:8px}.adv-lesson .memory li{padding:10px 12px;border-radius:10px;background:var(--c-soft)}
+.adv-lesson .exercise{border-top:1px solid var(--c-line);padding-top:16px;margin-top:16px}.adv-lesson .exercise:first-of-type{border-top:0;padding-top:0}.adv-lesson .choices{direction:ltr;text-align:left;unicode-bidi:isolate;color:var(--c-muted);font-size:.94rem}
+.adv-lesson details{border:1px solid var(--c-line);border-radius:14px;background:var(--c-soft);overflow:hidden;margin-top:16px}.adv-lesson summary{cursor:pointer;padding:13px 15px;font-weight:800;color:var(--c-primary-strong)}.adv-lesson .answers{padding:0 16px 15px}.adv-lesson .source{color:var(--c-muted);font-size:.82rem;margin-top:22px;padding-top:14px;border-top:1px solid var(--c-line)}
+@media(max-width:720px){.adv-lesson .grid{grid-template-columns:1fr}.adv-lesson .hero,.adv-lesson .card,.adv-lesson .subtopic{border-radius:15px}.adv-lesson table{min-width:560px}}
+@media(forced-colors:active){.adv-lesson .hero,.adv-lesson .card,.adv-lesson .subtopic,.adv-lesson .table-wrap,.adv-lesson details{border:1px solid CanvasText}}
 </style>
-<header class="adv-hero">
-<p class="adv-kicker">Lesson 23 · ADV-L23</p>
-<h2 lang="fr" dir="ltr">L’expression de la comparaison</h2>
-<p class="fa-title" lang="fa">بیان مقایسه</p>
-<p class="summary" lang="fa">این درس روی «بیان مقایسه» تمرکز دارد و زیرموضوع‌های برابری و شباهت، برتری، کمتری و تناسب، مقایسهٔ حرف‌اضافه‌ای و تصویری، واژگان مقایسه را پوشش می‌دهد.</p>
-<p class="meta">Printed pages 142–145 · PDF pages 144–147 · target 200 questions</p>
+
+<header class="hero">
+  <p class="kicker">LESSON 23 · ADV-L23</p>
+  <h2 lang="fr">L’expression de la comparaison</h2>
+  <p class="fa-title">بیان مقایسه در زبان فرانسه</p>
+  <p class="lead">بیان برابری، برتری، کمتری، شباهت، تفاوت و رابطهٔ تناسبی میان دو تغییر.</p>
+  <div class="meta"><span>صفحات کتاب: ۱۴۲ تا ۱۴۵</span><span>موضوع: comparaison</span><span>سطح: B1–B2 avancé</span></div>
 </header>
+
+<section class="card">
+  <h3 class="section-title">هدف درس</h3>
+  <p>پس از این درس باید بتوانید نوع مقایسه را تشخیص دهید و بر اساس چیزی که مقایسه می‌شود—صفت، قید، اسم، فعل یا شباهت کلی—ساختار مناسب را انتخاب کنید.</p>
+  <ul>
+    <li>تفاوت <span class="fr" lang="fr">aussi … que</span> و <span class="fr" lang="fr">autant … que</span> را تشخیص دهید.</li>
+    <li>برتری و کمتری را با <span class="fr" lang="fr">plus / moins</span> بسازید.</li>
+    <li>شباهت را با <span class="fr" lang="fr">comme</span> و <span class="fr" lang="fr">tel que</span> بیان کنید.</li>
+    <li>ساختارهای تناسبی <span class="fr" lang="fr">plus … plus …</span> و الگوهای مشابه را درست به کار ببرید.</li>
+    <li>حروف اضافهٔ ثابت در <span class="fr" lang="fr">par rapport à, ressembler à, différent de</span> را رعایت کنید.</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h3 class="section-title">ایدهٔ اصلی</h3>
+  <p>اول مشخص کنید دقیقاً چه چیزی را مقایسه می‌کنید: <strong>کیفیت/ویژگی</strong>، <strong>مقدار</strong>، <strong>میزان انجام یک عمل</strong> یا <strong>شباهت کلی</strong>.</p>
+  <div class="grid">
+    <div class="mini"><h4 lang="fr">Qualité / manière</h4><p>صفت یا قید → <span class="fr" lang="fr">aussi / plus / moins + adjectif ou adverbe + que</span></p></div>
+    <div class="mini"><h4 lang="fr">Quantité</h4><p>اسم → <span class="fr" lang="fr">autant de / plus de / moins de + nom + que</span></p></div>
+    <div class="mini"><h4 lang="fr">Action</h4><p>میزان انجام فعل → <span class="fr" lang="fr">verbe + autant que</span></p></div>
+    <div class="mini"><h4 lang="fr">Similitude</h4><p>شباهت → <span class="fr" lang="fr">comme</span> یا <span class="fr" lang="fr">tel / telle / tels / telles que</span></p></div>
+  </div>
+</section>
+
 <section class="subtopic" id="ADV-L23-ST01">
-<h3 lang="fr" dir="ltr">Égalité et similitude</h3>
-<p class="fa-subtitle" lang="fa">برابری و شباهت</p>
-<p class="rule" lang="fr">Comme, tel que, aussi... que et autant... que distinguent similitude, qualité et quantité.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «برابری و شباهت» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Elle travaille aussi vite que son collègue.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز aussi و autant را بدون توجه به صفت/قید، فعل یا اسم جابه‌جا می‌کند.</p>
-<p class="source"><code>ADV-L23:book-p142-p143:comp-equality</code> · printed 142–143 · PDF 144–145</p>
+  <h3 lang="fr">Égalité et similitude</h3><p class="fa-subtitle">برابری و شباهت</p>
+
+  <h4 class="minor">۱) <span class="fr" lang="fr">comme</span> — «مثل / همان‌طور که»</h4>
+  <p><span class="fr" lang="fr">comme</span> یک شباهت ساده میان دو عنصر یا دو وضعیت می‌سازد و می‌تواند قبل از اسم یا جملهٔ کامل بیاید.</p>
+  <div class="formula">proposition + comme + proposition</div><div class="formula">élément + comme + nom</div>
+  <div class="example"><p class="fr" lang="fr">Tout s’est passé comme nous l’avions prévu.</p><p class="translation">همه‌چیز همان‌طور که پیش‌بینی کرده بودیم پیش رفت.</p></div>
+  <div class="example"><p class="fr" lang="fr">Ce tissu est doux comme du velours.</p><p class="translation">این پارچه مثل مخمل نرم است.</p></div>
+
+  <h4 class="minor">۲) <span class="fr" lang="fr">tel que</span> — شباهت دقیق</h4>
+  <p><span class="fr" lang="fr">tel que</span> شباهتی نزدیک به «دقیقاً همان‌طور که» می‌دهد. <span class="fr" lang="fr">tel</span> با اسم از نظر جنس و تعداد هماهنگ می‌شود.</p>
+  <div class="formula">tel / telle / tels / telles + que</div>
+  <div class="table-wrap"><table><thead><tr><th>حالت</th><th class="frc">Forme</th></tr></thead><tbody><tr><td>مذکر مفرد</td><td class="frc">tel que</td></tr><tr><td>مؤنث مفرد</td><td class="frc">telle que</td></tr><tr><td>مذکر جمع</td><td class="frc">tels que</td></tr><tr><td>مؤنث جمع</td><td class="frc">telles que</td></tr></tbody></table></div>
+  <div class="example"><p class="fr" lang="fr">Elle est restée telle qu’elle était.</p><p class="translation">او دقیقاً همان‌طور که بود باقی مانده است.</p></div>
+
+  <h4 class="minor">۳) برابری کیفی با <span class="fr" lang="fr">aussi … que</span></h4>
+  <p>برای مقایسهٔ صفت یا قید از <span class="fr" lang="fr">aussi … que</span> استفاده می‌شود.</p>
+  <div class="formula">aussi + adjectif / adverbe + que</div>
+  <div class="example"><p class="fr" lang="fr">Cette solution est aussi efficace que l’autre.</p><p class="translation">این راه‌حل به اندازهٔ راه‌حل دیگر مؤثر است.</p></div>
+  <div class="example"><p class="fr" lang="fr">Elle travaille aussi rapidement que son collègue.</p><p class="translation">او به همان سرعت همکارش کار می‌کند.</p></div>
+
+  <h4 class="minor">۴) برابری کمی با <span class="fr" lang="fr">autant</span></h4>
+  <p>برای مقدار یک اسم از <span class="fr" lang="fr">autant de</span> و برای میزان انجام یک فعل از <span class="fr" lang="fr">autant que</span> استفاده می‌شود.</p>
+  <div class="formula">autant de + nom + que</div><div class="formula">verbe + autant que</div>
+  <div class="example"><p class="fr" lang="fr">Elle a autant de travail que moi.</p><p class="translation">او به اندازهٔ من کار دارد.</p></div>
+  <div class="example"><p class="fr" lang="fr">Il travaille autant que son frère.</p><p class="translation">او به اندازهٔ برادرش کار می‌کند.</p></div>
+  <div class="note"><strong>تشخیص سریع:</strong> <span class="fr" lang="fr">aussi</span> با صفت/قید؛ <span class="fr" lang="fr">autant</span> با مقدار یا فعل.</div>
+  <span class="bad" lang="fr">✗ Elle est autant rapide que lui.</span><span class="ok" lang="fr">✓ Elle est aussi rapide que lui.</span>
+  <span class="bad" lang="fr">✗ Il a aussi de temps que moi.</span><span class="ok" lang="fr">✓ Il a autant de temps que moi.</span>
 </section>
+
 <section class="subtopic" id="ADV-L23-ST02">
-<h3 lang="fr" dir="ltr">Supériorité, infériorité, proportion</h3>
-<p class="fa-subtitle" lang="fa">برتری، کمتری و تناسب</p>
-<p class="rule" lang="fr">Plus/moins + adjectif/adverbe ou plus/moins de + nom expriment degré; plus... plus marque proportion.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «برتری، کمتری و تناسب» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Plus on pratique, plus on progresse.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز پیش از اسم de را حذف می‌کند یا ساخت‌های متناسب plus... plus را مقایسهٔ ساده می‌خواند.</p>
-<p class="source"><code>ADV-L23:book-p142-p143:comp-degree</code> · printed 142–143 · PDF 144–145</p>
+  <h3 lang="fr">Supériorité, infériorité et proportion</h3><p class="fa-subtitle">برتری، کمتری و تناسب</p>
+
+  <h4 class="minor">۱) برتری با <span class="fr" lang="fr">plus</span></h4>
+  <div class="formula">plus + adjectif / adverbe + que</div><div class="formula">plus de + nom + que</div>
+  <div class="example"><p class="fr" lang="fr">Cette chambre est plus grande que l’autre.</p><p class="translation">این اتاق از آن یکی بزرگ‌تر است.</p></div>
+  <div class="example"><p class="fr" lang="fr">Nous avons plus de clients que l’an dernier.</p><p class="translation">مشتری بیشتری نسبت به سال گذشته داریم.</p></div>
+
+  <h4 class="minor">۲) کمتری با <span class="fr" lang="fr">moins</span></h4>
+  <div class="formula">moins + adjectif / adverbe + que</div><div class="formula">moins de + nom + que</div>
+  <div class="example"><p class="fr" lang="fr">Ce quartier est moins bruyant que le centre-ville.</p><p class="translation">این محله از مرکز شهر کم‌سروصداتر است.</p></div>
+  <div class="example"><p class="fr" lang="fr">Nous avons moins de temps que prévu.</p><p class="translation">از آنچه انتظار داشتیم وقت کمتری داریم.</p></div>
+
+  <div class="table-wrap"><table><thead><tr><th>نوع عنصر</th><th class="frc">Supériorité</th><th class="frc">Infériorité</th></tr></thead><tbody><tr><td>صفت</td><td class="frc">plus cher que</td><td class="frc">moins cher que</td></tr><tr><td>قید</td><td class="frc">plus vite que</td><td class="frc">moins vite que</td></tr><tr><td>اسم</td><td class="frc">plus de temps que</td><td class="frc">moins de temps que</td></tr></tbody></table></div>
+
+  <h4 class="minor">۳) تقویت با <span class="fr" lang="fr">beaucoup</span> و <span class="fr" lang="fr">bien</span></h4>
+  <p><span class="fr" lang="fr">plus</span> و <span class="fr" lang="fr">moins</span> را می‌توان با <span class="fr" lang="fr">beaucoup</span> یا <span class="fr" lang="fr">bien</span> تقویت کرد.</p>
+  <div class="example"><p class="fr" lang="fr">Ce modèle est beaucoup plus pratique que l’ancien.</p><p class="translation">این مدل خیلی کاربردی‌تر از مدل قبلی است.</p></div>
+  <div class="example"><p class="fr" lang="fr">La situation est bien moins compliquée qu’hier.</p><p class="translation">وضعیت نسبت به دیروز بسیار کم‌پیچیده‌تر است.</p></div>
+  <div class="note warn"><strong>محدودیت:</strong> در این نقش، <span class="fr" lang="fr">très</span> جای <span class="fr" lang="fr">beaucoup/bien</span> را برای تقویت <span class="fr" lang="fr">plus/moins</span> نمی‌گیرد.</div>
+
+  <h4 class="minor">۴) مقایسهٔ تناسبی</h4>
+  <div class="formula">plus …, plus …</div><div class="formula">moins …, moins …</div><div class="formula">plus …, moins …</div><div class="formula">moins …, plus …</div>
+  <div class="example"><p class="fr" lang="fr">Plus on pratique, plus on progresse.</p><p class="translation">هرچه بیشتر تمرین کنیم، بیشتر پیشرفت می‌کنیم.</p></div>
+  <div class="example"><p class="fr" lang="fr">Plus les prix augmentent, moins les clients achètent.</p><p class="translation">هرچه قیمت‌ها بیشتر بالا بروند، مشتری‌ها کمتر خرید می‌کنند.</p></div>
+  <div class="example"><p class="fr" lang="fr">Moins tu hésites, plus tu avances vite.</p><p class="translation">هرچه کمتر تردید کنی، سریع‌تر پیش می‌روی.</p></div>
+  <span class="bad" lang="fr">✗ Plus tu travailles, tu réussiras plus.</span><span class="ok" lang="fr">✓ Plus tu travailles, plus tu réussiras.</span>
 </section>
+
 <section class="subtopic" id="ADV-L23-ST03">
-<h3 lang="fr" dir="ltr">Comparaison prépositionnelle et imagée</h3>
-<p class="fa-subtitle" lang="fa">مقایسهٔ حرف‌اضافه‌ای و تصویری</p>
-<p class="rule" lang="fr">Comme, de, en, en comparaison de et par rapport à construisent images, formes, rôles ou rapprochements.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «مقایسهٔ حرف‌اضافه‌ای و تصویری» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Par rapport à l’an dernier, les ventes ont augmenté.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز en را در mourir en héros ماده یا مکان تحلیل می‌کند و نقش مقایسه‌ای/حالتی را نمی‌بیند.</p>
-<p class="source"><code>ADV-L23:book-p144-p145:comp-prep</code> · printed 144–145 · PDF 146–147</p>
+  <h3 lang="fr">Comparaison prépositionnelle et imagée</h3><p class="fa-subtitle">مقایسهٔ حرف‌اضافه‌ای و تصویری</p>
+
+  <h4 class="minor">۱) مقایسهٔ تصویری با <span class="fr" lang="fr">comme</span></h4>
+  <p><span class="fr" lang="fr">comme</span> می‌تواند تصویر ذهنی بسازد؛ بسیاری از این ترکیب‌ها عبارت‌های تثبیت‌شده‌اند.</p>
+  <div class="example"><p class="fr" lang="fr">Il est obstiné comme une mule.</p><p class="translation">مثل قاطر لجباز است.</p></div>
+
+  <h4 class="minor">۲) ساختارهای تصویری با <span class="fr" lang="fr">de</span> و <span class="fr" lang="fr">en</span></h4>
+  <p>این بخش تا حد زیادی واژگانی است؛ خود عبارت طبیعی را یاد بگیرید و آن را به یک فرمول آزاد برای همهٔ واژه‌ها تبدیل نکنید.</p>
+  <div class="grid"><div class="mini"><h4 lang="fr">de</h4><p class="fr" lang="fr">une faim de loup</p><p>گرسنگی بسیار زیاد</p><p class="fr" lang="fr">un appétit d’oiseau</p><p>اشتهای بسیار کم</p></div><div class="mini"><h4 lang="fr">en</h4><p class="fr" lang="fr">des yeux en amande</p><p>چشم‌های بادامی</p><p class="fr" lang="fr">mourir en héros</p><p>مانند/در مقام یک قهرمان مردن</p></div></div>
+
+  <h4 class="minor">۳) <span class="fr" lang="fr">en comparaison de</span> و <span class="fr" lang="fr">par rapport à</span></h4>
+  <div class="formula">en comparaison de + nom</div><div class="formula">par rapport à + nom / pronom</div>
+  <div class="example"><p class="fr" lang="fr">Les résultats sont excellents en comparaison de ceux de l’année dernière.</p><p class="translation">نتایج در مقایسه با نتایج سال گذشته عالی‌اند.</p></div>
+  <div class="example"><p class="fr" lang="fr">Les prix ont augmenté par rapport à l’an dernier.</p><p class="translation">قیمت‌ها نسبت به سال گذشته افزایش یافته‌اند.</p></div>
+  <span class="bad" lang="fr">✗ par rapport de l’année dernière</span><span class="ok" lang="fr">✓ par rapport à l’année dernière</span>
 </section>
+
 <section class="subtopic" id="ADV-L23-ST04">
-<h3 lang="fr" dir="ltr">Lexique de la comparaison</h3>
-<p class="fa-subtitle" lang="fa">واژگان مقایسه</p>
-<p class="rule" lang="fr">Ressembler à, comparable à, différent de, avoir l’air et avoir l’impression lexicalisent relation ou apparence.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «واژگان مقایسه» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Cette solution ressemble à celle que nous avions proposée.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز حاکمیت à/de در واژگان مقایسه را بر اساس ترجمه حدس می‌زند.</p>
-<p class="source"><code>ADV-L23:book-p144-p145:comp-lexicon</code> · printed 144–145 · PDF 146–147</p>
+  <h3 lang="fr">Lexique de la comparaison</h3><p class="fa-subtitle">واژگان مقایسه</p>
+
+  <h4 class="minor">۱) <span class="fr" lang="fr">ressembler à</span></h4><div class="formula">A ressemble à B</div>
+  <div class="example"><p class="fr" lang="fr">Paul ressemble beaucoup à son père.</p><p class="translation">پل خیلی شبیه پدرش است.</p></div><span class="bad" lang="fr">✗ ressembler avec quelqu’un</span><span class="ok" lang="fr">✓ ressembler à quelqu’un</span>
+
+  <h4 class="minor">۲) <span class="fr" lang="fr">comparer A à B</span></h4><div class="formula">comparer + élément + à + élément</div>
+  <div class="example"><p class="fr" lang="fr">On compare souvent cette ville à Paris.</p><p class="translation">اغلب این شهر را با پاریس مقایسه می‌کنند.</p></div>
+
+  <h4 class="minor">۳) ظاهر و برداشت</h4>
+  <div class="table-wrap"><table><thead><tr><th class="frc">Structure</th><th>کاربرد</th><th class="frc">Exemple</th></tr></thead><tbody><tr><td class="frc">sembler</td><td>به نظر رسیدن</td><td class="frc">Il semble fatigué.</td></tr><tr><td class="frc">paraître</td><td>به نظر آمدن</td><td class="frc">Elle paraît plus calme aujourd’hui.</td></tr><tr><td class="frc">avoir l’air + adjectif</td><td>ظاهرِ ... داشتن</td><td class="frc">Tu as l’air surpris.</td></tr><tr><td class="frc">avoir l’impression de + infinitif</td><td>برداشت دربارهٔ یک عمل</td><td class="frc">J’ai l’impression de connaître cet homme.</td></tr><tr><td class="frc">avoir l’impression que + proposition</td><td>برداشت دربارهٔ یک گزاره</td><td class="frc">J’ai l’impression que la situation s’améliore.</td></tr></tbody></table></div>
+
+  <h4 class="minor">۴) صفت‌ها و حرف اضافهٔ ثابت</h4>
+  <div class="table-wrap"><table><thead><tr><th class="frc">Structure</th><th class="frc">Préposition</th><th>معنا</th></tr></thead><tbody><tr><td class="frc">pareil</td><td class="frc">à</td><td>مثل / همانند</td></tr><tr><td class="frc">semblable</td><td class="frc">à</td><td>مشابه</td></tr><tr><td class="frc">identique</td><td class="frc">à</td><td>یکسان</td></tr><tr><td class="frc">comparable</td><td class="frc">à</td><td>قابل مقایسه</td></tr><tr><td class="frc">différent</td><td class="frc">de</td><td>متفاوت</td></tr><tr><td class="frc">avoir … en commun</td><td class="frc">—</td><td>وجه مشترک داشتن</td></tr></tbody></table></div>
+  <div class="example"><p class="fr" lang="fr">Cette situation est comparable à celle de l’année dernière.</p><p class="translation">این وضعیت قابل مقایسه با وضعیت سال گذشته است.</p></div>
+  <div class="example"><p class="fr" lang="fr">Son opinion est très différente de la mienne.</p><p class="translation">نظر او با نظر من بسیار متفاوت است.</p></div>
 </section>
-<aside class="notes"><h3>Notes avancées</h3>
-<section><h4>Exceptions / استثناها</h4><ul><li>Plus/moins peut être renforcé par beaucoup ou bien, pas par très dans la même fonction.</li><li>En peut introduire matière, forme ou rôle comparatif selon le nom et le verbe.</li></ul></section>
-<section><h4>Contrastes / تقابل‌ها</h4><ul><li>aussi qualité vs autant quantité</li><li>plus/moins + adjectif/adverbe vs plus/moins de + nom</li><li>similitude avec tel que vs égalité graduée</li></ul></section>
-<section><h4>Restrictions / محدودیت‌ها</h4><ul><li>La structure du comparatif dépend de la catégorie comparée et du type de relation.</li></ul></section>
-<section><h4>Register / سطح زبانی</h4><ul><li>Les comparaisons imagées et idiomatiques ont une forte composante de registre et de naturalité.</li></ul></section>
-<section><h4>Semantic notes / نکات معنایی</h4><ul><li>Comparaison peut exprimer égalité, degré, proportion, analogie, apparence ou différence lexicale.</li></ul></section>
-</aside>
+
+<section class="card">
+  <h3 class="section-title">تفاوت‌های ظریف در یک نگاه</h3>
+  <div class="table-wrap"><table><thead><tr><th>مقایسه</th><th class="frc">Structure</th><th class="frc">Exemple</th></tr></thead><tbody><tr><td>کیفیت</td><td class="frc">aussi + adj./adv. + que</td><td class="frc">aussi difficile que</td></tr><tr><td>مقدار اسم</td><td class="frc">autant de + nom + que</td><td class="frc">autant de temps que</td></tr><tr><td>میزان فعل</td><td class="frc">verbe + autant que</td><td class="frc">travaille autant que</td></tr><tr><td>برتری با اسم</td><td class="frc">plus de + nom + que</td><td class="frc">plus de temps que</td></tr><tr><td>کمتری با اسم</td><td class="frc">moins de + nom + que</td><td class="frc">moins de problèmes que</td></tr><tr><td>شباهت عمومی</td><td class="frc">comme</td><td class="frc">comme son frère</td></tr><tr><td>شباهت دقیق</td><td class="frc">tel / telle / tels / telles que</td><td class="frc">telle qu’elle était</td></tr></tbody></table></div>
+</section>
+
+<section class="card">
+  <h3 class="section-title">خطاهای رایج</h3>
+  <div class="errors">
+    <div class="error"><span class="bad" lang="fr">✗ Elle est autant intelligente que sa sœur.</span><span class="ok" lang="fr">✓ Elle est aussi intelligente que sa sœur.</span><p><strong>دلیل:</strong> <span class="fr" lang="fr">intelligente</span> صفت است.</p></div>
+    <div class="error"><span class="bad" lang="fr">✗ J’ai aussi de temps que toi.</span><span class="ok" lang="fr">✓ J’ai autant de temps que toi.</span><p><strong>دلیل:</strong> <span class="fr" lang="fr">temps</span> اسم است و مقدار آن مقایسه می‌شود.</p></div>
+    <div class="error"><span class="bad" lang="fr">✗ Il a plus patience que moi.</span><span class="ok" lang="fr">✓ Il a plus de patience que moi.</span><p><strong>دلیل:</strong> قبل از اسم در مقایسهٔ برتری <span class="fr" lang="fr">de</span> لازم است.</p></div>
+    <div class="error"><span class="bad" lang="fr">✗ Cette voiture est plus de rapide que l’autre.</span><span class="ok" lang="fr">✓ Cette voiture est plus rapide que l’autre.</span><p><strong>دلیل:</strong> قبل از صفت <span class="fr" lang="fr">de</span> نمی‌آید.</p></div>
+    <div class="error"><span class="bad" lang="fr">✗ Elle ressemble avec sa sœur.</span><span class="ok" lang="fr">✓ Elle ressemble à sa sœur.</span><p><strong>دلیل:</strong> ساختار فعل <span class="fr" lang="fr">ressembler à</span> است.</p></div>
+    <div class="error"><span class="bad" lang="fr">✗ Ce modèle est différent à l’ancien.</span><span class="ok" lang="fr">✓ Ce modèle est différent de l’ancien.</span><p><strong>دلیل:</strong> ساختار درست <span class="fr" lang="fr">différent de</span> است.</p></div>
+    <div class="error"><span class="bad" lang="fr">✗ Des idées tel que les tiennes…</span><span class="ok" lang="fr">✓ Des idées telles que les tiennes…</span><p><strong>دلیل:</strong> <span class="fr" lang="fr">tel</span> با اسم هماهنگ می‌شود.</p></div>
+  </div>
+</section>
+
+<section class="card">
+  <h3 class="section-title">زبان واقعی و Register</h3>
+  <p>مقایسه‌های تصویری و بعضی عبارت‌های این درس جنبهٔ اصطلاحی دارند و ممکن است در زبان روزمره طبیعی‌تر باشند. برای نوشتار روشن و رسمی، ساختارهای زیر بسیار مطمئن‌اند:</p>
+  <ul><li><span class="fr" lang="fr">plus / moins / aussi … que</span></li><li><span class="fr" lang="fr">autant de … que</span></li><li><span class="fr" lang="fr">par rapport à</span></li><li><span class="fr" lang="fr">en comparaison de</span></li><li><span class="fr" lang="fr">être comparable à</span></li><li><span class="fr" lang="fr">être différent de</span></li></ul>
+</section>
+
+<section class="card">
+  <h3 class="section-title">خلاصه‌ای که باید به خاطر بسپارید</h3>
+  <ul class="memory"><li>کیفیت برابر → <span class="fr" lang="fr">aussi + adjectif/adverbe + que</span></li><li>مقدار برابر → <span class="fr" lang="fr">autant de + nom + que</span></li><li>میزان فعل برابر → <span class="fr" lang="fr">verbe + autant que</span></li><li>برتری → <span class="fr" lang="fr">plus + adj./adv. + que</span> یا <span class="fr" lang="fr">plus de + nom + que</span></li><li>کمتری → <span class="fr" lang="fr">moins + adj./adv. + que</span> یا <span class="fr" lang="fr">moins de + nom + que</span></li><li>شباهت ساده → <span class="fr" lang="fr">comme</span></li><li>شباهت دقیق → <span class="fr" lang="fr">tel / telle / tels / telles que</span></li><li>تناسب → <span class="fr" lang="fr">plus… plus… / plus… moins… / moins… plus… / moins… moins…</span></li><li>نسبت به → <span class="fr" lang="fr">par rapport à</span></li><li>شبیه بودن → <span class="fr" lang="fr">ressembler à</span></li><li>متفاوت بودن → <span class="fr" lang="fr">être différent de</span></li></ul>
+</section>
+
+<section class="card">
+  <h3 class="section-title">تمرین</h3>
+  <div class="exercise"><h4>۱) گزینهٔ مناسب را انتخاب کنید.</h4><ol><li><span class="fr" lang="fr">Cette solution est ___ efficace que la précédente.</span><div class="choices">a) autant &nbsp; b) aussi &nbsp; c) autant de</div></li><li><span class="fr" lang="fr">Nous avons ___ travail que la semaine dernière.</span><div class="choices">a) aussi &nbsp; b) autant de &nbsp; c) autant</div></li><li><span class="fr" lang="fr">Elle voyage ___ que son frère.</span><div class="choices">a) autant &nbsp; b) aussi de &nbsp; c) telle</div></li><li><span class="fr" lang="fr">Ce quartier a ___ espaces verts que le centre-ville.</span><div class="choices">a) plus &nbsp; b) plus de &nbsp; c) plus des</div></li><li><span class="fr" lang="fr">Cette méthode est beaucoup ___ simple que l’ancienne.</span><div class="choices">a) plus &nbsp; b) de plus &nbsp; c) autant</div></li></ol></div>
+  <div class="exercise"><h4>۲) جمله‌ها را اصلاح کنید.</h4><ol><li><span class="fr" lang="fr">Il ressemble avec son père.</span></li><li><span class="fr" lang="fr">Cette ville est différente à Montréal.</span></li><li><span class="fr" lang="fr">Elle possède aussi de livres que moi.</span></li><li><span class="fr" lang="fr">Des situations tel que celle-ci sont rares.</span></li><li><span class="fr" lang="fr">Plus tu pratiques, tu parleras plus facilement.</span></li></ol></div>
+  <div class="exercise"><h4>۳) ساختار مناسب را انتخاب کنید.</h4><ol><li><span class="fr" lang="fr">Il a ______ patience que son collègue. (aussi / autant de)</span></li><li><span class="fr" lang="fr">Elle travaille ______ que moi. (aussi / autant)</span></li><li><span class="fr" lang="fr">Elle est ______ organisée que moi. (aussi / autant)</span></li><li><span class="fr" lang="fr">Les ventes ont progressé ______ l’an dernier. (par rapport à / différent à)</span></li><li><span class="fr" lang="fr">Cette version est très différente ______ la précédente. (à / de)</span></li></ol></div>
+  <details><summary>پاسخ تمرین‌ها</summary><div class="answers"><h4>تمرین ۱</h4><ol><li><strong>b) aussi</strong> — <span class="fr" lang="fr">efficace</span> صفت است.</li><li><strong>b) autant de</strong> — <span class="fr" lang="fr">travail</span> اسم است.</li><li><strong>a) autant</strong> — میزان انجام فعل مقایسه می‌شود.</li><li><strong>b) plus de</strong> — <span class="fr" lang="fr">espaces</span> اسم است.</li><li><strong>a) plus</strong> — <span class="fr" lang="fr">simple</span> صفت است.</li></ol><h4>تمرین ۲</h4><ol><li><span class="fr" lang="fr">Il ressemble à son père.</span></li><li><span class="fr" lang="fr">Cette ville est différente de Montréal.</span></li><li><span class="fr" lang="fr">Elle possède autant de livres que moi.</span></li><li><span class="fr" lang="fr">Des situations telles que celle-ci sont rares.</span></li><li><span class="fr" lang="fr">Plus tu pratiques, plus tu parleras facilement.</span></li></ol><h4>تمرین ۳</h4><ol><li><span class="fr" lang="fr">autant de</span></li><li><span class="fr" lang="fr">autant</span></li><li><span class="fr" lang="fr">aussi</span></li><li><span class="fr" lang="fr">par rapport à</span></li><li><span class="fr" lang="fr">de</span></li></ol></div></details>
+  <p class="source">مبنا: <span class="fr" lang="fr">Grammaire Progressive du Français — Niveau Avancé — 3e édition</span>، درس ۲۳، صفحات چاپی ۱۴۲ تا ۱۴۵. توضیح‌ها و مثال‌های آموزشی بازنویسی شده‌اند.</p>
+</section>
 </article>

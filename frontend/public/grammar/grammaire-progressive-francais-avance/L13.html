@@ -1,76 +1,876 @@
-<article class="adv-lesson" data-lesson-id="ADV-L13">
+<!--
+  Grammar Mastery Advanced — Lesson 13
+  Embeddable lesson fragment.
+  Theme behavior: inherits the host site's text/background colors and uses only
+  transparent/currentColor-based surfaces, so it remains readable in light and dark modes.
+-->
 <style>
-.adv-lesson{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.75;color:#172033;max-width:980px;margin:0 auto;padding:8px 2px 40px}
-.adv-lesson *{box-sizing:border-box}
-.adv-lesson .adv-hero{padding:24px;border:1px solid #e3e8f0;border-radius:18px;background:#fff;margin-bottom:22px}
-.adv-lesson .adv-kicker{font-size:.86rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.65;margin:0 0 6px}
-.adv-lesson h2,.adv-lesson h3{line-height:1.35}
-.adv-lesson h2{font-size:1.65rem;margin:0 0 4px}
-.adv-lesson .fa-title{direction:rtl;text-align:right;font-weight:650;margin:.2rem 0 .8rem}
-.adv-lesson .summary{direction:rtl;text-align:right;margin:0}
-.adv-lesson .meta{margin-top:12px;font-size:.9rem;opacity:.72}
-.adv-lesson .subtopic{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin:18px 0;background:#fff}
-.adv-lesson .subtopic h3{margin:0 0 2px;font-size:1.25rem}
-.adv-lesson .fa-subtitle{direction:rtl;text-align:right;font-weight:600;margin:.1rem 0 1rem}
-.adv-lesson .rule{direction:ltr;text-align:left;padding:12px 14px;border-left:4px solid currentColor;background:#f7f9fc;border-radius:8px;margin:12px 0}
-.adv-lesson .teaching,.adv-lesson .trap{direction:rtl;text-align:right}
-.adv-lesson .example{direction:ltr;text-align:left;font-style:italic;padding:10px 14px;background:#f7f9fc;border-radius:8px}
-.adv-lesson .trap{padding:10px 14px;border:1px dashed #c7ced9;border-radius:8px}
-.adv-lesson .source{font-size:.82rem;opacity:.65;margin-top:12px}
-.adv-lesson .notes{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin-top:22px}
-.adv-lesson .notes h3{margin-top:0}
-.adv-lesson .notes section{margin:16px 0}
-.adv-lesson .notes h4{margin:0 0 6px}
-.adv-lesson .notes ul{margin-top:4px}
+  .gm-lesson {
+    --gm-text: var(--foreground, currentColor);
+    --gm-muted: color-mix(in srgb, currentColor 68%, transparent);
+    --gm-border: color-mix(in srgb, currentColor 18%, transparent);
+    --gm-surface: color-mix(in srgb, currentColor 5%, transparent);
+    --gm-surface-strong: color-mix(in srgb, currentColor 9%, transparent);
+    --gm-accent: var(--primary, var(--accent, currentColor));
+    --gm-radius: 14px;
+    --gm-gap: 1rem;
+
+    direction: rtl;
+    color: var(--gm-text);
+    background: transparent;
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.9;
+    max-width: 980px;
+    margin-inline: auto;
+    padding: clamp(1rem, 2.5vw, 2rem);
+  }
+
+  .gm-lesson,
+  .gm-lesson * {
+    box-sizing: border-box;
+  }
+
+  .gm-lesson h1,
+  .gm-lesson h2,
+  .gm-lesson h3,
+  .gm-lesson h4 {
+    color: inherit;
+    line-height: 1.45;
+    margin-block: 1.6em .65em;
+    text-wrap: balance;
+  }
+
+  .gm-lesson h1 {
+    margin-top: 0;
+    font-size: clamp(1.75rem, 4vw, 2.55rem);
+  }
+
+  .gm-lesson h2 {
+    font-size: clamp(1.35rem, 3vw, 1.8rem);
+    padding-bottom: .35rem;
+    border-bottom: 1px solid var(--gm-border);
+  }
+
+  .gm-lesson h3 {
+    font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+  }
+
+  .gm-lesson h4 {
+    font-size: 1.05rem;
+  }
+
+  .gm-lesson p {
+    margin-block: .75rem;
+  }
+
+  .gm-lesson ul,
+  .gm-lesson ol {
+    padding-inline-start: 1.4rem;
+    margin-block: .75rem 1rem;
+  }
+
+  .gm-lesson li + li {
+    margin-top: .35rem;
+  }
+
+  .gm-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: .65rem;
+    margin-block: 1rem 1.5rem;
+  }
+
+  .gm-meta > div,
+  .gm-card,
+  .gm-note,
+  .gm-summary,
+  .gm-example,
+  .gm-error {
+    border: 1px solid var(--gm-border);
+    border-radius: var(--gm-radius);
+    background: var(--gm-surface);
+  }
+
+  .gm-meta > div {
+    padding: .85rem 1rem;
+  }
+
+  .gm-meta dt {
+    font-weight: 700;
+    margin-bottom: .2rem;
+  }
+
+  .gm-meta dd {
+    margin: 0;
+    color: var(--gm-muted);
+  }
+
+  .gm-card,
+  .gm-note,
+  .gm-summary,
+  .gm-error {
+    padding: 1rem 1.1rem;
+    margin-block: 1rem;
+  }
+
+  .gm-note {
+    border-inline-start: 4px solid var(--gm-accent);
+  }
+
+  .gm-summary {
+    background: var(--gm-surface-strong);
+  }
+
+  .gm-example {
+    padding: .85rem 1rem;
+    margin-block: .75rem;
+  }
+
+  .gm-example .fr,
+  .gm-structure,
+  .gm-fr {
+    direction: ltr;
+    unicode-bidi: isolate;
+    text-align: left;
+  }
+
+  .gm-example .fr {
+    display: block;
+    font-weight: 650;
+    margin-bottom: .25rem;
+  }
+
+  .gm-example .fa {
+    display: block;
+    color: var(--gm-muted);
+  }
+
+  .gm-structure {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: .8rem 1rem;
+    margin-block: .7rem 1rem;
+    border: 1px solid var(--gm-border);
+    border-radius: 10px;
+    background: var(--gm-surface-strong);
+    color: inherit;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    font-size: .95rem;
+  }
+
+  .gm-correct,
+  .gm-wrong,
+  .gm-tip {
+    display: block;
+    margin-block: .45rem;
+  }
+
+  .gm-correct::before { content: "✅ "; }
+  .gm-wrong::before { content: "❌ "; }
+  .gm-tip::before { content: "💡 "; }
+
+  .gm-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    margin-block: 1rem;
+    border: 1px solid var(--gm-border);
+    border-radius: var(--gm-radius);
+  }
+
+  .gm-lesson table {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: collapse;
+    background: transparent;
+  }
+
+  .gm-lesson th,
+  .gm-lesson td {
+    padding: .75rem .85rem;
+    text-align: right;
+    vertical-align: top;
+    border-bottom: 1px solid var(--gm-border);
+  }
+
+  .gm-lesson th {
+    background: var(--gm-surface-strong);
+    font-weight: 750;
+  }
+
+  .gm-lesson tr:last-child td {
+    border-bottom: 0;
+  }
+
+  .gm-lesson td[dir="ltr"],
+  .gm-lesson th[dir="ltr"] {
+    text-align: left;
+  }
+
+  .gm-inline-fr {
+    direction: ltr;
+    unicode-bidi: isolate;
+    display: inline-block;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    font-size: .94em;
+  }
+
+  .gm-label {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    padding: .2rem .55rem;
+    border: 1px solid var(--gm-border);
+    border-radius: 999px;
+    background: var(--gm-surface);
+    font-size: .88rem;
+    font-weight: 700;
+    margin-inline-end: .35rem;
+  }
+
+  .gm-toc {
+    display: grid;
+    gap: .35rem;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    margin: 1rem 0 1.5rem;
+  }
+
+  .gm-toc a {
+    color: inherit;
+    text-decoration: none;
+    border: 1px solid var(--gm-border);
+    background: var(--gm-surface);
+    border-radius: 10px;
+    padding: .6rem .75rem;
+  }
+
+  .gm-toc a:hover,
+  .gm-toc a:focus-visible {
+    background: var(--gm-surface-strong);
+    outline: none;
+  }
+
+  .gm-divider {
+    border: 0;
+    border-top: 1px solid var(--gm-border);
+    margin-block: 2rem;
+  }
+
+  @supports not (color: color-mix(in srgb, black 10%, transparent)) {
+    .gm-lesson {
+      --gm-muted: inherit;
+      --gm-border: rgba(127,127,127,.3);
+      --gm-surface: rgba(127,127,127,.06);
+      --gm-surface-strong: rgba(127,127,127,.1);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .gm-lesson {
+      padding-inline: .85rem;
+    }
+
+    .gm-meta {
+      grid-template-columns: 1fr;
+    }
+
+    .gm-lesson table {
+      min-width: 560px;
+    }
+  }
+
+  @media print {
+    .gm-lesson {
+      max-width: none;
+      padding: 0;
+    }
+
+    .gm-toc {
+      display: none;
+    }
+  }
 </style>
-<header class="adv-hero">
-<p class="adv-kicker">Lesson 13 · ADV-L13</p>
-<h2 lang="fr" dir="ltr">La forme impersonnelle</h2>
-<p class="fa-title" lang="fa">ساخت غیرشخصی</p>
-<p class="summary" lang="fa">این درس روی «ساخت غیرشخصی» تمرکز دارد و زیرموضوع‌های ساخت‌های بنیادی غیرشخصی، ضرورت و داوری غیرشخصی، افعال با کاربرد شخصی و غیرشخصی، مجهول غیرشخصی اداری را پوشش می‌دهد.</p>
-<p class="meta">Printed pages 86–87 · PDF pages 88–89 · target 150 questions</p>
-</header>
-<section class="subtopic" id="ADV-L13-ST01">
-<h3 lang="fr" dir="ltr">Phénomènes, il y a, il s’agit de</h3>
-<p class="fa-subtitle" lang="fa">ساخت‌های بنیادی غیرشخصی</p>
-<p class="rule" lang="fr">Il neutre sert aux phénomènes naturels, à l’existence et à des présentations comme il s’agit de.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «ساخت‌های بنیادی غیرشخصی» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Il y a encore deux places disponibles.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز il غیرشخصی را به مرجع مذکر مشخص نسبت می‌دهد یا il s’agit de را با «او عمل می‌کند» می‌فهمد.</p>
-<p class="source"><code>ADV-L13:book-p086-p087:impersonal-core</code> · printed 86–87 · PDF 88–89</p>
-</section>
-<section class="subtopic" id="ADV-L13-ST02">
-<h3 lang="fr" dir="ltr">Nécessité et jugement</h3>
-<p class="fa-subtitle" lang="fa">ضرورت و داوری غیرشخصی</p>
-<p class="rule" lang="fr">Il faut, il est possible/bon/juste + de ou que sélectionnent infinitif ou subordonnée selon le sujet et la modalité.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «ضرورت و داوری غیرشخصی» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Il est important que chacun puisse s’exprimer.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز پس از هر tournure impersonnelle indicatif می‌آورد و امکان، الزام یا داوری را نادیده می‌گیرد.</p>
-<p class="source"><code>ADV-L13:book-p086-p087:impersonal-eval</code> · printed 86–87 · PDF 88–89</p>
-</section>
-<section class="subtopic" id="ADV-L13-ST03">
-<h3 lang="fr" dir="ltr">Verbes à emploi personnel ou impersonnel</h3>
-<p class="fa-subtitle" lang="fa">افعال با کاربرد شخصی و غیرشخصی</p>
-<p class="rule" lang="fr">Arriver, être, plaire, paraître, sembler et suffire changent de construction et parfois de sens en emploi impersonnel.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «افعال با کاربرد شخصی و غیرشخصی» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Il semble que la situation s’améliore.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز معنای شخصی فعل را بی‌تغییر به ساخت il impersonnel منتقل می‌کند.</p>
-<p class="source"><code>ADV-L13:book-p086-p087:semi-impersonal</code> · printed 86–87 · PDF 88–89</p>
-</section>
-<section class="subtopic" id="ADV-L13-ST04">
-<h3 lang="fr" dir="ltr">Passif impersonnel administratif</h3>
-<p class="fa-subtitle" lang="fa">مجهول غیرشخصی اداری</p>
-<p class="rule" lang="fr">Il est interdit, permis, défendu ou décidé de présente une règle ou décision sans agent nommé.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «مجهول غیرشخصی اداری» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Il est interdit de stationner devant l’entrée.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز این ساخت اداری را با c’est + adjectif جایگزین می‌کند و سطح رسمی یا ساخت de + infinitif را خراب می‌کند.</p>
-<p class="source"><code>ADV-L13:book-p086-p087:impersonal-passive</code> · printed 86–87 · PDF 88–89</p>
-</section>
-<aside class="notes"><h3>Notes avancées</h3>
-<section><h4>Exceptions / استثناها</h4><ul><li>Certains verbes ont à la fois emploi personnel et impersonnel avec changement de construction ou de sens.</li></ul></section>
-<section><h4>Contrastes / تقابل‌ها</h4><ul><li>il référentiel vs il neutre</li><li>de + infinitif à sujet générique/identique vs que + proposition</li><li>possibilité vs probabilité</li></ul></section>
-<section><h4>Restrictions / محدودیت‌ها</h4><ul><li>Le mode après la tournure dépend de sa valeur modale et de la structure de complémentation.</li></ul></section>
-<section><h4>Register / سطح زبانی</h4><ul><li>Il est interdit/défendu/permis/décidé de est courant dans règlement et administration.</li></ul></section>
-<section><h4>Semantic notes / نکات معنایی</h4><ul><li>Les tours impersonnels présentent phénomène, existence, nécessité, jugement ou décision sans sujet lexical agentif.</li></ul></section>
-</aside>
+
+<article class="gm-lesson" dir="rtl" lang="fa">
+  <header>
+    <div>
+      <span class="gm-label">درس ۱۳</span>
+      <span class="gm-label" lang="fr" dir="ltr">B1–B2 / Avancé</span>
+    </div>
+
+    <h1><span lang="fr" dir="ltr">La forme impersonnelle</span> — ساختار غیرشخصی در زبان فرانسه</h1>
+
+    <dl class="gm-meta">
+      <div>
+        <dt>عنوان رسمی</dt>
+        <dd lang="fr" dir="ltr">La forme impersonnelle</dd>
+      </div>
+      <div>
+        <dt>صفحات کتاب</dt>
+        <dd>۸۶–۸۷ (صفحات ۸۸–۸۹ فایل PDF)</dd>
+      </div>
+      <div>
+        <dt>موضوع اصلی</dt>
+        <dd>کاربرد <span class="gm-inline-fr">il</span> خنثی، افعال غیرشخصی و ساخت‌های غیرشخصی در حالت مجهول</dd>
+      </div>
+    </dl>
+  </header>
+
+  <nav class="gm-toc" aria-label="فهرست درس">
+    <a href="#goal">هدف درس</a>
+    <a href="#idea">ایده اصلی</a>
+    <a href="#topics">آموزش کامل</a>
+    <a href="#contrasts">تفاوت‌های ظریف</a>
+    <a href="#limits">محدودیت‌ها</a>
+    <a href="#errors">خطاهای رایج</a>
+    <a href="#register">زبان واقعی و Register</a>
+    <a href="#summary">خلاصه نهایی</a>
+  </nav>
+
+  <section id="goal">
+    <h2>۱. هدف درس</h2>
+    <p>بعد از این درس باید بتوانید تشخیص دهید چه زمانی <span class="gm-inline-fr">il</span> به شخص یا چیز مشخصی اشاره نمی‌کند، ساخت‌های غیرشخصی رایج را درست بسازید، و میان کاربردهای شخصی و غیرشخصی بعضی افعال تفاوت بگذارید.</p>
+    <ul>
+      <li>تشخیص <span lang="fr" dir="ltr">il impersonnel</span> از <span lang="fr" dir="ltr">il personnel</span></li>
+      <li>استفاده درست از <span class="gm-inline-fr">il pleut</span>، <span class="gm-inline-fr">il faut</span>، <span class="gm-inline-fr">il y a</span> و <span class="gm-inline-fr">il s'agit de</span></li>
+      <li>تشخیص کاربردهای شخصی و غیرشخصی افعالی مانند <span class="gm-inline-fr">arriver</span>، <span class="gm-inline-fr">être</span>، <span class="gm-inline-fr">plaire</span>، <span class="gm-inline-fr">sembler</span> و <span class="gm-inline-fr">paraître</span></li>
+      <li>استفاده از ساخت‌های ارزیابی مانند <span class="gm-inline-fr">il est possible que...</span></li>
+      <li>شناخت ساخت‌های مجهول غیرشخصی مانند <span class="gm-inline-fr">il est interdit de...</span></li>
+    </ul>
+  </section>
+
+  <section id="idea">
+    <h2>۲. ایده اصلی</h2>
+    <p>در جملهٔ عادی، <span class="gm-inline-fr">il</span> معمولاً به یک اسم مذکر اشاره می‌کند:</p>
+
+    <div class="gm-example">
+      <span class="fr" lang="fr">Paul est arrivé. Il est fatigué.</span>
+      <span class="fa">پل رسیده است. او خسته است.</span>
+    </div>
+
+    <p>اما در <strong lang="fr" dir="ltr">forme impersonnelle</strong>، ضمیر <span class="gm-inline-fr">il</span> مرجع واقعی ندارد و فقط نقش دستوریِ فاعل را پر می‌کند:</p>
+
+    <div class="gm-example">
+      <span class="fr" lang="fr">Il pleut.</span>
+      <span class="fa">باران می‌بارد.</span>
+    </div>
+
+    <div class="gm-example">
+      <span class="fr" lang="fr">Il faut partir.</span>
+      <span class="fa">باید رفت.</span>
+    </div>
+
+    <div class="gm-note">
+      <strong>نکته:</strong> در چنین جمله‌هایی <span class="gm-inline-fr">il</span> را نباید «او» ترجمه کرد.
+    </div>
+  </section>
+
+  <section id="topics">
+    <h2>۳. آموزش کامل Subtopicها</h2>
+
+    <h3>۳.۱. <span lang="fr" dir="ltr">il</span> به‌عنوان <span lang="fr" dir="ltr">sujet neutre</span></h3>
+    <p>در ساخت غیرشخصی، <span class="gm-inline-fr">il</span> یک فاعل خنثی است و به شخص یا شیء مشخصی اشاره نمی‌کند.</p>
+
+    <code class="gm-structure">Il + verbe / expression impersonnelle</code>
+
+    <div class="gm-example">
+      <span class="fr" lang="fr">Depuis hier, il fait froid.</span>
+      <span class="fa">از دیروز هوا سرد است.</span>
+    </div>
+
+    <div class="gm-example">
+      <span class="fr" lang="fr">Il est possible qu'elle aille en Chine.</span>
+      <span class="fa">ممکن است او به چین برود.</span>
+    </div>
+
+    <h3>۳.۲. افعال و عبارت‌های ذاتاً غیرشخصی</h3>
+    <h4>الف) پدیده‌های جوی و طبیعی</h4>
+
+    <div class="gm-card">
+      <div class="gm-example">
+        <span class="fr" lang="fr">Il pleut.</span>
+        <span class="fa">باران می‌بارد.</span>
+      </div>
+      <div class="gm-example">
+        <span class="fr" lang="fr">Il neige.</span>
+        <span class="fa">برف می‌بارد.</span>
+      </div>
+      <div class="gm-example">
+        <span class="fr" lang="fr">Il fait beau.</span>
+        <span class="fa">هوا خوب است.</span>
+      </div>
+      <div class="gm-example">
+        <span class="fr" lang="fr">Il fait nuit.</span>
+        <span class="fa">هوا تاریک است / شب شده است.</span>
+      </div>
+    </div>
+
+    <span class="gm-wrong"><span class="gm-inline-fr">Ils pleuvent.</span></span>
+    <span class="gm-correct"><span class="gm-inline-fr">Il pleut.</span></span>
+
+    <h3>۳.۳. <span lang="fr" dir="ltr">Il faut</span></h3>
+    <p>این ساختار برای بیان ضرورت و الزام استفاده می‌شود.</p>
+
+    <h4>الف) <span lang="fr" dir="ltr">Il faut + infinitif</span></h4>
+    <p>وقتی ضرورت عمومی است یا شخص انجام‌دهنده را مشخص نمی‌کنیم:</p>
+
+    <code class="gm-structure">Il faut + infinitif</code>
+
+    <div class="gm-example">
+      <span class="fr" lang="fr">Il faut partir.</span>
+      <span class="fa">باید رفت.</span>
+    </div>
+
+    <div class="gm-example">
+      <span class="fr" lang="fr">Il faut y aller tout de suite.</span>
+      <span class="fa">باید فوراً رفت.</span>
+    </div>
+
+    <h4>ب) <span lang="fr" dir="ltr">Il faut que + subjonctif</span></h4>
+    <p>وقتی فاعل انجام‌دهنده مشخص است:</p>
+
+    <code class="gm-structure">Il faut que + sujet + subjonctif</code>
+
+    <div class="gm-example">
+      <span class="fr" lang="fr">Il faut que je lise ce livre.</span>
+      <span class="fa">باید این کتاب را بخوانم.</span>
+    </div>
+
+    <div class="gm-example">
+      <span class="fr" lang="fr">Il faut que vous arriviez avant huit heures.</span>
+      <span class="fa">لازم است قبل از ساعت هشت برسید.</span>
+    </div>
+
+    <div class="gm-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ساختار</th>
+            <th>کاربرد</th>
+            <th>مثال</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td dir="ltr"><code>Il faut + infinitif</code></td>
+            <td>ضرورت عمومی یا بدون ذکر فاعل</td>
+            <td dir="ltr"><code>Il faut partir.</code></td>
+          </tr>
+          <tr>
+            <td dir="ltr"><code>Il faut que + subjonctif</code></td>
+            <td>ضرورت برای یک فاعل مشخص</td>
+            <td dir="ltr"><code>Il faut que tu partes.</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <span class="gm-wrong"><span class="gm-inline-fr">Il faut que je lire ce livre.</span></span>
+    <span class="gm-correct"><span class="gm-inline-fr">Il faut que je lise ce livre.</span></span>
+    <span class="gm-tip">بعد از <span class="gm-inline-fr">il faut que</span> از <span lang="fr" dir="ltr">subjonctif</span> استفاده می‌شود.</span>
+
+    <h3>۳.۴. <span lang="fr" dir="ltr">Il y a</span></h3>
+    <p>برای بیان وجود شخص یا چیز از ساخت ثابت زیر استفاده می‌شود:</p>
+
+    <code class="gm-structure">Il y a + nom</code>
+
+    <div class="gm-example">
+      <span class="fr" lang="fr">Il y a quelqu'un dans le jardin.</span>
+      <span class="fa">یک نفر در باغ است.</span>
+    </div>
+
+    <div class="gm-example">
+      <span class="fr" lang="fr">Il y a beaucoup de monde.</span>
+      <span class="fa">آدم‌های زیادی هستند.</span>
+    </div>
+
+    <span class="gm-tip">حتی اگر اسم بعد از آن جمع باشد، ساختار همچنان <span class="gm-inline-fr">il y a</span> باقی می‌ماند.</span>
+    <span class="gm-wrong"><span class="gm-inline-fr">Ils y ont trois personnes.</span></span>
+    <span class="gm-correct"><span class="gm-inline-fr">Il y a trois personnes.</span></span>
+
+    <h3>۳.۵. <span lang="fr" dir="ltr">Il s'agit de</span></h3>
+    <p>برای گفتن «موضوع دربارهٔ ... است» یا «مسئله این است که ...» از این ساخت استفاده می‌شود.</p>
+
+    <code class="gm-structure">Il s'agit de + nom</code>
+    <code class="gm-structure">Il s'agit de + infinitif</code>
+
+    <div class="gm-example">
+      <span class="fr" lang="fr">Dans ce roman, il s'agit de...</span>
+      <span class="fa">در این رمان، موضوع دربارهٔ ... است.</span>
+    </div>
+
+    <div class="gm-example">
+      <span class="fr" lang="fr">Pour ce genre de travail, il s'agit d'être patient.</span>
+      <span class="fa">برای این نوع کار، لازم است صبور بود / مسئله این است که باید صبور بود.</span>
+    </div>
+
+    <span class="gm-wrong"><span class="gm-inline-fr">Il s'agit résoudre ce problème.</span></span>
+    <span class="gm-correct"><span class="gm-inline-fr">Il s'agit de résoudre ce problème.</span></span>
+
+    <h3>۳.۶. افعالی که همیشه غیرشخصی نیستند</h3>
+    <p>بعضی افعال هم کاربرد شخصی دارند و هم در بعضی ساخت‌ها کاربرد غیرشخصی.</p>
+
+    <h4><span lang="fr" dir="ltr">arriver</span></h4>
+    <div class="gm-example">
+      <span class="fr" lang="fr">J'arrive dans une minute.</span>
+      <span class="fa">یک دقیقهٔ دیگر می‌رسم.</span>
+    </div>
+    <div class="gm-example">
+      <span class="fr" lang="fr">Qu'est-il arrivé&nbsp;?</span>
+      <span class="fa">چه اتفاقی افتاده است؟</span>
+    </div>
+
+    <h4><span lang="fr" dir="ltr">être</span></h4>
+    <div class="gm-example">
+      <span class="fr" lang="fr">Jane est américaine.</span>
+      <span class="fa">جین آمریکایی است.</span>
+    </div>
+    <div class="gm-example">
+      <span class="fr" lang="fr">Il était une fois...</span>
+      <span class="fa">یکی بود یکی نبود...</span>
+    </div>
+
+    <h4><span lang="fr" dir="ltr">plaire</span></h4>
+    <div class="gm-example">
+      <span class="fr" lang="fr">Cette robe me plaît.</span>
+      <span class="fa">این لباس را دوست دارم / این لباس به دلم می‌نشیند.</span>
+    </div>
+    <div class="gm-example">
+      <span class="fr" lang="fr">S'il vous plaît.</span>
+      <span class="fa">لطفاً.</span>
+    </div>
+
+    <h3>۳.۷. <span lang="fr" dir="ltr">Il est + adjectif</span></h3>
+    <p>ساخت‌های غیرشخصی با <span class="gm-inline-fr">être + adjectif</span> می‌توانند امکان، قضاوت یا ارزیابی را بیان کنند.</p>
+
+    <div class="gm-example">
+      <span class="fr" lang="fr">Il est possible qu'elle aille en Chine.</span>
+      <span class="fa">ممکن است او به چین برود.</span>
+    </div>
+
+    <span class="gm-wrong"><span class="gm-inline-fr">Il est possible qu'elle va en Chine.</span></span>
+    <span class="gm-correct"><span class="gm-inline-fr">Il est possible qu'elle aille en Chine.</span></span>
+
+    <h3>۳.۸. <span lang="fr" dir="ltr">Il semble que</span> و <span lang="fr" dir="ltr">Il paraît que</span></h3>
+
+    <div class="gm-card">
+      <h4><span lang="fr" dir="ltr">Il semble que...</span></h4>
+      <p>بیشتر یک برداشت یا ارزیابی ظاهری را بیان می‌کند.</p>
+      <div class="gm-example">
+        <span class="fr" lang="fr">Il semble qu'il ait plu cette nuit.</span>
+        <span class="fa">به نظر می‌رسد دیشب باران باریده باشد.</span>
+      </div>
+    </div>
+
+    <div class="gm-card">
+      <h4><span lang="fr" dir="ltr">Il paraît que...</span></h4>
+      <p>اغلب اطلاعاتی را منتقل می‌کند که ظاهراً یا بنا بر شنیده‌ها درست است.</p>
+      <div class="gm-example">
+        <span class="fr" lang="fr">Il paraît qu'il s'est marié.</span>
+        <span class="fa">ظاهراً / می‌گویند ازدواج کرده است.</span>
+      </div>
+    </div>
+
+    <div class="gm-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ساختار</th>
+            <th>Nuance</th>
+            <th>مثال</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td dir="ltr"><code>Il semble que...</code></td>
+            <td>برداشت یا ارزیابی ظاهری</td>
+            <td dir="ltr"><code>Il semble qu'il ait plu.</code></td>
+          </tr>
+          <tr>
+            <td dir="ltr"><code>Il paraît que...</code></td>
+            <td>ظاهر امر یا خبری که شنیده شده</td>
+            <td dir="ltr"><code>Il paraît qu'il s'est marié.</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>۳.۹. <span lang="fr" dir="ltr">Il vaut mieux + infinitif</span></h3>
+    <p>برای توصیه و بیان «بهتر است...» استفاده می‌شود.</p>
+
+    <code class="gm-structure">Il vaut mieux + infinitif</code>
+
+    <div class="gm-example">
+      <span class="fr" lang="fr">Il vaut mieux rappeler.</span>
+      <span class="fa">بهتر است دوباره تماس بگیریم / تماس گرفته شود.</span>
+    </div>
+
+    <div class="gm-example">
+      <span class="fr" lang="fr">Il vaut mieux attendre.</span>
+      <span class="fa">بهتر است صبر کنیم.</span>
+    </div>
+
+    <h3>۳.۱۰. <span lang="fr" dir="ltr">Il suffit de...</span> و <span lang="fr" dir="ltr">Il suffit que...</span></h3>
+
+    <code class="gm-structure">Il suffit de + infinitif</code>
+
+    <div class="gm-example">
+      <span class="fr" lang="fr">Il suffit de téléphoner pour avoir les informations.</span>
+      <span class="fa">کافی است تلفن کنید تا اطلاعات را بگیرید.</span>
+    </div>
+
+    <div class="gm-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ساختار</th>
+            <th>ادامهٔ ساختار</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td dir="ltr"><code>Il suffit de...</code></td>
+            <td dir="ltr"><code>infinitif</code></td>
+          </tr>
+          <tr>
+            <td dir="ltr"><code>Il suffit que...</code></td>
+            <td>یک proposition با فعل صرف‌شده</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>۳.۱۱. ساخت غیرشخصی در <span lang="fr" dir="ltr">voix passive</span></h3>
+    <p>ساخت‌های غیرشخصی مجهول زمانی مفیدند که انجام‌دهندهٔ عمل مهم نیست یا نمی‌خواهیم او را مشخص کنیم.</p>
+
+    <code class="gm-structure">Il + être + participe passé + de + infinitif</code>
+
+    <div class="gm-example">
+      <span class="fr" lang="fr">Il est interdit de fumer dans ce taxi.</span>
+      <span class="fa">سیگار کشیدن در این تاکسی ممنوع است.</span>
+    </div>
+
+    <div class="gm-example">
+      <span class="fr" lang="fr">Il est défendu de marcher sur les pelouses.</span>
+      <span class="fa">راه رفتن روی چمن‌ها ممنوع است.</span>
+    </div>
+
+    <div class="gm-example">
+      <span class="fr" lang="fr">Il est permis de stationner pendant deux heures.</span>
+      <span class="fa">پارک کردن برای دو ساعت مجاز است.</span>
+    </div>
+
+    <div class="gm-example">
+      <span class="fr" lang="fr">Il a été décidé de fermer ce musée.</span>
+      <span class="fa">تصمیم گرفته شده است این موزه بسته شود.</span>
+    </div>
+
+    <div class="gm-note">
+      تمرکز در این ساخت‌ها روی <strong>قانون، تصمیم یا نتیجه</strong> است، نه روی شخصی که آن را ایجاد کرده است.
+    </div>
+  </section>
+
+  <section id="contrasts">
+    <h2>۴. Contrastها و تفاوت‌های ظریف</h2>
+
+    <h3>الف) <span lang="fr" dir="ltr">Il faut + infinitif</span> در برابر <span lang="fr" dir="ltr">Il faut que + subjonctif</span></h3>
+    <div class="gm-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ساختار</th>
+            <th>کاربرد</th>
+            <th>مثال</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td dir="ltr"><code>Il faut partir.</code></td>
+            <td>ضرورت عمومی</td>
+            <td>باید رفت.</td>
+          </tr>
+          <tr>
+            <td dir="ltr"><code>Il faut que tu partes.</code></td>
+            <td>ضرورت برای شخص مشخص</td>
+            <td>باید بروی.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>ب) کاربرد شخصی یا غیرشخصی</h3>
+    <div class="gm-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>فعل</th>
+            <th>کاربرد شخصی</th>
+            <th>کاربرد غیرشخصی</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td dir="ltr"><code>arriver</code></td>
+            <td dir="ltr"><code>J'arrive bientôt.</code></td>
+            <td dir="ltr"><code>Qu'est-il arrivé&nbsp;?</code></td>
+          </tr>
+          <tr>
+            <td dir="ltr"><code>être</code></td>
+            <td dir="ltr"><code>Jane est américaine.</code></td>
+            <td dir="ltr"><code>Il était une fois...</code></td>
+          </tr>
+          <tr>
+            <td dir="ltr"><code>plaire</code></td>
+            <td dir="ltr"><code>Cette robe me plaît.</code></td>
+            <td dir="ltr"><code>S'il vous plaît.</code></td>
+          </tr>
+          <tr>
+            <td dir="ltr"><code>sembler</code></td>
+            <td dir="ltr"><code>Elle semble jeune.</code></td>
+            <td dir="ltr"><code>Il semble qu'il ait plu.</code></td>
+          </tr>
+          <tr>
+            <td dir="ltr"><code>paraître</code></td>
+            <td dir="ltr"><code>Elle paraît triste.</code></td>
+            <td dir="ltr"><code>Il paraît qu'il s'est marié.</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>ج) جملهٔ معلوم با <span lang="fr" dir="ltr">on</span> در برابر passive غیرشخصی</h3>
+    <div class="gm-example">
+      <span class="fr" lang="fr">On a décidé de fermer le musée.</span>
+      <span class="fa">تصمیم گرفته‌اند موزه را ببندند.</span>
+    </div>
+    <div class="gm-example">
+      <span class="fr" lang="fr">Il a été décidé de fermer le musée.</span>
+      <span class="fa">تصمیم گرفته شده است موزه بسته شود.</span>
+    </div>
+  </section>
+
+  <section id="limits">
+    <h2>۵. استثناها و محدودیت‌ها</h2>
+
+    <ol>
+      <li><strong><span class="gm-inline-fr">il</span> غیرشخصی مرجع ندارد.</strong> در <span class="gm-inline-fr">Il pleut.</span> نباید آن را «او» ترجمه کرد.</li>
+      <li><strong>برخی افعال فقط در بعضی ساخت‌ها غیرشخصی‌اند.</strong> مثلاً <span class="gm-inline-fr">arriver</span> در <span class="gm-inline-fr">Qu'est-il arrivé&nbsp;?</span> غیرشخصی است، اما در <span class="gm-inline-fr">Marie est arrivée.</span> فاعل واقعی دارد.</li>
+      <li><strong>حرف اضافه یا <span class="gm-inline-fr">que</span> جزئی از ساختار است.</strong> مانند <span class="gm-inline-fr">il s'agit de</span>، <span class="gm-inline-fr">il suffit de</span>، <span class="gm-inline-fr">il faut que</span> و <span class="gm-inline-fr">il est possible que</span>.</li>
+      <li><strong><span class="gm-inline-fr">Il faut que</span> با subjonctif می‌آید.</strong></li>
+      <li><strong>Passive غیرشخصی وقتی طبیعی است که agent مهم نباشد.</strong> اگر تصمیم‌گیرنده مهم است، جملهٔ معلوم می‌تواند مناسب‌تر باشد: <span class="gm-inline-fr">Le gouvernement a décidé de...</span></li>
+    </ol>
+  </section>
+
+  <section id="errors">
+    <h2>۶. خطاهای رایج</h2>
+
+    <div class="gm-error">
+      <strong>خطا ۱ — ترجمهٔ <span class="gm-inline-fr">il</span> به «او»</strong>
+      <span class="gm-correct"><span class="gm-inline-fr">Il pleut.</span> = باران می‌بارد.</span>
+      <span class="gm-tip"><span class="gm-inline-fr">il</span> در اینجا فقط فاعل دستوری است.</span>
+    </div>
+
+    <div class="gm-error">
+      <strong>خطا ۲ — مصدر بعد از <span class="gm-inline-fr">il faut que</span></strong>
+      <span class="gm-wrong"><span class="gm-inline-fr">Il faut que tu partir.</span></span>
+      <span class="gm-correct"><span class="gm-inline-fr">Il faut que tu partes.</span></span>
+      <span class="gm-tip">بعد از <span class="gm-inline-fr">il faut que</span> از <span lang="fr" dir="ltr">subjonctif</span> استفاده می‌شود.</span>
+    </div>
+
+    <div class="gm-error">
+      <strong>خطا ۳ — حذف <span class="gm-inline-fr">de</span></strong>
+      <span class="gm-wrong"><span class="gm-inline-fr">Il s'agit résoudre ce problème.</span></span>
+      <span class="gm-correct"><span class="gm-inline-fr">Il s'agit de résoudre ce problème.</span></span>
+    </div>
+
+    <div class="gm-error">
+      <strong>خطا ۴ — جمع کردن <span class="gm-inline-fr">il y a</span></strong>
+      <span class="gm-wrong"><span class="gm-inline-fr">Ils y ont beaucoup de problèmes.</span></span>
+      <span class="gm-correct"><span class="gm-inline-fr">Il y a beaucoup de problèmes.</span></span>
+      <span class="gm-tip"><span class="gm-inline-fr">il y a</span> یک ساخت ثابت غیرشخصی است.</span>
+    </div>
+
+    <div class="gm-error">
+      <strong>خطا ۵ — حذف <span class="gm-inline-fr">que</span></strong>
+      <span class="gm-wrong"><span class="gm-inline-fr">Il semble il est fatigué.</span></span>
+      <span class="gm-correct"><span class="gm-inline-fr">Il semble qu'il soit fatigué.</span></span>
+    </div>
+
+    <div class="gm-error">
+      <strong>خطا ۶ — حذف <span class="gm-inline-fr">de</span> در passive</strong>
+      <span class="gm-wrong"><span class="gm-inline-fr">Il est interdit fumer ici.</span></span>
+      <span class="gm-correct"><span class="gm-inline-fr">Il est interdit de fumer ici.</span></span>
+    </div>
+
+    <div class="gm-error">
+      <strong>خطا ۷ — انتخاب mode نامناسب بعد از <span class="gm-inline-fr">possible</span></strong>
+      <span class="gm-wrong"><span class="gm-inline-fr">Il est possible qu'elle va venir.</span></span>
+      <span class="gm-correct"><span class="gm-inline-fr">Il est possible qu'elle vienne.</span></span>
+    </div>
+  </section>
+
+  <section id="register">
+    <h2>۷. زبان واقعی و Register</h2>
+    <p>ساخت‌های غیرشخصی به‌ویژه در زبان رسمی، اداری و اطلاعیه‌ها بسیار رایج‌اند:</p>
+
+    <div class="gm-example">
+      <span class="fr" lang="fr">Il est interdit de stationner.</span>
+      <span class="fa">پارک کردن ممنوع است.</span>
+    </div>
+
+    <div class="gm-example">
+      <span class="fr" lang="fr">Il est permis de...</span>
+      <span class="fa">اجازه داده شده است که...</span>
+    </div>
+
+    <div class="gm-example">
+      <span class="fr" lang="fr">Il a été décidé de...</span>
+      <span class="fa">تصمیم گرفته شده است که...</span>
+    </div>
+
+    <p>در مکالمه، ساخت معلوم با <span class="gm-inline-fr">on</span> نیز بسیار طبیعی است:</p>
+
+    <div class="gm-example">
+      <span class="fr" lang="fr">On a décidé de fermer le musée.</span>
+      <span class="fa">تصمیم گرفته‌اند موزه را ببندند.</span>
+    </div>
+
+    <p>در مقابل، <span class="gm-inline-fr">Il a été décidé de fermer le musée.</span> رسمی‌تر و غیرشخصی‌تر است و تمرکز را روی خود تصمیم قرار می‌دهد.</p>
+  </section>
+
+  <section>
+    <h2>۸. نکات کلیدی یادگیری</h2>
+    <ul>
+      <li>اگر <span class="gm-inline-fr">il</span> به هیچ شخص یا چیزی اشاره نمی‌کند، احتمالاً با <span lang="fr" dir="ltr">forme impersonnelle</span> روبه‌رو هستید.</li>
+      <li>آب‌وهوا: <span class="gm-inline-fr">Il pleut / Il neige / Il fait froid.</span></li>
+      <li>ضرورت عمومی: <span class="gm-inline-fr">Il faut + infinitif.</span></li>
+      <li>ضرورت برای شخص مشخص: <span class="gm-inline-fr">Il faut que + subjonctif.</span></li>
+      <li>وجود: <span class="gm-inline-fr">Il y a.</span></li>
+      <li>موضوع دربارهٔ چیزی بودن: <span class="gm-inline-fr">Il s'agit de.</span></li>
+      <li>بهتر است: <span class="gm-inline-fr">Il vaut mieux + infinitif.</span></li>
+      <li>کافی است: <span class="gm-inline-fr">Il suffit de + infinitif.</span></li>
+      <li>قوانین، ممنوعیت‌ها و تصمیم‌ها بدون ذکر عامل: ساخت passive غیرشخصی.</li>
+    </ul>
+  </section>
+
+  <section id="summary" class="gm-summary">
+    <h2>۹. خلاصه‌ای که باید به خاطر بسپارید</h2>
+    <ul>
+      <li><span class="gm-inline-fr">il</span> غیرشخصی → مرجع واقعی ندارد.</li>
+      <li>آب‌وهوا → <span class="gm-inline-fr">Il pleut / Il neige / Il fait beau.</span></li>
+      <li>ضرورت عمومی → <span class="gm-inline-fr">Il faut + infinitif.</span></li>
+      <li>ضرورت با فاعل مشخص → <span class="gm-inline-fr">Il faut que + subjonctif.</span></li>
+      <li>وجود → <span class="gm-inline-fr">Il y a + nom.</span></li>
+      <li>موضوع یا مسئله → <span class="gm-inline-fr">Il s'agit de + nom / infinitif.</span></li>
+      <li>امکان → <span class="gm-inline-fr">Il est possible que + subjonctif.</span></li>
+      <li>برداشت → <span class="gm-inline-fr">Il semble que...</span></li>
+      <li>ظاهر امر یا خبر شنیده‌شده → <span class="gm-inline-fr">Il paraît que...</span></li>
+      <li>توصیه → <span class="gm-inline-fr">Il vaut mieux + infinitif.</span></li>
+      <li>کافی بودن → <span class="gm-inline-fr">Il suffit de + infinitif.</span></li>
+      <li>ممنوعیت، اجازه یا تصمیم بدون ذکر عامل → <span class="gm-inline-fr">Il est interdit de...</span>، <span class="gm-inline-fr">Il est permis de...</span>، <span class="gm-inline-fr">Il a été décidé de...</span></li>
+      <li>افعالی مثل <span class="gm-inline-fr">arriver</span>، <span class="gm-inline-fr">être</span>، <span class="gm-inline-fr">plaire</span>، <span class="gm-inline-fr">sembler</span> و <span class="gm-inline-fr">paraître</span> می‌توانند بسته به ساختار، شخصی یا غیرشخصی باشند.</li>
+    </ul>
+  </section>
 </article>

@@ -1,86 +1,176 @@
-<article class="adv-lesson" data-lesson-id="ADV-L17">
+<article class="adv-lesson" data-lesson-id="ADV-L17" lang="fa" dir="rtl">
 <style>
-.adv-lesson{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.75;color:#172033;max-width:980px;margin:0 auto;padding:8px 2px 40px}
-.adv-lesson *{box-sizing:border-box}
-.adv-lesson .adv-hero{padding:24px;border:1px solid #e3e8f0;border-radius:18px;background:#fff;margin-bottom:22px}
-.adv-lesson .adv-kicker{font-size:.86rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.65;margin:0 0 6px}
-.adv-lesson h2,.adv-lesson h3{line-height:1.35}
-.adv-lesson h2{font-size:1.65rem;margin:0 0 4px}
-.adv-lesson .fa-title{direction:rtl;text-align:right;font-weight:650;margin:.2rem 0 .8rem}
-.adv-lesson .summary{direction:rtl;text-align:right;margin:0}
-.adv-lesson .meta{margin-top:12px;font-size:.9rem;opacity:.72}
-.adv-lesson .subtopic{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin:18px 0;background:#fff}
-.adv-lesson .subtopic h3{margin:0 0 2px;font-size:1.25rem}
-.adv-lesson .fa-subtitle{direction:rtl;text-align:right;font-weight:600;margin:.1rem 0 1rem}
-.adv-lesson .rule{direction:ltr;text-align:left;padding:12px 14px;border-left:4px solid currentColor;background:#f7f9fc;border-radius:8px;margin:12px 0}
-.adv-lesson .teaching,.adv-lesson .trap{direction:rtl;text-align:right}
-.adv-lesson .example{direction:ltr;text-align:left;font-style:italic;padding:10px 14px;background:#f7f9fc;border-radius:8px}
-.adv-lesson .trap{padding:10px 14px;border:1px dashed #c7ced9;border-radius:8px}
-.adv-lesson .source{font-size:.82rem;opacity:.65;margin-top:12px}
-.adv-lesson .notes{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin-top:22px}
-.adv-lesson .notes h3{margin-top:0}
-.adv-lesson .notes section{margin:16px 0}
-.adv-lesson .notes h4{margin:0 0 6px}
-.adv-lesson .notes ul{margin-top:4px}
+.adv-lesson{
+  --lesson-ink:var(--ink,#17233c);--lesson-muted:var(--muted,#5a6477);--lesson-line:var(--line,#d9dfeb);
+  --lesson-surface:var(--surface,#fff);--lesson-soft:var(--surface-soft,#f5f7fb);--lesson-primary:var(--primary,#2856c7);
+  --lesson-success:var(--success,#18794e);--lesson-success-soft:var(--success-soft,#e9f7f0);
+  --lesson-danger:var(--danger,#b42318);--lesson-danger-soft:var(--danger-soft,#fff0ee);
+  --lesson-warning:var(--warning,#8a4b08);--lesson-warning-soft:var(--warning-soft,#fff7e8);
+  font-family:var(--font-ui,Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif);
+  color:var(--lesson-ink);line-height:1.9;max-width:980px;margin:0 auto;padding:4px 2px 42px;background:transparent
+}
+.adv-lesson *{box-sizing:border-box}.adv-lesson a{color:var(--lesson-primary);text-underline-offset:.18em}
+.adv-lesson .adv-hero,.adv-lesson .panel,.adv-lesson .subtopic,.adv-lesson .summary-card{border:1px solid var(--lesson-line);background:var(--lesson-surface);border-radius:18px}
+.adv-lesson .adv-hero{padding:clamp(20px,3vw,30px);margin-bottom:20px}
+.adv-lesson .adv-kicker{margin:0 0 7px;color:var(--lesson-primary);font-size:.82rem;font-weight:850;letter-spacing:.055em;text-transform:uppercase;direction:ltr;text-align:left}
+.adv-lesson h2,.adv-lesson h3,.adv-lesson h4{color:var(--lesson-ink);line-height:1.45}
+.adv-lesson h2{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.75rem,4vw,2.35rem);direction:ltr;text-align:left}
+.adv-lesson h3{margin:0 0 8px;font-size:clamp(1.22rem,2.4vw,1.5rem)}.adv-lesson h4{margin:20px 0 8px;font-size:1.08rem}
+.adv-lesson .fa-title{margin:5px 0 10px;font-size:1.06rem;font-weight:850}.adv-lesson .lead{margin:0;color:var(--lesson-muted)}
+.adv-lesson .meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}.adv-lesson .chip{display:inline-flex;align-items:center;min-height:30px;padding:3px 10px;border:1px solid var(--lesson-line);border-radius:999px;background:var(--lesson-soft);color:var(--lesson-muted);font-size:.78rem;font-weight:750}
+.adv-lesson .panel{padding:clamp(18px,2.5vw,24px);margin:18px 0}.adv-lesson .panel>:first-child,.adv-lesson .subtopic>:first-child{margin-top:0}.adv-lesson .panel>:last-child,.adv-lesson .subtopic>:last-child{margin-bottom:0}
+.adv-lesson .goal-list,.adv-lesson .check-list,.adv-lesson .compact-list{margin:.4rem 0 0;padding-right:1.25rem}.adv-lesson li{margin:.36rem 0}
+.adv-lesson .core{border-inline-start:4px solid var(--lesson-primary);background:var(--lesson-soft);padding:15px 17px;border-radius:12px;margin:14px 0 0}
+.adv-lesson .subtopic{padding:clamp(18px,2.5vw,25px);margin:18px 0;scroll-margin-top:90px}.adv-lesson .subtopic-head{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:10px;padding-bottom:13px;margin-bottom:16px;border-bottom:1px solid var(--lesson-line)}.adv-lesson .subtopic-head h3{margin:0}
+.adv-lesson .source{direction:ltr;text-align:left;color:var(--lesson-muted);font-size:.76rem}.adv-lesson .source code{padding:2px 6px;border-radius:7px;background:var(--lesson-soft);color:inherit}
+.adv-lesson .rule,.adv-lesson .example,.adv-lesson .note,.adv-lesson .warning,.adv-lesson .correct,.adv-lesson .incorrect{border-radius:12px;padding:13px 15px;margin:12px 0}
+.adv-lesson .rule{border:1px solid var(--lesson-line);background:var(--lesson-soft)}.adv-lesson .example{border-inline-start:4px solid var(--lesson-primary);background:var(--lesson-soft)}
+.adv-lesson .note{border:1px solid var(--lesson-success);background:var(--lesson-success-soft)}.adv-lesson .warning{border:1px solid var(--lesson-warning);background:var(--lesson-warning-soft)}
+.adv-lesson .correct{border-inline-start:4px solid var(--lesson-success);background:var(--lesson-success-soft)}.adv-lesson .incorrect{border-inline-start:4px solid var(--lesson-danger);background:var(--lesson-danger-soft)}
+.adv-lesson .label{font-weight:900}.adv-lesson .fr,.adv-lesson code.fr,.adv-lesson .formula{direction:ltr;unicode-bidi:isolate;text-align:left}
+.adv-lesson .fr{display:block;font-family:Georgia,"Times New Roman",serif;font-size:1.04rem;line-height:1.75}.adv-lesson .translation{display:block;margin-top:4px;color:var(--lesson-muted);font-size:.93rem}
+.adv-lesson .formula{display:block;width:100%;overflow-x:auto;padding:10px 12px;border:1px dashed var(--lesson-line);border-radius:10px;background:var(--lesson-soft);color:var(--lesson-ink);font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;white-space:nowrap}
+.adv-lesson .toc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;list-style:none;margin:12px 0 0;padding:0}.adv-lesson .toc a{display:block;padding:10px 12px;border:1px solid var(--lesson-line);border-radius:11px;background:var(--lesson-soft);color:var(--lesson-ink);font-weight:750;text-decoration:none}.adv-lesson .toc a:hover{border-color:var(--lesson-primary);color:var(--lesson-primary)}
+.adv-lesson .table-wrap{width:100%;overflow-x:auto;margin:14px 0;border:1px solid var(--lesson-line);border-radius:13px}.adv-lesson table{width:100%;min-width:640px;border-collapse:collapse;background:var(--lesson-surface)}.adv-lesson th,.adv-lesson td{padding:11px 12px;border-bottom:1px solid var(--lesson-line);vertical-align:top;text-align:right}.adv-lesson th{background:var(--lesson-soft);color:var(--lesson-ink);font-size:.9rem}.adv-lesson tr:last-child td{border-bottom:0}.adv-lesson td[lang="fr"],.adv-lesson th[lang="fr"]{direction:ltr;text-align:left}
+.adv-lesson .mini-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px 0}.adv-lesson .mini-card{padding:14px;border:1px solid var(--lesson-line);border-radius:12px;background:var(--lesson-soft)}.adv-lesson .mini-card h4{margin:0 0 5px;font-size:1rem}
+.adv-lesson .error-item{padding:14px 0;border-bottom:1px solid var(--lesson-line)}.adv-lesson .error-item:last-child{border-bottom:0;padding-bottom:0}
+.adv-lesson .summary-card{margin-top:20px;padding:clamp(18px,2.5vw,25px);border-inline-start:5px solid var(--lesson-primary)}.adv-lesson .summary-card h3{margin-top:0}.adv-lesson strong{color:var(--lesson-ink)}.adv-lesson .muted{color:var(--lesson-muted)}
+@media(max-width:720px){.adv-lesson{line-height:1.82}.adv-lesson .toc,.adv-lesson .mini-grid{grid-template-columns:1fr}.adv-lesson .subtopic-head{display:block}.adv-lesson .source{margin-top:6px}.adv-lesson th,.adv-lesson td{padding:9px 10px}}
+@media(prefers-reduced-motion:reduce){.adv-lesson *{scroll-behavior:auto!important}}
 </style>
+
 <header class="adv-hero">
-<p class="adv-kicker">Lesson 17 · ADV-L17</p>
-<h2 lang="fr" dir="ltr">Les pronoms relatifs</h2>
-<p class="fa-title" lang="fa">ضمیرهای موصولی</p>
-<p class="summary" lang="fa">این درس روی «ضمیرهای موصولی» تمرکز دارد و زیرموضوع‌های ضمیرهای سادهٔ qui، que، où و quoi، dont و صورت‌های ce qui/que/dont، lequel پس از حرف اضافه، صورت‌های ادغام‌شده با à، صورت‌های ادغام‌شده با de را پوشش می‌دهد.</p>
-<p class="meta">Printed pages 114–121 · PDF pages 116–123 · target 240 questions</p>
+  <p class="adv-kicker">Lesson 17 · ADV-L17</p>
+  <h2 lang="fr">Les pronoms relatifs</h2>
+  <p class="fa-title">ضمایر موصولی</p>
+  <p class="lead">وصل‌کردن دو جمله بدون تکرار اسم، با انتخاب ضمیر موصولی بر اساس نقش دستوری، حرف اضافه و نوع مرجع.</p>
+  <div class="meta"><span class="chip">صفحات کتاب: 114–121</span><span class="chip">PDF: 116–123</span><span class="chip">موضوع: pronoms relatifs simples et composés</span></div>
 </header>
+
+<section class="panel" aria-labelledby="goal-title">
+  <h3 id="goal-title">هدف درس</h3>
+  <ul class="goal-list">
+    <li>تشخیص درست <span dir="ltr">qui / que / où / quoi</span> بر اساس نقش اسم در جملهٔ موصولی.</li>
+    <li>استفادهٔ صحیح از <span dir="ltr">dont</span> وقتی ساختار اصلی به <span dir="ltr">de</span> نیاز دارد.</li>
+    <li>تمایز <span dir="ltr">ce qui / ce que / ce dont</span> و ساختارهایی مثل <span dir="ltr">ce à quoi</span>.</li>
+    <li>کار با خانوادهٔ <span dir="ltr">lequel</span> بعد از حرف اضافه و شکل‌های <span dir="ltr">auquel</span> و <span dir="ltr">duquel</span>.</li>
+  </ul>
+  <div class="core"><strong>ایدهٔ مرکزی:</strong> ضمیر موصولی را از روی ترجمهٔ فارسی انتخاب نکنید. ابتدا جملهٔ دوم را بازسازی کنید و ببینید اسمِ تکرارشده در آن <strong>فاعل، COD، complément de lieu/temps یا complément introduit par une préposition</strong> است.</div>
+</section>
+
+<section class="panel" aria-labelledby="toc-title"><h3 id="toc-title">نقشهٔ درس</h3><ul class="toc"><li><a href="#ADV-L17-ST01"><span dir="ltr">qui, que, où, quoi</span> — ضمایر ساده</a></li><li><a href="#ADV-L17-ST02"><span dir="ltr">dont, ce qui/que/dont</span></a></li><li><a href="#ADV-L17-ST03"><span dir="ltr">lequel</span> پس از حرف اضافه</a></li><li><a href="#ADV-L17-ST04"><span dir="ltr">auquel / à laquelle...</span></a></li><li><a href="#ADV-L17-ST05"><span dir="ltr">duquel / de laquelle...</span></a></li></ul></section>
+
 <section class="subtopic" id="ADV-L17-ST01">
-<h3 lang="fr" dir="ltr">Qui, que, où et quoi</h3>
-<p class="fa-subtitle" lang="fa">ضمیرهای سادهٔ qui، que، où و quoi</p>
-<p class="rule" lang="fr">Qui est sujet, que COD, où lieu ou temps, et quoi neutre après préposition; des composés de où précisent le lieu.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «ضمیرهای سادهٔ qui، que، où و quoi» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Le quartier où je travaille est très animé.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز ضمیر موصولی را بر پایهٔ انسان یا شیء بودن مرجع انتخاب می‌کند، نه نقش نحوی در بند موصولی.</p>
-<p class="source"><code>ADV-L17:book-p114-p115:rel-simple</code> · printed 114–115 · PDF 116–117</p>
+  <div class="subtopic-head"><h3><span lang="fr" dir="ltr">Qui, que, où et quoi</span> — ضمایر موصولی ساده</h3><div class="source"><code>ADV-L17:book-p114-p115:rel-simple</code></div></div>
+  <h4><span dir="ltr">QUI</span> — وقتی antecedent فاعل است</h4>
+  <div class="rule"><span class="label">قاعده:</span> <span dir="ltr">qui</span> جانشین شخص یا چیزی می‌شود که در جملهٔ موصولی <strong>sujet</strong> است.<code class="formula">antécédent + qui + verbe</code></div>
+  <div class="example"><span class="fr" lang="fr">Valérie est ma cousine qui habite à Genève.</span><span class="translation">والری دخترخاله/دخترعموی من است که در ژنو زندگی می‌کند.</span></div>
+  <div class="example"><span class="fr" lang="fr">Je cherche un ordinateur qui fonctionne bien.</span><span class="translation">دنبال کامپیوتری می‌گردم که خوب کار کند.</span></div>
+  <div class="note"><strong>روش تشخیص:</strong> در <span dir="ltr">Ce voisin travaille à l’hôpital</span>، عبارت <span dir="ltr">ce voisin</span> فاعل است؛ پس بعد از ترکیب می‌شود <span dir="ltr">un voisin qui travaille...</span>.</div>
+
+  <h4><span dir="ltr">QUE</span> — وقتی antecedent مفعول مستقیم است</h4>
+  <div class="rule"><span class="label">قاعده:</span> <span dir="ltr">que</span> جای شخص یا چیزی را می‌گیرد که <strong>complément d’objet direct (COD)</strong> فعل بعدی است.<code class="formula">antécédent + que + sujet + verbe</code></div>
+  <div class="example"><span class="fr" lang="fr">Il m’a rendu le livre que je lui avais prêté.</span><span class="translation">کتابی را که به او قرض داده بودم به من برگرداند.</span></div>
+  <div class="example"><span class="fr" lang="fr">Voici le dossier que Marie a préparé.</span><span class="translation">این همان پرونده‌ای است که ماری آماده کرده است.</span></div>
+  <div class="table-wrap"><table><thead><tr><th>ساختار</th><th>نقش</th><th lang="fr">Exemple</th><th>نکته</th></tr></thead><tbody><tr><td><span dir="ltr">qui</span></td><td>فاعل</td><td lang="fr">La femme qui parle est ma professeure.</td><td>خود <span dir="ltr">qui</span> فاعل <span dir="ltr">parle</span> است.</td></tr><tr><td><span dir="ltr">que</span></td><td>COD</td><td lang="fr">La femme que tu regardes est ma professeure.</td><td>فاعل <span dir="ltr">regardes</span>، ضمیر <span dir="ltr">tu</span> است.</td></tr></tbody></table></div>
+
+  <h4><span dir="ltr">OÙ</span> — مکان یا زمان</h4>
+  <div class="rule"><span dir="ltr">où</span> به antecedentی برمی‌گردد که <strong>مکان یا زمان</strong> را نشان می‌دهد.</div>
+  <div class="mini-grid"><div class="mini-card"><h4>مکان</h4><span class="fr" lang="fr">J’ai visité le quartier où se trouve le nouveau musée.</span><span class="translation">محله‌ای را دیدم که موزهٔ جدید در آن قرار دارد.</span></div><div class="mini-card"><h4>زمان</h4><span class="fr" lang="fr">C’est l’année où elle s’est mariée.</span><span class="translation">این همان سالی است که او ازدواج کرد.</span></div></div>
+  <div class="example"><span class="fr" lang="fr">Je me souviens du jour où nous nous sommes rencontrés.</span><span class="translation">روزی را که با هم آشنا شدیم به یاد دارم.</span></div>
+
+  <h4><span dir="ltr">D’OÙ, PAR OÙ, LÀ OÙ, PARTOUT OÙ</span></h4>
+  <div class="table-wrap"><table><thead><tr><th>ساختار</th><th>معنا/کاربرد</th><th lang="fr">Exemple</th></tr></thead><tbody><tr><td><span dir="ltr">d’où</span></td><td>مبدأ؛ «از جایی که»</td><td lang="fr">C’est un monument d’où on peut voir tout Paris.</td></tr><tr><td><span dir="ltr">par où</span></td><td>مسیر؛ «از راهی که»</td><td lang="fr">Il connaît les routes par où il faut passer.</td></tr><tr><td><span dir="ltr">là où</span></td><td>«همان‌جایی که»</td><td lang="fr">On se retrouvera là où on s’est rencontrés hier.</td></tr><tr><td><span dir="ltr">partout où</span></td><td>«هر جا که»</td><td lang="fr">Elle a cherché partout où elle était allée.</td></tr></tbody></table></div>
+
+  <h4><span dir="ltr">QUOI</span> بعد از حرف اضافه</h4>
+  <div class="rule"><span dir="ltr">quoi</span> در این کاربرد <strong>خنثی (neutre)</strong> است و با یک préposition می‌آید: <span dir="ltr">à quoi, de quoi, avec quoi, pour quoi, par quoi, sur quoi</span>.</div>
+  <div class="example"><span class="fr" lang="fr">C’est quelque chose à quoi elle n’a jamais pensé.</span><span class="translation">این چیزی است که او هیچ‌وقت به آن فکر نکرده است.</span></div>
+  <div class="example"><span class="fr" lang="fr">Voici par quoi je vais commencer.</span></div>
 </section>
+
 <section class="subtopic" id="ADV-L17-ST02">
-<h3 lang="fr" dir="ltr">Dont et formes en ce</h3>
-<p class="fa-subtitle" lang="fa">dont و صورت‌های ce qui/que/dont</p>
-<p class="rule" lang="fr">Dont remplace de + complément de verbe, adjectif ou nom; ce qui/que/dont reprend une idée neutre ou une proposition.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «dont و صورت‌های ce qui/que/dont» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Ce dont j’ai besoin, c’est d’un peu de temps.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز هر de پیش از اسم را به dont تبدیل می‌کند، حتی وقتی de درون یک locution prépositionnelle است.</p>
-<p class="source"><code>ADV-L17:book-p116-p117:dont-ce</code> · printed 116–117 · PDF 118–119</p>
+  <div class="subtopic-head"><h3><span lang="fr" dir="ltr">Dont et formes en ce</span></h3><div class="source"><code>ADV-L17:book-p116-p117:dont-ce</code></div></div>
+  <h4><span dir="ltr">DONT</span> با فعل + <span dir="ltr">de</span></h4>
+  <div class="rule">وقتی ساختار اصلی فعل به <span dir="ltr">de</span> نیاز دارد، <span dir="ltr">dont</span> می‌تواند جای <span dir="ltr">de + antécédent</span> را بگیرد.</div>
+  <div class="example"><span class="fr" lang="fr">Catherine est l’amie dont je vous ai souvent parlé.</span><span class="translation">کاترین دوستی است که اغلب درباره‌اش با شما صحبت کرده‌ام.</span></div>
+  <div class="example"><span class="fr" lang="fr">C’est un sujet dont nous parlons souvent.</span><span class="translation">موضوعی است که اغلب درباره‌اش صحبت می‌کنیم.</span></div>
+  <h4><span dir="ltr">DONT</span> با adjectif + <span dir="ltr">de</span></h4>
+  <div class="example"><span class="fr" lang="fr">C’est un travail dont ils ne sont pas contents.</span><span class="translation">این کاری است که از آن راضی نیستند.</span></div>
+  <div class="example"><span class="fr" lang="fr">Voilà une réussite dont elle est très fière.</span><span class="translation">این موفقیتی است که او بسیار به آن افتخار می‌کند.</span></div>
+  <h4><span dir="ltr">DONT</span> با nom + <span dir="ltr">de</span></h4>
+  <div class="rule">رابطهٔ <span dir="ltr">nom + de + antécédent</span> نیز می‌تواند با <span dir="ltr">dont</span> بازسازی شود.</div>
+  <div class="example"><span class="fr" lang="fr">C’est un jeune comédien dont j’ai oublié le nom.</span><span class="translation">بازیگر جوانی است که اسمش را فراموش کرده‌ام.</span></div>
+  <div class="example"><span class="fr" lang="fr">C’est une entreprise dont le directeur vient de démissionner.</span><span class="translation">این شرکتی است که مدیرش تازه استعفا داده است.</span></div>
+  <div class="warning"><strong>محدودیت مهم:</strong><span class="fr" lang="fr">❌ L’homme dont son fils travaille ici...</span><span class="fr" lang="fr">✅ L’homme dont le fils travaille ici...</span>چون <span dir="ltr">dont</span> خودش مفهوم <span dir="ltr">de l’homme</span> را حمل می‌کند.</div>
+  <h4><span dir="ltr">la façon dont / la manière dont</span></h4>
+  <div class="example"><span class="fr" lang="fr">Je n’aime pas la manière dont il traite ses collègues.</span><span class="translation">روش برخورد او با همکارانش را دوست ندارم.</span></div>
+  <h4><span dir="ltr">DONT</span> برای مقدار: «از میان آنها»</h4>
+  <div class="rule"><span dir="ltr">dont</span> می‌تواند پس از یک مجموعه بیاید و مقدار یا بخشی از آن را معرفی کند؛ معنایی نزدیک به <span dir="ltr">parmi lesquels / lesquelles</span>.</div>
+  <div class="example"><span class="fr" lang="fr">Ils ont trois grands enfants dont deux sont médecins.</span><span class="translation">سه فرزند بزرگسال دارند که از میان آنها دو نفر پزشک‌اند.</span></div>
+  <div class="example"><span class="fr" lang="fr">J’ai reçu dix candidatures, dont quatre très intéressantes.</span><span class="translation">ده درخواست دریافت کردم که چهار مورد از آنها بسیار جالب بودند.</span></div>
+  <h4><span dir="ltr">CE QUI / CE QUE / CE DONT</span></h4>
+  <p>وقتی antecedent اسمیِ مشخصی نداریم و منظور «آنچه / چیزی که» است، از شکل‌های خنثی با <span dir="ltr">ce</span> استفاده می‌کنیم.</p>
+  <div class="table-wrap"><table><thead><tr><th>ساختار</th><th>نقش</th><th lang="fr">Exemple</th><th>معنی</th></tr></thead><tbody><tr><td><span dir="ltr">ce qui</span></td><td>فاعل</td><td lang="fr">Je sais ce qui lui fera plaisir.</td><td>می‌دانم چه چیزی خوشحالش خواهد کرد.</td></tr><tr><td><span dir="ltr">ce que</span></td><td>COD</td><td lang="fr">Elle ne sait pas ce qu’elle veut.</td><td>او نمی‌داند چه می‌خواهد.</td></tr><tr><td><span dir="ltr">ce dont</span></td><td>مکمل با <span dir="ltr">de</span></td><td lang="fr">C’est exactement ce dont j’avais besoin.</td><td>این دقیقاً همان چیزی است که به آن نیاز داشتم.</td></tr></tbody></table></div>
+  <h4>ارجاع به یک ایده یا جملهٔ کامل</h4>
+  <div class="example"><span class="fr" lang="fr">Ses parents lui ont offert un voyage à Florence ; ce qui lui a fait plaisir.</span><span class="translation"><span dir="ltr">ce qui</span> کل واقعیت جملهٔ قبل را می‌گیرد.</span></div>
+  <div class="example"><span class="fr" lang="fr">Il a été nommé directeur ; ce dont tout le personnel est content.</span><span class="translation">چون ساختار پایه <span dir="ltr">être content de cela</span> است، از <span dir="ltr">ce dont</span> استفاده شده است.</span></div>
+  <h4><span dir="ltr">CE À QUOI / CE POUR QUOI / CE CONTRE QUOI / CE SUR QUOI</span></h4>
+  <div class="rule">اگر ساختار به حرف اضافه‌ای غیر از <span dir="ltr">de</span> نیاز داشته باشد، الگوی <span dir="ltr">ce + préposition + quoi</span> به کار می‌رود.</div>
+  <div class="example"><span class="fr" lang="fr">Retourner dans son pays, revoir la mer, retrouver sa famille et ses amis, c’était ce à quoi il pensait sans cesse.</span><span class="translation">چون ساختار پایه <span dir="ltr">penser à quelque chose</span> است، <span dir="ltr">ce à quoi</span> می‌آید.</span></div>
 </section>
+
 <section class="subtopic" id="ADV-L17-ST03">
-<h3 lang="fr" dir="ltr">Lequel après préposition</h3>
-<p class="fa-subtitle" lang="fa">lequel پس از حرف اضافه</p>
-<p class="rule" lang="fr">Lequel et ses formes suivent une préposition pour des choses; qui reste fréquent pour des personnes.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «lequel پس از حرف اضافه» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">La collègue avec laquelle je travaille habite à Laval.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز پس از هر حرف اضافه qui می‌آورد، حتی برای شیء یا پس از parmi که lequel لازم است.</p>
-<p class="source"><code>ADV-L17:book-p118-p119:rel-compound</code> · printed 118–119 · PDF 120–121</p>
+  <div class="subtopic-head"><h3><span lang="fr" dir="ltr">Lequel après préposition</span></h3><div class="source"><code>ADV-L17:book-p118-p119:rel-compound</code></div></div>
+  <div class="rule">خانوادهٔ <span dir="ltr">lequel</span> با antecedent از نظر جنس و تعداد هماهنگ می‌شود و به‌ویژه بعد از حرف اضافه برای چیزها به کار می‌رود.</div>
+  <div class="table-wrap"><table><thead><tr><th>مرجع</th><th>ضمیر</th></tr></thead><tbody><tr><td>مذکر مفرد</td><td><span dir="ltr">lequel</span></td></tr><tr><td>مؤنث مفرد</td><td><span dir="ltr">laquelle</span></td></tr><tr><td>مذکر جمع</td><td><span dir="ltr">lesquels</span></td></tr><tr><td>مؤنث جمع</td><td><span dir="ltr">lesquelles</span></td></tr></tbody></table></div>
+  <div class="example"><span class="fr" lang="fr">Le sujet sur lequel elle travaille est passionnant.</span><span class="translation">موضوعی که او روی آن کار می‌کند جذاب است.</span></div>
+  <h4>برای شخص: <span dir="ltr">préposition + qui</span></h4>
+  <div class="rule">وقتی antecedent انسان است، <span dir="ltr">qui</span> بعد از حرف اضافه بسیار رایج است.</div>
+  <div class="example"><span class="fr" lang="fr">C’est quelqu’un en qui j’ai confiance.</span><span class="translation">این کسی است که به او اعتماد دارم.</span></div>
+  <div class="example"><span class="fr" lang="fr">La collègue avec qui je travaille...</span></div><div class="example"><span class="fr" lang="fr">L’ami sur qui je peux compter...</span></div>
+  <div class="warning"><strong>استثنای مهم کتاب:</strong> پس از <span dir="ltr">parmi</span> از شکل‌های خانوادهٔ <span dir="ltr">lequel</span> استفاده می‌شود:<span class="fr" lang="fr">✅ parmi lesquels / parmi lesquelles</span><span class="fr" lang="fr">❌ parmi qui</span></div>
+  <h4>آیا <span dir="ltr">lequel</span> برای انسان ممکن است؟</h4><p>بله. کتاب نشان می‌دهد این خانواده برای اشخاص نیز ممکن است، به‌خصوص وقتی یک گروه مطرح است.</p>
+  <div class="example"><span class="fr" lang="fr">Les gens avec lesquels j’habite sont sympathiques.</span><span class="translation">در چنین بافتی <span dir="ltr">avec lesquels</span> می‌تواند با <span dir="ltr">avec qui</span> رقابت کند.</span></div>
 </section>
+
 <section class="subtopic" id="ADV-L17-ST04">
-<h3 lang="fr" dir="ltr">Formes contractées avec à</h3>
-<p class="fa-subtitle" lang="fa">صورت‌های ادغام‌شده با à</p>
-<p class="rule" lang="fr">Auquel, auxquels, à laquelle et auxquelles accordent genre et nombre avec l’antécédent.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «صورت‌های ادغام‌شده با à» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Le projet auquel je participe commence lundi.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز à + lequel را بدون contraction می‌نویسد یا تطابق با antecedent را اشتباه می‌گیرد.</p>
-<p class="source"><code>ADV-L17:book-p118-p119:auquel</code> · printed 118–119 · PDF 120–121</p>
+  <div class="subtopic-head"><h3><span lang="fr" dir="ltr">Auquel, auxquels, à laquelle, auxquelles</span></h3><div class="source"><code>ADV-L17:book-p118-p119:auquel</code></div></div>
+  <div class="rule">وقتی حرف اضافهٔ موردنیاز <span dir="ltr">à</span> است، شکل‌های مذکر با contraction ساخته می‌شوند و همهٔ شکل‌ها باید با antecedent هماهنگ باشند.</div>
+  <div class="table-wrap"><table><thead><tr><th>ساخت پایه</th><th>شکل صحیح</th></tr></thead><tbody><tr><td><span dir="ltr">à + lequel</span></td><td><span dir="ltr">auquel</span></td></tr><tr><td><span dir="ltr">à + lesquels</span></td><td><span dir="ltr">auxquels</span></td></tr><tr><td><span dir="ltr">à + laquelle</span></td><td><span dir="ltr">à laquelle</span></td></tr><tr><td><span dir="ltr">à + lesquelles</span></td><td><span dir="ltr">auxquelles</span></td></tr></tbody></table></div>
+  <div class="example"><span class="fr" lang="fr">Le film auquel je pense est de Claude Berri.</span><span class="translation">چون <span dir="ltr">penser à quelque chose</span> داریم، برای <span dir="ltr">le film</span> از <span dir="ltr">auquel</span> استفاده می‌شود.</span></div>
+  <div class="example"><span class="fr" lang="fr">La littérature à laquelle il s’intéresse...</span><span class="translation">ساخت پایه: <span dir="ltr">s’intéresser à quelque chose</span>.</span></div>
+  <h4>برای شخص: <span dir="ltr">à qui</span></h4><div class="example"><span class="fr" lang="fr">Le peintre à qui il a fait allusion est mort l’année dernière.</span><span class="translation">ساخت <span dir="ltr">faire allusion à quelqu’un</span> است. کتاب شکل <span dir="ltr">auquel</span> را نیز برای شخص ممکن می‌داند.</span></div>
 </section>
+
 <section class="subtopic" id="ADV-L17-ST05">
-<h3 lang="fr" dir="ltr">Formes contractées avec de</h3>
-<p class="fa-subtitle" lang="fa">صورت‌های ادغام‌شده با de</p>
-<p class="rule" lang="fr">Duquel et ses variantes suivent surtout des locutions prépositionnelles contenant de, à distinguer de dont.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «صورت‌های ادغام‌شده با de» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">La table à côté de laquelle il est assis est réservée.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز dont را پس از près de، à côté de یا à cause de می‌آورد و حرف اضافهٔ مرکب را می‌شکند.</p>
-<p class="source"><code>ADV-L17:book-p118-p121:duquel</code> · printed 118–121 · PDF 120–123</p>
+  <div class="subtopic-head"><h3><span lang="fr" dir="ltr">Duquel, desquels, de laquelle, desquelles</span></h3><div class="source"><code>ADV-L17:book-p118-p121:duquel</code></div></div>
+  <div class="rule">این شکل‌ها به‌ویژه بعد از <strong>locutions prépositionnelles contenant de</strong> می‌آیند: <span dir="ltr">près de, à côté de, à cause de, à la fin de, au sujet de, à propos de...</span></div>
+  <div class="table-wrap"><table><thead><tr><th>ساخت پایه</th><th>شکل</th></tr></thead><tbody><tr><td><span dir="ltr">de + lequel</span></td><td><span dir="ltr">duquel</span></td></tr><tr><td><span dir="ltr">de + lesquels</span></td><td><span dir="ltr">desquels</span></td></tr><tr><td><span dir="ltr">de + laquelle</span></td><td><span dir="ltr">de laquelle</span></td></tr><tr><td><span dir="ltr">de + lesquelles</span></td><td><span dir="ltr">desquelles</span></td></tr></tbody></table></div>
+  <div class="example"><span class="fr" lang="fr">Tu te souviens de ce dîner à la fin duquel on est allés danser ?</span><span class="translation">ساخت پایه <span dir="ltr">à la fin de ce dîner</span> است.</span></div>
+  <div class="example"><span class="fr" lang="fr">C’est une maison près de laquelle il y a un parc.</span><span class="translation">خانه‌ای است که نزدیک آن یک پارک وجود دارد.</span></div>
+  <h4><span dir="ltr">DONT</span> یا خانوادهٔ <span dir="ltr">DUQUEL</span>؟</h4>
+  <div class="table-wrap"><table><thead><tr><th>ساختار پایه</th><th>انتخاب</th><th lang="fr">Exemple</th></tr></thead><tbody><tr><td><span dir="ltr">de</span> مستقیماً توسط فعل/صفت/اسم خواسته می‌شود</td><td><span dir="ltr">dont</span></td><td lang="fr">Le problème dont nous parlons.</td></tr><tr><td><span dir="ltr">de</span> بخشی از locution prépositionnelle است</td><td><span dir="ltr">duquel / de laquelle...</span></td><td lang="fr">La maison près de laquelle j’habite.</td></tr></tbody></table></div>
+  <div class="incorrect"><span class="fr" lang="fr">❌ La maison dont j’habite près.</span></div><div class="correct"><span class="fr" lang="fr">✅ La maison près de laquelle j’habite.</span></div>
 </section>
-<aside class="notes"><h3>Notes avancées</h3>
-<section><h4>Exceptions / استثناها</h4><ul><li>Parmi appelle lesquels/lesquelles plutôt que qui.</li><li>Dont ne remplace pas de à l’intérieur d’une locution comme près de; duquel est alors requis.</li></ul></section>
-<section><h4>Contrastes / تقابل‌ها</h4><ul><li>qui sujet vs que COD</li><li>dont vs duquel</li><li>antécédent nominal vs ce neutre reprenant une idée</li></ul></section>
-<section><h4>Restrictions / محدودیت‌ها</h4><ul><li>Le pronom se choisit selon la fonction dans la relative et la préposition gouvernée, puis s’accorde si composé.</li></ul></section>
-<section><h4>Register / سطح زبانی</h4><ul><li>Lequel peut être employé pour des personnes, mais qui est souvent plus naturel après préposition simple.</li></ul></section>
-<section><h4>Temporal notes / نکات زمانی</h4><ul><li>Où peut avoir un antécédent temporel aussi bien que spatial.</li></ul></section>
-<section><h4>Semantic notes / نکات معنایی</h4><ul><li>Ce qui/que/dont peut reprendre toute une proposition, contrairement à un relatif à antécédent nominal explicite.</li></ul></section>
-</aside>
+
+<section class="panel" aria-labelledby="contrasts-title"><h3 id="contrasts-title">Contrastها و تفاوت‌های ظریف</h3><div class="table-wrap"><table><thead><tr><th>تقابل</th><th>اصل انتخاب</th><th lang="fr">Exemples</th></tr></thead><tbody><tr><td><span dir="ltr">qui ↔ que</span></td><td>فاعل ↔ COD</td><td lang="fr">La femme qui parle / La femme que tu regardes</td></tr><tr><td><span dir="ltr">que ↔ où</span></td><td>COD ↔ مکان/زمان</td><td lang="fr">La ville que j’ai visitée / La ville où j’habite</td></tr><tr><td><span dir="ltr">dont ↔ où</span></td><td><span dir="ltr">de</span> مستقیم ↔ مکان/زمان</td><td lang="fr">Le sujet dont je parle / Le café où nous allons</td></tr><tr><td><span dir="ltr">dont ↔ duquel</span></td><td><span dir="ltr">de</span> مستقیم ↔ locution contenant <span dir="ltr">de</span></td><td lang="fr">Le livre dont je parle / La table à côté de laquelle...</td></tr><tr><td>شخص ↔ چیز بعد از préposition</td><td>برای شخص معمولاً <span dir="ltr">préposition + qui</span>؛ برای چیز خانوادهٔ <span dir="ltr">lequel</span></td><td lang="fr">avec qui / avec lequel</td></tr></tbody></table></div></section>
+
+<section class="panel" aria-labelledby="restrictions-title"><h3 id="restrictions-title">استثناها و محدودیت‌های مهم</h3><ul class="check-list"><li><span dir="ltr">quoi</span> در این کاربرد خنثی است و بعد از حرف اضافه می‌آید.</li><li><span dir="ltr">dont</span> خودش مفهوم <span dir="ltr">de</span> را حمل می‌کند؛ بنابراین <span dir="ltr">de</span> یا ضمیر دیگری را دوباره تکرار نکنید.</li><li>پس از <span dir="ltr">parmi</span>: <span dir="ltr">lesquels / lesquelles</span>، نه <span dir="ltr">qui</span>.</li><li>برای شخص پس از locutionهایی مثل <span dir="ltr">à côté de</span> می‌توان <span dir="ltr">qui</span> آورد: <span dir="ltr">la femme à côté de qui...</span>.</li><li>خانوادهٔ <span dir="ltr">lequel</span> باید از نظر جنس و تعداد با antecedent هماهنگ شود.</li><li><span dir="ltr">où</span> فقط مکانی نیست؛ antecedent زمانی نیز می‌تواند داشته باشد.</li></ul></section>
+
+<section class="panel" aria-labelledby="errors-title"><h3 id="errors-title">خطاهای رایج</h3>
+<div class="error-item"><div class="incorrect"><span class="fr" lang="fr">❌ La femme qui tu connais.</span></div><div class="correct"><span class="fr" lang="fr">✅ La femme que tu connais.</span></div><p><strong>دلیل:</strong> شخص بودن مرجع تعیین‌کننده نیست؛ در <span dir="ltr">tu connais la femme</span>، <span dir="ltr">la femme</span> مفعول مستقیم است.</p></div>
+<div class="error-item"><div class="incorrect"><span class="fr" lang="fr">❌ Le train que arrive à huit heures...</span></div><div class="correct"><span class="fr" lang="fr">✅ Le train qui arrive à huit heures...</span></div><p><strong>دلیل:</strong> <span dir="ltr">le train</span> فاعل فعل <span dir="ltr">arrive</span> است.</p></div>
+<div class="error-item"><div class="incorrect"><span class="fr" lang="fr">❌ Le jour que nous nous sommes rencontrés...</span></div><div class="correct"><span class="fr" lang="fr">✅ Le jour où nous nous sommes rencontrés...</span></div><p><strong>دلیل:</strong> <span dir="ltr">le jour</span> زمان وقوع رویداد را مشخص می‌کند.</p></div>
+<div class="error-item"><div class="incorrect"><span class="fr" lang="fr">❌ La personne dont je téléphone.</span></div><div class="correct"><span class="fr" lang="fr">✅ La personne à qui je téléphone.</span></div><p><strong>دلیل:</strong> ساختار فعل <span dir="ltr">téléphoner à quelqu’un</span> است.</p></div>
+<div class="error-item"><div class="incorrect"><span class="fr" lang="fr">❌ Le sujet dont nous parlons de lui.</span></div><div class="correct"><span class="fr" lang="fr">✅ Le sujet dont nous parlons.</span></div><p><strong>دلیل:</strong> <span dir="ltr">dont</span> از قبل جای <span dir="ltr">de ce sujet</span> را گرفته است.</p></div>
+<div class="error-item"><div class="incorrect"><span class="fr" lang="fr">❌ à lequel / à lesquels</span></div><div class="correct"><span class="fr" lang="fr">✅ auquel / auxquels</span></div><p><strong>دلیل:</strong> این شکل‌ها contraction دارند.</p></div>
+<div class="error-item"><div class="incorrect"><span class="fr" lang="fr">❌ de lequel / de lesquels</span></div><div class="correct"><span class="fr" lang="fr">✅ duquel / desquels</span></div></div>
+<div class="error-item"><div class="incorrect"><span class="fr" lang="fr">❌ La maison dont j’habite près.</span></div><div class="correct"><span class="fr" lang="fr">✅ La maison près de laquelle j’habite.</span></div><p><strong>دلیل:</strong> <span dir="ltr">près de</span> یک locution prépositionnelle است.</p></div>
+<div class="error-item"><div class="incorrect"><span class="fr" lang="fr">❌ Je ne comprends pas ce qui tu veux.</span></div><div class="correct"><span class="fr" lang="fr">✅ Je ne comprends pas ce que tu veux.</span></div><p><strong>دلیل:</strong> در <span dir="ltr">tu veux quelque chose</span>، آن «چیز» COD است.</p></div></section>
+
+<section class="panel" aria-labelledby="register-title"><h3 id="register-title">زبان واقعی و Register</h3><p>در صفحات این درس تقسیم‌بندی مستقلی میان <span dir="ltr">familier / courant / soutenu</span> ارائه نشده است؛ ساختارهای معرفی‌شده در چهارچوب زبان استاندارد فرانسه‌اند.</p><ul class="compact-list"><li>برای شخص، شکل‌هایی مانند <span dir="ltr">avec qui, à qui, sur qui</span> ساده و طبیعی‌اند.</li><li>برای چیزها بعد از حرف اضافه، خانوادهٔ <span dir="ltr">lequel</span> نقش اصلی دارد.</li><li>کتاب نشان می‌دهد خانوادهٔ <span dir="ltr">lequel</span> برای اشخاص نیز ممکن است؛ برای نمونه <span dir="ltr">avec lesquels</span>.</li></ul></section>
+
+<section class="panel" aria-labelledby="tips-title"><h3 id="tips-title">نکات کلیدی برای انتخاب سریع</h3><ol class="check-list"><li><strong>Antecedent مشخص دارید؟</strong> اگر ندارید و معنی «آنچه» است، سراغ <span dir="ltr">ce qui / ce que / ce dont / ce à quoi...</span> بروید.</li><li><strong>نقش اسم در جملهٔ دوم چیست؟</strong> فاعل → <span dir="ltr">qui</span>؛ COD → <span dir="ltr">que</span>؛ مکان/زمان → <span dir="ltr">où</span>.</li><li>اگر ساختار مستقیماً <span dir="ltr">de</span> می‌خواهد → <span dir="ltr">dont</span>.</li><li>اگر بعد از preposition یک شخص داریم → معمولاً <span dir="ltr">préposition + qui</span>.</li><li>اگر بعد از preposition یک چیز داریم → خانوادهٔ <span dir="ltr">lequel</span>.</li><li>اگر preposition برابر <span dir="ltr">à</span> است → <span dir="ltr">auquel / auxquels / à laquelle / auxquelles</span>.</li><li>اگر <span dir="ltr">de</span> داخل locution مانند <span dir="ltr">près de</span> است → خانوادهٔ <span dir="ltr">duquel</span>.</li></ol></section>
+
+<section class="summary-card" aria-labelledby="summary-title"><h3 id="summary-title">خلاصه‌ای که باید به خاطر بسپارید</h3><ul class="check-list"><li>فاعل → <strong dir="ltr">qui</strong></li><li>COD → <strong dir="ltr">que</strong></li><li>مکان یا زمان → <strong dir="ltr">où</strong></li><li>مبدأ/مسیر → <strong dir="ltr">d’où / par où</strong></li><li><span dir="ltr">de</span> مستقیم با فعل/صفت/اسم → <strong dir="ltr">dont</strong></li><li>«آنچه» فاعل → <strong dir="ltr">ce qui</strong>؛ COD → <strong dir="ltr">ce que</strong>؛ با <span dir="ltr">de</span> → <strong dir="ltr">ce dont</strong></li><li><span dir="ltr">penser à cela</span> → <strong dir="ltr">ce à quoi</strong></li><li>شخص بعد از préposition → معمولاً <strong dir="ltr">préposition + qui</strong></li><li>چیز بعد از préposition → <strong dir="ltr">lequel / laquelle / lesquels / lesquelles</strong></li><li><span dir="ltr">à + lequel</span> → <strong dir="ltr">auquel</strong>؛ <span dir="ltr">à + lesquels</span> → <strong dir="ltr">auxquels</strong></li><li><span dir="ltr">de + lequel</span> → <strong dir="ltr">duquel</strong>؛ <span dir="ltr">de + lesquels</span> → <strong dir="ltr">desquels</strong></li><li>با <span dir="ltr">près de / à côté de / à la fin de...</span> → خانوادهٔ <strong dir="ltr">duquel</strong>، نه <span dir="ltr">dont</span>.</li><li>پس از <span dir="ltr">parmi</span> → <strong dir="ltr">lesquels / lesquelles</strong>.</li></ul></section>
 </article>

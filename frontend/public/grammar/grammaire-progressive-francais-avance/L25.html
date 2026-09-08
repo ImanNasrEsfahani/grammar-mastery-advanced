@@ -1,77 +1,468 @@
-<article class="adv-lesson" data-lesson-id="ADV-L25">
+<article class="adv-lesson" data-lesson-id="ADV-L25" lang="fa" dir="rtl">
 <style>
-.adv-lesson{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.75;color:#172033;max-width:980px;margin:0 auto;padding:8px 2px 40px}
+.adv-lesson{
+  --lesson-ink:var(--ink,#17233c);
+  --lesson-muted:var(--muted,#5a6477);
+  --lesson-line:var(--line,#d9dfeb);
+  --lesson-surface:var(--surface,#fff);
+  --lesson-soft:var(--surface-soft,#f5f7fb);
+  --lesson-canvas:var(--canvas,#eef2f8);
+  --lesson-primary:var(--primary,#2856c7);
+  --lesson-primary-strong:var(--primary-strong,#1c3f99);
+  --lesson-success:var(--success,#18794e);
+  --lesson-success-soft:var(--success-soft,#e9f7f0);
+  --lesson-danger:var(--danger,#b42318);
+  --lesson-danger-soft:var(--danger-soft,#fff0ee);
+  --lesson-warning:var(--warning,#8a4b08);
+  --lesson-warning-soft:var(--warning-soft,#fff7e8);
+  --lesson-shadow:var(--shadow,0 18px 50px rgba(34,53,90,.09));
+  font-family:var(--font-ui,Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif);
+  color:var(--lesson-ink);
+  line-height:1.9;
+  max-width:980px;
+  margin:0 auto;
+  padding:8px 2px 44px;
+  text-align:right;
+}
+html[data-theme="dark"] .adv-lesson{
+  --lesson-ink:#e7edf7;
+  --lesson-muted:#aeb8ca;
+  --lesson-line:#334155;
+  --lesson-surface:#111827;
+  --lesson-soft:#172033;
+  --lesson-canvas:#0b1220;
+  --lesson-primary:#8fb3ff;
+  --lesson-primary-strong:#b7ccff;
+  --lesson-success:#63d7a6;
+  --lesson-success-soft:#102b22;
+  --lesson-danger:#ff9c93;
+  --lesson-danger-soft:#351817;
+  --lesson-warning:#ffc36b;
+  --lesson-warning-soft:#332414;
+  --lesson-shadow:0 18px 50px rgba(0,0,0,.22);
+}
+@media (prefers-color-scheme:dark){
+  html:not([data-theme]) .adv-lesson{
+    --lesson-ink:#e7edf7;
+    --lesson-muted:#aeb8ca;
+    --lesson-line:#334155;
+    --lesson-surface:#111827;
+    --lesson-soft:#172033;
+    --lesson-canvas:#0b1220;
+    --lesson-primary:#8fb3ff;
+    --lesson-primary-strong:#b7ccff;
+    --lesson-success:#63d7a6;
+    --lesson-success-soft:#102b22;
+    --lesson-danger:#ff9c93;
+    --lesson-danger-soft:#351817;
+    --lesson-warning:#ffc36b;
+    --lesson-warning-soft:#332414;
+  }
+}
 .adv-lesson *{box-sizing:border-box}
-.adv-lesson .adv-hero{padding:24px;border:1px solid #e3e8f0;border-radius:18px;background:#fff;margin-bottom:22px}
-.adv-lesson .adv-kicker{font-size:.86rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.65;margin:0 0 6px}
-.adv-lesson h2,.adv-lesson h3{line-height:1.35}
-.adv-lesson h2{font-size:1.65rem;margin:0 0 4px}
-.adv-lesson .fa-title{direction:rtl;text-align:right;font-weight:650;margin:.2rem 0 .8rem}
-.adv-lesson .summary{direction:rtl;text-align:right;margin:0}
-.adv-lesson .meta{margin-top:12px;font-size:.9rem;opacity:.72}
-.adv-lesson .subtopic{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin:18px 0;background:#fff}
-.adv-lesson .subtopic h3{margin:0 0 2px;font-size:1.25rem}
-.adv-lesson .fa-subtitle{direction:rtl;text-align:right;font-weight:600;margin:.1rem 0 1rem}
-.adv-lesson .rule{direction:ltr;text-align:left;padding:12px 14px;border-left:4px solid currentColor;background:#f7f9fc;border-radius:8px;margin:12px 0}
-.adv-lesson .teaching,.adv-lesson .trap{direction:rtl;text-align:right}
-.adv-lesson .example{direction:ltr;text-align:left;font-style:italic;padding:10px 14px;background:#f7f9fc;border-radius:8px}
-.adv-lesson .trap{padding:10px 14px;border:1px dashed #c7ced9;border-radius:8px}
-.adv-lesson .source{font-size:.82rem;opacity:.65;margin-top:12px}
-.adv-lesson .notes{border:1px solid #e3e8f0;border-radius:16px;padding:20px;margin-top:22px}
-.adv-lesson .notes h3{margin-top:0}
-.adv-lesson .notes section{margin:16px 0}
-.adv-lesson .notes h4{margin:0 0 6px}
-.adv-lesson .notes ul{margin-top:4px}
+.adv-lesson h2,.adv-lesson h3,.adv-lesson h4{color:var(--lesson-ink);line-height:1.45}
+.adv-lesson h2{font-size:clamp(1.5rem,3vw,1.9rem);margin:0 0 8px}
+.adv-lesson h3{font-size:clamp(1.16rem,2.3vw,1.38rem);margin:0 0 8px}
+.adv-lesson h4{font-size:1.02rem;margin:18px 0 7px}
+.adv-lesson p{margin:8px 0}
+.adv-lesson ul,.adv-lesson ol{margin:8px 0;padding-inline-start:1.45rem}
+.adv-lesson li+li{margin-top:6px}
+.adv-lesson strong{font-weight:800}
+.adv-lesson code,.adv-lesson .formula{
+  direction:ltr;
+  unicode-bidi:isolate;
+  display:inline-block;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;
+  font-size:.93em;
+  color:var(--lesson-primary-strong);
+}
+.adv-lesson .adv-hero,.adv-lesson .section-card,.adv-lesson .subtopic,.adv-lesson .notes,.adv-lesson .exercise-block{
+  border:1px solid var(--lesson-line);
+  background:var(--lesson-surface);
+  border-radius:18px;
+  box-shadow:var(--lesson-shadow);
+}
+.adv-lesson .adv-hero{padding:clamp(18px,4vw,28px);margin-bottom:20px}
+.adv-lesson .adv-kicker{direction:ltr;text-align:left;font-size:.82rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--lesson-primary);margin:0 0 6px}
+.adv-lesson .fr-title{direction:ltr;text-align:left;font-size:clamp(1.7rem,4vw,2.25rem);margin:0}
+.adv-lesson .fa-title{font-weight:800;font-size:1.08rem;margin:3px 0 10px;color:var(--lesson-primary-strong)}
+.adv-lesson .summary{margin:0;color:var(--lesson-ink)}
+.adv-lesson .meta-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.adv-lesson .chip{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--lesson-line);border-radius:999px;padding:5px 10px;background:var(--lesson-soft);color:var(--lesson-muted);font-size:.82rem;font-weight:700}
+.adv-lesson .section-card,.adv-lesson .subtopic,.adv-lesson .notes,.adv-lesson .exercise-block{padding:clamp(16px,3vw,22px);margin:16px 0}
+.adv-lesson .section-label{display:flex;align-items:center;gap:9px;margin-bottom:8px}
+.adv-lesson .section-no{direction:ltr;display:grid;place-items:center;inline-size:30px;block-size:30px;border-radius:9px;background:var(--lesson-primary);color:#fff;font-weight:900;font-size:.86rem;flex:none}
+.adv-lesson .lead{font-size:1.01rem}
+.adv-lesson .rule,.adv-lesson .example,.adv-lesson .note-box,.adv-lesson .trap,.adv-lesson .correct,.adv-lesson .incorrect{
+  border-radius:12px;
+  padding:12px 14px;
+  margin:12px 0;
+}
+.adv-lesson .rule{border-inline-start:4px solid var(--lesson-primary);background:var(--lesson-soft)}
+.adv-lesson .example{direction:ltr;text-align:left;background:var(--lesson-soft);border:1px solid var(--lesson-line);font-style:normal;unicode-bidi:plaintext}
+.adv-lesson .example .fa-translation{direction:rtl;text-align:right;color:var(--lesson-muted);font-style:normal;margin-top:5px}
+.adv-lesson .note-box{background:var(--lesson-warning-soft);border:1px solid color-mix(in srgb,var(--lesson-warning) 45%,var(--lesson-line))}
+.adv-lesson .trap{background:var(--lesson-danger-soft);border:1px dashed color-mix(in srgb,var(--lesson-danger) 45%,var(--lesson-line))}
+.adv-lesson .correct{background:var(--lesson-success-soft);border:1px solid color-mix(in srgb,var(--lesson-success) 42%,var(--lesson-line))}
+.adv-lesson .incorrect{background:var(--lesson-danger-soft);border:1px solid color-mix(in srgb,var(--lesson-danger) 42%,var(--lesson-line))}
+.adv-lesson .correct::before{content:"✓ ";color:var(--lesson-success);font-weight:900}
+.adv-lesson .incorrect::before{content:"✕ ";color:var(--lesson-danger);font-weight:900}
+.adv-lesson .compare-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}
+.adv-lesson .compare-card{border:1px solid var(--lesson-line);background:var(--lesson-soft);border-radius:13px;padding:14px;min-width:0}
+.adv-lesson .compare-card h4{margin:0 0 8px;color:var(--lesson-primary-strong)}
+.adv-lesson .table-wrap{overflow-x:auto;margin:12px 0;border:1px solid var(--lesson-line);border-radius:14px;background:var(--lesson-surface)}
+.adv-lesson table{width:100%;border-collapse:collapse;min-width:720px;text-align:right}
+.adv-lesson th,.adv-lesson td{padding:11px 12px;border-bottom:1px solid var(--lesson-line);vertical-align:top}
+.adv-lesson th{background:var(--lesson-soft);font-size:.9rem;color:var(--lesson-primary-strong)}
+.adv-lesson tbody tr:last-child td{border-bottom:0}
+.adv-lesson td[lang="fr"],.adv-lesson th[lang="fr"]{direction:ltr;text-align:left;unicode-bidi:plaintext}
+.adv-lesson .quick-list{display:grid;gap:8px;list-style:none;padding:0;margin:12px 0 0}
+.adv-lesson .quick-list li{border-inline-start:3px solid var(--lesson-primary);padding:8px 11px;background:var(--lesson-soft);border-radius:9px}
+.adv-lesson .exercise-list{counter-reset:item;list-style:none;padding:0;margin:12px 0;display:grid;gap:10px}
+.adv-lesson .exercise-list li{counter-increment:item;position:relative;padding:12px 44px 12px 12px;border:1px solid var(--lesson-line);border-radius:12px;background:var(--lesson-soft)}
+.adv-lesson .exercise-list li::before{content:counter(item);position:absolute;inset-inline-start:auto;inset-inline-end:10px;top:11px;display:grid;place-items:center;width:25px;height:25px;border-radius:8px;background:var(--lesson-primary);color:white;font-weight:900;font-size:.78rem}
+.adv-lesson details{border:1px solid var(--lesson-line);border-radius:12px;background:var(--lesson-soft);padding:0;margin-top:12px}
+.adv-lesson summary{cursor:pointer;font-weight:800;padding:12px 14px;color:var(--lesson-primary-strong)}
+.adv-lesson details[open] summary{border-bottom:1px solid var(--lesson-line)}
+.adv-lesson .answer-content{padding:12px 16px}
+.adv-lesson .answer-content ol{margin:0}
+.adv-lesson .source-note{margin-top:22px;padding-top:12px;border-top:1px solid var(--lesson-line);font-size:.82rem;color:var(--lesson-muted)}
+.adv-lesson .fr{direction:ltr;text-align:left;unicode-bidi:plaintext}
+.adv-lesson .muted{color:var(--lesson-muted)}
+.adv-lesson .accent{color:var(--lesson-primary-strong);font-weight:800}
+@media (max-width:700px){
+  .adv-lesson{padding-inline:0;line-height:1.85}
+  .adv-lesson .compare-grid{grid-template-columns:1fr}
+  .adv-lesson .adv-hero,.adv-lesson .section-card,.adv-lesson .subtopic,.adv-lesson .notes,.adv-lesson .exercise-block{border-radius:14px;padding:16px}
+  .adv-lesson .meta-row{gap:6px}
+  .adv-lesson .chip{font-size:.77rem}
+}
+@media (forced-colors:active){
+  .adv-lesson .adv-hero,.adv-lesson .section-card,.adv-lesson .subtopic,.adv-lesson .notes,.adv-lesson .exercise-block,.adv-lesson .rule,.adv-lesson .example,.adv-lesson .note-box,.adv-lesson .trap,.adv-lesson .correct,.adv-lesson .incorrect{border:1px solid CanvasText}
+}
 </style>
+
 <header class="adv-hero">
-<p class="adv-kicker">Lesson 25 · ADV-L25</p>
-<h2 lang="fr" dir="ltr">L’expression du but</h2>
-<p class="fa-title" lang="fa">بیان هدف</p>
-<p class="summary" lang="fa">این درس روی «بیان هدف» تمرکز دارد و زیرموضوع‌های هدف مثبت با pour que و afin que، هدفِ پرهیزی، فاعل یکسان یا متفاوت در هدف، هدف اسمی و سبک را پوشش می‌دهد.</p>
-<p class="meta">Printed pages 152–153 · PDF pages 154–155 · target 160 questions</p>
+  <p class="adv-kicker">Lesson 25 · ADV-L25</p>
+  <h2 class="fr-title" lang="fr" dir="ltr">L’expression du but</h2>
+  <p class="fa-title">بیان هدف، مقصود و هدفی که می‌خواهیم از آن اجتناب کنیم</p>
+  <p class="summary">این درس روی انتخاب میان <span class="formula">pour / pour que / afin de / afin que / de peur de / de peur que</span> و تشخیص زمان استفاده از <span class="formula">infinitif</span> یا <span class="formula">subjonctif</span> تمرکز دارد.</p>
+  <div class="meta-row" aria-label="مشخصات درس">
+    <span class="chip">درس ۲۵</span>
+    <span class="chip">صفحات کتاب ۱۵۲–۱۵۳</span>
+    <span class="chip">Niveau avancé · B1–B2</span>
+    <span class="chip">موضوع: le but</span>
+  </div>
 </header>
+
+<section class="section-card">
+  <div class="section-label"><span class="section-no">1</span><h3>هدف درس</h3></div>
+  <p class="lead">بعد از این درس باید بتوانید فقط با نگاه به <strong>فاعل دو عمل</strong> تشخیص دهید که هدف را با مصدر بیان کنید یا با <span class="formula">que + subjonctif</span>.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>وضعیت</th><th lang="fr">Structure</th></tr></thead>
+      <tbody>
+        <tr><td>یک فاعل + هدف مثبت</td><td lang="fr">pour / afin de + infinitif</td></tr>
+        <tr><td>دو فاعل متفاوت + هدف مثبت</td><td lang="fr">pour que / afin que + subjonctif</td></tr>
+        <tr><td>یک فاعل + هدفِ پرهیزی</td><td lang="fr">pour ne pas / de peur de + infinitif</td></tr>
+        <tr><td>دو فاعل متفاوت + هدفِ پرهیزی</td><td lang="fr">pour que ... ne ... pas / de peur que + subjonctif</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section-card">
+  <div class="section-label"><span class="section-no">2</span><h3>ایدهٔ اصلی</h3></div>
+  <p><strong>Le but</strong> یعنی کاری را انجام می‌دهیم <strong>به این قصد که نتیجه‌ای حاصل شود</strong>. سؤال تعیین‌کننده این است: «چه کسی عملِ هدف را انجام می‌دهد؟»</p>
+  <div class="compare-grid">
+    <article class="compare-card">
+      <h4>فاعل یکسان → infinitif</h4>
+      <p class="fr" lang="fr">Je ferme la fenêtre pour dormir tranquillement.</p>
+      <p class="muted">من پنجره را می‌بندم تا خودم راحت بخوابم.</p>
+    </article>
+    <article class="compare-card">
+      <h4>فاعل متفاوت → subjonctif</h4>
+      <p class="fr" lang="fr">Je ferme la fenêtre pour que les enfants dorment.</p>
+      <p class="muted">من پنجره را می‌بندم تا بچه‌ها بخوابند.</p>
+    </article>
+  </div>
+</section>
+
 <section class="subtopic" id="ADV-L25-ST01">
-<h3 lang="fr" dir="ltr">Pour que et afin que</h3>
-<p class="fa-subtitle" lang="fa">هدف مثبت با pour que و afin que</p>
-<p class="rule" lang="fr">Avec deux sujets, pour que/afin que + subjonctif présentent un résultat voulu mais non assuré.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «هدف مثبت با pour que و afin que» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Je vous écris pour que vous puissiez préparer les documents.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز پس از pour que indicatif می‌آورد چون هدف را آیندهٔ قطعی می‌پندارد.</p>
-<p class="source"><code>ADV-L25:book-p152-p153:purpose-pos</code> · printed 152–153 · PDF 154–155</p>
+  <div class="section-label"><span class="section-no">3</span><h3><span class="formula">pour que</span> و <span class="formula">afin que</span> + subjonctif</h3></div>
+  <div class="rule"><strong>قاعده:</strong> وقتی هدف یک فاعلِ متفاوت دارد، از <span class="formula">pour que / afin que + subjonctif</span> استفاده می‌کنیم.</div>
+  <p>نتیجه‌ای که می‌خواهیم به آن برسیم در لحظهٔ عمل اصلی یک واقعیت قطعی نیست؛ یک نتیجهٔ مطلوب و موردنظر است. به همین دلیل جملهٔ هدف با <strong>subjonctif</strong> می‌آید.</p>
+  <div class="example" lang="fr">
+    Je lui explique lentement pour qu’il comprenne.
+    <p class="fa-translation">آهسته برایش توضیح می‌دهم تا متوجه شود.</p>
+  </div>
+  <div class="example" lang="fr">
+    Nous avons réservé tôt pour que tout le monde puisse venir.
+    <p class="fa-translation">زود رزرو کردیم تا همه بتوانند بیایند.</p>
+  </div>
+  <p><strong>ساختار:</strong> <span class="formula">Sujet 1 + verbe + pour que / afin que + sujet 2 + subjonctif</span></p>
+  <div class="note-box"><strong>pour que یا afin que؟</strong> در این درس تفاوت معنایی مهمی میان آنها مطرح نمی‌شود. در زبان واقعی، <span class="formula">pour que</span> خنثی‌تر و رایج‌تر است و <span class="formula">afin que</span> معمولاً رسمی‌تر و نوشتاری‌تر به گوش می‌رسد.</div>
 </section>
-<section class="subtopic" id="ADV-L25-ST02">
-<h3 lang="fr" dir="ltr">But à éviter</h3>
-<p class="fa-subtitle" lang="fa">هدفِ پرهیزی</p>
-<p class="rule" lang="fr">Pour que... ne... pas et de peur que + subjonctif présentent un résultat que l’on veut éviter; ne peut être explétif.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «هدفِ پرهیزی» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Nous parlons doucement de peur que les enfants ne se réveillent.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز ne explétif را نفی واقعیِ اضافی می‌داند یا de peur que را با indicatif می‌آورد.</p>
-<p class="source"><code>ADV-L25:book-p152-p153:purpose-avoid</code> · printed 152–153 · PDF 154–155</p>
-</section>
+
 <section class="subtopic" id="ADV-L25-ST03">
-<h3 lang="fr" dir="ltr">Même sujet ou sujets différents</h3>
-<p class="fa-subtitle" lang="fa">فاعل یکسان یا متفاوت در هدف</p>
-<p class="rule" lang="fr">Même sujet exige pour/afin de/de peur de + infinitif; sujets distincts appellent généralement que + subjonctif.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «فاعل یکسان یا متفاوت در هدف» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Je pars tôt afin d’éviter la circulation; je ferme la porte pour que le bruit ne vous dérange pas.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز با فاعل یکسان pour que + subjonctif یا با فاعل متفاوت infinitif معلّق می‌سازد.</p>
-<p class="source"><code>ADV-L25:book-p152-p153:purpose-subject</code> · printed 152–153 · PDF 154–155</p>
+  <div class="section-label"><span class="section-no">4</span><h3>فاعل یکسان → <span class="formula">pour / afin de + infinitif</span></h3></div>
+  <div class="rule"><strong>قاعده:</strong> اگر فاعلِ فعل اصلی و انجام‌دهندهٔ عملِ هدف یک نفر باشد، به‌جای تکرار همان فاعل با <span class="formula">que</span> از infinitif استفاده می‌کنیم.</div>
+  <div class="example" lang="fr">
+    Je suis venu pour vous parler.
+    <p class="fa-translation">آمده‌ام تا با شما صحبت کنم.</p>
+  </div>
+  <div class="example" lang="fr">
+    Ils sont partis tôt afin d’éviter les embouteillages.
+    <p class="fa-translation">زود حرکت کردند تا از ترافیک اجتناب کنند.</p>
+  </div>
+  <div class="correct"><span class="fr" lang="fr">Je suis venu pour vous parler.</span></div>
+  <div class="incorrect"><span class="fr" lang="fr">Je suis venu pour que je vous parle.</span><br><span class="muted">وقتی فاعل هر دو عمل همان «je» است، تکرار آن با pour que طبیعی نیست.</span></div>
+  <div class="compare-grid">
+    <article class="compare-card">
+      <h4>همان فاعل</h4>
+      <p class="fr" lang="fr">Marie a acheté un ordinateur pour travailler chez elle.</p>
+      <p class="muted">ماری کامپیوتر خرید تا خودش در خانه کار کند.</p>
+    </article>
+    <article class="compare-card">
+      <h4>فاعل متفاوت</h4>
+      <p class="fr" lang="fr">Marie a acheté un ordinateur pour que son fils travaille chez lui.</p>
+      <p class="muted">ماری کامپیوتر خرید تا پسرش در خانه کار کند.</p>
+    </article>
+  </div>
 </section>
+
+<section class="subtopic">
+  <div class="section-label"><span class="section-no">5</span><h3>دو هدف پشت سر هم</h3></div>
+  <div class="rule"><strong>قاعده:</strong> اگر دو هدف هم‌پایه داشته باشیم، لازم نیست عبارت کامل را دوباره تکرار کنیم؛ برای هدف دوم معمولاً فقط <span class="formula">que</span> می‌آید.</div>
+  <div class="example" lang="fr">
+    J’ai tout préparé pour que vous puissiez commencer immédiatement et que vous ne perdiez pas de temps.
+    <p class="fa-translation">همه‌چیز را آماده کردم تا بتوانید فوراً شروع کنید و وقت از دست ندهید.</p>
+  </div>
+  <p class="formula">... pour que + proposition 1 et que + proposition 2</p>
+</section>
+
+<section class="subtopic" id="ADV-L25-ST02">
+  <div class="section-label"><span class="section-no">6</span><h3>هدفِ پرهیزی: جلوگیری از یک نتیجه</h3></div>
+  <p>گاهی هدف این نیست که چیزی رخ دهد، بلکه این است که <strong>اتفاقی رخ ندهد</strong>.</p>
+  <h4><span class="formula">pour que ... ne ... pas</span></h4>
+  <div class="example" lang="fr">
+    Je ferme la porte pour que le chien ne sorte pas.
+    <p class="fa-translation">در را می‌بندم تا سگ بیرون نرود.</p>
+  </div>
+  <p>اینجا <span class="formula">ne ... pas</span> یک نفی واقعی است: هدف این است که خروج سگ اتفاق نیفتد.</p>
+
+  <h4>فاعل یکسان → <span class="formula">pour ne pas + infinitif</span></h4>
+  <div class="example" lang="fr">
+    Je suis parti tôt pour ne pas être en retard.
+    <p class="fa-translation">زود حرکت کردم تا دیر نرسم.</p>
+  </div>
+  <div class="trap"><strong>ترتیب نفی با infinitif:</strong> <span class="formula">ne pas + infinitif</span><br><span class="fr" lang="fr">✓ pour ne pas oublier &nbsp;&nbsp; ✕ pour ne oublier pas</span></div>
+</section>
+
+<section class="subtopic">
+  <div class="section-label"><span class="section-no">7</span><h3><span class="formula">de peur que + subjonctif</span> و ne explétif</h3></div>
+  <p><span class="formula">de peur que</span> یعنی شخص کاری انجام می‌دهد <strong>از ترس اینکه رویدادی نامطلوب رخ دهد</strong>.</p>
+  <div class="example" lang="fr">
+    Elle a caché les clés de peur que les enfants les prennent.
+    <p class="fa-translation">کلیدها را پنهان کرد از ترس اینکه بچه‌ها آنها را بردارند.</p>
+  </div>
+  <div class="note-box">
+    <strong>ne explétif:</strong> در ساخت‌هایی مثل <span class="formula">de peur qu’il ne vienne</span>، واژهٔ <span class="formula">ne</span> ممکن است «نفی» نباشد. معنی جمله هنوز «از ترس اینکه او بیاید» است، نه «از ترس اینکه او نیاید».
+  </div>
+  <div class="compare-grid">
+    <article class="compare-card">
+      <h4>نفی واقعی</h4>
+      <p class="fr" lang="fr">Je ferme la porte pour qu’il ne vienne pas.</p>
+      <p class="muted">در را می‌بندم تا نیاید.</p>
+    </article>
+    <article class="compare-card">
+      <h4>ne explétif</h4>
+      <p class="fr" lang="fr">Je ferme la porte de peur qu’il ne vienne.</p>
+      <p class="muted">در را می‌بندم از ترس اینکه بیاید.</p>
+    </article>
+  </div>
+</section>
+
+<section class="subtopic">
+  <div class="section-label"><span class="section-no">8</span><h3><span class="formula">de peur de + infinitif</span></h3></div>
+  <div class="rule"><strong>قاعده:</strong> اگر فاعلِ دو عمل یکسان باشد، از <span class="formula">de peur de + infinitif</span> استفاده می‌کنیم.</div>
+  <div class="example" lang="fr">
+    Elle n’a rien dit de peur de provoquer un conflit.
+    <p class="fa-translation">چیزی نگفت از ترس اینکه باعث درگیری شود.</p>
+  </div>
+  <div class="example" lang="fr">
+    Elle n’a rien dit de peur que son collègue se mette en colère.
+    <p class="fa-translation">چیزی نگفت از ترس اینکه همکارش عصبانی شود.</p>
+  </div>
+  <p>در جملهٔ اول، خودِ او ممکن است درگیری ایجاد کند؛ در جملهٔ دوم، فاعلِ عمل دوم «همکار» است، پس <span class="formula">de peur que + subjonctif</span> لازم است.</p>
+</section>
+
 <section class="subtopic" id="ADV-L25-ST04">
-<h3 lang="fr" dir="ltr">But nominal et registre</h3>
-<p class="fa-subtitle" lang="fa">هدف اسمی و سبک</p>
-<p class="rule" lang="fr">Pour et de peur de peuvent introduire un nom; afin de/afin que appartiennent souvent à un registre plus formel.</p>
-<p class="teaching" lang="fa">این قاعده مربوط به «هدف اسمی و سبک» است. در تمرین و مرور، علاوه بر فرم جمله باید تفاوت معنایی و بافت کاربرد نیز بررسی شود.</p>
-<p class="example" lang="fr">Cette mesure a été prise afin de réduire les délais.</p>
-<p class="trap" lang="fa"><strong>دام رایج:</strong> زبان‌آموز de peur de + nom را فقط ساخت مصدر می‌پندارد یا afin de رسمی را در هر گفت‌وگوی ساده تحمیل می‌کند.</p>
-<p class="source"><code>ADV-L25:book-p152-p153:purpose-nominal</code> · printed 152–153 · PDF 154–155</p>
+  <div class="section-label"><span class="section-no">9</span><h3><span class="formula">pour</span> و <span class="formula">de peur de</span> + اسم</h3></div>
+  <p>این ساختارها الزاماً همیشه قبل از فعل نمی‌آیند و می‌توانند مستقیماً یک اسم را معرفی کنند.</p>
+  <div class="example" lang="fr">
+    J’ai besoin d’un produit pour le nettoyage des vitres.
+    <p class="fa-translation">برای تمیز کردن شیشه‌ها به یک محصول نیاز دارم.</p>
+  </div>
+  <div class="example" lang="fr">
+    Ils ont annulé la sortie de peur de la tempête.
+    <p class="fa-translation">از ترس طوفان برنامهٔ بیرون رفتن را لغو کردند.</p>
+  </div>
 </section>
-<aside class="notes"><h3>Notes avancées</h3>
-<section><h4>Exceptions / استثناها</h4><ul><li>De peur que peut recevoir un ne explétif qui ne constitue pas la négation.</li><li>Deux buts coordonnés ne répètent pas nécessairement la première locution complète.</li></ul></section>
-<section><h4>Contrastes / تقابل‌ها</h4><ul><li>but souhaité vs résultat constaté</li><li>pour/afin de à sujet identique vs pour que/afin que à sujets distincts</li><li>but positif vs but évité</li></ul></section>
-<section><h4>Restrictions / محدودیت‌ها</h4><ul><li>Le résultat visé est possible mais non assuré, d’où le subjonctif dans la proposition de but.</li></ul></section>
-<section><h4>Register / سطح زبانی</h4><ul><li>Afin de/afin que est généralement plus formel que pour/pour que.</li></ul></section>
-<section><h4>Temporal notes / نکات زمانی</h4><ul><li>Le but est orienté vers un résultat postérieur à l’action principale.</li></ul></section>
-<section><h4>Semantic notes / نکات معنایی</h4><ul><li>Le locuteur peut viser l’obtention d’un résultat ou l’évitement d’un risque.</li></ul></section>
-</aside>
+
+<section class="section-card">
+  <div class="section-label"><span class="section-no">10</span><h3>Contrastها و تفاوت‌های ظریف</h3></div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>ساختار</th><th>فاعل</th><th>معنا</th><th lang="fr">Exemple</th></tr></thead>
+      <tbody>
+        <tr><td><span class="formula">pour + infinitif</span></td><td>یکسان</td><td>هدف</td><td lang="fr">Je sors pour acheter du pain.</td></tr>
+        <tr><td><span class="formula">afin de + infinitif</span></td><td>یکسان</td><td>هدف، رسمی‌تر</td><td lang="fr">Il écrit afin de demander des renseignements.</td></tr>
+        <tr><td><span class="formula">pour que + subj.</span></td><td>متفاوت</td><td>هدف</td><td lang="fr">Je répète pour que vous compreniez.</td></tr>
+        <tr><td><span class="formula">afin que + subj.</span></td><td>متفاوت</td><td>هدف، رسمی‌تر</td><td lang="fr">Nous expliquons la procédure afin que chacun sache quoi faire.</td></tr>
+        <tr><td><span class="formula">pour ne pas + infinitif</span></td><td>یکسان</td><td>جلوگیری از نتیجه</td><td lang="fr">Je note l’adresse pour ne pas l’oublier.</td></tr>
+        <tr><td><span class="formula">pour que ... ne ... pas</span></td><td>متفاوت</td><td>جلوگیری از نتیجه</td><td lang="fr">Je parle doucement pour que le bébé ne se réveille pas.</td></tr>
+        <tr><td><span class="formula">de peur de + infinitif</span></td><td>یکسان</td><td>ترس از وقوع</td><td lang="fr">Il hésite de peur de faire une erreur.</td></tr>
+        <tr><td><span class="formula">de peur que + subj.</span></td><td>متفاوت</td><td>ترس از وقوع</td><td lang="fr">Il ferme la fenêtre de peur que la pluie n’entre.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4><span class="formula">pour que</span> در برابر <span class="formula">parce que</span></h4>
+  <div class="compare-grid">
+    <article class="compare-card">
+      <h4>But — هدف</h4>
+      <p class="fr" lang="fr">Il parle lentement pour que tout le monde comprenne.</p>
+      <p class="muted">آهسته حرف می‌زند تا همه متوجه شوند.</p>
+    </article>
+    <article class="compare-card">
+      <h4>Cause — علت</h4>
+      <p class="fr" lang="fr">Il parle lentement parce que les étudiants sont débutants.</p>
+      <p class="muted">آهسته حرف می‌زند چون دانشجویان مبتدی‌اند.</p>
+    </article>
+  </div>
+
+  <h4>But در برابر conséquence</h4>
+  <div class="compare-grid">
+    <article class="compare-card">
+      <h4>هدفِ موردنظر</h4>
+      <p class="fr" lang="fr">Il a fermé la fenêtre pour que nous n’entendions plus le bruit.</p>
+      <p class="muted">پنجره را بست تا دیگر صدا را نشنویم.</p>
+    </article>
+    <article class="compare-card">
+      <h4>نتیجهٔ تحقق‌یافته</h4>
+      <p class="fr" lang="fr">Il a fermé la fenêtre, si bien que nous n’entendons plus le bruit.</p>
+      <p class="muted">پنجره را بست؛ در نتیجه دیگر صدا را نمی‌شنویم.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-card">
+  <div class="section-label"><span class="section-no">11</span><h3>استثناها و محدودیت‌ها</h3></div>
+  <ul>
+    <li>با فاعل یکسان، تکرار همان فاعل با <span class="formula">pour que</span> را بی‌دلیل انجام ندهید؛ infinitif طبیعی‌تر است.</li>
+    <li>با دو فاعل متفاوت، infinitif ساده معمولاً نمی‌تواند رابطهٔ هدف را درست نشان دهد؛ از <span class="formula">que + subjonctif</span> استفاده کنید.</li>
+    <li>بعد از <span class="formula">pour que / afin que / de peur que</span>، فعلِ جملهٔ هدف در <strong>subjonctif</strong> می‌آید.</li>
+    <li>بعد از <span class="formula">pour / afin de / de peur de</span> در ساخت فعلی، infinitif می‌آید.</li>
+    <li><span class="formula">ne</span> در <span class="formula">de peur que ... ne ...</span> می‌تواند explétif باشد و نباید خودکار به معنی نفی ترجمه شود.</li>
+  </ul>
+</section>
+
+<section class="section-card">
+  <div class="section-label"><span class="section-no">12</span><h3>خطاهای رایج</h3></div>
+
+  <div class="incorrect"><span class="fr" lang="fr">Je parle plus fort pour que vous m’entendez.</span></div>
+  <div class="correct"><span class="fr" lang="fr">Je parle plus fort pour que vous m’entendiez.</span><br><span class="muted">بعد از pour que → subjonctif.</span></div>
+
+  <div class="incorrect"><span class="fr" lang="fr">Je téléphone pour que je réserve une table.</span></div>
+  <div class="correct"><span class="fr" lang="fr">Je téléphone pour réserver une table.</span><br><span class="muted">فاعل هر دو عمل «je» است.</span></div>
+
+  <div class="incorrect"><span class="fr" lang="fr">J’ouvre la porte pour entrer les invités.</span></div>
+  <div class="correct"><span class="fr" lang="fr">J’ouvre la porte pour que les invités entrent.</span><br><span class="muted">فاعل‌های دو عمل متفاوت‌اند.</span></div>
+
+  <div class="incorrect"><span class="fr" lang="fr">pour ne oublier pas</span></div>
+  <div class="correct"><span class="fr" lang="fr">pour ne pas oublier</span></div>
+
+  <div class="trap"><strong>ne explétif:</strong> <span class="formula">Je suis parti de peur qu’il ne pleuve.</span> به معنی «از ترس اینکه باران ببارد» است، نه «از ترس اینکه باران نبارد».</div>
+
+  <div class="incorrect"><span class="fr" lang="fr">Je suis resté chez moi pour que j’étais malade.</span></div>
+  <div class="correct"><span class="fr" lang="fr">Je suis resté chez moi parce que j’étais malade.</span><br><span class="muted">اینجا بیماری علت است، نه هدف.</span></div>
+</section>
+
+<section class="section-card">
+  <div class="section-label"><span class="section-no">13</span><h3>زبان واقعی و Register</h3></div>
+  <ul>
+    <li><span class="formula">pour / pour que</span> در گفتار و نوشتار بسیار رایج و خنثی‌اند.</li>
+    <li><span class="formula">afin de / afin que</span> معمولاً در نوشتار رسمی، اداری و استدلالی بیشتر دیده می‌شوند.</li>
+    <li><span class="formula">de peur que + ne explétif</span> ساختاری نسبتاً رسمی‌تر است؛ حذف <span class="formula">ne</span> در گفتار طبیعی است.</li>
+    <li>برای آزمون و نوشتار رسمی باید هم ساخت‌های رایج و هم ساخت‌های رسمی‌تر را بشناسید، حتی اگر در مکالمه بیشتر از <span class="formula">pour</span> استفاده کنید.</li>
+  </ul>
+</section>
+
+<section class="notes">
+  <div class="section-label"><span class="section-no">14</span><h3>نکات کلیدی یادگیری</h3></div>
+  <p>به‌جای حفظ فهرست بلند، ابتدا دو فعل را پیدا کنید و از خودتان بپرسید: <strong>چه کسی هر فعل را انجام می‌دهد؟</strong></p>
+  <ul class="quick-list">
+    <li><span class="formula">A fait X → A fait Y</span> → infinitif</li>
+    <li><span class="formula">A fait X → B fait Y</span> → <span class="formula">que + subjonctif</span></li>
+    <li>هدف مثبت + فاعل یکسان → <span class="formula">pour / afin de + infinitif</span></li>
+    <li>هدف مثبت + فاعل متفاوت → <span class="formula">pour que / afin que + subjonctif</span></li>
+    <li>هدف پرهیزی + فاعل یکسان → <span class="formula">pour ne pas / de peur de + infinitif</span></li>
+    <li>هدف پرهیزی + فاعل متفاوت → <span class="formula">pour que ... ne ... pas / de peur que + subjonctif</span></li>
+  </ul>
+</section>
+
+<section class="section-card">
+  <div class="section-label"><span class="section-no">15</span><h3>خلاصه‌ای که باید به خاطر بسپارید</h3></div>
+  <ul>
+    <li><strong>یک فاعل + هدف</strong> → <span class="formula">pour + infinitif / afin de + infinitif</span></li>
+    <li><strong>دو فاعل متفاوت + هدف</strong> → <span class="formula">pour que / afin que + subjonctif</span></li>
+    <li><strong>یک فاعل + هدف منفی</strong> → <span class="formula">pour ne pas + infinitif</span></li>
+    <li><strong>دو فاعل + هدف منفی</strong> → <span class="formula">pour que + sujet + ne ... pas + subjonctif</span></li>
+    <li><strong>ترس + همان فاعل</strong> → <span class="formula">de peur de + infinitif</span></li>
+    <li><strong>ترس + فاعل متفاوت</strong> → <span class="formula">de peur que + subjonctif</span></li>
+    <li>در <span class="formula">de peur que ... ne ...</span>، <span class="formula">ne</span> ممکن است explétif باشد و معنی منفی نداشته باشد.</li>
+    <li>دو هدف پشت سر هم → <span class="formula">pour que ... et que ...</span></li>
+    <li><span class="formula">pour que</span> = هدف؛ <span class="formula">parce que</span> = علت؛ <span class="formula">si bien que</span> = نتیجه.</li>
+  </ul>
+</section>
+
+<section class="exercise-block">
+  <div class="section-label"><span class="section-no">16</span><h3>تمرین</h3></div>
+  <p class="muted">ساختار مناسب را انتخاب یا جمله را کامل کنید.</p>
+  <ol class="exercise-list">
+    <li><p class="fr" lang="fr">Je prends des notes ______ oublier les détails.</p></li>
+    <li><p class="fr" lang="fr">Je prends des notes ______ mes collègues puissent consulter les informations plus tard.</p></li>
+    <li><p class="fr" lang="fr">Elle a fermé doucement la porte ______ le bébé ne se réveille pas.</p></li>
+    <li><p class="fr" lang="fr">Ils sont partis tôt ______ éviter les embouteillages.</p></li>
+    <li><p class="fr" lang="fr">Nous avons laissé la lumière allumée ______ les enfants aient peur.</p></li>
+    <li><p class="fr" lang="fr">Il n’a rien dit ______ provoquer une dispute.</p></li>
+    <li><p class="fr" lang="fr">Elle a sauvegardé le document pour que nous puissions le modifier et ______ nous ne perdions aucune donnée.</p></li>
+    <li><p class="fr" lang="fr">Il vérifie deux fois son travail de peur qu’une erreur ______ dans le rapport.</p></li>
+    <li><p>نوع رابطه را مشخص کنید: <span class="fr" lang="fr">Elle a parlé lentement pour que chacun comprenne.</span></p></li>
+    <li><p>نوع رابطه را مشخص کنید: <span class="fr" lang="fr">Elle a parlé lentement parce que certains étudiants débutaient.</span></p></li>
+    <li><p>نوع رابطه را مشخص کنید: <span class="fr" lang="fr">Elle a très bien expliqué, si bien que tout le monde a compris.</span></p></li>
+  </ol>
+
+  <details>
+    <summary>پاسخ تمرین‌ها</summary>
+    <div class="answer-content">
+      <ol>
+        <li><span class="formula">pour ne pas</span> → <span class="fr" lang="fr">Je prends des notes pour ne pas oublier les détails.</span></li>
+        <li><span class="formula">pour que</span>؛ فاعل‌ها متفاوت‌اند و <span class="formula">puissent</span> در subjonctif است.</li>
+        <li><span class="formula">pour que</span> → <span class="fr" lang="fr">... pour que le bébé ne se réveille pas.</span></li>
+        <li><span class="formula">pour / afin d’</span> → <span class="fr" lang="fr">Ils sont partis tôt pour éviter les embouteillages.</span></li>
+        <li><span class="formula">de peur que</span>؛ فاعل‌ها متفاوت‌اند.</li>
+        <li><span class="formula">de peur de</span>؛ فاعل هر دو عمل <span class="formula">il</span> است.</li>
+        <li><span class="formula">que</span> → <span class="fr" lang="fr">... et que nous ne perdions aucune donnée.</span></li>
+        <li><span class="formula">apparaisse</span>؛ بعد از <span class="formula">de peur que</span> → subjonctif.</li>
+        <li><strong>but</strong> — هدف.</li>
+        <li><strong>cause</strong> — علت.</li>
+        <li><strong>conséquence</strong> — نتیجه.</li>
+      </ol>
+    </div>
+  </details>
+
+  <p class="source-note">مرجع آموزشی: <span lang="fr" dir="ltr">Grammaire Progressive du Français — Niveau Avancé — 3e édition</span>، درس ۲۵، صفحات چاپی ۱۵۲–۱۵۳.</p>
+</section>
 </article>
