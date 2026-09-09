@@ -88,8 +88,15 @@ services:
     networks:
       - app
 
+# Important:
+# This is the existing production database volume.
+# It is declared external so Compose will NEVER silently create a replacement
+# volume with a project-prefixed name such as:
+# grammar-mastery-advanced_postgres_data
 volumes:
   postgres_data:
+    external: true
+    name: grammar-mastery-advanced-postgres-data
 
 networks:
   app:
