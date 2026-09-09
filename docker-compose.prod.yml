@@ -1,9 +1,8 @@
-name: grammar-mastery-advanced
+name: grammar-mastery
 
 services:
   postgres:
     image: postgres:15-bookworm
-    pull_policy: missing
     restart: unless-stopped
     env_file:
       - .env.docker
@@ -27,22 +26,26 @@ services:
     env_file:
       - .env.docker
     environment:
-      APP_ENV: production
+      APP_ENV: ${APP_ENV:-staging}
       DJANGO_SETTINGS_MODULE: gmp_runtime.settings
       DJANGO_DB_HOST: postgres
       DJANGO_DB_PORT: "5432"
-      DJANGO_ALLOWED_HOSTS: grammarb2.imannasr.com,localhost,127.0.0.1,backend
-      DJANGO_CSRF_TRUSTED_ORIGINS: https://grammarb2.imannasr.com
-      DJANGO_DEBUG: "false"
-      DJANGO_SECURE_SSL_REDIRECT: "false"
-      PASSWORD_RESET_PUBLIC_ORIGIN: https://grammarb2.imannasr.com
-      STAGE21_JWT_ISSUER: grammar-mastery-advanced
-      STAGE21_JWT_AUDIENCE: grammar-mastery-advanced-api
+      DJANGO_DB_NAME: ${POSTGRES_DB:-grammar_mastery}
+      DJANGO_DB_USER: ${POSTGRES_USER:-grammar_mastery}
+      DJANGO_DB_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env.docker}
+      # The Advanced schema-only migration runner consumes libpq PG* variables
+      # when it is invoked explicitly. The application entrypoint never runs
+      # migrations automatically.
+      PGHOST: postgres
+      PGPORT: "5432"
+      PGDATABASE: ${POSTGRES_DB:-grammar_mastery}
+      PGUSER: ${POSTGRES_USER:-grammar_mastery}
+      PGPASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env.docker}
     depends_on:
       postgres:
         condition: service_healthy
     ports:
-      - "127.0.0.1:8006:8000"
+      - "${BACKEND_BIND:-127.0.0.1}:${BACKEND_PORT:-8000}:8000"
     healthcheck:
       test:
         - CMD
@@ -58,7 +61,6 @@ services:
 
   frontend:
     image: ghcr.io/imannasresfahani/grammar-mastery-advanced-frontend:latest
-    pull_policy: always
     restart: unless-stopped
     init: true
     env_file:
@@ -66,15 +68,14 @@ services:
     environment:
       NODE_ENV: production
       DJANGO_API_BASE_URL: http://backend:8000/api/v1
-      NEXT_PUBLIC_DEFAULT_LOCALE: fa
-      GMP_SESSION_COOKIE_SECURE: "true"
+      NEXT_PUBLIC_DEFAULT_LOCALE: ${NEXT_PUBLIC_DEFAULT_LOCALE:-fa}
       PORT: "3000"
       HOSTNAME: "0.0.0.0"
     depends_on:
       backend:
         condition: service_healthy
     ports:
-      - "127.0.0.1:3006:3000"
+      - "${FRONTEND_BIND:-127.0.0.1}:${FRONTEND_PORT:-3000}:3000"
     healthcheck:
       test:
         - CMD
